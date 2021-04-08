@@ -1,1 +1,476 @@
-Sparnatural.eu
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Sparnatural - Javascript SPARQL query builder</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700|Open+Sans:300,300i,400,400i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet" />
+
+  <!-- Font Awesome -->    
+  <link rel="stylesheet" href="assets/fa/css/all.min.css" />
+
+  <!-- =======================================================
+  * Template Name: Avilon - v4.0.1
+  * Template URL: https://bootstrapmade.com/avilon-bootstrap-landing-page-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+    <div class="container d-flex justify-content-between align-items-center">
+
+      <div id="logo">
+        <h1><a href="index.html">Sparnatural</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt=""></a> -->
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto" href="#features">Features</a></li>
+          <li><a class="nav-link scrollto" href="#more-features">Demos</a></li>
+          <li><a class="nav-link scrollto" href="#gallery">Gallery</a></li>
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+
+    <div class="hero-text" data-aos="zoom-out">
+      <h2>Sparnatural</h2>
+      <p>Knowledge Graph Exploration for your end-users <em><small>(and for you !)</small></em></p>
+      <a href="#about" class="btn-get-started scrollto">Get Started</a>
+    </div>
+
+    <div class="product-screens">
+
+      <div class="product-screen-single" data-aos="fade-up" data-aos-delay="400">
+        <a href="assets/videos/screencast-full.gif"><img src="assets/videos/screencast-short.gif" alt="" width="1000px"></a>
+      </div>
+
+      <!--
+      <div class="product-screen-1" data-aos="fade-up" data-aos-delay="400">
+        <img src="assets/img/screencast-sparnatural-dbpedia-v3-en.gif" alt="" width="200px">
+      </div>
+
+      <div class="product-screen-2" data-aos="fade-up" data-aos-delay="200">
+        <img src="assets/img/screencast-sparnatural-dbpedia-v3-en.gif" alt="" width="800px">
+      </div>
+
+      <div class="product-screen-3" data-aos="fade-up">
+        <img src="assets/img/product-screen-3.png" alt="">
+      </div>
+      -->
+
+    </div>
+
+  </section><!-- End Hero Section -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="section-bg">
+      <div class="container-fluid" data-aos="fade-up">
+        <div class="section-header">
+          <h3 class="section-title">About Sparnatural</h3>
+          <span class="section-divider"></span>
+          <p class="section-description">
+            Sparnatural is a Javascript component that allows users to explore an RDF Knowledge Graph<br>
+            by building SPARQL queries intuitively. It is configurable to adapt to your knowledge graph ontology.
+          </p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6 about-img" data-aos="fade-right" dat-aos-delay="100">
+            <img src="assets/img/about-img.png" alt="">
+          </div>
+
+          <div class="col-lg-6 content" data-aos="fade-left" dat-aos-delay="100">
+            <h2>How do <strong>you</strong> explore your knowledge graph ?</h2>
+            <p>
+              Maybe you have lists of entities. Or a search engine. Maybe you have facets. Maybe you even have data-visualisation. But can you explore your knowledge graph <em>really as a graph</em> ? This is what Sparnatural does.
+            </p>
+
+            <p>
+              Have you ever been frustrated by not being able to show - and to sell - all this nice structured data you have aggregated in your graph ? Sparnatural can demonstrate the value of heterogeneous data integration.
+            </p>
+
+            <p>
+              Are you looking for a solution that can <em>bring your knowledge graph to your end-users</em> ? Sparnatural is the right tool for this : it allows try-and-error interactions, it is visual, and it "gamifies" the knowledge graph experience.
+            </p>
+
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+
+    <!-- ======= Featuress Section ======= -->
+    <section id="features">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+
+          <div class="col-lg-8 offset-lg-4">
+            <div class="section-header">
+              <h3 class="section-title">End-User interface for <u>your</u> SPARQL endpoint</h3>
+              <span class="section-divider"></span>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-5 features-img">
+            <img src="assets/img/product-features.png" alt="" data-aos="fade-right">
+          </div>
+
+          <div class="col-lg-8 col-md-7 ">
+
+            <div class="row">
+
+              <div class="col-lg-6 col-md-6 box" data-aos="fade-up" data-aos-delay="100">
+                <div class="icon"><i class="fad fa-layer-group"></i></div>
+                <h4 class="title"><a href="">Adapt to <u>your</u> ontology</a></h4>
+                <p class="description">Sparnatural can be configured to adapt to your graph structure. You can hide some of the complexity of your graph, and simplify the navigation for your users. Configuration is made through <strong>JSON or OWL</strong>.</p>
+              </div>
+              <div class="col-lg-6 col-md-6 box" data-aos="fade-up" dat-aos-delay="100">
+                <div class="icon"><i class="fab fa-js-square"></i></div>
+                <h4 class="title"><a href="">Client-only (no additionnal server required)</a></h4>
+                <p class="description">Sparnatural is pure client javascript and can be <strong>plugged to any existing SPARQL endpoint</strong>, without additionnal server required.</p>
+              </div>
+              <div class="col-lg-6 col-md-6 box" data-aos="fade-up">
+                <div class="icon"><i class="fad fa-balance-scale"></i></div>
+                <h4 class="title"><a href="">Free and open-source</a></h4>
+                <p class="description">Sparnatural license is <strong>LGPL-3.0</strong>, which means you are free to integrate it in your website. Any modification you make <em>inside the source code</em> of Sparnatural needs to be distributed with the same license, or contributed to the original project.</p>
+              </div>
+              <div class="col-lg-6 col-md-6 box" data-aos="fade-up">
+                <div class="icon"><i class="fab fa-github"></i></div>
+                <h4 class="title"><a href="">Open-Source on Github</a></h4>
+                <p class="description">Sparnatural development is open and happens on the <strong><a href="https://github.com/sparna-git/Sparnatural">Github repository</a></strong>.</p>
+              </div>
+              <div class="col-lg-6 col-md-6 box" data-aos="fade-up">
+                <div class="icon"><i class="fad fa-list"></i></div>
+                <h4 class="title"><a href="">Widgets</a></h4>
+                <p class="description">Sparnatural offers different <strong>widgets for value selection</strong> : dropdown lists, ordered by occurrence count or alphabetically, autocomplete search fields, date pickers... this is all part of Sparnatural configuration.</p>
+              </div>
+
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- End Featuress Section -->
+
+
+    <!-- ======= Call To Action Section ======= -->
+    <section id="call-to-action">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 text-center text-lg-start">
+            <h3 class="cta-title">Try & download</h3>
+            <p class="cta-text">Test a live demo to browse french-speaking DBPedia. Download from Github and start using !</p>
+          </div>
+          <div class="col-lg-4 cta-btn-container text-center">
+            <a class="cta-btn align-middle" href="demos/demo-dbpedia/index.html?lang=en">Try the demo</a>
+          </div>
+          <div class="col-lg-4 cta-btn-container text-center">
+            <a class="cta-btn align-middle" href="https://github.com/sparna-git/Sparnatural/releases/latest">Download from Github</a>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+
+      </div>
+    </section><!-- End Call To Action Section -->
+
+
+    <!-- ======= More Features Section ======= -->
+    <section id="more-features" class="section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+          <h3 class="section-title">Demos</h3>
+          <span class="section-divider"></span>
+          <p class="section-description">&nbsp;</p>
+        </div>
+
+        <div class="row gy-4">
+
+          <div class="col-lg-6">
+            <div class="box">
+              <div class="icon"><i class="fad fa-university"></i></div>
+              <h4 class="title"><a href="demos/demo-dbpedia/index.html?lang=en">DBPedia Museums</a></h4>
+              <p class="description">Museums, Artworks and painters.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="box">
+              <div class="icon"><i class="fad fa-scroll"></i></div>
+              <h4 class="title"><a href="demos/demo-legilux/index.html">Legilux (Luxembourg legislation)</a></h4>
+              <p class="description">Legislation, EU transpositions, citations, modifications, abrogation links.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- End More Features Section -->
+
+
+
+    <!-- ======= Clients Section ======= -->
+    <!--
+    <section id="clients">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+
+          <div class="col-md-2">
+            <img src="assets/img/clients/openarchaeo.png" alt="">
+          </div>
+
+          <div class="col-md-2">
+            <img src="assets/img/clients/archives-nationales.png" alt="">
+          </div>
+
+          <div class="col-md-2">
+            <img src="assets/img/clients/client-3.png" alt="">
+          </div>
+
+          <div class="col-md-2">
+            <img src="assets/img/clients/client-4.png" alt="">
+          </div>
+
+          <div class="col-md-2">
+            <img src="assets/img/clients/client-5.png" alt="">
+          </div>
+
+          <div class="col-md-2">
+            <img src="assets/img/clients/client-6.png" alt="">
+          </div>
+
+        </div>
+      </div>
+    </section>
+    --><!-- End Clients Section -->
+
+    <!-- ======= Pricing Section ======= -->
+    <!--
+    <section id="pricing" class="section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+          <h3 class="section-title">Pricing</h3>
+          <span class="section-divider"></span>
+          <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6">
+            <div class="box">
+              <h3>Free</h3>
+              <h4><sup>$</sup>0<span> month</span></h4>
+              <ul>
+                <li><i class="bi bi-check-circle"></i> Quam adipiscing vitae proin</li>
+                <li><i class="bi bi-check-circle"></i> Nec feugiat nisl pretium</li>
+                <li><i class="bi bi-check-circle"></i> Nulla at volutpat diam uteera</li>
+                <li><i class="bi bi-check-circle"></i> Pharetra massa massa ultricies</li>
+                <li><i class="bi bi-check-circle"></i> Massa ultricies mi quis hendrerit</li>
+              </ul>
+              <a href="#" class="get-started-btn">Get Started</a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="box featured">
+              <h3>Business</h3>
+              <h4><sup>$</sup>29<span> month</span></h4>
+              <ul>
+                <li><i class="bi bi-check-circle"></i> Quam adipiscing vitae proin</li>
+                <li><i class="bi bi-check-circle"></i> Nec feugiat nisl pretium</li>
+                <li><i class="bi bi-check-circle"></i> Nulla at volutpat diam uteera</li>
+                <li><i class="bi bi-check-circle"></i> Pharetra massa massa ultricies</li>
+                <li><i class="bi bi-check-circle"></i> Massa ultricies mi quis hendrerit</li>
+              </ul>
+              <a href="#" class="get-started-btn">Get Started</a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="box">
+              <h3>Developer</h3>
+              <h4><sup>$</sup>49<span> month</span></h4>
+              <ul>
+                <li><i class="bi bi-check-circle"></i> Quam adipiscing vitae proin</li>
+                <li><i class="bi bi-check-circle"></i> Nec feugiat nisl pretium</li>
+                <li><i class="bi bi-check-circle"></i> Nulla at volutpat diam uteera</li>
+                <li><i class="bi bi-check-circle"></i> Pharetra massa massa ultricies</li>
+                <li><i class="bi bi-check-circle"></i> Massa ultricies mi quis hendrerit</li>
+              </ul>
+              <a href="#" class="get-started-btn">Get Started</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    --><!-- End Pricing Section -->
+
+    <!-- ======= Gallery Section ======= -->
+    <section id="gallery">
+      <div class="container-fluid" data-aos="fade-up">
+        <div class="section-header">
+          <h3 class="section-title">Gallery</h3>
+          <span class="section-divider"></span>
+          <!-- <p class="section-description">...</p> -->
+        </div>
+
+        <div class="row no-gutters">
+
+          <div class="col-lg-4 col-md-6">
+            <div class="gallery-item">
+              <a href="assets/img/gallery/dbpedia.png" data-gall="portfolioGallery" class="gallery-lightbox">
+                <img src="assets/img/gallery/dbpedia.png" alt="">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="gallery-item">
+              <a href="assets/img/gallery/openarchaeo.png" data-gall="portfolioGallery" class="gallery-lightbox">
+                <img src="assets/img/gallery/openarchaeo.png" alt="">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="gallery-item">
+              <a href="assets/img/gallery/archives-nationales.png" data-gall="portfolioGallery" class="gallery-lightbox">
+                <img src="assets/img/gallery/archives-nationales.png" alt="">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="gallery-item">
+              <a href="assets/img/gallery/databnf.png" data-gall="portfolioGallery" class="gallery-lightbox">
+                <img src="assets/img/gallery/databnf.png" alt="">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="gallery-item">
+              <a href="assets/img/gallery/legilux.png" data-gall="portfolioGallery" class="gallery-lightbox">
+                <img src="assets/img/gallery/legilux.png" alt="">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="gallery-item">
+              <a href="assets/img/gallery/semapps.png" data-gall="portfolioGallery" class="gallery-lightbox">
+                <img src="assets/img/gallery/semapps.png" alt="">
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Gallery Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact">
+      <div class="container" data-aos="fade-up">
+        <div class="row">
+
+          <div class="col-lg-4 col-md-4">
+            <div class="contact-about">
+              <a href="http://sparna.fr"><img src="assets/img/sparna.png" style="width:100%" /></a>
+              <p style="margin-top:10px;">Thomas Francart - Web of data and knowledge graph services. <br/>RDF OWL SPARQL SHACL SKOS FRBR CIDOC-CRM RIC-O</p>
+              <div class="social-links">
+                <a href="http://sparna.fr"><i class="bi bi-building"></i></a>
+                <a href="https://github.com/sparna-git/Sparnatural"><i class="bi bi-github"></i></a>
+                <a href="http://blog.sparna.fr"><i class="bi bi-journal-text"></i></a>
+                <a href="http://www.linkedin.com/in/thomasfrancart"><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="info">
+              <div>
+                <i class="bi bi-geo-alt"></i>
+                <p>30 rue André Theuriet<br/>37000 Tours - FRANCE</p>
+              </div>
+
+              <div>
+                <i class="bi bi-envelope"></i>
+                <p><a href="mailto:thomas.francart@sparna.fr">thomas.francart@sparna.fr</a></p>
+              </div>
+
+              <div>
+                <i class="bi bi-building"></i>
+                <p><a href="http://sparna.fr/contact">http://sparna.fr/contact</a></p>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-chevron-up"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
