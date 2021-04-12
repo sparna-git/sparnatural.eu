@@ -853,14 +853,14 @@ section {
   border: 2px solid #1dc8cd;
 }
 
-/* More Features Section
+/* Demos Section
 --------------------------------*/
-#more-features {
+#demos {
   padding: 60px 0 60px 0;
   overflow: hidden;
 }
 
-#more-features .box {
+#demos .box {
   padding: 40px;
   margin-bottom: 30px;
   box-shadow: 0px 0px 30px rgba(73, 78, 92, 0.15);
@@ -869,11 +869,11 @@ section {
   height: 100%;
 }
 
-#more-features .icon {
+#demos .icon {
   float: left;
 }
 
-#more-features .icon i {
+#demos .icon i {
   color: #666666;
   /* font-size: 80px; */
   font-size: 65px;
@@ -881,7 +881,7 @@ section {
   /* line-height: 0; */
 }
 
-#more-features .icon i:before {
+#demos .icon i:before {
   background: #1dc8cd;
   background: linear-gradient(45deg, #1dc8cd 0%, #55fabe 100%);
   background-clip: border-box;
@@ -889,18 +889,18 @@ section {
   -webkit-text-fill-color: transparent;
 }
 
-#more-features h4 {
+#demos h4 {
   margin-left: 100px;
   font-weight: 700;
   margin-bottom: 15px;
   font-size: 18px;
 }
 
-#more-features h4 a {
+#demos h4 a {
   color: #111;
 }
 
-#more-features p {
+#demos p {
   font-size: 14px;
   margin-left: 100px;
   margin-bottom: 0;
@@ -908,15 +908,15 @@ section {
 }
 
 @media (max-width: 767px) {
-  #more-features .box {
+  #demos .box {
     margin-bottom: 20px;
   }
-  #more-features .icon {
+  #demos .icon {
     float: none;
     text-align: center;
     padding-bottom: 15px;
   }
-  #more-features h4, #more-features p {
+  #demos h4, #demos p {
     margin-left: 0;
     text-align: center;
   }
