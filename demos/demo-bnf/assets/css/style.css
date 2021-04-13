@@ -1344,3 +1344,9 @@ section {
 #footer .footer-links a:hover {
   color: #1dc8cd;
 }
+
+/* YASR section */
+
+#yasr-section {
+  min-height: 500px;
+}
