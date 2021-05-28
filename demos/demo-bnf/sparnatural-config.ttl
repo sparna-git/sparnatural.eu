@@ -14,26 +14,14 @@
 #    Object Properties
 #################################################################
 
-###  http://data.sparna.fr/ontologies/sparnatural-databnf#dateOfWork
-:dateOfWork rdf:type owl:ObjectProperty ;
-            rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#ListProperty> ;
-            rdfs:domain <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Work> ;
-            rdfs:range :Date ;
-            <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://rdvocab.info/Elements/dateOfWork>" ,
-                                                                                    "créée en"@fr ;
-            <http://data.sparna.fr/ontologies/sparnatural-config-datasources#datasource> :list_instant_alpha ;
-            rdfs:label "created in"@fr .
-
-
-###  http://data.sparna.fr/ontologies/sparnatural-databnf#publishedIn
-:publishedIn rdf:type owl:ObjectProperty ;
-             rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#ListProperty> ;
-             rdfs:domain <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation> ;
-             rdfs:range :Date ;
-             <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://rdvocab.info/Elements/dateOfPublicationManifestation>" ;
-             <http://data.sparna.fr/ontologies/sparnatural-config-datasources#datasource> :list_instant_alpha ;
-             rdfs:label "published in"@en ,
-                        "publiée en"@fr .
+###  http://data.sparna.fr/ontologies/sparnatural-databnf#contributeurDe
+:contributeurDe rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#AutocompleteProperty> ;
+                rdfs:domain <http://xmlns.com/foaf/0.1/Person> ;
+                rdfs:range <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Work> ;
+                <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "^<http://purl.org/dc/terms/contributor>" ;
+                rdfs:label "contributeur de"@fr ,
+                           "contributor of"@en .
 
 
 ###  http://ontologies.sparna.fr/sparnatural-databnf#auteurDe
@@ -76,6 +64,17 @@
                      "adapté de"@fr .
 
 
+###  http://ontologies.sparna.fr/sparnatural-legilux#dateOfWork
+:dateOfWork rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#ListProperty> ;
+            rdfs:domain <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Work> ;
+            rdfs:range :Date ;
+            <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://rdvocab.info/Elements/dateOfWork>" ,
+                                                                                    "créée en"@fr ;
+            <http://data.sparna.fr/ontologies/sparnatural-config-datasources#datasource> :list_instant_alpha ;
+            rdfs:label "created in"@fr .
+
+
 ###  http://ontologies.sparna.fr/sparnatural-legilux#langueEdition
 :langueEdition rdf:type owl:ObjectProperty ;
                rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#ListProperty> ;
@@ -84,6 +83,17 @@
                <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "rdarelationships:expressionManifested/dcterms:language" ;
                rdfs:label "language"@en ,
                           "langue"@fr .
+
+
+###  http://ontologies.sparna.fr/sparnatural-legilux#publishedIn
+:publishedIn rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#ListProperty> ;
+             rdfs:domain <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation> ;
+             rdfs:range :Date ;
+             <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://rdvocab.info/Elements/dateOfPublicationManifestation>" ;
+             <http://data.sparna.fr/ontologies/sparnatural-config-datasources#datasource> :list_instant_alpha ;
+             rdfs:label "published in"@en ,
+                        "publiée en"@fr .
 
 
 ###  http://purl.org/dc/terms/contributor
@@ -176,7 +186,7 @@
 #    Individuals
 #################################################################
 
-###  http://data.sparna.fr/ontologies/sparnatural-databnf#list_instant_alpha
+###  http://ontologies.sparna.fr/sparnatural-legilux#list_instant_alpha
 :list_instant_alpha rdf:type owl:NamedIndividual ,
                              <http://data.sparna.fr/ontologies/sparnatural-config-datasources#SparqlDatasource> ;
                     <http://data.sparna.fr/ontologies/sparnatural-config-datasources#queryString> """PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
