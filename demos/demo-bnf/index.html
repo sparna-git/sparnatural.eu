@@ -229,6 +229,7 @@
       prefixesPostProcess = function(queryString, queryJson) {
         if(queryString.indexOf("rdf-schema#") == -1) {
           queryString = queryString.replace("SELECT ", "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> \nSELECT ");
+          queryString = queryString.replace("SELECT ", "PREFIX dcterms: <http://purl.org/dc/terms/> \nSELECT ");
         }
         return queryString;
       }
