@@ -100,7 +100,7 @@
 
         <div style="text-align:right; padding-bottom:10px;">
           <span style="font-size:90%; font-style: italic;"> 
-               Querying <a id="endpoint" href="http://data.legilux.public.lu/sparql">http://data.legilux.public.lu/sparql</a>
+               Querying <a id="endpoint" href="http://proxy.sparnatural.eu/sparql-proxy/sparql?endpoint=http%3A%2F%2Ffr.dbpedia.org%2Fsparql">http://proxy.sparnatural.eu/sparql-proxy/sparql?endpoint=http%3A%2F%2Ffr.dbpedia.org%2Fsparql</a>
                </span>
         </div>
 
@@ -151,7 +151,7 @@
 
           <div class="col-lg-3 col-md-4">
             <div class="social-links">
-              <a href="mailto:thomas.francart@sparna.fr" ><i class="bi bi-envelope-fill"></i></a>                
+            	<a href="mailto:thomas.francart@sparna.fr" ><i class="bi bi-envelope-fill"></i></a>                
                 <a href="http://sparna.fr" ><i class="bi bi-building"></i></a>
                 <a href="http://blog.sparna.fr"><i class="bi bi-journal-text"></i></a>                
                 <a href="https://github.com/sparna-git/Sparnatural"><i class="bi bi-github"></i></a>
@@ -205,9 +205,7 @@
       $( document ).ready(function($) {          
 
         sparnatural = $('#sparnatural-container').Sparnatural({
-          // config: "https://gist.githubusercontent.com/tfrancart/65dd8238fd53f221f6e4183b98ebb4e1/raw/sparnatural-config-datamusee.ttl",
           config: "sparnatural-config.ttl",
-          // config: config,
           language: lang,
           maxDepth: 4,                                                                        
           addDistinct: true,
@@ -236,14 +234,14 @@
       }
 
       displayLabelPostProcess = function(queryString, queryJson) {
-        // queryString = queryString.replace(new RegExp('}$'), "  ?this rdfs:label ?theLabel FILTER(lang(?theLabel) = 'fr') \n}");
+        queryString = queryString.replace(new RegExp('}$'), "  ?this rdfs:label ?theLabel FILTER(lang(?theLabel) = 'fr') \n}");
         return queryString;
       }
 
       orderByPostProcess = function(queryString, queryJson) {
         // queryString = queryString.replace(new RegExp('}$'), "}\nORDER BY ?label LIMIT 100");
-        // queryString = queryString.replace("SELECT DISTINCT ?this", "SELECT DISTINCT (STR(?theLabel) AS ?label) ?this");
-        // queryString = queryString.replace(new RegExp('}$'), "}\nORDER BY ?label LIMIT 1000");
+        queryString = queryString.replace("SELECT DISTINCT ?this", "SELECT DISTINCT (STR(?theLabel) AS ?label) ?this");
+        queryString = queryString.replace(new RegExp('}$'), "}\nORDER BY ?label LIMIT 1000");
         return queryString;
       }
 
