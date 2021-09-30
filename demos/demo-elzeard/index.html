@@ -100,7 +100,7 @@
 
         <div style="text-align:right; padding-bottom:10px;">
           <span style="font-size:90%; font-style: italic;"> 
-               Querying <a id="endpoint" href="http://elzeard.co/sparql">http://elzeard.co/sparql</a> |Config in <a id="endpoint" href="https://docs.google.com/spreadsheets/d/1S5K7cl-8-JFyqnCZP2pVhI3-E4IK0XgCPElkr657jJg/edit?usp=sharing">this spreadsheet</a> 
+               Querying <a id="endpoint" href="http://proxy.sparnatural.eu/sparql-proxy/sparql?endpoint=http%3A%2F%2Fgraph.elzeard.co%2Frepositories%2Fc3po-demo">http://proxy.sparnatural.eu/sparql-proxy/sparql?endpoint=http%3A%2F%2Fgraph.elzeard.co%2Frepositories%2Fc3po-demo</a> |Config in <a id="endpoint" href="https://docs.google.com/spreadsheets/d/1S5K7cl-8-JFyqnCZP2pVhI3-E4IK0XgCPElkr657jJg/edit?usp=sharing">this spreadsheet</a> 
           </span>   
         </div>
 
@@ -241,7 +241,7 @@
       }
 
       displayLabelPostProcess = function(queryString, queryJson) {
-        queryString = queryString.replace(new RegExp('}$'), "  OPTIONAL { ?this rdfs:label ?theLabel } \n}");
+        queryString = queryString.replace(new RegExp('}$'), "  OPTIONAL { ?this rdfs:label ?theLabel FILTER(lang(?theLabel) = 'fr') } \n}");
         return queryString;
       }
 
