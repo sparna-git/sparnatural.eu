@@ -223,8 +223,6 @@
             yasqe.query();
           },
           sparqlPrefixes : {
-              "c3poplant" : "http://www.elzeard.co/ontologies/c3po/plant#",
-              "c3povoc" : "http://www.elzeard.co/ontologies/c3po/vocabulary#",
               "c3potreat" : "http://www.elzeard.co/ontologies/c3po/treatment#",
               "c3poparam" : "http://www.elzeard.co/ontologies/c3po/parameter#",
               "skos" : "http://www.w3.org/2004/02/skos/core#"
@@ -236,6 +234,7 @@
       prefixesPostProcess = function(queryString, queryJson) {
         if(queryString.indexOf("rdf-schema#") == -1) {
           queryString = queryString.replace("SELECT ", "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> \nSELECT ");
+          queryString = queryString.replace("SELECT ", "PREFIX skos: <http://www.w3.org/2004/02/skos/core#> \nSELECT ");
         }
         return queryString;
       }
