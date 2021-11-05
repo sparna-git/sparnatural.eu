@@ -1,0 +1,131 @@
+@prefix config-core: <http://data.sparna.fr/ontologies/sparnatural-config-core#> .
+@prefix config-datasources: <http://data.sparna.fr/ontologies/sparnatural-config-datasources#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix this: <http://sparnatural.eu/demos/demo-smt-cim10/ontology/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://sparnatural.eu/demos/demo-smt-cim10/ontology> a owl:Ontology;
+  rdfs:seeAlso <http://xls2rdf.sparna.fr/rest/convert?url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1JpWi41Wv1x-HQPrzt3COTNnEavRu43uQ12KG_aEoYWk%2Fexport%3Fformat%3Dxlsx&noPostProcessings=true>,
+    <https://docs.google.com/spreadsheets/d/1JpWi41Wv1x-HQPrzt3COTNnEavRu43uQ12KG_aEoYWk/export?format=xlsx>;
+  owl:imports <http://data.sparna.fr/ontologies/sparnatural-config-core>, <http://data.sparna.fr/ontologies/sparnatural-config-datasources> .
+
+this:Disease a owl:Class;
+  config-core:faIcon "fa-duotone fa-virus";
+  config-core:sparqlString "<http://www.w3.org/2002/07/owl#Class>";
+  rdfs:label "Maladie"@fr;
+  rdfs:subClassOf config-core:SparnaturalClass .
+
+this:Chapter a owl:Class;
+  config-core:faIcon "fa-duotone fa-book-medical";
+  config-core:sparqlString "<http://www.w3.org/2002/07/owl#Class>;<http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://data.esante.gouv.fr/atih/cim10>";
+  rdfs:label "Chapitre"@fr;
+  rdfs:subClassOf config-core:SparnaturalClass .
+
+this:SubChapter a owl:Class;
+  config-core:faIcon "fa-duotone fa-book-medical";
+  config-core:sparqlString "<http://www.w3.org/2002/07/owl#Class>;<http://www.w3.org/2000/01/rdf-schema#subClassOf>/<http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://data.esante.gouv.fr/atih/cim10>";
+  rdfs:label "Sous-Chapitre"@fr;
+  rdfs:subClassOf config-core:SparnaturalClass .
+
+this:Search a owl:Class;
+  config-core:faIcon "fa-duotone fa-quote-right";
+  rdfs:label "Rechercher..."@fr;
+  rdfs:subClassOf config-core:SparnaturalClass .
+
+this:Type a owl:Class;
+  config-core:faIcon "fa-duotone fa-ellipsis-h";
+  rdfs:label "Type d'entrée"@fr;
+  rdfs:subClassOf rdfs:Literal .
+
+this:hasCausality a owl:ObjectProperty;
+  config-core:sparqlString "<http://data.esante.gouv.fr/atih-cim10#hasCausality>";
+  config-datasources:datasource this:diseaseDatasource;
+  rdfs:domain this:Disease;
+  rdfs:label "a pour causalité"@fr;
+  rdfs:range this:Disease;
+  rdfs:subPropertyOf config-core:AutocompleteProperty .
+
+this:hasManifestation a owl:ObjectProperty;
+  config-core:sparqlString "<http://data.esante.gouv.fr/atih-cim10#hasManifestation>";
+  config-datasources:datasource this:diseaseDatasource;
+  rdfs:domain this:Disease;
+  rdfs:label "a pour manifestation"@fr;
+  rdfs:range this:Disease;
+  rdfs:subPropertyOf config-core:AutocompleteProperty .
+
+this:exclusion a owl:ObjectProperty;
+  config-core:sparqlString "<http://data.esante.gouv.fr/atih-cim10#exclusion>";
+  config-datasources:datasource this:diseaseDatasource;
+  rdfs:domain this:Disease;
+  rdfs:label "exclut"@fr;
+  rdfs:range this:Disease;
+  rdfs:subPropertyOf config-core:AutocompleteProperty .
+
+this:inChapter a owl:ObjectProperty;
+  config-core:sparqlString "<http://www.w3.org/2000/01/rdf-schema#subClassOf>+";
+  config-datasources:datasource this:chapterDatasource;
+  rdfs:domain this:Disease;
+  rdfs:label "dans le chapitre"@fr;
+  rdfs:range this:Chapter;
+  rdfs:subPropertyOf config-core:ListProperty .
+
+this:inSubChapter a owl:ObjectProperty;
+  config-core:sparqlString "<http://www.w3.org/2000/01/rdf-schema#subClassOf>+";
+  config-datasources:datasource this:subChapterDatasource;
+  rdfs:domain this:Disease;
+  rdfs:label "dans le sous-chapitre"@fr;
+  rdfs:range this:SubChapter;
+  rdfs:subPropertyOf config-core:ListProperty .
+
+this:label a owl:ObjectProperty;
+  config-core:sparqlString "<http://www.w3.org/2004/02/skos/core#prefLabel>|<http://www.w3.org/2004/02/skos/core#altLabel>";
+  rdfs:domain this:Disease;
+  rdfs:label "nom ou synonyme"@fr;
+  rdfs:range this:Search;
+  rdfs:subPropertyOf config-core:SearchProperty .
+
+<http://purl.org/dc/elements/1.1/type> a owl:ObjectProperty;
+  rdfs:domain this:Disease;
+  rdfs:label "type"@fr;
+  rdfs:range this:Type;
+  rdfs:subPropertyOf config-core:LiteralListProperty .
+
+this:chapterDatasource a config-datasources:SparqlDatasource;
+  config-datasources:queryString """PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?uri (CONCAT(STR(?notation), \" - \", STR(?theLabel)) AS ?label)
+WHERE { 
+ ?uri rdfs:subClassOf <http://data.esante.gouv.fr/atih/cim10> . 
+ ?uri rdfs:label ?theLabel .
+ ?uri skos:notation ?notation .
+}
+ORDER BY ?label""" .
+
+this:subChapterDatasource a config-datasources:SparqlDatasource;
+  config-datasources:queryString """PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?uri (CONCAT(STR(?notation), \" - \", STR(?theLabel)) AS ?label)
+WHERE { 
+ ?uri rdfs:subClassOf/rdfs:subClassOf <http://data.esante.gouv.fr/atih/cim10> . 
+ ?uri rdfs:label ?theLabel .
+ ?uri skos:notation ?notation .
+}
+ORDER BY ?label""" .
+
+this:diseaseDatasource a config-datasources:SparqlDatasource;
+  config-datasources:queryString """PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT DISTINCT ?uri (CONCAT(STR(?notation), \" - \", STR(?displayLabel)) AS ?label)
+WHERE { 
+ ?domain $property ?uri .
+ ?uri rdfs:subClassOf+ <http://data.esante.gouv.fr/atih/cim10> . 
+ ?uri rdfs:label ?displayLabel .
+ ?uri skos:notation ?notation .
+ ?uri skos:prefLabel|skos:altLabel ?theLabel .
+ FILTER(CONTAINS(LCASE(STR(?theLabel)), LCASE('$key')))
+}
+ORDER BY ?label""" .
+
+this:typeDatasource a config-datasources:SparqlDatasource .

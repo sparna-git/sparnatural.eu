@@ -319,7 +319,8 @@
       $( document ).ready(function($) {          
 
         sparnatural = document.getElementById('sparnatural-container').Sparnatural({
-          config: "http://xls2rdf.sparna.fr/rest/convert?url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1JpWi41Wv1x-HQPrzt3COTNnEavRu43uQ12KG_aEoYWk%2Fexport%3Fformat%3Dxlsx&noPostProcessings=true",
+          // config: "http://xls2rdf.sparna.fr/rest/convert?url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1JpWi41Wv1x-HQPrzt3COTNnEavRu43uQ12KG_aEoYWk%2Fexport%3Fformat%3Dxlsx&noPostProcessings=true",
+          config: "sparnatural-config.ttl",
           language: lang,
           maxDepth: 4,                                                                        
           addDistinct: true,
