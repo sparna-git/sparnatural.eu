@@ -13,6 +13,7 @@
 #################################################################
 #    Object Properties
 #################################################################
+#test modif
 
 ###  http://data.sparna.fr/ontologies/sparnatural-databnf#contributeurDe
 :contributeurDe rdf:type owl:ObjectProperty ;
@@ -133,6 +134,7 @@
       <http://data.sparna.fr/ontologies/sparnatural-config-core#faIcon> "fad fa-calendar-alt" ;
       <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://www.w3.org/TR/owl-time/Instant>" ;
       <http://data.sparna.fr/ontologies/sparnatural-config-datasources#datasource> <http://data.sparna.fr/ontologies/sparnatural-config-datasources#search_rdfslabel_bifcontains> ;
+      <http://data.sparna.fr/ontologies/sparnatural-config-core#tooltip> "Permet de sélectionner une année dans une liste déroulante."@fr;
       rdfs:label "Date"@en ,
                  "Date"@fr .
 
