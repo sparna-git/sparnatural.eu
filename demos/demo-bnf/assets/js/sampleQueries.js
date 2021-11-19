@@ -52,5 +52,45 @@ var sampleQueries = {
 	      "children": []
 	    }
 	  ]
+	},
+	"example.2" :
+	{
+	  "distinct": true,
+	  "variables": [
+	    "?this"
+	  ],
+	  "branches": [
+	    {
+	      "line": {
+	        "s": "?this",
+	        "p": "http://ontologies.sparna.fr/sparnatural-legilux#dateOfWork",
+	        "o": "?Date_1",
+	        "sType": "http://rdvocab.info/uri/schema/FRBRentitiesRDA/Work",
+	        "oType": "http://ontologies.sparna.fr/sparnatural-legilux#Date",
+	        "values": [
+	          {
+	            "label": "1792",
+	            "uri": "http://data.bnf.fr/date/1792/"
+	          }
+	        ]
+	      },
+	      "children": [],
+	      "optional": false,
+	      "notExists": false
+	    },
+	    {
+	      "line": {
+	        "s": "?this",
+	        "p": "http://ontologies.sparna.fr/sparnatural-legilux#adapteDans",
+	        "o": "?Event_2",
+	        "sType": "http://rdvocab.info/uri/schema/FRBRentitiesRDA/Work",
+	        "oType": "http://purl.org/dc/dcmitype/Event",
+	        "values": []
+	      },
+	      "children": [],
+	      "optional": false,
+	      "notExists": false
+	    }
+	  ]
 	}
 };
