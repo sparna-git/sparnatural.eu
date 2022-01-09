@@ -30,6 +30,7 @@
            rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#TimeProperty-Date> ;
            rdfs:domain :Person ;
            rdfs:range :Date ;
+           <http://data.sparna.fr/ontologies/sparnatural-config-core#enableOptional> "true"^^xsd:boolean ;
            <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://dbpedia.org/ontology/birthDate>" ;
            rdfs:label "birth date"@en ,
                       "date de naissance"@fr .
@@ -106,6 +107,7 @@
            rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#TimeProperty-Year> ;
            rdfs:domain :Person ;
            rdfs:range :Date ;
+           <http://data.sparna.fr/ontologies/sparnatural-config-core#enableOptional> "true"^^xsd:boolean ;
            <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://dbpedia.org/ontology/deathDate>" ;
            rdfs:label "année de décès"@fr ,
                       "death year"@en .

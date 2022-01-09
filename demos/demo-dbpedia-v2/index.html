@@ -21,6 +21,9 @@
 
   <!-- Sparnatural-specific -->
 
+    <!-- Vis.js for timeline -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css">
+
     <!-- Font Awesome -->    
     <link rel="stylesheet" href="assets/fa6/css/all.min.css" />
 
@@ -32,6 +35,8 @@
 
     <!-- Sparnatural CSS -->
     <link href="sparnatural.css" rel="stylesheet" />
+    <!-- Timeline CSS -->
+    <link rel="stylesheet" href="assets/css/timeline.css" />
 
     <style>
       .yasqe .CodeMirror {
@@ -248,6 +253,11 @@
     <!-- YASGUI stuff -->
     <script src="https://unpkg.com/@triply/yasgui/build/yasgui.min.js"></script>
 
+    <!-- vis.js for the timeline -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
+    <!--  defines timeline plugin -->
+    <script src='assets/js/timeline.js'></script>
+
     <!-- Sparnatural Javascript -->
     <script type="text/javascript" src="./sparnatural.js"></script>
 
@@ -402,8 +412,9 @@
         copyEndpointOnNewTab: false  
       });
 
+      Yasr.registerPlugin("timeline",Timeline);
       const yasr = new Yasr(document.getElementById("yasr"), {
-        pluginOrder: ["table"]
+        pluginOrder: ["table", "Timeline"]
       });
 
 
