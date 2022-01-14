@@ -416,11 +416,14 @@
         copyEndpointOnNewTab: false  
       });
 
-      Yasr.registerPlugin("timeline",Timeline);
+      Yasr.registerPlugin("Timeline",Timeline);
       const yasr = new Yasr(document.getElementById("yasr"), {
-        pluginOrder: ["table", "Timeline"]
+        pluginOrder: ["table", "Timeline"],
+        // disable persistency
+        persistencyExpire: 0,
+        maxPersistentResponseSize: 0
       });
-
+      console.log(yasr.config);
 
       // link yasqe and yasr
       yasqe.on("queryResponse", function(_yasqe, response, duration) {
