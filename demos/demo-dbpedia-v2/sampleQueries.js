@@ -80,8 +80,8 @@ var sampleQueries = {
   "variables": [
     "?Date_3",
     "?Date_4",
-    "?this",
-    "?Text_2"
+    "?Text_2",
+    "?this"
   ],
   "defaultLang": "fr",
   "order": {
@@ -136,6 +136,7 @@ var sampleQueries = {
         "oType": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#Date",
         "values": []
       },
+      "optional": true,
       "children": []
     }
   ]
