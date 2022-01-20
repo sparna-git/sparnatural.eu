@@ -20,10 +20,9 @@
         rdfs:domain :Artwork ;
         rdfs:range :Person ;
         <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://dbpedia.org/ontology/author>" ;
+        <http://data.sparna.fr/ontologies/sparnatural-config-core#tooltip> "l'artiste,l e peintre ou le sculpteur qui a créé l'œuvre"@fr ,
+                                                                           "the artist, painter or sculptor who created the artwork"@en ;
         <http://data.sparna.fr/ontologies/sparnatural-config-datasources#datasource> <http://data.sparna.fr/ontologies/sparnatural-config-datasources#search_rdfslabel_bifcontains> ;
-        <http://data.sparna.fr/ontologies/sparnatural-config-core#tooltip> 
-        "l'artiste,l e peintre ou le sculpteur qui a créé l'œuvre"@fr,
-        "the artist, painter or sculptor who created the artwork"@en;
         rdfs:label "auteur"@fr ,
                    "author"@en .
 
@@ -45,10 +44,9 @@
             rdfs:domain :Country ;
             rdfs:range :Person ;
             <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "^(<http://dbpedia.org/ontology/birthPlace>/<http://dbpedia.org/ontology/country>)" ;
+            <http://data.sparna.fr/ontologies/sparnatural-config-core#tooltip> "Les personnes nées dans ce pays.<br/><br/><em>A noter : dans DBPedia, les personnes sont liées à leur ville de naissance, et la ville est reliée au pays.</em>"@fr ,
+                                                                               "Persons who were born in this country.<br/><br/><em>Note : in DBPedia, persons are linked to the city in which they were born, and the city is linked to the country.</em>"@en ;
             <http://data.sparna.fr/ontologies/sparnatural-config-datasources#datasource> <http://data.sparna.fr/ontologies/sparnatural-config-datasources#search_rdfslabel_bifcontains> ;
-            <http://data.sparna.fr/ontologies/sparnatural-config-core#tooltip> 
-            "Les personnes nées dans ce pays.<br/><br/><em>A noter : dans DBPedia, les personnes sont liées à leur ville de naissance, et la ville est reliée au pays.</em>"@fr,
-            "Persons who were born in this country.<br/><br/><em>Note : in DBPedia, persons are linked to the city in which they were born, and the city is linked to the country.</em>"@en;
             rdfs:label "birth place of"@en ,
                        "lieu de naissance de"@fr .
 
@@ -59,10 +57,9 @@
         rdfs:domain :Person ;
         rdfs:range :Country ;
         <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://dbpedia.org/ontology/birthPlace>/<http://dbpedia.org/ontology/country>" ;
-        <http://data.sparna.fr/ontologies/sparnatural-config-datasources#datasource> <http://data.sparna.fr/ontologies/sparnatural-config-datasources#list_rdfslabel_alpha> ;
-        <http://data.sparna.fr/ontologies/sparnatural-config-core#tooltip> 
-        "Le pays de naissance de la personne.<br/><br/><em>A noter : dans DBPedia, les personnes sont liées à leur ville de naissance, et la ville est reliée au pays.</em>"@fr,
-        "The birth country of the person.<br/><br/><em>Note : in DBPedia, persons are linked to the city in which they were born, and the city is linked to the country.</em>"@en;
+        <http://data.sparna.fr/ontologies/sparnatural-config-core#tooltip> "Le pays de naissance de la personne.<br/><br/><em>A noter : dans DBPedia, les personnes sont liées à leur ville de naissance, et la ville est reliée au pays.</em>"@fr ,
+                                                                           "The birth country of the person.<br/><br/><em>Note : in DBPedia, persons are linked to the city in which they were born, and the city is linked to the country.</em>"@en ;
+        <http://data.sparna.fr/ontologies/sparnatural-config-datasources#datasource> <http://data.sparna.fr/ontologies/sparnatural-config-datasources#list_rdfslabel_alpha_with_count> ;
         rdfs:label "born in"@en ,
                    "né à / né en"@fr .
 
@@ -106,10 +103,9 @@
             rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#AutocompleteProperty> ;
             rdfs:domain :Country ;
             rdfs:range :Person ;
+            <http://data.sparna.fr/ontologies/sparnatural-config-core#tooltip> "Les personnes décédées dans ce pays.<br/><br/><em>A noter : dans DBPedia, les personnes sont liées à leur ville de décès, et la ville est reliée au pays.</em>"@fr ,
+                                                                               "Persons who died in this country.<br/><br/><em>Note : in DBPedia, persons are linked to the city where they died, and the city is linked to the country.</em>"@en ;
             <http://data.sparna.fr/ontologies/sparnatural-config-datasources#datasource> <http://data.sparna.fr/ontologies/sparnatural-config-datasources#search_rdfslabel_bifcontains> ;
-            <http://data.sparna.fr/ontologies/sparnatural-config-core#tooltip> 
-            "Les personnes décédées dans ce pays.<br/><br/><em>A noter : dans DBPedia, les personnes sont liées à leur ville de décès, et la ville est reliée au pays.</em>"@fr,
-            "Persons who died in this country.<br/><br/><em>Note : in DBPedia, persons are linked to the city where they died, and the city is linked to the country.</em>"@en;
             rdfs:label "death place of"@en ,
                        "lieu de décès de"@fr .
 
@@ -148,10 +144,9 @@
         rdfs:domain :Person ;
         rdfs:range :Country ;
         <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://dbpedia.org/ontology/deathPlace>/<http://dbpedia.org/ontology/country>" ;
-        <http://data.sparna.fr/ontologies/sparnatural-config-datasources#datasource> <http://data.sparna.fr/ontologies/sparnatural-config-datasources#list_rdfslabel_alpha> ;
-        <http://data.sparna.fr/ontologies/sparnatural-config-core#tooltip> 
-        "Le pays où la personne est décédée.<br/><br/><em>A noter : dans DBPedia, les personnes sont liées à leur ville de décès, et la ville est reliée au pays.</em>"@fr,
-        "The country where the person died.<br/><br/><em>Note : in DBPedia, persons are linked to the city where they died, and the city is linked to the country.</em>"@en;
+        <http://data.sparna.fr/ontologies/sparnatural-config-core#tooltip> "Le pays où la personne est décédée.<br/><br/><em>A noter : dans DBPedia, les personnes sont liées à leur ville de décès, et la ville est reliée au pays.</em>"@fr ,
+                                                                           "The country where the person died.<br/><br/><em>Note : in DBPedia, persons are linked to the city where they died, and the city is linked to the country.</em>"@en ;
+        <http://data.sparna.fr/ontologies/sparnatural-config-datasources#datasource> <http://data.sparna.fr/ontologies/sparnatural-config-datasources#list_rdfslabel_alpha_with_count> ;
         rdfs:label "died in"@en ,
                    "mort à / mort en"@fr .
 
@@ -235,9 +230,8 @@
          rdfs:subClassOf <http://data.sparna.fr/ontologies/sparnatural-config-core#SparnaturalClass> ;
          <http://data.sparna.fr/ontologies/sparnatural-config-core#faIcon> "fad fa-paint-brush" ;
          <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://dbpedia.org/ontology/Artwork>" ;
-         <http://data.sparna.fr/ontologies/sparnatural-config-core#tooltip> 
-        "Une Œuvre qui peut être exposée dans un musée"@fr,
-        "A piece of art that can be displayed in a museum"@en;
+         <http://data.sparna.fr/ontologies/sparnatural-config-core#tooltip> "A piece of art that can be displayed in a museum"@en ,
+                                                                            "Une Œuvre qui peut être exposée dans un musée"@fr ;
          rdfs:label "Artwork"@en ,
                     "Oeuvre"@fr .
 
@@ -247,9 +241,8 @@
          rdfs:subClassOf <http://data.sparna.fr/ontologies/sparnatural-config-core#SparnaturalClass> ;
          <http://data.sparna.fr/ontologies/sparnatural-config-core#faIcon> "fad fa-globe-africa" ;
          <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://dbpedia.org/ontology/Country>" ;
-         <http://data.sparna.fr/ontologies/sparnatural-config-core#tooltip> 
-        "Un <b>Pays DBPedia</b>"@fr,
-        "A <b>DBPedia Country<b>"@en;
+         <http://data.sparna.fr/ontologies/sparnatural-config-core#tooltip> "A <b>DBPedia Country<b>"@en ,
+                                                                            "Un <b>Pays DBPedia</b>"@fr ;
          rdfs:label "Country"@en ,
                     "Pays"@fr .
 
@@ -258,9 +251,8 @@
 :Date rdf:type owl:Class ;
       rdfs:subClassOf rdfs:Literal ;
       <http://data.sparna.fr/ontologies/sparnatural-config-core#faIcon> "fad fa-calendar-alt" ;
-      <http://data.sparna.fr/ontologies/sparnatural-config-core#tooltip> 
-        "Une date ou une année"@fr,
-        "A date or a year"@en;
+      <http://data.sparna.fr/ontologies/sparnatural-config-core#tooltip> "A date or a year"@en ,
+                                                                         "Une date ou une année"@fr ;
       rdfs:label "Date"@en ,
                  "Date"@fr .
 
@@ -270,9 +262,8 @@
           rdfs:subClassOf <http://data.sparna.fr/ontologies/sparnatural-config-core#SparnaturalClass> ;
           <http://data.sparna.fr/ontologies/sparnatural-config-core#faIcon> "fad fa-palette" ;
           <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://www.w3.org/2004/02/skos/core#Concept>" ;
-          <http://data.sparna.fr/ontologies/sparnatural-config-core#tooltip> 
-        "Une école d'artistes, un style pictural"@fr,
-        "A school of artists, a painting style"@en;
+          <http://data.sparna.fr/ontologies/sparnatural-config-core#tooltip> "A school of artists, a painting style"@en ,
+                                                                             "Une école d'artistes, un style pictural"@fr ;
           rdfs:label "Mouvement"@fr ,
                      "Movement"@en .
 
@@ -282,9 +273,8 @@
         rdfs:subClassOf <http://data.sparna.fr/ontologies/sparnatural-config-core#SparnaturalClass> ;
         <http://data.sparna.fr/ontologies/sparnatural-config-core#faIcon> "fad fa-university" ;
         <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://dbpedia.org/ontology/Museum>" ;
-        <http://data.sparna.fr/ontologies/sparnatural-config-core#tooltip> 
-        "Un <b>Musée DBPedia</b>"@fr,
-        "A <b>DBPedia Museum</b>"@en;
+        <http://data.sparna.fr/ontologies/sparnatural-config-core#tooltip> "A <b>DBPedia Museum</b>"@en ,
+                                                                           "Un <b>Musée DBPedia</b>"@fr ;
         rdfs:label "Museum"@en ,
                    "Musée"@fr .
 
@@ -294,9 +284,8 @@
         rdfs:subClassOf <http://data.sparna.fr/ontologies/sparnatural-config-core#SparnaturalClass> ;
         <http://data.sparna.fr/ontologies/sparnatural-config-core#faIcon> "fad fa-male" ;
         <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://dbpedia.org/ontology/Person>" ;
-        <http://data.sparna.fr/ontologies/sparnatural-config-core#tooltip> 
-        "Une personne, ici souvent un peintre ou un scupteur"@fr,
-        "A person, here usually a painter or sculptor"@en;
+        <http://data.sparna.fr/ontologies/sparnatural-config-core#tooltip> "A person, here usually a painter or sculptor"@en ,
+                                                                           "Une personne, ici souvent un peintre ou un scupteur"@fr ;
         rdfs:label "Person"@en ,
                    "Personne"@fr .
 
@@ -305,21 +294,14 @@
 :Text rdf:type owl:Class ;
       rdfs:subClassOf rdfs:Literal ;
       <http://data.sparna.fr/ontologies/sparnatural-config-core#faIcon> "fad fa-font-case" ;
-      <http://data.sparna.fr/ontologies/sparnatural-config-core#tooltip> 
-        "Un attribut qui caractérise l'objet, comme un nom ou une description. <br/><br/>Choisissez ceci pour sélectionner le nom de l'objet"@fr,
-        "An attribute, a property that describes the object, like a name or a description. <br/><br/>Use this to select the name of the object."@en;
+      <http://data.sparna.fr/ontologies/sparnatural-config-core#tooltip> "An attribute, a property that describes the object, like a name or a description. <br/><br/>Use this to select the name of the object."@en ,
+                                                                         "Un attribut qui caractérise l'objet, comme un nom ou une description. <br/><br/>Choisissez ceci pour sélectionner le nom de l'objet"@fr ;
       rdfs:label "Text"@en ,
                  "Texte"@fr .
 
 
 ###  http://xmlns.com/foaf/0.1/Person
 <http://xmlns.com/foaf/0.1/Person> rdf:type owl:Class .
-
-
-#################################################################
-#    Individuals
-#################################################################
-
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
