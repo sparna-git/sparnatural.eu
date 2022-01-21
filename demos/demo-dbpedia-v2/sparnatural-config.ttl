@@ -169,6 +169,7 @@
           rdfs:domain :Museum ;
           rdfs:range :Artwork ;
           <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "^<http://dbpedia.org/ontology/museum>" ;
+          <http://data.sparna.fr/ontologies/sparnatural-config-core#enableOptional> true;
           rdfs:label "displays"@en ,
                      "expose"@fr .
 
