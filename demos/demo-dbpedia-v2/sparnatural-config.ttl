@@ -98,6 +98,16 @@
                     "created"@en .
 
 
+###  http://ontologies.sparna.fr/sparnatural-demo-dbpedia#creationYear
+:creationYear rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#TimeProperty-Year> ;
+              rdfs:domain :Artwork ;
+              rdfs:range :Date ;
+              <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://dbpedia.org/ontology/creationYear>" ;
+              rdfs:label "année de création"@fr ,
+                         "creation year"@en .
+
+
 ###  http://ontologies.sparna.fr/sparnatural-demo-dbpedia#deathPlace
 :deathPlace rdf:type owl:ObjectProperty ;
             rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#AutocompleteProperty> ;
@@ -168,8 +178,8 @@
           rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#NonSelectableProperty> ;
           rdfs:domain :Museum ;
           rdfs:range :Artwork ;
+          <http://data.sparna.fr/ontologies/sparnatural-config-core#enableOptional> "true"^^xsd:boolean ;
           <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "^<http://dbpedia.org/ontology/museum>" ;
-          <http://data.sparna.fr/ontologies/sparnatural-config-core#enableOptional> true;
           rdfs:label "displays"@en ,
                      "expose"@fr .
 
@@ -229,6 +239,7 @@
 ###  http://ontologies.sparna.fr/sparnatural-demo-dbpedia#Artwork
 :Artwork rdf:type owl:Class ;
          rdfs:subClassOf <http://data.sparna.fr/ontologies/sparnatural-config-core#SparnaturalClass> ;
+         <http://data.sparna.fr/ontologies/sparnatural-config-core#defaultLabelProperty> :label ;
          <http://data.sparna.fr/ontologies/sparnatural-config-core#faIcon> "fad fa-paint-brush" ;
          <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://dbpedia.org/ontology/Artwork>" ;
          <http://data.sparna.fr/ontologies/sparnatural-config-core#tooltip> "A piece of art that can be displayed in a museum"@en ,
@@ -240,6 +251,7 @@
 ###  http://ontologies.sparna.fr/sparnatural-demo-dbpedia#Country
 :Country rdf:type owl:Class ;
          rdfs:subClassOf <http://data.sparna.fr/ontologies/sparnatural-config-core#SparnaturalClass> ;
+         <http://data.sparna.fr/ontologies/sparnatural-config-core#defaultLabelProperty> :label_select-only ;
          <http://data.sparna.fr/ontologies/sparnatural-config-core#faIcon> "fad fa-globe-africa" ;
          <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://dbpedia.org/ontology/Country>" ;
          <http://data.sparna.fr/ontologies/sparnatural-config-core#tooltip> "A <b>DBPedia Country<b>"@en ,
@@ -261,6 +273,7 @@
 ###  http://ontologies.sparna.fr/sparnatural-demo-dbpedia#Movement
 :Movement rdf:type owl:Class ;
           rdfs:subClassOf <http://data.sparna.fr/ontologies/sparnatural-config-core#SparnaturalClass> ;
+          <http://data.sparna.fr/ontologies/sparnatural-config-core#defaultLabelProperty> :label_select-only ;
           <http://data.sparna.fr/ontologies/sparnatural-config-core#faIcon> "fad fa-palette" ;
           <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://www.w3.org/2004/02/skos/core#Concept>" ;
           <http://data.sparna.fr/ontologies/sparnatural-config-core#tooltip> "A school of artists, a painting style"@en ,
@@ -272,6 +285,7 @@
 ###  http://ontologies.sparna.fr/sparnatural-demo-dbpedia#Museum
 :Museum rdf:type owl:Class ;
         rdfs:subClassOf <http://data.sparna.fr/ontologies/sparnatural-config-core#SparnaturalClass> ;
+        <http://data.sparna.fr/ontologies/sparnatural-config-core#defaultLabelProperty> :label ;
         <http://data.sparna.fr/ontologies/sparnatural-config-core#faIcon> "fad fa-university" ;
         <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://dbpedia.org/ontology/Museum>" ;
         <http://data.sparna.fr/ontologies/sparnatural-config-core#tooltip> "A <b>DBPedia Museum</b>"@en ,
@@ -283,6 +297,7 @@
 ###  http://ontologies.sparna.fr/sparnatural-demo-dbpedia#Person
 :Person rdf:type owl:Class ;
         rdfs:subClassOf <http://data.sparna.fr/ontologies/sparnatural-config-core#SparnaturalClass> ;
+        <http://data.sparna.fr/ontologies/sparnatural-config-core#defaultLabelProperty> :label ;
         <http://data.sparna.fr/ontologies/sparnatural-config-core#faIcon> "fad fa-male" ;
         <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://dbpedia.org/ontology/Person>" ;
         <http://data.sparna.fr/ontologies/sparnatural-config-core#tooltip> "A person, here usually a painter or sculptor"@en ,

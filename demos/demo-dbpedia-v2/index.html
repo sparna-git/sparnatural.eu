@@ -261,9 +261,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
     <!--  defines timeline plugin -->
     <script src='assets/js/timeline.js'></script>
+    <script src='assets/js/myTable.js'></script>
 
     <!-- Sparnatural Javascript -->
     <script type="text/javascript" src="./sparnatural.js"></script>
+    <script type="text/javascript" src="./sparnatural-yasgui-plugins.js"></script>
 
   <!-- /Sparnatural-specific -->
 
@@ -416,14 +418,23 @@
         copyEndpointOnNewTab: false  
       });
 
+      Yasr.registerPlugin("LabelledUriTable",SparnaturalYasguiPlugins.TableX);
       Yasr.registerPlugin("Timeline",Timeline);
+      Yasr.plugins.LabelledUriTable.defaults.labelledUriAdapter = function(uri) {
+        if(uri.startsWith("http://fr.dbpedia.org/resource/")) {
+          return "http://fr.wikipedia.org/wiki/" + uri.substring("http://fr.dbpedia.org/resource/".length);
+        } else {
+          return uri;
+        }
+      };
+      delete Yasr.plugins['table'];
+      delete Yasr.plugins['response'];
       const yasr = new Yasr(document.getElementById("yasr"), {
-        pluginOrder: ["table", "Timeline"],
+        pluginOrder: ["LabelledUriTable", "Timeline"],
         // disable persistency
         persistencyExpire: 0,
         maxPersistentResponseSize: 0
       });
-      console.log(yasr.config);
 
       // link yasqe and yasr
       yasqe.on("queryResponse", function(_yasqe, response, duration) {
@@ -464,7 +475,7 @@
           $('#exportModal').modal('show');       
       } 
 
-      document.getElementById('select-examples').onclick = function() {
+      document.getElementById('select-examples').onchange = function() {
         var key = $('#select-examples option:selected').val();
         if(sampleQueries.hasOwnProperty(key)) {
             sparnatural.loadQuery(sampleQueries[key]) ;
