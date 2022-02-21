@@ -99,7 +99,7 @@
         <div class="row" style="padding-bottom:10px;">
           <div class="col-md-6">
             <form>
-              <select class="form-control" style="width:100%" id="select-examples">
+              <select class="form-control" style="width:100%; appearance: auto !important;" id="select-examples">
                 <option value="none" data-i18n="example.placeholder" selected></option>
                 
                 <option value="example.1" data-i18n="example.1.title"></option>
@@ -125,7 +125,7 @@
         <!-- -->
         <div class="row">
           <div style="font-style: italic; font-size:0.9em; padding-top:0.4em;">
-            <button type="button" class="btn btn-success" data-i18n="actions.execute" id="trigger-search"></button>&nbsp;&nbsp;
+            
             <a href="#" id="sparql-toggle"><i id="sparql-toggle-icon" class="fad fa-eye fa-fw"></i>&nbsp; <span data-i18n="actions.toggle"></span></a>&nbsp;|&nbsp;<a href="#" id="share"><i id="share-icon" class="fad fa-share-square"></i>&nbsp; <span data-i18n="actions.share"></span></a>&nbsp;|&nbsp;<a href="#" id="export"><i id="export-icon" class="fad fa-file-export"></i>&nbsp; <span data-i18n="actions.export"></span></a>
           </div>
         </div>
@@ -243,6 +243,7 @@
 
     <!-- Sparnatural Javascript -->
     <script type="text/javascript" src="./sparnatural.js"></script>
+    <script type="text/javascript" src="./sparnatural-yasgui-plugins.js"></script>
 
     <!-- Json url (Compression) -->
     <script src="https://cdn.jsdelivr.net/gh/masotime/json-url@master/dist/browser/json-url.js"></script>
@@ -328,14 +329,22 @@
             defaultEndpoint : $('#endpoint').text(),
             onQueryUpdated: function(queryString, queryJson) {
               queryString = semanticPostProcess(queryString, queryJson);
-              queryString = displayLabelPostProcess(queryString, queryJson);
-              queryString = orderByPostProcess(queryString, queryJson);
+              queryString = limitPostProcess(queryString, queryJson);
+              // queryString = displayLabelPostProcess(queryString, queryJson);
+              // queryString = orderByPostProcess(queryString, queryJson);
               $('#sparql code').html(queryString.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"));
               yasqe.setValue(queryString);
               // yasqe.query();
 
               // save query
               document.getElementById('query-json').value = JSON.stringify(queryJson);
+            },
+            // triggered when "play" button is clicked
+            onSubmit: function(form) {
+              // enable loader on button
+              form.sparnatural.enableLoading() ; 
+              // trigger the query from YasQE
+              yasqe.query();
             }
           });
 
@@ -348,23 +357,23 @@
             copyEndpointOnNewTab: false  
           });
 
+          Yasr.registerPlugin("LabelledUriTable",SparnaturalYasguiPlugins.TableX);
+          // Yasr.registerPlugin("Timeline",Timeline);
+          delete Yasr.plugins['table'];
+          delete Yasr.plugins['response'];
           const yasr = new Yasr(document.getElementById("yasr"), {
-            pluginOrder: ["table"]
+            pluginOrder: ["LabelledUriTable", "Timeline"],
+            // disable persistency
+            persistencyExpire: 0,
+            maxPersistentResponseSize: 0
           });
 
 
           // link yasqe and yasr
           yasqe.on("queryResponse", function(_yasqe, response, duration) {
-            document.getElementById('trigger-search').disabled = false;
-            document.getElementById('trigger-search').classList.remove('disabled');
             yasr.setResponse(response, duration);
+            sparnatural.disableLoading() ;
           });
-
-          document.getElementById('trigger-search').onclick = function() {
-            document.getElementById('trigger-search').disabled = true;
-            document.getElementById('trigger-search').classList.add('disabled');
-            yasqe.query();
-          }
 
           document.getElementById('sparql-toggle').onclick = function() {
             if(document.getElementById('yasqe').style.display == 'none') {
@@ -413,6 +422,14 @@
         // queryString = queryString.replace(new RegExp('}$'), "}\nORDER BY ?label LIMIT 100");
         queryString = queryString.replace("SELECT DISTINCT ?this", "SELECT DISTINCT (STR(?theLabel) AS ?label) ?this");
         queryString = queryString.replace(new RegExp('}$'), "}\nORDER BY ?label LIMIT 1000");
+        // queryString = queryString.replace(new RegExp('}$'), "}\nLIMIT 1000");
+        return queryString;
+      }
+
+      limitPostProcess = function(queryString, queryJson) {
+        // queryString = queryString.replace(new RegExp('}$'), "}\nORDER BY ?label LIMIT 100");
+        // queryString = queryString.replace("SELECT DISTINCT ?this", "SELECT DISTINCT (STR(?theLabel) AS ?label) ?this");
+        queryString = queryString.replace(new RegExp('}$'), "}\nLIMIT 1000");
         // queryString = queryString.replace(new RegExp('}$'), "}\nLIMIT 1000");
         return queryString;
       }

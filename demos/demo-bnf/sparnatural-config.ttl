@@ -13,7 +13,37 @@
 #################################################################
 #    Object Properties
 #################################################################
-#test modif
+
+###  http://data.sparna.fr/ontologies/sparnatural-databnf#aPourEdition
+:aPourEdition rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#AutocompleteProperty> ;
+              rdfs:domain <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Work> ;
+              rdfs:range <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation> ;
+              <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "^<http://rdvocab.info/RDARelationshipsWEMI/workManifested>" ;
+              rdfs:label "a pour édition"@fr ,
+                         "has edition"@en .
+
+
+###  http://data.sparna.fr/ontologies/sparnatural-databnf#adapteDans
+:adapteDans rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#AutocompleteProperty> ;
+            rdfs:domain <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Work> ;
+            rdfs:range <http://purl.org/dc/dcmitype/Event> ;
+            <http://data.sparna.fr/ontologies/sparnatural-config-core#enableNegation> "true"@en ;
+            <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "^<http://rdvocab.info/RDARelationshipsWEMI/workManifested>" ;
+            rdfs:label "adapted in"@en ,
+                       "adapté dans"@fr .
+
+
+###  http://data.sparna.fr/ontologies/sparnatural-databnf#adapteDe
+:adapteDe rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#AutocompleteProperty> ;
+          rdfs:domain <http://purl.org/dc/dcmitype/Event> ;
+          rdfs:range <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Work> ;
+          <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://rdvocab.info/RDARelationshipsWEMI/workManifested>" ;
+          rdfs:label "adapted from"@en ,
+                     "adapté de"@fr .
+
 
 ###  http://data.sparna.fr/ontologies/sparnatural-databnf#contributeurDe
 :contributeurDe rdf:type owl:ObjectProperty ;
@@ -25,47 +55,7 @@
                            "contributor of"@en .
 
 
-###  http://ontologies.sparna.fr/sparnatural-databnf#auteurDe
-<http://ontologies.sparna.fr/sparnatural-databnf#auteurDe> rdf:type owl:ObjectProperty ;
-                                                           rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#AutocompleteProperty> ;
-                                                           rdfs:domain <http://xmlns.com/foaf/0.1/Person> ;
-                                                           rdfs:range <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Work> ;
-                                                           <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "^<http://purl.org/dc/terms/creator>" ;
-                                                           rdfs:label "auteur de"@fr ,
-                                                                      "author of"@en .
-
-
-###  http://ontologies.sparna.fr/sparnatural-legilux#aPourEdition
-:aPourEdition rdf:type owl:ObjectProperty ;
-              rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#AutocompleteProperty> ;
-              rdfs:domain <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Work> ;
-              rdfs:range <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation> ;
-              <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "^<http://rdvocab.info/RDARelationshipsWEMI/workManifested>" ;
-              rdfs:label "a pour édition"@fr ,
-                         "has edition"@en .
-
-
-###  http://ontologies.sparna.fr/sparnatural-legilux#adapteDans
-:adapteDans rdf:type owl:ObjectProperty ;
-            rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#AutocompleteProperty> ;
-            rdfs:domain <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Work> ;
-            rdfs:range <http://purl.org/dc/dcmitype/Event> ;
-            <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "^<http://rdvocab.info/RDARelationshipsWEMI/workManifested>" ;
-            rdfs:label "adapted in"@en ,
-                       "adapté dans"@fr .
-
-
-###  http://ontologies.sparna.fr/sparnatural-legilux#adapteDe
-:adapteDe rdf:type owl:ObjectProperty ;
-          rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#AutocompleteProperty> ;
-          rdfs:domain <http://purl.org/dc/dcmitype/Event> ;
-          rdfs:range <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Work> ;
-          <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://rdvocab.info/RDARelationshipsWEMI/workManifested>" ;
-          rdfs:label "adapted from"@en ,
-                     "adapté de"@fr .
-
-
-###  http://ontologies.sparna.fr/sparnatural-legilux#dateOfWork
+###  http://data.sparna.fr/ontologies/sparnatural-databnf#dateOfWork
 :dateOfWork rdf:type owl:ObjectProperty ;
             rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#ListProperty> ;
             rdfs:domain <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Work> ;
@@ -76,7 +66,7 @@
             rdfs:label "created in"@fr .
 
 
-###  http://ontologies.sparna.fr/sparnatural-legilux#langueEdition
+###  http://data.sparna.fr/ontologies/sparnatural-databnf#langueEdition
 :langueEdition rdf:type owl:ObjectProperty ;
                rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#ListProperty> ;
                rdfs:domain <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation> ;
@@ -86,7 +76,14 @@
                           "langue"@fr .
 
 
-###  http://ontologies.sparna.fr/sparnatural-legilux#publishedIn
+###  http://data.sparna.fr/ontologies/sparnatural-databnf#nameAutoSelect
+:nameAutoSelect rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#NonSelectableProperty> ;
+                rdfs:range :Name ;
+                <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://xmlns.com/foaf/0.1/name>" .
+
+
+###  http://data.sparna.fr/ontologies/sparnatural-databnf#publishedIn
 :publishedIn rdf:type owl:ObjectProperty ;
              rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#ListProperty> ;
              rdfs:domain <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation> ;
@@ -95,6 +92,23 @@
              <http://data.sparna.fr/ontologies/sparnatural-config-datasources#datasource> :list_instant_alpha ;
              rdfs:label "published in"@en ,
                         "publiée en"@fr .
+
+
+###  http://data.sparna.fr/ontologies/sparnatural-databnf#titleAutoSelect
+:titleAutoSelect rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#NonSelectableProperty> ;
+                 rdfs:range :Title ;
+                 <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://purl.org/dc/terms/title>" .
+
+
+###  http://ontologies.sparna.fr/sparnatural-databnf#auteurDe
+<http://ontologies.sparna.fr/sparnatural-databnf#auteurDe> rdf:type owl:ObjectProperty ;
+                                                           rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#AutocompleteProperty> ;
+                                                           rdfs:domain <http://xmlns.com/foaf/0.1/Person> ;
+                                                           rdfs:range <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Work> ;
+                                                           <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "^<http://purl.org/dc/terms/creator>" ;
+                                                           rdfs:label "auteur de"@fr ,
+                                                                      "author of"@en .
 
 
 ###  http://purl.org/dc/terms/contributor
@@ -115,6 +129,16 @@
                                               "author"@en .
 
 
+###  http://rdvocab.info/ElementsGr2/biographicalInformation
+<http://rdvocab.info/ElementsGr2/biographicalInformation> rdf:type owl:ObjectProperty ;
+                                                          rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#NonSelectableProperty> ;
+                                                          rdfs:domain <http://xmlns.com/foaf/0.1/Person> ;
+                                                          rdfs:range :Description ;
+                                                          <http://data.sparna.fr/ontologies/sparnatural-config-core#enableOptional> "true"^^xsd:boolean ;
+                                                          rdfs:label "biographical information"@en ,
+                                                                     "informations biographiques"@fr .
+
+
 ###  http://rdvocab.info/RDARelationshipsWEMI/workManifested
 <http://rdvocab.info/RDARelationshipsWEMI/workManifested> rdf:type owl:ObjectProperty ;
                                                           rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#AutocompleteProperty> ;
@@ -128,24 +152,48 @@
 #    Classes
 #################################################################
 
-###  http://ontologies.sparna.fr/sparnatural-legilux#Date
+###  http://data.sparna.fr/ontologies/sparnatural-databnf#Date
 :Date rdf:type owl:Class ;
       rdfs:subClassOf <http://data.sparna.fr/ontologies/sparnatural-config-core#SparnaturalClass> ;
       <http://data.sparna.fr/ontologies/sparnatural-config-core#faIcon> "fad fa-calendar-alt" ;
       <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://www.w3.org/TR/owl-time/Instant>" ;
+      <http://data.sparna.fr/ontologies/sparnatural-config-core#tooltip> "Permet de sélectionner une année dans une liste déroulante."@fr ;
       <http://data.sparna.fr/ontologies/sparnatural-config-datasources#datasource> <http://data.sparna.fr/ontologies/sparnatural-config-datasources#search_rdfslabel_bifcontains> ;
-      <http://data.sparna.fr/ontologies/sparnatural-config-core#tooltip> "Permet de sélectionner une année dans une liste déroulante."@fr;
       rdfs:label "Date"@en ,
                  "Date"@fr .
 
 
-###  http://ontologies.sparna.fr/sparnatural-legilux#Langue
+###  http://data.sparna.fr/ontologies/sparnatural-databnf#Description
+:Description rdf:type owl:Class ;
+             rdfs:subClassOf rdfs:Literal ;
+             <http://data.sparna.fr/ontologies/sparnatural-config-core#faIcon> "fad fa-file-alt" ;
+             rdfs:label "Description"@en ,
+                        "Description"@fr .
+
+
+###  http://data.sparna.fr/ontologies/sparnatural-databnf#Langue
 :Langue rdf:type owl:Class ;
         rdfs:subClassOf <http://data.sparna.fr/ontologies/sparnatural-config-core#NotInstantiatedClass> ;
         <http://data.sparna.fr/ontologies/sparnatural-config-core#faIcon> "fad fa-globe-africa" ;
         <http://data.sparna.fr/ontologies/sparnatural-config-datasources#datasource> :list_language_alpha ;
         rdfs:label "Language"@en ,
                    "Langue"@fr .
+
+
+###  http://data.sparna.fr/ontologies/sparnatural-databnf#Name
+:Name rdf:type owl:Class ;
+      rdfs:subClassOf rdfs:Literal ;
+      <http://data.sparna.fr/ontologies/sparnatural-config-core#faIcon> "fad fa-font-case" ;
+      rdfs:label "Name"@en ,
+                 "Nom"@fr .
+
+
+###  http://data.sparna.fr/ontologies/sparnatural-databnf#Title
+:Title rdf:type owl:Class ;
+       rdfs:subClassOf rdfs:Literal ;
+       <http://data.sparna.fr/ontologies/sparnatural-config-core#faIcon> "fad fa-font-case" ;
+       rdfs:label "Title"@en ,
+                  "Titre"@fr .
 
 
 ###  http://purl.org/dc/dcmitype/Event
@@ -160,6 +208,7 @@
 ###  http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation
 <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation> rdf:type owl:Class ;
                                                                rdfs:subClassOf <http://data.sparna.fr/ontologies/sparnatural-config-core#SparnaturalClass> ;
+                                                               <http://data.sparna.fr/ontologies/sparnatural-config-core#defaultLabelProperty> :titleAutoSelect ;
                                                                <http://data.sparna.fr/ontologies/sparnatural-config-core#faIcon> "fad fa-book" ;
                                                                <http://data.sparna.fr/ontologies/sparnatural-config-datasources#datasource> <http://data.sparna.fr/ontologies/sparnatural-config-datasources#search_dctermstitle_bifcontains> ;
                                                                rdfs:label "Edition"@en ,
@@ -169,6 +218,7 @@
 ###  http://rdvocab.info/uri/schema/FRBRentitiesRDA/Work
 <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Work> rdf:type owl:Class ;
                                                       rdfs:subClassOf <http://data.sparna.fr/ontologies/sparnatural-config-core#SparnaturalClass> ;
+                                                      <http://data.sparna.fr/ontologies/sparnatural-config-core#defaultLabelProperty> :titleAutoSelect ;
                                                       <http://data.sparna.fr/ontologies/sparnatural-config-core#faIcon> "fad fa-lightbulb" ;
                                                       <http://data.sparna.fr/ontologies/sparnatural-config-datasources#datasource> <http://data.sparna.fr/ontologies/sparnatural-config-datasources#search_dctermstitle_bifcontains> ;
                                                       rdfs:label "Oeuvre"@fr ,
@@ -178,6 +228,7 @@
 ###  http://xmlns.com/foaf/0.1/Person
 <http://xmlns.com/foaf/0.1/Person> rdf:type owl:Class ;
                                    rdfs:subClassOf <http://data.sparna.fr/ontologies/sparnatural-config-core#SparnaturalClass> ;
+                                   <http://data.sparna.fr/ontologies/sparnatural-config-core#defaultLabelProperty> :nameAutoSelect ;
                                    <http://data.sparna.fr/ontologies/sparnatural-config-core#faIcon> "fad fa-user" ;
                                    <http://data.sparna.fr/ontologies/sparnatural-config-datasources#datasource> <http://data.sparna.fr/ontologies/sparnatural-config-datasources#search_foafname_bifcontains> ;
                                    rdfs:label "Person"@en ,
@@ -188,7 +239,7 @@
 #    Individuals
 #################################################################
 
-###  http://ontologies.sparna.fr/sparnatural-legilux#list_instant_alpha
+###  http://data.sparna.fr/ontologies/sparnatural-databnf#list_instant_alpha
 :list_instant_alpha rdf:type owl:NamedIndividual ,
                              <http://data.sparna.fr/ontologies/sparnatural-config-datasources#SparqlDatasource> ;
                     <http://data.sparna.fr/ontologies/sparnatural-config-datasources#queryString> """PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
@@ -205,7 +256,7 @@ ORDER BY DESC(?label)
 LIMIT 500""" .
 
 
-###  http://ontologies.sparna.fr/sparnatural-legilux#list_language_alpha
+###  http://data.sparna.fr/ontologies/sparnatural-databnf#list_language_alpha
 :list_language_alpha rdf:type owl:NamedIndividual ,
                               <http://data.sparna.fr/ontologies/sparnatural-config-datasources#SparqlDatasource> ;
                      <http://data.sparna.fr/ontologies/sparnatural-config-datasources#queryString> """SELECT DISTINCT ?uri ?label
