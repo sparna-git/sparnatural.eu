@@ -20,7 +20,7 @@
               rdfs:domain <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Work> ;
               rdfs:range <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Manifestation> ;
               <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "^<http://rdvocab.info/RDARelationshipsWEMI/workManifested>" ;
-              rdfs:label "a pour édition"@fr ,
+              rdfs:label "éditée dans"@fr ,
                          "has edition"@en .
 
 
@@ -32,7 +32,7 @@
             <http://data.sparna.fr/ontologies/sparnatural-config-core#enableNegation> "true"@en ;
             <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "^<http://rdvocab.info/RDARelationshipsWEMI/workManifested>" ;
             rdfs:label "adapted in"@en ,
-                       "adapté dans"@fr .
+                       "adaptée dans"@fr .
 
 
 ###  http://data.sparna.fr/ontologies/sparnatural-databnf#adapteDe
@@ -42,7 +42,7 @@
           rdfs:range <http://rdvocab.info/uri/schema/FRBRentitiesRDA/Work> ;
           <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://rdvocab.info/RDARelationshipsWEMI/workManifested>" ;
           rdfs:label "adapted from"@en ,
-                     "adapté de"@fr .
+                     "adaptée de"@fr .
 
 
 ###  http://data.sparna.fr/ontologies/sparnatural-databnf#contributeurDe
@@ -63,7 +63,7 @@
             <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://rdvocab.info/Elements/dateOfWork>" ,
                                                                                     "créée en"@fr ;
             <http://data.sparna.fr/ontologies/sparnatural-config-datasources#datasource> :list_instant_alpha ;
-            rdfs:label "created in"@fr .
+            rdfs:label "créée en"@fr .
 
 
 ###  http://data.sparna.fr/ontologies/sparnatural-databnf#langueEdition
