@@ -63,7 +63,7 @@
             <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://rdvocab.info/Elements/dateOfWork>" ,
                                                                                     "créée en"@fr ;
             <http://data.sparna.fr/ontologies/sparnatural-config-datasources#datasource> :list_instant_alpha ;
-            rdfs:label "créée en"@fr .
+            rdfs:label "créée en"@fr, "created in"@en .
 
 
 ###  http://data.sparna.fr/ontologies/sparnatural-databnf#langueEdition
