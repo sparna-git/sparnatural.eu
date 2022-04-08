@@ -252,6 +252,7 @@
           rdfs:subClassOf <http://data.sparna.fr/ontologies/sparnatural-config-core#SparnaturalClass> ;
           <http://data.sparna.fr/ontologies/sparnatural-config-core#defaultLabelProperty> :label_select-only ;
           <http://data.sparna.fr/ontologies/sparnatural-config-core#faIcon> "fad fa-palette" ;
+          <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://www.w3.org/2004/02/skos/core#Concept>" ;
           <http://data.sparna.fr/ontologies/sparnatural-config-core#tooltip> "A wikipedia category"@en ,
                                                                              "Une catégorie Wikipedia"@fr ;
           rdfs:label "Category"@en ,
