@@ -19,6 +19,8 @@
               rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#TreeProperty> ;
               rdfs:domain :Person ;
               rdfs:range :Category ;
+              <http://data.sparna.fr/ontologies/sparnatural-config-core#enableNegation> true;
+              <http://data.sparna.fr/ontologies/sparnatural-config-core#enableOptional> true;
               <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://purl.org/dc/terms/subject>" ;
               <http://data.sparna.fr/ontologies/sparnatural-config-datasources#treeChildrenDatasource> <http://data.sparna.fr/ontologies/sparnatural-config-datasources#tree_children_skosnarrower> ;
               <http://data.sparna.fr/ontologies/sparnatural-config-datasources#treeRootsDatasource> :tree_root_frenchPainters ;
@@ -68,6 +70,7 @@
         rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#ListProperty> ;
         rdfs:domain :Person ;
         rdfs:range :Country ;
+        <http://data.sparna.fr/ontologies/sparnatural-config-core#enableNegation> true;
         <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://dbpedia.org/ontology/birthPlace>/<http://dbpedia.org/ontology/country>" ;
         <http://data.sparna.fr/ontologies/sparnatural-config-core#tooltip> "Le pays de naissance de la personne.<br/><br/><em>A noter : dans DBPedia, les personnes sont liées à leur ville de naissance, et la ville est reliée au pays.</em>"@fr ,
                                                                            "The birth country of the person.<br/><br/><em>Note : in DBPedia, persons are linked to the city in which they were born, and the city is linked to the country.</em>"@en ;
@@ -165,6 +168,7 @@
         rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#ListProperty> ;
         rdfs:domain :Person ;
         rdfs:range :Country ;
+        <http://data.sparna.fr/ontologies/sparnatural-config-core#enableNegation> true;
         <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://dbpedia.org/ontology/deathPlace>/<http://dbpedia.org/ontology/country>" ;
         <http://data.sparna.fr/ontologies/sparnatural-config-core#tooltip> "Le pays où la personne est décédée.<br/><br/><em>A noter : dans DBPedia, les personnes sont liées à leur ville de décès, et la ville est reliée au pays.</em>"@fr ,
                                                                            "The country where the person died.<br/><br/><em>Note : in DBPedia, persons are linked to the city where they died, and the city is linked to the country.</em>"@en ;
