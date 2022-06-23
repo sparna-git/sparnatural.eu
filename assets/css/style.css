@@ -1018,23 +1018,23 @@ section {
 
 /* Frequently Asked Questions Section
 --------------------------------*/
-#faq {
+#bibliography {
   padding: 60px 0;
   overflow: hidden;
 }
 
-#faq .faq-list {
+#bibliography .bibliography-list {
   padding: 0;
   list-style: none;
 }
 
-#faq .faq-list li {
+#bibliography .bibliography-list > li {
   border-bottom: 1px solid #f0f0f0;
   margin-bottom: 20px;
   padding-bottom: 20px;
 }
 
-#faq .faq-list .question {
+#bibliography .bibliography-list .entry {
   display: block;
   position: relative;
   font-family: #1dc8cd;
@@ -1047,36 +1047,36 @@ section {
   transition: 0.3s;
 }
 
-#faq .faq-list i {
+#bibliography .bibliography-list i {
   font-size: 16px;
   position: absolute;
   left: 0;
   top: -2px;
 }
 
-#faq .faq-list p {
+#bibliography .bibliography-list p {
   margin-bottom: 0;
   padding: 10px 0 0 25px;
 }
 
-#faq .faq-list .icon-show {
+#bibliography .bibliography-list .icon-show {
   display: none;
 }
 
-#faq .faq-list .collapsed {
+#bibliography .bibliography-list .collapsed {
   color: black;
 }
 
-#faq .faq-list .collapsed:hover {
+#bibliography .bibliography-list .collapsed:hover {
   color: #1dc8cd;
 }
 
-#faq .faq-list .collapsed .icon-show {
+#bibliography .bibliography-list .collapsed .icon-show {
   display: inline-block;
   transition: 0.6s;
 }
 
-#faq .faq-list .collapsed .icon-close {
+#bibliography .bibliography-list .collapsed .icon-close {
   display: none;
   transition: 0.6s;
 }
