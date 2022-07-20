@@ -126,11 +126,8 @@
 
         </div>
 
-
-        <div style="text-align:right; padding-bottom:10px;">
-          <span style="font-size:90%; font-style: italic;"> 
-              
-          </span>   
+        <div class="row" style="font-style: italic; font-size:0.9em;">
+          <a href="#" id="tutorial"><i id="sparql-toggle-icon" class="fad fa-question fa-fw"></i>&nbsp; <span data-i18n="tutorial"></a>
         </div>
 
         <!-- This is where Sparnatural is inserted -->
@@ -280,6 +277,11 @@
   <!-- Json url (Compression) -->
   <script src="https://cdn.jsdelivr.net/gh/masotime/json-url@master/dist/browser/json-url.js"></script>
 
+  <!-- Sheperd -->
+  <script src="https://cdn.jsdelivr.net/npm/shepherd.js@8.3.1/dist/js/shepherd.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/shepherd.js@8.3.1/dist/css/shepherd.css"/>
+  <script src="tutorial.js"></script>
+
     <script>
       $.urlParam = function(name){
         var results = new RegExp('[\\?&amp;]' + name + '=([^&amp;#]*)').exec(window.location.href);
@@ -300,6 +302,7 @@
             'actions.toggle': 'Toggle SPARQL editor',
             'actions.share': 'Share',            
             'actions.export': 'Export',
+            'tutorial': 'First time here ? watch the tutorial !',
             'share.modal.title': 'Direct query link',
             'share.modal.close': 'Close',
             'export.modal.title': 'Query as JSON',
@@ -317,6 +320,7 @@
             'actions.toggle': 'Afficher/Masquer éditeur SPARQL',
             'actions.share': 'Partager',            
             'actions.export': 'Exporter',
+            'tutorial': 'Vous ne savez pas comment commencer ? cliquez ici pour être guidé !',
             'share.modal.title': 'Lien direct vers la requête',
             'share.modal.close': 'Fermer',
             'export.modal.title': 'Requête JSON',
@@ -354,6 +358,11 @@
 
             // save query
             document.getElementById('query-json').value = JSON.stringify(queryJson);
+
+            // When click on select2 for Sheperd tour
+            if (StepToWait3.isOpen()){
+              Shepherd.activeTour.next();
+            }
           },
           // triggered when "play" button is clicked
           onSubmit: function(form) {
@@ -378,6 +387,8 @@
         }
 
       }) ;
+
+      
 
       prefixesPostProcess = function(queryString, queryJson) {
         if(queryString.indexOf("rdf-schema#") == -1) {
@@ -489,6 +500,12 @@
             sparnatural.loadQuery(sampleQueries[key]) ;
         }
       }
+
+      document.getElementById('tutorial').onclick = function() {
+        sparnatural.clear();
+        initTour();
+      }
+
     </script>
   </script>
 
