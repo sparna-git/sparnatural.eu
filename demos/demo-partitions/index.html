@@ -427,8 +427,8 @@
       Yasr.registerPlugin("LabelledUriTable",SparnaturalYasguiPlugins.TableX);
       Yasr.registerPlugin("Timeline",Timeline);
       Yasr.plugins.LabelledUriTable.defaults.labelledUriAdapter = function(uri) {
-        if(uri.startsWith("http://fr.dbpedia.org/resource/")) {
-          return "http://fr.wikipedia.org/wiki/" + uri.substring("http://fr.dbpedia.org/resource/".length);
+        if(uri.startsWith("https://ark.philharmoniedeparis.fr/ark:49250/")) {
+          return "http://graphdb.sparna.fr/resource?uri=" + encodeURI(uri);
         } else {
           return uri;
         }
