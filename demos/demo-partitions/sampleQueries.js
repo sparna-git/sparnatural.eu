@@ -3,60 +3,6 @@ var sampleQueries = {
 {
   "distinct": true,
   "variables": [
-    "?this",
-    "?Museum_1",
-    "?Text_4"
-  ],
-  "defaultLang": "fr",
-  "order": null,
-  "branches": [
-    {
-      "line": {
-        "s": "?this",
-        "p": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#displayedAt",
-        "o": "?Museum_1",
-        "sType": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#Artwork",
-        "oType": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#Museum",
-        "values": []
-      },
-      "children": [
-        {
-          "line": {
-            "s": "?Museum_1",
-            "p": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#country",
-            "o": "?Country_2",
-            "sType": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#Museum",
-            "oType": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#Country",
-            "values": [
-              {
-                "label": "France (222)",
-                "uri": "http://fr.dbpedia.org/resource/France"
-              }
-            ]
-          },
-          "children": []
-        }
-      ]
-    },
-    {
-      "line": {
-        "s": "?this",
-        "p": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#description",
-        "o": "?Text_4",
-        "sType": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#Artwork",
-        "oType": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#Text",
-        "values": []
-      },
-      "children": []
-    }
-  ]
-},
-	"example.2" :
-{
-  "distinct": true,
-  "variables": [
-    "?Date_3",
-    "?Date_4",
     "?this"
   ],
   "defaultLang": "fr",
@@ -65,14 +11,181 @@ var sampleQueries = {
     {
       "line": {
         "s": "?this",
-        "p": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#movement",
-        "o": "?Movement_1",
-        "sType": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#Person",
-        "oType": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#Movement",
+        "p": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/casting",
+        "o": "?Casting_1",
+        "sType": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/Partition",
+        "oType": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/Casting",
+        "values": []
+      },
+      "children": [
+        {
+          "line": {
+            "s": "?Casting_1",
+            "p": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/castingdetail",
+            "o": "?CastingDetail_2",
+            "sType": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/Casting",
+            "oType": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/CastingDetail",
+            "values": []
+          },
+          "children": [
+            {
+              "line": {
+                "s": "?CastingDetail_2",
+                "p": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/medium",
+                "o": "?Medium_3",
+                "sType": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/CastingDetail",
+                "oType": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/Medium",
+                "values": [
+                  {
+                    "label": "Violon",
+                    "uri": "http://www.mimo-db.eu/InstrumentsKeywords/3573"
+                  }
+                ]
+              },
+              "children": []
+            },
+            {
+              "line": {
+                "s": "?CastingDetail_2",
+                "p": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/quantityofmop",
+                "o": "?QuantityOfMop_4",
+                "sType": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/CastingDetail",
+                "oType": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/QuantityOfMop",
+                "values": [
+                  {
+                    "label": "1",
+                    "regex": "1"
+                  }
+                ]
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "line": {
+            "s": "?Casting_1",
+            "p": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/castingdetail",
+            "o": "?CastingDetail_5",
+            "sType": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/Casting",
+            "oType": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/CastingDetail",
+            "values": []
+          },
+          "children": [
+            {
+              "line": {
+                "s": "?CastingDetail_5",
+                "p": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/medium",
+                "o": "?Medium_6",
+                "sType": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/CastingDetail",
+                "oType": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/Medium",
+                "values": [
+                  {
+                    "label": "Piano",
+                    "uri": "http://www.mimo-db.eu/InstrumentsKeywords/2299"
+                  }
+                ]
+              },
+              "children": []
+            },
+            {
+              "line": {
+                "s": "?CastingDetail_5",
+                "p": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/quantityofmop",
+                "o": "?QuantityOfMop_7",
+                "sType": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/CastingDetail",
+                "oType": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/QuantityOfMop",
+                "values": [
+                  {
+                    "label": "1",
+                    "regex": "1"
+                  }
+                ]
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "line": {
+            "s": "?Casting_1",
+            "p": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/numberOfInstrument",
+            "o": "?NumberOfInstrument_8",
+            "sType": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/Casting",
+            "oType": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/NumberOfInstrument",
+            "values": [
+              {
+                "label": "2",
+                "literal": "2"
+              }
+            ]
+          },
+          "children": []
+        }
+      ]
+    }
+  ]
+},
+	"example.2" :
+{
+  "distinct": true,
+  "variables": [
+    "?this"
+  ],
+  "defaultLang": "fr",
+  "order": null,
+  "branches": [
+    {
+      "line": {
+        "s": "?this",
+        "p": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/created_inverse",
+        "o": "?Event_1",
+        "sType": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/Partition",
+        "oType": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/Event",
+        "values": []
+      },
+      "children": [
+        {
+          "line": {
+            "s": "?Event_1",
+            "p": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/acivity",
+            "o": "?Activity_2",
+            "sType": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/Event",
+            "oType": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/Activity",
+            "values": []
+          },
+          "children": [
+            {
+              "line": {
+                "s": "?Activity_2",
+                "p": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/activity_carriedoutBy",
+                "o": "?Person_3",
+                "sType": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/Activity",
+                "oType": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/Person",
+                "values": [
+                  {
+                    "label": "Wolfgang Amadeus Mozart",
+                    "uri": "https://ark.philharmoniedeparis.fr/ark:49250/0055853"
+                  }
+                ]
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "line": {
+        "s": "?this",
+        "p": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/genre",
+        "o": "?Genre_4",
+        "sType": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/Partition",
+        "oType": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/Genre",
         "values": [
           {
-            "label": "Impressionnisme (88)",
-            "uri": "http://fr.dbpedia.org/resource/Impressionnisme"
+            "label": "Concerto (1526)",
+            "uri": "https://ark.philharmoniedeparis.fr/ark:49250/0064628"
           }
         ]
       },
@@ -81,25 +194,42 @@ var sampleQueries = {
     {
       "line": {
         "s": "?this",
-        "p": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#birthDate",
-        "o": "?Date_3",
-        "sType": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#Person",
-        "oType": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#Date",
+        "p": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/casting",
+        "o": "?Casting_5",
+        "sType": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/Partition",
+        "oType": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/Casting",
         "values": []
       },
-      "children": []
-    },
-    {
-      "line": {
-        "s": "?this",
-        "p": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#deathYear",
-        "o": "?Date_4",
-        "sType": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#Person",
-        "oType": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#Date",
-        "values": []
-      },
-      "children": [],
-      "optional": true
+      "children": [
+        {
+          "line": {
+            "s": "?Casting_5",
+            "p": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/castingdetail",
+            "o": "?CastingDetail_6",
+            "sType": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/Casting",
+            "oType": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/CastingDetail",
+            "values": []
+          },
+          "children": [
+            {
+              "line": {
+                "s": "?CastingDetail_6",
+                "p": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/medium",
+                "o": "?Medium_7",
+                "sType": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/CastingDetail",
+                "oType": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/Medium",
+                "values": [
+                  {
+                    "label": "Piano",
+                    "uri": "http://www.mimo-db.eu/InstrumentsKeywords/2299"
+                  }
+                ]
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
     }
   ]
 }
