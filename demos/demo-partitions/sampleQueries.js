@@ -109,14 +109,14 @@ var sampleQueries = {
         {
           "line": {
             "s": "?Casting_1",
-            "p": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/numberOfInstrument",
+            "p": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/numberOfInstrument_search",
             "o": "?NumberOfInstrument_8",
             "sType": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/Casting",
             "oType": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/NumberOfInstrument",
             "values": [
               {
                 "label": "2",
-                "literal": "2"
+                "regex": "2"
               }
             ]
           },
