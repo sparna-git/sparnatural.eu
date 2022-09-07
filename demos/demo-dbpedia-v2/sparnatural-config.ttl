@@ -85,7 +85,7 @@
          owl:inverseOf :countryOf ;
          rdfs:domain :Museum ;
          rdfs:range :Country ;
-         <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://dbpedia.org/ontology/country>" ;
+         <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://dbpedia.org/ontology/location>/<http://dbpedia.org/ontology/country>" ;
          <http://data.sparna.fr/ontologies/sparnatural-config-datasources#datasource> <http://data.sparna.fr/ontologies/sparnatural-config-datasources#list_rdfslabel_count> ;
          rdfs:label "country"@en ,
                     "pays"@fr .

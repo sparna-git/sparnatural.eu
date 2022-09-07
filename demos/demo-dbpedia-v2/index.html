@@ -360,7 +360,7 @@
             document.getElementById('query-json').value = JSON.stringify(queryJson);
 
             // When click on select2 for Sheperd tour
-            if (StepToWait3.isOpen()){
+            if (StepToWait3 != null && StepToWait3.isOpen()){
               Shepherd.activeTour.next();
             }
           },
