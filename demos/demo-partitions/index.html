@@ -427,10 +427,12 @@
       Yasr.registerPlugin("LabelledUriTable",SparnaturalYasguiPlugins.TableX);
       Yasr.registerPlugin("Timeline",Timeline);
       Yasr.plugins.LabelledUriTable.defaults.labelledUriAdapter = function(uri) {
-        if(uri.startsWith("https://ark.philharmoniedeparis.fr/ark:49250/")) {
-          return "http://graphdb.sparna.fr/resource?uri=" + encodeURI(uri);
+        if(/^https:\/\/ark.philharmoniedeparis.fr\/ark:49250\/[0-9][0-9][0-9][0-9][0-9][0-9][0-9]$/.test(uri)) {
+        // if(uri.startsWith("https://ark.philharmoniedeparis.fr/ark:49250/")) {
+          // return "http://graphdb.sparna.fr/resource?uri=" + encodeURI(uri);
+          return "https://catalogue.philharmoniedeparis.fr/doc/ALOES/"+uri.substring("https://ark.philharmoniedeparis.fr/ark:49250/".length)
         } else {
-          return uri;
+          return "http://graphdb.sparna.fr/resource?uri=" + encodeURI(uri);
         }
       };
       delete Yasr.plugins['table'];
