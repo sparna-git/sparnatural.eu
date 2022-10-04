@@ -119,7 +119,7 @@
           <div class="col-md-6">
             <div style="text-align:right;">
               <span style="font-size:90%; font-style: italic;"> 
-                   <span data-i18n="endpoint.querying"></span> <a id="endpoint" href="http://graphdb.sparna.fr/repositories/philharmonie-chatbot">http://graphdb.sparna.fr/repositories/philharmonie-chatbot</a> | config in <a href="https://docs.google.com/spreadsheets/d/1wIVJIIg7q-dZJQmvbKsSGdoS2gbFk3xwoZ_6ud_MiS4">https://docs.google.com/spreadsheets/d/1wIVJIIg7q-dZJQmvbKsSGdoS2gbFk3xwoZ_6ud_MiS4</a>
+                   <span data-i18n="endpoint.querying"></span> <a id="endpoint" href="https://proxy.sparnatural.eu/sparql-proxy/sparql?endpoint=http%3A%2F%2Fgraphdb.sparna.fr%2Frepositories%2Fphilharmonie-chatbot">http://graphdb.sparna.fr/repositories/philharmonie-chatbot</a> | config in <a href="https://docs.google.com/spreadsheets/d/1wIVJIIg7q-dZJQmvbKsSGdoS2gbFk3xwoZ_6ud_MiS4">https://docs.google.com/spreadsheets/d/1wIVJIIg7q-dZJQmvbKsSGdoS2gbFk3xwoZ_6ud_MiS4</a>
               </span>
             </div>
           </div>
@@ -260,8 +260,8 @@
     <!-- vis.js for the timeline -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
     <!--  defines timeline plugin -->
-    <script src='assets/js/timeline.js'></script>
-    <script src='assets/js/myTable.js'></script>
+    <script src='./assets/js/timeline.js'></script>
+    <script src='./assets/js/myTable.js'></script>
 
     <!-- Sparnatural Javascript -->
     <script type="text/javascript" src="./sparnatural.js"></script>
@@ -332,8 +332,9 @@
       var sparnatural;
       $( document ).ready(function($) {          
 
+        console.log($('#endpoint').attr('href'));
         sparnatural = document.getElementById('sparnatural-container').Sparnatural({
-          config: "http://xls2rdf.sparna.fr/rest/convert?url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1wIVJIIg7q-dZJQmvbKsSGdoS2gbFk3xwoZ_6ud_MiS4%2Fexport%3Fformat%3Dxlsx&noPostProcessings=true",
+          config: "https://xls2rdf.sparna.fr/rest/convert?url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1wIVJIIg7q-dZJQmvbKsSGdoS2gbFk3xwoZ_6ud_MiS4%2Fexport%3Fformat%3Dxlsx&noPostProcessings=true",
           language: lang,
           maxDepth: 4,                                                                        
           addDistinct: true,
@@ -341,7 +342,7 @@
           backgroundBaseColor: '29,224,153',
           autocomplete : null,
           list : null,
-          defaultEndpoint : $('#endpoint').text(),
+          defaultEndpoint : $('#endpoint').attr('href'),
           onQueryUpdated: function(queryString, queryJson) {
             queryString = semanticPostProcess(queryString, queryJson);
             // queryString = displayLabelPostProcess(queryString, queryJson);
@@ -417,7 +418,7 @@
 
       const yasqe = new Yasqe(document.getElementById("yasqe"), {
         requestConfig: { 
-          endpoint: $('#endpoint').text(),
+          endpoint: $('#endpoint').attr('href'),
           method: "GET",
           header: {}
         },
