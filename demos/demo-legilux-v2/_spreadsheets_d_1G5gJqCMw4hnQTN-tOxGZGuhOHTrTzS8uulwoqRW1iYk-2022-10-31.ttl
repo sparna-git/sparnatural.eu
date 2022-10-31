@@ -1,0 +1,136 @@
+@prefix core: <http://data.sparna.fr/ontologies/sparnatural-config-core#> .
+@prefix datasources: <http://data.sparna.fr/ontologies/sparnatural-config-datasources#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix jolux: <http://data.legilux.public.lu/resource/ontology/jolux#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix this: <http://data.sparnatural.eu/demo-legilux-config/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.sparnatural.eu/demo-legilux-config> a owl:Ontology;
+  dct:format <https://docs.google.com/spreadsheets/d/1G5gJqCMw4hnQTN-tOxGZGuhOHTrTzS8uulwoqRW1iYk/export?format=xlsx>,
+    <https://xls2rdf.sparna.fr/rest/convert?url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1G5gJqCMw4hnQTN-tOxGZGuhOHTrTzS8uulwoqRW1iYk%2Fexport%3Fformat%3Dxlsx&noPostProcessings=true>;
+  dct:source <https://docs.google.com/spreadsheets/d/1G5gJqCMw4hnQTN-tOxGZGuhOHTrTzS8uulwoqRW1iYk>;
+  owl:imports <http://data.sparna.fr/ontologies/sparnatural-config-core>, <http://data.sparna.fr/ontologies/sparnatural-config-datasources> .
+
+jolux:Act a owl:Class;
+  core:faIcon "fa-duotone fa-book-section";
+  core:order 1;
+  core:tooltip "Un acte"@fr;
+  rdfs:label "Act"@en, "Acte"@fr;
+  rdfs:subClassOf core:SparnaturalClass .
+
+jolux:Memorial a owl:Class;
+  core:faIcon "fa-duotone fa-book-section";
+  core:order 2;
+  rdfs:label "Memorial"@en, "Mémorial"@fr;
+  rdfs:subClassOf core:SparnaturalClass .
+
+this:memorial a owl:ObjectProperty;
+  datasources:datasource this:list_memorialName_alpha_with_count;
+  rdfs:domain jolux:Act;
+  rdfs:label "dans mémorial"@fr, "memorial serie"@en;
+  rdfs:range jolux:Memorial;
+  rdfs:subPropertyOf core:ListProperty .
+
+this:list_skosprefLabel_alpha_with_count_langfr a datasources:SparqlDatasource;
+  datasources:labelProperty skos:prefLabel;
+  datasources:queryTemplate this:query_list_label_alpha_with_count_langfr .
+
+this:list_skosprefLabel_count_langfr a datasources:SparqlDatasource;
+  datasources:labelProperty skos:prefLabel;
+  datasources:queryTemplate this:query_list_label_count_langfr .
+
+this:list_rdfslabel_alpha_with_count_langfr a datasources:SparqlDatasource;
+  datasources:labelProperty rdfs:label;
+  datasources:queryTemplate this:query_list_label_alpha_with_count_langfr .
+
+this:list_skosprefLabel_alpha_langfr a datasources:SparqlDatasource;
+  datasources:labelProperty skos:prefLabel;
+  datasources:queryTemplate this:query_list_label_alpha_langfr .
+
+this:search_skospreflabel_contains_langfr a datasources:SparqlDatasource;
+  datasources:labelProperty skos:prefLabel;
+  datasources:queryTemplate this:query_search_label_contains_langfr .
+
+this:search_rdfslabel_contains_langfr a datasources:SparqlDatasource;
+  datasources:labelProperty rdfs:label;
+  datasources:queryTemplate this:query_search_label_contains_langfr .
+
+this:list_memorialName_alpha_with_count a datasources:SparqlDatasource;
+  datasources:labelPath "<http://data.legilux.public.lu/resource/ontology/jolux#memorialName>";
+  datasources:queryTemplate this:query_list_label_alpha_with_count .
+
+this:query_list_label_alpha_with_count_langfr a "config-datatsources:SPARQLQuery";
+  datasources:queryString """SELECT DISTINCT ?uri ?count (CONCAT(STR(?theLabel), ' (', STR(?count), ')') AS ?label)
+WHERE {
+{
+ SELECT DISTINCT ?uri (COUNT(?domain) AS ?count)
+ WHERE {
+ ?domain a $domain .
+ ?domain $property ?uri .
+ FILTER(isIRI(?uri))
+ # Note how the range criteria is not used in this query
+ }
+ GROUP BY ?uri
+}
+OPTIONAL { ?uri $labelPath ?theLabelLang . FILTER(lang(?theLabelLang) = $lang) }
+OPTIONAL { ?uri $labelPath ?theLabelNone . FILTER(lang(?theLabelNone) = \"\") }
+OPTIONAL { ?uri $labelPath ?theLabelFr . FILTER(lang(?theLabelFr) = \"fr\") }
+BIND(COALESCE(?theLabelLang, ?theLabelNone, ?theLabelFr, STR(?uri)) AS ?theLabel)
+}
+ORDER BY UCASE(?label)
+LIMIT 500""" .
+
+this:query_list_label_count_langfr a "config-datatsources:SPARQLQuery";
+  datasources:queryString """SELECT ?uri ?count (CONCAT(STR(?theLabel), ' (', STR(?count), ')') AS ?label)
+WHERE {
+{
+ SELECT DISTINCT ?uri (COUNT(?domain) AS ?count)
+ WHERE {
+ ?domain a $domain .
+ ?domain $property ?uri .
+ FILTER(isIRI(?uri))
+ # Note how the range criteria is not used in this query
+ }
+ GROUP BY ?uri
+}
+OPTIONAL { ?uri $labelPath ?theLabelLang . FILTER(lang(?theLabelLang) = $lang) }
+OPTIONAL { ?uri $labelPath ?theLabelNone . FILTER(lang(?theLabelNone) = \"\") }
+OPTIONAL { ?uri $labelPath ?theLabelFr . FILTER(lang(?theLabelFr) = \"fr\") }
+BIND(COALESCE(?theLabelLang, ?theLabelNone, ?theLabelFr) AS ?theLabel)
+}
+ORDER BY DESC(?count) UCASE(?label)
+LIMIT 500""" .
+
+this:query_list_label_alpha_langfr a "config-datatsources:SPARQLQuery";
+  datasources:queryString """SELECT DISTINCT ?uri ?label
+WHERE {
+ ?domain a $domain .
+ ?domain $property ?uri .
+ # Note how the range criteria is not used in this query
+ FILTER(isIRI(?uri))
+
+ OPTIONAL { ?uri $labelPath ?theLabelLang . FILTER(lang(?theLabelLang) = $lang) }
+ OPTIONAL { ?uri $labelPath ?theLabelNone . FILTER(lang(?theLabelNone) = \"\") }
+ OPTIONAL { ?uri $labelPath ?theLabelFr . FILTER(lang(?theLabelFr) = \"fr\") }
+ BIND(COALESCE(?theLabelLang, ?theLabelNone, ?theLabelFr) AS ?label)
+}
+ORDER BY UCASE(?label)
+LIMIT 500""" .
+
+this:query_search_label_contains_langfr a "config-datatsources:SPARQLQuery";
+  datasources:queryString """SELECT DISTINCT ?uri ?label
+WHERE {
+ ?domain a $domain .
+ ?domain $property ?uri .
+ ?uri a $range .
+ ?uri $labelPath ?label .
+ FILTER(isIRI(?uri))
+ FILTER(CONTAINS(LCASE(STR(?label)), LCASE(\"$key\"))) 
+ FILTER(lang(?label) = '' || lang(?label) = \"fr\")
+} 
+ORDER BY UCASE(?label)
+LIMIT 50""" .
