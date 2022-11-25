@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Référentiel du Médicament</title>
+  <title>SPARNATURAL</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -104,31 +104,10 @@
       <div class="container">
 
         <div class="row" style="padding-bottom:10px;">
-          <div class="col-md-6">
-            <form>
-              <div class="form-group">
-                <select class="form-control" style="width:100%; appearance: auto !important;" id="select-examples">
-                  <option value="none" data-i18n="example.placeholder" selected></option>
-                  <option value="example.1" data-i18n="example.1.title"></option>
-                  <option value="example.2" data-i18n="example.2.title"></option>
-                </select>
-              </div>
-            </form>            
-          </div>
-
-          <div class="col-md-6">
             <div style="text-align:right;">
-              <span style="font-size:90%; font-style: italic;"> 
-                   <!-- https://proxy.sparnatural.eu/sparql-proxy/sparql?endpoint=https%3A%2F%2Fsmt.esante.gouv.fr%2Fapi%2Fsparql%3Fdefault-graph-uri%3Dhttp%253A%252F%252Fdata.esante.gouv.fr%252Fgraph%252Fterminologie-ref_interop_med -->
-                   <!-- Get the all catalogo -->
-                   <span data-i18n="endpoint.querying"></span> <a id="endpoint" href="https://docs.google.com/spreadsheets/d/1wIVJIIg7q-dZJQmvbKsSGdoS2gbFk3xwoZ_6ud_MiS4">https://docs.google.com/spreadsheets/d/1wIVJIIg7q-dZJQmvbKsSGdoS2gbFk3xwoZ_6ud_MiS4</a>
-                   <!--
-                    | <a href="https://docs.google.com/spreadsheets/d/1p79HqAvg5uDELeVSvgmZ1SgoDLcg59CSaw_tsbfQBUk">Config</a> 
-                   -->
-              </span>
+              <span data-i18n="endpoint.querying"></span><a id="endpoint" href="" target="_blank">
+                <span data-i18n="endpoint.Spreadsheet"></a>
             </div>
-          </div>
-
         </div>
 
 
@@ -175,6 +154,7 @@
 
       </div>
     </section><!-- End YASR Section -->
+
 
     <!-- ======= Contact Section ======= -->
     <section id="contact">
@@ -244,10 +224,6 @@
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Template Main JS File -->
-  <script src="assets/js/demo.js"></script>
-  <script src="sampleQueries.js"></script>
-
   <!-- Sparnatural-specific -->
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -280,7 +256,6 @@
   <script src="assets/vendor/jquery.i18n/jquery.i18n.parser.js"></script>
   <script src="assets/vendor/jquery.i18n/jquery.i18n.emitter.js"></script>
 
-
   <!-- Json url (Compression) -->
   <script src="https://cdn.jsdelivr.net/gh/masotime/json-url@master/dist/browser/json-url.js"></script>
 
@@ -288,60 +263,71 @@
       $.urlParam = function(name){
         var results = new RegExp('[\\?&amp;]' + name + '=([^&amp;#]*)').exec(window.location.href);
         if(results == null) { return null; }
-        return results[1] || 0;
+        return results[1].split("?source")[0] || 0;
       }
       var lang = ($.urlParam('lang') != null)?$.urlParam('lang'):'fr';
 
-
-      $.urlConvert = function(name){
-        var results = window.location.href
-        if(results == null) { return null; }
+      const urlSource = new Object();
+      $.urlConvert = function(sourceURL){
+        if(sourceURL == null) { return null; }
         else {
-          if (results.includes("?source=")){
-            return results.split("?source=")[1] || 0;
+          if (sourceURL.includes("?source=") & sourceURL.includes("?endpoint=")){
+            var getSource = sourceURL.split("?source=")[1];
+            urlSource.urlConfigSparnatural = getSource.split("?endpoint=")[0];
+            urlSource.endpoint = getSource.split("?endpoint=")[1];
+            return getSource.split("?endpoint=")[0];            
+          } else {
+            return getSource.split("?endpoint=")[1] || 0;
           }
         }        
       }
       var urlConfigSparnatural = ($.urlConvert(window.location.href) != null)?$.urlConvert(window.location.href):'';
-
-
+      if (urlSource.endpoint != null){
+        $("#endpoint").attr("href",urlSource.endpoint);
+      }
 
       // set the locale
       $.i18n( { locale: lang } );  
       $.i18n().load( {
           'en': {
-            'page.title': 'Référentiel du Médicament',
+            'page.title': 'SPARNATURAL',
+            'page.title_Template': 'Sparnatural Template',
             'menu.home': 'Sparnatural',
             'menu.lang': 'Lang.',
             'menu.github': 'Github',
+            'menu.template': 'Create the Spreadsheet Sparnatural Template',
             'endpoint.querying': 'Querying',
+            'endpoint.Spreadsheet': 'Go to Spreadsheet ...',
             'actions.toggle': 'Toggle SPARQL editor',
             'actions.share': 'Share',            
             'actions.export': 'Export',
+            'actions.clone': 'Get the spreadsheet Template',
+            'actions.step_3': 'Copy/paste spreadsheet URL into the box below to generated your ....',
             'share.modal.title': 'Direct query link',
             'share.modal.close': 'Close',
             'export.modal.title': 'Query as JSON',
             'export.modal.close': 'Close',
-            'example.placeholder': 'Load example query...',
-            'example.1.title': 'Comment se prescrit le chlorhydrate de lidocaïne anhydre ? avec la voie',
-            'example.2.title': 'Les spécialités et leurs UCD catégorisées par "acide clavulanique 500 mg + amoxicilline 500 mg solution injectable/pour perfusion"'
+            'example.placeholder': 'Load example query...',            
           },
           'fr': {
-            'page.title': 'Référentiel du Médicament',
+            'page.title': 'SPARNATURAL',
+            'page.title_Template': 'Modele de Sparnatural',
             'menu.home': 'Sparnatural',
             'menu.lang': 'Lang.',
             'menu.github': 'Github',
+            'menu.template': 'Creation de une fichier google sheet Sparnatural',
             'endpoint.querying': 'Service SPARQL:',
+            'endpoint.Spreadsheet': 'Aller au Tableur ...',
             'actions.toggle': 'Afficher/Masquer éditeur SPARQL',
             'actions.share': 'Partager',            
             'actions.export': 'Exporter',
+            'actions.clone': 'Obtenir le modèle de feuille de calcul',
+            'actions.step_3': 'Coller/Paste votre spreadsheet URL dans le boîte dessous pour generer votre ....',
             'share.modal.title': 'Lien direct vers la requête',
             'share.modal.close': 'Fermer',
             'export.modal.title': 'Requête JSON',
             'export.modal.close': 'Fermer',
-            'example.placeholder': 'Charger une requête d\'exemple...',
-            'example.1.title': 'Comment se prescrit le chlorhydrate de lidocaïne anhydre ? avec la voie',
-            'example.2.title': 'Les spécialités et leurs UCD catégorisées par "acide clavulanique 500 mg + amoxicilline 500 mg solution injectable/pour perfusion"'
+            'example.placeholder': 'Charger une requête d\'exemple...',            
           }
       } );  
       $('body').i18n();
@@ -350,13 +336,8 @@
       var sparnatural;
       $( document ).ready(function($) {
 
-        // Sparnatural code 
-              
         sparnatural = document.getElementById('sparnatural-container').Sparnatural({
-
-            //config: "https://xls2rdf.sparna.fr/rest/convert?url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1p79HqAvg5uDELeVSvgmZ1SgoDLcg59CSaw_tsbfQBUk%2Fexport%3Fformat%3Dxlsx&noPostProcessings=true",
-            //config: "sparnatural-config.ttl",
-            config: urlConfigSparnatural,
+            config: urlSource.urlConfigSparnatural,
             language: lang,
             maxDepth: 4,                                                                        
             addDistinct: true,
@@ -364,7 +345,7 @@
             backgroundBaseColor: '29,224,153',
             autocomplete : null,
             list : null,
-            defaultEndpoint : $('#endpoint').text(), // get the all data catalogos
+            defaultEndpoint : urlSource.endpoint,
             typePredicate : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
             
             onQueryUpdated: function(queryString, queryJson) {
@@ -447,7 +428,7 @@
 
       const yasqe = new Yasqe(document.getElementById("yasqe"), {
         requestConfig: { 
-          endpoint: $('#endpoint').text(),
+          endpoint: urlSource.endpoint, //$('#endpoint').text(),
           method: "GET",
           header: {}
         },
@@ -509,25 +490,17 @@
           $('#exportModal').modal('show');       
       } 
 
+      /*
       document.getElementById('select-examples').onchange = function() {
         var key = $('#select-examples option:selected').val();
         if(sampleQueries.hasOwnProperty(key)) {
             sparnatural.loadQuery(sampleQueries[key]) ;
         }
       }
-
-
-      document.getElementById('clone').onclick = function(){
-        var UrlSheet = yasqe.config.requestConfig.endpoint;
-        $('#clone').attr('href', UrlSheet);
-        $('#clone').modal('show');
-        console.log(" Url google sheet ")
-        console.log(Url_Sheet);
-      }
-
-
+      */
 
     </script>
+
   </script>
 
 </body>
