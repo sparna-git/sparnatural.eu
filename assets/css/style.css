@@ -1357,3 +1357,99 @@ section {
 #footer .footer-links a:hover {
   color: #1dc8cd;
 }
+
+/* EFSparnatural Us Section
+--------------------------------*/
+#EFSparnatural {
+  padding: 60px 0;
+  overflow: hidden;
+}
+
+#EFSparnatural .section-description {
+  font-size: 130%;
+}
+
+#EFSparnatural .about-img {
+  height: 510px;
+  overflow: hidden;
+}
+
+#EFSparnatural .about-img img {
+  margin-left: -15px;
+  max-width: 100%;
+}
+
+#EFSparnatural .content .h2 {
+  color: #333;
+  font-weight: 300;
+  font-size: 24px;
+}
+
+#EFSparnatural .content h3 {
+  color: #777;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 26px;
+  font-style: italic;
+}
+
+#EFSparnatural .content p {
+  line-height: 26px;
+}
+
+#EFSparnatural .content p:last-child {
+  margin-bottom: 0;
+}
+
+#EFSparnatural .content i {
+  font-size: 20px;
+  padding-right: 4px;
+  color: #1dc8cd;
+}
+
+#EFSparnatural .content ul {
+  list-style: none;
+  padding: 0;
+}
+
+#EFSparnatural .content ul li {
+  padding-bottom: 10px;
+}
+
+
+.label_control {
+    display: flex;
+    align-items: center;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: center;
+    white-space: nowrap;
+    background-color: #e9ecef;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0.25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+#input_control input {    
+    border: 0
+}
