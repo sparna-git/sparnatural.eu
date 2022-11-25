@@ -106,7 +106,7 @@
         <div class="row" style="padding-bottom:10px;">
             <div style="text-align:right;">
               <span data-i18n="endpoint.querying"></span><a id="endpoint" href="" target="_blank">
-                <span data-i18n="endpoint.Spreadsheet"></a>
+                <p id="endpoint"></p></a>
             </div>
         </div>
 
@@ -283,7 +283,7 @@
       }
       var urlConfigSparnatural = ($.urlConvert(window.location.href) != null)?$.urlConvert(window.location.href):'';
       if (urlSource.endpoint != null){
-        $("#endpoint").attr("href",urlSource.endpoint);
+        document.getElementById("demo").innerHTML = urlSource.endpoint
       }
 
       // set the locale
@@ -359,7 +359,7 @@
 
               // save query
               document.getElementById('query-json').value = JSON.stringify(queryJson);
-              yasqe.query();
+              //yasqe.query();
               
             },
             // triggered when "play" button is clicked
