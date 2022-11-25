@@ -271,13 +271,13 @@
       $.urlConvert = function(sourceURL){
         if(sourceURL == null) { return null; }
         else {
-          if (sourceURL.includes("?source=") & sourceURL.includes("?endpoint=")){
+          if (sourceURL.includes("?source=") & sourceURL.includes("?source_endpoint=")){
             var getSource = sourceURL.split("?source=")[1];
-            urlSource.urlConfigSparnatural = getSource.split("?endpoint=")[0];
-            urlSource.endpoint = getSource.split("?endpoint=")[1];
-            return getSource.split("?endpoint=")[0];            
+            urlSource.urlConfigSparnatural = getSource.split("?source_endpoint=")[0];
+            urlSource.endpoint = getSource.split("?source_endpoint=")[1];
+            return getSource.split("?source_endpoint=")[0];            
           } else {
-            return getSource.split("?endpoint=")[1] || 0;
+            return getSource.split("?source_endpoint=")[1] || 0;
           }
         }        
       }
