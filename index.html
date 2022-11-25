@@ -227,7 +227,7 @@
         <div class="section-header">
           <h3 class="section-title">Build your own SPARNATURAL environment</h3>
           <span class="section-divider"></span>
-          <p class="section-description">Build your own SPARNATURAL environment from your Spreadsheet in 2 or 3 steps.</p>
+          <p class="section-description">Build your own SPARNATURAL environment from your Spreadsheet in 3 or 4 steps.</p>
         </div>
 
         <dl>
@@ -238,14 +238,34 @@
                   Build a new Google Spreadsheet using our template. You'll need to copy the template to your own Google Drive account by clicking the "Make a Copy" button.<br/>
                   You must add the ontology URL and configure your Sparnatural template. Click the link to go to the Sparnatural template.
                   </p>
-                  <a href="https://docs.google.com/spreadsheets/d/1SGiaHFpLd_pYenleIkO-Ix39A0EkzX_TJ9iV6xfGRKw/edit#gid=468548378/copy" id="sparnatural-sheet" target="_blank">Get the Spreadsheet Template</span></a>
+                  <a href="https://docs.google.com/spreadsheets/d/1CtF8dTEOXEkNFLDRugOEco3LHmvAcEAds4thtX_fYpg/copy" id="sparnatural-sheet" target="_blank">Get the Spreadsheet Template</span></a>
                 </dd>  
                 <br/>
-                <dt><h2 class="title">2 - Google Spreadsheet URL</h2></dt>
+                <dt><h2 class="title">2 - Publish to the Web</h2></dt>
+                <dd>
+                  <br/>
+                  <p>
+                  Select the option <strong>File</strong> -> <strong>Share</strong> -> <strong>Publish to the Web</strong>.
+                  </p>
+                  <img src="assets/img/spreadsheets/publish_to_web_small.png" alt="Screenshot of Google Sheets showing location of 'Publish to web' menu option"></img>
+                  <br/>
+                  <br/>
+                  <p>In the next window, click the <strong>"Publish"</strong> button. When asked, "Are you sure you want to publish this selection?" click OK. Ignore the URL that appears in the center of the window. Just close the window using the X in the top right corner.</p>
+                  <img src="assets/img/spreadsheets/publish_to_web_window.png" alt="Screenshot of Google Sheets showing location of 'Publish to web' menu option"></img>
+                  <br/>
+                  <br/>
+                  <img src="assets/img/spreadsheets/publish_to_web_url.png" alt="Screenshot of Google Sheets showing location of 'Publish to web' menu option"></img>
+                  <br/>
+                  <br/>
+                  <p>After you close the window, copy the URL in your browser's address bar. You'll use this in the next step. In the section for generate your own Sparnatural environment</p>                  
+                </dd>
+                <br/>
+                <dt><h2 class="title">3 - Google Spreadsheet URL</h2></dt>
                 <dd>
                   <br/>
                   <p>
                   <strong>Copy/paste Spreadsheet URL</strong> into the box below to generate your Sparnatural. This generates a Sparnatural template and data conversion URL.
+                  <p>It is important to add the endpoint url to generate the entire service. Press the <strong>Generate</strong> button and go to the final step</p>
                   </p>
                   <br/>
                   <div>
@@ -254,11 +274,21 @@
                       <input class="form-control" type="text" id="source-url" placeholder="https://docs.google.com/spreadsheets/d/.....">
                       <p id="source-url-message" class="note note-alert note-error"></p>
                       </label>
-                    </form>                     
+                    </form>
+                    <br/>
+                    <form>
+                      <label class="label_control">Endpoint  
+                      <input class="form-control" type="text" id="endpoint-source-url" placeholder="https://docs.google.com/spreadsheets/d/.....">
+                      <p id="source-url-message" class="note note-alert note-error"></p>
+                      </label>
+                    </form> 
+                    <br/>
+                    <button id="BtnGenerate">Generate</button>
+                    <p id="msg_error"></p>                  
                   </div>
                 </dd>
                 <br/>
-                <dt><h2>3 - Share your Sparnatural</h2></dt>
+                <dt><h2>4 - Share your Sparnatural</h2></dt>
                 <dd>
                   <br/>
                   <h6>Copy and paste the URL in your browser bar to start SPARNATURAL</h6>
@@ -693,8 +723,43 @@
 
   <!-- /Building URL -->
   <script src="assets/js/_buildingURI.js"></script>
-  <script>
-    var input_link = document.getElementById('source-url').addEventListener("change",f_getURL);
+  <script type="text/javascript">
+    document.getElementById("BtnGenerate").onclick = function() {
+
+       //var input_link = document.getElementById('source-url').addEventListener("change",f_getURL);  
+      var urlgSheet = document.getElementById('source-url');
+      var val_endpoint = document.getElementById('endpoint-source-url');
+      
+      var urlString = "https://xls2rdf.sparna.fr/rest/convert";
+      var urlResult = "";
+      if(urlgSheet.value != ""){
+
+        var urlSheet = "";
+        if(urlgSheet.value.includes("/edit")){
+          urlSheet = urlgSheet.value.split("/edit")[0];
+        } else {
+          urlSheet = urlgSheet.value;
+        }
+
+        // Mime type of the RDF output format (e.g. "application/rdf+xml"). Turtle is returned by default
+        urlString += "?url="+ urlSheet + "/export?format=xlsx";
+        //Don't apply SKOS post-processings after conversion. Set this to true only if you are explicitely generating SKOS taxonomies.
+        urlString += "&noPostProcessings=true";
+
+
+        var pageGeneric = "https://sparnatural.eu/demos/demo-generic/index.html"
+
+        var urlGeneral = pageGeneric + "?lang=en" + "?source=" + urlString + "?source_endpoint=" + val_endpoint.value;
+        
+        document.getElementById('sharable-url').value = urlGeneral;
+
+        iframe = "<iframe src='" + urlGeneral +"'";
+        iframe += "></iframe>"
+
+        document.getElementById('iframe_code').value = iframe;
+      }
+
+    };
   </script>
 </body>
 
