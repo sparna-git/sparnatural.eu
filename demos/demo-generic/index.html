@@ -88,10 +88,8 @@
           <li><a class="nav-link" href="http://sparnatural.eu"><i style="font-size:25px;" class="fa-thin fa-house"></i>&nbsp;Home</a></li>
           <li class="dropdown"><a href="#"><i style="font-size:25px;" class="fa-thin fa-globe-africa"></i>&nbsp;<span>Lang.</span> <i class="bi bi-chevron-down"></i></a>
             <ul style="width:80%;">
-              <!-- <li><a href="?lang=fr" id="langFR">fr</a></li>
-              <li><a href="?lang=en" id="langEN">en</a></li> -->
-              <li><a href="#" id="langFR">fr</a></li>
-              <li><a href="#" id="langEN">en</a></li>
+              <li><a href="?lang=fr">fr</a></li>
+              <li><a href="?lang=en">en</a></li>
             </ul>
           </li>
           <li><a class="nav-link" href="https://github.com/sparna-git/Sparnatural"><i style="font-size:25px;" class="fab fa-github"></i>&nbsp; Github</a></li>
@@ -107,7 +105,8 @@
 
         <div class="row" style="padding-bottom:10px;">
             <div style="text-align:right;">
-              <span data-i18n="endpoint.querying"></span><a id="endpoint" href="" target="_blank"><p id="endpointURL"></p></a>
+              <span data-i18n="endpoint.querying"></span><a id="endpoint" href="" target="_blank">
+                <span data-i18n="endpoint.Spreadsheet"></a>
             </div>
         </div>
 
@@ -264,7 +263,7 @@
       $.urlParam = function(name){
         var results = new RegExp('[\\?&amp;]' + name + '=([^&amp;#]*)').exec(window.location.href);
         if(results == null) { return null; }
-        return results[1].split("?config")[0] || 0;
+        return results[1].split("?source")[0] || 0;
       }
       var lang = ($.urlParam('lang') != null)?$.urlParam('lang'):'fr';
 
@@ -272,20 +271,19 @@
       $.urlConvert = function(sourceURL){
         if(sourceURL == null) { return null; }
         else {
-          if (sourceURL.includes("?config=") & sourceURL.includes("?endpoint=")){
-            var getSource = sourceURL.split("?config=")[1];
-            urlSource.urlConfigSparnatural = getSource.split("?endpoint=")[0];
-            urlSource.endpoint = getSource.split("?endpoint=")[1];
-            return getSource.split("?endpoint=")[0];            
+          if (sourceURL.includes("?source=") & sourceURL.includes("?source_endpoint=")){
+            var getSource = sourceURL.split("?source=")[1];
+            urlSource.urlConfigSparnatural = getSource.split("?source_endpoint=")[0];
+            urlSource.endpoint = getSource.split("?source_endpoint=")[1];
+            return getSource.split("?source_endpoint=")[0];            
           } else {
-            return getSource.split("?endpoint=")[1] || 0;
+            return getSource.split("?source_endpoint=")[1] || 0;
           }
         }        
       }
       var urlConfigSparnatural = ($.urlConvert(window.location.href) != null)?$.urlConvert(window.location.href):'';
       if (urlSource.endpoint != null){
-        //$("#endpoint").attr("href",urlSource.endpoint);
-        document.getElementById("endpointURL").innerHTML = urlSource.endpoint;
+        $("#endpoint").attr("href",urlSource.endpoint);
       }
 
       // set the locale
@@ -299,6 +297,7 @@
             'menu.github': 'Github',
             'menu.template': 'Create the Spreadsheet Sparnatural Template',
             'endpoint.querying': 'Querying',
+            'endpoint.Spreadsheet': 'Go to Spreadsheet ...',
             'actions.toggle': 'Toggle SPARQL editor',
             'actions.share': 'Share',            
             'actions.export': 'Export',
@@ -318,6 +317,7 @@
             'menu.github': 'Github',
             'menu.template': 'Creation de une fichier google sheet Sparnatural',
             'endpoint.querying': 'Service SPARQL:',
+            'endpoint.Spreadsheet': 'Aller au Tableur ...',
             'actions.toggle': 'Afficher/Masquer éditeur SPARQL',
             'actions.share': 'Partager',            
             'actions.export': 'Exporter',
@@ -388,7 +388,6 @@
             });
           }
       }); // End document ready
-
 
       prefixesPostProcess = function(queryString, queryJson) {
         if(queryString.indexOf("rdf-schema#") == -1) {
@@ -473,7 +472,7 @@
       document.getElementById('share').onclick = function() {
         var compressCodec = JsonUrl('lzma');
         compressCodec.compress(document.getElementById('query-json').value).then(result => {
-          var url = window.location.href //window.location.pathname;
+          var url = window.location.pathname;
           url += '?query='+result ;
           $('#share-link').text(url);
           $('#share-link').attr('href', url);
@@ -490,31 +489,6 @@
           $('#export-json').val(jsonString);
           $('#exportModal').modal('show');       
       } 
-
-
-      document.getElementById("langFR").onclick = function() {
-        var url_source = window.location.href.split("?lang=")[0];
-        var url_section_config = window.location.href.split("?config=")[1];
-        var fr_option = "?lang=fr?config=";
-
-        var url = url_source+fr_option+url_section_config;
-
-        location.href=url;
-
-      }
-
-      document.getElementById("langEN").onclick = function() {
-        var url_source = window.location.href.split("?lang=")[0];
-        var url_section_config = window.location.href.split("?config=")[1];
-        var fr_option = "?lang=en?config=";
-
-        var url = url_source+fr_option+url_section_config;
-
-        location.href=url;
-
-      }
-
-      
 
       /*
       document.getElementById('select-examples').onchange = function() {
