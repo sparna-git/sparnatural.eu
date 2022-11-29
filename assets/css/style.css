@@ -1448,8 +1448,27 @@ section {
     appearance: none;
     border-radius: 0.25rem;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    margin-left: 0.4234em
 }
 
 #input_control input {    
     border: 0
+}
+
+
+.btnSpreadsheet {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 8px 28px;
+  border-radius: 50px;
+  transition: 0.5s;
+  margin: 10px;
+  border: 2px solid #7cc9a5;
+  color: #20915c;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
 }

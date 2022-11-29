@@ -232,29 +232,27 @@
 
         <dl>
                 <dt><h2 class="title">1 - Create your Spreadsheet.</h2></dt>
-                
                 <dd>
                   <p>
                   Build a new Google Spreadsheet using our template. You'll need to copy the template to your own Google Drive account by clicking the "Make a Copy" button.<br/>
                   You must add the ontology URL and configure your Sparnatural template. Click the link to go to the Sparnatural template.
                   </p>
-                  <a href="https://docs.google.com/spreadsheets/d/1CtF8dTEOXEkNFLDRugOEco3LHmvAcEAds4thtX_fYpg/copy" id="sparnatural-sheet" target="_blank">Get the Spreadsheet Template</span></a>
+
+                  <a href="https://docs.google.com/spreadsheets/d/1CtF8dTEOXEkNFLDRugOEco3LHmvAcEAds4thtX_fYpg/copy" target="_blank" class="btnSpreadsheet">Get the Spreadsheet Template</a>
+                  
                 </dd>  
                 <br/>
-                <dt><h2 class="title">2 - Publish to the Web</h2></dt>
+                <dt><h2 class="title">2 - Share your own Spreadsheet</h2></dt>
                 <dd>
                   <br/>
                   <p>
-                  Select the option <strong>File</strong> -> <strong>Share</strong> -> <strong>Publish to the Web</strong>.
+                  Select the option <strong>Share</strong>.
                   </p>
-                  <img src="assets/img/spreadsheets/publish_to_web_small.png" alt="Screenshot of Google Sheets showing location of 'Publish to web' menu option"></img>
+                  <img src="assets/img/spreadsheets/share_.png" alt="Screenshot of Google Sheets showing location of 'Publish to web' menu option"></img>
                   <br/>
                   <br/>
-                  <p>In the next window, click the <strong>"Publish"</strong> button. When asked, "Are you sure you want to publish this selection?" click OK. Ignore the URL that appears in the center of the window. Just close the window using the X in the top right corner.</p>
-                  <img src="assets/img/spreadsheets/publish_to_web_window.png" alt="Screenshot of Google Sheets showing location of 'Publish to web' menu option"></img>
-                  <br/>
-                  <br/>
-                  <img src="assets/img/spreadsheets/publish_to_web_url.png" alt="Screenshot of Google Sheets showing location of 'Publish to web' menu option"></img>
+                  <p>In the next window, click the <strong>"General access"</strong> button. Select the "Anyone with the link" option and press the "Done" button. </p>
+                  <img src="assets/img/spreadsheets/share_config.png" alt="Screenshot of Google Sheets showing location of 'Publish to web' menu option"></img>
                   <br/>
                   <br/>
                   <p>After you close the window, copy the URL in your browser's address bar. You'll use this in the next step. In the section for generate your own Sparnatural environment</p>                  
@@ -277,31 +275,32 @@
                     </form>
                     <br/>
                     <form>
-                      <label class="label_control">Endpoint  
-                      <input class="form-control" type="text" id="endpoint-source-url" placeholder="https://docs.google.com/spreadsheets/d/.....">
+                      <label class="label_control">Endpoint   
+                      <input class="form-control" type="text" id="endpoint-source-url" placeholder="https://docs.google.com/spreadsheets/d/....."  >
                       <p id="source-url-message" class="note note-alert note-error"></p>
                       </label>
                     </form> 
                     <br/>
-                    <button id="BtnGenerate">Generate</button>
+                    <a href="" id="BtnGenerate" class="btnSpreadsheet">Generate</a>
                     <p id="msg_error"></p>                  
                   </div>
                 </dd>
                 <br/>
-                <dt><h2>4 - Share your Sparnatural</h2></dt>
+                <dt>
+                  <h2>4 - Share your Sparnatural</h2>
+                </dt>
                 <dd>
                   <br/>
                   <h6>Copy and paste the URL in your browser bar to start SPARNATURAL</h6>
                   <form>
                       <textarea id="sharable-url" class="form-control" rows="3" type="text" "readonly"="" name="textplaceholder" value="" style="height:4rem;">https://sparnatural.eu/demo/index.html?</textarea>
+                      <br/>
+                      <div>                        
+                        <a id="preview-link" href="" class="btnSpreadsheet" target="_blank" onclick="window.open(document.getElementById('sharable-url').value,'_blank'); return false;">Open preview in a new windows</a>
+                      </div>
                   </form>
                   <br/>
-                  <h6>iFrame</h6>
-                  Copy this embed code and paste it on your site.
-                  <form>
-                    <textarea id="iframe_code" class="form-control" rows="3" readonly="readonly" type="text" name="textplaceholder" value="" style="height:5rem;">&lt;iframe src="https://sparnatural.eu/demo/index.html?source=1xuY4&amp;font=Default&amp;lang=en&gt;&lt;/iframe&gt;
-                    </textarea>
-                  </form>
+
                 </dd>  
               </dl>
 
@@ -721,8 +720,6 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
-  <!-- /Building URL -->
-  <script src="assets/js/_buildingURI.js"></script>
   <script type="text/javascript">
     document.getElementById("BtnGenerate").onclick = function() {
 
@@ -748,18 +745,18 @@
 
 
         var pageGeneric = "https://sparnatural.eu/demos/demo-generic/index.html"
-
-        var urlGeneral = pageGeneric + "?lang=en" + "?source=" + urlString + "?source_endpoint=" + val_endpoint.value;
+        var urlGeneral = pageGeneric + "?lang=en" + "?config=" + urlString + "?endpoint=" + val_endpoint.value;
         
         document.getElementById('sharable-url').value = urlGeneral;
-
-        iframe = "<iframe src='" + urlGeneral +"'";
-        iframe += "></iframe>"
-
-        document.getElementById('iframe_code').value = iframe;
+        
+        return false;
       }
 
     };
+
+
+    
+
   </script>
 </body>
 
