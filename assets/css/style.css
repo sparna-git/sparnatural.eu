@@ -1023,6 +1023,10 @@ section {
   overflow: hidden;
 }
 
+#bibliography .section-description {
+  font-size: 130%;
+}
+
 #bibliography .bibliography-list {
   padding: 0;
   list-style: none;
@@ -1360,32 +1364,32 @@ section {
 
 /* EFSparnatural Us Section
 --------------------------------*/
-#EFSparnatural {
+#make-your-own {
   padding: 60px 0;
   overflow: hidden;
 }
 
-#EFSparnatural .section-description {
+#make-your-own .section-description {
   font-size: 130%;
 }
 
-#EFSparnatural .about-img {
+#make-your-own .about-img {
   height: 510px;
   overflow: hidden;
 }
 
-#EFSparnatural .about-img img {
+#make-your-own .about-img img {
   margin-left: -15px;
   max-width: 100%;
 }
 
-#EFSparnatural .content .h2 {
+#make-your-own .content .h2 {
   color: #333;
   font-weight: 300;
   font-size: 24px;
 }
 
-#EFSparnatural .content h3 {
+#make-your-own .content h3 {
   color: #777;
   font-weight: 300;
   font-size: 18px;
@@ -1393,26 +1397,26 @@ section {
   font-style: italic;
 }
 
-#EFSparnatural .content p {
+#make-your-own .content p {
   line-height: 26px;
 }
 
-#EFSparnatural .content p:last-child {
+#make-your-own .content p:last-child {
   margin-bottom: 0;
 }
 
-#EFSparnatural .content i {
+#make-your-own .content i {
   font-size: 20px;
   padding-right: 4px;
   color: #1dc8cd;
 }
 
-#EFSparnatural .content ul {
+#make-your-own .content ul {
   list-style: none;
   padding: 0;
 }
 
-#EFSparnatural .content ul li {
+#make-your-own .content ul li {
   padding-bottom: 10px;
 }
 
@@ -1456,7 +1460,7 @@ section {
 }
 
 
-.btnSpreadsheet {
+.btnGenerateForm {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   font-size: 16px;

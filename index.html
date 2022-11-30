@@ -203,15 +203,18 @@
     <section id="call-to-action">
       <div class="container">
         <div class="row">
-          <div class="col-lg-4 text-center text-lg-start">
+          <div class="col-lg-3 text-center text-lg-start">
             <h3 class="cta-title">Try & download</h3>
-            <p class="cta-text">Test a live demo to browse french-speaking DBPedia. Download from Github and start using !</p>
+            <p class="cta-text">Test one of the demo, or create your own demo page ! You can also download from Github and start using !</p>
           </div>
-          <div class="col-lg-4 cta-btn-container text-center">
-            <a class="cta-btn align-middle" href="demos/demo-dbpedia-v2/index.html?lang=en">Try the demo</a>
+          <div class="col-lg-3 cta-btn-container text-center">
+            <a class="cta-btn align-middle" target="_blank" href="demos/demo-dbpedia-v2/index.html?lang=en">Test DBPedia demo</a>
           </div>
-          <div class="col-lg-4 cta-btn-container text-center">
-            <a class="cta-btn align-middle" href="https://github.com/sparna-git/Sparnatural/releases/latest">Download from Github</a>
+          <div class="col-lg-3 cta-btn-container text-center">
+            <a class="cta-btn align-middle" href="#make-your-own">Create your own</a>
+          </div>
+          <div class="col-lg-3 cta-btn-container text-center">
+            <a class="cta-btn align-middle" target="_blank" href="https://github.com/sparna-git/Sparnatural/releases/latest">Download from Github</a>
           </div>
         </div>
       </div>
@@ -219,94 +222,6 @@
 
       </div>
     </section><!-- End Call To Action Section -->
-
-    <!-- ======= Section Environment ======= -->
-    <section id="EFSparnatural">
-      <div class="container">
-
-        <div class="section-header">
-          <h3 class="section-title">Build your own SPARNATURAL environment</h3>
-          <span class="section-divider"></span>
-          <p class="section-description">Build your own SPARNATURAL environment from your Spreadsheet in 3 or 4 steps.</p>
-        </div>
-
-        <dl>
-                <dt><h2 class="title">1 - Create your Spreadsheet.</h2></dt>
-                <dd>
-                  <p>
-                  Build a new Google Spreadsheet using our template. You'll need to copy the template to your own Google Drive account by clicking the "Make a Copy" button.<br/>
-                  You must add the ontology URL and configure your Sparnatural template. Click the link to go to the Sparnatural template.
-                  </p>
-
-                  <a href="https://docs.google.com/spreadsheets/d/1CtF8dTEOXEkNFLDRugOEco3LHmvAcEAds4thtX_fYpg/copy" target="_blank" class="btnSpreadsheet">Get the Spreadsheet Template</a>
-                  
-                </dd>  
-                <br/>
-                <dt><h2 class="title">2 - Share your own Spreadsheet</h2></dt>
-                <dd>
-                  <br/>
-                  <p>
-                  Select the option <strong>Share</strong>.
-                  </p>
-                  <img src="assets/img/spreadsheets/share_.png" alt="Screenshot of Google Sheets showing location of 'Publish to web' menu option"></img>
-                  <br/>
-                  <br/>
-                  <p>In the next window, click the <strong>"General access"</strong> button. Select the "Anyone with the link" option and press the "Done" button. </p>
-                  <img src="assets/img/spreadsheets/share_config.png" alt="Screenshot of Google Sheets showing location of 'Publish to web' menu option"></img>
-                  <br/>
-                  <br/>
-                  <p>After you close the window, copy the URL in your browser's address bar. You'll use this in the next step. In the section for generate your own Sparnatural environment</p>                  
-                </dd>
-                <br/>
-                <dt><h2 class="title">3 - Google Spreadsheet URL</h2></dt>
-                <dd>
-                  <br/>
-                  <p>
-                  <strong>Copy/paste Spreadsheet URL</strong> into the box below to generate your Sparnatural. This generates a Sparnatural template and data conversion URL.
-                  <p>It is important to add the endpoint url to generate the entire service. Press the <strong>Generate</strong> button and go to the final step</p>
-                  </p>
-                  <br/>
-                  <div>
-                    <form>
-                      <label class="label_control">Google Spreadsheet URL 
-                      <input class="form-control" type="text" id="source-url" placeholder="https://docs.google.com/spreadsheets/d/.....">
-                      <p id="source-url-message" class="note note-alert note-error"></p>
-                      </label>
-                    </form>
-                    <br/>
-                    <form>
-                      <label class="label_control">Endpoint   
-                      <input class="form-control" type="text" id="endpoint-source-url" placeholder="https://docs.google.com/spreadsheets/d/....."  >
-                      <p id="source-url-message" class="note note-alert note-error"></p>
-                      </label>
-                    </form> 
-                    <br/>
-                    <a href="" id="BtnGenerate" class="btnSpreadsheet">Generate</a>
-                    <p id="msg_error"></p>                  
-                  </div>
-                </dd>
-                <br/>
-                <dt>
-                  <h2>4 - Share your Sparnatural</h2>
-                </dt>
-                <dd>
-                  <br/>
-                  <h6>Copy and paste the URL in your browser bar to start SPARNATURAL</h6>
-                  <form>
-                      <textarea id="sharable-url" class="form-control" rows="3" type="text" "readonly"="" name="textplaceholder" value="" style="height:4rem;">https://sparnatural.eu/demo/index.html?</textarea>
-                      <br/>
-                      <div>                        
-                        <a id="preview-link" href="" class="btnSpreadsheet" target="_blank" onclick="window.open(document.getElementById('sharable-url').value,'_blank'); return false;">Open preview in a new windows</a>
-                      </div>
-                  </form>
-                  <br/>
-
-                </dd>  
-              </dl>
-
-        
-      </div>
-    </section>
 
     <!-- ======= More Features Section ======= -->
     <section id="demos" class="section-bg">
@@ -390,6 +305,79 @@
       </div>
     </section>
     <!-- End More Features Section -->
+
+    <!-- ======= Section Environment ======= -->
+    <section id="make-your-own">
+      <div class="container">
+
+        <div class="section-header">
+          <h3 class="section-title">Make your own Sparnatural demo page</h3>
+          <span class="section-divider"></span>
+          <p class="section-description">You can easily build your own demo page from our template in 4 steps. The only prerequisite is to <em>know a SPARQL endpoint URL</em> to which the generated queries will be sent.</p>
+        </div>
+
+        <div>
+          <h2>1 - Create your configuration Spreadsheet</h2>
+          <p>
+            Build a new Google Spreadsheet using our template. Click the button below to copy the template to your own Google Drive account.<br/>
+            Your will use this spreadsheet to configure the classes, properties, icons, etc. of Sparnatural. More detailled documentation will come on how to fill in the spreadsheet.
+          </p>
+          <p>
+            <a href="https://docs.google.com/spreadsheets/d/1CtF8dTEOXEkNFLDRugOEco3LHmvAcEAds4thtX_fYpg/copy" target="_blank" class="btnGenerateForm">Get the Spreadsheet Template</a>
+          </p>
+
+          <h2>2 - Share your Spreadsheet</h2>
+          <p>
+            Once filled in, your spreadsheet needs to be publicly visible. You need to share it with the <em>"Anyone with the link = Viewer"</em> option. To do this, select the option <strong>Share</strong>.
+          </p>
+          <p>
+            <img src="assets/img/spreadsheets/share_.png" alt="Screenshot of Google Sheets showing location of 'Publish to web' menu option"></img>
+          </p>
+          <p>In the next window, click the <strong>"General access"</strong> button. Select the <em>"Anyone with the link"</em> option and press the "Done" button. </p>
+          <p>
+            <img src="assets/img/spreadsheets/share_config.png" alt="Screenshot of Google Sheets showing location of 'Publish to web' menu option"></img> 
+          </p>
+          <p>After you close the window, copy the URL in your browser's address bar. You'll use this in the next step.</p>  
+
+          <h2>3 - Generate your Sparnatural demo page</h2>
+          <p>
+            <strong>Copy/paste the Google Spreadsheet URL</strong> into the first field below. Enter the URL of your SPARQL endpoint in the second field. Then press the <strong>Generate</strong> button to generate the URL to your demo page.
+          </p>
+          <br/>
+
+          <div>
+            <form>
+              <label class="label_control">Google Spreadsheet URL 
+              <input class="form-control" type="text" id="source-url" placeholder="e.g. https://docs.google.com/spreadsheets/d/.....">
+              <p id="source-url-message" class="note note-alert note-error"></p>
+              </label>
+            </form>
+            <br/>
+            <form>
+              <label class="label_control">SPARQL Endpoint URL   
+              <input class="form-control" type="text" id="endpoint-source-url" placeholder="e.g. https://dbpedia.org/sparql"  >
+              <p id="source-url-message" class="note note-alert note-error"></p>
+              </label>
+            </form> 
+            <br/>
+            <a id="BtnGenerate" class="btnGenerateForm">Generate</a>
+            <p id="msg_error"></p>                  
+          </div>
+
+          <h2>4 - Share Link</h2>
+          <p>Use this link directly to your Sparnatural demo page, or click the button below to open it directly in a new tab.</p>
+          <form>
+              <textarea id="sharable-url" class="form-control" rows="3" type="text" readonly name="textplaceholder" value="" style="height:4rem;"></textarea>
+              <br/>
+              <div>                        
+                <a class="btnGenerateForm" id="btnOpenDemo" target="_blank">Open Sparnatural demo page</a>
+              </div>
+          </form>
+
+        </div>
+        
+      </div><!-- end container -->
+    </section>
 
 
 
@@ -494,7 +482,7 @@
 
 
     <!-- ======= Bibliography Section ======= -->
-    <section id="bibliography">
+    <section id="bibliography" class="section-bg">
       <div class="container">
 
         <div class="section-header">
@@ -723,13 +711,13 @@
   <script type="text/javascript">
     document.getElementById("BtnGenerate").onclick = function() {
 
-       //var input_link = document.getElementById('source-url').addEventListener("change",f_getURL);  
+      //var input_link = document.getElementById('source-url').addEventListener("change",f_getURL);  
       var urlgSheet = document.getElementById('source-url');
       var val_endpoint = document.getElementById('endpoint-source-url');
       
       var urlString = "https://xls2rdf.sparna.fr/rest/convert";
       var urlResult = "";
-      if(urlgSheet.value != ""){
+      if(urlgSheet.value != "" && val_endpoint != ""){
 
         var urlSheet = "";
         if(urlgSheet.value.includes("/edit")){
@@ -740,7 +728,7 @@
 
         // Mime type of the RDF output format (e.g. "application/rdf+xml"). Turtle is returned by default
         urlString += "?url="+ urlSheet + "/export?format=xlsx";
-        //Don't apply SKOS post-processings after conversion. Set this to true only if you are explicitely generating SKOS taxonomies.
+        //Don't apply SKOS post-processings after conversion.
         urlString += "&noPostProcessings=true";
 
 
@@ -748,6 +736,7 @@
         var urlGeneral = pageGeneric + "?lang=en" + "?config=" + urlString + "?endpoint=" + val_endpoint.value;
         
         document.getElementById('sharable-url').value = urlGeneral;
+        document.getElementById('btnOpenDemo').setAttribute("href", urlGeneral);
         
         return false;
       }
