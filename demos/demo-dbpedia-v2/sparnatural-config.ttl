@@ -85,11 +85,22 @@
          owl:inverseOf :countryOf ;
          rdfs:domain :Museum ;
          rdfs:range :Country ;
-         <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://dbpedia.org/ontology/location>/<http://dbpedia.org/ontology/country>" ;
+         <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://dbpedia.org/ontology/country>" ;
          <http://data.sparna.fr/ontologies/sparnatural-config-datasources#datasource> <http://data.sparna.fr/ontologies/sparnatural-config-datasources#list_rdfslabel_count> ;
          rdfs:label "country"@en ,
                     "pays"@fr .
 
+:situe_a rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#MapProperty> ;
+         rdfs:domain :MuseumWikidata ;
+         rdfs:range :Map ;
+         <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlService> [
+             <http://data.sparna.fr/ontologies/sparnatural-config-core#endpoint> <https://query.wikidata.org/sparql>; 
+         ];
+         # <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://www.w3.org/2003/01/geo/wgs84_pos#geometry>" ;
+         <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://www.wikidata.org/prop/direct/P625>" ;
+         rdfs:label "position"@en ,
+                    "localisation"@fr .
 
 ###  http://ontologies.sparna.fr/sparnatural-demo-dbpedia#countryOf
 :countryOf rdf:type owl:ObjectProperty ;
@@ -200,6 +211,16 @@
                      "expose"@fr .
 
 
+:inWikidata rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#NonSelectableProperty> ;
+          rdfs:domain :Museum ;
+          rdfs:range :MuseumWikidata ;
+          <http://data.sparna.fr/ontologies/sparnatural-config-core#enableOptional> "true"^^xsd:boolean ;
+          <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://www.w3.org/2002/07/owl#sameAs>" ;
+          rdfs:label "has other record"@en ,
+                     "autre fiche"@fr .
+
+
 ###  http://ontologies.sparna.fr/sparnatural-demo-dbpedia#label
 :label rdf:type owl:ObjectProperty ;
        rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#SearchProperty> ;
@@ -235,6 +256,16 @@
           <http://data.sparna.fr/ontologies/sparnatural-config-datasources#datasource> <http://data.sparna.fr/ontologies/sparnatural-config-datasources#list_rdfslabel_count> ;
           rdfs:label "mouvement"@fr ,
                      "movement"@en .
+
+:editeur rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#LiteralListProperty> ;
+          rdfs:domain :Person ;
+          rdfs:range :Text ;
+          <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://fr.dbpedia.org/property/éditeur>" ;
+          <http://data.sparna.fr/ontologies/sparnatural-config-datasources#datasource> <http://data.sparna.fr/ontologies/sparnatural-config-datasources#literal_list_count> ;
+          rdfs:label "éditeur"@fr ,
+                     "publisher"@en .
+
 
 
 ###  http://ontologies.sparna.fr/sparnatural-demo-dbpedia#movementIncludes
@@ -320,6 +351,23 @@
         rdfs:label "Museum"@en ,
                    "Musée"@fr .
 
+
+:MuseumWikidata rdf:type owl:Class ;
+        rdfs:subClassOf <http://data.sparna.fr/ontologies/sparnatural-config-core#NotInstantiatedClass> ;
+        <http://data.sparna.fr/ontologies/sparnatural-config-core#faIcon> "fad fa-university" ;
+        <http://data.sparna.fr/ontologies/sparnatural-config-core#tooltip> "The record of the Museum in Wikidata."@en ,
+                                                                           "La fiche du musée dans Wikidata"@fr ;
+        rdfs:label "Wikidata Museum"@en ,
+                   "Musée Wikidata"@fr .
+
+
+:Map rdf:type owl:Class ;
+        rdfs:subClassOf rdfs:Literal ;
+        <http://data.sparna.fr/ontologies/sparnatural-config-core#faIcon> "fad fa-map" ;
+        <http://data.sparna.fr/ontologies/sparnatural-config-core#tooltip> "Position on a map, expressed as WKT datatype, queried in GeoSPARQL"@en ,
+                                                                           "Position sur une carte, exprimée en WKT, requếtée avec GeoSPARQL"@fr ;
+        rdfs:label "Map"@en ,
+                   "Carte"@fr .
 
 ###  http://ontologies.sparna.fr/sparnatural-demo-dbpedia#Person
 :Person rdf:type owl:Class ;
