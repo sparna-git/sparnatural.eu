@@ -397,7 +397,12 @@
         }
       }
 
-      sparnatural.settings = settings;
+      sparnatural.addEventListener('componentLoaded',(e)=>{
+        console.log("component loaded");
+        sparnatural.settings = settings;
+      });
+
+      // sparnatural.settings = settings;
 
       // load ?query= param if present
       var UrlString = window.location.search;
