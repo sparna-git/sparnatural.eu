@@ -132,7 +132,16 @@
 
         <!-- This is where Sparnatural is inserted -->
         <div class="row">
-          <spar-natural />
+
+          <spar-natural 
+            src="sparnatural-config.ttl"
+            endpoint="https://proxy.sparnatural.eu/sparql-proxy/sparql?endpoint=http%3A%2F%2Ffr.dbpedia.org%2Fsparql"
+            lang="fr"
+            distinct="true"
+            limit="1000"
+            debug="true"
+          />
+
           <input type="hidden" id="query-json"></input>
         </div>
 
@@ -361,48 +370,34 @@
       $('body').i18n();
 
       const sparnatural = document.querySelector("spar-natural");
-
-
-      const settings = {
-        language: lang ? lang : "fr",
-        defaultEndpoint: function() { return $('#endpoint').attr('href') },
-        config: "sparnatural-config.ttl",
-
-        onQueryUpdated: function(queryString, queryJson, sparqlJsStructure) {
-          queryString = sparnatural.expandSparql(queryString);
-          queryString = limitPostProcess(queryString, queryJson);
-          $('#sparql code').html(queryString.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"));
-          yasqe.setValue(queryString);
-
-          // save query
-          document.getElementById('query-json').value = JSON.stringify(queryJson);
-
-          // When click on select2 for Sheperd tour
-          if (StepToWait3 != null && StepToWait3.isOpen()){
-            Shepherd.activeTour.next();
-          }
-        },
-        // triggered when "play" button is clicked
-        onSubmit: ()=> {
-            // enable loader on button
-            sparnatural.disablePlayBtn() ; 
-            // trigger the query from YasQE
-            yasqe.query();
-        },
-        onReset: ()=> {
-            yasqe.setValue("");
-        },
-        sparqlPrefixes : {
-          
-        }
+      if(lang == "en") { 
+        sparnatural.setAttribute("lang", "en");
       }
 
-      sparnatural.addEventListener('componentLoaded',(e)=>{
-        console.log("component loaded");
-        sparnatural.settings = settings;
+      sparnatural.addEventListener("queryUpdated", (event) => {
+        queryString = sparnatural.expandSparql(queryString);
+        $('#sparql code').html(queryString.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"));
+        yasqe.setValue(queryString);
+
+        // save query
+        document.getElementById('query-json').value = JSON.stringify(queryJson);
+
+        // When click on select2 for Sheperd tour
+        if (StepToWait3 != null && StepToWait3.isOpen()){
+          Shepherd.activeTour.next();
+        }
       });
 
-      // sparnatural.settings = settings;
+      sparnatural.addEventListener("submit", (event) => {
+        // enable loader on button
+        sparnatural.disablePlayBtn() ; 
+        // trigger the query from YasQE
+        yasqe.query();
+      });
+
+      sparnatural.addEventListener("reset", (event) => {
+        yasqe.setValue("");
+      });
 
       // load ?query= param if present
       var UrlString = window.location.search;
@@ -414,11 +409,6 @@
           sparnatural.loadQuery(JSON.parse(json)) ;
         });
       }      
-
-      limitPostProcess = function(queryString, queryJson) {
-        queryString = queryString.replace(new RegExp('$'), "\nLIMIT 1000");
-        return queryString;
-      }
 
       const yasqe = new Yasqe(document.getElementById("yasqe"), {
         requestConfig: { 
