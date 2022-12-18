@@ -33,7 +33,7 @@ function initTour() {
     id: 'step-0',
     text: 'This line is a query criteria and will allow you to express what you are looking for, like a sentence.',
     attachTo: {
-      element: '#CriteriaGroup-0',
+      element: 'spar-natural .CriteriaGroup',
       on: 'bottom'
     },
     canClickTarget: false,
@@ -49,7 +49,7 @@ function initTour() {
     id: 'step--1',
     text: '<p>The first step is to choose what you are looking for in this list.</p><p>Let\'s imagine you are interested in <em>Italian Painters</em>.</p>',
     attachTo: {
-      element: '#CriteriaGroup-0>.StartClassGroup ul.list',
+      element: 'spar-natural .CriteriaGroup>.StartClassGroup ul.list',
       on: 'right'
     },
     classes: 'example-step-extra-class',
@@ -79,7 +79,7 @@ function initTour() {
     id: 'step--3',
     text: 'Then you need to select the kind of thing the Person is connected to, from this list.',
     attachTo: {
-      element: '#CriteriaGroup-0>.EndClassGroup ul.list',
+      element: 'spar-natural .CriteriaGroup>.EndClassGroup ul.list',
       on: 'right'
     },
     classes: 'example-step-extra-class',
@@ -114,7 +114,7 @@ function initTour() {
     id: 'step--5',
     text: 'The next step is to indicate <em>how</em> the Person is related to the Country, by selecting from this list. (Sometimes there is only one possible choice, it will be selected automatically).',
     attachTo: {
-      element: '#CriteriaGroup-0>.ObjectPropertyGroup ul.list',
+      element: 'spar-natural .CriteriaGroup>.ObjectPropertyGroup ul.list',
       on: 'bottom'
     },
     classes: 'example-step-extra-class',
@@ -149,7 +149,7 @@ function initTour() {
     id: 'step--7',
     text: 'And then you will be able to indicate that the Country you are interested in is <em>Italy</em>',
     attachTo: {
-      element: '#CriteriaGroup-0>.EndClassGroup>.EditComponents>.ObjectPropertyTypeWidget',
+      element: 'spar-natural .CriteriaGroup>.EndClassGroup>.EditComponents>.ObjectPropertyTypeWidget',
       on: 'left'
     },
     classes: 'example-step-extra-class',
@@ -170,13 +170,13 @@ function initTour() {
     id: 'step--7',
     text: 'And then you will be able to indicate that the Country you are interested in is <em>Italy</em>. Click to unfold the list.',
     attachTo: {
-      element: '#CriteriaGroup-0>.EndClassGroup>.EditComponents>.ObjectPropertyTypeWidget .list-widget',
+      element: 'spar-natural .CriteriaGroup>.EndClassGroup>.EditComponents>.WidgetWrapper>.list-widget',
       on: 'left'
     },
     classes: 'example-step-extra-class',
     canClickTarget: true,
     advanceOn: {
-      selector: '#CriteriaGroup-0>.EndClassGroup>.EditComponents>.ObjectPropertyTypeWidget .list-widget',
+      selector: 'spar-natural .CriteriaGroup>.EndClassGroup>.EditComponents>.WidgetWrapper>.list-widget',
       event: 'click'
     },
     beforeShowPromise: function() {
@@ -188,7 +188,7 @@ function initTour() {
     id: 'step--8',
     text: 'Then search or select <em>Italy</em> in the list (or any other country, actually !)',
     attachTo: {
-      // element: '#CriteriaGroup-0>.EndClassGroup>.EditComponents>.ObjectPropertyTypeWidget .list-widget',
+      // element: 'spar-natural .CriteriaGroup>.EndClassGroup>.EditComponents>.ObjectPropertyTypeWidget .list-widget',
       element: '.select2-dropdown',
       on: 'left'
     },
@@ -203,7 +203,7 @@ function initTour() {
     id: 'step--9',
     text: 'You have written your first criteria to search for <em>Persons born in the Country Italy</em> (or whichever you chose from the list) ! Now you need to execute the query.',
     attachTo: {
-      element: '#CriteriaGroup-0',
+      element: 'spar-natural .CriteriaGroup',
       on: 'bottom'
     },
     classes: 'example-step-extra-class',
