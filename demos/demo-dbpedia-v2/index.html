@@ -375,12 +375,12 @@
       }
 
       sparnatural.addEventListener("queryUpdated", (event) => {
-        queryString = sparnatural.expandSparql(queryString);
+        queryString = sparnatural.expandSparql(event.detail.queryString);
         $('#sparql code').html(queryString.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"));
         yasqe.setValue(queryString);
 
         // save query
-        document.getElementById('query-json').value = JSON.stringify(queryJson);
+        document.getElementById('query-json').value = JSON.stringify(event.detail.queryJson);
 
         // When click on select2 for Sheperd tour
         if (StepToWait3 != null && StepToWait3.isOpen()){

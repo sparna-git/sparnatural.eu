@@ -99,8 +99,8 @@
          ];
          # <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://www.w3.org/2003/01/geo/wgs84_pos#geometry>" ;
          <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://www.wikidata.org/prop/direct/P625>" ;
-         rdfs:label "position"@en ,
-                    "localisation"@fr .
+         rdfs:label "located at"@en ,
+                    "situé à"@fr .
 
 ###  http://ontologies.sparna.fr/sparnatural-demo-dbpedia#countryOf
 :countryOf rdf:type owl:ObjectProperty ;
@@ -366,8 +366,8 @@
         <http://data.sparna.fr/ontologies/sparnatural-config-core#faIcon> "fad fa-map" ;
         <http://data.sparna.fr/ontologies/sparnatural-config-core#tooltip> "Position on a map, expressed as WKT datatype, queried in GeoSPARQL"@en ,
                                                                            "Position sur une carte, exprimée en WKT, requếtée avec GeoSPARQL"@fr ;
-        rdfs:label "Map"@en ,
-                   "Carte"@fr .
+        rdfs:label "Position"@en ,
+                   "Position"@fr .
 
 ###  http://ontologies.sparna.fr/sparnatural-demo-dbpedia#Person
 :Person rdf:type owl:Class ;
