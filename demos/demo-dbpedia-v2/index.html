@@ -119,7 +119,7 @@
           <div class="col-md-6">
             <div style="text-align:right;">
               <span style="font-size:90%; font-style: italic;"> 
-                   <span data-i18n="endpoint.querying"></span> <a id="endpoint" href="https://proxy.sparnatural.eu/sparql-proxy/sparql?endpoint=http%3A%2F%2Ffr.dbpedia.org%2Fsparql">https://proxy.sparnatural.eu/sparql-proxy/sparql?endpoint=http%3A%2F%2Ffr.dbpedia.org%2Fsparql</a> 
+                <span data-i18n="endpoint.querying"></span> <a id="endpoint" href="...">...</a> 
               </span>
             </div>
           </div>
@@ -370,9 +370,14 @@
       $('body').i18n();
 
       const sparnatural = document.querySelector("spar-natural");
+
       if(lang == "en") { 
         sparnatural.setAttribute("lang", "en");
       }
+
+      // prints the endpoint
+      $('#endpoint').attr("href", sparnatural.getAttribute("endpoint"));
+      $('#endpoint').html(sparnatural.getAttribute("endpoint"));
 
       sparnatural.addEventListener("queryUpdated", (event) => {
         queryString = sparnatural.expandSparql(event.detail.queryString);
