@@ -1,441 +1,422 @@
-@prefix : <https://sparnatural.eu/demos/demo-edm/sparnatural-config#> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix core: <http://data.sparna.fr/ontologies/sparnatural-config-core#> .
+@prefix datasources: <http://data.sparna.fr/ontologies/sparnatural-config-datasources#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix edm: <http://www.europeana.eu/schemas/edm/> .
+@prefix euvoc: <http://publications.europa.eu/ontology/euvoc#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ore: <http://www.openarchives.org/ore/terms/> .
+@prefix org: <http://www.w3.org/ns/org#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <https://sparnatural.eu/demos/demo-edm/sparnatural-config> .
-
-<https://sparnatural.eu/demos/demo-edm/sparnatural-config> rdf:type owl:Ontology ;
-                                                            owl:imports <http://data.sparna.fr/ontologies/sparnatural-config-core> ,
-                                                                        <http://data.sparna.fr/ontologies/sparnatural-config-datasources> .
-
-#################################################################
-#    Object Properties
-#################################################################
-
-###  https://sparnatural.eu/demos/demo-edm/sparnatural-config#Date_de_création
-:Date_de_création rdf:type owl:ObjectProperty ;
-                  rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#TimeProperty-Date> ;
-                  rdfs:domain :Lot_Europeana ,
-                              <https://sparnatural.eu/demos/demo-edm/sparnatural-config/ProvidedCHO> ;
-                  rdfs:range :Date ;
-                  <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlService> "<http://purl.org/dc/terms/created>" ;
-                  rdfs:label "created"@en ,
-                             "créé(e) le"@fr .
-
-
-###  https://sparnatural.eu/demos/demo-edm/sparnatural-config#a_pour_étendue
-:a_pour_étendue rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#LiteralListProperty> ;
-                rdfs:domain <https://sparnatural.eu/demos/demo-edm/sparnatural-config/ProvidedCHO> ;
-                rdfs:range :Format ;
-                <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://purl.org/dc/terms/extent>" ;
-                rdfs:label "a pour étendue"@fr ,
-                           "extent"@en .
-
-
-###  https://sparnatural.eu/demos/demo-edm/sparnatural-config#agrégateur_source
-:agrégateur_source rdf:type owl:ObjectProperty ;
-                   rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#LiteralListProperty> ;
-                   rdfs:domain :Lot_partenaire ;
-                   rdfs:range :Agent ;
-                   <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://www.europeana.eu/schemas/edm/dataProvider>" ;
-                   rdfs:label "data provider"@en ,
-                              "fournie par"@fr .
-
-
-###  https://sparnatural.eu/demos/demo-edm/sparnatural-config#consultable
-:consultable rdf:type owl:ObjectProperty ;
-             rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#LiteralListProperty> ;
-             rdfs:domain :Lot_partenaire ;
-             rdfs:range :Adresse_catalogue ;
-             <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://www.europeana.eu/schemas/edm/isShownAt>" ;
-             rdfs:label "est accessible à"@fr ,
-                        "is shown at"@en .
-
-
-###  https://sparnatural.eu/demos/demo-edm/sparnatural-config#couverture_spatiale
-:couverture_spatiale rdf:type owl:ObjectProperty ;
-                     rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#SearchProperty> ;
-                     rdfs:domain <https://sparnatural.eu/demos/demo-edm/sparnatural-config/ProvidedCHO> ;
-                     rdfs:range :Spatial ;
-                     <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://purl.org/dc/terms/spatial>" ;
-                     rdfs:label "concerne"@fr ,
-                                "spatial"@en .
-
-
-###  https://sparnatural.eu/demos/demo-edm/sparnatural-config#couverture_temporelle
-:couverture_temporelle rdf:type owl:ObjectProperty ;
-                       rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#TimeProperty-Period> ;
-                       rdfs:domain <https://sparnatural.eu/demos/demo-edm/sparnatural-config/ProvidedCHO> ;
-                       rdfs:range :Durée ;
-                       <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://purl.org/dc/terms/temporal>" ;
-                       rdfs:label "concerne"@fr ,
-                                  "temporal"@en .
-
-
-###  https://sparnatural.eu/demos/demo-edm/sparnatural-config#créé_par
-:créé_par rdf:type owl:ObjectProperty ;
-          rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#ListProperty> ;
-          rdfs:domain <https://sparnatural.eu/demos/demo-edm/sparnatural-config/ProvidedCHO> ;
-          rdfs:range :Agent ;
-          <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://purl.org/dc/elements/1.1/creator>" ;
-          <http://data.sparna.fr/ontologies/sparnatural-config-datasources#datasource> <http://data.sparna.fr/ontologies/sparnatural-config-datasources#list_skospreflabel_count> ;
-          rdfs:label "creator"@en ,
-                     "créé par"@fr .
-
-
-###  https://sparnatural.eu/demos/demo-edm/sparnatural-config#currentLocation
-:currentLocation rdf:type owl:ObjectProperty ;
-                 rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#ListProperty> ;
-                 rdfs:domain <https://sparnatural.eu/demos/demo-edm/sparnatural-config/ProvidedCHO> ;
-                 rdfs:range :Lieu ;
-                 <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://www.europeana.eu/schemas/edm/currentLocation>" ;
-                 <http://data.sparna.fr/ontologies/sparnatural-config-datasources#datasource> <http://data.sparna.fr/ontologies/sparnatural-config-datasources#list_skospreflabel_count> ;
-                 rdfs:label "current location"@en ,
-                            "est situé à"@fr .
-
-
-###  https://sparnatural.eu/demos/demo-edm/sparnatural-config#dans_rubrique_Europeana
-:dans_rubrique_Europeana rdf:type owl:ObjectProperty ;
-                         rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#LiteralListProperty> ;
-                         rdfs:domain :Lot_partenaire ;
-                         rdfs:range :Agent ;
-                         <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://www.europeana.eu/schemas/edm/provider>" ;
-                         rdfs:label "agrégée par"@fr ,
-                                    "provider"@en .
-
-
-###  https://sparnatural.eu/demos/demo-edm/sparnatural-config#description
-:description rdf:type owl:ObjectProperty ;
-             rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#LiteralListProperty> ;
-             rdfs:domain <https://sparnatural.eu/demos/demo-edm/sparnatural-config/ProvidedCHO> ;
-             rdfs:range :Texte ;
-             <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://purl.org/dc/elements/1.1/description>" ;
-             rdfs:label "description"@en ,
-                        "est associé à"@fr .
-
-
-###  https://sparnatural.eu/demos/demo-edm/sparnatural-config#droits_associes_au_visuel
-:droits_associes_au_visuel rdf:type owl:ObjectProperty ;
-                           rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#LiteralListProperty> ;
-                           rdfs:domain :Visuel ;
-                           rdfs:range :Mention_de_droits ;
-                           <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://purl.org/dc/elements/1.1/rights>" ;
-                           rdfs:label "dc rights"@en ,
-                                      "est protégé par"@fr .
-
-
-###  https://sparnatural.eu/demos/demo-edm/sparnatural-config#droits_associés_à_la_vue
-:droits_associés_à_la_vue rdf:type owl:ObjectProperty ;
-                          rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#ListProperty> ;
-                          rdfs:domain :Lot_partenaire ,
-                                      :Visuel ;
-                          rdfs:range :Licence ;
-                          <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://www.europeana.eu/schemas/edm/rights>" ;
-                          rdfs:label "a pour licence"@fr ,
-                                     "rights"@en .
-
-
-###  https://sparnatural.eu/demos/demo-edm/sparnatural-config#est_édité_par
-:est_édité_par rdf:type owl:ObjectProperty ;
-               rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#ListProperty> ;
-               rdfs:domain <https://sparnatural.eu/demos/demo-edm/sparnatural-config/ProvidedCHO> ;
-               rdfs:range :Agent ;
-               <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://purl.org/dc/elements/1.1/publisher>" ;
-               <http://data.sparna.fr/ontologies/sparnatural-config-datasources#datasource> <http://data.sparna.fr/ontologies/sparnatural-config-datasources#list_skospreflabel_count> ;
-               rdfs:label "est édité par"@fr ,
-                          "publisher"@en .
-
-
-###  https://sparnatural.eu/demos/demo-edm/sparnatural-config#fait_partie_de
-:fait_partie_de rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#NonSelectableProperty> ;
-                rdfs:domain <https://sparnatural.eu/demos/demo-edm/sparnatural-config/ProvidedCHO> ;
-                rdfs:range :Lot_partenaire ;
-                <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "^<http://www.europeana.eu/schemas/edm/object>" ;
-                rdfs:label "aggregated in"@en ,
-                           "fait partie de"@fr .
-
-
-###  https://sparnatural.eu/demos/demo-edm/sparnatural-config#identifiant
-:identifiant rdf:type owl:ObjectProperty ;
-             rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#LiteralListProperty> ;
-             rdfs:domain :Agent ;
-             rdfs:range :Identifiant ;
-             <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://purl.org/dc/elements/1.1/identifier>" ;
-             rdfs:label "est référencé sous"@fr ,
-                        "identifier"@en .
-
-
-###  https://sparnatural.eu/demos/demo-edm/sparnatural-config#langue
-:langue rdf:type owl:ObjectProperty ;
-        rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#LiteralListProperty> ;
-        rdfs:domain <https://sparnatural.eu/demos/demo-edm/sparnatural-config/ProvidedCHO> ;
-        rdfs:range :Langue ;
-        <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://purl.org/dc/elements/1.1/language>" ;
-        rdfs:label "est disponible en"@fr ,
-                   "language"@en .
-
-
-###  https://sparnatural.eu/demos/demo-edm/sparnatural-config#objet_culturel_agrégé
-:objet_culturel_agrégé rdf:type owl:ObjectProperty ;
-                       rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#AutocompleteProperty> ;
-                       rdfs:domain :Lot_partenaire ;
-                       rdfs:range <https://sparnatural.eu/demos/demo-edm/sparnatural-config/ProvidedCHO> ;
-                       <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://www.europeana.eu/schemas/edm/aggregatedCHO>" ;
-                       <http://data.sparna.fr/ontologies/sparnatural-config-datasources#datasource> :search_dctitle_contains ;
-                       rdfs:label "aggregated CHO"@en ,
-                                  "concerne"@fr .
-
-
-###  https://sparnatural.eu/demos/demo-edm/sparnatural-config#titre
-:titre rdf:type owl:ObjectProperty ;
-       rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#LiteralListProperty> ;
-       rdfs:domain <https://sparnatural.eu/demos/demo-edm/sparnatural-config/ProvidedCHO> ;
-       rdfs:range :Titre ;
-       <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://purl.org/dc/elements/1.1/title>" ;
-       rdfs:label "a pour titre"@fr ,
-                  "title"@en .
-
-
-###  https://sparnatural.eu/demos/demo-edm/sparnatural-config#type_DC
-:type_DC rdf:type owl:ObjectProperty ;
-         rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#LiteralListProperty> ;
-         rdfs:domain <https://sparnatural.eu/demos/demo-edm/sparnatural-config/ProvidedCHO> ;
-         rdfs:range :Type_DC ;
-         <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://purl.org/dc/elements/1.1/type>" ;
-         rdfs:label "dc type"@en ,
-                    "type DC"@fr .
-
-
-###  https://sparnatural.eu/demos/demo-edm/sparnatural-config#type_Europeana
-:type_Europeana rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#LiteralListProperty> ;
-                rdfs:domain <https://sparnatural.eu/demos/demo-edm/sparnatural-config/ProvidedCHO> ;
-                rdfs:range :TYPE_EDM ;
-                <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://www.europeana.eu/schemas/edm/type>" ;
-                rdfs:label "est de type EDM"@fr ,
-                           "type"@en .
-
-
-###  https://sparnatural.eu/demos/demo-edm/sparnatural-config#origine_de_l'agrégateur
-<https://sparnatural.eu/demos/demo-edm/sparnatural-config#origine_de_l'agrégateur> rdf:type owl:ObjectProperty ;
-                                                                                   rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#SearchProperty> ;
-                                                                                   rdfs:domain :Agent ,
-                                                                                               :Lot_Europeana ;
-                                                                                   rdfs:range :Pays ;
-                                                                                   <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://www.europeana.eu/schemas/edm/country>" ;
-                                                                                   rdfs:label "a pour origine"@fr ,
-                                                                                              "country"@en .
-
-
-###  https://sparnatural.eu/demos/demo-edm/sparnatural-config/subject
-<https://sparnatural.eu/demos/demo-edm/sparnatural-config/subject> rdf:type owl:ObjectProperty ;
-                                                                   rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#ListProperty> ;
-                                                                   rdfs:domain <https://sparnatural.eu/demos/demo-edm/sparnatural-config/ProvidedCHO> ;
-                                                                   rdfs:range <https://sparnatural.eu/demos/demo-edm/sparnatural-config/Subject> ;
-                                                                   <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://purl.org/dc/elements/1.1/subject>" ;
-                                                                   <http://data.sparna.fr/ontologies/sparnatural-config-datasources#datasource> <http://data.sparna.fr/ontologies/sparnatural-config-datasources#list_skospreflabel_count> ;
-                                                                   rdfs:label "a pour sujet"@fr ,
-                                                                              "has subject"@en .
-
-
-#################################################################
-#    Classes
-#################################################################
-
-###  https://sparnatural.eu/demos/demo-edm/sparnatural-config#Adresse_catalogue
-:Adresse_catalogue rdf:type owl:Class ;
-                   rdfs:subClassOf rdfs:Literal ;
-                   rdfs:label "URL catalog"@en ,
-                              "URL catalogue"@fr .
-
-
-###  https://sparnatural.eu/demos/demo-edm/sparnatural-config#Agent
-:Agent rdf:type owl:Class ;
-       rdfs:subClassOf <http://data.sparna.fr/ontologies/sparnatural-config-core#SparnaturalClass> ;
-       <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://www.europeana.eu/schemas/edm/Agent>" ;
-       rdfs:label "Agent"@en ,
-                  "Agent"@fr .
-
-
-###  https://sparnatural.eu/demos/demo-edm/sparnatural-config#Centre_culturel
-:Centre_culturel rdf:type owl:Class ;
-                 rdfs:subClassOf <http://data.sparna.fr/ontologies/sparnatural-config-core#SparnaturalClass> ;
-                 <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://xmlns.com/foaf/0.1/#term_Organization>" ;
-                 rdfs:label "Centre culturel"@fr ,
-                            "Organization"@en .
-
-
-###  https://sparnatural.eu/demos/demo-edm/sparnatural-config#Date
-:Date rdf:type owl:Class ;
-      rdfs:subClassOf rdfs:Literal ;
-      rdfs:label "Date"@en ,
-                 "Date"@fr .
-
-
-###  https://sparnatural.eu/demos/demo-edm/sparnatural-config#Durée
-:Durée rdf:type owl:Class ;
-       rdfs:subClassOf rdfs:Literal ;
-       <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://www.europeana.eu/schemas/edm/TimeSpan>" ;
-       rdfs:label "Période"@fr ,
-                  "Time Span"@en .
-
-
-###  https://sparnatural.eu/demos/demo-edm/sparnatural-config#Format
-:Format rdf:type owl:Class ;
-        rdfs:subClassOf <http://data.sparna.fr/ontologies/sparnatural-config-core#SparnaturalClass> ;
-        rdfs:label "Format"@en ,
-                   "Format"@fr .
-
-
-###  https://sparnatural.eu/demos/demo-edm/sparnatural-config#Identifiant
-:Identifiant rdf:type owl:Class ;
-             rdfs:subClassOf rdfs:Literal ;
-             rdfs:label "Identifiant"@fr ,
-                        "Identifier"@en .
-
-
-###  https://sparnatural.eu/demos/demo-edm/sparnatural-config#Langue
-:Langue rdf:type owl:Class ;
-        rdfs:subClassOf <http://data.sparna.fr/ontologies/sparnatural-config-core#SparnaturalClass> ;
-        rdfs:label "Language"@en ,
-                   "Langue"@fr .
-
-
-###  https://sparnatural.eu/demos/demo-edm/sparnatural-config#Licence
-:Licence rdf:type owl:Class ;
-         rdfs:subClassOf <http://data.sparna.fr/ontologies/sparnatural-config-core#SparnaturalClass> ;
-         <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://creativecommons.org/ns#License>" ;
-         rdfs:label "Licence"@fr ,
-                    "License"@en .
-
-
-###  https://sparnatural.eu/demos/demo-edm/sparnatural-config#Lieu
-:Lieu rdf:type owl:Class ;
-      rdfs:subClassOf <http://data.sparna.fr/ontologies/sparnatural-config-core#SparnaturalClass> ;
-      <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://www.europeana.eu/schemas/edm/Place>" ;
-      rdfs:label "Localisation"@fr ,
-                 "Place"@en .
-
-
-###  https://sparnatural.eu/demos/demo-edm/sparnatural-config#Lot_Europeana
-:Lot_Europeana rdf:type owl:Class ;
-               rdfs:subClassOf <http://data.sparna.fr/ontologies/sparnatural-config-core#SparnaturalClass> ;
-               <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://www.europeana.eu/schemas/edm/EuropeanaAggregation>"@en ;
-               rdfs:label "Europeana Aggregation"@en ,
-                          "Vue Europeana"@fr .
-
-
-###  https://sparnatural.eu/demos/demo-edm/sparnatural-config#Lot_partenaire
-:Lot_partenaire rdf:type owl:Class ;
-                rdfs:subClassOf <http://data.sparna.fr/ontologies/sparnatural-config-core#SparnaturalClass> ;
-                <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://www.openarchives.org/ore/terms/Aggregation>" ;
-                rdfs:label "Aggregation"@en ,
-                           "Vue catalogue"@fr .
-
-
-###  https://sparnatural.eu/demos/demo-edm/sparnatural-config#Mention_de_droits
-:Mention_de_droits rdf:type owl:Class ;
-                   rdfs:subClassOf rdfs:Literal ;
-                   rdfs:label "Mention de droits"@fr ,
-                              "Rights"@en .
-
-
-###  https://sparnatural.eu/demos/demo-edm/sparnatural-config#Pays
-:Pays rdf:type owl:Class ;
-      rdfs:subClassOf <http://data.sparna.fr/ontologies/sparnatural-config-core#SparnaturalClass> ;
-      <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://www.iso.org/iso/english_country_names_and_code_elements>" ;
-      rdfs:label "Country"@en ,
-                 "Pays"@fr .
-
-
-###  https://sparnatural.eu/demos/demo-edm/sparnatural-config#Position
-:Position rdf:type owl:Class ;
-          rdfs:subClassOf rdfs:Literal ;
-          rdfs:label "Position"@en ,
-                     "Position"@fr .
-
-
-###  https://sparnatural.eu/demos/demo-edm/sparnatural-config#Spatial
-:Spatial rdf:type owl:Class ;
-         rdfs:subClassOf <http://data.sparna.fr/ontologies/sparnatural-config-core#SparnaturalClass> ;
-         rdfs:label "Aire géographique"@fr ,
-                    "Spatial (coverage)"@en .
-
-
-###  https://sparnatural.eu/demos/demo-edm/sparnatural-config#TYPE_EDM
-:TYPE_EDM rdf:type owl:Class ;
-          rdfs:subClassOf rdfs:Literal ;
-          rdfs:label "EDM TYPE"@en ,
-                     "TYPE EDM"@fr .
-
-
-###  https://sparnatural.eu/demos/demo-edm/sparnatural-config#Texte
-:Texte rdf:type owl:Class ;
-       rdfs:subClassOf rdfs:Literal ;
-       rdfs:label "Description"@en ,
-                  "Description"@fr .
-
-
-###  https://sparnatural.eu/demos/demo-edm/sparnatural-config#Titre
-:Titre rdf:type owl:Class ;
-       rdfs:subClassOf rdfs:Literal ;
-       rdfs:label "Title"@en ,
-                  "Titre"@fr .
-
-
-###  https://sparnatural.eu/demos/demo-edm/sparnatural-config#Type_DC
-:Type_DC rdf:type owl:Class ;
-         rdfs:subClassOf rdfs:Literal ;
-         rdfs:label "Type DC"@en ,
-                    "Type DC"@fr .
-
-
-###  https://sparnatural.eu/demos/demo-edm/sparnatural-config#Visuel
-:Visuel rdf:type owl:Class ;
-        rdfs:subClassOf <http://data.sparna.fr/ontologies/sparnatural-config-core#SparnaturalClass> ;
-        <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://www.europeana.eu/schemas/edm/WebResource>" ;
-        rdfs:label "Visuel"@fr ,
-                   "Web Resource"@en .
-
-
-###  https://sparnatural.eu/demos/demo-edm/sparnatural-config#Événement
-:Événement rdf:type owl:Class ;
-           rdfs:subClassOf <http://data.sparna.fr/ontologies/sparnatural-config-core#SparnaturalClass> ;
-           <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://www.europeana.eu/schemas/edm/Event>" ;
-           rdfs:label "Event"@en ,
-                      "Événement"@fr .
-
-
-###  https://sparnatural.eu/demos/demo-edm/sparnatural-config/ProvidedCHO
-<https://sparnatural.eu/demos/demo-edm/sparnatural-config/ProvidedCHO> rdf:type owl:Class ;
-                                                                       rdfs:subClassOf <http://data.sparna.fr/ontologies/sparnatural-config-core#SparnaturalClass> ;
-                                                                       <http://data.sparna.fr/ontologies/sparnatural-config-core#defaultLabelProperty> :titre ;
-                                                                       <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://www.europeana.eu/schemas/edm/ProvidedCHO>" ;
-                                                                       rdfs:label "Objet culturel"@fr ,
-                                                                                  "Provided CHO"@en .
-
-
-###  https://sparnatural.eu/demos/demo-edm/sparnatural-config/Subject
-<https://sparnatural.eu/demos/demo-edm/sparnatural-config/Subject> rdf:type owl:Class ;
-                                                                   rdfs:subClassOf <http://data.sparna.fr/ontologies/sparnatural-config-core#SparnaturalClass> ;
-                                                                   <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://www.w3.org/2004/02/skos/core#Concept>" ;
-                                                                   rdfs:label "Subject"@en ,
-                                                                              "Sujet"@fr .
-
-
-#################################################################
-#    Individuals
-#################################################################
-
-###  https://sparnatural.eu/demos/demo-edm/sparnatural-config#search_dctitle_contains
-:search_dctitle_contains rdf:type owl:NamedIndividual ,
-                                  <http://data.sparna.fr/ontologies/sparnatural-config-datasources#SparqlSearchDatasource> ;
-                         <http://data.sparna.fr/ontologies/sparnatural-config-datasources#queryTemplate> <http://data.sparna.fr/ontologies/sparnatural-config-datasources#query_search_label_contains> ;
-                         <http://data.sparna.fr/ontologies/sparnatural-config-datasources#labelProperty> <http://purl.org/dc/elements/1.1/title> .
-
-
-###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
+@prefix schema: <http://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosthes: <http://purl.org/iso25964/skos-thes#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+@prefix this: <http://sparnatural.eu/demos/demo-edm/sparnatural-config.ttl/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://sparnatural.eu/demos/demo-edm/sparnatural-config.ttl> a owl:Ontology;
+  dct:format <https://docs.google.com/spreadsheets/d/14Ak0N8fE8kFpmFA0cjApLDvE2BFiNa7ypa2Yk7v1pO4/export?format=xlsx>,
+    <https://xls2rdf.sparna.fr/rest/convert?url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F14Ak0N8fE8kFpmFA0cjApLDvE2BFiNa7ypa2Yk7v1pO4%2Fexport%3Fformat%3Dxlsx&noPostProcessings=true>;
+  dct:source <https://docs.google.com/spreadsheets/d/14Ak0N8fE8kFpmFA0cjApLDvE2BFiNa7ypa2Yk7v1pO4>;
+  owl:imports <http://data.sparna.fr/ontologies/sparnatural-config-core>, <http://data.sparna.fr/ontologies/sparnatural-config-datasources> .
+
+ore:Aggregation a owl:Class;
+  core:defaultLabelProperty this:aggredatedCHO_title;
+  core:faIcon "fa-regular fa-newspaper";
+  core:order 1;
+  core:tooltip "A package of resources about one cultural heritage object."@en, "Lot de ressources assemblées entre elles autour d'un même objet culturel."@fr;
+  rdfs:label "Aggregation"@en, "Vue catalogue"@fr;
+  rdfs:subClassOf core:SparnaturalClass .
+
+edm:ProvidedCHO a owl:Class;
+  core:defaultLabelProperty dc:title;
+  core:faIcon "fa-regular fa-palette";
+  core:order 4;
+  core:tooltip "Sujet principal du lot de données qui a été fourni à Europeana."@fr,
+    "The subject of the package of data that has been submitted to Europeana."@en;
+  rdfs:label "Objet culturel"@fr, "Provided CHO"@en;
+  rdfs:subClassOf core:SparnaturalClass .
+
+edm:WebResource a owl:Class;
+  core:faIcon "fa-regular fa-image";
+  core:order 5;
+  rdfs:label "Visuel"@fr, "Web Resource"@en;
+  rdfs:subClassOf core:NotInstantiatedClass, rdfs:Literal .
+
+this:CatalogURL a owl:Class;
+  core:faIcon "fa-regular fa-globe";
+  core:order 7;
+  rdfs:label "Catalog URL"@en, "URL Catalogue"@fr;
+  rdfs:subClassOf core:NotInstantiatedClass, rdfs:Literal .
+
+cc:License a owl:Class;
+  core:faIcon "fa-brands fa-creative-commons";
+  core:order 6;
+  rdfs:label "Licence"@fr, "License"@en;
+  rdfs:subClassOf core:NotInstantiatedClass .
+
+this:PlaceIRI a owl:Class;
+  core:faIcon "fa-regular fa-location-dot";
+  core:order "12.1"^^xsd:integer;
+  rdfs:label "Lieu (IRI)"@fr, "Place (IRI)"@en;
+  rdfs:subClassOf core:NotInstantiatedClass .
+
+this:DCTypeIRI a owl:Class;
+  core:faIcon "fa-regular fa-photo-film-music";
+  core:order "6.1"^^xsd:integer;
+  rdfs:label "DC Type (IRI)"@en, "Type DC (IRI)"@fr;
+  rdfs:subClassOf core:NotInstantiatedClass .
+
+skos:Concept a owl:Class;
+  core:faIcon "fa-regular fa-hashtag";
+  core:order 14;
+  rdfs:label "Subject"@en, "Sujet"@fr;
+  rdfs:subClassOf rdfs:Literal .
+
+edm:Agent a owl:Class;
+  core:faIcon "fa-regular fa-user-large";
+  core:order 3;
+  rdfs:label "Auteur"@fr, "Author"@en;
+  rdfs:subClassOf rdfs:Literal .
+
+edm:Place a owl:Class;
+  core:faIcon "fa-regular fa-location-dot";
+  core:order 12;
+  rdfs:label "Localisation"@fr, "Place"@en;
+  rdfs:subClassOf rdfs:Literal .
+
+edm:TimeSpan a owl:Class;
+  core:faIcon "fa-regular fa-hourglass";
+  core:order 11;
+  rdfs:label "Période"@fr, "Time Span"@en;
+  rdfs:subClassOf rdfs:Literal .
+
+foaf:Organization a owl:Class;
+  core:faIcon "fa-regular fa-landmark";
+  core:order 3;
+  rdfs:label "Centre culturel"@fr, "Organization"@en;
+  rdfs:subClassOf rdfs:Literal .
+
+this:Aggregator a owl:Class;
+  core:faIcon "fa-regular fa-diagram-project";
+  core:order 2;
+  rdfs:label "Aggregator"@en, "Agrégateur"@fr;
+  rdfs:subClassOf rdfs:Literal .
+
+this:Date a owl:Class;
+  core:faIcon "fa-regular fa-calendar-days";
+  core:order 4;
+  rdfs:label "Date"@en, "Date"@fr;
+  rdfs:subClassOf rdfs:Literal .
+
+this:Description a owl:Class;
+  core:faIcon "fa-sharp fa-regular fa-circle-info";
+  core:order 13;
+  rdfs:label "Description"@en, "Notes"@fr;
+  rdfs:subClassOf rdfs:Literal .
+
+this:Format a owl:Class;
+  core:faIcon "fa-sharp fa-regular fa-expand";
+  core:order 8;
+  rdfs:label "Format"@en, "Format"@fr;
+  rdfs:subClassOf rdfs:Literal .
+
+this:Identifier a owl:Class;
+  core:faIcon "fa-regular fa-barcode";
+  core:order 15;
+  rdfs:label "Identifiant"@fr, "Identifier"@en;
+  rdfs:subClassOf rdfs:Literal .
+
+this:Language a owl:Class;
+  core:faIcon "fa-regular fa-language";
+  core:order 5;
+  rdfs:label "Language"@en, "Langue"@fr;
+  rdfs:subClassOf rdfs:Literal .
+
+this:Title a owl:Class;
+  core:faIcon "fa-regular fa-angles-left";
+  core:order 2;
+  rdfs:label "Title"@en, "Titre"@fr;
+  rdfs:subClassOf rdfs:Literal .
+
+this:DCType a owl:Class;
+  core:faIcon "fa-regular fa-photo-film-music";
+  core:order 6;
+  rdfs:label "DC Type"@en, "Type DC"@fr;
+  rdfs:subClassOf rdfs:Literal .
+
+this:Provenance a owl:Class;
+  core:faIcon "fa-regular fa-hand-holding";
+  core:order 10;
+  rdfs:label "Donateur"@fr, "Provenance"@en;
+  rdfs:subClassOf rdfs:Literal .
+
+this:EDMType a owl:Class;
+  core:faIcon "fa-regular fa-photo-film-music";
+  core:order 7;
+  rdfs:label "EDM Type"@en, "Type EDM"@fr;
+  rdfs:subClassOf rdfs:Literal .
+
+this:Extent a owl:Class;
+  core:faIcon "fa-regular fa-ruler-horizontal";
+  core:order 9;
+  rdfs:label "Dimensions"@fr, "Extent"@en;
+  rdfs:subClassOf rdfs:Literal .
+
+edm:dataProvider a owl:ObjectProperty;
+  rdfs:domain ore:Aggregation;
+  rdfs:label "data provider"@en, "est fournie par"@fr;
+  rdfs:range foaf:Organization;
+  rdfs:subPropertyOf core:LiteralListProperty .
+
+edm:isShownAt a owl:ObjectProperty;
+  rdfs:domain ore:Aggregation;
+  rdfs:label "est accessible à l'adresse"@fr, "is shown at"@en;
+  rdfs:range this:CatalogURL;
+  rdfs:subPropertyOf core:NonSelectableProperty .
+
+edm:isShownBy a owl:ObjectProperty;
+  core:enableOptional true;
+  rdfs:domain ore:Aggregation;
+  rdfs:label "contient"@fr, "is shown by"@en;
+  rdfs:range edm:WebResource;
+  rdfs:subPropertyOf core:NonSelectableProperty .
+
+edm:provider a owl:ObjectProperty;
+  rdfs:domain ore:Aggregation;
+  rdfs:label "est issue de"@fr, "provider"@en;
+  rdfs:range this:Aggregator;
+  rdfs:subPropertyOf core:LiteralListProperty .
+
+edm:rights a owl:ObjectProperty;
+  rdfs:domain ore:Aggregation;
+  rdfs:label "est protégée par"@fr, "rights"@en;
+  rdfs:range cc:License;
+  rdfs:subPropertyOf core:ListProperty .
+
+edm:aggregatedCHO a owl:ObjectProperty;
+  rdfs:domain ore:Aggregation;
+  rdfs:label "aggregated CHO"@en, "concerne"@fr;
+  rdfs:range edm:ProvidedCHO;
+  rdfs:subPropertyOf core:LiteralListProperty .
+
+dc:creator a owl:ObjectProperty;
+  core:enableOptional true;
+  rdfs:domain edm:ProvidedCHO;
+  rdfs:label "creator"@en, "créé par"@fr;
+  rdfs:range edm:Agent;
+  rdfs:subPropertyOf core:LiteralListProperty .
+
+dc:description a owl:ObjectProperty;
+  core:enableOptional true;
+  rdfs:domain edm:ProvidedCHO;
+  rdfs:label "a pour description"@fr, "description"@en;
+  rdfs:range this:Description;
+  rdfs:subPropertyOf core:SearchProperty .
+
+dc:format a owl:ObjectProperty;
+  core:enableOptional true;
+  rdfs:domain edm:ProvidedCHO;
+  rdfs:label "est au format"@fr, "format"@en;
+  rdfs:range this:Format;
+  rdfs:subPropertyOf core:SearchProperty .
+
+dc:identifier a owl:ObjectProperty;
+  rdfs:domain edm:ProvidedCHO;
+  rdfs:label "est référencé sous"@fr, "identifier"@en;
+  rdfs:range this:Identifier;
+  rdfs:subPropertyOf core:StringEqualsProperty .
+
+dc:language a owl:ObjectProperty;
+  rdfs:domain edm:ProvidedCHO;
+  rdfs:label "est disponible en"@fr, "language"@en;
+  rdfs:range this:Language;
+  rdfs:subPropertyOf core:LiteralListProperty .
+
+dc:subject a owl:ObjectProperty;
+  core:enableOptional true;
+  rdfs:domain edm:ProvidedCHO;
+  rdfs:label "a pour sujet"@fr, "subject"@en;
+  rdfs:range skos:Concept;
+  rdfs:subPropertyOf core:SearchProperty .
+
+dc:title a owl:ObjectProperty;
+  core:isMultilingual true;
+  rdfs:domain edm:ProvidedCHO;
+  rdfs:label "a pour titre"@fr, "title"@en;
+  rdfs:range this:Title;
+  rdfs:subPropertyOf core:SearchProperty .
+
+dc:type a owl:ObjectProperty;
+  rdfs:domain edm:ProvidedCHO;
+  rdfs:label "est de type DC"@fr, "type"@en;
+  rdfs:range this:DCType;
+  rdfs:subPropertyOf core:LiteralListProperty .
+
+dct:created a owl:ObjectProperty;
+  core:enableOptional true;
+  rdfs:domain edm:ProvidedCHO;
+  rdfs:label "created"@en, "créé en"@fr;
+  rdfs:range this:Date;
+  rdfs:subPropertyOf core:LiteralListProperty .
+
+dct:extent a owl:ObjectProperty;
+  core:enableOptional true;
+  rdfs:domain edm:ProvidedCHO;
+  rdfs:label "a pour étendue"@fr, "extent"@en;
+  rdfs:range this:Extent;
+  rdfs:subPropertyOf core:SearchProperty .
+
+dct:provenance a owl:ObjectProperty;
+  core:enableOptional true;
+  rdfs:domain edm:ProvidedCHO;
+  rdfs:label "a pour origine"@fr, "provenance"@en;
+  rdfs:range this:Provenance;
+  rdfs:subPropertyOf core:SearchProperty .
+
+dct:spatial a owl:ObjectProperty;
+  core:enableOptional true;
+  rdfs:domain edm:ProvidedCHO;
+  rdfs:label "concerne"@fr, "spatial"@en;
+  rdfs:range edm:Place;
+  rdfs:subPropertyOf core:LiteralListProperty .
+
+edm:type a owl:ObjectProperty;
+  rdfs:domain edm:ProvidedCHO;
+  rdfs:label "est de type EDM"@fr, "type"@en;
+  rdfs:range this:EDMType;
+  rdfs:subPropertyOf core:LiteralListProperty .
+
+this:aggredatedCHO_title a owl:ObjectProperty;
+  core:sparqlString "<http://www.europeana.eu/schemas/edm/aggregatedCHO>/<http://purl.org/dc/elements/1.1/title>";
+  rdfs:range this:Title;
+  rdfs:subPropertyOf core:SearchProperty .
+
+this:aggredatedIn a owl:ObjectProperty;
+  core:sparqlString "^<http://www.europeana.eu/schemas/edm/aggregatedCHO>";
+  rdfs:domain edm:ProvidedCHO;
+  rdfs:label "aggregated in"@en, "présenté dans"@fr;
+  rdfs:range ore:Aggregation;
+  rdfs:subPropertyOf core:NonSelectableProperty .
+
+this:spatialIRI a owl:ObjectProperty;
+  core:sparqlString "<http://purl.org/dc/terms/spatial>";
+  datasources:datasource datasources:list_URI_count;
+  rdfs:domain edm:ProvidedCHO;
+  rdfs:label "concerne"@fr, "spatial (IRI)"@en;
+  rdfs:range this:PlaceIRI;
+  rdfs:subPropertyOf core:ListProperty .
+
+this:hasdcTypeIRI a owl:ObjectProperty;
+  core:sparqlString "<http://purl.org/dc/elements/1.1/type>";
+  datasources:datasource datasources:list_URI_count;
+  rdfs:domain edm:ProvidedCHO;
+  rdfs:label "dc type (IRI)"@en, "est de type DC"@fr;
+  rdfs:range this:DCTypeIRI;
+  rdfs:subPropertyOf core:ListProperty .
+
+this:list_skosprefLabel_alpha_with_count_langfr a datasources:SparqlDatasource;
+  datasources:labelProperty skos:prefLabel;
+  datasources:queryTemplate this:query_list_label_alpha_with_count_langfr .
+
+this:list_skosprefLabel_count_langfr a datasources:SparqlDatasource;
+  datasources:labelProperty skos:prefLabel;
+  datasources:queryTemplate this:query_list_label_count_langfr .
+
+this:list_rdfslabel_alpha_with_count_langfr a datasources:SparqlDatasource;
+  datasources:labelProperty rdfs:label;
+  datasources:queryTemplate this:query_list_label_alpha_with_count_langfr .
+
+this:list_skosprefLabel_alpha_langfr a datasources:SparqlDatasource;
+  datasources:labelProperty skos:prefLabel;
+  datasources:queryTemplate this:query_list_label_alpha_langfr .
+
+this:search_skospreflabel_contains_langfr a datasources:SparqlDatasource;
+  datasources:labelProperty skos:prefLabel;
+  datasources:queryTemplate this:query_search_label_contains_langfr .
+
+this:search_rdfslabel_contains_langfr a datasources:SparqlDatasource;
+  datasources:labelProperty rdfs:label;
+  datasources:queryTemplate this:query_search_label_contains_langfr .
+
+this:query_list_label_alpha_with_count_langfr a "config-datatsources:SPARQLQuery";
+  datasources:queryString """SELECT DISTINCT ?uri ?count (CONCAT(STR(?theLabel), ' (', STR(?count), ')') AS ?label)
+WHERE {
+{
+ SELECT DISTINCT ?uri (COUNT(?domain) AS ?count)
+ WHERE {
+ ?domain a $domain .
+ ?domain $property ?uri .
+ FILTER(isIRI(?uri))
+ # Note how the range criteria is not used in this query
+ }
+ GROUP BY ?uri
+}
+OPTIONAL { ?uri $labelPath ?theLabelLang . FILTER(lang(?theLabelLang) = $lang) }
+OPTIONAL { ?uri $labelPath ?theLabelNone . FILTER(lang(?theLabelNone) = \"\") }
+OPTIONAL { ?uri $labelPath ?theLabelFr . FILTER(lang(?theLabelFr) = \"fr\") }
+BIND(COALESCE(?theLabelLang, ?theLabelNone, ?theLabelFr, STR(?uri)) AS ?theLabel)
+}
+ORDER BY UCASE(?label)
+LIMIT 500""" .
+
+this:query_list_label_count_langfr a "config-datatsources:SPARQLQuery";
+  datasources:queryString """SELECT ?uri ?count (CONCAT(STR(?theLabel), ' (', STR(?count), ')') AS ?label)
+WHERE {
+{
+ SELECT DISTINCT ?uri (COUNT(?domain) AS ?count)
+ WHERE {
+ ?domain a $domain .
+ ?domain $property ?uri .
+ FILTER(isIRI(?uri))
+ # Note how the range criteria is not used in this query
+ }
+ GROUP BY ?uri
+}
+OPTIONAL { ?uri $labelPath ?theLabelLang . FILTER(lang(?theLabelLang) = $lang) }
+OPTIONAL { ?uri $labelPath ?theLabelNone . FILTER(lang(?theLabelNone) = \"\") }
+OPTIONAL { ?uri $labelPath ?theLabelFr . FILTER(lang(?theLabelFr) = \"fr\") }
+BIND(COALESCE(?theLabelLang, ?theLabelNone, ?theLabelFr) AS ?theLabel)
+}
+ORDER BY DESC(?count) UCASE(?label)
+LIMIT 500""" .
+
+this:query_list_label_alpha_langfr a "config-datatsources:SPARQLQuery";
+  datasources:queryString """SELECT DISTINCT ?uri ?label
+WHERE {
+ ?domain a $domain .
+ ?domain $property ?uri .
+ # Note how the range criteria is not used in this query
+ FILTER(isIRI(?uri))
+
+ OPTIONAL { ?uri $labelPath ?theLabelLang . FILTER(lang(?theLabelLang) = $lang) }
+ OPTIONAL { ?uri $labelPath ?theLabelNone . FILTER(lang(?theLabelNone) = \"\") }
+ OPTIONAL { ?uri $labelPath ?theLabelFr . FILTER(lang(?theLabelFr) = \"fr\") }
+ BIND(COALESCE(?theLabelLang, ?theLabelNone, ?theLabelFr) AS ?label)
+}
+ORDER BY UCASE(?label)
+LIMIT 500""" .
+
+this:query_search_label_contains_langfr a "config-datatsources:SPARQLQuery";
+  datasources:queryString """SELECT DISTINCT ?uri ?label
+WHERE {
+ ?domain a $domain .
+ ?domain $property ?uri .
+ ?uri a $range .
+ ?uri $labelPath ?label .
+ FILTER(isIRI(?uri))
+ FILTER(CONTAINS(LCASE(STR(?label)), LCASE(\"$key\"))) 
+ FILTER(lang(?label) = '' || lang(?label) = \"fr\")
+} 
+ORDER BY UCASE(?label)
+LIMIT 50""" .

@@ -111,6 +111,7 @@
                   <option value="none" data-i18n="example.placeholder" selected></option>
                   <option value="example.1" data-i18n="example.1.title"></option>
                   <option value="example.2" data-i18n="example.2.title"></option>
+                  <option value="example.3" data-i18n="example.3.title"></option>
                 </select>
               </div>
             </form>
@@ -119,24 +120,24 @@
           <div class="col-md-6">
             <div style="text-align:right;">
               <span style="font-size:90%; font-style: italic;"> 
-                <span data-i18n="endpoint.querying"></span> <a id="endpoint" href="...">...</a> 
+                <span data-i18n="endpoint.querying"></span> <a id="endpoint" href="http://graphdb.sparna.fr/repositories/europeana-poc">http://graphdb.sparna.fr/repositories/europeana-poc</a> 
               </span>
             </div>
           </div>
 
         </div>
 
-        <div class="row" style="font-style: italic; font-size:0.9em;">
+        <!--<div class="row" style="font-style: italic; font-size:0.9em;">
           <a href="#" id="tutorial"><i id="sparql-toggle-icon" class="fad fa-question fa-fw"></i>&nbsp; <span data-i18n="tutorial"></a>
-        </div>
+        </div> -->
 
         <!-- This is where Sparnatural is inserted -->
         <div class="row">
 
           <spar-natural 
             src="sparnatural-config.ttl"
-            endpoint="http://graphdb.sparna.fr/repositories/sparnatural-demo-edm"
-            lang="fr"
+            endpoint="http://graphdb.sparna.fr/repositories/europeana-poc"
+            lang="en"
             distinct="true"
             limit="1000"
             debug="true"
@@ -319,7 +320,7 @@
         if(results == null) { return null; }
         return results[1] || 0;
       }
-      var lang = ($.urlParam('lang') != null)?$.urlParam('lang'):'fr';
+      var lang = ($.urlParam('lang') != null)?$.urlParam('lang'):'en';
 
       // set the locale
       $.i18n( { locale: lang } );  
@@ -342,8 +343,9 @@
             'import.modal.title': 'Query as JSON',
             'import.modal.import': 'Import',
             'example.placeholder': 'Load example query...',
-            'example.1.title': 'Toutes les Oeuvres exposées dans un musée français, avec leur nom et description',
-            'example.2.title': 'Tous les peintres impressionnistes avec leur date de naissance, triés par date'
+            'example.1.title': 'All Aggregations under Public Domain Mark License 1.0',
+            'example.2.title': 'All « metal » - Format Objects with a mention of a Provenance « amsterdam »',
+            'example.3.title': 'All Objects with a « diamant » Format possibly having a View, with creation Date'
           },
           'fr': {
             'page.title': 'Sparnatural EDM',
@@ -363,16 +365,17 @@
             'import.modal.title': 'Charger une requête en JSON',
             'import.modal.import': 'Charger',
             'example.placeholder': 'Charger une requête d\'exemple...',
-            'example.1.title': 'Toutes les Oeuvres exposées dans un musée français, avec leur nom et description',
-            'example.2.title': 'Tous les peintres impressionnistes avec leur date de naissance, triés par date'
+            'example.1.title': 'Toutes les Vues catalogue sous Licence Marque du Domaine Public 1.0',
+            'example.2.title': 'Tous les Objets Format « métal » avec Provenance donation « amsterdam »',
+            'example.3.title': 'Tous les Objets Format « diamant » pouvant avoir un Visuel avec Date de création'
           }
       } );  
       $('body').i18n();
 
       const sparnatural = document.querySelector("spar-natural");
 
-      if(lang == "en") { 
-        sparnatural.setAttribute("lang", "en");
+      if(lang == "fr") { 
+        // sparnatural.setAttribute("lang", "fr");
       }
 
       // prints the endpoint
@@ -499,10 +502,12 @@
         }
       }
 
+      /*
       document.getElementById('tutorial').onclick = function() {
         sparnatural.clear();
         initTour();
       }
+      */
 
     </script>
   </script>

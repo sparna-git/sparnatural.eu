@@ -3,76 +3,51 @@ var sampleQueries = {
 {
   "distinct": true,
   "variables": [
-    "?this",
-    "?Museum_1",
-    "?Text_4"
+    "Aggregation_1",
+    "License_2"
   ],
-  "defaultLang": "fr",
   "order": null,
   "branches": [
     {
       "line": {
-        "s": "?this",
-        "p": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#displayedAt",
-        "o": "?Museum_1",
-        "sType": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#Artwork",
-        "oType": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#Museum",
-        "values": []
-      },
-      "children": [
-        {
-          "line": {
-            "s": "?Museum_1",
-            "p": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#country",
-            "o": "?Country_2",
-            "sType": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#Museum",
-            "oType": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#Country",
-            "values": [
-              {
-                "label": "France (222)",
-                "uri": "http://fr.dbpedia.org/resource/France"
-              }
-            ]
-          },
-          "children": []
-        }
-      ]
-    },
-    {
-      "line": {
-        "s": "?this",
-        "p": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#description",
-        "o": "?Text_4",
-        "sType": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#Artwork",
-        "oType": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#Text",
-        "values": []
+        "s": "?Aggregation_1",
+        "p": "http://www.europeana.eu/schemas/edm/rights",
+        "o": "?License_2",
+        "sType": "http://www.openarchives.org/ore/terms/Aggregation",
+        "oType": "http://creativecommons.org/ns#License",
+        "values": [
+          {
+            "label": "http://creativecommons.org/publicdomain/mark/1.0/",
+            "uri": "http://creativecommons.org/publicdomain/mark/1.0/"
+          }
+        ]
       },
       "children": []
     }
   ]
-},
+}
+,
 	"example.2" :
 {
-  "distinct": true,
+    "distinct": true,
   "variables": [
-    "?Date_3",
-    "?Date_4",
-    "?this"
+    "ProvidedCHO_1",
+    "Provenance_2",
+    "Format_4"
   ],
-  "defaultLang": "fr",
   "order": null,
   "branches": [
     {
       "line": {
-        "s": "?this",
-        "p": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#movement",
-        "o": "?Movement_1",
-        "sType": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#Person",
-        "oType": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#Movement",
+        "s": "?ProvidedCHO_1",
+        "p": "http://purl.org/dc/terms/provenance",
+        "o": "?Provenance_2",
+        "sType": "http://www.europeana.eu/schemas/edm/ProvidedCHO",
+        "oType": "http://sparnatural.eu/demos/demo-edm/sparnatural-config.ttl/Provenance",
         "values": [
           {
-            "label": "Impressionnisme (88)",
-            "uri": "http://fr.dbpedia.org/resource/Impressionnisme"
+            "label": "amsterdam",
+            "regex": "amsterdam"
           }
         ]
       },
@@ -80,27 +55,86 @@ var sampleQueries = {
     },
     {
       "line": {
-        "s": "?this",
-        "p": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#birthDate",
-        "o": "?Date_3",
-        "sType": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#Person",
-        "oType": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#Date",
-        "values": []
+        "s": "?ProvidedCHO_1",
+        "p": "http://purl.org/dc/elements/1.1/format",
+        "o": "?Format_4",
+        "sType": "http://www.europeana.eu/schemas/edm/ProvidedCHO",
+        "oType": "http://sparnatural.eu/demos/demo-edm/sparnatural-config.ttl/Format",
+        "values": [
+          {
+            "label": "metal",
+            "regex": "metal"
+          }
+        ]
+      },
+      "children": []
+}
+  ]
+},
+
+  "example.3" :
+{
+
+  "distinct": true,
+  "variables": [
+    "ProvidedCHO_1",
+    "Format_2",
+    "Date_8",
+    "WebResource_6"
+  ],
+  "order": null,
+  "branches": [
+    {
+      "line": {
+        "s": "?ProvidedCHO_1",
+        "p": "http://purl.org/dc/elements/1.1/format",
+        "o": "?Format_2",
+        "sType": "http://www.europeana.eu/schemas/edm/ProvidedCHO",
+        "oType": "http://sparnatural.eu/demos/demo-edm/sparnatural-config.ttl/Format",
+        "values": [
+          {
+            "label": "diamant",
+            "regex": "diamant"
+          }
+        ]
       },
       "children": []
     },
     {
       "line": {
-        "s": "?this",
-        "p": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#deathYear",
-        "o": "?Date_4",
-        "sType": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#Person",
-        "oType": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#Date",
+        "s": "?ProvidedCHO_1",
+        "p": "http://sparnatural.eu/demos/demo-edm/sparnatural-config.ttl/aggredatedIn",
+        "o": "?Aggregation_4",
+        "sType": "http://www.europeana.eu/schemas/edm/ProvidedCHO",
+        "oType": "http://www.openarchives.org/ore/terms/Aggregation",
         "values": []
       },
-      "children": [],
-      "optional": true
-    }
+      "children": [
+        {
+          "line": {
+            "s": "?Aggregation_4",
+            "p": "http://www.europeana.eu/schemas/edm/isShownBy",
+            "o": "?WebResource_6",
+            "sType": "http://www.openarchives.org/ore/terms/Aggregation",
+            "oType": "http://www.europeana.eu/schemas/edm/WebResource",
+            "values": []
+          },
+          "children": [],
+          "optional": true
+        }
+      ]
+    },
+    {
+      "line": {
+        "s": "?ProvidedCHO_1",
+        "p": "http://purl.org/dc/terms/created",
+        "o": "?Date_8",
+        "sType": "http://www.europeana.eu/schemas/edm/ProvidedCHO",
+        "oType": "http://sparnatural.eu/demos/demo-edm/sparnatural-config.ttl/Date",
+        "values": []
+      },
+      "children": []
+          }
   ]
 }
-};
+}
