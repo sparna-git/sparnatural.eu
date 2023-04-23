@@ -440,6 +440,7 @@
       delete Yasr.plugins['response'];
       const yasr = new Yasr(document.getElementById("yasr"), {
         pluginOrder: ["LabelledUriTable", "Timeline"],
+        defaultPlugin: "LabelledUriTable",
         // disable persistency
         persistencyExpire: 0,
         maxPersistentResponseSize: 0

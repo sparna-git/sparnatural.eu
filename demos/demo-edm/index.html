@@ -135,7 +135,7 @@
         <div class="row">
 
           <spar-natural 
-            src="sparnatural-config.ttl"
+            src="test-demo.ttl"
             endpoint="https://proxy.sparnatural.eu/sparql-proxy/sparql?endpoint=http%3A%2F%2Fgraphdb.sparna.fr%2Frepositories%2Feuropeana-poc"
             lang="en"
             distinct="true"
@@ -440,6 +440,7 @@
       delete Yasr.plugins['response'];
       const yasr = new Yasr(document.getElementById("yasr"), {
         pluginOrder: ["LabelledUriTable", "Timeline"],
+        defaultPlugin: "LabelledUriTable",
         // disable persistency
         persistencyExpire: 0,
         maxPersistentResponseSize: 0
