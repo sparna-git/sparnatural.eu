@@ -3,18 +3,16 @@ var sampleQueries = {
 {
   "distinct": true,
   "variables": [
-    "?this",
-    "?Museum_1",
-    "?Text_4"
+    "Artwork_1",
+    "Text_6"
   ],
-  "defaultLang": "fr",
   "order": null,
   "branches": [
     {
       "line": {
-        "s": "?this",
+        "s": "?Artwork_1",
         "p": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#displayedAt",
-        "o": "?Museum_1",
+        "o": "?Museum_2",
         "sType": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#Artwork",
         "oType": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#Museum",
         "values": []
@@ -22,15 +20,18 @@ var sampleQueries = {
       "children": [
         {
           "line": {
-            "s": "?Museum_1",
+            "s": "?Museum_2",
             "p": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#country",
-            "o": "?Country_2",
+            "o": "?Country_4",
             "sType": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#Museum",
             "oType": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#Country",
             "values": [
               {
-                "label": "France (222)",
-                "uri": "http://fr.dbpedia.org/resource/France"
+                "label": "France (3987)",
+                "rdfTerm": {
+                  "type": "uri",
+                  "value": "http://fr.dbpedia.org/resource/France"
+                }
               }
             ]
           },
@@ -40,9 +41,9 @@ var sampleQueries = {
     },
     {
       "line": {
-        "s": "?this",
+        "s": "?Artwork_1",
         "p": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#description",
-        "o": "?Text_4",
+        "o": "?Text_6",
         "sType": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#Artwork",
         "oType": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#Text",
         "values": []
@@ -55,24 +56,26 @@ var sampleQueries = {
 {
   "distinct": true,
   "variables": [
-    "?Date_3",
-    "?Date_4",
-    "?this"
+    "Person_1",
+    "Date_4",
+    "Date_6"
   ],
-  "defaultLang": "fr",
   "order": null,
   "branches": [
     {
       "line": {
-        "s": "?this",
+        "s": "?Person_1",
         "p": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#movement",
-        "o": "?Movement_1",
+        "o": "?Movement_2",
         "sType": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#Person",
         "oType": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#Movement",
         "values": [
           {
-            "label": "Impressionnisme (88)",
-            "uri": "http://fr.dbpedia.org/resource/Impressionnisme"
+            "label": "Impressionnisme (820)",
+            "rdfTerm": {
+              "type": "uri",
+              "value": "http://fr.dbpedia.org/resource/Impressionnisme"
+            }
           }
         ]
       },
@@ -80,9 +83,9 @@ var sampleQueries = {
     },
     {
       "line": {
-        "s": "?this",
+        "s": "?Person_1",
         "p": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#birthDate",
-        "o": "?Date_3",
+        "o": "?Date_4",
         "sType": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#Person",
         "oType": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#Date",
         "values": []
@@ -91,9 +94,9 @@ var sampleQueries = {
     },
     {
       "line": {
-        "s": "?this",
+        "s": "?Person_1",
         "p": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#deathYear",
-        "o": "?Date_4",
+        "o": "?Date_6",
         "sType": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#Person",
         "oType": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#Date",
         "values": []

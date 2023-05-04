@@ -1,0 +1,74 @@
+@prefix : <http://www.semanticweb.org/thomas/ontologies/2023/3/untitled-ontology-73#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/thomas/ontologies/2023/3/untitled-ontology-73> .
+
+<http://www.semanticweb.org/thomas/ontologies/2023/3/untitled-ontology-73> rdf:type owl:Ontology ;
+                                                                            owl:imports <http://data.sparna.fr/ontologies/sparnatural-config-core> ,
+                                                                                        <http://data.sparna.fr/ontologies/sparnatural-config-datasources> .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/thomas/ontologies/2023/3/untitled-ontology-73/axisHasPart
+<http://www.semanticweb.org/thomas/ontologies/2023/3/untitled-ontology-73/axisHasPart> rdf:type owl:ObjectProperty ;
+                                                                                       rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#ListProperty> ;
+                                                                                       rdfs:domain <http://www.semanticweb.org/thomas/ontologies/2023/3/untitled-ontology-73/LoincAxis> ;
+                                                                                       rdfs:range <http://data.example.nl/loinc/ontology#LoincPart> ;
+                                                                                       <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://data.example.nl/loinc/ontology#hasPart>"@en ;
+                                                                                       <http://data.sparna.fr/ontologies/sparnatural-config-datasources#datasource> <http://data.sparna.fr/ontologies/sparnatural-config-datasources#list_rdfslabel_alpha> ;
+                                                                                       rdfs:label "has part"@en .
+
+
+###  http://www.semanticweb.org/thomas/ontologies/2023/3/untitled-ontology-73/partIsPartOfAxis
+<http://www.semanticweb.org/thomas/ontologies/2023/3/untitled-ontology-73/partIsPartOfAxis> rdf:type owl:ObjectProperty ;
+                                                                                            rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#ListProperty> ;
+                                                                                            rdfs:domain <http://data.example.nl/loinc/ontology#LoincPart> ;
+                                                                                            rdfs:range <http://www.semanticweb.org/thomas/ontologies/2023/3/untitled-ontology-73/LoincAxis> ;
+                                                                                            <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "^<http://data.example.nl/loinc/ontology#hasPart>"@en ;
+                                                                                            rdfs:label "is part of"@en .
+
+
+###  http://www.semanticweb.org/thomas/ontologies/2023/3/untitled-ontology-73/partLabel
+<http://www.semanticweb.org/thomas/ontologies/2023/3/untitled-ontology-73/partLabel> rdf:type owl:ObjectProperty ;
+                                                                                     rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#SearchProperty> ;
+                                                                                     rdfs:range <http://www.semanticweb.org/thomas/ontologies/2023/3/untitled-ontology-73/Text> ;
+                                                                                     <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://w3.org/rdf-schema#label>" ;
+                                                                                     rdfs:label "part label"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://data.example.nl/loinc/ontology#LoincPart
+<http://data.example.nl/loinc/ontology#LoincPart> rdf:type owl:Class ;
+                                                  rdfs:subClassOf <http://data.sparna.fr/ontologies/sparnatural-config-core#SparnaturalClass> ;
+                                                  <http://data.sparna.fr/ontologies/sparnatural-config-core#defaultLabelProperty> <http://www.semanticweb.org/thomas/ontologies/2023/3/untitled-ontology-73/partLabel> ;
+                                                  rdfs:label "LOINC part"@en .
+
+
+###  http://data.example.nl/loinc/ontology#LoincTimeSystem
+<http://data.example.nl/loinc/ontology#LoincTimeSystem> rdf:type owl:Class ;
+                                                        rdfs:subClassOf <http://www.semanticweb.org/thomas/ontologies/2023/3/untitled-ontology-73/LoincAxis> ;
+                                                        <http://data.sparna.fr/ontologies/sparnatural-config-core#faIcon> "fad fa-user" ;
+                                                        rdfs:label "LOINC Time System"@en .
+
+
+###  http://www.semanticweb.org/thomas/ontologies/2023/3/untitled-ontology-73/LoincAxis
+<http://www.semanticweb.org/thomas/ontologies/2023/3/untitled-ontology-73/LoincAxis> rdf:type owl:Class ;
+                                                                                     rdfs:subClassOf <http://data.sparna.fr/ontologies/sparnatural-config-core#SparnaturalClass> ;
+                                                                                     rdfs:label "Axis"@en .
+
+
+###  http://www.semanticweb.org/thomas/ontologies/2023/3/untitled-ontology-73/Text
+<http://www.semanticweb.org/thomas/ontologies/2023/3/untitled-ontology-73/Text> rdf:type owl:Class ;
+                                                                                rdfs:subClassOf rdfs:Literal ;
+                                                                                rdfs:label "Text"@en .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

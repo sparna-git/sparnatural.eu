@@ -14,20 +14,6 @@
 #    Object Properties
 #################################################################
 
-###  http://data.sparna.fr/ontologies/sparnatural-demo-dbpedia#classifiedIn
-:classifiedIn rdf:type owl:ObjectProperty ;
-              rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#TreeProperty> ;
-              rdfs:domain :Person ;
-              rdfs:range :Category ;
-              <http://data.sparna.fr/ontologies/sparnatural-config-core#enableNegation> true;
-              <http://data.sparna.fr/ontologies/sparnatural-config-core#enableOptional> true;
-              <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://purl.org/dc/terms/subject>" ;
-              <http://data.sparna.fr/ontologies/sparnatural-config-datasources#treeChildrenDatasource> <http://data.sparna.fr/ontologies/sparnatural-config-datasources#tree_children_skosnarrower> ;
-              <http://data.sparna.fr/ontologies/sparnatural-config-datasources#treeRootsDatasource> :tree_root_frenchPainters ;
-              rdfs:label "category"@en ,
-                         "catégorie"@fr .
-
-
 ###  http://ontologies.sparna.fr/sparnatural-demo-dbpedia#author
 :author rdf:type owl:ObjectProperty ;
         rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#AutocompleteProperty> ;
@@ -70,13 +56,27 @@
         rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#ListProperty> ;
         rdfs:domain :Person ;
         rdfs:range :Country ;
-        <http://data.sparna.fr/ontologies/sparnatural-config-core#enableNegation> true;
+        <http://data.sparna.fr/ontologies/sparnatural-config-core#enableNegation> "true"^^xsd:boolean ;
         <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://dbpedia.org/ontology/birthPlace>/<http://dbpedia.org/ontology/country>" ;
         <http://data.sparna.fr/ontologies/sparnatural-config-core#tooltip> "Le pays de naissance de la personne.<br/><br/><em>A noter : dans DBPedia, les personnes sont liées à leur ville de naissance, et la ville est reliée au pays.</em>"@fr ,
                                                                            "The birth country of the person.<br/><br/><em>Note : in DBPedia, persons are linked to the city in which they were born, and the city is linked to the country.</em>"@en ;
         <http://data.sparna.fr/ontologies/sparnatural-config-datasources#datasource> <http://data.sparna.fr/ontologies/sparnatural-config-datasources#list_rdfslabel_alpha_with_count> ;
         rdfs:label "born in"@en ,
                    "né à / né en"@fr .
+
+
+###  http://ontologies.sparna.fr/sparnatural-demo-dbpedia#classifiedIn
+:classifiedIn rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#TreeProperty> ;
+              rdfs:domain :Person ;
+              rdfs:range :Category ;
+              <http://data.sparna.fr/ontologies/sparnatural-config-core#enableNegation> "true"^^xsd:boolean ;
+              <http://data.sparna.fr/ontologies/sparnatural-config-core#enableOptional> "true"^^xsd:boolean ;
+              <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://purl.org/dc/terms/subject>" ;
+              <http://data.sparna.fr/ontologies/sparnatural-config-datasources#treeChildrenDatasource> <http://data.sparna.fr/ontologies/sparnatural-config-datasources#tree_children_skosnarrower> ;
+              <http://data.sparna.fr/ontologies/sparnatural-config-datasources#treeRootsDatasource> :tree_root_frenchPainters ;
+              rdfs:label "category"@en ,
+                         "catégorie"@fr .
 
 
 ###  http://ontologies.sparna.fr/sparnatural-demo-dbpedia#country
@@ -90,17 +90,6 @@
          rdfs:label "country"@en ,
                     "pays"@fr .
 
-:situe_a rdf:type owl:ObjectProperty ;
-         rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#MapProperty> ;
-         rdfs:domain :MuseumWikidata ;
-         rdfs:range :Map ;
-         <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlService> [
-             <http://data.sparna.fr/ontologies/sparnatural-config-core#endpoint> <https://query.wikidata.org/sparql>; 
-         ];
-         # <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://www.w3.org/2003/01/geo/wgs84_pos#geometry>" ;
-         <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://www.wikidata.org/prop/direct/P625>" ;
-         rdfs:label "located at"@en ,
-                    "situé à"@fr .
 
 ###  http://ontologies.sparna.fr/sparnatural-demo-dbpedia#countryOf
 :countryOf rdf:type owl:ObjectProperty ;
@@ -179,7 +168,7 @@
         rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#ListProperty> ;
         rdfs:domain :Person ;
         rdfs:range :Country ;
-        <http://data.sparna.fr/ontologies/sparnatural-config-core#enableNegation> true;
+        <http://data.sparna.fr/ontologies/sparnatural-config-core#enableNegation> "true"^^xsd:boolean ;
         <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://dbpedia.org/ontology/deathPlace>/<http://dbpedia.org/ontology/country>" ;
         <http://data.sparna.fr/ontologies/sparnatural-config-core#tooltip> "Le pays où la personne est décédée.<br/><br/><em>A noter : dans DBPedia, les personnes sont liées à leur ville de décès, et la ville est reliée au pays.</em>"@fr ,
                                                                            "The country where the person died.<br/><br/><em>Note : in DBPedia, persons are linked to the city where they died, and the city is linked to the country.</em>"@en ;
@@ -211,14 +200,26 @@
                      "expose"@fr .
 
 
+###  http://ontologies.sparna.fr/sparnatural-demo-dbpedia#editeur
+:editeur rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#LiteralListProperty> ;
+         rdfs:domain :Person ;
+         rdfs:range :Text ;
+         <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://fr.dbpedia.org/property/éditeur>" ;
+         <http://data.sparna.fr/ontologies/sparnatural-config-datasources#datasource> <http://data.sparna.fr/ontologies/sparnatural-config-datasources#literal_list_count> ;
+         rdfs:label "publisher"@en ,
+                    "éditeur"@fr .
+
+
+###  http://ontologies.sparna.fr/sparnatural-demo-dbpedia#inWikidata
 :inWikidata rdf:type owl:ObjectProperty ;
-          rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#NonSelectableProperty> ;
-          rdfs:domain :Museum ;
-          rdfs:range :MuseumWikidata ;
-          <http://data.sparna.fr/ontologies/sparnatural-config-core#enableOptional> "true"^^xsd:boolean ;
-          <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://www.w3.org/2002/07/owl#sameAs>" ;
-          rdfs:label "has other record"@en ,
-                     "autre fiche"@fr .
+            rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#NonSelectableProperty> ;
+            rdfs:domain :Museum ;
+            rdfs:range :MuseumWikidata ;
+            <http://data.sparna.fr/ontologies/sparnatural-config-core#enableOptional> "true"^^xsd:boolean ;
+            <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://www.w3.org/2002/07/owl#sameAs>" ;
+            rdfs:label "autre fiche"@fr ,
+                       "has other record"@en .
 
 
 ###  http://ontologies.sparna.fr/sparnatural-demo-dbpedia#label
@@ -257,16 +258,6 @@
           rdfs:label "mouvement"@fr ,
                      "movement"@en .
 
-:editeur rdf:type owl:ObjectProperty ;
-          rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#LiteralListProperty> ;
-          rdfs:domain :Person ;
-          rdfs:range :Text ;
-          <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://fr.dbpedia.org/property/éditeur>" ;
-          <http://data.sparna.fr/ontologies/sparnatural-config-datasources#datasource> <http://data.sparna.fr/ontologies/sparnatural-config-datasources#literal_list_count> ;
-          rdfs:label "éditeur"@fr ,
-                     "publisher"@en .
-
-
 
 ###  http://ontologies.sparna.fr/sparnatural-demo-dbpedia#movementIncludes
 :movementIncludes rdf:type owl:ObjectProperty ;
@@ -278,21 +269,20 @@
                              "participant"@fr .
 
 
+###  http://ontologies.sparna.fr/sparnatural-demo-dbpedia#situe_a
+:situe_a rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#MapProperty> ;
+         rdfs:domain :MuseumWikidata ;
+         rdfs:range :Map ;
+         <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlService> <https://www.wikidata.org> ;
+         <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://www.wikidata.org/prop/direct/P625>" ;
+         rdfs:label "located at"@en ,
+                    "situé à"@fr .
+
+
 #################################################################
 #    Classes
 #################################################################
-
-###  http://data.sparna.fr/ontologies/sparnatural-demo-dbpedia#Category
-:Category rdf:type owl:Class ;
-          rdfs:subClassOf <http://data.sparna.fr/ontologies/sparnatural-config-core#SparnaturalClass> ;
-          <http://data.sparna.fr/ontologies/sparnatural-config-core#defaultLabelProperty> :label_select-only ;
-          <http://data.sparna.fr/ontologies/sparnatural-config-core#faIcon> "fad fa-palette" ;
-          <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://www.w3.org/2004/02/skos/core#Concept>" ;
-          <http://data.sparna.fr/ontologies/sparnatural-config-core#tooltip> "A wikipedia category"@en ,
-                                                                             "Une catégorie Wikipedia"@fr ;
-          rdfs:label "Category"@en ,
-                     "Catégorie"@fr .
-
 
 ###  http://ontologies.sparna.fr/sparnatural-demo-dbpedia#Artwork
 :Artwork rdf:type owl:Class ;
@@ -304,6 +294,18 @@
                                                                             "Une Œuvre qui peut être exposée dans un musée"@fr ;
          rdfs:label "Artwork"@en ,
                     "Oeuvre"@fr .
+
+
+###  http://ontologies.sparna.fr/sparnatural-demo-dbpedia#Category
+:Category rdf:type owl:Class ;
+          rdfs:subClassOf <http://data.sparna.fr/ontologies/sparnatural-config-core#SparnaturalClass> ;
+          <http://data.sparna.fr/ontologies/sparnatural-config-core#defaultLabelProperty> :label_select-only ;
+          <http://data.sparna.fr/ontologies/sparnatural-config-core#faIcon> "fad fa-palette" ;
+          <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://www.w3.org/2004/02/skos/core#Concept>" ;
+          <http://data.sparna.fr/ontologies/sparnatural-config-core#tooltip> "A wikipedia category"@en ,
+                                                                             "Une catégorie Wikipedia"@fr ;
+          rdfs:label "Category"@en ,
+                     "Catégorie"@fr .
 
 
 ###  http://ontologies.sparna.fr/sparnatural-demo-dbpedia#Country
@@ -326,6 +328,16 @@
                                                                          "Une date ou une année"@fr ;
       rdfs:label "Date"@en ,
                  "Date"@fr .
+
+
+###  http://ontologies.sparna.fr/sparnatural-demo-dbpedia#Map
+:Map rdf:type owl:Class ;
+     rdfs:subClassOf rdfs:Literal ;
+     <http://data.sparna.fr/ontologies/sparnatural-config-core#faIcon> "fad fa-map" ;
+     <http://data.sparna.fr/ontologies/sparnatural-config-core#tooltip> "Position on a map, expressed as WKT datatype, queried in GeoSPARQL"@en ,
+                                                                        "Position sur une carte, exprimée en WKT, requếtée avec GeoSPARQL"@fr ;
+     rdfs:label "Position"@en ,
+                "Position"@fr .
 
 
 ###  http://ontologies.sparna.fr/sparnatural-demo-dbpedia#Movement
@@ -352,22 +364,15 @@
                    "Musée"@fr .
 
 
+###  http://ontologies.sparna.fr/sparnatural-demo-dbpedia#MuseumWikidata
 :MuseumWikidata rdf:type owl:Class ;
-        rdfs:subClassOf <http://data.sparna.fr/ontologies/sparnatural-config-core#NotInstantiatedClass> ;
-        <http://data.sparna.fr/ontologies/sparnatural-config-core#faIcon> "fad fa-university" ;
-        <http://data.sparna.fr/ontologies/sparnatural-config-core#tooltip> "The record of the Museum in Wikidata."@en ,
-                                                                           "La fiche du musée dans Wikidata"@fr ;
-        rdfs:label "Wikidata Museum"@en ,
-                   "Musée Wikidata"@fr .
+                rdfs:subClassOf <http://data.sparna.fr/ontologies/sparnatural-config-core#NotInstantiatedClass> ;
+                <http://data.sparna.fr/ontologies/sparnatural-config-core#faIcon> "fad fa-university" ;
+                <http://data.sparna.fr/ontologies/sparnatural-config-core#tooltip> "La fiche du musée dans Wikidata"@fr ,
+                                                                                   "The record of the Museum in Wikidata."@en ;
+                rdfs:label "Musée Wikidata"@fr ,
+                           "Wikidata Museum"@en .
 
-
-:Map rdf:type owl:Class ;
-        rdfs:subClassOf rdfs:Literal ;
-        <http://data.sparna.fr/ontologies/sparnatural-config-core#faIcon> "fad fa-map" ;
-        <http://data.sparna.fr/ontologies/sparnatural-config-core#tooltip> "Position on a map, expressed as WKT datatype, queried in GeoSPARQL"@en ,
-                                                                           "Position sur une carte, exprimée en WKT, requếtée avec GeoSPARQL"@fr ;
-        rdfs:label "Position"@en ,
-                   "Position"@fr .
 
 ###  http://ontologies.sparna.fr/sparnatural-demo-dbpedia#Person
 :Person rdf:type owl:Class ;
@@ -399,7 +404,7 @@
 #    Individuals
 #################################################################
 
-###  http://data.sparna.fr/ontologies/sparnatural-demo-dbpedia#tree_root_frenchPainters
+###  http://ontologies.sparna.fr/sparnatural-demo-dbpedia#tree_root_frenchPainters
 :tree_root_frenchPainters rdf:type owl:NamedIndividual ,
                                    <http://data.sparna.fr/ontologies/sparnatural-config-datasources#SparqlTreeRootDatasource> ;
                           <http://data.sparna.fr/ontologies/sparnatural-config-datasources#queryString> """PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
@@ -411,5 +416,18 @@ WHERE {
   BIND(true AS ?hasChildren)
 }""" .
 
+
+###  https://www.wikidata.org
+<https://www.wikidata.org> rdf:type owl:NamedIndividual ,
+                                    <http://www.w3.org/ns/sparql-service-description#Service> ;
+                           <http://www.w3.org/ns/sparql-service-description#endpoint> <https://query.wikidata.org/> .
+
+
+###  https://query.wikidata.org/
+<https://query.wikidata.org/> rdf:type owl:NamedIndividual .
+
+
+[ rdf:type <http://www.w3.org/ns/sparql-service-description#Service>
+] .
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
