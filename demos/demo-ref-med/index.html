@@ -112,6 +112,11 @@
                   <option value="example.1" data-i18n="example.1.title"></option>
                   <option value="example.2" data-i18n="example.2.title"></option>
                   <option value="example.3" data-i18n="example.3.title"></option>
+                  <option value="example.4" data-i18n="example.4.title"></option>
+                  <option value="example.5" data-i18n="example.5.title"></option>
+                  <option value="example.6" data-i18n="example.6.title"></option>
+                  <option value="example.7" data-i18n="example.7.title"></option>
+                  <option value="example.8" data-i18n="example.8.title"></option>
                 </select>
               </div>
             </form>
@@ -135,7 +140,7 @@
         <div class="row">
 
           <spar-natural 
-            src="https://xls2rdf.sparna.fr/rest/convert?url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1ZkgVyfG1rnl3yZALOdxovj7ommoKDn7ieudi7jCwoYw%2Fexport%3Fformat%3Dxlsx&noPostProcessings=true"
+            src="sparnatural-config.ttl"
             endpoint="https://proxy.sparnatural.eu/sparql-proxy/sparql?endpoint=https%3A%2F%2Fsmt.esante.gouv.fr%2Fapi%2Fsparql"
             typePredicate="<http://www.w3.org/2000/01/rdf-schema#subClassOf>"
             lang="fr"
@@ -344,9 +349,7 @@
             'import.modal.title': 'Query as JSON',
             'import.modal.import': 'Import',
             'example.placeholder': 'Load example query...',
-            'example.1.title': 'All Aggregations under Public Domain Mark License 1.0',
-            'example.2.title': 'All « metal » - Format Objects with a mention of a Provenance « amsterdam »',
-            'example.3.title': 'All Objects with a « diamant » Format possibly having a View, with creation Date'
+
           },
           'fr': {
             'page.title': 'Référentiel d\'interopérabilité du médicament',
@@ -366,9 +369,14 @@
             'import.modal.title': 'Charger une requête en JSON',
             'import.modal.import': 'Charger',
             'example.placeholder': 'Charger une requête d\'exemple...',
-            'example.1.title': 'Toutes les Vues catalogue sous Licence Marque du Domaine Public 1.0',
-            'example.2.title': 'Tous les Objets Format « métal » avec Provenance donation « amsterdam »',
-            'example.3.title': 'Tous les Objets Format « diamant » pouvant avoir un Visuel avec Date de création'
+            'example.1.title': '1) Toutes les correspondances CIP UCD de Spécialités contenant CEFUROXIME (J01DC02)',
+            'example.2.title': '2) Toutes les substances associées au code ATC du PERINDOPRIL (C09AA04)',
+            'example.3.title': '3) Toutes les classes ATC dont le libellé contient « BETAMETHASONE »',
+            'example.4.title': '4) Tous les vaccins COVID-19 disponibles en France',
+            'example.5.title': '5) Tous les événements dans la vie de la spécialité « FORTUM 2 g » (CIS 69443806)',
+            'example.6.title': '6) Toutes les présentations commercialisées à ce jour de médicaments contenant de l’EZETIMIBE ayant eu une autorisation d’importation parallèle',
+            'example.7.title': '7) Toutes les présentations commercialisées à ce jour dont le libellé décrit une composition de 1000 mg de METFORMINE',
+            'example.8.title': '8) Toutes les substances actives de l’HUMEX RHUME'
           }
       } );  
       $('body').i18n();
