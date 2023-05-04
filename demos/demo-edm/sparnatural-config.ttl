@@ -2,9 +2,8 @@
 @prefix cc: <http://creativecommons.org/ns#> .
 @prefix core: <http://data.sparna.fr/ontologies/sparnatural-config-core#> .
 @prefix datasources: <http://data.sparna.fr/ontologies/sparnatural-config-datasources#> .
-@prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
-@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dce: <http://purl.org/dc/elements/1.1/> .
 @prefix doap: <http://usefulinc.com/ns/doap#> .
 @prefix edm: <http://www.europeana.eu/schemas/edm/> .
 @prefix euvoc: <http://publications.europa.eu/ontology/euvoc#> .
@@ -21,13 +20,14 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix skosthes: <http://purl.org/iso25964/skos-thes#> .
 @prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+@prefix terms: <http://purl.org/dc/terms/> .
 @prefix this: <http://sparnatural.eu/demos/demo-edm/sparnatural-config.ttl/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://sparnatural.eu/demos/demo-edm/sparnatural-config.ttl> a owl:Ontology;
-  dct:format <https://docs.google.com/spreadsheets/d/14Ak0N8fE8kFpmFA0cjApLDvE2BFiNa7ypa2Yk7v1pO4/export?format=xlsx>,
+  terms:format <https://docs.google.com/spreadsheets/d/14Ak0N8fE8kFpmFA0cjApLDvE2BFiNa7ypa2Yk7v1pO4/export?format=xlsx>,
     <https://xls2rdf.sparna.fr/rest/convert?url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F14Ak0N8fE8kFpmFA0cjApLDvE2BFiNa7ypa2Yk7v1pO4%2Fexport%3Fformat%3Dxlsx&noPostProcessings=true>;
-  dct:source <https://docs.google.com/spreadsheets/d/14Ak0N8fE8kFpmFA0cjApLDvE2BFiNa7ypa2Yk7v1pO4>;
+  terms:source <https://docs.google.com/spreadsheets/d/14Ak0N8fE8kFpmFA0cjApLDvE2BFiNa7ypa2Yk7v1pO4>;
   owl:imports <http://data.sparna.fr/ontologies/sparnatural-config-core>, <http://data.sparna.fr/ontologies/sparnatural-config-datasources> .
 
 ore:Aggregation a owl:Class;
@@ -39,7 +39,7 @@ ore:Aggregation a owl:Class;
   rdfs:subClassOf core:SparnaturalClass .
 
 edm:ProvidedCHO a owl:Class;
-  core:defaultLabelProperty dc:title;
+  core:defaultLabelProperty dce:title;
   core:faIcon "fa-regular fa-palette";
   core:order 4;
   core:tooltip "Sujet principal du lot de données qui a été fourni à Europeana."@fr,
@@ -177,7 +177,7 @@ edm:dataProvider a owl:ObjectProperty;
   rdfs:domain ore:Aggregation;
   rdfs:label "data provider"@en, "est fournie par"@fr;
   rdfs:range foaf:Organization;
-  rdfs:subPropertyOf core:LiteralListProperty .
+  rdfs:subPropertyOf core:ListProperty .
 
 edm:isShownAt a owl:ObjectProperty;
   rdfs:domain ore:Aggregation;
@@ -196,7 +196,7 @@ edm:provider a owl:ObjectProperty;
   rdfs:domain ore:Aggregation;
   rdfs:label "est issue de"@fr, "provider"@en;
   rdfs:range this:Aggregator;
-  rdfs:subPropertyOf core:LiteralListProperty .
+  rdfs:subPropertyOf core:ListProperty .
 
 edm:rights a owl:ObjectProperty;
   rdfs:domain ore:Aggregation;
@@ -208,94 +208,93 @@ edm:aggregatedCHO a owl:ObjectProperty;
   rdfs:domain ore:Aggregation;
   rdfs:label "aggregated CHO"@en, "concerne"@fr;
   rdfs:range edm:ProvidedCHO;
-  rdfs:subPropertyOf core:LiteralListProperty .
+  rdfs:subPropertyOf core:NonSelectableProperty .
 
-dc:creator a owl:ObjectProperty;
+dce:creator a owl:ObjectProperty;
   core:enableOptional true;
   rdfs:domain edm:ProvidedCHO;
   rdfs:label "creator"@en, "créé par"@fr;
   rdfs:range edm:Agent;
-  rdfs:subPropertyOf core:LiteralListProperty .
+  rdfs:subPropertyOf core:ListProperty .
 
-dc:description a owl:ObjectProperty;
+dce:description a owl:ObjectProperty;
   core:enableOptional true;
   rdfs:domain edm:ProvidedCHO;
   rdfs:label "a pour description"@fr, "description"@en;
   rdfs:range this:Description;
   rdfs:subPropertyOf core:SearchProperty .
 
-dc:format a owl:ObjectProperty;
+dce:format a owl:ObjectProperty;
   core:enableOptional true;
   rdfs:domain edm:ProvidedCHO;
   rdfs:label "est au format"@fr, "format"@en;
   rdfs:range this:Format;
-  rdfs:subPropertyOf core:SearchProperty .
+  rdfs:subPropertyOf core:ListProperty .
 
-dc:identifier a owl:ObjectProperty;
+dce:identifier a owl:ObjectProperty;
   rdfs:domain edm:ProvidedCHO;
   rdfs:label "est référencé sous"@fr, "identifier"@en;
   rdfs:range this:Identifier;
-  rdfs:subPropertyOf core:StringEqualsProperty .
+  rdfs:subPropertyOf core:AutocompleteProperty .
 
-dc:language a owl:ObjectProperty;
+dce:language a owl:ObjectProperty;
   rdfs:domain edm:ProvidedCHO;
   rdfs:label "est disponible en"@fr, "language"@en;
   rdfs:range this:Language;
-  rdfs:subPropertyOf core:LiteralListProperty .
+  rdfs:subPropertyOf core:ListProperty .
 
-dc:subject a owl:ObjectProperty;
+dce:subject a owl:ObjectProperty;
   core:enableOptional true;
   rdfs:domain edm:ProvidedCHO;
   rdfs:label "a pour sujet"@fr, "subject"@en;
   rdfs:range skos:Concept;
-  rdfs:subPropertyOf core:SearchProperty .
+  rdfs:subPropertyOf core:AutocompleteProperty .
 
-dc:title a owl:ObjectProperty;
-  core:isMultilingual true;
+dce:title a owl:ObjectProperty;
   rdfs:domain edm:ProvidedCHO;
   rdfs:label "a pour titre"@fr, "title"@en;
   rdfs:range this:Title;
   rdfs:subPropertyOf core:SearchProperty .
 
-dc:type a owl:ObjectProperty;
+dce:type a owl:ObjectProperty;
   rdfs:domain edm:ProvidedCHO;
   rdfs:label "est de type DC"@fr, "type"@en;
   rdfs:range this:DCType;
-  rdfs:subPropertyOf core:LiteralListProperty .
+  rdfs:subPropertyOf core:ListProperty .
 
-dct:created a owl:ObjectProperty;
+terms:created a owl:ObjectProperty;
   core:enableOptional true;
   rdfs:domain edm:ProvidedCHO;
   rdfs:label "created"@en, "créé en"@fr;
   rdfs:range this:Date;
-  rdfs:subPropertyOf core:LiteralListProperty .
+  rdfs:subPropertyOf core:ListProperty .
 
-dct:extent a owl:ObjectProperty;
+terms:extent a owl:ObjectProperty;
   core:enableOptional true;
   rdfs:domain edm:ProvidedCHO;
   rdfs:label "a pour étendue"@fr, "extent"@en;
   rdfs:range this:Extent;
   rdfs:subPropertyOf core:SearchProperty .
 
-dct:provenance a owl:ObjectProperty;
+terms:provenance a owl:ObjectProperty;
   core:enableOptional true;
   rdfs:domain edm:ProvidedCHO;
   rdfs:label "a pour origine"@fr, "provenance"@en;
   rdfs:range this:Provenance;
   rdfs:subPropertyOf core:SearchProperty .
 
-dct:spatial a owl:ObjectProperty;
+terms:spatial a owl:ObjectProperty;
   core:enableOptional true;
   rdfs:domain edm:ProvidedCHO;
   rdfs:label "concerne"@fr, "spatial"@en;
   rdfs:range edm:Place;
-  rdfs:subPropertyOf core:LiteralListProperty .
+  rdfs:subPropertyOf core:ListProperty .
 
 edm:type a owl:ObjectProperty;
   rdfs:domain edm:ProvidedCHO;
   rdfs:label "est de type EDM"@fr, "type"@en;
   rdfs:range this:EDMType;
-  rdfs:subPropertyOf core:LiteralListProperty .
+  rdfs:subPropertyOf core:ListProperty .
 
 this:aggredatedCHO_title a owl:ObjectProperty;
   core:sparqlString "<http://www.europeana.eu/schemas/edm/aggregatedCHO>/<http://purl.org/dc/elements/1.1/title>";

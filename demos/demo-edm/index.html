@@ -104,6 +104,16 @@
       <div class="container">
 
         <div class="row" style="padding-bottom:10px;">
+          <div class="col-md-2">
+            <form>
+              <div class="form-group">
+                <select class="form-control" style="width:50%; appearance: auto !important;" id="select-queryLang">
+                  <option value="en" selected>en</option>
+                  <option value="nl">nl</option>                  
+                </select>
+              </div>
+            </form>
+          </div>
           <div class="col-md-6">
             <form>
               <div class="form-group">
@@ -117,10 +127,10 @@
             </form>
           </div>
 
-          <div class="col-md-6">
+          <div class="col-md-4">
             <div style="text-align:right;">
               <span style="font-size:90%; font-style: italic;"> 
-                <span data-i18n="endpoint.querying"></span> <a id="endpoint" href="http://graphdb.sparna.fr/repositories/europeana-poc">http://graphdb.sparna.fr/repositories/europeana-poc</a> 
+                <a id="endpoint" href="this is updated automatically">SPARQL endpoint</a> / <a href="https://docs.google.com/spreadsheets/d/14Ak0N8fE8kFpmFA0cjApLDvE2BFiNa7ypa2Yk7v1pO4/edit#gid=1577547731">configuration</a>
               </span>
             </div>
           </div>
@@ -134,10 +144,12 @@
         <!-- This is where Sparnatural is inserted -->
         <div class="row">
 
+          <!-- https://xls2rdf.sparna.fr/rest/convert?url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F14Ak0N8fE8kFpmFA0cjApLDvE2BFiNa7ypa2Yk7v1pO4%2Fexport%3Fformat%3Dxlsx&noPostProcessings=true -->
           <spar-natural 
             src="sparnatural-config.ttl"
-            endpoint="https://proxy.sparnatural.eu/sparql-proxy/sparql?endpoint=http%3A%2F%2Fgraphdb.sparna.fr%2Frepositories%2Feuropeana-poc"
+            endpoint="https://sage-ails.ails.ece.ntua.gr/api/content/rijksmuseum-poc/sparql"
             lang="en"
+            queryLang="en"
             distinct="true"
             limit="1000"
             debug="true"
@@ -375,12 +387,12 @@
       const sparnatural = document.querySelector("spar-natural");
 
       if(lang == "fr") { 
-        // sparnatural.setAttribute("lang", "fr");
+        sparnatural.setAttribute("lang", "fr");
       }
 
       // prints the endpoint
       $('#endpoint').attr("href", sparnatural.getAttribute("endpoint"));
-      $('#endpoint').html(sparnatural.getAttribute("endpoint"));
+      // $('#endpoint').html(sparnatural.getAttribute("endpoint"));
 
       sparnatural.addEventListener("queryUpdated", (event) => {
         queryString = sparnatural.expandSparql(event.detail.queryString);
@@ -501,6 +513,11 @@
         if(sampleQueries.hasOwnProperty(key)) {
             sparnatural.loadQuery(sampleQueries[key]) ;
         }
+      }
+
+      document.getElementById('select-queryLang').onchange = function() {
+        var langCode = $('#select-queryLang option:selected').val();
+        sparnatural.setAttribute("queryLang", langCode);
       }
 
       /*

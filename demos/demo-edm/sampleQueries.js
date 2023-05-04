@@ -17,8 +17,11 @@ var sampleQueries = {
         "oType": "http://creativecommons.org/ns#License",
         "values": [
           {
-            "label": "http://creativecommons.org/publicdomain/mark/1.0/",
-            "uri": "http://creativecommons.org/publicdomain/mark/1.0/"
+            "label": "http://creativecommons.org/publicdomain/mark/1.0/ (3127)",
+            "rdfTerm": {
+              "type": "uri",
+              "value": "http://creativecommons.org/publicdomain/mark/1.0/"
+            }
           }
         ]
       },
@@ -29,7 +32,7 @@ var sampleQueries = {
 ,
 	"example.2" :
 {
-    "distinct": true,
+  "distinct": true,
   "variables": [
     "ProvidedCHO_1",
     "Provenance_2",
@@ -62,25 +65,28 @@ var sampleQueries = {
         "oType": "http://sparnatural.eu/demos/demo-edm/sparnatural-config.ttl/Format",
         "values": [
           {
-            "label": "metal",
-            "regex": "metal"
+            "label": "metal (405)",
+            "rdfTerm": {
+              "type": "literal",
+              "xml:lang": "en",
+              "value": "metal"
+            }
           }
         ]
       },
       "children": []
-}
+    }
   ]
 },
 
   "example.3" :
 {
-
   "distinct": true,
   "variables": [
     "ProvidedCHO_1",
     "Format_2",
-    "Date_8",
-    "WebResource_6"
+    "WebResource_6",
+    "Date_8"
   ],
   "order": null,
   "branches": [
@@ -93,8 +99,12 @@ var sampleQueries = {
         "oType": "http://sparnatural.eu/demos/demo-edm/sparnatural-config.ttl/Format",
         "values": [
           {
-            "label": "diamant",
-            "regex": "diamant"
+            "label": "diamond (mineral) (109)",
+            "rdfTerm": {
+              "type": "literal",
+              "xml:lang": "en",
+              "value": "diamond (mineral)"
+            }
           }
         ]
       },
@@ -134,7 +144,7 @@ var sampleQueries = {
         "values": []
       },
       "children": []
-          }
+    }
   ]
 }
 }
