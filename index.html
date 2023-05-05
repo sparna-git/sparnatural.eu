@@ -742,8 +742,8 @@
         urlString += "&noPostProcessings=true";
 
 
-        var pageGeneric = "https://sparnatural.eu/demos/demo-generic/index.html"
-        var urlGeneral = pageGeneric + "?lang=en" + "&config=" + urlString + "&endpoint=" + val_endpoint.value;
+        var pageGeneric = "https://sparnatural.eu/demos/demo-generic"
+        var urlGeneral = pageGeneric + "?lang=en" + "&config=" + encodeURI(urlString) + "&endpoint=" + encodeURI(val_endpoint.value);
         
         document.getElementById('sharable-url').value = urlGeneral;
         document.getElementById('btnOpenDemo').setAttribute("href", urlGeneral);
