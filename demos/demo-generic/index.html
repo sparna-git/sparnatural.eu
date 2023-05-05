@@ -286,10 +286,13 @@
         }        
       }
       var urlConfigSparnatural = ($.urlConvert(window.location.href) != null)?$.urlConvert(window.location.href):'';
+      
       if (urlSource.endpoint != null){
         //$("#endpoint").attr("href",urlSource.endpoint);
         document.getElementById("endpointURL").innerHTML = urlSource.endpoint;
       }
+
+      let proxyEndpoint = "https://proxy.sparnatural.eu/sparql-proxy/sparql?endpoint="+encodeURI(urlSource.endpoint);
 
       // set the locale
       $.i18n( { locale: lang } );  
@@ -348,9 +351,8 @@
             backgroundBaseColor: '29,224,153',
             autocomplete : null,
             list : null,
-            defaultEndpoint : urlSource.endpoint,
-            //typePredicate : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
-            
+            defaultEndpoint : proxyEndpoint,
+
             onQueryUpdated: function(queryString, queryJson) {
               queryString = semanticPostProcess(queryString, queryJson);
               // queryString = displayLabelPostProcess(queryString, queryJson);
