@@ -122,8 +122,20 @@
         </div>
 
         <!-- This is where Sparnatural is inserted -->
-        <div class="row">
-          <div id="sparnatural-container"></div>
+        <div class="row" id="insert-sparnatural-here">
+
+          <!--
+          <spar-natural 
+            src="..."
+            endpoint="..."
+            lang="en"
+            queryLang="en"
+            distinct="true"
+            limit="1000"
+            debug="true"
+          ></spar-natural>
+        -->
+
           <input type="hidden" id="query-json"></input>
         </div>
 
@@ -269,19 +281,19 @@
         if(results == null) { return null; }
         return results[1].split("?config")[0] || 0;
       }
-      var lang = ($.urlParam('lang') != null)?$.urlParam('lang'):'fr';
+      var lang = ($.urlParam('lang') != null)?$.urlParam('lang'):'en';
 
       const urlSource = new Object();
       $.urlConvert = function(sourceURL){
         if(sourceURL == null) { return null; }
         else {
-          if (sourceURL.includes("?config=") & sourceURL.includes("?endpoint=")){
-            var getSource = sourceURL.split("?config=")[1];
-            urlSource.urlConfigSparnatural = getSource.split("?endpoint=")[0];
-            urlSource.endpoint = getSource.split("?endpoint=")[1];
-            return getSource.split("?endpoint=")[0];            
+          if (sourceURL.includes("&config=") & sourceURL.includes("&endpoint=")){
+            var getSource = sourceURL.split("&config=")[1];
+            urlSource.urlConfigSparnatural = getSource.split("&endpoint=")[0];
+            urlSource.endpoint = getSource.split("&endpoint=")[1];
+            return getSource.split("&endpoint=")[0];            
           } else {
-            return getSource.split("?endpoint=")[1] || 0;
+            return getSource.split("&endpoint=")[1] || 0;
           }
         }        
       }
@@ -292,6 +304,8 @@
         document.getElementById("endpointURL").innerHTML = urlSource.endpoint;
       }
 
+      console.log("Extracted endpoint : "+urlSource.endpoint);
+      console.log("Extracted config : "+urlSource.urlConfigSparnatural);
       let proxyEndpoint = "https://proxy.sparnatural.eu/sparql-proxy/sparql?endpoint="+encodeURI(urlSource.endpoint);
 
       // set the locale
@@ -338,102 +352,59 @@
       } );  
       $('body').i18n();
 
-      // Section for the get uri's  (URL of sparnatural and URL of data results)
-      var sparnatural;
-      $( document ).ready(function($) {
+      const sparnaturalString = "<spar-natural src='"+urlSource.urlConfigSparnatural+"' endpoint='"+proxyEndpoint+"' limit='1000' debug='true' distinct='true' lang='en' queryLang="+lang+"></spar-natural>"
 
-        sparnatural = document.getElementById('sparnatural-container').Sparnatural({
-            config: urlSource.urlConfigSparnatural,
-            language: lang,
-            maxDepth: 4,                                                                        
-            addDistinct: true,
-            sendQueryOnFirstClassSelected: false,
-            backgroundBaseColor: '29,224,153',
-            autocomplete : null,
-            list : null,
-            defaultEndpoint : proxyEndpoint,
+      document.querySelector("#insert-sparnatural-here").innerHTML = sparnaturalString;
 
-            onQueryUpdated: function(queryString, queryJson) {
-              queryString = semanticPostProcess(queryString, queryJson);
-              // queryString = displayLabelPostProcess(queryString, queryJson);
-              // queryString = orderByPostProcess(queryString, queryJson);
-              queryString = limitPostProcess(queryString, queryJson);
-              $('#sparql code').html(queryString.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"));
+      console.log(document.querySelector("#insert-sparnatural-here").innerHTML);
+
+      const sparnatural = document.querySelector("spar-natural");
+
+      /**
+      const sparnatural = document.querySelector("spar-natural");
+      sparnatural.setAttribute("endpoint", proxyEndpoint);
+      sparnatural.setAttribute("src", urlSource.urlConfigSparnatural);
+      if(lang == "fr") { 
+        sparnatural.setAttribute("lang", "fr");
+      }
+      **/
+
+      sparnatural.addEventListener("queryUpdated", (event) => {
+        queryString = sparnatural.expandSparql(event.detail.queryString);
+
+        queryString = semanticPostProcess(queryString, queryJson);
+        $('#sparql code').html(queryString.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"));
               
-              yasqe.setValue(queryString);
+        yasqe.setValue(queryString);
 
-              // save query
-              document.getElementById('query-json').value = JSON.stringify(queryJson);
-              //yasqe.query();
-              
-            },
-            // triggered when "play" button is clicked
-            onSubmit: function(form) {
-              // enable loader on button
-              form.sparnatural.enableLoading() ; 
-              // trigger the query from YasQE
-              
-              yasqe.query();
-            },
-            sparqlPrefixes : {
-            }
-          });
-          
-          // load ?query= param if present
-          var UrlString = window.location.search;
-          if(UrlString.includes("?source=")){
-            UrlString = UrlString.split("?source=")[1];
-          }
-          var urlParams = new URLSearchParams(UrlString);
-          if (urlParams.has("query") === true) {
-            var compressedJson = urlParams.get("query") ;
-            var compressCodec = JsonUrl('lzma');
-            compressCodec.decompress(compressedJson).then(json => {
-              sparnatural.loadQuery(JSON.parse(json)) ;
-            });
-          }
-      }); // End document ready
+        document.getElementById('query-json').value = JSON.stringify(queryJson);
+      });
 
-      prefixesPostProcess = function(queryString, queryJson) {
-        if(queryString.indexOf("rdf-schema#") == -1) {
-          queryString = queryString.replace("SELECT ", "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> \nSELECT ");
-          queryString = queryString.replace("SELECT ", "PREFIX owl: <http://www.w3.org/2002/07/owl#> \nSELECT ");
-          queryString = queryString.replace("SELECT ", "PREFIX skos: <http://www.w3.org/2004/02/skos/core#> \nSELECT ");
-        }
-        return queryString;
-      }
+      sparnatural.addEventListener("submit", (event) => {
+        // enable loader on button
+        sparnatural.disablePlayBtn() ; 
+        // trigger the query from YasQE
+        yasqe.query();
+      });
 
-      displayLabelPostProcess = function(queryString, queryJson) {
-        queryString = queryString.replace(new RegExp('}$'), "  OPTIONAL { ?this rdfs:label ?theLabel FILTER(lang(?theLabel) = 'fr') } \n}");
-        queryString = queryString.replace(new RegExp('}$'), "  OPTIONAL { ?this skos:notation ?notation } \n}");
-        queryString = queryString.replace(new RegExp('}$'), "}\nORDER BY ?notation");
-        return queryString;
-      }
+      sparnatural.addEventListener("reset", (event) => {
+        yasqe.setValue("");
+      });
 
-      orderByPostProcess = function(queryString, queryJson) {
-        // queryString = queryString.replace(new RegExp('}$'), "}\nORDER BY ?label LIMIT 100");
-        queryString = queryString.replace("SELECT DISTINCT ?this", "SELECT DISTINCT ?notation (STR(?theLabel) AS ?label) ?this");
-        // queryString = queryString.replace(new RegExp('}$'), "}\nORDER BY ?label LIMIT 1000");
-        // queryString = queryString.replace(new RegExp('}$'), "}\nLIMIT 1000");
-        return queryString;
-      }
-
-      limitPostProcess = function(queryString, queryJson) {
-        queryString = queryString.replace(new RegExp('$'), "\nLIMIT 1000");
-        // queryString = queryString.replace(new RegExp('}$'), "}\nORDER BY ?label LIMIT 1000");
-        // queryString = queryString.replace(new RegExp('}$'), "}\nLIMIT 1000");
-        return queryString;
-      }
-
-      semanticPostProcess = function(queryString, queryJson) {
-        queryString = prefixesPostProcess(queryString, queryJson);
-        queryString = sparnatural.expandSparql(queryString);
-        return queryString;
-      }
+      // load ?query= param if present
+      var UrlString = window.location.search;
+      var urlParams = new URLSearchParams(UrlString);
+      if (urlParams.has("query") === true) {
+        var compressedJson = urlParams.get("query") ;
+        var compressCodec = JsonUrl('lzma');
+        compressCodec.decompress(compressedJson).then(json => {
+          sparnatural.loadQuery(JSON.parse(json)) ;
+        });
+      } 
 
       const yasqe = new Yasqe(document.getElementById("yasqe"), {
         requestConfig: { 
-          endpoint: urlSource.endpoint, //$('#endpoint').text(),
+          endpoint: proxyEndpoint, //$('#endpoint').text(),
           method: "GET",
           header: {}
         },
@@ -515,14 +486,6 @@
 
         location.href=url;
       }
-      /*
-      document.getElementById('select-examples').onchange = function() {
-        var key = $('#select-examples option:selected').val();
-        if(sampleQueries.hasOwnProperty(key)) {
-            sparnatural.loadQuery(sampleQueries[key]) ;
-        }
-      }
-      */
 
     </script>
 
