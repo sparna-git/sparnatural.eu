@@ -130,7 +130,7 @@
           <div class="col-md-4">
             <div style="text-align:right;">
               <span style="font-size:90%; font-style: italic;"> 
-                <a id="endpoint" href="this is updated automatically">SPARQL endpoint</a> / <a href="https://docs.google.com/spreadsheets/d/14Ak0N8fE8kFpmFA0cjApLDvE2BFiNa7ypa2Yk7v1pO4/edit#gid=1577547731">configuration</a>
+                <a id="endpoint" href="https://sage-ails.ails.ece.ntua.gr/api/content/rijksmuseum-poc/sparql">SPARQL endpoint</a> / <a href="https://docs.google.com/spreadsheets/d/14Ak0N8fE8kFpmFA0cjApLDvE2BFiNa7ypa2Yk7v1pO4/edit#gid=1577547731">configuration</a>
               </span>
             </div>
           </div>
@@ -432,7 +432,7 @@
 
       const yasqe = new Yasqe(document.getElementById("yasqe"), {
         requestConfig: { 
-          endpoint: $('#endpoint').text(),
+          endpoint: $('#endpoint').attr("href"),
           method: "GET",
           header: {}
         },
