@@ -360,19 +360,9 @@
 
       const sparnatural = document.querySelector("spar-natural");
 
-      /**
-      const sparnatural = document.querySelector("spar-natural");
-      sparnatural.setAttribute("endpoint", proxyEndpoint);
-      sparnatural.setAttribute("src", urlSource.urlConfigSparnatural);
-      if(lang == "fr") { 
-        sparnatural.setAttribute("lang", "fr");
-      }
-      **/
 
       sparnatural.addEventListener("queryUpdated", (event) => {
         queryString = sparnatural.expandSparql(event.detail.queryString);
-
-        queryString = semanticPostProcess(queryString, queryJson);
         $('#sparql code').html(queryString.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"));
               
         yasqe.setValue(queryString);
@@ -469,8 +459,8 @@
 
       document.getElementById("langFR").onclick = function() {
         var url_source = window.location.href.split("?lang=")[0];
-        var url_section_config = window.location.href.split("?config=")[1];
-        var fr_option = "?lang=fr?config=";
+        var url_section_config = window.location.href.split("&config=")[1];
+        var fr_option = "?lang=fr&config=";
 
         var url = url_source+fr_option+url_section_config;
 
@@ -479,8 +469,8 @@
 
       document.getElementById("langEN").onclick = function() {
         var url_source = window.location.href.split("?lang=")[0];
-        var url_section_config = window.location.href.split("?config=")[1];
-        var fr_option = "?lang=en?config=";
+        var url_section_config = window.location.href.split("&config=")[1];
+        var fr_option = "?lang=en&config=";
 
         var url = url_source+fr_option+url_section_config;
 
