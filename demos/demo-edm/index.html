@@ -107,9 +107,8 @@
           <div class="col-md-2">
             <form>
               <div class="form-group">
-                <select class="form-control" style="width:50%; appearance: auto !important;" id="select-queryLang">
-                  <option value="en" selected>en</option>
-                  <option value="nl">nl</option>                  
+                <select class="form-control" style="width:50%; appearance: auto !important;" id="select-lang">
+                  <!-- this is populated automatically based on config -->                
                 </select>
               </div>
             </form>
@@ -130,7 +129,8 @@
           <div class="col-md-4">
             <div style="text-align:right;">
               <span style="font-size:90%; font-style: italic;"> 
-                <a id="endpoint" href="https://sage-ails.ails.ece.ntua.gr/api/content/rijksmuseum-poc/sparql">SPARQL endpoint</a> / <a href="https://docs.google.com/spreadsheets/d/14Ak0N8fE8kFpmFA0cjApLDvE2BFiNa7ypa2Yk7v1pO4/edit#gid=1577547731">configuration</a>
+                <!-- Rijksmuseum : https://sage-ails.ails.ece.ntua.gr/api/content/rijksmuseum-poc/sparql -->
+                <a id="endpoint" href="https://sage-ails.ails.ece.ntua.gr/api/content/semanticsearch-digital-repository-of-ireland/sparql">SPARQL endpoint</a> / <a href="https://docs.google.com/spreadsheets/d/14Ak0N8fE8kFpmFA0cjApLDvE2BFiNa7ypa2Yk7v1pO4/edit#gid=1577547731">configuration</a>
               </span>
             </div>
           </div>
@@ -146,10 +146,10 @@
 
           <!-- https://xls2rdf.sparna.fr/rest/convert?url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F14Ak0N8fE8kFpmFA0cjApLDvE2BFiNa7ypa2Yk7v1pO4%2Fexport%3Fformat%3Dxlsx&noPostProcessings=true -->
           <spar-natural 
-            src="sparnatural-config.ttl"
-            endpoint="https://sage-ails.ails.ece.ntua.gr/api/content/rijksmuseum-poc/sparql"
+            src="https://xls2rdf.sparna.fr/rest/convert?url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F14Ak0N8fE8kFpmFA0cjApLDvE2BFiNa7ypa2Yk7v1pO4%2Fexport%3Fformat%3Dxlsx&noPostProcessings=true"
+            endpoint="https://sage-ails.ails.ece.ntua.gr/api/content/semanticsearch-digital-repository-of-ireland/sparql"
             lang="en"
-            queryLang="en"
+            defaultLang="en"
             distinct="true"
             limit="1000"
             debug="true"
@@ -288,7 +288,7 @@
   <!-- Sparnatural-specific -->
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
@@ -419,6 +419,15 @@
         yasqe.setValue("");
       });
 
+      sparnatural.addEventListener("init", (event) => {
+        let languages = event.detail.sparnatural.specProvider.getLanguages();
+        $('#select-lang').empty();
+        languages.forEach(l => {
+          $('#select-lang').append('<option value="' + l + '">' + l + '</option>');
+        });
+        $('#select-lang').val(sparnatural.getAttribute("lang"));
+      });
+
       // load ?query= param if present
       var UrlString = window.location.search;
       var urlParams = new URLSearchParams(UrlString);
@@ -515,9 +524,9 @@
         }
       }
 
-      document.getElementById('select-queryLang').onchange = function() {
-        var langCode = $('#select-queryLang option:selected').val();
-        sparnatural.setAttribute("queryLang", langCode);
+      document.getElementById('select-lang').onchange = function() {
+        var langCode = $('#select-lang option:selected').val();
+        sparnatural.setAttribute("lang", langCode);
       }
 
       /*
