@@ -86,12 +86,14 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link" href="http://sparnatural.eu"><i style="font-size:25px;" class="fa-thin fa-house"></i>&nbsp;Home</a></li>
+          <!--
           <li class="dropdown"><a href="#"><i style="font-size:25px;" class="fa-thin fa-globe-africa"></i>&nbsp;<span>Lang.</span> <i class="bi bi-chevron-down"></i></a>
             <ul style="width:80%;">
               <li><a href="?lang=fr">fr</a></li>
               <li><a href="?lang=en">en</a></li>
             </ul>
           </li>
+          -->
           <li><a class="nav-link" href="https://github.com/sparna-git/Sparnatural"><i style="font-size:25px;" class="fab fa-github"></i>&nbsp; Github</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -106,10 +108,15 @@
         <div class="row" style="padding-bottom:10px;">
           <div class="col-md-2">
             <form>
-              <div class="form-group">
-                <select class="form-control" style="width:50%; appearance: auto !important;" id="select-lang">
-                  <!-- this is populated automatically based on config -->                
-                </select>
+              <div class="form-group row">
+                <div class="col-sm-6">
+                  <i style="font-size:25px;" class="fa-thin fa-globe-africa"></i>&nbsp;<span>Lang.</span>
+                </div>
+                <div class="col-sm-6">
+                  <select class="form-control" style="appearance: auto !important;" id="select-lang">
+                    <!-- this is populated automatically based on config -->                
+                  </select>
+              </div>
               </div>
             </form>
           </div>
@@ -527,6 +534,13 @@
       document.getElementById('select-lang').onchange = function() {
         var langCode = $('#select-lang option:selected').val();
         sparnatural.setAttribute("lang", langCode);
+
+        let locale="en";
+        if(langCode == "fr") {
+          locale=langCode
+        }
+        $.i18n( { locale: locale } );
+        $('body').i18n();
       }
 
       /*
