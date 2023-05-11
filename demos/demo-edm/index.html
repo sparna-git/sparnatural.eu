@@ -171,10 +171,12 @@
             <a href="#" id="sparql-toggle"><i id="sparql-toggle-icon" class="fad fa-eye fa-fw"></i>&nbsp; <span data-i18n="actions.toggle"></span></a>
             &nbsp;|&nbsp;
             <a href="#" id="share"><i id="share-icon" class="fad fa-share-square"></i>&nbsp; <span data-i18n="actions.share"></span></a>
+            <!--
             &nbsp;|&nbsp;
             <a href="#" id="export"><i id="export-icon" class="fad fa-file-export"></i>&nbsp; <span data-i18n="actions.export"></span></a>
             &nbsp;|&nbsp;
             <a href="#" id="import"><i id="import-icon" class="fad fa-file-import"></i>&nbsp; <span data-i18n="actions.import"></span></a>
+            -->
           </div>
         </div>
 
@@ -345,7 +347,7 @@
       $.i18n( { locale: lang } );  
       $.i18n().load( {
           'en': {
-            'page.title': 'Sparnatural EDM',
+            'page.title': 'Europeana Linked Data Taskforce',
             'menu.home': 'Sparnatural',
             'menu.lang': 'Lang.',
             'menu.github': 'Github',
@@ -367,7 +369,7 @@
             'example.3.title': 'All Objects with a « diamant » Format possibly having a View, with creation Date'
           },
           'fr': {
-            'page.title': 'Sparnatural EDM',
+            'page.title': 'Europeana Linked Data Taskforce',
             'menu.home': 'Sparnatural',
             'menu.lang': 'Lang.',
             'menu.github': 'Github',
@@ -503,7 +505,8 @@
           $('#shareModal').modal('show');
         });
       }
-        
+      
+      /*  
       document.getElementById('export').onclick = function() {
           var jsonString = JSON.stringify(
               JSON.parse(document.getElementById('query-json').value),
@@ -517,6 +520,7 @@
       document.getElementById('import').onclick = function() {
           $('#importModal').modal('show');       
       } 
+      */
 
       document.getElementById('importButton').onclick = function() {
           var json = JSON.parse($('#import-json').val());
