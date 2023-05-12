@@ -17,11 +17,8 @@ var sampleQueries = {
         "oType": "http://creativecommons.org/ns#License",
         "values": [
           {
-            "label": "http://creativecommons.org/publicdomain/mark/1.0/ (3127)",
-            "rdfTerm": {
-              "type": "uri",
-              "value": "http://creativecommons.org/publicdomain/mark/1.0/"
-            }
+            "label": "public",
+            "regex": "public"
           }
         ]
       },
@@ -35,22 +32,27 @@ var sampleQueries = {
   "distinct": true,
   "variables": [
     "ProvidedCHO_1",
-    "Provenance_2",
-    "Format_4"
+    "Concept_2",
+    "Coverage_4",
+    "WebResource_10"
   ],
   "order": null,
   "branches": [
     {
       "line": {
         "s": "?ProvidedCHO_1",
-        "p": "http://purl.org/dc/terms/provenance",
-        "o": "?Provenance_2",
+        "p": "http://purl.org/dc/elements/1.1/subject",
+        "o": "?Concept_2",
         "sType": "http://www.europeana.eu/schemas/edm/ProvidedCHO",
-        "oType": "http://sparnatural.eu/demos/demo-edm/sparnatural-config.ttl/Provenance",
+        "oType": "http://www.w3.org/2004/02/skos/core#Concept",
         "values": [
           {
-            "label": "amsterdam",
-            "regex": "amsterdam"
+            "label": "Statues",
+            "rdfTerm": {
+              "type": "literal",
+              "xml:lang": "en",
+              "value": "Statues"
+            }
           }
         ]
       },
@@ -59,51 +61,32 @@ var sampleQueries = {
     {
       "line": {
         "s": "?ProvidedCHO_1",
-        "p": "http://purl.org/dc/elements/1.1/format",
-        "o": "?Format_4",
+        "p": "http://purl.org/dc/terms/spatial",
+        "o": "?Coverage_4",
         "sType": "http://www.europeana.eu/schemas/edm/ProvidedCHO",
-        "oType": "http://sparnatural.eu/demos/demo-edm/sparnatural-config.ttl/Format",
+        "oType": "http://sparnatural.eu/demos/demo-edm/sparnatural-config.ttl/Coverage",
         "values": [
           {
-            "label": "metal (405)",
-            "rdfTerm": {
-              "type": "literal",
-              "xml:lang": "en",
-              "value": "metal"
-            }
+            "label": "Dublin",
+            "regex": "Dublin"
           }
         ]
       },
       "children": []
-    }
-  ]
-},
-
-  "example.3" :
-{
-  "distinct": true,
-  "variables": [
-    "ProvidedCHO_1",
-    "Format_2",
-    "WebResource_6",
-    "Date_8"
-  ],
-  "order": null,
-  "branches": [
+    },
     {
       "line": {
         "s": "?ProvidedCHO_1",
-        "p": "http://purl.org/dc/elements/1.1/format",
-        "o": "?Format_2",
+        "p": "http://www.europeana.eu/schemas/edm/type",
+        "o": "?Type_6",
         "sType": "http://www.europeana.eu/schemas/edm/ProvidedCHO",
-        "oType": "http://sparnatural.eu/demos/demo-edm/sparnatural-config.ttl/Format",
+        "oType": "http://sparnatural.eu/demos/demo-edm/sparnatural-config.ttl/Type",
         "values": [
           {
-            "label": "diamond (mineral) (109)",
+            "label": "IMAGE (19160)",
             "rdfTerm": {
               "type": "literal",
-              "xml:lang": "en",
-              "value": "diamond (mineral)"
+              "value": "IMAGE"
             }
           }
         ]
@@ -114,7 +97,7 @@ var sampleQueries = {
       "line": {
         "s": "?ProvidedCHO_1",
         "p": "http://sparnatural.eu/demos/demo-edm/sparnatural-config.ttl/aggredatedIn",
-        "o": "?Aggregation_4",
+        "o": "?Aggregation_8",
         "sType": "http://www.europeana.eu/schemas/edm/ProvidedCHO",
         "oType": "http://www.openarchives.org/ore/terms/Aggregation",
         "values": []
@@ -122,29 +105,82 @@ var sampleQueries = {
       "children": [
         {
           "line": {
-            "s": "?Aggregation_4",
-            "p": "http://www.europeana.eu/schemas/edm/isShownBy",
-            "o": "?WebResource_6",
+            "s": "?Aggregation_8",
+            "p": "http://www.europeana.eu/schemas/edm/hasView",
+            "o": "?WebResource_10",
             "sType": "http://www.openarchives.org/ore/terms/Aggregation",
             "oType": "http://www.europeana.eu/schemas/edm/WebResource",
             "values": []
           },
-          "children": [],
-          "optional": true
+          "children": []
         }
       ]
+    }
+  ]
+},
+
+  "example.3" :
+{
+  "distinct": true,
+  "variables": [
+    "ProvidedCHO_1",
+    "Type_2",
+    "Concept_4",
+    "Language_6"
+  ],
+  "order": null,
+  "branches": [
+    {
+      "line": {
+        "s": "?ProvidedCHO_1",
+        "p": "http://purl.org/dc/elements/1.1/type",
+        "o": "?Type_2",
+        "sType": "http://www.europeana.eu/schemas/edm/ProvidedCHO",
+        "oType": "http://sparnatural.eu/demos/demo-edm/sparnatural-config.ttl/Type",
+        "values": [
+          {
+            "label": "SOUND (396)",
+            "rdfTerm": {
+              "type": "literal",
+              "xml:lang": "en",
+              "value": "SOUND"
+            }
+          }
+        ]
+      },
+      "children": []
     },
     {
       "line": {
         "s": "?ProvidedCHO_1",
-        "p": "http://purl.org/dc/terms/created",
-        "o": "?Date_8",
+        "p": "http://purl.org/dc/elements/1.1/subject",
+        "o": "?Concept_4",
         "sType": "http://www.europeana.eu/schemas/edm/ProvidedCHO",
-        "oType": "http://sparnatural.eu/demos/demo-edm/sparnatural-config.ttl/Date",
+        "oType": "http://www.w3.org/2004/02/skos/core#Concept",
+        "values": [
+          {
+            "label": "Tales -- Ireland",
+            "rdfTerm": {
+              "type": "literal",
+              "xml:lang": "en",
+              "value": "Tales -- Ireland"
+            }
+          }
+        ]
+      },
+      "children": []
+    },
+    {
+      "line": {
+        "s": "?ProvidedCHO_1",
+        "p": "http://purl.org/dc/elements/1.1/language",
+        "o": "?Language_6",
+        "sType": "http://www.europeana.eu/schemas/edm/ProvidedCHO",
+        "oType": "http://sparnatural.eu/demos/demo-edm/sparnatural-config.ttl/Language",
         "values": []
       },
       "children": []
     }
   ]
 }
-}
+};
