@@ -65,18 +65,6 @@ cc:License a owl:Class;
   rdfs:label "Licence"@fr, "License"@en;
   rdfs:subClassOf core:NotInstantiatedClass .
 
-this:PlaceIRI a owl:Class;
-  core:faIcon "fa-regular fa-location-dot";
-  core:order "12.1"^^xsd:integer;
-  rdfs:label "Lieu (IRI)"@fr, "Place (IRI)"@en;
-  rdfs:subClassOf core:NotInstantiatedClass .
-
-this:DCTypeIRI a owl:Class;
-  core:faIcon "fa-regular fa-photo-film-music";
-  core:order "6.1"^^xsd:integer;
-  rdfs:label "DC Type (IRI)"@en, "Type DC (IRI)"@fr;
-  rdfs:subClassOf core:NotInstantiatedClass .
-
 skos:Concept a owl:Class;
   core:faIcon "fa-regular fa-hashtag";
   core:order 14;
@@ -86,7 +74,7 @@ skos:Concept a owl:Class;
 edm:Agent a owl:Class;
   core:faIcon "fa-regular fa-user-large";
   core:order 3;
-  rdfs:label "Auteur"@fr, "Author"@en;
+  rdfs:label "Agent"@en, "Personne"@fr;
   rdfs:subClassOf rdfs:Literal .
 
 edm:Place a owl:Class;
@@ -149,76 +137,100 @@ this:Title a owl:Class;
   rdfs:label "Title"@en, "Titre"@fr;
   rdfs:subClassOf rdfs:Literal .
 
-this:DCType a owl:Class;
+this:Type a owl:Class;
   core:faIcon "fa-regular fa-photo-film-music";
   core:order 6;
-  rdfs:label "DC Type"@en, "Type DC"@fr;
+  rdfs:label "Type"@en, "Type"@fr;
   rdfs:subClassOf rdfs:Literal .
 
 this:Provenance a owl:Class;
   core:faIcon "fa-regular fa-hand-holding";
   core:order 10;
-  rdfs:label "Donateur"@fr, "Provenance"@en;
-  rdfs:subClassOf rdfs:Literal .
-
-this:EDMType a owl:Class;
-  core:faIcon "fa-regular fa-photo-film-music";
-  core:order 7;
-  rdfs:label "EDM Type"@en, "Type EDM"@fr;
+  rdfs:label "Donateur (RM)"@fr, "Provenance (RM)"@en;
   rdfs:subClassOf rdfs:Literal .
 
 this:Extent a owl:Class;
   core:faIcon "fa-regular fa-ruler-horizontal";
   core:order 9;
-  rdfs:label "Dimensions"@fr, "Extent"@en;
+  rdfs:label "Dimensions (RM)"@fr, "Extent (RM)"@en;
+  rdfs:subClassOf rdfs:Literal .
+
+this:Coverage a owl:Class;
+  core:faIcon "fa-regular fa-arrows-up-down-left-right";
+  core:order "10.1"^^xsd:integer;
+  rdfs:label "Couverture spatio-temporelle"@fr, "Coverage"@en;
+  rdfs:subClassOf rdfs:Literal .
+
+this:OtherResource a owl:Class;
+  core:faIcon "fa-regular fa-puzzle-piece-simple";
+  rdfs:label "Autre ressource"@fr, "Other resource"@en;
+  rdfs:subClassOf rdfs:Literal .
+
+this:Medium a owl:Class;
+  core:faIcon "fa-regular fa-block-question";
+  core:order "8.5"^^xsd:integer;
+  rdfs:label "Matériau"@fr, "Medium"@en;
+  rdfs:subClassOf rdfs:Literal .
+
+this:Rights a owl:Class;
+  core:faIcon "fa-regular fa-copyright";
+  rdfs:label "Droits"@fr, "Rights"@en;
   rdfs:subClassOf rdfs:Literal .
 
 edm:dataProvider a owl:ObjectProperty;
+  core:enableOptional true;
   rdfs:domain ore:Aggregation;
   rdfs:label "data provider"@en, "est fournie par"@fr;
   rdfs:range foaf:Organization;
   rdfs:subPropertyOf core:ListProperty .
 
 edm:isShownAt a owl:ObjectProperty;
+  core:enableOptional true;
   rdfs:domain ore:Aggregation;
   rdfs:label "est accessible à l'adresse"@fr, "is shown at"@en;
   rdfs:range this:CatalogURL;
   rdfs:subPropertyOf core:NonSelectableProperty .
 
-edm:isShownBy a owl:ObjectProperty;
-  core:enableOptional true;
-  rdfs:domain ore:Aggregation;
-  rdfs:label "contient"@fr, "is shown by"@en;
-  rdfs:range edm:WebResource;
-  rdfs:subPropertyOf core:NonSelectableProperty .
-
 edm:provider a owl:ObjectProperty;
+  core:enableOptional true;
   rdfs:domain ore:Aggregation;
   rdfs:label "est issue de"@fr, "provider"@en;
   rdfs:range this:Aggregator;
   rdfs:subPropertyOf core:ListProperty .
 
 edm:rights a owl:ObjectProperty;
+  core:enableOptional true;
   rdfs:domain ore:Aggregation;
   rdfs:label "est protégée par"@fr, "rights"@en;
   rdfs:range cc:License;
-  rdfs:subPropertyOf core:ListProperty .
+  rdfs:subPropertyOf core:SearchProperty .
 
 edm:aggregatedCHO a owl:ObjectProperty;
+  core:enableOptional true;
   rdfs:domain ore:Aggregation;
   rdfs:label "aggregated CHO"@en, "concerne"@fr;
   rdfs:range edm:ProvidedCHO;
   rdfs:subPropertyOf core:NonSelectableProperty .
 
+edm:hasView a owl:ObjectProperty;
+  core:enableOptional true;
+  core:sparqlString "<http://www.europeana.eu/schemas/edm/hasView>|<http://www.europeana.eu/schemas/edm/isShownBy>";
+  rdfs:domain ore:Aggregation;
+  rdfs:label "a pour visuel"@fr, "has view"@en;
+  rdfs:range edm:WebResource;
+  rdfs:subPropertyOf core:NonSelectableProperty .
+
 dce:creator a owl:ObjectProperty;
   core:enableOptional true;
+  core:sparqlString "^<http://www.openarchives.org/ore/terms/proxyFor>/<http://purl.org/dc/elements/1.1/creator>";
   rdfs:domain edm:ProvidedCHO;
   rdfs:label "creator"@en, "créé par"@fr;
   rdfs:range edm:Agent;
-  rdfs:subPropertyOf core:ListProperty .
+  rdfs:subPropertyOf core:AutocompleteProperty .
 
 dce:description a owl:ObjectProperty;
   core:enableOptional true;
+  core:sparqlString "^<http://www.openarchives.org/ore/terms/proxyFor>/<http://purl.org/dc/elements/1.1/description>";
   rdfs:domain edm:ProvidedCHO;
   rdfs:label "a pour description"@fr, "description"@en;
   rdfs:range this:Description;
@@ -226,18 +238,23 @@ dce:description a owl:ObjectProperty;
 
 dce:format a owl:ObjectProperty;
   core:enableOptional true;
+  core:sparqlString "^<http://www.openarchives.org/ore/terms/proxyFor>/<http://purl.org/dc/elements/1.1/format>";
   rdfs:domain edm:ProvidedCHO;
   rdfs:label "est au format"@fr, "format"@en;
   rdfs:range this:Format;
   rdfs:subPropertyOf core:ListProperty .
 
 dce:identifier a owl:ObjectProperty;
+  core:enableOptional true;
+  core:sparqlString "^<http://www.openarchives.org/ore/terms/proxyFor>/<http://purl.org/dc/elements/1.1/identifier>";
   rdfs:domain edm:ProvidedCHO;
   rdfs:label "est référencé sous"@fr, "identifier"@en;
   rdfs:range this:Identifier;
-  rdfs:subPropertyOf core:AutocompleteProperty .
+  rdfs:subPropertyOf core:SearchProperty .
 
 dce:language a owl:ObjectProperty;
+  core:enableOptional true;
+  core:sparqlString "^<http://www.openarchives.org/ore/terms/proxyFor>/<http://purl.org/dc/elements/1.1/language>";
   rdfs:domain edm:ProvidedCHO;
   rdfs:label "est disponible en"@fr, "language"@en;
   rdfs:range this:Language;
@@ -245,84 +262,174 @@ dce:language a owl:ObjectProperty;
 
 dce:subject a owl:ObjectProperty;
   core:enableOptional true;
+  core:sparqlString "^<http://www.openarchives.org/ore/terms/proxyFor>/<http://purl.org/dc/elements/1.1/subject>";
   rdfs:domain edm:ProvidedCHO;
   rdfs:label "a pour sujet"@fr, "subject"@en;
   rdfs:range skos:Concept;
   rdfs:subPropertyOf core:AutocompleteProperty .
 
 dce:title a owl:ObjectProperty;
+  core:enableOptional true;
+  core:isMultilingual true;
+  core:sparqlString "^<http://www.openarchives.org/ore/terms/proxyFor>/<http://purl.org/dc/elements/1.1/title>";
   rdfs:domain edm:ProvidedCHO;
   rdfs:label "a pour titre"@fr, "title"@en;
   rdfs:range this:Title;
   rdfs:subPropertyOf core:SearchProperty .
 
 dce:type a owl:ObjectProperty;
+  core:enableOptional true;
+  core:sparqlString "^<http://www.openarchives.org/ore/terms/proxyFor>/<http://purl.org/dc/elements/1.1/type>";
   rdfs:domain edm:ProvidedCHO;
-  rdfs:label "est de type DC"@fr, "type"@en;
-  rdfs:range this:DCType;
+  rdfs:label "DC type"@en, "est de type DC"@fr;
+  rdfs:range this:Type;
   rdfs:subPropertyOf core:ListProperty .
 
 terms:created a owl:ObjectProperty;
   core:enableOptional true;
+  core:sparqlString "^<http://www.openarchives.org/ore/terms/proxyFor>/<http://purl.org/dc/terms/created>";
   rdfs:domain edm:ProvidedCHO;
   rdfs:label "created"@en, "créé en"@fr;
   rdfs:range this:Date;
-  rdfs:subPropertyOf core:ListProperty .
+  rdfs:subPropertyOf core:SearchProperty .
 
 terms:extent a owl:ObjectProperty;
   core:enableOptional true;
+  core:sparqlString "^<http://www.openarchives.org/ore/terms/proxyFor>/<http://purl.org/dc/terms/extent>";
   rdfs:domain edm:ProvidedCHO;
   rdfs:label "a pour étendue"@fr, "extent"@en;
   rdfs:range this:Extent;
-  rdfs:subPropertyOf core:SearchProperty .
+  rdfs:subPropertyOf core:ListProperty .
 
 terms:provenance a owl:ObjectProperty;
   core:enableOptional true;
+  core:sparqlString "^<http://www.openarchives.org/ore/terms/proxyFor>/<http://purl.org/dc/terms/provenance>";
   rdfs:domain edm:ProvidedCHO;
   rdfs:label "a pour origine"@fr, "provenance"@en;
   rdfs:range this:Provenance;
-  rdfs:subPropertyOf core:SearchProperty .
+  rdfs:subPropertyOf core:ListProperty .
 
 terms:spatial a owl:ObjectProperty;
   core:enableOptional true;
+  core:sparqlString "^<http://www.openarchives.org/ore/terms/proxyFor>/<http://purl.org/dc/terms/spatial>";
   rdfs:domain edm:ProvidedCHO;
   rdfs:label "concerne"@fr, "spatial"@en;
-  rdfs:range edm:Place;
-  rdfs:subPropertyOf core:ListProperty .
+  rdfs:range this:Coverage;
+  rdfs:subPropertyOf core:SearchProperty .
 
 edm:type a owl:ObjectProperty;
+  core:enableOptional true;
+  core:sparqlString "^<http://www.openarchives.org/ore/terms/proxyFor>/<http://www.europeana.eu/schemas/edm/type>";
   rdfs:domain edm:ProvidedCHO;
-  rdfs:label "est de type EDM"@fr, "type"@en;
-  rdfs:range this:EDMType;
+  rdfs:label "EDM type"@en, "est de type EDM"@fr;
+  rdfs:range this:Type;
   rdfs:subPropertyOf core:ListProperty .
 
 this:aggredatedCHO_title a owl:ObjectProperty;
-  core:sparqlString "<http://www.europeana.eu/schemas/edm/aggregatedCHO>/<http://purl.org/dc/elements/1.1/title>";
+  core:enableOptional true;
+  core:sparqlString "<http://www.europeana.eu/schemas/edm/aggregatedCHO>/^<http://www.openarchives.org/ore/terms/proxyFor>/<http://purl.org/dc/elements/1.1/title>";
   rdfs:range this:Title;
-  rdfs:subPropertyOf core:SearchProperty .
+  rdfs:subPropertyOf core:AutocompleteProperty .
 
 this:aggredatedIn a owl:ObjectProperty;
+  core:enableOptional true;
   core:sparqlString "^<http://www.europeana.eu/schemas/edm/aggregatedCHO>";
   rdfs:domain edm:ProvidedCHO;
   rdfs:label "aggregated in"@en, "présenté dans"@fr;
   rdfs:range ore:Aggregation;
   rdfs:subPropertyOf core:NonSelectableProperty .
 
-this:spatialIRI a owl:ObjectProperty;
-  core:sparqlString "<http://purl.org/dc/terms/spatial>";
-  datasources:datasource datasources:list_URI_count;
+dce:contributor a owl:ObjectProperty;
+  core:enableOptional true;
+  core:sparqlString "^<http://www.openarchives.org/ore/terms/proxyFor>/<http://purl.org/dc/elements/1.1/contributor>";
   rdfs:domain edm:ProvidedCHO;
-  rdfs:label "concerne"@fr, "spatial (IRI)"@en;
-  rdfs:range this:PlaceIRI;
+  rdfs:label "contributeur"@fr, "contributor"@en;
+  rdfs:range edm:Agent;
+  rdfs:subPropertyOf core:AutocompleteProperty .
+
+dce:coverage a owl:ObjectProperty;
+  core:enableOptional true;
+  core:sparqlString "^<http://www.openarchives.org/ore/terms/proxyFor>/<http://purl.org/dc/elements/1.1/coverage>";
+  rdfs:domain edm:ProvidedCHO;
+  rdfs:label "concerne"@fr, "coverage"@en;
+  rdfs:range this:Coverage;
+  rdfs:subPropertyOf core:SearchProperty .
+
+dce:date a owl:ObjectProperty;
+  core:enableOptional true;
+  core:sparqlString "^<http://www.openarchives.org/ore/terms/proxyFor>/<http://purl.org/dc/elements/1.1/date>";
+  rdfs:domain edm:ProvidedCHO;
+  rdfs:label "date associée"@fr, "significant date"@en;
+  rdfs:range this:Date;
+  rdfs:subPropertyOf core:SearchProperty .
+
+edm:europeanaProxy a owl:ObjectProperty;
+  core:enableOptional true;
+  rdfs:domain edm:ProvidedCHO;
+  rdfs:label "europeana proxy"@en .
+
+terms:isPartOf a owl:ObjectProperty;
+  core:enableOptional true;
+  core:sparqlString "^<http://www.openarchives.org/ore/terms/proxyFor>/<http://purl.org/dc/terms/isPartOf>";
+  rdfs:domain edm:ProvidedCHO;
+  rdfs:label "est une partie de"@fr, "is part of"@en;
+  rdfs:range this:OtherResource;
   rdfs:subPropertyOf core:ListProperty .
 
-this:hasdcTypeIRI a owl:ObjectProperty;
-  core:sparqlString "<http://purl.org/dc/elements/1.1/type>";
-  datasources:datasource datasources:list_URI_count;
+ore:lineage a owl:ObjectProperty;
+  core:enableOptional true;
   rdfs:domain edm:ProvidedCHO;
-  rdfs:label "dc type (IRI)"@en, "est de type DC"@fr;
-  rdfs:range this:DCTypeIRI;
-  rdfs:subPropertyOf core:ListProperty .
+  rdfs:label "lineage"@en .
+
+terms:medium a owl:ObjectProperty;
+  core:enableOptional true;
+  core:sparqlString "^<http://www.openarchives.org/ore/terms/proxyFor>/<http://purl.org/dc/terms/medium>";
+  rdfs:domain edm:ProvidedCHO;
+  rdfs:label "est réalisé en"@fr, "made of"@en;
+  rdfs:range this:Medium;
+  rdfs:subPropertyOf core:SearchProperty .
+
+ore:proxyFor a owl:ObjectProperty;
+  core:enableOptional true;
+  rdfs:domain edm:ProvidedCHO;
+  rdfs:label "proxy for"@en .
+
+ore:proxyIn a owl:ObjectProperty;
+  core:enableOptional true;
+  rdfs:domain edm:ProvidedCHO;
+  rdfs:label "proxy in"@en .
+
+dce:publisher a owl:ObjectProperty;
+  core:enableOptional true;
+  core:sparqlString "^<http://www.openarchives.org/ore/terms/proxyFor>/<http://purl.org/dc/elements/1.1/creator>";
+  rdfs:domain edm:ProvidedCHO;
+  rdfs:label "publisher"@en, "éditeur"@fr;
+  rdfs:range edm:Agent;
+  rdfs:subPropertyOf core:AutocompleteProperty .
+
+dce:rights a owl:ObjectProperty;
+  core:enableOptional true;
+  core:sparqlString "^<http://www.openarchives.org/ore/terms/proxyFor>/<http://purl.org/dc/elements/1.1/rights>";
+  rdfs:domain edm:ProvidedCHO;
+  rdfs:label "associated rights"@en, "droits associés"@fr;
+  rdfs:range this:Rights;
+  rdfs:subPropertyOf core:SearchProperty .
+
+dce:source a owl:ObjectProperty;
+  core:enableOptional true;
+  core:sparqlString "^<http://www.openarchives.org/ore/terms/proxyFor>/<http://purl.org/dc/elements/1.1/source>";
+  rdfs:domain edm:ProvidedCHO;
+  rdfs:label "source"@en, "source"@fr;
+  rdfs:range this:OtherResource;
+  rdfs:subPropertyOf core:SearchProperty .
+
+terms:temporal a owl:ObjectProperty;
+  core:enableOptional true;
+  core:sparqlString "^<http://www.openarchives.org/ore/terms/proxyFor>/<http://purl.org/dc/terms/temporal>";
+  rdfs:domain edm:ProvidedCHO;
+  rdfs:label "couverture temporelle"@fr, "temporal"@en;
+  rdfs:range this:Coverage;
+  rdfs:subPropertyOf core:SearchProperty .
 
 this:list_skosprefLabel_alpha_with_count_langfr a datasources:SparqlDatasource;
   datasources:labelProperty skos:prefLabel;

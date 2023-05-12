@@ -124,9 +124,7 @@ var sampleQueries = {
   "distinct": true,
   "variables": [
     "ProvidedCHO_1",
-    "Type_2",
-    "Concept_4",
-    "Language_6"
+    "WebResource_10"
   ],
   "order": null,
   "branches": [
@@ -177,9 +175,40 @@ var sampleQueries = {
         "o": "?Language_6",
         "sType": "http://www.europeana.eu/schemas/edm/ProvidedCHO",
         "oType": "http://sparnatural.eu/demos/demo-edm/sparnatural-config.ttl/Language",
-        "values": []
+        "values": [
+          {
+            "label": "ga (395)",
+            "rdfTerm": {
+              "type": "literal",
+              "value": "ga"
+            }
+          }
+        ]
       },
       "children": []
+    },
+    {
+      "line": {
+        "s": "?ProvidedCHO_1",
+        "p": "http://sparnatural.eu/demos/demo-edm/sparnatural-config.ttl/aggredatedIn",
+        "o": "?Aggregation_8",
+        "sType": "http://www.europeana.eu/schemas/edm/ProvidedCHO",
+        "oType": "http://www.openarchives.org/ore/terms/Aggregation",
+        "values": []
+      },
+      "children": [
+        {
+          "line": {
+            "s": "?Aggregation_8",
+            "p": "http://www.europeana.eu/schemas/edm/hasView",
+            "o": "?WebResource_10",
+            "sType": "http://www.openarchives.org/ore/terms/Aggregation",
+            "oType": "http://www.europeana.eu/schemas/edm/WebResource",
+            "values": []
+          },
+          "children": []
+        }
+      ]
     }
   ]
 }
