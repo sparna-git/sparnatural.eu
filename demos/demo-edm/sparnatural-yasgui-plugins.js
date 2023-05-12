@@ -28023,7 +28023,7 @@ var TableX = /** @class */ (function () {
     function TableX(yasr) {
         var _this = this;
         this.persistentConfig = {};
-        this.helpReference = "https://triply.cc/docs/yasgui#table";
+        // public helpReference = "https://github.com/sparna-git/sparnatural-yasgui-plugins";
         this.label = "Table";
         this.priority = 10;
         this.setEllipsisHandlers = function () {
@@ -28287,43 +28287,45 @@ var TableX = /** @class */ (function () {
         this.removeControls();
         this.tableControls = document.createElement("div");
         this.tableControls.className = "tableControls";
-        // Compact switch
-        var toggleWrapper = document.createElement("div");
-        var switchComponent = document.createElement("label");
-        var textComponent = document.createElement("span");
-        textComponent.innerText = "Simple view";
-        (0, __1.addClass)(textComponent, "label");
-        switchComponent.appendChild(textComponent);
-        (0, __1.addClass)(switchComponent, "switch");
-        toggleWrapper.appendChild(switchComponent);
-        this.tableCompactSwitch = document.createElement("input");
-        switchComponent.addEventListener("change", this.handleSetCompactToggle);
-        this.tableCompactSwitch.type = "checkbox";
-        switchComponent.appendChild(this.tableCompactSwitch);
-        this.tableCompactSwitch.defaultChecked = !!this.persistentConfig.compact;
-        this.tableControls.appendChild(toggleWrapper);
-        // Ellipsis switch
-        var ellipseToggleWrapper = document.createElement("div");
-        var ellipseSwitchComponent = document.createElement("label");
-        var ellipseTextComponent = document.createElement("span");
-        ellipseTextComponent.innerText = "Ellipse";
-        (0, __1.addClass)(ellipseTextComponent, "label");
-        ellipseSwitchComponent.appendChild(ellipseTextComponent);
-        (0, __1.addClass)(ellipseSwitchComponent, "switch");
-        ellipseToggleWrapper.appendChild(ellipseSwitchComponent);
-        this.tableEllipseSwitch = document.createElement("input");
-        ellipseSwitchComponent.addEventListener("change", this.handleSetEllipsisToggle);
-        this.tableEllipseSwitch.type = "checkbox";
-        ellipseSwitchComponent.appendChild(this.tableEllipseSwitch);
-        this.tableEllipseSwitch.defaultChecked = this.persistentConfig.isEllipsed !== false;
-        this.tableControls.appendChild(ellipseToggleWrapper);
-        // Create table filter
-        this.tableFilterField = document.createElement("input");
-        this.tableFilterField.className = "tableFilter";
-        this.tableFilterField.placeholder = "Filter query results";
-        this.tableFilterField.setAttribute("aria-label", "Filter query results");
-        this.tableControls.appendChild(this.tableFilterField);
-        this.tableFilterField.addEventListener("keyup", this.handleTableSearch);
+        if (this.config.includeControls) {
+            // Compact switch
+            var toggleWrapper = document.createElement("div");
+            var switchComponent = document.createElement("label");
+            var textComponent = document.createElement("span");
+            textComponent.innerText = "Simple view";
+            (0, __1.addClass)(textComponent, "label");
+            switchComponent.appendChild(textComponent);
+            (0, __1.addClass)(switchComponent, "switch");
+            toggleWrapper.appendChild(switchComponent);
+            this.tableCompactSwitch = document.createElement("input");
+            switchComponent.addEventListener("change", this.handleSetCompactToggle);
+            this.tableCompactSwitch.type = "checkbox";
+            switchComponent.appendChild(this.tableCompactSwitch);
+            this.tableCompactSwitch.defaultChecked = !!this.persistentConfig.compact;
+            this.tableControls.appendChild(toggleWrapper);
+            // Ellipsis switch
+            var ellipseToggleWrapper = document.createElement("div");
+            var ellipseSwitchComponent = document.createElement("label");
+            var ellipseTextComponent = document.createElement("span");
+            ellipseTextComponent.innerText = "Ellipse";
+            (0, __1.addClass)(ellipseTextComponent, "label");
+            ellipseSwitchComponent.appendChild(ellipseTextComponent);
+            (0, __1.addClass)(ellipseSwitchComponent, "switch");
+            ellipseToggleWrapper.appendChild(ellipseSwitchComponent);
+            this.tableEllipseSwitch = document.createElement("input");
+            ellipseSwitchComponent.addEventListener("change", this.handleSetEllipsisToggle);
+            this.tableEllipseSwitch.type = "checkbox";
+            ellipseSwitchComponent.appendChild(this.tableEllipseSwitch);
+            this.tableEllipseSwitch.defaultChecked = this.persistentConfig.isEllipsed !== false;
+            this.tableControls.appendChild(ellipseToggleWrapper);
+            // Create table filter
+            this.tableFilterField = document.createElement("input");
+            this.tableFilterField.className = "tableFilter";
+            this.tableFilterField.placeholder = "Filter query results";
+            this.tableFilterField.setAttribute("aria-label", "Filter query results");
+            this.tableControls.appendChild(this.tableFilterField);
+            this.tableFilterField.addEventListener("keyup", this.handleTableSearch);
+        }
         // Create page wrapper
         var pageSizerWrapper = document.createElement("div");
         pageSizerWrapper.className = "pageSizeWrapper";
@@ -28400,6 +28402,7 @@ var TableX = /** @class */ (function () {
     // ***** end TableX MODIFICATION
     TableX.defaults = {
         openIriInNewWindow: true,
+        includeControls: false,
         tableConfig: {
             dom: "tip",
             pageLength: DEFAULT_PAGE_SIZE,

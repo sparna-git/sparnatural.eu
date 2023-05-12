@@ -125,8 +125,8 @@
           <div class="col-md-6">
             <div style="text-align:right;">
               <span style="font-size:90%; font-style: italic;"> 
-                <span data-i18n="endpoint.querying"></span> <a id="endpoint" href="https://proxy.sparnatural.eu/sparql-proxy/sparql?endpoint=https%3A%2F%2Fsmt.esante.gouv.fr%2Fapi%2Fsparql">https://smt.esante.gouv.fr/api/sparql</a> 
-              </span>
+                <a id="endpoint" href="https://smt.esante.gouv.fr/api/sparql">Service SPARQL du SMT</a> 
+              </span> | <a href="https://docs.google.com/spreadsheets/d/1ZkgVyfG1rnl3yZALOdxovj7ommoKDn7ieudi7jCwoYw">Configuration</a> 
             </div>
           </div>
 
@@ -158,10 +158,12 @@
             <a href="#" id="sparql-toggle"><i id="sparql-toggle-icon" class="fad fa-eye fa-fw"></i>&nbsp; <span data-i18n="actions.toggle"></span></a>
             &nbsp;|&nbsp;
             <a href="#" id="share"><i id="share-icon" class="fad fa-share-square"></i>&nbsp; <span data-i18n="actions.share"></span></a>
+            <!--
             &nbsp;|&nbsp;
             <a href="#" id="export"><i id="export-icon" class="fad fa-file-export"></i>&nbsp; <span data-i18n="actions.export"></span></a>
             &nbsp;|&nbsp;
             <a href="#" id="import"><i id="import-icon" class="fad fa-file-import"></i>&nbsp; <span data-i18n="actions.import"></span></a>
+            -->
           </div>
         </div>
 
@@ -387,10 +389,6 @@
         // sparnatural.setAttribute("lang", "fr");
       }
 
-      // prints the endpoint
-      $('#endpoint').attr("href", sparnatural.getAttribute("endpoint"));
-      $('#endpoint').html(sparnatural.getAttribute("endpoint"));
-
       sparnatural.addEventListener("queryUpdated", (event) => {
         queryString = sparnatural.expandSparql(event.detail.queryString);
         $('#sparql code').html(queryString.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"));
@@ -429,7 +427,7 @@
 
       const yasqe = new Yasqe(document.getElementById("yasqe"), {
         requestConfig: { 
-          endpoint: $('#endpoint').text(),
+          endpoint: "https://proxy.sparnatural.eu/sparql-proxy/sparql?endpoint=https%3A%2F%2Fsmt.esante.gouv.fr%2Fapi%2Fsparql",
           method: "GET",
           header: {}
         },
@@ -485,6 +483,7 @@
         });
       }
         
+      /*
       document.getElementById('export').onclick = function() {
           var jsonString = JSON.stringify(
               JSON.parse(document.getElementById('query-json').value),
@@ -498,6 +497,7 @@
       document.getElementById('import').onclick = function() {
           $('#importModal').modal('show');       
       } 
+      */
 
       document.getElementById('importButton').onclick = function() {
           var json = JSON.parse($('#import-json').val());
