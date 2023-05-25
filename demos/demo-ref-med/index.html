@@ -145,7 +145,6 @@
             typePredicate="<http://www.w3.org/2000/01/rdf-schema#subClassOf>"
             lang="fr"
             distinct="true"
-            limit="1000"
             debug="true"
           ></spar-natural>
 
@@ -164,6 +163,11 @@
             &nbsp;|&nbsp;
             <a href="#" id="import"><i id="import-icon" class="fad fa-file-import"></i>&nbsp; <span data-i18n="actions.import"></span></a>
             -->
+          </div>
+        </div>
+        <div class="row" style="margin-top: 2em;">
+          <div class="col-md-6">
+            <i class="fad fa-warning"></i>&nbsp; <span data-i18n="actions.warning.limit"></span>
           </div>
         </div>
 
@@ -343,6 +347,7 @@
             'actions.share': 'Share',            
             'actions.export': 'Export query in JSON',
             'actions.import': 'Import query in JSON',
+            'actions.warning.limit': 'Result is always limited to 10000 lines',
             'tutorial': 'First time here ? watch the tutorial !',
             'share.modal.title': 'Direct query link',
             'share.modal.close': 'Close',
@@ -351,6 +356,14 @@
             'import.modal.title': 'Query as JSON',
             'import.modal.import': 'Import',
             'example.placeholder': 'Load example query...',
+            'example.1.title': '1) Toutes les correspondances CIP UCD de Spécialités contenant CEFUROXIME (J01DC02)',
+            'example.2.title': '2) Toutes les substances associées au code ATC du PERINDOPRIL (C09AA04)',
+            'example.3.title': '3) Toutes les classes ATC dont le libellé contient « BETAMETHASONE »',
+            'example.4.title': '4) Tous les vaccins COVID-19 disponibles en France',
+            'example.5.title': '5) Tous les événements dans la vie de la spécialité « FORTUM 2 g » (CIS 69443806)',
+            'example.6.title': '6) Toutes les présentations commercialisées à ce jour de médicaments contenant de l’EZETIMIBE ayant eu une autorisation d’importation parallèle',
+            'example.7.title': '7) Toutes les présentations commercialisées à ce jour dont le libellé décrit une composition de 1000 mg de METFORMINE',
+            'example.8.title': '8) Toutes les substances actives de l’HUMEX RHUME'
 
           },
           'fr': {
@@ -363,6 +376,7 @@
             'actions.share': 'Partager',            
             'actions.export': 'Exporter la requête en JSON',
             'actions.import': 'Charger une requête en JSON',
+            'actions.warning.limit': 'Le nombre maximum de résultats est fixé à 10 000.',
             'tutorial': 'Vous ne savez pas comment commencer ? cliquez ici pour être guidé !',
             'share.modal.title': 'Lien direct vers la requête',
             'share.modal.close': 'Fermer',
