@@ -106,21 +106,69 @@
       <div class="container">
 
         <div class="row" style="padding-bottom:10px;">
+          <div class="col-md-1">
+            <label for="select-lang" class="form-label">Language</label>
+            <select class="form-control" style="appearance: auto !important;" id="select-lang">
+              <!-- this is populated automatically based on config -->                
+            </select>
+          </div>
+          <div class="col-md-2">
+            <label for="select-config" class="form-label">View</label>
+            <select class="form-control" style="appearance: auto !important;" id="select-config">
+              <option value="sparnatural-config.ttl" data-i18n="config.1.title"></option>
+              <option value="sparnatural-config-simplified.ttl" data-i18n="config.2.title"></option>            
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label for="select-examples" class="form-label">Sample query</label>
+            <select class="form-control" style="width:100%; appearance: auto !important;" id="select-examples">
+              <option value="none" data-i18n="example.placeholder" selected></option>
+              <option value="example.1" data-i18n="example.1.title"></option>
+              <option value="example.2" data-i18n="example.2.title"></option>
+              <option value="example.3" data-i18n="example.3.title"></option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <div style="text-align:right;">
+              <span style="font-size:90%; font-style: italic;"> 
+                <!-- Rijksmuseum : https://sage-ails.ails.ece.ntua.gr/api/content/rijksmuseum-poc/sparql -->
+                <a id="endpoint" href="https://sage-ails.ails.ece.ntua.gr/api/content/semanticsearch-digital-repository-of-ireland/sparql">SPARQL endpoint</a> / <a href="https://docs.google.com/spreadsheets/d/14Ak0N8fE8kFpmFA0cjApLDvE2BFiNa7ypa2Yk7v1pO4/edit#gid=1577547731">configuration</a>
+              </span>
+            </div>
+          </div>
+
+        </div>
+        <!--
+        <div class="row" style="padding-bottom:10px;">
           <div class="col-md-2">
             <form>
               <div class="form-group row">
-                <div class="col-sm-6">
-                  <i style="font-size:25px;" class="fa-thin fa-globe-africa"></i>&nbsp;<span>Lang.</span>
+                <div class="col-sm-6 gx-0">
+                  <i class="fa-thin fa-globe-africa"></i>&nbsp;<span>Lang.</span>
                 </div>
-                <div class="col-sm-6">
-                  <select class="form-control" style="appearance: auto !important;" id="select-lang">
-                    <!-- this is populated automatically based on config -->                
+                <div class="col-sm-6 gx-2">
+                  <select class="form-control" style="appearance: auto !important;" id="select-lang">               
                   </select>
               </div>
               </div>
             </form>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-2">
+            <form>
+              <div class="form-group row">
+                <div class="col-sm-5 gx-0">
+                  <i class="fa-thin fa-eye"></i>&nbsp;<span>View:</span>
+                </div>
+                <div class="col-sm-7 gx-2">
+                  <select class="form-control" style="appearance: auto !important;" id="select-config">
+                    <option value="sparnatural-config.ttl" data-i18n="config.1.title"></option>
+                    <option value="sparnatural-config-simplified.ttl" data-i18n="config.2.title"></option>            
+                  </select>
+              </div>
+              </div>
+            </form>
+          </div>
+          <div class="col-md-4">
             <form>
               <div class="form-group">
                 <select class="form-control" style="width:100%; appearance: auto !important;" id="select-examples">
@@ -133,16 +181,17 @@
             </form>
           </div>
 
-          <div class="col-md-4">
+          <div class="col-md-3">
             <div style="text-align:right;">
               <span style="font-size:90%; font-style: italic;"> 
-                <!-- Rijksmuseum : https://sage-ails.ails.ece.ntua.gr/api/content/rijksmuseum-poc/sparql -->
+                <- Rijksmuseum : https://sage-ails.ails.ece.ntua.gr/api/content/rijksmuseum-poc/sparql ->
                 <a id="endpoint" href="https://sage-ails.ails.ece.ntua.gr/api/content/semanticsearch-digital-repository-of-ireland/sparql">SPARQL endpoint</a> / <a href="https://docs.google.com/spreadsheets/d/14Ak0N8fE8kFpmFA0cjApLDvE2BFiNa7ypa2Yk7v1pO4/edit#gid=1577547731">configuration</a>
               </span>
             </div>
           </div>
 
         </div>
+      -->
 
         <!--<div class="row" style="font-style: italic; font-size:0.9em;">
           <a href="#" id="tutorial"><i id="sparql-toggle-icon" class="fad fa-question fa-fw"></i>&nbsp; <span data-i18n="tutorial"></a>
@@ -153,7 +202,7 @@
 
           <!-- https://xls2rdf.sparna.fr/rest/convert?url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F14Ak0N8fE8kFpmFA0cjApLDvE2BFiNa7ypa2Yk7v1pO4%2Fexport%3Fformat%3Dxlsx&noPostProcessings=true -->
           <spar-natural 
-            src="sparnatural-config.ttl"
+            src="https://xls2rdf.sparna.fr/rest/convert?url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F14Ak0N8fE8kFpmFA0cjApLDvE2BFiNa7ypa2Yk7v1pO4%2Fexport%3Fformat%3Dxlsx&noPostProcessings=true"
             endpoint="https://sage-ails.ails.ece.ntua.gr/api/content/semanticsearch-digital-repository-of-ireland/sparql"
             lang="en"
             defaultLang="en"
@@ -363,10 +412,12 @@
             'export.modal.close': 'Close',
             'import.modal.title': 'Query as JSON',
             'import.modal.import': 'Import',
-            'example.placeholder': 'Load example query...',
+            'example.placeholder': 'Load example query (standard view only)...',
             'example.1.title': 'All Aggregations under Public Domain License',
             'example.2.title': 'All Statues of Dublin with their Web Pictures',
-            'example.3.title': 'All DC Types Sounds of Irish tales'
+            'example.3.title': 'All DC Types Sounds of Irish tales',
+            'config.1.title': 'Standard view',
+            'config.2.title': 'Simplified view'
           },
           'fr': {
             'page.title': 'Europeana Linked Data Taskforce',
@@ -385,10 +436,12 @@
             'export.modal.close': 'Fermer',
             'import.modal.title': 'Charger une requête en JSON',
             'import.modal.import': 'Charger',
-            'example.placeholder': 'Charger une requête d\'exemple...',
+            'example.placeholder': 'Charger une requête d\'exemple (vue standard seulement)...',
             'example.1.title': 'Toutes les Vues catalogue sous Licence Domaine Public',
             'example.2.title': 'Toutes les Statues de Dublin avec leurs images',
-            'example.3.title': 'Tous les DC Types "sounds" de contes irlandais'
+            'example.3.title': 'Tous les DC Types "sounds" de contes irlandais',
+            'config.1.title': 'Vie standard',
+            'config.2.title': 'Vue simplifiée'
           }
       } );  
       $('body').i18n();
@@ -547,12 +600,15 @@
         $('body').i18n();
       }
 
-      /*
-      document.getElementById('tutorial').onclick = function() {
-        sparnatural.clear();
-        initTour();
+      document.getElementById('select-config').onchange = function() {
+        var config = $('#select-config option:selected').val();
+        sparnatural.setAttribute("src", config);
+        if($('#select-config option:selected').val() == "sparnatural-config.ttl") {
+          document.getElementById('select-examples').disabled = false;
+        } else {
+          document.getElementById('select-examples').disabled = true;
+        }
       }
-      */
 
     </script>
   </script>
