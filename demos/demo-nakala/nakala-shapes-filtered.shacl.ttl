@@ -1,3 +1,4 @@
+@prefix dash:  <http://datashapes.org/dash#> .
 @prefix dct:   <http://purl.org/dc/terms/> .
 @prefix edm:   <http://www.europeana.eu/schemas/edm/> .
 @prefix ore:   <http://www.openarchives.org/ore/terms/> .
@@ -39,9 +40,12 @@ shape:Group  rdf:type   sh:NodeShape ;
         void:property  terms:educationLevel ;
         void:triples   "74"^^xsd:int .
 
-<https://nakala.fr/sparql/partition_ProvidedCHO_IsSupplementedBy>
-        void:property  <http://datacite.org/schema/kernel-4/IsSupplementedBy> ;
-        void:triples   "59"^^xsd:int .
+shape:Collection_date
+        sh:description  "1334 triples" ;
+        sh:name         "date"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:or           ( shape:Collection_date_datatype_0 shape:Collection_date_datatype_1 ) ;
+        sh:path         terms:date .
 
 <https://nakala.fr/sparql/partition_ProvidedCHO_isVersionOf>
         void:property  terms:isVersionOf ;
@@ -56,17 +60,14 @@ shape:Aggregation  rdf:type  sh:NodeShape ;
 shape:Collection_contributor_datatype_1
         sh:datatype  xsd:string .
 
-shape:Collection_date
-        sh:description  "1334 triples" ;
-        sh:name         "date"@en ;
-        sh:nodeKind     sh:Literal ;
-        sh:or           ( shape:Collection_date_datatype_0 shape:Collection_date_datatype_1 ) ;
-        sh:path         terms:date .
+<https://nakala.fr/sparql/partition_ProvidedCHO_IsSupplementedBy>
+        void:property  <http://datacite.org/schema/kernel-4/IsSupplementedBy> ;
+        void:triples   "59"^^xsd:int .
 
 <https://nakala.fr/sparql>
         rdf:type             void:Dataset ;
         terms:conformsTo     <https://shacl-play.sparna.fr/shapes> ;
-        void:classPartition  <https://nakala.fr/sparql/partition_Agent> , <https://nakala.fr/sparql/partition_WebResource> , <https://nakala.fr/sparql/partition_Aggregation> , <https://nakala.fr/sparql/partition_ProvidedCHO> , <https://nakala.fr/sparql/partition_Concept> , <https://nakala.fr/sparql/partition_Document> , <https://nakala.fr/sparql/partition_Person> , <https://nakala.fr/sparql/partition_Collection> , <https://nakala.fr/sparql/partition_ResourceMap> , <https://nakala.fr/sparql/partition_Group> ;
+        void:classPartition  <https://nakala.fr/sparql/partition_Agent> , <https://nakala.fr/sparql/partition_WebResource> , <https://nakala.fr/sparql/partition_Aggregation> , <https://nakala.fr/sparql/partition_ProvidedCHO> , <https://nakala.fr/sparql/partition_Document> , <https://nakala.fr/sparql/partition_Concept> , <https://nakala.fr/sparql/partition_Person> , <https://nakala.fr/sparql/partition_Collection> , <https://nakala.fr/sparql/partition_ResourceMap> , <https://nakala.fr/sparql/partition_Group> ;
         void:triples         "31420457"^^xsd:int .
 
 <https://nakala.fr/sparql/partition_Collection_hasVersion>
@@ -116,7 +117,7 @@ shape:Agent_sameAs  sh:description  "505 triples" ;
         terms:conformsTo        shape:Agent ;
         void:class              edm:Agent ;
         void:entities           "12592"^^xsd:int ;
-        void:propertyPartition  <https://nakala.fr/sparql/partition_Agent_familyName> , <https://nakala.fr/sparql/partition_Agent_sameAs> , <https://nakala.fr/sparql/partition_Agent_givenName> , <https://nakala.fr/sparql/partition_Agent_name> .
+        void:propertyPartition  <https://nakala.fr/sparql/partition_Agent_name> , <https://nakala.fr/sparql/partition_Agent_givenName> , <https://nakala.fr/sparql/partition_Agent_sameAs> , <https://nakala.fr/sparql/partition_Agent_familyName> .
 
 shape:Collection_format_datatype_0
         sh:datatype  rdf:langString .
@@ -139,7 +140,7 @@ shape:Collection_format_datatype_0
         terms:conformsTo        shape:ProvidedCHO ;
         void:class              edm:ProvidedCHO ;
         void:entities           "656612"^^xsd:int ;
-        void:propertyPartition  <https://nakala.fr/sparql/partition_ProvidedCHO_rightsHolder> , <https://nakala.fr/sparql/partition_ProvidedCHO_alternative> , <https://nakala.fr/sparql/partition_ProvidedCHO_accrualPolicy> , <https://nakala.fr/sparql/partition_ProvidedCHO_IsObsoletedBy> , <https://nakala.fr/sparql/partition_ProvidedCHO_temporal> , <https://nakala.fr/sparql/partition_ProvidedCHO_hasFormat> , <https://nakala.fr/sparql/partition_ProvidedCHO_spatial> , <https://nakala.fr/sparql/partition_ProvidedCHO_source> , <https://nakala.fr/sparql/partition_ProvidedCHO_isVersionOf> , <https://nakala.fr/sparql/partition_ProvidedCHO_isFormatOf> , <https://nakala.fr/sparql/partition_ProvidedCHO_hasPart> , <https://nakala.fr/sparql/partition_ProvidedCHO_IsRequiredBy> , <https://nakala.fr/sparql/partition_ProvidedCHO_IsReviewedBy> , <https://nakala.fr/sparql/partition_ProvidedCHO_isGatheredInto> , <https://nakala.fr/sparql/partition_ProvidedCHO_educationLevel> , <https://nakala.fr/sparql/partition_ProvidedCHO_audience> , <https://nakala.fr/sparql/partition_ProvidedCHO_Documents> , <https://nakala.fr/sparql/partition_ProvidedCHO_Obsoletes> , <https://nakala.fr/sparql/partition_ProvidedCHO_IsSourceOf> , <https://nakala.fr/sparql/partition_ProvidedCHO_type> , <https://nakala.fr/sparql/partition_ProvidedCHO_tableOfContents> , <https://nakala.fr/sparql/partition_ProvidedCHO_license> , <https://nakala.fr/sparql/partition_ProvidedCHO_creator> , <https://nakala.fr/sparql/partition_ProvidedCHO_requires> , <https://nakala.fr/sparql/partition_ProvidedCHO_bibliographicCitation> , <https://nakala.fr/sparql/partition_ProvidedCHO_References> , <https://nakala.fr/sparql/partition_ProvidedCHO_HasPart> , <https://nakala.fr/sparql/partition_ProvidedCHO_subject> , <https://nakala.fr/sparql/partition_ProvidedCHO_modified> , <https://nakala.fr/sparql/partition_ProvidedCHO_IsPartOf> , <https://nakala.fr/sparql/partition_ProvidedCHO_Continues> , <https://nakala.fr/sparql/partition_ProvidedCHO_Cites> , <https://nakala.fr/sparql/partition_ProvidedCHO_references> , <https://nakala.fr/sparql/partition_ProvidedCHO_IsSupplementTo> , <https://nakala.fr/sparql/partition_ProvidedCHO_accrualPeriodicity> , <https://nakala.fr/sparql/partition_ProvidedCHO_medium> , <https://nakala.fr/sparql/partition_ProvidedCHO_IsVersionOf> , <https://nakala.fr/sparql/partition_ProvidedCHO_HasVersion> , <https://nakala.fr/sparql/partition_ProvidedCHO_format> , <https://nakala.fr/sparql/partition_ProvidedCHO_IsDocumentedBy> , <https://nakala.fr/sparql/partition_ProvidedCHO_contributor> , <https://nakala.fr/sparql/partition_ProvidedCHO_isRequiredBy> , <https://nakala.fr/sparql/partition_ProvidedCHO_IsCitedBy> , <https://nakala.fr/sparql/partition_ProvidedCHO_mediator> , <https://nakala.fr/sparql/partition_ProvidedCHO_IsCompiledBy> , <https://nakala.fr/sparql/partition_ProvidedCHO_dateSubmitted> , <https://nakala.fr/sparql/partition_ProvidedCHO_IsNewVersionOf> , <https://nakala.fr/sparql/partition_ProvidedCHO_relation> , <https://nakala.fr/sparql/partition_ProvidedCHO_Reviews> , <https://nakala.fr/sparql/partition_ProvidedCHO_language> , <https://nakala.fr/sparql/partition_ProvidedCHO_IsOriginalFormOf> , <https://nakala.fr/sparql/partition_ProvidedCHO_title> , <https://nakala.fr/sparql/partition_ProvidedCHO_dateCopyrighted> , <https://nakala.fr/sparql/partition_ProvidedCHO_conformsTo> , <https://nakala.fr/sparql/partition_ProvidedCHO_accrualMethod> , <https://nakala.fr/sparql/partition_ProvidedCHO_isPartOf> , <https://nakala.fr/sparql/partition_ProvidedCHO_issued> , <https://nakala.fr/sparql/partition_ProvidedCHO_IsVariantFormOf> , <https://nakala.fr/sparql/partition_ProvidedCHO_extent> , <https://nakala.fr/sparql/partition_ProvidedCHO_provenance> , <https://nakala.fr/sparql/partition_ProvidedCHO_dateAccepted> , <https://nakala.fr/sparql/partition_ProvidedCHO_IsSupplementedBy> , <https://nakala.fr/sparql/partition_ProvidedCHO_isReferencedBy> , <https://nakala.fr/sparql/partition_ProvidedCHO_IsDerivedFrom> , <https://nakala.fr/sparql/partition_ProvidedCHO_Requires> , <https://nakala.fr/sparql/partition_ProvidedCHO_accessRights> , <https://nakala.fr/sparql/partition_ProvidedCHO_rights> , <https://nakala.fr/sparql/partition_ProvidedCHO_abstract> , <https://nakala.fr/sparql/partition_ProvidedCHO_date> , <https://nakala.fr/sparql/partition_ProvidedCHO_coverage> , <https://nakala.fr/sparql/partition_ProvidedCHO_available> , <https://nakala.fr/sparql/partition_ProvidedCHO_publisher> , <https://nakala.fr/sparql/partition_ProvidedCHO_hasVersion> , <https://nakala.fr/sparql/partition_ProvidedCHO_IsContinuedBy> , <https://nakala.fr/sparql/partition_ProvidedCHO_description> , <https://nakala.fr/sparql/partition_ProvidedCHO_identifier> , <https://nakala.fr/sparql/partition_ProvidedCHO_created> , <https://nakala.fr/sparql/partition_ProvidedCHO_PreviousVersionOf> .
+        void:propertyPartition  <https://nakala.fr/sparql/partition_ProvidedCHO_rightsHolder> , <https://nakala.fr/sparql/partition_ProvidedCHO_alternative> , <https://nakala.fr/sparql/partition_ProvidedCHO_accrualPolicy> , <https://nakala.fr/sparql/partition_ProvidedCHO_IsObsoletedBy> , <https://nakala.fr/sparql/partition_ProvidedCHO_temporal> , <https://nakala.fr/sparql/partition_ProvidedCHO_hasFormat> , <https://nakala.fr/sparql/partition_ProvidedCHO_spatial> , <https://nakala.fr/sparql/partition_ProvidedCHO_source> , <https://nakala.fr/sparql/partition_ProvidedCHO_isVersionOf> , <https://nakala.fr/sparql/partition_ProvidedCHO_isFormatOf> , <https://nakala.fr/sparql/partition_ProvidedCHO_IsRequiredBy> , <https://nakala.fr/sparql/partition_ProvidedCHO_hasPart> , <https://nakala.fr/sparql/partition_ProvidedCHO_isGatheredInto> , <https://nakala.fr/sparql/partition_ProvidedCHO_IsReviewedBy> , <https://nakala.fr/sparql/partition_ProvidedCHO_educationLevel> , <https://nakala.fr/sparql/partition_ProvidedCHO_audience> , <https://nakala.fr/sparql/partition_ProvidedCHO_Documents> , <https://nakala.fr/sparql/partition_ProvidedCHO_Obsoletes> , <https://nakala.fr/sparql/partition_ProvidedCHO_IsSourceOf> , <https://nakala.fr/sparql/partition_ProvidedCHO_type> , <https://nakala.fr/sparql/partition_ProvidedCHO_tableOfContents> , <https://nakala.fr/sparql/partition_ProvidedCHO_license> , <https://nakala.fr/sparql/partition_ProvidedCHO_creator> , <https://nakala.fr/sparql/partition_ProvidedCHO_requires> , <https://nakala.fr/sparql/partition_ProvidedCHO_bibliographicCitation> , <https://nakala.fr/sparql/partition_ProvidedCHO_References> , <https://nakala.fr/sparql/partition_ProvidedCHO_HasPart> , <https://nakala.fr/sparql/partition_ProvidedCHO_subject> , <https://nakala.fr/sparql/partition_ProvidedCHO_modified> , <https://nakala.fr/sparql/partition_ProvidedCHO_IsPartOf> , <https://nakala.fr/sparql/partition_ProvidedCHO_Continues> , <https://nakala.fr/sparql/partition_ProvidedCHO_Cites> , <https://nakala.fr/sparql/partition_ProvidedCHO_references> , <https://nakala.fr/sparql/partition_ProvidedCHO_accrualPeriodicity> , <https://nakala.fr/sparql/partition_ProvidedCHO_IsSupplementTo> , <https://nakala.fr/sparql/partition_ProvidedCHO_medium> , <https://nakala.fr/sparql/partition_ProvidedCHO_IsVersionOf> , <https://nakala.fr/sparql/partition_ProvidedCHO_HasVersion> , <https://nakala.fr/sparql/partition_ProvidedCHO_format> , <https://nakala.fr/sparql/partition_ProvidedCHO_IsDocumentedBy> , <https://nakala.fr/sparql/partition_ProvidedCHO_contributor> , <https://nakala.fr/sparql/partition_ProvidedCHO_IsCitedBy> , <https://nakala.fr/sparql/partition_ProvidedCHO_isRequiredBy> , <https://nakala.fr/sparql/partition_ProvidedCHO_IsCompiledBy> , <https://nakala.fr/sparql/partition_ProvidedCHO_mediator> , <https://nakala.fr/sparql/partition_ProvidedCHO_dateSubmitted> , <https://nakala.fr/sparql/partition_ProvidedCHO_IsNewVersionOf> , <https://nakala.fr/sparql/partition_ProvidedCHO_Reviews> , <https://nakala.fr/sparql/partition_ProvidedCHO_relation> , <https://nakala.fr/sparql/partition_ProvidedCHO_language> , <https://nakala.fr/sparql/partition_ProvidedCHO_IsOriginalFormOf> , <https://nakala.fr/sparql/partition_ProvidedCHO_title> , <https://nakala.fr/sparql/partition_ProvidedCHO_dateCopyrighted> , <https://nakala.fr/sparql/partition_ProvidedCHO_conformsTo> , <https://nakala.fr/sparql/partition_ProvidedCHO_accrualMethod> , <https://nakala.fr/sparql/partition_ProvidedCHO_isPartOf> , <https://nakala.fr/sparql/partition_ProvidedCHO_IsVariantFormOf> , <https://nakala.fr/sparql/partition_ProvidedCHO_issued> , <https://nakala.fr/sparql/partition_ProvidedCHO_extent> , <https://nakala.fr/sparql/partition_ProvidedCHO_provenance> , <https://nakala.fr/sparql/partition_ProvidedCHO_dateAccepted> , <https://nakala.fr/sparql/partition_ProvidedCHO_IsSupplementedBy> , <https://nakala.fr/sparql/partition_ProvidedCHO_isReferencedBy> , <https://nakala.fr/sparql/partition_ProvidedCHO_IsDerivedFrom> , <https://nakala.fr/sparql/partition_ProvidedCHO_Requires> , <https://nakala.fr/sparql/partition_ProvidedCHO_accessRights> , <https://nakala.fr/sparql/partition_ProvidedCHO_rights> , <https://nakala.fr/sparql/partition_ProvidedCHO_abstract> , <https://nakala.fr/sparql/partition_ProvidedCHO_date> , <https://nakala.fr/sparql/partition_ProvidedCHO_coverage> , <https://nakala.fr/sparql/partition_ProvidedCHO_available> , <https://nakala.fr/sparql/partition_ProvidedCHO_publisher> , <https://nakala.fr/sparql/partition_ProvidedCHO_hasVersion> , <https://nakala.fr/sparql/partition_ProvidedCHO_description> , <https://nakala.fr/sparql/partition_ProvidedCHO_IsContinuedBy> , <https://nakala.fr/sparql/partition_ProvidedCHO_created> , <https://nakala.fr/sparql/partition_ProvidedCHO_identifier> , <https://nakala.fr/sparql/partition_ProvidedCHO_PreviousVersionOf> .
 
 shape:Collection_extent
         sh:description  "223 triples" ;
@@ -210,7 +211,7 @@ shape:Collection_isReferencedBy_datatype_1
         terms:conformsTo        shape:ResourceMap ;
         void:class              ore:ResourceMap ;
         void:entities           "664264"^^xsd:int ;
-        void:propertyPartition  <https://nakala.fr/sparql/partition_ResourceMap_modified> , <https://nakala.fr/sparql/partition_ResourceMap_describes> , <https://nakala.fr/sparql/partition_ResourceMap_creator> , <https://nakala.fr/sparql/partition_ResourceMap_rights> , <https://nakala.fr/sparql/partition_ResourceMap_created> , <https://nakala.fr/sparql/partition_ResourceMap_version> .
+        void:propertyPartition  <https://nakala.fr/sparql/partition_ResourceMap_version> , <https://nakala.fr/sparql/partition_ResourceMap_created> , <https://nakala.fr/sparql/partition_ResourceMap_rights> , <https://nakala.fr/sparql/partition_ResourceMap_creator> , <https://nakala.fr/sparql/partition_ResourceMap_describes> , <https://nakala.fr/sparql/partition_ResourceMap_modified> .
 
 shape:ProvidedCHO_provenance
         sh:description  "107184 triples" ;
@@ -221,14 +222,14 @@ shape:ProvidedCHO_provenance
 shape:Collection_modified_datatype_0
         sh:datatype  rdf:langString .
 
-<https://nakala.fr/sparql/partition_ProvidedCHO_IsOriginalFormOf>
-        void:property  <http://datacite.org/schema/kernel-4/IsOriginalFormOf> ;
-        void:triples   "4"^^xsd:int .
-
 <https://nakala.fr/sparql/partition_Agent_name>
         terms:conformsTo  shape:Agent_name ;
         void:property     xmlns:name ;
         void:triples      "12592"^^xsd:int .
+
+<https://nakala.fr/sparql/partition_ProvidedCHO_IsOriginalFormOf>
+        void:property  <http://datacite.org/schema/kernel-4/IsOriginalFormOf> ;
+        void:triples   "4"^^xsd:int .
 
 shape:WebResource_sha1
         sh:datatype     xsd:string ;
@@ -242,7 +243,7 @@ shape:WebResource_sha1
 shape:Person  rdf:type  sh:NodeShape ;
         rdfs:comment    "1106 instances" ;
         rdfs:label      "Person"@en ;
-        sh:property     shape:Person_name , shape:Person_givenName , shape:Person_familyName , shape:Person_sameAs ;
+        sh:property     shape:Person_sameAs , shape:Person_familyName , shape:Person_givenName , shape:Person_name ;
         sh:targetClass  xmlns:Person .
 
 shape:ProvidedCHO_description_datatype_0
@@ -272,6 +273,10 @@ shape:Agent_givenName
         sh:nodeKind     sh:Literal ;
         sh:path         xmlns:givenName .
 
+<https://nakala.fr/sparql/partition_Collection_accessRights>
+        void:property  terms:accessRights ;
+        void:triples   "4"^^xsd:int .
+
 <https://nakala.fr/sparql/partition_Person_familyName>
         terms:conformsTo  shape:Person_familyName ;
         void:property     xmlns:familyName ;
@@ -280,20 +285,11 @@ shape:Agent_givenName
 shape:WebResource_extent_datatype_1
         sh:datatype  xsd:integer .
 
-<https://nakala.fr/sparql/partition_Collection_accessRights>
-        void:property  terms:accessRights ;
-        void:triples   "4"^^xsd:int .
-
 shape:Collection  rdf:type  sh:NodeShape ;
         rdfs:comment    "7652 instances" ;
         rdfs:label      "Collection"@en ;
         sh:property     shape:Collection_coverage , shape:Collection_created , shape:Collection_abstract , shape:Collection_description , shape:Collection_subject , shape:Collection_provenance , shape:Collection_source , shape:Collection_title , shape:Collection_date , shape:Collection_creator , shape:Collection_publisher , shape:Collection_spatial , shape:Collection_relation , shape:Collection_extent , shape:Collection_identifier , shape:Collection_contributor , shape:Collection_type , shape:Collection_isPartOf ;
         sh:targetClass  edm:Collection .
-
-<https://nakala.fr/sparql/partition_ProvidedCHO_description>
-        terms:conformsTo  shape:ProvidedCHO_description ;
-        void:property     terms:description ;
-        void:triples      "1054879"^^xsd:int .
 
 shape:ResourceMap_created
         sh:datatype     xsd:dateTime ;
@@ -303,6 +299,11 @@ shape:ResourceMap_created
         sh:name         "created"@en ;
         sh:nodeKind     sh:Literal ;
         sh:path         terms:created .
+
+<https://nakala.fr/sparql/partition_ProvidedCHO_description>
+        terms:conformsTo  shape:ProvidedCHO_description ;
+        void:property     terms:description ;
+        void:triples      "1054879"^^xsd:int .
 
 shape:ProvidedCHO_creator
         sh:description  "905829 triples" ;
@@ -694,20 +695,21 @@ shape:Aggregation_hasView
         sh:nodeKind     sh:IRI ;
         sh:path         edm:hasView .
 
-<https://nakala.fr/sparql/partition_Collection_license>
-        void:property  terms:license ;
-        void:triples   "13"^^xsd:int .
-
 shape:ProvidedCHO_format_datatype_0
         sh:datatype  rdf:langString .
 
-shape:Person_name  sh:datatype  xsd:string ;
-        sh:description  "1106 triples" ;
-        sh:maxCount     1 ;
-        sh:minCount     1 ;
-        sh:name         "name"@en ;
-        sh:nodeKind     sh:Literal ;
-        sh:path         xmlns:name .
+shape:Person_name  dash:propertyRole  dash:LabelRole ;
+        sh:datatype        xsd:string ;
+        sh:description     "1106 triples" ;
+        sh:maxCount        1 ;
+        sh:minCount        1 ;
+        sh:name            "name"@en ;
+        sh:nodeKind        sh:Literal ;
+        sh:path            xmlns:name .
+
+<https://nakala.fr/sparql/partition_Collection_license>
+        void:property  terms:license ;
+        void:triples   "13"^^xsd:int .
 
 shape:ResourceMap_version
         sh:datatype     xsd:int ;
@@ -717,10 +719,6 @@ shape:ResourceMap_version
         sh:nodeKind     sh:Literal ;
         sh:path         <http://nakala.fr/terms#version> .
 
-<https://nakala.fr/sparql/partition_Collection_issued>
-        void:property  terms:issued ;
-        void:triples   "20"^^xsd:int .
-
 shape:Agent_familyName
         sh:datatype     xsd:string ;
         sh:description  "12353 triples" ;
@@ -729,6 +727,10 @@ shape:Agent_familyName
         sh:name         "familyName"@en ;
         sh:nodeKind     sh:Literal ;
         sh:path         xmlns:familyName .
+
+<https://nakala.fr/sparql/partition_Collection_issued>
+        void:property  terms:issued ;
+        void:triples   "20"^^xsd:int .
 
 <https://nakala.fr/sparql/partition_Collection_abstract>
         terms:conformsTo  shape:Collection_abstract ;
@@ -779,20 +781,20 @@ shape:ProvidedCHO_relation
         sh:nodeKind     sh:IRIOrLiteral ;
         sh:path         terms:relation .
 
-<https://nakala.fr/sparql/partition_Collection_audience>
-        void:property  terms:audience ;
-        void:triples   "2"^^xsd:int .
-
 shape:ProvidedCHO_isPartOf
         sh:description  "32439 triples" ;
         sh:name         "isPartOf"@en ;
         sh:nodeKind     sh:IRIOrLiteral ;
         sh:path         terms:isPartOf .
 
+<https://nakala.fr/sparql/partition_Collection_audience>
+        void:property  terms:audience ;
+        void:triples   "2"^^xsd:int .
+
 shape:Agent  rdf:type   sh:NodeShape ;
         rdfs:comment    "12592 instances" ;
         rdfs:label      "Agent"@en ;
-        sh:property     shape:Agent_name , shape:Agent_givenName , shape:Agent_familyName , shape:Agent_sameAs ;
+        sh:property     shape:Agent_sameAs , shape:Agent_familyName , shape:Agent_givenName , shape:Agent_name ;
         sh:targetClass  edm:Agent .
 
 <https://nakala.fr/sparql/partition_ProvidedCHO_Obsoletes>
@@ -814,15 +816,15 @@ shape:Agent  rdf:type   sh:NodeShape ;
         void:property     terms:available ;
         void:triples      "967149"^^xsd:int .
 
-<https://nakala.fr/sparql/partition_ProvidedCHO_isGatheredInto>
-        terms:conformsTo  shape:ProvidedCHO_isGatheredInto ;
-        void:property     edm:isGatheredInto ;
-        void:triples      "1500804"^^xsd:int .
-
 <https://nakala.fr/sparql/partition_ResourceMap_describes>
         terms:conformsTo  shape:ResourceMap_describes ;
         void:property     ore:describes ;
         void:triples      "664260"^^xsd:int .
+
+<https://nakala.fr/sparql/partition_ProvidedCHO_isGatheredInto>
+        terms:conformsTo  shape:ProvidedCHO_isGatheredInto ;
+        void:property     edm:isGatheredInto ;
+        void:triples      "1500804"^^xsd:int .
 
 <https://nakala.fr/sparql/partition_ProvidedCHO_accessRights>
         void:property  terms:accessRights ;
@@ -854,26 +856,26 @@ shape:Collection_type
         sh:nodeKind     sh:IRIOrLiteral ;
         sh:path         terms:type .
 
+<https://nakala.fr/sparql/partition_Collection>
+        terms:conformsTo        shape:Collection ;
+        void:class              edm:Collection ;
+        void:entities           "7652"^^xsd:int ;
+        void:propertyPartition  <https://nakala.fr/sparql/partition_Collection_publisher> , <https://nakala.fr/sparql/partition_Collection_isRequiredBy> , <https://nakala.fr/sparql/partition_Collection_contributor> , <https://nakala.fr/sparql/partition_Collection_license> , <https://nakala.fr/sparql/partition_Collection_hasVersion> , <https://nakala.fr/sparql/partition_Collection_isReferencedBy> , <https://nakala.fr/sparql/partition_Collection_isFormatOf> , <https://nakala.fr/sparql/partition_Collection_relation> , <https://nakala.fr/sparql/partition_Collection_spatial> , <https://nakala.fr/sparql/partition_Collection_date> , <https://nakala.fr/sparql/partition_Collection_audience> , <https://nakala.fr/sparql/partition_Collection_identifier> , <https://nakala.fr/sparql/partition_Collection_rights> , <https://nakala.fr/sparql/partition_Collection_creator> , <https://nakala.fr/sparql/partition_Collection_hasPart> , <https://nakala.fr/sparql/partition_Collection_language> , <https://nakala.fr/sparql/partition_Collection_format> , <https://nakala.fr/sparql/partition_Collection_accessRights> , <https://nakala.fr/sparql/partition_Collection_accrualPeriodicity> , <https://nakala.fr/sparql/partition_Collection_extent> , <https://nakala.fr/sparql/partition_Collection_isVersionOf> , <https://nakala.fr/sparql/partition_Collection_dateCopyrighted> , <https://nakala.fr/sparql/partition_Collection_isPartOf> , <https://nakala.fr/sparql/partition_Collection_coverage> , <https://nakala.fr/sparql/partition_Collection_available> , <https://nakala.fr/sparql/partition_Collection_issued> , <https://nakala.fr/sparql/partition_Collection_source> , <https://nakala.fr/sparql/partition_Collection_created> , <https://nakala.fr/sparql/partition_Collection_type> , <https://nakala.fr/sparql/partition_Collection_description> , <https://nakala.fr/sparql/partition_Collection_subject> , <https://nakala.fr/sparql/partition_Collection_temporal> , <https://nakala.fr/sparql/partition_Collection_bibliographicCitation> , <https://nakala.fr/sparql/partition_Collection_title> , <https://nakala.fr/sparql/partition_Collection_alternative> , <https://nakala.fr/sparql/partition_Collection_provenance> , <https://nakala.fr/sparql/partition_Collection_abstract> , <https://nakala.fr/sparql/partition_Collection_rightsHolder> , <https://nakala.fr/sparql/partition_Collection_modified> , <https://nakala.fr/sparql/partition_Collection_medium> .
+
 <https://nakala.fr/sparql/partition_ProvidedCHO_spatial>
         terms:conformsTo  shape:ProvidedCHO_spatial ;
         void:property     terms:spatial ;
         void:triples      "335263"^^xsd:int .
 
-<https://nakala.fr/sparql/partition_Collection_created>
-        terms:conformsTo  shape:Collection_created ;
-        void:property     terms:created ;
-        void:triples      "526"^^xsd:int .
-
-<https://nakala.fr/sparql/partition_Collection>
-        terms:conformsTo        shape:Collection ;
-        void:class              edm:Collection ;
-        void:entities           "7652"^^xsd:int ;
-        void:propertyPartition  <https://nakala.fr/sparql/partition_Collection_publisher> , <https://nakala.fr/sparql/partition_Collection_isRequiredBy> , <https://nakala.fr/sparql/partition_Collection_contributor> , <https://nakala.fr/sparql/partition_Collection_license> , <https://nakala.fr/sparql/partition_Collection_hasVersion> , <https://nakala.fr/sparql/partition_Collection_isReferencedBy> , <https://nakala.fr/sparql/partition_Collection_isFormatOf> , <https://nakala.fr/sparql/partition_Collection_relation> , <https://nakala.fr/sparql/partition_Collection_spatial> , <https://nakala.fr/sparql/partition_Collection_date> , <https://nakala.fr/sparql/partition_Collection_audience> , <https://nakala.fr/sparql/partition_Collection_identifier> , <https://nakala.fr/sparql/partition_Collection_rights> , <https://nakala.fr/sparql/partition_Collection_creator> , <https://nakala.fr/sparql/partition_Collection_hasPart> , <https://nakala.fr/sparql/partition_Collection_language> , <https://nakala.fr/sparql/partition_Collection_format> , <https://nakala.fr/sparql/partition_Collection_accessRights> , <https://nakala.fr/sparql/partition_Collection_accrualPeriodicity> , <https://nakala.fr/sparql/partition_Collection_extent> , <https://nakala.fr/sparql/partition_Collection_isVersionOf> , <https://nakala.fr/sparql/partition_Collection_dateCopyrighted> , <https://nakala.fr/sparql/partition_Collection_isPartOf> , <https://nakala.fr/sparql/partition_Collection_coverage> , <https://nakala.fr/sparql/partition_Collection_available> , <https://nakala.fr/sparql/partition_Collection_issued> , <https://nakala.fr/sparql/partition_Collection_source> , <https://nakala.fr/sparql/partition_Collection_created> , <https://nakala.fr/sparql/partition_Collection_type> , <https://nakala.fr/sparql/partition_Collection_description> , <https://nakala.fr/sparql/partition_Collection_subject> , <https://nakala.fr/sparql/partition_Collection_temporal> , <https://nakala.fr/sparql/partition_Collection_bibliographicCitation> , <https://nakala.fr/sparql/partition_Collection_title> , <https://nakala.fr/sparql/partition_Collection_alternative> , <https://nakala.fr/sparql/partition_Collection_provenance> , <https://nakala.fr/sparql/partition_Collection_abstract> , <https://nakala.fr/sparql/partition_Collection_rightsHolder> , <https://nakala.fr/sparql/partition_Collection_medium> , <https://nakala.fr/sparql/partition_Collection_modified> .
-
 <https://nakala.fr/sparql/partition_Aggregation_rights>
         terms:conformsTo  shape:Aggregation_rights ;
         void:property     edm:rights ;
         void:triples      "664260"^^xsd:int .
+
+<https://nakala.fr/sparql/partition_Collection_created>
+        terms:conformsTo  shape:Collection_created ;
+        void:property     terms:created ;
+        void:triples      "526"^^xsd:int .
 
 <https://nakala.fr/sparql/partition_Collection_modified>
         void:property  terms:modified ;
@@ -909,16 +911,16 @@ shape:ResourceMap_describes
         sh:nodeKind     sh:IRI ;
         sh:path         ore:describes .
 
-<https://nakala.fr/sparql/partition_Concept>
-        terms:conformsTo  shape:Concept ;
-        void:class        skos:Concept ;
-        void:entities     "12"^^xsd:int .
-
 shape:Collection_coverage
         sh:description  "83 triples" ;
         sh:name         "coverage"@en ;
         sh:nodeKind     sh:IRIOrLiteral ;
         sh:path         terms:coverage .
+
+<https://nakala.fr/sparql/partition_Concept>
+        terms:conformsTo  shape:Concept ;
+        void:class        skos:Concept ;
+        void:entities     "12"^^xsd:int .
 
 <https://nakala.fr/sparql/partition_ProvidedCHO_PreviousVersionOf>
         void:property  <http://datacite.org/schema/kernel-4/PreviousVersionOf> ;
@@ -953,7 +955,7 @@ shape:Collection_rights_datatype_1
 shape:ProvidedCHO  rdf:type  sh:NodeShape ;
         rdfs:comment    "656612 instances" ;
         rdfs:label      "ProvidedCHO"@en ;
-        sh:property     shape:ProvidedCHO_subject , shape:ProvidedCHO_identifier , shape:ProvidedCHO_type , shape:ProvidedCHO_relation , shape:ProvidedCHO_tableOfContents , shape:ProvidedCHO_language , shape:ProvidedCHO_title , shape:ProvidedCHO_description , shape:ProvidedCHO_bibliographicCitation , shape:ProvidedCHO_contributor , shape:ProvidedCHO_isReferencedBy , shape:ProvidedCHO_spatial , shape:ProvidedCHO_date , shape:ProvidedCHO_created , shape:ProvidedCHO_isGatheredInto , shape:ProvidedCHO_issued , shape:ProvidedCHO_creator , shape:ProvidedCHO_rightsHolder , shape:ProvidedCHO_medium , shape:ProvidedCHO_rights , shape:ProvidedCHO_references , shape:ProvidedCHO_format , shape:ProvidedCHO_publisher , shape:ProvidedCHO_modified , shape:ProvidedCHO_provenance , shape:ProvidedCHO_source , shape:ProvidedCHO_extent , shape:ProvidedCHO_isPartOf , shape:ProvidedCHO_license , shape:ProvidedCHO_abstract , shape:ProvidedCHO_temporal , shape:ProvidedCHO_coverage , shape:ProvidedCHO_hasFormat , shape:ProvidedCHO_available ;
+        sh:property     shape:ProvidedCHO_subject , shape:ProvidedCHO_identifier , shape:ProvidedCHO_type , shape:ProvidedCHO_relation , shape:ProvidedCHO_tableOfContents , shape:ProvidedCHO_language , shape:ProvidedCHO_title , shape:ProvidedCHO_description , shape:ProvidedCHO_bibliographicCitation , shape:ProvidedCHO_contributor , shape:ProvidedCHO_isReferencedBy , shape:ProvidedCHO_spatial , shape:ProvidedCHO_date , shape:ProvidedCHO_created , shape:ProvidedCHO_isGatheredInto , shape:ProvidedCHO_issued , shape:ProvidedCHO_creator , shape:ProvidedCHO_rightsHolder , shape:ProvidedCHO_medium , shape:ProvidedCHO_rights , shape:ProvidedCHO_references , shape:ProvidedCHO_format , shape:ProvidedCHO_publisher , shape:ProvidedCHO_modified , shape:ProvidedCHO_provenance , shape:ProvidedCHO_source , shape:ProvidedCHO_extent , shape:ProvidedCHO_isPartOf , shape:ProvidedCHO_license , shape:ProvidedCHO_coverage , shape:ProvidedCHO_temporal , shape:ProvidedCHO_abstract , shape:ProvidedCHO_hasFormat , shape:ProvidedCHO_available ;
         sh:targetClass  edm:ProvidedCHO .
 
 shape:ProvidedCHO_conformsTo_datatype_1
@@ -967,20 +969,20 @@ shape:Collection_subject
         sh:or           ( shape:Collection_subject_datatype_0 shape:Collection_subject_datatype_1 ) ;
         sh:path         terms:subject .
 
-<https://nakala.fr/sparql/partition_ProvidedCHO_IsObsoletedBy>
-        void:property  <http://datacite.org/schema/kernel-4/IsObsoletedBy> ;
-        void:triples   "2"^^xsd:int .
-
 <https://nakala.fr/sparql/partition_ProvidedCHO_isRequiredBy>
         void:property  terms:isRequiredBy ;
         void:triples   "4"^^xsd:int .
 
-<https://nakala.fr/sparql/partition_ProvidedCHO_IsReviewedBy>
-        void:property  <http://datacite.org/schema/kernel-4/IsReviewedBy> ;
-        void:triples   "1"^^xsd:int .
+<https://nakala.fr/sparql/partition_ProvidedCHO_IsObsoletedBy>
+        void:property  <http://datacite.org/schema/kernel-4/IsObsoletedBy> ;
+        void:triples   "2"^^xsd:int .
 
 shape:Collection_temporal_datatype_0
         sh:datatype  rdf:langString .
+
+<https://nakala.fr/sparql/partition_ProvidedCHO_IsReviewedBy>
+        void:property  <http://datacite.org/schema/kernel-4/IsReviewedBy> ;
+        void:triples   "1"^^xsd:int .
 
 shape:ProvidedCHO_accessRights_datatype_0
         sh:datatype  rdf:langString .
@@ -1009,10 +1011,6 @@ shape:ProvidedCHO_medium
         void:property     terms:format ;
         void:triples      "1016538"^^xsd:int .
 
-<https://nakala.fr/sparql/partition_ProvidedCHO_dateSubmitted>
-        void:property  terms:dateSubmitted ;
-        void:triples   "559"^^xsd:int .
-
 shape:ResourceMap  rdf:type  sh:NodeShape ;
         rdfs:comment    "664264 instances" ;
         rdfs:label      "ResourceMap"@en ;
@@ -1021,6 +1019,10 @@ shape:ResourceMap  rdf:type  sh:NodeShape ;
 
 shape:Collection_subject_datatype_0
         sh:datatype  rdf:langString .
+
+<https://nakala.fr/sparql/partition_ProvidedCHO_dateSubmitted>
+        void:property  terms:dateSubmitted ;
+        void:triples   "559"^^xsd:int .
 
 <https://nakala.fr/sparql/partition_Collection_rights>
         void:property  terms:rights ;
@@ -1074,13 +1076,14 @@ shape:ProvidedCHO_references
         void:property     terms:creator ;
         void:triples      "905829"^^xsd:int .
 
-shape:Group_name  sh:datatype  xsd:string ;
-        sh:description  "23 triples" ;
-        sh:maxCount     1 ;
-        sh:minCount     1 ;
-        sh:name         "name"@en ;
-        sh:nodeKind     sh:Literal ;
-        sh:path         xmlns:name .
+shape:Group_name  dash:propertyRole  dash:LabelRole ;
+        sh:datatype        xsd:string ;
+        sh:description     "23 triples" ;
+        sh:maxCount        1 ;
+        sh:minCount        1 ;
+        sh:name            "name"@en ;
+        sh:nodeKind        sh:Literal ;
+        sh:path            xmlns:name .
 
 shape:ProvidedCHO_identifier
         sh:description  "958499 triples" ;
@@ -1125,25 +1128,25 @@ shape:ProvidedCHO_publisher
         sh:nodeKind     sh:IRIOrLiteral ;
         sh:path         terms:publisher .
 
+shape:Collection_date_datatype_0
+        sh:datatype  rdf:langString .
+
+shape:ProvidedCHO_title_datatype_1
+        sh:datatype  xsd:string .
+
 <https://nakala.fr/sparql/partition_Collection_relation>
         terms:conformsTo  shape:Collection_relation ;
         void:property     terms:relation ;
         void:triples      "102"^^xsd:int .
 
-shape:ProvidedCHO_title_datatype_1
-        sh:datatype  xsd:string .
-
-shape:Collection_date_datatype_0
-        sh:datatype  rdf:langString .
-
-<https://nakala.fr/sparql/partition_Collection_isReferencedBy>
-        void:property  terms:isReferencedBy ;
-        void:triples   "6"^^xsd:int .
-
 <https://nakala.fr/sparql/partition_Agent_familyName>
         terms:conformsTo  shape:Agent_familyName ;
         void:property     xmlns:familyName ;
         void:triples      "12353"^^xsd:int .
+
+<https://nakala.fr/sparql/partition_Collection_isReferencedBy>
+        void:property  terms:isReferencedBy ;
+        void:triples   "6"^^xsd:int .
 
 <https://nakala.fr/sparql/partition_ProvidedCHO_format>
         terms:conformsTo  shape:ProvidedCHO_format ;
@@ -1153,14 +1156,14 @@ shape:Collection_date_datatype_0
 shape:Aggregation_provider_class_0
         sh:class  xmlns:Person .
 
+shape:ProvidedCHO_extent_datatype_0
+        sh:datatype  rdf:langString .
+
 shape:ProvidedCHO_temporal
         sh:description  "45738 triples" ;
         sh:name         "temporal"@en ;
         sh:nodeKind     sh:IRIOrLiteral ;
         sh:path         terms:temporal .
-
-shape:ProvidedCHO_extent_datatype_0
-        sh:datatype  rdf:langString .
 
 <https://nakala.fr/sparql/partition_Collection_dateCopyrighted>
         void:property  terms:dateCopyrighted ;
@@ -1189,27 +1192,27 @@ shape:Collection_abstract_datatype_0
         void:property     xmlns:name ;
         void:triples      "1106"^^xsd:int .
 
+shape:ProvidedCHO_tableOfContents_datatype_0
+        sh:datatype  rdf:langString .
+
 <https://nakala.fr/sparql/partition_ProvidedCHO_IsPartOf>
         void:property  <http://datacite.org/schema/kernel-4/IsPartOf> ;
         void:triples   "64"^^xsd:int .
 
-shape:ProvidedCHO_tableOfContents_datatype_0
-        sh:datatype  rdf:langString .
-
 <https://nakala.fr/sparql/partition_ProvidedCHO_IsVariantFormOf>
         void:property  <http://datacite.org/schema/kernel-4/IsVariantFormOf> ;
         void:triples   "6"^^xsd:int .
+
+shape:Document  rdf:type  sh:NodeShape ;
+        rdfs:comment    "1 instances" ;
+        rdfs:label      "Document"@en ;
+        sh:targetClass  xmlns:Document .
 
 shape:ProvidedCHO_coverage
         sh:description  "1202507 triples" ;
         sh:name         "coverage"@en ;
         sh:nodeKind     sh:IRIOrLiteral ;
         sh:path         terms:coverage .
-
-shape:Document  rdf:type  sh:NodeShape ;
-        rdfs:comment    "1 instances" ;
-        rdfs:label      "Document"@en ;
-        sh:targetClass  xmlns:Document .
 
 shape:Aggregation_aggregates
         sh:class        edm:Collection ;
@@ -1287,14 +1290,6 @@ shape:Person_sameAs  sh:description  "505 triples" ;
         sh:nodeKind     sh:IRI ;
         sh:path         owl:sameAs .
 
-<https://nakala.fr/sparql/partition_Collection_available>
-        void:property  terms:available ;
-        void:triples   "2"^^xsd:int .
-
-<https://nakala.fr/sparql/partition_Collection_accrualPeriodicity>
-        void:property  terms:accrualPeriodicity ;
-        void:triples   "3"^^xsd:int .
-
 shape:Collection_identifier
         sh:description  "7905 triples" ;
         sh:minCount     1 ;
@@ -1302,25 +1297,33 @@ shape:Collection_identifier
         sh:nodeKind     sh:IRIOrLiteral ;
         sh:path         terms:identifier .
 
+<https://nakala.fr/sparql/partition_Collection_accrualPeriodicity>
+        void:property  terms:accrualPeriodicity ;
+        void:triples   "3"^^xsd:int .
+
+<https://nakala.fr/sparql/partition_Collection_available>
+        void:property  terms:available ;
+        void:triples   "2"^^xsd:int .
+
+shape:Collection_accessRights_datatype_1
+        sh:datatype  xsd:string .
+
+shape:ProvidedCHO_mediator_datatype_0
+        sh:datatype  rdf:langString .
+
 shape:ProvidedCHO_subject
         sh:description  "2089670 triples" ;
         sh:name         "subject"@en ;
         sh:nodeKind     sh:IRIOrLiteral ;
         sh:path         terms:subject .
 
-shape:ProvidedCHO_mediator_datatype_0
-        sh:datatype  rdf:langString .
-
-shape:Collection_accessRights_datatype_1
-        sh:datatype  xsd:string .
+shape:Aggregation_dataProvider_class_0
+        sh:class  xmlns:Person .
 
 <https://nakala.fr/sparql/partition_ProvidedCHO_provenance>
         terms:conformsTo  shape:ProvidedCHO_provenance ;
         void:property     terms:provenance ;
         void:triples      "107184"^^xsd:int .
-
-shape:Aggregation_dataProvider_class_0
-        sh:class  xmlns:Person .
 
 shape:ResourceMap_rights
         sh:description  "664260 triples" ;
@@ -1342,12 +1345,6 @@ shape:ProvidedCHO_spatial
         void:property     terms:available ;
         void:triples      "28246"^^xsd:int .
 
-shape:Collection_spatial
-        sh:description  "265 triples" ;
-        sh:name         "spatial"@en ;
-        sh:nodeKind     sh:IRIOrLiteral ;
-        sh:path         terms:spatial .
-
 shape:ProvidedCHO_title
         sh:description  "674794 triples" ;
         sh:minCount     1 ;
@@ -1355,6 +1352,12 @@ shape:ProvidedCHO_title
         sh:nodeKind     sh:Literal ;
         sh:or           ( shape:ProvidedCHO_title_datatype_0 shape:ProvidedCHO_title_datatype_1 ) ;
         sh:path         terms:title .
+
+shape:Collection_spatial
+        sh:description  "265 triples" ;
+        sh:name         "spatial"@en ;
+        sh:nodeKind     sh:IRIOrLiteral ;
+        sh:path         terms:spatial .
 
 <https://nakala.fr/sparql/partition_ResourceMap_creator>
         terms:conformsTo  shape:ResourceMap_creator ;
@@ -1372,11 +1375,6 @@ shape:ProvidedCHO_language
         void:property  terms:hasVersion ;
         void:triples   "69"^^xsd:int .
 
-<https://nakala.fr/sparql/partition_ProvidedCHO_isReferencedBy>
-        terms:conformsTo  shape:ProvidedCHO_isReferencedBy ;
-        void:property     terms:isReferencedBy ;
-        void:triples      "25411"^^xsd:int .
-
 shape:WebResource_format
         sh:datatype     xsd:string ;
         sh:description  "1016538 triples" ;
@@ -1386,19 +1384,25 @@ shape:WebResource_format
         sh:nodeKind     sh:Literal ;
         sh:path         terms:format .
 
+<https://nakala.fr/sparql/partition_ProvidedCHO_isReferencedBy>
+        terms:conformsTo  shape:ProvidedCHO_isReferencedBy ;
+        void:property     terms:isReferencedBy ;
+        void:triples      "25411"^^xsd:int .
+
 <https://nakala.fr/sparql/partition_Person>
         terms:conformsTo        shape:Person ;
         void:class              xmlns:Person ;
         void:entities           "1106"^^xsd:int ;
-        void:propertyPartition  <https://nakala.fr/sparql/partition_Person_sameAs> , <https://nakala.fr/sparql/partition_Person_givenName> , <https://nakala.fr/sparql/partition_Person_name> , <https://nakala.fr/sparql/partition_Person_familyName> .
+        void:propertyPartition  <https://nakala.fr/sparql/partition_Person_familyName> , <https://nakala.fr/sparql/partition_Person_name> , <https://nakala.fr/sparql/partition_Person_givenName> , <https://nakala.fr/sparql/partition_Person_sameAs> .
 
-shape:Agent_name  sh:datatype  xsd:string ;
-        sh:description  "12592 triples" ;
-        sh:maxCount     1 ;
-        sh:minCount     1 ;
-        sh:name         "name"@en ;
-        sh:nodeKind     sh:Literal ;
-        sh:path         xmlns:name .
+shape:Agent_name  dash:propertyRole  dash:LabelRole ;
+        sh:datatype        xsd:string ;
+        sh:description     "12592 triples" ;
+        sh:maxCount        1 ;
+        sh:minCount        1 ;
+        sh:name            "name"@en ;
+        sh:nodeKind        sh:Literal ;
+        sh:path            xmlns:name .
 
 <https://nakala.fr/sparql/partition_ProvidedCHO_hasFormat>
         terms:conformsTo  shape:ProvidedCHO_hasFormat ;
@@ -1442,17 +1446,17 @@ shape:Collection_date_datatype_1
         void:property  terms:accrualMethod ;
         void:triples   "3480"^^xsd:int .
 
-<https://nakala.fr/sparql/partition_ProvidedCHO_relation>
-        terms:conformsTo  shape:ProvidedCHO_relation ;
-        void:property     terms:relation ;
-        void:triples      "103800"^^xsd:int .
-
 shape:Aggregation_provider_class_1
         sh:class  edm:Agent .
 
 <https://nakala.fr/sparql/partition_ProvidedCHO_IsSourceOf>
         void:property  <http://datacite.org/schema/kernel-4/IsSourceOf> ;
         void:triples   "45"^^xsd:int .
+
+<https://nakala.fr/sparql/partition_ProvidedCHO_relation>
+        terms:conformsTo  shape:ProvidedCHO_relation ;
+        void:property     terms:relation ;
+        void:triples      "103800"^^xsd:int .
 
 shape:ProvidedCHO_extent_datatype_1
         sh:datatype  xsd:string .
@@ -1479,15 +1483,6 @@ shape:Collection_abstract_datatype_1
         void:property  <http://datacite.org/schema/kernel-4/IsSupplementTo> ;
         void:triples   "62"^^xsd:int .
 
-<https://nakala.fr/sparql/partition_WebResource_primaryTopic>
-        terms:conformsTo  shape:WebResource_primaryTopic ;
-        void:property     xmlns:primaryTopic ;
-        void:triples      "1016538"^^xsd:int .
-
-<https://nakala.fr/sparql/partition_ProvidedCHO_Continues>
-        void:property  <http://datacite.org/schema/kernel-4/Continues> ;
-        void:triples   "15"^^xsd:int .
-
 shape:Aggregation_aggregatedCHO
         sh:class        edm:ProvidedCHO ;
         sh:description  "656612 triples" ;
@@ -1496,6 +1491,15 @@ shape:Aggregation_aggregatedCHO
         sh:name         "aggregatedCHO"@en ;
         sh:nodeKind     sh:IRI ;
         sh:path         edm:aggregatedCHO .
+
+<https://nakala.fr/sparql/partition_WebResource_primaryTopic>
+        terms:conformsTo  shape:WebResource_primaryTopic ;
+        void:property     xmlns:primaryTopic ;
+        void:triples      "1016538"^^xsd:int .
+
+<https://nakala.fr/sparql/partition_ProvidedCHO_Continues>
+        void:property  <http://datacite.org/schema/kernel-4/Continues> ;
+        void:triples   "15"^^xsd:int .
 
 shape:ProvidedCHO_bibliographicCitation
         sh:description  "49698 triples" ;
@@ -1523,12 +1527,12 @@ shape:ProvidedCHO_license
         sh:nodeKind     sh:IRIOrLiteral ;
         sh:path         terms:license .
 
+shape:ProvidedCHO_modified_datatype_0
+        sh:datatype  rdf:langString .
+
 <https://nakala.fr/sparql/partition_Collection_temporal>
         void:property  terms:temporal ;
         void:triples   "7"^^xsd:int .
-
-shape:ProvidedCHO_modified_datatype_0
-        sh:datatype  rdf:langString .
 
 <https://nakala.fr/sparql/partition_Collection_isPartOf>
         terms:conformsTo  shape:Collection_isPartOf ;
@@ -1635,42 +1639,42 @@ shape:ProvidedCHO_created
         sh:or           ( shape:ProvidedCHO_created_datatype_0 shape:ProvidedCHO_created_datatype_1 ) ;
         sh:path         terms:created .
 
-_:b0 rdf:first shape:Collection_accessRights_datatype_0 ; rdf:rest ( shape:Collection_accessRights_datatype_1 ) .
+_:b0 rdf:first shape:Collection_alternative_datatype_0 ; rdf:rest ( shape:Collection_alternative_datatype_1 ) .
 
-_:b1 rdf:first shape:ProvidedCHO_mediator_datatype_0 ; rdf:rest ( shape:ProvidedCHO_mediator_datatype_1 ) .
+_:b1 rdf:first shape:ProvidedCHO_conformsTo_datatype_0 ; rdf:rest ( shape:ProvidedCHO_conformsTo_datatype_1 ) .
 
 _:b2 rdf:first "fr" ; rdf:rest () .
 
 _:b3 rdf:first shape:ProvidedCHO_accessRights_datatype_0 ; rdf:rest ( shape:ProvidedCHO_accessRights_datatype_1 ) .
 
-_:b4 rdf:first shape:Collection_isReferencedBy_datatype_0 ; rdf:rest ( shape:Collection_isReferencedBy_datatype_1 ) .
+_:b4 rdf:first shape:Collection_rights_datatype_0 ; rdf:rest ( shape:Collection_rights_datatype_1 ) .
 
 _:b5 rdf:first "fr" ; rdf:rest () .
 
-_:b6 rdf:first shape:Collection_alternative_datatype_0 ; rdf:rest ( shape:Collection_alternative_datatype_1 ) .
+_:b6 rdf:first shape:Collection_temporal_datatype_0 ; rdf:rest ( shape:Collection_temporal_datatype_1 ) .
 
-_:b7 rdf:first shape:Collection_modified_datatype_0 ; rdf:rest ( shape:Collection_modified_datatype_1 ) .
+_:b7 rdf:first "fr" ; rdf:rest () .
 
-_:b8 rdf:first shape:ProvidedCHO_conformsTo_datatype_0 ; rdf:rest ( shape:ProvidedCHO_conformsTo_datatype_1 ) .
+_:b8 rdf:first shape:Collection_audience_datatype_0 ; rdf:rest ( shape:Collection_audience_datatype_1 ) .
 
-_:b9 rdf:first "fr" ; rdf:rest () .
+_:b9 rdf:first shape:Collection_accrualPeriodicity_datatype_0 ; rdf:rest ( shape:Collection_accrualPeriodicity_datatype_1 ) .
 
 _:b10 rdf:first shape:Collection_format_datatype_0 ; rdf:rest ( shape:Collection_format_datatype_1 ) .
 
-_:b11 rdf:first shape:ProvidedCHO_audience_datatype_0 ; rdf:rest ( shape:ProvidedCHO_audience_datatype_1 ) .
+_:b11 rdf:first shape:ProvidedCHO_alternative_datatype_0 ; rdf:rest ( shape:ProvidedCHO_alternative_datatype_1 ) .
 
-_:b12 rdf:first shape:Collection_rightsHolder_datatype_0 ; rdf:rest ( shape:Collection_rightsHolder_datatype_1 ) .
+_:b12 rdf:first shape:ProvidedCHO_audience_datatype_0 ; rdf:rest ( shape:ProvidedCHO_audience_datatype_1 ) .
 
-_:b13 rdf:first "fr" ; rdf:rest () .
+_:b13 rdf:first shape:Collection_rightsHolder_datatype_0 ; rdf:rest ( shape:Collection_rightsHolder_datatype_1 ) .
 
-_:b14 rdf:first shape:Collection_audience_datatype_0 ; rdf:rest ( shape:Collection_audience_datatype_1 ) .
+_:b14 rdf:first "fr" ; rdf:rest () .
 
-_:b15 rdf:first shape:Collection_accrualPeriodicity_datatype_0 ; rdf:rest ( shape:Collection_accrualPeriodicity_datatype_1 ) .
+_:b15 rdf:first shape:Collection_isReferencedBy_datatype_0 ; rdf:rest ( shape:Collection_isReferencedBy_datatype_1 ) .
 
-_:b16 rdf:first "fr" ; rdf:rest () .
+_:b16 rdf:first shape:Collection_modified_datatype_0 ; rdf:rest ( shape:Collection_modified_datatype_1 ) .
 
-_:b17 rdf:first shape:Collection_rights_datatype_0 ; rdf:rest ( shape:Collection_rights_datatype_1 ) .
+_:b17 rdf:first shape:ProvidedCHO_mediator_datatype_0 ; rdf:rest ( shape:ProvidedCHO_mediator_datatype_1 ) .
 
-_:b18 rdf:first shape:ProvidedCHO_alternative_datatype_0 ; rdf:rest ( shape:ProvidedCHO_alternative_datatype_1 ) .
+_:b18 rdf:first shape:Collection_accessRights_datatype_0 ; rdf:rest ( shape:Collection_accessRights_datatype_1 ) .
 
-_:b19 rdf:first shape:Collection_temporal_datatype_0 ; rdf:rest ( shape:Collection_temporal_datatype_1 ) .
+_:b19 rdf:first "fr" ; rdf:rest () .
