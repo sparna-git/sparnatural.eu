@@ -207,7 +207,7 @@ edm:hasView a owl:ObjectProperty;
   rdfs:subPropertyOf core:NonSelectableProperty;
   rdfs:domain edm:ProvidedCHO;
   rdfs:range edm:WebResource;
-  core:sparqlString "<http://www.europeana.eu/schemas/edm/hasView>|<http://www.europeana.eu/schemas/edm/isShownBy>";
+  core:sparqlString "^<http://www.europeana.eu/schemas/edm/aggregatedCHO>/(<http://www.europeana.eu/schemas/edm/hasView>|<http://www.europeana.eu/schemas)/edm/isShownBy>";
   core:enableOptional "true"^^xsd:boolean .
 
 dce:creator a owl:ObjectProperty;
