@@ -1,0 +1,1590 @@
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+
+<https://www.performing-arts.ch/sparql/partition_Record_hasPacking>
+        dct:conformsTo        <http://shapes.performing-arts.ch/Record_hasPacking> ;
+        void:distinctObjects  "6"^^xsd:int ;
+        void:property         <http://ontology.performing-arts.ch/hasPacking> ;
+        void:triples          "2502"^^xsd:int ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "40"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/pkpst>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "19"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/pkbag>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "150"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/pkba5>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "18"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/pkbco>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "34"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/pkpnt>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "2241"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/pkba4>
+                ] .
+
+<https://www.performing-arts.ch/sparql/partition_RecordResourceExtent_quantity>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordResourceExtent_quantity> ;
+        void:distinctObjects  "231"^^xsd:int ;
+        void:property         <https://www.ica.org/standards/RiC/ontology#quantity> ;
+        void:triples          "46805"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_RecordResourceExtent_hasUnitOfMeasurement>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordResourceExtent_hasUnitOfMeasurement> ;
+        void:distinctObjects  "8"^^xsd:int ;
+        void:property         <https://www.ica.org/standards/RiC/ontology#hasUnitOfMeasurement> ;
+        void:triples          "46796"^^xsd:int ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "20"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/umkg>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "19346"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/umpcs>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "92"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/umlnm>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "37"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/umcen>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "26822"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/umenv>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "477"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/umbox>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "1"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/umsdc>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "1"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/umgig>
+                ] .
+
+<https://www.performing-arts.ch/sparql/partition_Record_hasDoublets>
+        dct:conformsTo        <http://shapes.performing-arts.ch/Record_hasDoublets> ;
+        void:distinctObjects  "63"^^xsd:int ;
+        void:property         <http://ontology.performing-arts.ch/hasDoublets> ;
+        void:triples          "670"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_SingleDate_expressedDate>
+        dct:conformsTo        <http://shapes.performing-arts.ch/SingleDate_expressedDate> ;
+        void:distinctObjects  "3632"^^xsd:int ;
+        void:property         <https://www.ica.org/standards/RiC/ontology#expressedDate> ;
+        void:triples          "63344"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_RecordSet_isRelatedTo>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordSet_isRelatedTo> ;
+        void:distinctObjects  "339"^^xsd:int ;
+        void:property         <http://ontology.performing-arts.ch/isRelatedTo> ;
+        void:triples          "366"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_Record>
+        dct:conformsTo          <http://shapes.performing-arts.ch/Record> ;
+        void:class              <https://www.ica.org/standards/RiC/ontology#Record> ;
+        void:entities           "16454"^^xsd:int ;
+        void:propertyPartition  <https://www.performing-arts.ch/sparql/partition_Record_deliveryNumber> , <https://www.performing-arts.ch/sparql/partition_Record_hasProcessingDate> , <https://www.performing-arts.ch/sparql/partition_Record_hasExtent> , <https://www.performing-arts.ch/sparql/partition_Record_physicalCharacteristics> , <https://www.performing-arts.ch/sparql/partition_Record_hasDoublets> , <https://www.performing-arts.ch/sparql/partition_Record_isOrWasIncludedIn> , <https://www.performing-arts.ch/sparql/partition_Record_hasPermission> , <https://www.performing-arts.ch/sparql/partition_Record_conditionsOfUse> , <https://www.performing-arts.ch/sparql/partition_Record_conditionsOfAccess> , <https://www.performing-arts.ch/sparql/partition_Record_hasDocumentaryFormType> , <https://www.performing-arts.ch/sparql/partition_Record_hasCredit> , <https://www.performing-arts.ch/sparql/partition_Record_descriptiveNote> , <https://www.performing-arts.ch/sparql/partition_Record_name> , <https://www.performing-arts.ch/sparql/partition_Record_isAssociatedWithDate> , <https://www.performing-arts.ch/sparql/partition_Record_isAssociatedWithEvent> , <https://www.performing-arts.ch/sparql/partition_Record_hasAnnotationRecto> , <https://www.performing-arts.ch/sparql/partition_Record_hasUsageRightsStreaming> , <https://www.performing-arts.ch/sparql/partition_Record_hasAnnotationVerso> , <https://www.performing-arts.ch/sparql/partition_Record_hasOrHadIdentifier> , <https://www.performing-arts.ch/sparql/partition_Record_copyrightNotice> , <https://www.performing-arts.ch/sparql/partition_Record_legacyIdentifier> , <https://www.performing-arts.ch/sparql/partition_Record_isAssociatedWithPlace> , <https://www.performing-arts.ch/sparql/partition_Record_hasProtectionDuration> , <https://www.performing-arts.ch/sparql/partition_Record_hasInternalNote> , <https://www.performing-arts.ch/sparql/partition_Record_hasPacking> , <https://www.performing-arts.ch/sparql/partition_Record_hasProcessingConvention> , <https://www.performing-arts.ch/sparql/partition_Record_hasUsageRightsStill> , <https://www.performing-arts.ch/sparql/partition_Record_sameAs> , <https://www.performing-arts.ch/sparql/partition_Record_hasTermsOfProtection> , <https://www.performing-arts.ch/sparql/partition_Record_seeAlso> , <https://www.performing-arts.ch/sparql/partition_Record_hasRecordState> , <https://www.performing-arts.ch/sparql/partition_Record_hasOrHadLocation> , <https://www.performing-arts.ch/sparql/partition_Record_identifier> , <https://www.performing-arts.ch/sparql/partition_Record_hasOrHadSubject> , <https://www.performing-arts.ch/sparql/partition_Record_index> , <https://www.performing-arts.ch/sparql/partition_Record_hasProvenance> , <https://www.performing-arts.ch/sparql/partition_Record_hasCopyrightDeclaration> , <https://www.performing-arts.ch/sparql/partition_Record_comment> , <https://www.performing-arts.ch/sparql/partition_Record_hasOrHadLanguage> , <https://www.performing-arts.ch/sparql/partition_Record_isRelatedTo> , <https://www.performing-arts.ch/sparql/partition_Record_hasAccessibility> , <https://www.performing-arts.ch/sparql/partition_Record_hasResponsibleEmployee> , <https://www.performing-arts.ch/sparql/partition_Record_hasNote> , <https://www.performing-arts.ch/sparql/partition_Record_hasInstantiation> , <https://www.performing-arts.ch/sparql/partition_Record_hasCreator> , <https://www.performing-arts.ch/sparql/partition_Record_hasPhysicalUsability> .
+
+<https://www.performing-arts.ch/sparql/partition_RecordPart_isOrWasConstituentOf>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordPart_isOrWasConstituentOf> ;
+        void:distinctObjects  "409"^^xsd:int ;
+        void:property         <https://www.ica.org/standards/RiC/ontology#isOrWasConstituentOf> ;
+        void:triples          "1332"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_RecordPart_hasCopyrightDeclaration>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordPart_hasCopyrightDeclaration> ;
+        void:distinctObjects  "5"^^xsd:int ;
+        void:property         <http://ontology.performing-arts.ch/hasCopyrightDeclaration> ;
+        void:triples          "1203"^^xsd:int ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "15"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/cppnd>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "2"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/cpprt>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "175"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/cpprs>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "563"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/cpyes>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "448"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/cpno>
+                ] .
+
+<https://www.performing-arts.ch/sparql/partition_RecordSet_deliveryNumber>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordSet_deliveryNumber> ;
+        void:distinctObjects  "64"^^xsd:int ;
+        void:property         <http://ontology.performing-arts.ch/deliveryNumber> ;
+        void:triples          "268"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_RecordPart_descriptiveNote>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordPart_descriptiveNote> ;
+        void:distinctObjects  "770"^^xsd:int ;
+        void:property         <https://www.ica.org/standards/RiC/ontology#descriptiveNote> ;
+        void:triples          "1121"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_RecordSet_isAssociatedWithPlace>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordSet_isAssociatedWithPlace> ;
+        void:distinctObjects  "17"^^xsd:int ;
+        void:property         <https://www.ica.org/standards/RiC/ontology#isAssociatedWithPlace> ;
+        void:triples          "404"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_Identifier_value>
+        dct:conformsTo        <http://shapes.performing-arts.ch/Identifier_value> ;
+        void:distinctObjects  "7499"^^xsd:int ;
+        void:property         <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> ;
+        void:triples          "7573"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_RecordPart_isAssociatedWithDate>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordPart_isAssociatedWithDate> ;
+        void:distinctObjects  "1265"^^xsd:int ;
+        void:property         <https://www.ica.org/standards/RiC/ontology#isAssociatedWithDate> ;
+        void:triples          "1265"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_Record_hasCreator>
+        dct:conformsTo        <http://shapes.performing-arts.ch/Record_hasCreator> ;
+        void:distinctObjects  "4445"^^xsd:int ;
+        void:property         <https://www.ica.org/standards/RiC/ontology#hasCreator> ;
+        void:triples          "10318"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_RecordSet_conditionsOfUse>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordSet_conditionsOfUse> ;
+        void:distinctObjects  "33"^^xsd:int ;
+        void:property         <https://www.ica.org/standards/RiC/ontology#conditionsOfUse> ;
+        void:triples          "4846"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_Record_comment>
+        dct:conformsTo        <http://shapes.performing-arts.ch/Record_comment> ;
+        void:distinctObjects  "2"^^xsd:int ;
+        void:property         <http://www.w3.org/2000/01/rdf-schema#comment> ;
+        void:triples          "3"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_DateRange>
+        dct:conformsTo          <http://shapes.performing-arts.ch/DateRange> ;
+        void:class              <https://www.ica.org/standards/RiC/ontology#DateRange> ;
+        void:entities           "18387"^^xsd:int ;
+        void:propertyPartition  <https://www.performing-arts.ch/sparql/partition_DateRange_hasEndDate> , <https://www.performing-arts.ch/sparql/partition_DateRange_hasBeginningDate> .
+
+<https://www.performing-arts.ch/sparql/partition_RecordSet_copyrightNotice>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordSet_copyrightNotice> ;
+        void:distinctObjects  "371"^^xsd:int ;
+        void:property         <http://schema.org/copyrightNotice> ;
+        void:triples          "920"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_RecordPart_hasTermsOfProtection>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordPart_hasTermsOfProtection> ;
+        void:distinctObjects  "1"^^xsd:int ;
+        void:property         <http://ontology.performing-arts.ch/hasTermsOfProtection> ;
+        void:triples          "1140"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_SingleDate_normalizedDateValue>
+        dct:conformsTo        <http://shapes.performing-arts.ch/SingleDate_normalizedDateValue> ;
+        void:distinctObjects  "3665"^^xsd:int ;
+        void:property         <https://www.ica.org/standards/RiC/ontology#normalizedDateValue> ;
+        void:triples          "68127"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_RecordState>
+        dct:conformsTo          <http://shapes.performing-arts.ch/RecordState> ;
+        void:class              <https://www.ica.org/standards/RiC/ontology#RecordState> ;
+        void:entities           "6"^^xsd:int ;
+        void:propertyPartition  <https://www.performing-arts.ch/sparql/partition_Concept_definition> , <https://www.performing-arts.ch/sparql/partition_Concept_prefLabel> , <https://www.performing-arts.ch/sparql/partition_Concept_hiddenLabel> , <https://www.performing-arts.ch/sparql/partition_Concept_broader> , <https://www.performing-arts.ch/sparql/partition_Concept_topConceptOf> , <https://www.performing-arts.ch/sparql/partition_Concept_altLabel> , <https://www.performing-arts.ch/sparql/partition_Concept_comment> , <https://www.performing-arts.ch/sparql/partition_Concept_inScheme> , <https://www.performing-arts.ch/sparql/partition_Concept_narrower> , <https://www.performing-arts.ch/sparql/partition_Concept_exactMatch> .
+
+<https://www.performing-arts.ch/sparql/partition_Record_hasTermsOfProtection>
+        dct:conformsTo        <http://shapes.performing-arts.ch/Record_hasTermsOfProtection> ;
+        void:distinctObjects  "2"^^xsd:int ;
+        void:property         <http://ontology.performing-arts.ch/hasTermsOfProtection> ;
+        void:triples          "15406"^^xsd:int ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "1"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/tpeop>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "15405"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/tpunk>
+                ] .
+
+<https://www.performing-arts.ch/sparql/partition_Record_hasExtent>
+        dct:conformsTo        <http://shapes.performing-arts.ch/Record_hasExtent> ;
+        void:distinctObjects  "12602"^^xsd:int ;
+        void:property         <https://www.ica.org/standards/RiC/ontology#hasExtent> ;
+        void:triples          "12602"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_RecordPart_hasProtectionDuration>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordPart_hasProtectionDuration> ;
+        void:distinctObjects  "1"^^xsd:int ;
+        void:property         <http://ontology.performing-arts.ch/hasProtectionDuration> ;
+        void:triples          "1140"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_Record_hasInstantiation>
+        dct:conformsTo        <http://shapes.performing-arts.ch/Record_hasInstantiation> ;
+        void:distinctObjects  "21508"^^xsd:int ;
+        void:property         <https://www.ica.org/standards/RiC/ontology#hasInstantiation> ;
+        void:triples          "21510"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_RecordSet_hasOrHadSubject>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordSet_hasOrHadSubject> ;
+        void:distinctObjects  "32963"^^xsd:int ;
+        void:property         <https://www.ica.org/standards/RiC/ontology#hasOrHadSubject> ;
+        void:triples          "33952"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_RecordSet_hasProcessingConvention>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordSet_hasProcessingConvention> ;
+        void:distinctObjects  "11"^^xsd:int ;
+        void:property         <http://ontology.performing-arts.ch/hasProcessingConvention> ;
+        void:triples          "1386"^^xsd:int ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "1"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          "Test: Erschliessung durch Visionierung des Bandes, Nutzungserklärung."
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "248"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          "Selon la norme de description ISAD/G."
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "378"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          "Selon la norme ISAD/G."
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "40"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          "ISAD/G."
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "80"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          "ISAD/G"
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "6"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          "Selon la norme ISAD/G"
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "1"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          "Erschliessung durch Visionierung des Bandes. Programmheft."
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "1"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          "Einverständniserklärung zur Archivierung und Nutzung, Programmheft."
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "10"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          "Selon norme ISAD/G"
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "620"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          "Selon la norme ISAD(G)"
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "1"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          "Visionierung des Masterbandes; Einverständniserklärung zur Archivierung und Nutzung"
+                ] .
+
+<https://www.performing-arts.ch/sparql/partition_RecordPart_hasPermission>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordPart_hasPermission> ;
+        void:distinctObjects  "3"^^xsd:int ;
+        void:property         <http://ontology.performing-arts.ch/hasPermission> ;
+        void:triples          "1140"^^xsd:int ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "1"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/pmprv>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "51"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/pmarc>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "1088"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/pmnon>
+                ] .
+
+<https://www.performing-arts.ch/sparql/partition_RecordPart_hasNote>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordPart_hasNote> ;
+        void:distinctObjects  "58"^^xsd:int ;
+        void:property         <http://ontology.performing-arts.ch/hasNote> ;
+        void:triples          "117"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_Record_conditionsOfAccess>
+        dct:conformsTo        <http://shapes.performing-arts.ch/Record_conditionsOfAccess> ;
+        void:distinctObjects  "19"^^xsd:int ;
+        void:property         <https://www.ica.org/standards/RiC/ontology#conditionsOfAccess> ;
+        void:triples          "8539"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_Concept_comment>
+        dct:conformsTo        <http://shapes.performing-arts.ch/Concept_comment> ;
+        void:distinctObjects  "65"^^xsd:int , "0"^^xsd:int , "3"^^xsd:int ;
+        void:property         <http://www.w3.org/2000/01/rdf-schema#comment> ;
+        void:triples          "65"^^xsd:int , "0"^^xsd:int , "3"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_Date_normalizedDateValue>
+        dct:conformsTo        <http://shapes.performing-arts.ch/Date_normalizedDateValue> ;
+        void:distinctObjects  "14105"^^xsd:int ;
+        void:property         <https://www.ica.org/standards/RiC/ontology#normalizedDateValue> ;
+        void:triples          "26648"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_RecordPart_hasUsageRightsStreaming>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordPart_hasUsageRightsStreaming> ;
+        void:distinctObjects  "3"^^xsd:int ;
+        void:property         <http://ontology.performing-arts.ch/hasUsageRightsStreaming> ;
+        void:triples          "421"^^xsd:int ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "2"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/blukn>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "6"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/blno>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "413"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/blyes>
+                ] .
+
+<https://www.performing-arts.ch/sparql/partition_RecordSet_hasProcessingDate>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordSet_hasProcessingDate> ;
+        void:distinctObjects  "5315"^^xsd:int ;
+        void:property         <http://ontology.performing-arts.ch/hasProcessingDate> ;
+        void:triples          "5315"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_RecordPart_hasInstantiation>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordPart_hasInstantiation> ;
+        void:distinctObjects  "243"^^xsd:int ;
+        void:property         <https://www.ica.org/standards/RiC/ontology#hasInstantiation> ;
+        void:triples          "361"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_RecordPart>
+        dct:conformsTo          <http://shapes.performing-arts.ch/RecordPart> ;
+        void:class              <https://www.ica.org/standards/RiC/ontology#RecordPart> ;
+        void:entities           "1332"^^xsd:int ;
+        void:propertyPartition  <https://www.performing-arts.ch/sparql/partition_RecordPart_hasInternalNote> , <https://www.performing-arts.ch/sparql/partition_RecordPart_hasInstantiation> , <https://www.performing-arts.ch/sparql/partition_RecordPart_hasPermission> , <https://www.performing-arts.ch/sparql/partition_RecordPart_isAssociatedWithDate> , <https://www.performing-arts.ch/sparql/partition_RecordPart_hasOrHadIdentifier> , <https://www.performing-arts.ch/sparql/partition_RecordPart_name> , <https://www.performing-arts.ch/sparql/partition_RecordPart_hasAccessibility> , <https://www.performing-arts.ch/sparql/partition_RecordPart_hasProtectionDuration> , <https://www.performing-arts.ch/sparql/partition_RecordPart_hasOrHadLocation> , <https://www.performing-arts.ch/sparql/partition_RecordPart_index> , <https://www.performing-arts.ch/sparql/partition_RecordPart_hasPhysicalUsability> , <https://www.performing-arts.ch/sparql/partition_RecordPart_hasDocumentaryFormType> , <https://www.performing-arts.ch/sparql/partition_RecordPart_identifier> , <https://www.performing-arts.ch/sparql/partition_RecordPart_hasUsageRightsStreaming> , <https://www.performing-arts.ch/sparql/partition_RecordPart_isRelatedTo> , <https://www.performing-arts.ch/sparql/partition_RecordPart_descriptiveNote> , <https://www.performing-arts.ch/sparql/partition_RecordPart_hasProcessingDate> , <https://www.performing-arts.ch/sparql/partition_RecordPart_hasOrHadSubject> , <https://www.performing-arts.ch/sparql/partition_RecordPart_hasCopyrightDeclaration> , <https://www.performing-arts.ch/sparql/partition_RecordPart_hasResponsibleEmployee> , <https://www.performing-arts.ch/sparql/partition_RecordPart_isOrWasConstituentOf> , <https://www.performing-arts.ch/sparql/partition_RecordPart_seeAlso> , <https://www.performing-arts.ch/sparql/partition_RecordPart_hasUsageRightsStill> , <https://www.performing-arts.ch/sparql/partition_RecordPart_legacyIdentifier> , <https://www.performing-arts.ch/sparql/partition_RecordPart_hasNote> , <https://www.performing-arts.ch/sparql/partition_RecordPart_hasTermsOfProtection> , <https://www.performing-arts.ch/sparql/partition_RecordPart_hasProcessingConvention> .
+
+<https://www.performing-arts.ch/sparql/partition_Language>
+        dct:conformsTo          <http://shapes.performing-arts.ch/Language> ;
+        void:class              <https://www.ica.org/standards/RiC/ontology#Language> ;
+        void:entities           "70"^^xsd:int ;
+        void:propertyPartition  <https://www.performing-arts.ch/sparql/partition_Concept_definition> , <https://www.performing-arts.ch/sparql/partition_Concept_exactMatch> , <https://www.performing-arts.ch/sparql/partition_Concept_comment> , <https://www.performing-arts.ch/sparql/partition_Concept_inScheme> , <https://www.performing-arts.ch/sparql/partition_Concept_topConceptOf> , <https://www.performing-arts.ch/sparql/partition_Concept_broader> , <https://www.performing-arts.ch/sparql/partition_Concept_altLabel> , <https://www.performing-arts.ch/sparql/partition_Concept_hiddenLabel> , <https://www.performing-arts.ch/sparql/partition_Concept_narrower> , <https://www.performing-arts.ch/sparql/partition_Concept_prefLabel> .
+
+<https://www.performing-arts.ch/sparql/partition_RecordSet_hasAccessibility>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordSet_hasAccessibility> ;
+        void:distinctObjects  "2"^^xsd:int ;
+        void:property         <http://ontology.performing-arts.ch/hasAccessibility> ;
+        void:triples          "4847"^^xsd:int ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "3"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/acstf>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "4844"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/acpbc>
+                ] .
+
+<https://www.performing-arts.ch/sparql/partition_Concept_narrower>
+        dct:conformsTo        <http://shapes.performing-arts.ch/Concept_narrower> ;
+        void:distinctObjects  "5"^^xsd:int , "344"^^xsd:int , "4"^^xsd:int , "43"^^xsd:int ;
+        void:property         <http://www.w3.org/2004/02/skos/core#narrower> ;
+        void:triples          "43"^^xsd:int , "4"^^xsd:int , "344"^^xsd:int , "5"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_Concept_topConceptOf>
+        dct:conformsTo        <http://shapes.performing-arts.ch/Concept_topConceptOf> ;
+        void:distinctObjects  "45"^^xsd:int , "1"^^xsd:int ;
+        void:property         <http://www.w3.org/2004/02/skos/core#topConceptOf> ;
+        void:triples          "314"^^xsd:int , "11"^^xsd:int , "66"^^xsd:int , "1"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_RecordSet_hasDoublets>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordSet_hasDoublets> ;
+        void:distinctObjects  "11"^^xsd:int ;
+        void:property         <http://ontology.performing-arts.ch/hasDoublets> ;
+        void:triples          "17"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_Identifier_P2_has_type>
+        dct:conformsTo        <http://shapes.performing-arts.ch/Identifier_P2_has_type> ;
+        void:distinctObjects  "5"^^xsd:int ;
+        void:property         <http://www.cidoc-crm.org/cidoc-crm/P2_has_type> ;
+        void:triples          "7573"^^xsd:int ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "64"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/idtec>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "1234"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/idpid>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "6141"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/iduni>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "90"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/idcon>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "44"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/idold>
+                ] .
+
+<https://www.performing-arts.ch/sparql/partition_RecordSet_hasOrHadLocation>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordSet_hasOrHadLocation> ;
+        void:distinctObjects  "706"^^xsd:int ;
+        void:property         <https://www.ica.org/standards/RiC/ontology#hasOrHadLocation> ;
+        void:triples          "27038"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_RecordSet_hasCreator>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordSet_hasCreator> ;
+        void:distinctObjects  "10"^^xsd:int ;
+        void:property         <https://www.ica.org/standards/RiC/ontology#hasCreator> ;
+        void:triples          "347"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_Record_hasOrHadLanguage>
+        dct:conformsTo        <http://shapes.performing-arts.ch/Record_hasOrHadLanguage> ;
+        void:distinctObjects  "10"^^xsd:int ;
+        void:property         <https://www.ica.org/standards/RiC/ontology#hasOrHadLanguage> ;
+        void:triples          "7170"^^xsd:int ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "1"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/lgjap>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "1"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/lgswe>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "1846"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/lgdeu>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "19"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/lgspa>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "5"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/lgdut>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "1"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/lgroh>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "1"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/lgces>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "8"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/lgita>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "2754"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/lgeng>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "2534"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/lgfra>
+                ] .
+
+<https://www.performing-arts.ch/sparql/partition_RecordSet_legacyIdentifier>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordSet_legacyIdentifier> ;
+        void:distinctObjects  "404"^^xsd:int ;
+        void:property         <http://ontology.performing-arts.ch/legacyIdentifier> ;
+        void:triples          "636"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_Record_deliveryNumber>
+        dct:conformsTo        <http://shapes.performing-arts.ch/Record_deliveryNumber> ;
+        void:distinctObjects  "9"^^xsd:int ;
+        void:property         <http://ontology.performing-arts.ch/deliveryNumber> ;
+        void:triples          "41"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_RecordSet_identifier>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordSet_identifier> ;
+        void:distinctObjects  "4904"^^xsd:int ;
+        void:property         <https://www.ica.org/standards/RiC/ontology#identifier> ;
+        void:triples          "5090"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_RecordSet_index>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordSet_index> ;
+        void:distinctObjects  "756"^^xsd:int ;
+        void:property         <http://purl.org/ontology/olo/core#index> ;
+        void:triples          "5555"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_DateRange_hasEndDate>
+        dct:conformsTo        <http://shapes.performing-arts.ch/DateRange_hasEndDate> ;
+        void:distinctObjects  "12444"^^xsd:int ;
+        void:property         <https://www.ica.org/standards/RiC/ontology#hasEndDate> ;
+        void:triples          "12444"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_Record_hasUsageRightsStill>
+        dct:conformsTo        <http://shapes.performing-arts.ch/Record_hasUsageRightsStill> ;
+        void:distinctObjects  "3"^^xsd:int ;
+        void:property         <http://ontology.performing-arts.ch/hasUsageRightsStill> ;
+        void:triples          "768"^^xsd:int ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "4"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/blukn>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "13"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/blno>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "751"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/blyes>
+                ] .
+
+<https://www.performing-arts.ch/sparql/partition_Record_hasOrHadIdentifier>
+        dct:conformsTo        <http://shapes.performing-arts.ch/Record_hasOrHadIdentifier> ;
+        void:distinctObjects  "1477"^^xsd:int ;
+        void:property         <https://www.ica.org/standards/RiC/ontology#hasOrHadIdentifier> ;
+        void:triples          "1477"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_Record_conditionsOfUse>
+        dct:conformsTo        <http://shapes.performing-arts.ch/Record_conditionsOfUse> ;
+        void:distinctObjects  "16"^^xsd:int ;
+        void:property         <https://www.ica.org/standards/RiC/ontology#conditionsOfUse> ;
+        void:triples          "8539"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_RecordPart_hasProcessingDate>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordPart_hasProcessingDate> ;
+        void:distinctObjects  "2587"^^xsd:int ;
+        void:property         <http://ontology.performing-arts.ch/hasProcessingDate> ;
+        void:triples          "2587"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_SingleDate>
+        dct:conformsTo          <http://shapes.performing-arts.ch/SingleDate> ;
+        void:class              <https://www.ica.org/standards/RiC/ontology#SingleDate> ;
+        void:entities           "68723"^^xsd:int ;
+        void:propertyPartition  <https://www.performing-arts.ch/sparql/partition_SingleDate_normalizedDateValue> , <https://www.performing-arts.ch/sparql/partition_SingleDate_dateQualifier> , <https://www.performing-arts.ch/sparql/partition_SingleDate_dateStandard> , <https://www.performing-arts.ch/sparql/partition_SingleDate_certainty> , <https://www.performing-arts.ch/sparql/partition_SingleDate_expressedDate> .
+
+<https://www.performing-arts.ch/sparql/partition_Record_copyrightNotice>
+        dct:conformsTo        <http://shapes.performing-arts.ch/Record_copyrightNotice> ;
+        void:distinctObjects  "89"^^xsd:int ;
+        void:property         <http://schema.org/copyrightNotice> ;
+        void:triples          "5726"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_SingleDate_certainty>
+        dct:conformsTo        <http://shapes.performing-arts.ch/SingleDate_certainty> ;
+        void:distinctObjects  "3"^^xsd:int ;
+        void:property         <https://www.ica.org/standards/RiC/ontology#certainty> ;
+        void:triples          "709"^^xsd:int ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "2"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/ctuct>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "1"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/ctddd>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "706"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/ctprb>
+                ] .
+
+<https://www.performing-arts.ch/sparql/partition_Record_hasCredit>
+        dct:conformsTo        <http://shapes.performing-arts.ch/Record_hasCredit> ;
+        void:distinctObjects  "411"^^xsd:int ;
+        void:property         <http://ontology.performing-arts.ch/hasCredit> ;
+        void:triples          "8505"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_Record_hasPhysicalUsability>
+        dct:conformsTo        <http://shapes.performing-arts.ch/Record_hasPhysicalUsability> ;
+        void:distinctObjects  "2"^^xsd:int ;
+        void:property         <http://ontology.performing-arts.ch/hasPhysicalUsability> ;
+        void:triples          "15425"^^xsd:int ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "59"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/pures>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "15366"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/puurs>
+                ] .
+
+<https://www.performing-arts.ch/sparql/partition_RecordResourceExtent>
+        dct:conformsTo          <http://shapes.performing-arts.ch/RecordResourceExtent> ;
+        void:class              <https://www.ica.org/standards/RiC/ontology#RecordResourceExtent> ;
+        void:entities           "46805"^^xsd:int ;
+        void:propertyPartition  <https://www.performing-arts.ch/sparql/partition_RecordResourceExtent_quantity> , <https://www.performing-arts.ch/sparql/partition_RecordResourceExtent_hasUnitOfMeasurement> .
+
+<https://www.performing-arts.ch/sparql/partition_Record_hasProtectionDuration>
+        dct:conformsTo        <http://shapes.performing-arts.ch/Record_hasProtectionDuration> ;
+        void:distinctObjects  "2"^^xsd:int ;
+        void:property         <http://ontology.performing-arts.ch/hasProtectionDuration> ;
+        void:triples          "15373"^^xsd:int ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "1"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          "30"
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "15372"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          "0"
+                ] .
+
+<https://www.performing-arts.ch/sparql/partition_Record_hasAccessibility>
+        dct:conformsTo        <http://shapes.performing-arts.ch/Record_hasAccessibility> ;
+        void:distinctObjects  "2"^^xsd:int ;
+        void:property         <http://ontology.performing-arts.ch/hasAccessibility> ;
+        void:triples          "15423"^^xsd:int ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "93"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/acstf>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "15330"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/acpbc>
+                ] .
+
+<https://www.performing-arts.ch/sparql/partition_RecordPart_isRelatedTo>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordPart_isRelatedTo> ;
+        void:distinctObjects  "1"^^xsd:int ;
+        void:property         <http://ontology.performing-arts.ch/isRelatedTo> ;
+        void:triples          "1"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_RecordSet_history>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordSet_history> ;
+        void:distinctObjects  "242"^^xsd:int ;
+        void:property         <https://www.ica.org/standards/RiC/ontology#history> ;
+        void:triples          "244"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_RecordSet_conditionsOfAccess>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordSet_conditionsOfAccess> ;
+        void:distinctObjects  "52"^^xsd:int ;
+        void:property         <https://www.ica.org/standards/RiC/ontology#conditionsOfAccess> ;
+        void:triples          "4856"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_Record_isAssociatedWithPlace>
+        dct:conformsTo        <http://shapes.performing-arts.ch/Record_isAssociatedWithPlace> ;
+        void:distinctObjects  "17"^^xsd:int ;
+        void:property         <https://www.ica.org/standards/RiC/ontology#isAssociatedWithPlace> ;
+        void:triples          "5656"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_RecordSet_hasPhysicalUsability>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordSet_hasPhysicalUsability> ;
+        void:distinctObjects  "3"^^xsd:int ;
+        void:property         <http://ontology.performing-arts.ch/hasPhysicalUsability> ;
+        void:triples          "4857"^^xsd:int ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "4791"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/puurs>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "64"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/pures>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "2"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/punps>
+                ] .
+
+<https://www.performing-arts.ch/sparql/partition_Record_hasOrHadLocation>
+        dct:conformsTo        <http://shapes.performing-arts.ch/Record_hasOrHadLocation> ;
+        void:distinctObjects  "134"^^xsd:int ;
+        void:property         <https://www.ica.org/standards/RiC/ontology#hasOrHadLocation> ;
+        void:triples          "14488"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_Record_hasProvenance>
+        dct:conformsTo        <http://shapes.performing-arts.ch/Record_hasProvenance> ;
+        void:distinctObjects  "12"^^xsd:int ;
+        void:property         <https://www.ica.org/standards/RiC/ontology#hasProvenance> ;
+        void:triples          "58"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_Concept_altLabel>
+        dct:conformsTo        <http://shapes.performing-arts.ch/Concept_altLabel> ;
+        void:distinctObjects  "267"^^xsd:int , "29"^^xsd:int , "12"^^xsd:int , "0"^^xsd:int ;
+        void:property         <http://www.w3.org/2004/02/skos/core#altLabel> ;
+        void:triples          "270"^^xsd:int , "29"^^xsd:int , "12"^^xsd:int , "0"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_Record_legacyIdentifier>
+        dct:conformsTo        <http://shapes.performing-arts.ch/Record_legacyIdentifier> ;
+        void:distinctObjects  "4909"^^xsd:int ;
+        void:property         <http://ontology.performing-arts.ch/legacyIdentifier> ;
+        void:triples          "5084"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_Record_sameAs>
+        dct:conformsTo        <http://shapes.performing-arts.ch/Record_sameAs> ;
+        void:distinctObjects  "15367"^^xsd:int ;
+        void:property         <http://www.w3.org/2002/07/owl#sameAs> ;
+        void:triples          "15367"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_RecordPart_hasAccessibility>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordPart_hasAccessibility> ;
+        void:distinctObjects  "1"^^xsd:int ;
+        void:property         <http://ontology.performing-arts.ch/hasAccessibility> ;
+        void:triples          "1140"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_RecordPart_hasDocumentaryFormType>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordPart_hasDocumentaryFormType> ;
+        void:distinctObjects  "4"^^xsd:int ;
+        void:property         <https://www.ica.org/standards/RiC/ontology#hasDocumentaryFormType> ;
+        void:triples          "1329"^^xsd:int ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "1"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/dftxd>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "178"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/dfpmd>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "161"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/dftvr>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "989"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/dfwrq>
+                ] .
+
+<https://www.performing-arts.ch/sparql/partition_RecordSet_isAssociatedWithEvent>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordSet_isAssociatedWithEvent> ;
+        void:distinctObjects  "4113"^^xsd:int ;
+        void:property         <https://www.ica.org/standards/RiC/ontology#isAssociatedWithEvent> ;
+        void:triples          "4113"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_RecordPart_hasOrHadLocation>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordPart_hasOrHadLocation> ;
+        void:distinctObjects  "2"^^xsd:int ;
+        void:property         <https://www.ica.org/standards/RiC/ontology#hasOrHadLocation> ;
+        void:triples          "3"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_Record_hasProcessingConvention>
+        dct:conformsTo        <http://shapes.performing-arts.ch/Record_hasProcessingConvention> ;
+        void:distinctObjects  "83"^^xsd:int ;
+        void:property         <http://ontology.performing-arts.ch/hasProcessingConvention> ;
+        void:triples          "1039"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_RecordSet_sameAs>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordSet_sameAs> ;
+        void:distinctObjects  "4790"^^xsd:int ;
+        void:property         <http://www.w3.org/2002/07/owl#sameAs> ;
+        void:triples          "4790"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_RecordPart_legacyIdentifier>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordPart_legacyIdentifier> ;
+        void:distinctObjects  "199"^^xsd:int ;
+        void:property         <http://ontology.performing-arts.ch/legacyIdentifier> ;
+        void:triples          "303"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_RecordSet_hasUsageRightsStreaming>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordSet_hasUsageRightsStreaming> ;
+        void:distinctObjects  "3"^^xsd:int ;
+        void:property         <http://ontology.performing-arts.ch/hasUsageRightsStreaming> ;
+        void:triples          "12"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_Record_name>
+        dct:conformsTo        <http://shapes.performing-arts.ch/Record_name> ;
+        void:distinctObjects  "11137"^^xsd:int ;
+        void:property         <https://www.ica.org/standards/RiC/ontology#name> ;
+        void:triples          "16454"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_RecordPart_seeAlso>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordPart_seeAlso> ;
+        void:distinctObjects  "1478"^^xsd:int ;
+        void:property         <http://ontology.performing-arts.ch/seeAlso> ;
+        void:triples          "3243"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_Record_isAssociatedWithDate>
+        dct:conformsTo        <http://shapes.performing-arts.ch/Record_isAssociatedWithDate> ;
+        void:distinctObjects  "15474"^^xsd:int ;
+        void:property         <https://www.ica.org/standards/RiC/ontology#isAssociatedWithDate> ;
+        void:triples          "15474"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_RecordSet_hasExtent>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordSet_hasExtent> ;
+        void:distinctObjects  "34184"^^xsd:int ;
+        void:property         <https://www.ica.org/standards/RiC/ontology#hasExtent> ;
+        void:triples          "34184"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_Record_hasAnnotationVerso>
+        dct:conformsTo        <http://shapes.performing-arts.ch/Record_hasAnnotationVerso> ;
+        void:distinctObjects  "745"^^xsd:int ;
+        void:property         <http://ontology.performing-arts.ch/hasAnnotationVerso> ;
+        void:triples          "862"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_RecordSet_hasProtectionDuration>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordSet_hasProtectionDuration> ;
+        void:distinctObjects  "3"^^xsd:int ;
+        void:property         <http://ontology.performing-arts.ch/hasProtectionDuration> ;
+        void:triples          "4790"^^xsd:int ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "1"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          "Datenschutz je nach Anfrage bestimmen."
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "2"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          "100"
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "4787"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          "0"
+                ] .
+
+<https://www.performing-arts.ch/sparql/partition_RecordSet_hasOrHadIdentifier>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordSet_hasOrHadIdentifier> ;
+        void:distinctObjects  "1364"^^xsd:int ;
+        void:property         <https://www.ica.org/standards/RiC/ontology#hasOrHadIdentifier> ;
+        void:triples          "1364"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_RecordPart_hasOrHadSubject>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordPart_hasOrHadSubject> ;
+        void:distinctObjects  "2845"^^xsd:int ;
+        void:property         <https://www.ica.org/standards/RiC/ontology#hasOrHadSubject> ;
+        void:triples          "3889"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_Record_hasPermission>
+        dct:conformsTo        <http://shapes.performing-arts.ch/Record_hasPermission> ;
+        void:distinctObjects  "3"^^xsd:int ;
+        void:property         <http://ontology.performing-arts.ch/hasPermission> ;
+        void:triples          "15424"^^xsd:int ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "3051"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/pmnon>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "12123"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/pmarc>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "250"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/pmprv>
+                ] .
+
+<https://www.performing-arts.ch/sparql/partition_ArchivalPlace>
+        dct:conformsTo          <http://shapes.performing-arts.ch/ArchivalPlace> ;
+        void:class              <http://ontology.performing-arts.ch/ArchivalPlace> ;
+        void:entities           "914"^^xsd:int ;
+        void:propertyPartition  <https://www.performing-arts.ch/sparql/partition_ArchivalPlace_label> , <https://www.performing-arts.ch/sparql/partition_ArchivalPlace_containedBy> , <https://www.performing-arts.ch/sparql/partition_ArchivalPlace_hasPacking> .
+
+<https://www.performing-arts.ch/sparql/partition_Date_dateStandard>
+        dct:conformsTo        <http://shapes.performing-arts.ch/Date_dateStandard> ;
+        void:distinctObjects  "1"^^xsd:int ;
+        void:property         <https://www.ica.org/standards/RiC/ontology#dateStandard> ;
+        void:triples          "26589"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_RecordSet_isAssociatedWithDate>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordSet_isAssociatedWithDate> ;
+        void:distinctObjects  "12272"^^xsd:int ;
+        void:property         <https://www.ica.org/standards/RiC/ontology#isAssociatedWithDate> ;
+        void:triples          "12272"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_RecordSet_descriptiveNote>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordSet_descriptiveNote> ;
+        void:distinctObjects  "3761"^^xsd:int ;
+        void:property         <https://www.ica.org/standards/RiC/ontology#descriptiveNote> ;
+        void:triples          "4620"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_RecordSet_hasRecordSetType>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordSet_hasRecordSetType> ;
+        void:distinctObjects  "10"^^xsd:int ;
+        void:property         <https://www.ica.org/standards/RiC/ontology#hasRecordSetType> ;
+        void:triples          "37342"^^xsd:int ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "56"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/rsssr>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "274"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/rsfnd>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "38"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/rsssf>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "134"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/rssfn>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "3"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/rsclt>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "1"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/rsarc>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "4"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/rssct>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "10"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/rsssc>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "621"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/rssrs>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "36201"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/rsfil>
+                ] .
+
+<https://www.performing-arts.ch/sparql/partition_Record_seeAlso>
+        dct:conformsTo        <http://shapes.performing-arts.ch/Record_seeAlso> ;
+        void:distinctObjects  "53"^^xsd:int ;
+        void:property         <http://ontology.performing-arts.ch/seeAlso> ;
+        void:triples          "78"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_RecordPart_name>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordPart_name> ;
+        void:distinctObjects  "1139"^^xsd:int ;
+        void:property         <https://www.ica.org/standards/RiC/ontology#name> ;
+        void:triples          "1332"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_RecordPart_hasOrHadIdentifier>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordPart_hasOrHadIdentifier> ;
+        void:distinctObjects  "28"^^xsd:int ;
+        void:property         <https://www.ica.org/standards/RiC/ontology#hasOrHadIdentifier> ;
+        void:triples          "28"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_RecordSet_hasPacking>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordSet_hasPacking> ;
+        void:distinctObjects  "7"^^xsd:int ;
+        void:property         <http://ontology.performing-arts.ch/hasPacking> ;
+        void:triples          "3869"^^xsd:int ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "653"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/pkba5>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "85"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/pkbco>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "407"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/pkbag>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "30"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/pkpst>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "21"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/pkdgf>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "2666"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/pkba4>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "7"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/pkpnt>
+                ] .
+
+<https://www.performing-arts.ch/sparql/partition_RecordSet_hasNote>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordSet_hasNote> ;
+        void:distinctObjects  "1017"^^xsd:int ;
+        void:property         <http://ontology.performing-arts.ch/hasNote> ;
+        void:triples          "1204"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_RecordSet_hasOrHadLanguage>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordSet_hasOrHadLanguage> ;
+        void:distinctObjects  "20"^^xsd:int ;
+        void:property         <https://www.ica.org/standards/RiC/ontology#hasOrHadLanguage> ;
+        void:triples          "2278"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_Concept_hiddenLabel>
+        dct:conformsTo        <http://shapes.performing-arts.ch/Concept_hiddenLabel> ;
+        void:distinctObjects  "5"^^xsd:int , "0"^^xsd:int ;
+        void:property         <http://www.w3.org/2004/02/skos/core#hiddenLabel> ;
+        void:triples          "5"^^xsd:int , "0"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_RecordSet_isOrWasIncludedIn>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordSet_isOrWasIncludedIn> ;
+        void:distinctObjects  "472"^^xsd:int ;
+        void:property         <https://www.ica.org/standards/RiC/ontology#isOrWasIncludedIn> ;
+        void:triples          "37658"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_Record_hasDocumentaryFormType>
+        dct:conformsTo        <http://shapes.performing-arts.ch/Record_hasDocumentaryFormType> ;
+        void:distinctObjects  "16"^^xsd:int ;
+        void:property         <https://www.ica.org/standards/RiC/ontology#hasDocumentaryFormType> ;
+        void:triples          "10807"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_Record_hasProcessingDate>
+        dct:conformsTo        <http://shapes.performing-arts.ch/Record_hasProcessingDate> ;
+        void:distinctObjects  "15999"^^xsd:int ;
+        void:property         <http://ontology.performing-arts.ch/hasProcessingDate> ;
+        void:triples          "15999"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_RecordSet_hasInternalNote>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordSet_hasInternalNote> ;
+        void:distinctObjects  "161"^^xsd:int ;
+        void:property         <http://ontology.performing-arts.ch/hasInternalNote> ;
+        void:triples          "207"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_RecordSet_hasTermsOfProtection>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordSet_hasTermsOfProtection> ;
+        void:distinctObjects  "2"^^xsd:int ;
+        void:property         <http://ontology.performing-arts.ch/hasTermsOfProtection> ;
+        void:triples          "4831"^^xsd:int ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "4828"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/tpunk>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "3"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/tpeop>
+                ] .
+
+<https://www.performing-arts.ch/sparql/partition_Record_identifier>
+        dct:conformsTo        <http://shapes.performing-arts.ch/Record_identifier> ;
+        void:distinctObjects  "15401"^^xsd:int ;
+        void:property         <https://www.ica.org/standards/RiC/ontology#identifier> ;
+        void:triples          "15416"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_RecordPart_hasInternalNote>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordPart_hasInternalNote> ;
+        void:distinctObjects  "153"^^xsd:int ;
+        void:property         <http://ontology.performing-arts.ch/hasInternalNote> ;
+        void:triples          "1138"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_RecordSet>
+        dct:conformsTo          <http://shapes.performing-arts.ch/RecordSet> ;
+        void:class              <https://www.ica.org/standards/RiC/ontology#RecordSet> ;
+        void:entities           "37659"^^xsd:int ;
+        void:propertyPartition  <https://www.performing-arts.ch/sparql/partition_RecordSet_physicalCharacteristics> , <https://www.performing-arts.ch/sparql/partition_RecordSet_hasInstantiation> , <https://www.performing-arts.ch/sparql/partition_RecordSet_hasProvenance> , <https://www.performing-arts.ch/sparql/partition_RecordSet_hasAccessibility> , <https://www.performing-arts.ch/sparql/partition_RecordSet_hasUsageRightsStill> , <https://www.performing-arts.ch/sparql/partition_RecordSet_conditionsOfAccess> , <https://www.performing-arts.ch/sparql/partition_RecordSet_hasInternalNote> , <https://www.performing-arts.ch/sparql/partition_RecordSet_legacyIdentifier> , <https://www.performing-arts.ch/sparql/partition_RecordSet_isOrWasIncludedIn> , <https://www.performing-arts.ch/sparql/partition_RecordSet_isAssociatedWithDate> , <https://www.performing-arts.ch/sparql/partition_RecordSet_hasCreator> , <https://www.performing-arts.ch/sparql/partition_RecordSet_name> , <https://www.performing-arts.ch/sparql/partition_RecordSet_hasExtent> , <https://www.performing-arts.ch/sparql/partition_RecordSet_sameAs> , <https://www.performing-arts.ch/sparql/partition_RecordSet_seeAlso> , <https://www.performing-arts.ch/sparql/partition_RecordSet_hasPhysicalUsability> , <https://www.performing-arts.ch/sparql/partition_RecordSet_hasResponsibleEmployee> , <https://www.performing-arts.ch/sparql/partition_RecordSet_isAssociatedWithPlace> , <https://www.performing-arts.ch/sparql/partition_RecordSet_hasProcessingDate> , <https://www.performing-arts.ch/sparql/partition_RecordSet_copyrightNotice> , <https://www.performing-arts.ch/sparql/partition_RecordSet_hasOrHadSubject> , <https://www.performing-arts.ch/sparql/partition_RecordSet_isRelatedTo> , <https://www.performing-arts.ch/sparql/partition_RecordSet_hasPacking> , <https://www.performing-arts.ch/sparql/partition_RecordSet_history> , <https://www.performing-arts.ch/sparql/partition_RecordSet_hasPermission> , <https://www.performing-arts.ch/sparql/partition_RecordSet_hasProcessingConvention> , <https://www.performing-arts.ch/sparql/partition_RecordSet_hasNote> , <https://www.performing-arts.ch/sparql/partition_RecordSet_hasProtectionDuration> , <https://www.performing-arts.ch/sparql/partition_RecordSet_hasUsageRightsStreaming> , <https://www.performing-arts.ch/sparql/partition_RecordSet_index> , <https://www.performing-arts.ch/sparql/partition_RecordSet_hasCredit> , <https://www.performing-arts.ch/sparql/partition_RecordSet_hasDoublets> , <https://www.performing-arts.ch/sparql/partition_RecordSet_comment> , <https://www.performing-arts.ch/sparql/partition_RecordSet_hasOrHadLocation> , <https://www.performing-arts.ch/sparql/partition_RecordSet_hasOrHadLanguage> , <https://www.performing-arts.ch/sparql/partition_RecordSet_identifier> , <https://www.performing-arts.ch/sparql/partition_RecordSet_isAssociatedWithEvent> , <https://www.performing-arts.ch/sparql/partition_RecordSet_hasCopyrightDeclaration> , <https://www.performing-arts.ch/sparql/partition_RecordSet_hasOrHadIdentifier> , <https://www.performing-arts.ch/sparql/partition_RecordSet_descriptiveNote> , <https://www.performing-arts.ch/sparql/partition_RecordSet_cassation> , <https://www.performing-arts.ch/sparql/partition_RecordSet_conditionsOfUse> , <https://www.performing-arts.ch/sparql/partition_RecordSet_hasOrHadAllMembersWithDocumentaryFormType> , <https://www.performing-arts.ch/sparql/partition_RecordSet_hasRecordSetType> , <https://www.performing-arts.ch/sparql/partition_RecordSet_hasTermsOfProtection> , <https://www.performing-arts.ch/sparql/partition_RecordSet_deliveryNumber> .
+
+<https://www.performing-arts.ch/sparql/partition_Record_isOrWasIncludedIn>
+        dct:conformsTo        <http://shapes.performing-arts.ch/Record_isOrWasIncludedIn> ;
+        void:distinctObjects  "1752"^^xsd:int ;
+        void:property         <https://www.ica.org/standards/RiC/ontology#isOrWasIncludedIn> ;
+        void:triples          "16454"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_Concept_inScheme>
+        dct:conformsTo        <http://shapes.performing-arts.ch/Concept_inScheme> ;
+        void:distinctObjects  "48"^^xsd:int , "2"^^xsd:int , "1"^^xsd:int ;
+        void:property         <http://www.w3.org/2004/02/skos/core#inScheme> ;
+        void:triples          "670"^^xsd:int , "56"^^xsd:int , "70"^^xsd:int , "6"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_Date>
+        dct:conformsTo          <http://shapes.performing-arts.ch/Date> ;
+        void:class              <https://www.ica.org/standards/RiC/ontology#Date> ;
+        void:entities           "31110"^^xsd:int ;
+        void:propertyPartition  <https://www.performing-arts.ch/sparql/partition_Date_normalizedDateValue> , <https://www.performing-arts.ch/sparql/partition_Date_dateStandard> , <https://www.performing-arts.ch/sparql/partition_Date_expressedDate> .
+
+<https://www.performing-arts.ch/sparql/partition_Record_physicalCharacteristics>
+        dct:conformsTo        <http://shapes.performing-arts.ch/Record_physicalCharacteristics> ;
+        void:distinctObjects  "38"^^xsd:int ;
+        void:property         <https://www.ica.org/standards/RiC/ontology#physicalCharacteristics> ;
+        void:triples          "108"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_RecordPart_identifier>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordPart_identifier> ;
+        void:distinctObjects  "1322"^^xsd:int ;
+        void:property         <https://www.ica.org/standards/RiC/ontology#identifier> ;
+        void:triples          "1324"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_RecordSet_hasResponsibleEmployee>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordSet_hasResponsibleEmployee> ;
+        void:distinctObjects  "53"^^xsd:int ;
+        void:property         <http://ontology.performing-arts.ch/hasResponsibleEmployee> ;
+        void:triples          "4741"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_SingleDate_dateQualifier>
+        dct:conformsTo        <http://shapes.performing-arts.ch/SingleDate_dateQualifier> ;
+        void:distinctObjects  "2"^^xsd:int ;
+        void:property         <https://www.ica.org/standards/RiC/ontology#dateQualifier> ;
+        void:triples          "1812"^^xsd:int ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "1"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/dqext>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "1811"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/dqcrc>
+                ] .
+
+<https://www.performing-arts.ch/sparql/partition_RecordSet_name>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordSet_name> ;
+        void:distinctObjects  "31108"^^xsd:int ;
+        void:property         <https://www.ica.org/standards/RiC/ontology#name> ;
+        void:triples          "37697"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_Record_hasCopyrightDeclaration>
+        dct:conformsTo        <http://shapes.performing-arts.ch/Record_hasCopyrightDeclaration> ;
+        void:distinctObjects  "5"^^xsd:int ;
+        void:property         <http://ontology.performing-arts.ch/hasCopyrightDeclaration> ;
+        void:triples          "2675"^^xsd:int ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "4"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/cpprt>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "334"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/cpprs>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "952"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/cpyes>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "103"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/cppnd>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "1282"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/cpno>
+                ] .
+
+<https://www.performing-arts.ch/sparql/partition_RecordSet_hasCredit>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordSet_hasCredit> ;
+        void:distinctObjects  "379"^^xsd:int ;
+        void:property         <http://ontology.performing-arts.ch/hasCredit> ;
+        void:triples          "4240"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_Date_expressedDate>
+        dct:conformsTo        <http://shapes.performing-arts.ch/Date_expressedDate> ;
+        void:distinctObjects  "2"^^xsd:int ;
+        void:property         <https://www.ica.org/standards/RiC/ontology#expressedDate> ;
+        void:triples          "4518"^^xsd:int ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "654"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          "N/A"
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "3864"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          "s.d."
+                ] .
+
+<https://www.performing-arts.ch/sparql/partition_RecordSet_cassation>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordSet_cassation> ;
+        void:distinctObjects  "95"^^xsd:int ;
+        void:property         <http://ontology.performing-arts.ch/cassation> ;
+        void:triples          "147"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_RecordSet_hasProvenance>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordSet_hasProvenance> ;
+        void:distinctObjects  "265"^^xsd:int ;
+        void:property         <https://www.ica.org/standards/RiC/ontology#hasProvenance> ;
+        void:triples          "279"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_Record_hasOrHadSubject>
+        dct:conformsTo        <http://shapes.performing-arts.ch/Record_hasOrHadSubject> ;
+        void:distinctObjects  "11369"^^xsd:int ;
+        void:property         <https://www.ica.org/standards/RiC/ontology#hasOrHadSubject> ;
+        void:triples          "19178"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_RecordPart_hasResponsibleEmployee>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordPart_hasResponsibleEmployee> ;
+        void:distinctObjects  "14"^^xsd:int ;
+        void:property         <http://ontology.performing-arts.ch/hasResponsibleEmployee> ;
+        void:triples          "1324"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_Record_hasRecordState>
+        dct:conformsTo        <http://shapes.performing-arts.ch/Record_hasRecordState> ;
+        void:distinctObjects  "5"^^xsd:int ;
+        void:property         <https://www.ica.org/standards/RiC/ontology#hasRecordState> ;
+        void:triples          "4777"^^xsd:int ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "58"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/stwkp>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "4260"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/stvtp>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "6"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/stvpd>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "262"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/stvps>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "191"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/stltp>
+                ] .
+
+<https://www.performing-arts.ch/sparql/partition_ArchivalPlace_label>
+        dct:conformsTo        <http://shapes.performing-arts.ch/ArchivalPlace_label> ;
+        void:distinctObjects  "872"^^xsd:int ;
+        void:property         <http://www.w3.org/2000/01/rdf-schema#label> ;
+        void:triples          "914"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_SingleDate_dateStandard>
+        dct:conformsTo        <http://shapes.performing-arts.ch/SingleDate_dateStandard> ;
+        void:distinctObjects  "1"^^xsd:int ;
+        void:property         <https://www.ica.org/standards/RiC/ontology#dateStandard> ;
+        void:triples          "68127"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_Concept_prefLabel>
+        dct:conformsTo        <http://shapes.performing-arts.ch/Concept_prefLabel> ;
+        void:distinctObjects  "280"^^xsd:int , "21"^^xsd:int , "2291"^^xsd:int , "217"^^xsd:int ;
+        void:property         <http://www.w3.org/2004/02/skos/core#prefLabel> ;
+        void:triples          "280"^^xsd:int , "217"^^xsd:int , "21"^^xsd:int , "2400"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_RecordPart_hasProcessingConvention>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordPart_hasProcessingConvention> ;
+        void:distinctObjects  "35"^^xsd:int ;
+        void:property         <http://ontology.performing-arts.ch/hasProcessingConvention> ;
+        void:triples          "451"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_Record_hasNote>
+        dct:conformsTo        <http://shapes.performing-arts.ch/Record_hasNote> ;
+        void:distinctObjects  "5076"^^xsd:int ;
+        void:property         <http://ontology.performing-arts.ch/hasNote> ;
+        void:triples          "6083"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_Record_isAssociatedWithEvent>
+        dct:conformsTo        <http://shapes.performing-arts.ch/Record_isAssociatedWithEvent> ;
+        void:distinctObjects  "14553"^^xsd:int ;
+        void:property         <https://www.ica.org/standards/RiC/ontology#isAssociatedWithEvent> ;
+        void:triples          "14553"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_Record_descriptiveNote>
+        dct:conformsTo        <http://shapes.performing-arts.ch/Record_descriptiveNote> ;
+        void:distinctObjects  "3019"^^xsd:int ;
+        void:property         <https://www.ica.org/standards/RiC/ontology#descriptiveNote> ;
+        void:triples          "6201"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_Record_isRelatedTo>
+        dct:conformsTo        <http://shapes.performing-arts.ch/Record_isRelatedTo> ;
+        void:distinctObjects  "143"^^xsd:int ;
+        void:property         <http://ontology.performing-arts.ch/isRelatedTo> ;
+        void:triples          "187"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_RecordPart_index>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordPart_index> ;
+        void:distinctObjects  "27"^^xsd:int ;
+        void:property         <http://purl.org/ontology/olo/core#index> ;
+        void:triples          "1141"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_Record_hasUsageRightsStreaming>
+        dct:conformsTo        <http://shapes.performing-arts.ch/Record_hasUsageRightsStreaming> ;
+        void:distinctObjects  "3"^^xsd:int ;
+        void:property         <http://ontology.performing-arts.ch/hasUsageRightsStreaming> ;
+        void:triples          "774"^^xsd:int ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "4"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/blukn>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "27"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/blno>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "743"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/blyes>
+                ] .
+
+<https://www.performing-arts.ch/sparql/partition_ArchivalPlace_hasPacking>
+        dct:conformsTo        <http://shapes.performing-arts.ch/ArchivalPlace_hasPacking> ;
+        void:distinctObjects  "3"^^xsd:int ;
+        void:property         <http://ontology.performing-arts.ch/hasPacking> ;
+        void:triples          "26"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_Record_hasInternalNote>
+        dct:conformsTo        <http://shapes.performing-arts.ch/Record_hasInternalNote> ;
+        void:distinctObjects  "354"^^xsd:int ;
+        void:property         <http://ontology.performing-arts.ch/hasInternalNote> ;
+        void:triples          "2446"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql>
+        a                    void:Dataset ;
+        void:classPartition  <https://www.performing-arts.ch/sparql/partition_Date> , <https://www.performing-arts.ch/sparql/partition_Record> , <https://www.performing-arts.ch/sparql/partition_RecordPart> , <https://www.performing-arts.ch/sparql/partition_Language> , <https://www.performing-arts.ch/sparql/partition_DocumentaryFormType> , <https://www.performing-arts.ch/sparql/partition_RecordResourceExtent> , <https://www.performing-arts.ch/sparql/partition_SingleDate> , <https://www.performing-arts.ch/sparql/partition_ArchivalPlace> , <https://www.performing-arts.ch/sparql/partition_Identifier> , <https://www.performing-arts.ch/sparql/partition_RecordState> , <https://www.performing-arts.ch/sparql/partition_Concept> , <https://www.performing-arts.ch/sparql/partition_RecordSet> , <https://www.performing-arts.ch/sparql/partition_DateRange> ;
+        void:triples         "11936744"^^xsd:int ;
+        <http://www.w3.org/ns/shacl#suggestedShapesGraph>
+                <http://shapes.performing-arts.ch/Collections> .
+
+<https://www.performing-arts.ch/sparql/partition_RecordSet_hasOrHadAllMembersWithDocumentaryFormType>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordSet_hasOrHadAllMembersWithDocumentaryFormType> ;
+        void:distinctObjects  "37"^^xsd:int ;
+        void:property         <https://www.ica.org/standards/RiC/ontology#hasOrHadAllMembersWithDocumentaryFormType> ;
+        void:triples          "38012"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_RecordSet_hasUsageRightsStill>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordSet_hasUsageRightsStill> ;
+        void:distinctObjects  "3"^^xsd:int ;
+        void:property         <http://ontology.performing-arts.ch/hasUsageRightsStill> ;
+        void:triples          "12"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_RecordSet_physicalCharacteristics>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordSet_physicalCharacteristics> ;
+        void:distinctObjects  "29"^^xsd:int ;
+        void:property         <https://www.ica.org/standards/RiC/ontology#physicalCharacteristics> ;
+        void:triples          "72"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_RecordPart_hasPhysicalUsability>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordPart_hasPhysicalUsability> ;
+        void:distinctObjects  "3"^^xsd:int ;
+        void:property         <http://ontology.performing-arts.ch/hasPhysicalUsability> ;
+        void:triples          "1140"^^xsd:int ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "2"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/punps>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "6"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/pures>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "1132"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/puurs>
+                ] .
+
+<https://www.performing-arts.ch/sparql/partition_RecordSet_comment>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordSet_comment> ;
+        void:distinctObjects  "22"^^xsd:int ;
+        void:property         <http://www.w3.org/2000/01/rdf-schema#comment> ;
+        void:triples          "55"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_Record_hasAnnotationRecto>
+        dct:conformsTo        <http://shapes.performing-arts.ch/Record_hasAnnotationRecto> ;
+        void:distinctObjects  "474"^^xsd:int ;
+        void:property         <http://ontology.performing-arts.ch/hasAnnotationRecto> ;
+        void:triples          "743"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_RecordPart_hasUsageRightsStill>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordPart_hasUsageRightsStill> ;
+        void:distinctObjects  "3"^^xsd:int ;
+        void:property         <http://ontology.performing-arts.ch/hasUsageRightsStill> ;
+        void:triples          "424"^^xsd:int ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "2"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/blukn>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "3"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/blno>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "419"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/blyes>
+                ] .
+
+<https://www.performing-arts.ch/sparql/partition_DateRange_hasBeginningDate>
+        dct:conformsTo        <http://shapes.performing-arts.ch/DateRange_hasBeginningDate> ;
+        void:distinctObjects  "13708"^^xsd:int ;
+        void:property         <https://www.ica.org/standards/RiC/ontology#hasBeginningDate> ;
+        void:triples          "13708"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_Identifier>
+        dct:conformsTo          <http://shapes.performing-arts.ch/Identifier> ;
+        void:class              <https://www.ica.org/standards/RiC/ontology#Identifier> ;
+        void:entities           "7573"^^xsd:int ;
+        void:propertyPartition  <https://www.performing-arts.ch/sparql/partition_Identifier_value> , <https://www.performing-arts.ch/sparql/partition_Identifier_P2_has_type> .
+
+<https://www.performing-arts.ch/sparql/partition_ArchivalPlace_containedBy>
+        dct:conformsTo        <http://shapes.performing-arts.ch/ArchivalPlace_containedBy> ;
+        void:distinctObjects  "29"^^xsd:int ;
+        void:property         <https://www.ica.org/standards/RiC/ontology#containedBy> ;
+        void:triples          "913"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_Concept_broader>
+        dct:conformsTo        <http://shapes.performing-arts.ch/Concept_broader> ;
+        void:distinctObjects  "98"^^xsd:int , "9"^^xsd:int , "3"^^xsd:int ;
+        void:property         <http://www.w3.org/2004/02/skos/core#broader> ;
+        void:triples          "345"^^xsd:int , "43"^^xsd:int , "4"^^xsd:int , "5"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_DocumentaryFormType>
+        dct:conformsTo          <http://shapes.performing-arts.ch/DocumentaryFormType> ;
+        void:class              <https://www.ica.org/standards/RiC/ontology#DocumentaryFormType> ;
+        void:entities           "56"^^xsd:int ;
+        void:propertyPartition  <https://www.performing-arts.ch/sparql/partition_Concept_definition> , <https://www.performing-arts.ch/sparql/partition_Concept_hiddenLabel> , <https://www.performing-arts.ch/sparql/partition_Concept_narrower> , <https://www.performing-arts.ch/sparql/partition_Concept_comment> , <https://www.performing-arts.ch/sparql/partition_Concept_exactMatch> , <https://www.performing-arts.ch/sparql/partition_Concept_altLabel> , <https://www.performing-arts.ch/sparql/partition_Concept_inScheme> , <https://www.performing-arts.ch/sparql/partition_Concept_broader> , <https://www.performing-arts.ch/sparql/partition_Concept_prefLabel> , <https://www.performing-arts.ch/sparql/partition_Concept_topConceptOf> .
+
+<https://www.performing-arts.ch/sparql/partition_RecordSet_hasCopyrightDeclaration>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordSet_hasCopyrightDeclaration> ;
+        void:distinctObjects  "3"^^xsd:int ;
+        void:property         <http://ontology.performing-arts.ch/hasCopyrightDeclaration> ;
+        void:triples          "18"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_Record_index>
+        dct:conformsTo        <http://shapes.performing-arts.ch/Record_index> ;
+        void:distinctObjects  "611"^^xsd:int ;
+        void:property         <http://purl.org/ontology/olo/core#index> ;
+        void:triples          "16376"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_RecordSet_hasPermission>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordSet_hasPermission> ;
+        void:distinctObjects  "3"^^xsd:int ;
+        void:property         <http://ontology.performing-arts.ch/hasPermission> ;
+        void:triples          "4835"^^xsd:int ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "613"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/pmprv>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "266"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/pmnon>
+                ] ;
+        <https://shacl-play.sparna.fr/ontology#valuePartition>
+                [ void:distinctSubjects  "3956"^^xsd:int ;
+                  <https://shacl-play.sparna.fr/ontology#value>
+                          <http://vocab.performing-arts.ch/pmarc>
+                ] .
+
+<https://www.performing-arts.ch/sparql/partition_Concept_exactMatch>
+        dct:conformsTo        <http://shapes.performing-arts.ch/Concept_exactMatch> ;
+        void:distinctObjects  "3"^^xsd:int , "27"^^xsd:int , "89"^^xsd:int , "380"^^xsd:int ;
+        void:property         <http://www.w3.org/2004/02/skos/core#exactMatch> ;
+        void:triples          "27"^^xsd:int , "388"^^xsd:int , "91"^^xsd:int , "3"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_RecordSet_hasInstantiation>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordSet_hasInstantiation> ;
+        void:distinctObjects  "2558"^^xsd:int ;
+        void:property         <https://www.ica.org/standards/RiC/ontology#hasInstantiation> ;
+        void:triples          "2738"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_Record_hasResponsibleEmployee>
+        dct:conformsTo        <http://shapes.performing-arts.ch/Record_hasResponsibleEmployee> ;
+        void:distinctObjects  "29"^^xsd:int ;
+        void:property         <http://ontology.performing-arts.ch/hasResponsibleEmployee> ;
+        void:triples          "18619"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_RecordSet_seeAlso>
+        dct:conformsTo        <http://shapes.performing-arts.ch/RecordSet_seeAlso> ;
+        void:distinctObjects  "53"^^xsd:int ;
+        void:property         <http://ontology.performing-arts.ch/seeAlso> ;
+        void:triples          "87"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_Concept_definition>
+        dct:conformsTo        <http://shapes.performing-arts.ch/Concept_definition> ;
+        void:distinctObjects  "7"^^xsd:int , "2"^^xsd:int , "0"^^xsd:int ;
+        void:property         <http://www.w3.org/2004/02/skos/core#definition> ;
+        void:triples          "7"^^xsd:int , "2"^^xsd:int , "0"^^xsd:int .
+
+<https://www.performing-arts.ch/sparql/partition_Concept>
+        dct:conformsTo          <http://shapes.performing-arts.ch/Concept> ;
+        void:class              <http://www.w3.org/2004/02/skos/core#Concept> ;
+        void:entities           "670"^^xsd:int ;
+        void:propertyPartition  <https://www.performing-arts.ch/sparql/partition_Concept_broader> , <https://www.performing-arts.ch/sparql/partition_Concept_narrower> , <https://www.performing-arts.ch/sparql/partition_Concept_altLabel> , <https://www.performing-arts.ch/sparql/partition_Concept_inScheme> , <https://www.performing-arts.ch/sparql/partition_Concept_definition> , <https://www.performing-arts.ch/sparql/partition_Concept_prefLabel> , <https://www.performing-arts.ch/sparql/partition_Concept_hiddenLabel> , <https://www.performing-arts.ch/sparql/partition_Concept_comment> , <https://www.performing-arts.ch/sparql/partition_Concept_topConceptOf> , <https://www.performing-arts.ch/sparql/partition_Concept_exactMatch> .

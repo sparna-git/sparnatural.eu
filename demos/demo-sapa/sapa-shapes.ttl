@@ -1,0 +1,1533 @@
+@prefix premis: <http://www.loc.gov/premis/rdf/v1#> .
+@prefix schema: <http://schema.org/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix volipi: <http://data.sparna.fr/ontologies/volipi#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skosthes: <http://purl.org/iso25964/skos-thes#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix rico: <https://www.ica.org/standards/RiC/ontology#> .
+@prefix sapash: <http://shapes.performing-arts.ch/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix euvoc: <http://publications.europa.eu/ontology/euvoc#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix xls2rdf: <https://xls2rdf.sparna.fr/vocabulary#> .
+@prefix olo: <http://purl.org/ontology/olo/core#> .
+@prefix shacl-play: <https://shacl-play.sparna.fr/ontology#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ebucore: <https://www.ebu.ch/metadata/ontologies/ebucore#> .
+@prefix sapo: <http://ontology.performing-arts.ch/> .
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix frbroo: <http://iflastandards.info/ns/fr/frbr/frbroo/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+
+sapash:Collections a owl:Ontology;
+  dct:hasFormat <https://docs.google.com/spreadsheets/d/1NnWIuwdpjKiLLIMEOiIhr9pY3Oxb6BMF/export?format=xlsx>,
+    <https://xls2rdf.sparna.fr/rest/convert?url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1NnWIuwdpjKiLLIMEOiIhr9pY3Oxb6BMF%2Fexport%3Fformat%3Dxlsx&noPostProcessings=true>;
+  rdfs:seeAlso <https://shacl-play.sparna.fr/play/doc?url=https%3A%2F%2Fxls2rdf.sparna.fr%2Frest%2Fconvert%3Furl%3Dhttps%253A%252F%252Fdocs.google.com%252Fspreadsheets%252Fd%252F1NnWIuwdpjKiLLIMEOiIhr9pY3Oxb6BMF%252Fexport%253Fformat%253Dxlsx%26noPostProcessings%3Dtrue&includeDiagram=true&language=fr> .
+
+sapash:Record a sh:NodeShape;
+  sh:order "1"^^xsd:integer;
+  volipi:iconName "fa-light fa-file";
+  sh:targetClass rico:Record;
+  rdfs:label "Record"@en;
+  skos:example <http://data.performing-arts.ch/r/01f3d044-33ea-4a23-b1f7-125d5b8b5c36>;
+  foaf:depiction sapash:Diagram_Record;
+  shacl-play:background-color "F7CECC";
+  sh:property sapash:Record_conditionsOfAccess, sapash:Record_conditionsOfUse, sapash:Record_descriptiveNote,
+    sapash:Record_hasCreator, sapash:Record_hasDocumentaryFormType, sapash:Record_hasExtent,
+    sapash:Record_hasInstantiation, sapash:Record_hasOrHadIdentifier, sapash:Record_hasOrHadLanguage,
+    sapash:Record_hasOrHadLocation, sapash:Record_hasOrHadSubject, sapash:Record_hasProvenance,
+    sapash:Record_hasRecordState, sapash:Record_identifier, sapash:Record_isAssociatedWithDate,
+    sapash:Record_isAssociatedWithEvent, sapash:Record_isAssociatedWithPlace, sapash:Record_isOrWasIncludedIn,
+    sapash:Record_name, sapash:Record_physicalCharacteristics, sapash:Record_deliveryNumber,
+    sapash:Record_hasAccessibility, sapash:Record_hasAnnotationRecto, sapash:Record_hasAnnotationVerso,
+    sapash:Record_hasCopyrightDeclaration, sapash:Record_hasCredit, sapash:Record_hasDoublets,
+    sapash:Record_hasInternalNote, sapash:Record_hasNote, sapash:Record_hasPacking, sapash:Record_hasPermission,
+    sapash:Record_hasPhysicalUsability, sapash:Record_hasProcessingConvention, sapash:Record_hasProcessingDate,
+    sapash:Record_hasProtectionDuration, sapash:Record_hasResponsibleEmployee, sapash:Record_hasTermsOfProtection,
+    sapash:Record_hasUsageRightsStill, sapash:Record_hasUsageRightsStreaming, sapash:Record_isRelatedTo,
+    sapash:Record_legacyIdentifier, sapash:Record_copyrightNotice, sapash:Record_seeAlso,
+    sapash:Record_index, sapash:Record_sameAs, sapash:Record_comment .
+
+sapash:RecordSet a sh:NodeShape;
+  sh:order "2"^^xsd:integer;
+  volipi:iconName "fa-light fa-box-archive";
+  sh:targetClass rico:RecordSet;
+  rdfs:label "Record Set"@en;
+  skos:example <http://data.performing-arts.ch/r/0006c351-351a-4add-addf-40aafa582718>;
+  foaf:depiction sapash:Diagram_RecordSet;
+  shacl-play:background-color "F7948F";
+  sh:property sapash:RecordSet_conditionsOfAccess, sapash:RecordSet_conditionsOfUse,
+    sapash:RecordSet_descriptiveNote, sapash:RecordSet_hasCreator, sapash:RecordSet_hasExtent,
+    sapash:RecordSet_hasInstantiation, sapash:RecordSet_hasOrHadAllMembersWithDocumentaryFormType,
+    sapash:RecordSet_hasOrHadIdentifier, sapash:RecordSet_hasOrHadLanguage, sapash:RecordSet_hasOrHadLocation,
+    sapash:RecordSet_hasOrHadSubject, sapash:RecordSet_hasProvenance, sapash:RecordSet_hasRecordSetType,
+    sapash:RecordSet_history, sapash:RecordSet_identifier, sapash:RecordSet_isAssociatedWithDate,
+    sapash:RecordSet_isAssociatedWithEvent, sapash:RecordSet_isAssociatedWithPlace, sapash:RecordSet_isOrWasIncludedIn,
+    sapash:RecordSet_name, sapash:RecordSet_physicalCharacteristics, sapash:RecordSet_cassation,
+    sapash:RecordSet_deliveryNumber, sapash:RecordSet_hasAccessibility, sapash:RecordSet_hasCopyrightDeclaration,
+    sapash:RecordSet_hasCredit, sapash:RecordSet_hasDoublets, sapash:RecordSet_hasInternalNote,
+    sapash:RecordSet_hasNote, sapash:RecordSet_hasPacking, sapash:RecordSet_hasPermission,
+    sapash:RecordSet_hasPhysicalUsability, sapash:RecordSet_hasProcessingConvention, sapash:RecordSet_hasProcessingDate,
+    sapash:RecordSet_hasProtectionDuration, sapash:RecordSet_hasResponsibleEmployee, sapash:RecordSet_hasTermsOfProtection,
+    sapash:RecordSet_hasUsageRightsStill, sapash:RecordSet_hasUsageRightsStreaming, sapash:RecordSet_isRelatedTo,
+    sapash:RecordSet_legacyIdentifier, sapash:RecordSet_seeAlso, sapash:RecordSet_sameAs,
+    sapash:RecordSet_comment, sapash:RecordSet_copyrightNotice, sapash:RecordSet_index .
+
+sapash:RecordPart a sh:NodeShape;
+  sh:order "3"^^xsd:integer;
+  volipi:iconName "fa-light fa-puzzle";
+  sh:targetClass rico:RecordPart;
+  rdfs:label "Record Part"@en;
+  skos:example <http://data.performing-arts.ch/r/dd5bc0bc-4c1f-4f67-8c4f-c5040ddc04d8>;
+  foaf:depiction sapash:Diagram_RecordPart;
+  shacl-play:background-color "F7E0DF";
+  sh:property sapash:RecordPart_descriptiveNote, sapash:RecordPart_hasDocumentaryFormType,
+    sapash:RecordPart_hasInstantiation, sapash:RecordPart_hasOrHadIdentifier, sapash:RecordPart_hasOrHadLocation,
+    sapash:RecordPart_hasOrHadSubject, sapash:RecordPart_identifier, sapash:RecordPart_isAssociatedWithDate,
+    sapash:RecordPart_isOrWasConstituentOf, sapash:RecordPart_name, sapash:RecordPart_hasAccessibility,
+    sapash:RecordPart_hasCopyrightDeclaration, sapash:RecordPart_hasInternalNote, sapash:RecordPart_hasNote,
+    sapash:RecordPart_hasPermission, sapash:RecordPart_hasPhysicalUsability, sapash:RecordPart_hasProcessingConvention,
+    sapash:RecordPart_hasProcessingDate, sapash:RecordPart_hasProtectionDuration, sapash:RecordPart_hasResponsibleEmployee,
+    sapash:RecordPart_hasTermsOfProtection, sapash:RecordPart_hasUsageRightsStill, sapash:RecordPart_hasUsageRightsStreaming,
+    sapash:RecordPart_seeAlso, sapash:RecordPart_index, sapash:RecordPart_isRelatedTo,
+    sapash:RecordPart_legacyIdentifier .
+
+sapash:RecordResourceExtent a sh:NodeShape;
+  sh:order "90"^^xsd:integer;
+  volipi:iconName "fa-light fa-ruler-triangle";
+  sh:targetClass rico:RecordResourceExtent;
+  rdfs:label "Extent"@en;
+  sh:deactivated "true"^^xsd:boolean;
+  sh:property sapash:RecordResourceExtent_quantity, sapash:RecordResourceExtent_hasUnitOfMeasurement .
+
+sapash:Identifier a sh:NodeShape;
+  sh:order "90"^^xsd:integer;
+  volipi:iconName "fa-light fa-barcode";
+  sh:targetClass rico:Identifier;
+  rdfs:label "Identifier"@en;
+  sh:deactivated "true"^^xsd:boolean;
+  sh:property sapash:Identifier_value, sapash:Identifier_P2_has_type .
+
+sapash:SingleDate a sh:NodeShape;
+  sh:order "91"^^xsd:integer;
+  volipi:iconName "fa-light fa-calendar-xmark";
+  sh:targetClass rico:SingleDate;
+  rdfs:label "Date (single)"@en;
+  sh:deactivated "true"^^xsd:boolean;
+  sh:property sapash:SingleDate_certainty, sapash:SingleDate_dateQualifier, sapash:SingleDate_dateStandard,
+    sapash:SingleDate_expressedDate, sapash:SingleDate_normalizedDateValue .
+
+sapash:Date a sh:NodeShape;
+  sh:order "91"^^xsd:integer;
+  volipi:iconName "fa-light fa-calendar";
+  sh:targetClass rico:Date;
+  rdfs:label "Date"@en;
+  sh:deactivated "true"^^xsd:boolean;
+  sh:property sapash:Date_dateStandard, sapash:Date_expressedDate, sapash:Date_normalizedDateValue .
+
+sapash:DateRange a sh:NodeShape;
+  sh:order "91"^^xsd:integer;
+  volipi:iconName "fa-light fa-calendar-range";
+  sh:targetClass rico:DateRange;
+  rdfs:label "Date (range)"@en;
+  sh:deactivated "true"^^xsd:boolean;
+  sh:property sapash:DateRange_hasBeginningDate, sapash:DateRange_hasEndDate .
+
+sapash:ArchivalPlace a sh:NodeShape;
+  sh:order "97"^^xsd:integer;
+  volipi:iconName "fa-light fa-building";
+  sh:targetClass sapo:ArchivalPlace;
+  rdfs:label "Archival place"@en;
+  sh:property sapash:ArchivalPlace_label, sapash:ArchivalPlace_containedBy, sapash:ArchivalPlace_hasPacking .
+
+sapash:Language a sh:NodeShape;
+  sh:order "97"^^xsd:integer;
+  volipi:iconName "fa-light fa-language";
+  sh:targetClass rico:Language;
+  rdfs:label "Language"@en;
+  sh:property sapash:Concept_prefLabel, sapash:Concept_altLabel, sapash:Concept_hiddenLabel,
+    sapash:Concept_broader, sapash:Concept_narrower, sapash:Concept_definition, sapash:Concept_inScheme,
+    sapash:Concept_topConceptOf, sapash:Concept_exactMatch, sapash:Concept_comment .
+
+sapash:DocumentaryFormType a sh:NodeShape;
+  sh:order "98"^^xsd:integer;
+  volipi:iconName "fa-light fa-tags";
+  sh:targetClass rico:DocumentaryFormType;
+  rdfs:label "Documentary Form Type"@en;
+  sh:property sapash:Concept_prefLabel, sapash:Concept_altLabel, sapash:Concept_hiddenLabel,
+    sapash:Concept_broader, sapash:Concept_narrower, sapash:Concept_definition, sapash:Concept_inScheme,
+    sapash:Concept_topConceptOf, sapash:Concept_exactMatch, sapash:Concept_comment .
+
+sapash:RecordState a sh:NodeShape;
+  sh:order "98"^^xsd:integer;
+  volipi:iconName "fa-light fa-tags";
+  sh:targetClass rico:RecordState;
+  rdfs:label "Record State"@en;
+  sh:property sapash:Concept_prefLabel, sapash:Concept_altLabel, sapash:Concept_hiddenLabel,
+    sapash:Concept_broader, sapash:Concept_narrower, sapash:Concept_definition, sapash:Concept_inScheme,
+    sapash:Concept_topConceptOf, sapash:Concept_exactMatch, sapash:Concept_comment .
+
+sapash:Concept a sh:NodeShape;
+  sh:order "99"^^xsd:integer;
+  volipi:iconName "fa-light fa-tags";
+  sh:targetClass skos:Concept;
+  rdfs:label "Concept"@en;
+  sh:property sapash:Concept_prefLabel, sapash:Concept_altLabel, sapash:Concept_hiddenLabel,
+    sapash:Concept_broader, sapash:Concept_narrower, sapash:Concept_definition, sapash:Concept_inScheme,
+    sapash:Concept_topConceptOf, sapash:Concept_exactMatch, sapash:Concept_comment .
+
+sapash:Record_conditionsOfAccess sh:path rico:conditionsOfAccess;
+  sh:order "1";
+  sh:name "conditions of access"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string .
+
+sapash:Record_conditionsOfUse sh:path rico:conditionsOfUse;
+  sh:order "2";
+  sh:name "conditions of use"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string .
+
+sapash:Record_descriptiveNote sh:path rico:descriptiveNote;
+  sh:order "3";
+  sh:name "descriptive note"@en;
+  skos:editorialNote "To be migrated to rico:scopeAndContent in a future version"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string .
+
+sapash:Record_hasCreator sh:path rico:hasCreator;
+  sh:order "4";
+  sh:name "has creator"@en;
+  sh:nodeKind sh:IRI;
+  sh:class rico:Agent .
+
+sapash:Record_hasDocumentaryFormType sh:path rico:hasDocumentaryFormType;
+  sh:order "5";
+  sh:name "has documentary form type"@en;
+  sh:nodeKind sh:IRI;
+  sh:class rico:DocumentaryFormType .
+
+sapash:Record_hasExtent sh:path rico:hasExtent;
+  sh:order "6";
+  sh:name "has extent"@en;
+  sh:nodeKind sh:IRI;
+  sh:class rico:RecordResourceExtent .
+
+sapash:Record_hasInstantiation sh:path rico:hasInstantiation;
+  sh:order "7";
+  sh:name "has instantiation"@en;
+  sh:nodeKind sh:IRI;
+  sh:class rico:Instantiation .
+
+sapash:Record_hasOrHadIdentifier sh:path rico:hasOrHadIdentifier;
+  sh:order "9";
+  sh:name "has or had identifier"@en;
+  sh:description """Je supprime le rico:identifier avec un i minuscule. Il faudra corriger ces entrées, voici la requête pour les lister, il y en a ~2900:
+
+PREFIX rico: <https://www.ica.org/standards/RiC/ontology#>
+SELECT ?identifier
+WHERE {
+ ?uri rico:hasOrHadIdentifier ?identifier .
+ ?identifier a rico:identifier .
+}"""@en;
+  sh:nodeKind sh:IRI;
+  sh:class rico:Identifier .
+
+sapash:Record_hasOrHadLanguage sh:path rico:hasOrHadLanguage;
+  sh:order "10";
+  sh:name "has or had language"@en;
+  sh:nodeKind sh:IRI;
+  sh:class rico:Language .
+
+sapash:Record_hasOrHadLocation sh:path rico:hasOrHadLocation;
+  sh:order "11";
+  sh:name "has or had location"@en;
+  sh:description """Pour être cohérent avec RiC-O, il faudrait que les valeurs de cette propriété (donc les entrées dans le vocabulaire ArchivalPlace) soient typées rico:Place. Ou alors il faudrait que ArchivalPlace soit formellement défini comme une subClassOf rico:Place. D'ailleurs où est la publication OWL des types et des propriétés SAPA ?
+
+Pour l'instant je laisse sapo:ArchivalPlace mais il faut soit : 
+1. Publier le OWL formel de SAPA avec une déclaration que sapo:ArchivalPlace est subclassOf rico:Place
+2. Ne pas utiliser sapo:ArchivalPlace mais simplement typer ces entrées comme rico:Place (ma solution préférée car la plus simple)
+3. faire un double typage sapo:ArchivalPlace, rico:Place"""@en;
+  sh:nodeKind sh:IRI;
+  sh:class sapo:ArchivalPlace .
+
+sapash:Record_hasOrHadSubject sh:path rico:hasOrHadSubject;
+  sh:order "12";
+  sh:name "has or had subject"@en;
+  sh:description """Par souci de cohérence avec RiC, je mettrai en range rico:Thing, et normalement toutes les valeurs devraient avoir une classe qui est sous-classe de rico:Thing.
+Cela pose question pour les Performance_Plan et les Recording.
+
+L'ontologie SAPA pourrait déclarer des triplets additionnels pour dire que des classes FRBRoo sont subclassOf RiC-O:Thing.
+
+Si on ne souhaite pas faire cela, on pourrait enlever du range les classes CRM qui ont une correspondance RiCO (Group, Actor, E21_Person, etc...)
+
+Pour l'instant ce que je fais c'est que j'enlève du range les classes CRM qui ont leur correspondance dans RiC-O, et je laisse celles qui n'ont pas de correspondance
+
+Option : passer les F26 et F25 en rico:Thing. Peut-être dans le OWL SAPO ? Poser la question à Florence Clavaud"""@en;
+  sh:nodeKind sh:IRI;
+  sh:or _:3aac70b518b847b0b6c080487a7c9e099669 .
+
+_:3aac70b518b847b0b6c080487a7c9e099669 rdf:first _:3aac70b518b847b0b6c080487a7c9e099670;
+  rdf:rest _:3aac70b518b847b0b6c080487a7c9e099671 .
+
+_:3aac70b518b847b0b6c080487a7c9e099670 sh:class rico:Person .
+
+_:3aac70b518b847b0b6c080487a7c9e099671 rdf:first _:3aac70b518b847b0b6c080487a7c9e099672;
+  rdf:rest _:3aac70b518b847b0b6c080487a7c9e099673 .
+
+_:3aac70b518b847b0b6c080487a7c9e099672 sh:class rico:CorporateBody .
+
+_:3aac70b518b847b0b6c080487a7c9e099673 rdf:first _:3aac70b518b847b0b6c080487a7c9e099674;
+  rdf:rest _:3aac70b518b847b0b6c080487a7c9e099675 .
+
+_:3aac70b518b847b0b6c080487a7c9e099674 sh:class rico:Group .
+
+_:3aac70b518b847b0b6c080487a7c9e099675 rdf:first _:3aac70b518b847b0b6c080487a7c9e099676;
+  rdf:rest _:3aac70b518b847b0b6c080487a7c9e099677 .
+
+_:3aac70b518b847b0b6c080487a7c9e099676 sh:class crm:E39_Actor .
+
+_:3aac70b518b847b0b6c080487a7c9e099677 rdf:first _:3aac70b518b847b0b6c080487a7c9e099678;
+  rdf:rest _:3aac70b518b847b0b6c080487a7c9e099679 .
+
+_:3aac70b518b847b0b6c080487a7c9e099678 sh:class frbroo:F26_Recording .
+
+_:3aac70b518b847b0b6c080487a7c9e099679 rdf:first _:3aac70b518b847b0b6c080487a7c9e099680;
+  rdf:rest rdf:nil .
+
+_:3aac70b518b847b0b6c080487a7c9e099680 sh:class frbroo:F25_Performance_Plan .
+
+sapash:Record_hasProvenance sh:path rico:hasProvenance;
+  sh:order "13";
+  sh:name "has provenance"@en;
+  skos:editorialNote "Note : hasProvenance n'est plus dans RiC-O 1.0, maintenant c'est rico:hasOrganicProvenance ou rico:hasOrganicOrFunctionalProvenance"@en;
+  sh:nodeKind sh:IRI;
+  sh:or _:3aac70b518b847b0b6c080487a7c9e099681 .
+
+_:3aac70b518b847b0b6c080487a7c9e099681 rdf:first _:3aac70b518b847b0b6c080487a7c9e099682;
+  rdf:rest _:3aac70b518b847b0b6c080487a7c9e099683 .
+
+_:3aac70b518b847b0b6c080487a7c9e099682 sh:class rico:Person .
+
+_:3aac70b518b847b0b6c080487a7c9e099683 rdf:first _:3aac70b518b847b0b6c080487a7c9e099684;
+  rdf:rest rdf:nil .
+
+_:3aac70b518b847b0b6c080487a7c9e099684 sh:class rico:CorporateBody .
+
+sapash:Record_hasRecordState sh:path rico:hasRecordState;
+  sh:order "15";
+  sh:name "has record state"@en;
+  sh:nodeKind sh:IRI;
+  sh:class rico:RecordState .
+
+sapash:Record_identifier sh:path rico:identifier;
+  sh:order "16";
+  sh:name "identifier"@en;
+  skos:editorialNote "Objective : having a migration to consistently use rico:hasOrHadIdentifier (maybe at the same time as migratio nto RICO 1.0)"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string .
+
+sapash:Record_isAssociatedWithDate sh:path rico:isAssociatedWithDate;
+  sh:order "17";
+  sh:name "is associated with date"@en;
+  skos:editorialNote "To be changed in RiC-O 1.0"@en;
+  sh:nodeKind sh:IRI;
+  sh:or _:3aac70b518b847b0b6c080487a7c9e099685 .
+
+_:3aac70b518b847b0b6c080487a7c9e099685 rdf:first _:3aac70b518b847b0b6c080487a7c9e099686;
+  rdf:rest _:3aac70b518b847b0b6c080487a7c9e099687 .
+
+_:3aac70b518b847b0b6c080487a7c9e099686 sh:class rico:Date .
+
+_:3aac70b518b847b0b6c080487a7c9e099687 rdf:first _:3aac70b518b847b0b6c080487a7c9e099688;
+  rdf:rest _:3aac70b518b847b0b6c080487a7c9e099689 .
+
+_:3aac70b518b847b0b6c080487a7c9e099688 sh:class rico:SingleDate .
+
+_:3aac70b518b847b0b6c080487a7c9e099689 rdf:first _:3aac70b518b847b0b6c080487a7c9e099690;
+  rdf:rest rdf:nil .
+
+_:3aac70b518b847b0b6c080487a7c9e099690 sh:class rico:DateRange .
+
+sapash:Record_isAssociatedWithEvent sh:path rico:isAssociatedWithEvent;
+  sh:order "18";
+  sh:name "is associated with event"@en;
+  sh:nodeKind sh:IRI;
+  sh:class rico:Event .
+
+sapash:Record_isAssociatedWithPlace sh:path rico:isAssociatedWithPlace;
+  sh:order "19";
+  sh:name "is associated with place"@en;
+  sh:description "Ici on utilise rico:Place comme range"@en;
+  sh:nodeKind sh:IRI;
+  sh:class rico:Place .
+
+sapash:Record_isOrWasIncludedIn sh:path rico:isOrWasIncludedIn;
+  sh:order "20";
+  sh:name "is or was included in"@en;
+  skos:editorialNote "RiC-O 1.0 : rico:isDirectlyIncludedIn"@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:class rico:RecordSet .
+
+sapash:Record_name sh:path rico:name;
+  sh:order "21";
+  sh:name "name"@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string;
+  dash:propertyRole dash:LabelRole .
+
+sapash:Record_physicalCharacteristics sh:path rico:physicalCharacteristics;
+  sh:order "22";
+  sh:name "physical characteristics"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string .
+
+sapash:Record_deliveryNumber sh:path sapo:deliveryNumber;
+  sh:order "23";
+  sh:name "delivery number"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string .
+
+sapash:Record_hasAccessibility sh:path sapo:hasAccessibility;
+  sh:order "24";
+  sh:name "has accessibility"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:class skos:Concept .
+
+sapash:Record_hasAnnotationRecto sh:path sapo:hasAnnotationRecto;
+  sh:order "25";
+  sh:name "has annotation (recto)"@en;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string .
+
+sapash:Record_hasAnnotationVerso sh:path sapo:hasAnnotationVerso;
+  sh:order "26";
+  sh:name "has annotation (verso)"@en;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string .
+
+sapash:Record_hasCopyrightDeclaration sh:path sapo:hasCopyrightDeclaration;
+  sh:order "27";
+  sh:name "has copyright declaration"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:class skos:Concept .
+
+sapash:Record_hasCredit sh:path sapo:hasCredit;
+  sh:order "28";
+  sh:name "has credit"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string .
+
+sapash:Record_hasDoublets sh:path sapo:hasDoublets;
+  sh:order "29";
+  sh:name "has doublets"@en;
+  sh:description "Champs de gestion administrative qui sert à repérer les doublons"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string .
+
+sapash:Record_hasInternalNote sh:path sapo:hasInternalNote;
+  sh:order "30";
+  sh:name "has internal note"@en;
+  skos:editorialNote "A migrer vers SKOS plus tard"@en;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string .
+
+sapash:Record_hasNote sh:path sapo:hasNote;
+  sh:order "31";
+  sh:name "has note"@en;
+  skos:editorialNote "A migrer vers SKOS plus tard"@en;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string .
+
+sapash:Record_hasPacking sh:path sapo:hasPacking;
+  sh:order "32";
+  sh:name "has packing"@en;
+  sh:description """Ce champs sert à préciser le type/taille de contenant utilisé : A4, A3 etc. Nous ne l'utilisons pas beaucoup. Son intérêt devrait être réévaluer.
+Je mets skos:Concept en range"""@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:class skos:Concept .
+
+sapash:Record_hasPermission sh:path sapo:hasPermission;
+  sh:order "33";
+  sh:name "has permission"@en;
+  sh:description "C'est un chemps de gestion interne qui définit quel groupe d'utilisateurs à droit d'accéder au contenu de cette Ressource. je mets skos:Concept en range"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:class skos:Concept .
+
+sapash:Record_hasPhysicalUsability sh:path sapo:hasPhysicalUsability;
+  sh:order "34";
+  sh:name "has physical usability"@en;
+  sh:description "je mets skos:Concept en range"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:class skos:Concept .
+
+sapash:Record_hasProcessingConvention sh:path sapo:hasProcessingConvention;
+  sh:order "35";
+  sh:name "has processing convention"@en;
+  sh:description """N'y aurait-il pas une propriété RiC-O ?
+
+THOMAS : regarder les valeurs et voir si une propriété existante existe en RiC-O"""@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string .
+
+sapash:Record_hasProcessingDate sh:path sapo:hasProcessingDate;
+  sh:order "36";
+  sh:name "has processing date"@en;
+  sh:nodeKind sh:IRI;
+  sh:or _:3aac70b518b847b0b6c080487a7c9e099691 .
+
+_:3aac70b518b847b0b6c080487a7c9e099691 rdf:first _:3aac70b518b847b0b6c080487a7c9e099692;
+  rdf:rest _:3aac70b518b847b0b6c080487a7c9e099693 .
+
+_:3aac70b518b847b0b6c080487a7c9e099692 sh:class rico:SingleDate .
+
+_:3aac70b518b847b0b6c080487a7c9e099693 rdf:first _:3aac70b518b847b0b6c080487a7c9e099694;
+  rdf:rest _:3aac70b518b847b0b6c080487a7c9e099695 .
+
+_:3aac70b518b847b0b6c080487a7c9e099694 sh:class rico:DateRange .
+
+_:3aac70b518b847b0b6c080487a7c9e099695 rdf:first _:3aac70b518b847b0b6c080487a7c9e099696;
+  rdf:rest rdf:nil .
+
+_:3aac70b518b847b0b6c080487a7c9e099696 sh:class rico:Date .
+
+sapash:Record_hasProtectionDuration sh:path sapo:hasProtectionDuration;
+  sh:order "37";
+  sh:name "has protection duration"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string .
+
+sapash:Record_hasResponsibleEmployee sh:path sapo:hasResponsibleEmployee;
+  sh:order "38";
+  sh:name "has responsible employer"@en;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string .
+
+sapash:Record_hasTermsOfProtection sh:path sapo:hasTermsOfProtection;
+  sh:order "39";
+  sh:name "has terms of protection"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:class skos:Concept .
+
+sapash:Record_hasUsageRightsStill sh:path sapo:hasUsageRightsStill;
+  sh:order "40";
+  sh:name "has usage rights still"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:class skos:Concept .
+
+sapash:Record_hasUsageRightsStreaming sh:path sapo:hasUsageRightsStreaming;
+  sh:order "41";
+  sh:name "has usage rights streaming"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:class skos:Concept .
+
+sapash:Record_isRelatedTo sh:path sapo:isRelatedTo;
+  sh:order "42";
+  sh:name "is related to"@en;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string .
+
+sapash:Record_legacyIdentifier sh:path sapo:legacyIdentifier;
+  sh:order "43";
+  sh:name "legacy identifier"@en;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string .
+
+sapash:Record_copyrightNotice sh:path schema:copyrightNotice;
+  sh:order "44";
+  sh:name "copyright notice"@en;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string .
+
+sapash:Record_seeAlso sh:path sapo:seeAlso;
+  sh:order "45";
+  sh:name "see also"@en;
+  skos:editorialNote "Will be migrated to rico:isRelatedTo, probably at the time of the RiC-O 1.0 conversion"@en;
+  sh:nodeKind sh:IRI;
+  sh:or _:3aac70b518b847b0b6c080487a7c9e099697 .
+
+_:3aac70b518b847b0b6c080487a7c9e099697 rdf:first _:3aac70b518b847b0b6c080487a7c9e099698;
+  rdf:rest _:3aac70b518b847b0b6c080487a7c9e099699 .
+
+_:3aac70b518b847b0b6c080487a7c9e099698 sh:class rico:Record .
+
+_:3aac70b518b847b0b6c080487a7c9e099699 rdf:first _:3aac70b518b847b0b6c080487a7c9e099700;
+  rdf:rest _:3aac70b518b847b0b6c080487a7c9e099701 .
+
+_:3aac70b518b847b0b6c080487a7c9e099700 sh:class rico:RecordSet .
+
+_:3aac70b518b847b0b6c080487a7c9e099701 rdf:first _:3aac70b518b847b0b6c080487a7c9e099702;
+  rdf:rest _:3aac70b518b847b0b6c080487a7c9e099703 .
+
+_:3aac70b518b847b0b6c080487a7c9e099702 sh:class rico:Instantiation .
+
+_:3aac70b518b847b0b6c080487a7c9e099703 rdf:first _:3aac70b518b847b0b6c080487a7c9e099704;
+  rdf:rest _:3aac70b518b847b0b6c080487a7c9e099705 .
+
+_:3aac70b518b847b0b6c080487a7c9e099704 sh:class frbroo:F26_Recording .
+
+_:3aac70b518b847b0b6c080487a7c9e099705 rdf:first _:3aac70b518b847b0b6c080487a7c9e099706;
+  rdf:rest rdf:nil .
+
+_:3aac70b518b847b0b6c080487a7c9e099706 sh:class rico:CorporateBody .
+
+sapash:Record_index sh:path olo:index;
+  sh:order "46";
+  sh:name "index"@en;
+  sh:description "Cette propriété nous permet de définir un ordre de tri des entités soit dans les Layouts soit dans les exports."@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:integer .
+
+sapash:Record_sameAs sh:path owl:sameAs;
+  sh:order "47";
+  sh:name "same as (owl)"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI .
+
+sapash:Record_comment sh:path rdfs:comment;
+  sh:order "48";
+  sh:name "comment"@en;
+  sh:description "Note : Présent seulement 3 fois."@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string .
+
+sapash:RecordSet_conditionsOfAccess sh:path rico:conditionsOfAccess;
+  sh:order "1";
+  sh:name "conditions of access"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string .
+
+sapash:RecordSet_conditionsOfUse sh:path rico:conditionsOfUse;
+  sh:order "2";
+  sh:name "conditions of use"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string .
+
+sapash:RecordSet_descriptiveNote sh:path rico:descriptiveNote;
+  sh:order "3";
+  sh:name "descriptive note"@en;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string .
+
+sapash:RecordSet_hasCreator sh:path rico:hasCreator;
+  sh:order "4";
+  sh:name "has creator"@en;
+  sh:description "Je garde rico:Person en range"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:class rico:Person .
+
+sapash:RecordSet_hasExtent sh:path rico:hasExtent;
+  sh:order "5";
+  sh:name "has extent"@en;
+  sh:nodeKind sh:IRI;
+  sh:class rico:RecordResourceExtent .
+
+sapash:RecordSet_hasInstantiation sh:path rico:hasInstantiation;
+  sh:order "6";
+  sh:name "has intantiation"@en;
+  sh:description "Je garde rico:Instantiation en range"@en;
+  sh:nodeKind sh:IRI;
+  sh:class rico:Instantiation .
+
+sapash:RecordSet_hasOrHadAllMembersWithDocumentaryFormType sh:path rico:hasOrHadAllMembersWithDocumentaryFormType;
+  sh:order "7";
+  sh:name "has or had members with documentary form type"@en;
+  sh:nodeKind sh:IRI;
+  sh:class rico:DocumentaryFormType .
+
+sapash:RecordSet_hasOrHadIdentifier sh:path rico:hasOrHadIdentifier;
+  sh:order "8";
+  sh:name "has or had identifier"@en;
+  sh:nodeKind sh:IRI;
+  sh:class rico:Identifier .
+
+sapash:RecordSet_hasOrHadLanguage sh:path rico:hasOrHadLanguage;
+  sh:order "9";
+  sh:name "has or had language"@en;
+  sh:nodeKind sh:IRI;
+  sh:class rico:Language .
+
+sapash:RecordSet_hasOrHadLocation sh:path rico:hasOrHadLocation;
+  sh:order "10";
+  sh:name "has or had location"@en;
+  sh:nodeKind sh:IRI;
+  sh:class sapo:ArchivalPlace .
+
+sapash:RecordSet_hasOrHadSubject sh:path rico:hasOrHadSubject;
+  sh:order "11";
+  sh:name "has or had subject"@en;
+  sh:description """Je supprime du range les classes CRM qui ont une correspondance RiCO.
+Et les classes RiC-O en ne laissant que rico:Thing.
+
+Liste de départ:
+
+(
+[sh:class crm:E22_Man-Made_Object]
+ [sh:class rico:Thing]
+ [sh:class crm:E21_Person]
+ [sh:class rico:Person]
+ [sh:class crm:E40_Legal_Body]
+ [sh:class rico:CorporateBody]
+ [sh:class crm:E28_Conceptual_Object]
+ [sh:class rico:Concept]
+ [sh:class crm:E39_Actor]
+ [sh:class crm:E74_Group]
+ [sh:class rico:Group]
+ [sh:class rico:Family]
+ [sh:class frbroo:F25_Performance_Plan]
+)"""@en;
+  sh:nodeKind sh:IRI;
+  sh:or _:3aac70b518b847b0b6c080487a7c9e099707 .
+
+_:3aac70b518b847b0b6c080487a7c9e099707 rdf:first _:3aac70b518b847b0b6c080487a7c9e099708;
+  rdf:rest _:3aac70b518b847b0b6c080487a7c9e099709 .
+
+_:3aac70b518b847b0b6c080487a7c9e099708 sh:class crm:E22_Man-Made_Object .
+
+_:3aac70b518b847b0b6c080487a7c9e099709 rdf:first _:3aac70b518b847b0b6c080487a7c9e099710;
+  rdf:rest _:3aac70b518b847b0b6c080487a7c9e099711 .
+
+_:3aac70b518b847b0b6c080487a7c9e099710 sh:class rico:Thing .
+
+_:3aac70b518b847b0b6c080487a7c9e099711 rdf:first _:3aac70b518b847b0b6c080487a7c9e099712;
+  rdf:rest rdf:nil .
+
+_:3aac70b518b847b0b6c080487a7c9e099712 sh:class frbroo:F25_Performance_Plan .
+
+sapash:RecordSet_hasProvenance sh:path rico:hasProvenance;
+  sh:order "12";
+  sh:name "has provenance"@en;
+  sh:description "Je garde seulement les classes Ric-O en range"@en;
+  sh:nodeKind sh:IRI;
+  sh:or _:3aac70b518b847b0b6c080487a7c9e099713 .
+
+_:3aac70b518b847b0b6c080487a7c9e099713 rdf:first _:3aac70b518b847b0b6c080487a7c9e099714;
+  rdf:rest _:3aac70b518b847b0b6c080487a7c9e099715 .
+
+_:3aac70b518b847b0b6c080487a7c9e099714 sh:class rico:Group .
+
+_:3aac70b518b847b0b6c080487a7c9e099715 rdf:first _:3aac70b518b847b0b6c080487a7c9e099716;
+  rdf:rest _:3aac70b518b847b0b6c080487a7c9e099717 .
+
+_:3aac70b518b847b0b6c080487a7c9e099716 sh:class rico:Person .
+
+_:3aac70b518b847b0b6c080487a7c9e099717 rdf:first _:3aac70b518b847b0b6c080487a7c9e099718;
+  rdf:rest rdf:nil .
+
+_:3aac70b518b847b0b6c080487a7c9e099718 sh:class rico:CorporateBody .
+
+sapash:RecordSet_hasRecordSetType sh:path rico:hasRecordSetType;
+  sh:order "13";
+  sh:name "has record set type"@en;
+  sh:description "Je mets skos:Concept en range, mais pourquoi pas une classe RiC-O ? Ce n'est pas normal, les autres vocabulaires contrôlés comme DocumentaryFormType ont bien une classe dédié. Normalement ca devrait être rico:RecordSetType"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:class skos:Concept .
+
+sapash:RecordSet_history sh:path rico:history;
+  sh:order "14";
+  sh:name "history"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string .
+
+sapash:RecordSet_identifier sh:path rico:identifier;
+  sh:order "15";
+  sh:name "identifier"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string .
+
+sapash:RecordSet_isAssociatedWithDate sh:path rico:isAssociatedWithDate;
+  sh:order "16";
+  sh:name "is associated with date"@en;
+  sh:nodeKind sh:IRI;
+  sh:or _:3aac70b518b847b0b6c080487a7c9e099719 .
+
+_:3aac70b518b847b0b6c080487a7c9e099719 rdf:first _:3aac70b518b847b0b6c080487a7c9e099720;
+  rdf:rest _:3aac70b518b847b0b6c080487a7c9e099721 .
+
+_:3aac70b518b847b0b6c080487a7c9e099720 sh:class rico:DateRange .
+
+_:3aac70b518b847b0b6c080487a7c9e099721 rdf:first _:3aac70b518b847b0b6c080487a7c9e099722;
+  rdf:rest _:3aac70b518b847b0b6c080487a7c9e099723 .
+
+_:3aac70b518b847b0b6c080487a7c9e099722 sh:class rico:SingleDate .
+
+_:3aac70b518b847b0b6c080487a7c9e099723 rdf:first _:3aac70b518b847b0b6c080487a7c9e099724;
+  rdf:rest rdf:nil .
+
+_:3aac70b518b847b0b6c080487a7c9e099724 sh:class rico:Date .
+
+sapash:RecordSet_isAssociatedWithEvent sh:path rico:isAssociatedWithEvent;
+  sh:order "17";
+  sh:name "is associated with event"@en;
+  sh:nodeKind sh:IRI;
+  sh:class rico:Event .
+
+sapash:RecordSet_isAssociatedWithPlace sh:path rico:isAssociatedWithPlace;
+  sh:order "18";
+  sh:name "is associated with place"@en;
+  sh:description "je met rico:Place en range"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:class rico:Place .
+
+sapash:RecordSet_isOrWasIncludedIn sh:path rico:isOrWasIncludedIn;
+  sh:order "19";
+  sh:name "is or was included in"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:class rico:RecordSet .
+
+sapash:RecordSet_name sh:path rico:name;
+  sh:order "20";
+  sh:name "name"@en;
+  sh:description "Le cadre de classement est multilingue, mais les fonds sont mono-lingue"@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:or _:3aac70b518b847b0b6c080487a7c9e099725;
+  dash:propertyRole dash:LabelRole .
+
+_:3aac70b518b847b0b6c080487a7c9e099725 rdf:first _:3aac70b518b847b0b6c080487a7c9e099726;
+  rdf:rest _:3aac70b518b847b0b6c080487a7c9e099727 .
+
+_:3aac70b518b847b0b6c080487a7c9e099726 sh:datatype rdf:langString .
+
+_:3aac70b518b847b0b6c080487a7c9e099727 rdf:first _:3aac70b518b847b0b6c080487a7c9e099728;
+  rdf:rest rdf:nil .
+
+_:3aac70b518b847b0b6c080487a7c9e099728 sh:datatype xsd:string .
+
+sapash:RecordSet_physicalCharacteristics sh:path rico:physicalCharacteristics;
+  sh:order "21";
+  sh:name "physical characteristics"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string .
+
+sapash:RecordSet_cassation sh:path sapo:cassation;
+  sh:order "23";
+  sh:name "cassation"@en;
+  skos:editorialNote "Voir si une propriété RiC-O permettrait d'encoder cela."@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string .
+
+sapash:RecordSet_deliveryNumber sh:path sapo:deliveryNumber;
+  sh:order "24";
+  sh:name "delivery number"@en;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string .
+
+sapash:RecordSet_hasAccessibility sh:path sapo:hasAccessibility;
+  sh:order "25";
+  sh:name "has accessibility"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:class skos:Concept .
+
+sapash:RecordSet_hasCopyrightDeclaration sh:path sapo:hasCopyrightDeclaration;
+  sh:order "26";
+  sh:name "has copyright declaration"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:class skos:Concept .
+
+sapash:RecordSet_hasCredit sh:path sapo:hasCredit;
+  sh:order "27";
+  sh:name "has credit"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string .
+
+sapash:RecordSet_hasDoublets sh:path sapo:hasDoublets;
+  sh:order "28";
+  sh:name "has doublets"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string .
+
+sapash:RecordSet_hasInternalNote sh:path sapo:hasInternalNote;
+  sh:order "29";
+  sh:name "has internal note"@en;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string .
+
+sapash:RecordSet_hasNote sh:path sapo:hasNote;
+  sh:order "30";
+  sh:name "has note"@en;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string .
+
+sapash:RecordSet_hasPacking sh:path sapo:hasPacking;
+  sh:order "31";
+  sh:name "has packing"@en;
+  sh:nodeKind sh:IRI;
+  sh:class skos:Concept .
+
+sapash:RecordSet_hasPermission sh:path sapo:hasPermission;
+  sh:order "32";
+  sh:name "has permission"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:class skos:Concept .
+
+sapash:RecordSet_hasPhysicalUsability sh:path sapo:hasPhysicalUsability;
+  sh:order "33";
+  sh:name "has physical usability"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:class skos:Concept .
+
+sapash:RecordSet_hasProcessingConvention sh:path sapo:hasProcessingConvention;
+  sh:order "34";
+  sh:name "has processing convention"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string .
+
+sapash:RecordSet_hasProcessingDate sh:path sapo:hasProcessingDate;
+  sh:order "35";
+  sh:name "has processing date"@en;
+  sh:nodeKind sh:IRI;
+  sh:or _:3aac70b518b847b0b6c080487a7c9e099729 .
+
+_:3aac70b518b847b0b6c080487a7c9e099729 rdf:first _:3aac70b518b847b0b6c080487a7c9e099730;
+  rdf:rest _:3aac70b518b847b0b6c080487a7c9e099731 .
+
+_:3aac70b518b847b0b6c080487a7c9e099730 sh:class rico:DateRange .
+
+_:3aac70b518b847b0b6c080487a7c9e099731 rdf:first _:3aac70b518b847b0b6c080487a7c9e099732;
+  rdf:rest _:3aac70b518b847b0b6c080487a7c9e099733 .
+
+_:3aac70b518b847b0b6c080487a7c9e099732 sh:class rico:SingleDate .
+
+_:3aac70b518b847b0b6c080487a7c9e099733 rdf:first _:3aac70b518b847b0b6c080487a7c9e099734;
+  rdf:rest rdf:nil .
+
+_:3aac70b518b847b0b6c080487a7c9e099734 sh:class rico:Date .
+
+sapash:RecordSet_hasProtectionDuration sh:path sapo:hasProtectionDuration;
+  sh:order "36";
+  sh:name "has protection duration"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string .
+
+sapash:RecordSet_hasResponsibleEmployee sh:path sapo:hasResponsibleEmployee;
+  sh:order "37";
+  sh:name "has responsible employee"@en;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string .
+
+sapash:RecordSet_hasTermsOfProtection sh:path sapo:hasTermsOfProtection;
+  sh:order "38";
+  sh:name "has terms of protection"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:class skos:Concept .
+
+sapash:RecordSet_hasUsageRightsStill sh:path sapo:hasUsageRightsStill;
+  sh:order "39";
+  sh:name "has usage rights still"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:class skos:Concept .
+
+sapash:RecordSet_hasUsageRightsStreaming sh:path sapo:hasUsageRightsStreaming;
+  sh:order "40";
+  sh:name "has usage rights streaming"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:class skos:Concept .
+
+sapash:RecordSet_isRelatedTo sh:path sapo:isRelatedTo;
+  sh:order "41";
+  sh:name "is related to"@en;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string .
+
+sapash:RecordSet_legacyIdentifier sh:path sapo:legacyIdentifier;
+  sh:order "44";
+  sh:name "legacy identifier"@en;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string .
+
+sapash:RecordSet_seeAlso sh:path sapo:seeAlso;
+  sh:order "45";
+  sh:name "see also"@en;
+  sh:nodeKind sh:IRI;
+  sh:or _:3aac70b518b847b0b6c080487a7c9e099735 .
+
+_:3aac70b518b847b0b6c080487a7c9e099735 rdf:first _:3aac70b518b847b0b6c080487a7c9e099736;
+  rdf:rest _:3aac70b518b847b0b6c080487a7c9e099737 .
+
+_:3aac70b518b847b0b6c080487a7c9e099736 sh:class rico:Person .
+
+_:3aac70b518b847b0b6c080487a7c9e099737 rdf:first _:3aac70b518b847b0b6c080487a7c9e099738;
+  rdf:rest _:3aac70b518b847b0b6c080487a7c9e099739 .
+
+_:3aac70b518b847b0b6c080487a7c9e099738 sh:class frbroo:F26_Recording .
+
+_:3aac70b518b847b0b6c080487a7c9e099739 rdf:first _:3aac70b518b847b0b6c080487a7c9e099740;
+  rdf:rest _:3aac70b518b847b0b6c080487a7c9e099741 .
+
+_:3aac70b518b847b0b6c080487a7c9e099740 sh:class rico:RecordPart .
+
+_:3aac70b518b847b0b6c080487a7c9e099741 rdf:first _:3aac70b518b847b0b6c080487a7c9e099742;
+  rdf:rest _:3aac70b518b847b0b6c080487a7c9e099743 .
+
+_:3aac70b518b847b0b6c080487a7c9e099742 sh:class rico:Record .
+
+_:3aac70b518b847b0b6c080487a7c9e099743 rdf:first _:3aac70b518b847b0b6c080487a7c9e099744;
+  rdf:rest rdf:nil .
+
+_:3aac70b518b847b0b6c080487a7c9e099744 sh:class rico:RecordSet .
+
+sapash:RecordSet_sameAs sh:path owl:sameAs;
+  sh:order "46";
+  sh:name "same as (owl)"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI .
+
+sapash:RecordSet_comment sh:path rdfs:comment;
+  sh:order "47";
+  sh:name "comment"@en;
+  sh:description "Utilisé 55 fois"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string .
+
+sapash:RecordSet_copyrightNotice sh:path schema:copyrightNotice;
+  sh:order "48";
+  sh:name "copyright notice"@en;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string .
+
+sapash:RecordSet_index sh:path olo:index;
+  sh:order "49";
+  sh:name "index"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:integer .
+
+sapash:RecordPart_descriptiveNote sh:path rico:descriptiveNote;
+  sh:order "1";
+  sh:name "descriptive note"@en;
+  skos:editorialNote "To be migrated to rico:scopeAndContent in a future version"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string .
+
+sapash:RecordPart_hasDocumentaryFormType sh:path rico:hasDocumentaryFormType;
+  sh:order "2";
+  sh:name "has documentary form type"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:class rico:DocumentaryFormType .
+
+sapash:RecordPart_hasInstantiation sh:path rico:hasInstantiation;
+  sh:order "3";
+  sh:name "has instantiation"@en;
+  sh:nodeKind sh:IRI;
+  sh:class rico:Instantiation .
+
+sapash:RecordPart_hasOrHadIdentifier sh:path rico:hasOrHadIdentifier;
+  sh:order "4";
+  sh:name "has or had identifier"@en;
+  sh:nodeKind sh:IRI;
+  sh:class rico:Identifier .
+
+sapash:RecordPart_hasOrHadLocation sh:path rico:hasOrHadLocation;
+  sh:order "5";
+  sh:name "has or had location"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:class sapo:ArchivalPlace .
+
+sapash:RecordPart_hasOrHadSubject sh:path rico:hasOrHadSubject;
+  sh:order "6";
+  sh:name "has or had subject"@en;
+  sh:description """Par souci de cohérence avec RiC, je mettrai en range rico:Thing, et normalement toutes les valeurs devraient avoir une classe qui est sous-classe de rico:Thing.
+Cela pose question pour les Performance_Plan et les Recording.
+
+L'ontologie SAPA pourrait déclarer des triplets additionnels pour dire que des classes FRBRoo sont subclassOf RiC-O:Thing.
+
+Si on ne souhaite pas faire cela, on pourrait enlever du range les classes CRM qui ont une correspondance RiCO (Group, Actor, E21_Person, etc...)
+
+Pour l'instant ce que je fais c'est que j'enlève du range les classes CRM qui ont leur correspondance dans RiC-O, et je laisse celles qui n'ont pas de correspondance"""@en;
+  sh:nodeKind sh:IRI;
+  sh:or _:3aac70b518b847b0b6c080487a7c9e099745 .
+
+_:3aac70b518b847b0b6c080487a7c9e099745 rdf:first _:3aac70b518b847b0b6c080487a7c9e099746;
+  rdf:rest _:3aac70b518b847b0b6c080487a7c9e099747 .
+
+_:3aac70b518b847b0b6c080487a7c9e099746 sh:class rico:Person .
+
+_:3aac70b518b847b0b6c080487a7c9e099747 rdf:first _:3aac70b518b847b0b6c080487a7c9e099748;
+  rdf:rest _:3aac70b518b847b0b6c080487a7c9e099749 .
+
+_:3aac70b518b847b0b6c080487a7c9e099748 sh:class rico:CorporateBody .
+
+_:3aac70b518b847b0b6c080487a7c9e099749 rdf:first _:3aac70b518b847b0b6c080487a7c9e099750;
+  rdf:rest _:3aac70b518b847b0b6c080487a7c9e099751 .
+
+_:3aac70b518b847b0b6c080487a7c9e099750 sh:class crm:E39_Actor .
+
+_:3aac70b518b847b0b6c080487a7c9e099751 rdf:first _:3aac70b518b847b0b6c080487a7c9e099752;
+  rdf:rest _:3aac70b518b847b0b6c080487a7c9e099753 .
+
+_:3aac70b518b847b0b6c080487a7c9e099752 sh:class frbroo:F26_Recording .
+
+_:3aac70b518b847b0b6c080487a7c9e099753 rdf:first _:3aac70b518b847b0b6c080487a7c9e099754;
+  rdf:rest _:3aac70b518b847b0b6c080487a7c9e099755 .
+
+_:3aac70b518b847b0b6c080487a7c9e099754 sh:class rico:Group .
+
+_:3aac70b518b847b0b6c080487a7c9e099755 rdf:first _:3aac70b518b847b0b6c080487a7c9e099756;
+  rdf:rest rdf:nil .
+
+_:3aac70b518b847b0b6c080487a7c9e099756 sh:class frbroo:F25_Performance_Plan .
+
+sapash:RecordPart_identifier sh:path rico:identifier;
+  sh:order "7";
+  sh:name "identifier"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string .
+
+sapash:RecordPart_isAssociatedWithDate sh:path rico:isAssociatedWithDate;
+  sh:order "8";
+  sh:name "is associated with date"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:or _:3aac70b518b847b0b6c080487a7c9e099757 .
+
+_:3aac70b518b847b0b6c080487a7c9e099757 rdf:first _:3aac70b518b847b0b6c080487a7c9e099758;
+  rdf:rest _:3aac70b518b847b0b6c080487a7c9e099759 .
+
+_:3aac70b518b847b0b6c080487a7c9e099758 sh:class rico:SingleDate .
+
+_:3aac70b518b847b0b6c080487a7c9e099759 rdf:first _:3aac70b518b847b0b6c080487a7c9e099760;
+  rdf:rest _:3aac70b518b847b0b6c080487a7c9e099761 .
+
+_:3aac70b518b847b0b6c080487a7c9e099760 sh:class rico:Date .
+
+_:3aac70b518b847b0b6c080487a7c9e099761 rdf:first _:3aac70b518b847b0b6c080487a7c9e099762;
+  rdf:rest rdf:nil .
+
+_:3aac70b518b847b0b6c080487a7c9e099762 sh:class rico:DateRange .
+
+sapash:RecordPart_isOrWasConstituentOf sh:path rico:isOrWasConstituentOf;
+  sh:order "9";
+  sh:name "is or was constituent of"@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:class rico:Record .
+
+sapash:RecordPart_name sh:path rico:name;
+  sh:order "10";
+  sh:name "name"@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string;
+  dash:propertyRole dash:LabelRole .
+
+sapash:RecordPart_hasAccessibility sh:path sapo:hasAccessibility;
+  sh:order "11";
+  sh:name "has accessibility"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:class skos:Concept .
+
+sapash:RecordPart_hasCopyrightDeclaration sh:path sapo:hasCopyrightDeclaration;
+  sh:order "12";
+  sh:name "has copyright declaration"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:class skos:Concept .
+
+sapash:RecordPart_hasInternalNote sh:path sapo:hasInternalNote;
+  sh:order "13";
+  sh:name "has internal note"@en;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string .
+
+sapash:RecordPart_hasNote sh:path sapo:hasNote;
+  sh:order "14";
+  sh:name "has note"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string .
+
+sapash:RecordPart_hasPermission sh:path sapo:hasPermission;
+  sh:order "15";
+  sh:name "has permission"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:class skos:Concept .
+
+sapash:RecordPart_hasPhysicalUsability sh:path sapo:hasPhysicalUsability;
+  sh:order "16";
+  sh:name "has physical usability"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:class skos:Concept .
+
+sapash:RecordPart_hasProcessingConvention sh:path sapo:hasProcessingConvention;
+  sh:order "17";
+  sh:name "has processing convention"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string .
+
+sapash:RecordPart_hasProcessingDate sh:path sapo:hasProcessingDate;
+  sh:order "18";
+  sh:name "has processing date"@en;
+  sh:nodeKind sh:IRI;
+  sh:or _:3aac70b518b847b0b6c080487a7c9e099763 .
+
+_:3aac70b518b847b0b6c080487a7c9e099763 rdf:first _:3aac70b518b847b0b6c080487a7c9e099764;
+  rdf:rest _:3aac70b518b847b0b6c080487a7c9e099765 .
+
+_:3aac70b518b847b0b6c080487a7c9e099764 sh:class rico:DateRange .
+
+_:3aac70b518b847b0b6c080487a7c9e099765 rdf:first _:3aac70b518b847b0b6c080487a7c9e099766;
+  rdf:rest _:3aac70b518b847b0b6c080487a7c9e099767 .
+
+_:3aac70b518b847b0b6c080487a7c9e099766 sh:class rico:SingleDate .
+
+_:3aac70b518b847b0b6c080487a7c9e099767 rdf:first _:3aac70b518b847b0b6c080487a7c9e099768;
+  rdf:rest rdf:nil .
+
+_:3aac70b518b847b0b6c080487a7c9e099768 sh:class rico:Date .
+
+sapash:RecordPart_hasProtectionDuration sh:path sapo:hasProtectionDuration;
+  sh:order "19";
+  sh:name "has protection duration"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string .
+
+sapash:RecordPart_hasResponsibleEmployee sh:path sapo:hasResponsibleEmployee;
+  sh:order "20";
+  sh:name "has responsible employee"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string .
+
+sapash:RecordPart_hasTermsOfProtection sh:path sapo:hasTermsOfProtection;
+  sh:order "21";
+  sh:name "has terms of protection"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:class skos:Concept .
+
+sapash:RecordPart_hasUsageRightsStill sh:path sapo:hasUsageRightsStill;
+  sh:order "22";
+  sh:name "has usage rights still"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:class skos:Concept .
+
+sapash:RecordPart_hasUsageRightsStreaming sh:path sapo:hasUsageRightsStreaming;
+  sh:order "23";
+  sh:name "has usage rights streaming"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:class skos:Concept .
+
+sapash:RecordPart_seeAlso sh:path sapo:seeAlso;
+  sh:order "24";
+  sh:name "see also"@en;
+  sh:nodeKind sh:IRI;
+  sh:or _:3aac70b518b847b0b6c080487a7c9e099769 .
+
+_:3aac70b518b847b0b6c080487a7c9e099769 rdf:first _:3aac70b518b847b0b6c080487a7c9e099770;
+  rdf:rest _:3aac70b518b847b0b6c080487a7c9e099771 .
+
+_:3aac70b518b847b0b6c080487a7c9e099770 sh:class rico:RecordPart .
+
+_:3aac70b518b847b0b6c080487a7c9e099771 rdf:first _:3aac70b518b847b0b6c080487a7c9e099772;
+  rdf:rest _:3aac70b518b847b0b6c080487a7c9e099773 .
+
+_:3aac70b518b847b0b6c080487a7c9e099772 sh:class frbroo:F26_Recording .
+
+_:3aac70b518b847b0b6c080487a7c9e099773 rdf:first _:3aac70b518b847b0b6c080487a7c9e099774;
+  rdf:rest _:3aac70b518b847b0b6c080487a7c9e099775 .
+
+_:3aac70b518b847b0b6c080487a7c9e099774 sh:class rico:RecordSet .
+
+_:3aac70b518b847b0b6c080487a7c9e099775 rdf:first _:3aac70b518b847b0b6c080487a7c9e099776;
+  rdf:rest rdf:nil .
+
+_:3aac70b518b847b0b6c080487a7c9e099776 sh:class rico:Instantiation .
+
+sapash:RecordPart_index sh:path olo:index;
+  sh:order "25";
+  sh:name "index"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:integer .
+
+sapash:RecordPart_isRelatedTo sh:path sapo:isRelatedTo;
+  sh:order "26";
+  sh:name "is related to"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string .
+
+sapash:RecordPart_legacyIdentifier sh:path sapo:legacyIdentifier;
+  sh:order "27";
+  sh:name "legacy identifier"@en;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string .
+
+sapash:RecordResourceExtent_quantity sh:path rico:quantity;
+  sh:order "1";
+  sh:name "quantity"@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:or _:3aac70b518b847b0b6c080487a7c9e099777 .
+
+_:3aac70b518b847b0b6c080487a7c9e099777 rdf:first _:3aac70b518b847b0b6c080487a7c9e099778;
+  rdf:rest _:3aac70b518b847b0b6c080487a7c9e099779 .
+
+_:3aac70b518b847b0b6c080487a7c9e099778 sh:datatype xsd:integer .
+
+_:3aac70b518b847b0b6c080487a7c9e099779 rdf:first _:3aac70b518b847b0b6c080487a7c9e099780;
+  rdf:rest rdf:nil .
+
+_:3aac70b518b847b0b6c080487a7c9e099780 sh:datatype xsd:string .
+
+sapash:RecordResourceExtent_hasUnitOfMeasurement sh:path rico:hasUnitOfMeasurement;
+  sh:order "2";
+  sh:name "has unit"@en;
+  sh:description "There was a mistake in the type of the range : it was rico:unitOfMeasurement, it should be rico:UnitOfMeasurement, with capital \"U\""@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:class rico:UnitOfMeasurement .
+
+sapash:Identifier_value sh:path rdf:value;
+  sh:order "1";
+  sh:name "value"@en;
+  sh:description "Il faut migrer cette structure en structure RiC-O : en RiC-O il y a rico:textualValue ou rico:normalizedValue"@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string .
+
+sapash:Identifier_P2_has_type sh:path crm:P2_has_type;
+  sh:order "2";
+  sh:name "type"@en;
+  sh:description "Il faut migrer cette structure en structure RiC-O : rico:hasIdentifierType, et il faut typer les valeurs avec la classe rico:IdentifierType à la place d'une classe CRM"@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:class skos:Concept .
+
+sapash:ArchivalPlace_label sh:path rdfs:label;
+  sh:order "1";
+  sh:name "label"@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string;
+  dash:propertyRole dash:LabelRole .
+
+sapash:ArchivalPlace_containedBy sh:path rico:containedBy;
+  sh:order "2";
+  sh:name "contained by"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:class sapo:ArchivalPlace .
+
+sapash:ArchivalPlace_hasPacking sh:path sapo:hasPacking;
+  sh:order "3";
+  sh:name "has packing"@en;
+  sh:description "Je trouve l'utilisation de cette propriété bizarre sur les ArchivalPlace"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:class skos:Concept .
+
+sapash:Date_dateStandard sh:path rico:dateStandard;
+  sh:name "date standard"@en;
+  sh:description "L'utilisation de rico:Date directement est bizarre. Soit on met une SingleDate, soit un DateRange, mais pourquoi utiliser rico:Date directement ? de toutes façons c'est à migrer"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string .
+
+sapash:Date_expressedDate sh:path rico:expressedDate;
+  sh:name "expressed date"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string .
+
+sapash:Date_normalizedDateValue sh:path rico:normalizedDateValue;
+  sh:name "normalized date value"@en;
+  sh:description "C'est dommage que ce champs n'ait pas un datatype normalisé"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string .
+
+sapash:DateRange_hasBeginningDate sh:path rico:hasBeginningDate;
+  sh:name "has beginning date"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:class rico:SingleDate .
+
+sapash:DateRange_hasEndDate sh:path rico:hasEndDate;
+  sh:name "has end date"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:class rico:SingleDate .
+
+sapash:SingleDate_certainty sh:path rico:certainty;
+  sh:name "certainty"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:class skos:Concept .
+
+sapash:SingleDate_dateQualifier sh:path rico:dateQualifier;
+  sh:name "date qualifier"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:class skos:Concept .
+
+sapash:SingleDate_dateStandard sh:path rico:dateStandard;
+  sh:name "date standard"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string .
+
+sapash:SingleDate_expressedDate sh:path rico:expressedDate;
+  sh:name "expressed date"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string .
+
+sapash:SingleDate_normalizedDateValue sh:path rico:normalizedDateValue;
+  sh:name "normalized date value"@en;
+  sh:description "C'est dommage que ce champs n'ait pas un datatype normalisé"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string .
+
+sapash:Concept_prefLabel sh:path skos:prefLabel;
+  sh:order "1";
+  sh:name "preferred label"@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype rdf:langString;
+  dash:propertyRole dash:LabelRole .
+
+sapash:Concept_altLabel sh:path skos:altLabel;
+  sh:order "2";
+  sh:name "alternative label (synonym)"@en;
+  sh:nodeKind sh:Literal;
+  sh:datatype rdf:langString .
+
+sapash:Concept_hiddenLabel sh:path skos:hiddenLabel;
+  sh:order "3";
+  sh:name "hidden label"@en;
+  sh:nodeKind sh:Literal;
+  sh:datatype rdf:langString .
+
+sapash:Concept_broader sh:path skos:broader;
+  sh:order "4";
+  sh:name "broader"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:class skos:Concept .
+
+sapash:Concept_narrower sh:path skos:narrower;
+  sh:order "5";
+  sh:name "narrower"@en;
+  sh:nodeKind sh:IRI;
+  sh:class skos:Concept .
+
+sapash:Concept_definition sh:path skos:definition;
+  sh:order "6";
+  sh:name "definition"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype rdf:langString .
+
+sapash:Concept_inScheme sh:path skos:inScheme;
+  sh:order "7";
+  sh:name "in scheme"@en;
+  sh:minCount "1"^^xsd:integer;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:class skos:ConceptScheme .
+
+sapash:Concept_topConceptOf sh:path skos:topConceptOf;
+  sh:order "8";
+  sh:name "top concept of"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:IRI;
+  sh:class skos:ConceptScheme .
+
+sapash:Concept_exactMatch sh:path skos:exactMatch;
+  sh:order "9";
+  sh:name "exact match"@en;
+  sh:nodeKind sh:IRI;
+  sh:class skos:Concept .
+
+sapash:Concept_comment sh:path rdfs:comment;
+  sh:order "10";
+  sh:name "comment"@en;
+  sh:maxCount "1"^^xsd:integer;
+  sh:nodeKind sh:Literal;
+  sh:datatype rdf:langString .
+
+sapash:Diagram_Record dct:title "Record"@fr;
+  sh:order "1"^^xsd:integer .
+
+sapash:Diagram_RecordSet dct:title "Record Set"@fr;
+  sh:order "2"^^xsd:integer .
+
+sapash:Diagram_RecordPart dct:title "Record Part"@fr;
+  sh:order "3"^^xsd:integer .
