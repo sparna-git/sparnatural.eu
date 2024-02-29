@@ -88,8 +88,10 @@
           <li><a class="nav-link" href="http://sparnatural.eu"><i style="font-size:25px;" class="fa-thin fa-house"></i>&nbsp;Home</a></li>
           <li class="dropdown"><a href="#"><i style="font-size:25px;" class="fa-thin fa-globe-africa"></i>&nbsp;<span>Lang.</span> <i class="bi bi-chevron-down"></i></a>
             <ul style="width:80%;">
-              <li><a href="?lang=fr">fr</a></li>
+              <li><a href="?lang=de">de</a></li>
               <li><a href="?lang=en">en</a></li>
+              <li><a href="?lang=fr">fr</a></li>
+              <li><a href="?lang=it">it</a></li>
             </ul>
           </li>
           <li><a class="nav-link" href="https://github.com/sparna-git/Sparnatural"><i style="font-size:25px;" class="fab fa-github"></i>&nbsp; Github</a></li>
@@ -320,6 +322,7 @@
         if(results == null) { return null; }
         return results[1] || 0;
       }
+      // default to 'fr'
       var lang = ($.urlParam('lang') != null)?$.urlParam('lang'):'fr';
 
       // set the locale
@@ -366,15 +369,55 @@
             'example.placeholder': 'Charger une requête d\'exemple...',
             'example.1.title': 'Example 1 to be completed...',
             'example.2.title': 'Example 2 to be completed...'
+          },
+          'it': {
+            'page.title': 'SAPA Collezioni',
+            'menu.home': 'Sparnatural',
+            'menu.lang': 'Lang.',
+            'menu.github': 'Github',
+            'endpoint.querying': 'Interrogazione SPARQL',
+            'actions.toggle': 'Attivare/disattivare editore SPARQL',
+            'actions.share': 'Condividere',            
+            'actions.export': 'Esportare l\'interrogazione in JSON',
+            'actions.import': 'Importare interrogazione in JSON',
+            'tutorial': 'Non sapete come cominciare? Guardate il tutorial!',
+            'share.modal.title': 'Link diretto verso l\'interrogazione',
+            'share.modal.close': 'Chiudere',
+            'export.modal.title': 'Interrogazione JSON',
+            'export.modal.close': 'Chiudere',
+            'import.modal.title': 'Cambiare interrogazione in JSON',
+            'import.modal.import': 'Importare',
+            'example.placeholder': 'Carica un\'interrogazione d\'esempio...',
+            'example.1.title': 'Esempio 1 da completare...',
+            'example.2.title': 'Esempio 2 da completare...'
+          },
+          'de': {
+            'page.title': 'SAPA Sammlungen',
+            'menu.home': 'Sparnatural',
+            'menu.lang': 'Lang.',
+            'menu.github': 'Github',
+            'endpoint.querying': 'SPARQL Anfrage',
+            'actions.toggle': 'Editor SPARQL umschalten',
+            'actions.share': 'Teilen',            
+            'actions.export': 'Anfrage in JSON exportieren',
+            'actions.import': 'Anfrage in JSON importieren',
+            'tutorial': 'Sie wissen nicht wie starten? Hier zum Tutorial!',
+            'share.modal.title': 'Direkter Link zur Anfrage',
+            'share.modal.close': 'Schliessen',
+            'export.modal.title': 'Anfrage JSON',
+            'export.modal.close': 'Schliessen',
+            'import.modal.title': 'Anfrage in JSON ändern',
+            'import.modal.import': 'Importieren',
+            'example.placeholder': 'Musteranfrage laden...',
+            'example.1.title': 'Beispiel 1 zu vervollständigen ...',
+            'example.2.title': 'Beispiel 2 zu vervollständigen ...'
           }
       } );  
       $('body').i18n();
 
       const sparnatural = document.querySelector("spar-natural");
 
-      if(lang == "en") { 
-        sparnatural.setAttribute("lang", "en");
-      }
+      sparnatural.setAttribute("lang", lang);
 
       // prints the endpoint
       $('#endpoint').attr("href", sparnatural.getAttribute("endpoint"));
