@@ -1,13 +1,13 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory();
+		module.exports = factory(require("leaflet"));
 	else if(typeof define === 'function' && define.amd)
-		define([], factory);
+		define(["leaflet"], factory);
 	else if(typeof exports === 'object')
-		exports["SparnaturalYasguiPlugins"] = factory();
+		exports["SparnaturalYasguiPlugins"] = factory(require("leaflet"));
 	else
-		root["SparnaturalYasguiPlugins"] = factory();
-})(self, function() {
+		root["SparnaturalYasguiPlugins"] = factory(root["leaflet"]);
+})(self, function(__WEBPACK_EXTERNAL_MODULE__159__) {
 return /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
@@ -85,6 +85,84 @@ var ___CSS_LOADER_URL_REPLACEMENT_3___ = _css_loader_dist_runtime_getUrl_js__WEB
 var ___CSS_LOADER_URL_REPLACEMENT_4___ = _css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_4___);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, "table.dataTable th.dt-left,\ntable.dataTable td.dt-left {\n  text-align: left;\n}\ntable.dataTable th.dt-center,\ntable.dataTable td.dt-center,\ntable.dataTable td.dataTables_empty {\n  text-align: center;\n}\ntable.dataTable th.dt-right,\ntable.dataTable td.dt-right {\n  text-align: right;\n}\ntable.dataTable th.dt-justify,\ntable.dataTable td.dt-justify {\n  text-align: justify;\n}\ntable.dataTable th.dt-nowrap,\ntable.dataTable td.dt-nowrap {\n  white-space: nowrap;\n}\ntable.dataTable thead th.dt-head-left,\ntable.dataTable thead td.dt-head-left,\ntable.dataTable tfoot th.dt-head-left,\ntable.dataTable tfoot td.dt-head-left {\n  text-align: left;\n}\ntable.dataTable thead th.dt-head-center,\ntable.dataTable thead td.dt-head-center,\ntable.dataTable tfoot th.dt-head-center,\ntable.dataTable tfoot td.dt-head-center {\n  text-align: center;\n}\ntable.dataTable thead th.dt-head-right,\ntable.dataTable thead td.dt-head-right,\ntable.dataTable tfoot th.dt-head-right,\ntable.dataTable tfoot td.dt-head-right {\n  text-align: right;\n}\ntable.dataTable thead th.dt-head-justify,\ntable.dataTable thead td.dt-head-justify,\ntable.dataTable tfoot th.dt-head-justify,\ntable.dataTable tfoot td.dt-head-justify {\n  text-align: justify;\n}\ntable.dataTable thead th.dt-head-nowrap,\ntable.dataTable thead td.dt-head-nowrap,\ntable.dataTable tfoot th.dt-head-nowrap,\ntable.dataTable tfoot td.dt-head-nowrap {\n  white-space: nowrap;\n}\ntable.dataTable tbody th.dt-body-left,\ntable.dataTable tbody td.dt-body-left {\n  text-align: left;\n}\ntable.dataTable tbody th.dt-body-center,\ntable.dataTable tbody td.dt-body-center {\n  text-align: center;\n}\ntable.dataTable tbody th.dt-body-right,\ntable.dataTable tbody td.dt-body-right {\n  text-align: right;\n}\ntable.dataTable tbody th.dt-body-justify,\ntable.dataTable tbody td.dt-body-justify {\n  text-align: justify;\n}\ntable.dataTable tbody th.dt-body-nowrap,\ntable.dataTable tbody td.dt-body-nowrap {\n  white-space: nowrap;\n}\ntable.dataTable td.dt-control {\n  text-align: center;\n  cursor: pointer;\n}\ntable.dataTable td.dt-control:before {\n  height: 1em;\n  width: 1em;\n  margin-top: -9px;\n  display: inline-block;\n  color: white;\n  border: 0.15em solid white;\n  border-radius: 1em;\n  box-shadow: 0 0 0.2em #444;\n  box-sizing: content-box;\n  text-align: center;\n  text-indent: 0 !important;\n  font-family: \"Courier New\", Courier, monospace;\n  line-height: 1em;\n  content: \"+\";\n  background-color: #31b131;\n}\ntable.dataTable tr.dt-hasChild td.dt-control:before {\n  content: \"-\";\n  background-color: #d33333;\n}\n\n/*\n * Table styles\n */\ntable.dataTable {\n  width: 100%;\n  margin: 0 auto;\n  clear: both;\n  border-collapse: separate;\n  border-spacing: 0;\n  /*\n   * Header and footer styles\n   */\n  /*\n   * Body styles\n   */\n}\ntable.dataTable thead th,\ntable.dataTable tfoot th {\n  font-weight: bold;\n}\ntable.dataTable thead th,\ntable.dataTable thead td {\n  padding: 10px 18px;\n  border-bottom: 1px solid #111;\n}\ntable.dataTable thead th:active,\ntable.dataTable thead td:active {\n  outline: none;\n}\ntable.dataTable tfoot th,\ntable.dataTable tfoot td {\n  padding: 10px 18px 6px 18px;\n  border-top: 1px solid #111;\n}\ntable.dataTable thead .sorting,\ntable.dataTable thead .sorting_asc,\ntable.dataTable thead .sorting_desc,\ntable.dataTable thead .sorting_asc_disabled,\ntable.dataTable thead .sorting_desc_disabled {\n  cursor: pointer;\n  *cursor: hand;\n  background-repeat: no-repeat;\n  background-position: center right;\n}\ntable.dataTable thead .sorting {\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n}\ntable.dataTable thead .sorting_asc {\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ") !important;\n}\ntable.dataTable thead .sorting_desc {\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_2___ + ") !important;\n}\ntable.dataTable thead .sorting_asc_disabled {\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_3___ + ");\n}\ntable.dataTable thead .sorting_desc_disabled {\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_4___ + ");\n}\ntable.dataTable tbody tr {\n  background-color: #ffffff;\n}\ntable.dataTable tbody tr.selected {\n  background-color: #B0BED9;\n}\ntable.dataTable tbody th,\ntable.dataTable tbody td {\n  padding: 8px 10px;\n}\ntable.dataTable.row-border tbody th, table.dataTable.row-border tbody td, table.dataTable.display tbody th, table.dataTable.display tbody td {\n  border-top: 1px solid #ddd;\n}\ntable.dataTable.row-border tbody tr:first-child th,\ntable.dataTable.row-border tbody tr:first-child td, table.dataTable.display tbody tr:first-child th,\ntable.dataTable.display tbody tr:first-child td {\n  border-top: none;\n}\ntable.dataTable.cell-border tbody th, table.dataTable.cell-border tbody td {\n  border-top: 1px solid #ddd;\n  border-right: 1px solid #ddd;\n}\ntable.dataTable.cell-border tbody tr th:first-child,\ntable.dataTable.cell-border tbody tr td:first-child {\n  border-left: 1px solid #ddd;\n}\ntable.dataTable.cell-border tbody tr:first-child th,\ntable.dataTable.cell-border tbody tr:first-child td {\n  border-top: none;\n}\ntable.dataTable.stripe tbody tr.odd, table.dataTable.display tbody tr.odd {\n  background-color: #f9f9f9;\n}\ntable.dataTable.stripe tbody tr.odd.selected, table.dataTable.display tbody tr.odd.selected {\n  background-color: #acbad4;\n}\ntable.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {\n  background-color: #f6f6f6;\n}\ntable.dataTable.hover tbody tr:hover.selected, table.dataTable.display tbody tr:hover.selected {\n  background-color: #aab7d1;\n}\ntable.dataTable.order-column tbody tr > .sorting_1,\ntable.dataTable.order-column tbody tr > .sorting_2,\ntable.dataTable.order-column tbody tr > .sorting_3, table.dataTable.display tbody tr > .sorting_1,\ntable.dataTable.display tbody tr > .sorting_2,\ntable.dataTable.display tbody tr > .sorting_3 {\n  background-color: #fafafa;\n}\ntable.dataTable.order-column tbody tr.selected > .sorting_1,\ntable.dataTable.order-column tbody tr.selected > .sorting_2,\ntable.dataTable.order-column tbody tr.selected > .sorting_3, table.dataTable.display tbody tr.selected > .sorting_1,\ntable.dataTable.display tbody tr.selected > .sorting_2,\ntable.dataTable.display tbody tr.selected > .sorting_3 {\n  background-color: #acbad5;\n}\ntable.dataTable.display tbody tr.odd > .sorting_1, table.dataTable.order-column.stripe tbody tr.odd > .sorting_1 {\n  background-color: #f1f1f1;\n}\ntable.dataTable.display tbody tr.odd > .sorting_2, table.dataTable.order-column.stripe tbody tr.odd > .sorting_2 {\n  background-color: #f3f3f3;\n}\ntable.dataTable.display tbody tr.odd > .sorting_3, table.dataTable.order-column.stripe tbody tr.odd > .sorting_3 {\n  background-color: whitesmoke;\n}\ntable.dataTable.display tbody tr.odd.selected > .sorting_1, table.dataTable.order-column.stripe tbody tr.odd.selected > .sorting_1 {\n  background-color: #a6b4cd;\n}\ntable.dataTable.display tbody tr.odd.selected > .sorting_2, table.dataTable.order-column.stripe tbody tr.odd.selected > .sorting_2 {\n  background-color: #a8b5cf;\n}\ntable.dataTable.display tbody tr.odd.selected > .sorting_3, table.dataTable.order-column.stripe tbody tr.odd.selected > .sorting_3 {\n  background-color: #a9b7d1;\n}\ntable.dataTable.display tbody tr.even > .sorting_1, table.dataTable.order-column.stripe tbody tr.even > .sorting_1 {\n  background-color: #fafafa;\n}\ntable.dataTable.display tbody tr.even > .sorting_2, table.dataTable.order-column.stripe tbody tr.even > .sorting_2 {\n  background-color: #fcfcfc;\n}\ntable.dataTable.display tbody tr.even > .sorting_3, table.dataTable.order-column.stripe tbody tr.even > .sorting_3 {\n  background-color: #fefefe;\n}\ntable.dataTable.display tbody tr.even.selected > .sorting_1, table.dataTable.order-column.stripe tbody tr.even.selected > .sorting_1 {\n  background-color: #acbad5;\n}\ntable.dataTable.display tbody tr.even.selected > .sorting_2, table.dataTable.order-column.stripe tbody tr.even.selected > .sorting_2 {\n  background-color: #aebcd6;\n}\ntable.dataTable.display tbody tr.even.selected > .sorting_3, table.dataTable.order-column.stripe tbody tr.even.selected > .sorting_3 {\n  background-color: #afbdd8;\n}\ntable.dataTable.display tbody tr:hover > .sorting_1, table.dataTable.order-column.hover tbody tr:hover > .sorting_1 {\n  background-color: #eaeaea;\n}\ntable.dataTable.display tbody tr:hover > .sorting_2, table.dataTable.order-column.hover tbody tr:hover > .sorting_2 {\n  background-color: #ececec;\n}\ntable.dataTable.display tbody tr:hover > .sorting_3, table.dataTable.order-column.hover tbody tr:hover > .sorting_3 {\n  background-color: #efefef;\n}\ntable.dataTable.display tbody tr:hover.selected > .sorting_1, table.dataTable.order-column.hover tbody tr:hover.selected > .sorting_1 {\n  background-color: #a2aec7;\n}\ntable.dataTable.display tbody tr:hover.selected > .sorting_2, table.dataTable.order-column.hover tbody tr:hover.selected > .sorting_2 {\n  background-color: #a3b0c9;\n}\ntable.dataTable.display tbody tr:hover.selected > .sorting_3, table.dataTable.order-column.hover tbody tr:hover.selected > .sorting_3 {\n  background-color: #a5b2cb;\n}\ntable.dataTable.no-footer {\n  border-bottom: 1px solid #111;\n}\ntable.dataTable.nowrap th, table.dataTable.nowrap td {\n  white-space: nowrap;\n}\ntable.dataTable.compact thead th,\ntable.dataTable.compact thead td {\n  padding: 4px 17px;\n}\ntable.dataTable.compact tfoot th,\ntable.dataTable.compact tfoot td {\n  padding: 4px;\n}\ntable.dataTable.compact tbody th,\ntable.dataTable.compact tbody td {\n  padding: 4px;\n}\n\ntable.dataTable th,\ntable.dataTable td {\n  box-sizing: content-box;\n}\n\n/*\n * Control feature layout\n */\n.dataTables_wrapper {\n  position: relative;\n  clear: both;\n}\n.dataTables_wrapper .dataTables_length {\n  float: left;\n}\n.dataTables_wrapper .dataTables_length select {\n  border: 1px solid #aaa;\n  border-radius: 3px;\n  padding: 5px;\n  background-color: transparent;\n  padding: 4px;\n}\n.dataTables_wrapper .dataTables_filter {\n  float: right;\n  text-align: right;\n}\n.dataTables_wrapper .dataTables_filter input {\n  border: 1px solid #aaa;\n  border-radius: 3px;\n  padding: 5px;\n  background-color: transparent;\n  margin-left: 3px;\n}\n.dataTables_wrapper .dataTables_info {\n  clear: both;\n  float: left;\n  padding-top: 0.755em;\n}\n.dataTables_wrapper .dataTables_paginate {\n  float: right;\n  text-align: right;\n  padding-top: 0.25em;\n}\n.dataTables_wrapper .dataTables_paginate .paginate_button {\n  box-sizing: border-box;\n  display: inline-block;\n  min-width: 1.5em;\n  padding: 0.5em 1em;\n  margin-left: 2px;\n  text-align: center;\n  text-decoration: none !important;\n  cursor: pointer;\n  *cursor: hand;\n  color: #333 !important;\n  border: 1px solid transparent;\n  border-radius: 2px;\n}\n.dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {\n  color: #333 !important;\n  border: 1px solid #979797;\n  background-color: white;\n  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(100%, #dcdcdc));\n  /* Chrome,Safari4+ */\n  background: -webkit-linear-gradient(top, white 0%, #dcdcdc 100%);\n  /* Chrome10+,Safari5.1+ */\n  background: -moz-linear-gradient(top, white 0%, #dcdcdc 100%);\n  /* FF3.6+ */\n  background: -ms-linear-gradient(top, white 0%, #dcdcdc 100%);\n  /* IE10+ */\n  background: -o-linear-gradient(top, white 0%, #dcdcdc 100%);\n  /* Opera 11.10+ */\n  background: linear-gradient(to bottom, white 0%, #dcdcdc 100%);\n  /* W3C */\n}\n.dataTables_wrapper .dataTables_paginate .paginate_button.disabled, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active {\n  cursor: default;\n  color: #666 !important;\n  border: 1px solid transparent;\n  background: transparent;\n  box-shadow: none;\n}\n.dataTables_wrapper .dataTables_paginate .paginate_button:hover {\n  color: white !important;\n  border: 1px solid #111;\n  background-color: #585858;\n  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #585858), color-stop(100%, #111));\n  /* Chrome,Safari4+ */\n  background: -webkit-linear-gradient(top, #585858 0%, #111 100%);\n  /* Chrome10+,Safari5.1+ */\n  background: -moz-linear-gradient(top, #585858 0%, #111 100%);\n  /* FF3.6+ */\n  background: -ms-linear-gradient(top, #585858 0%, #111 100%);\n  /* IE10+ */\n  background: -o-linear-gradient(top, #585858 0%, #111 100%);\n  /* Opera 11.10+ */\n  background: linear-gradient(to bottom, #585858 0%, #111 100%);\n  /* W3C */\n}\n.dataTables_wrapper .dataTables_paginate .paginate_button:active {\n  outline: none;\n  background-color: #2b2b2b;\n  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #2b2b2b), color-stop(100%, #0c0c0c));\n  /* Chrome,Safari4+ */\n  background: -webkit-linear-gradient(top, #2b2b2b 0%, #0c0c0c 100%);\n  /* Chrome10+,Safari5.1+ */\n  background: -moz-linear-gradient(top, #2b2b2b 0%, #0c0c0c 100%);\n  /* FF3.6+ */\n  background: -ms-linear-gradient(top, #2b2b2b 0%, #0c0c0c 100%);\n  /* IE10+ */\n  background: -o-linear-gradient(top, #2b2b2b 0%, #0c0c0c 100%);\n  /* Opera 11.10+ */\n  background: linear-gradient(to bottom, #2b2b2b 0%, #0c0c0c 100%);\n  /* W3C */\n  box-shadow: inset 0 0 3px #111;\n}\n.dataTables_wrapper .dataTables_paginate .ellipsis {\n  padding: 0 1em;\n}\n.dataTables_wrapper .dataTables_processing {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  width: 100%;\n  height: 40px;\n  margin-left: -50%;\n  margin-top: -25px;\n  padding-top: 20px;\n  text-align: center;\n  font-size: 1.2em;\n  background-color: white;\n  background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(25%, rgba(255, 255, 255, 0.9)), color-stop(75%, rgba(255, 255, 255, 0.9)), color-stop(100%, rgba(255, 255, 255, 0)));\n  background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 25%, rgba(255, 255, 255, 0.9) 75%, rgba(255, 255, 255, 0) 100%);\n  background: -moz-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 25%, rgba(255, 255, 255, 0.9) 75%, rgba(255, 255, 255, 0) 100%);\n  background: -ms-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 25%, rgba(255, 255, 255, 0.9) 75%, rgba(255, 255, 255, 0) 100%);\n  background: -o-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 25%, rgba(255, 255, 255, 0.9) 75%, rgba(255, 255, 255, 0) 100%);\n  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 25%, rgba(255, 255, 255, 0.9) 75%, rgba(255, 255, 255, 0) 100%);\n}\n.dataTables_wrapper .dataTables_length,\n.dataTables_wrapper .dataTables_filter,\n.dataTables_wrapper .dataTables_info,\n.dataTables_wrapper .dataTables_processing,\n.dataTables_wrapper .dataTables_paginate {\n  color: #333;\n}\n.dataTables_wrapper .dataTables_scroll {\n  clear: both;\n}\n.dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody {\n  *margin-top: -1px;\n  -webkit-overflow-scrolling: touch;\n}\n.dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody > table > thead > tr > th, .dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody > table > thead > tr > td, .dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody > table > tbody > tr > th, .dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody > table > tbody > tr > td {\n  vertical-align: middle;\n}\n.dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody > table > thead > tr > th > div.dataTables_sizing,\n.dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody > table > thead > tr > td > div.dataTables_sizing, .dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody > table > tbody > tr > th > div.dataTables_sizing,\n.dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody > table > tbody > tr > td > div.dataTables_sizing {\n  height: 0;\n  overflow: hidden;\n  margin: 0 !important;\n  padding: 0 !important;\n}\n.dataTables_wrapper.no-footer .dataTables_scrollBody {\n  border-bottom: 1px solid #111;\n}\n.dataTables_wrapper.no-footer div.dataTables_scrollHead table.dataTable,\n.dataTables_wrapper.no-footer div.dataTables_scrollBody > table {\n  border-bottom: none;\n}\n.dataTables_wrapper:after {\n  visibility: hidden;\n  display: block;\n  content: \"\";\n  clear: both;\n  height: 0;\n}\n\n@media screen and (max-width: 767px) {\n  .dataTables_wrapper .dataTables_info,\n.dataTables_wrapper .dataTables_paginate {\n    float: none;\n    text-align: center;\n  }\n  .dataTables_wrapper .dataTables_paginate {\n    margin-top: 0.5em;\n  }\n}\n@media screen and (max-width: 640px) {\n  .dataTables_wrapper .dataTables_length,\n.dataTables_wrapper .dataTables_filter {\n    float: none;\n    text-align: center;\n  }\n  .dataTables_wrapper .dataTables_filter {\n    margin-top: 0.5em;\n  }\n}\n", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ 827:
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(81);
+/* harmony import */ var _css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(645);
+/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+// Imports
+
+
+var ___CSS_LOADER_EXPORT___ = _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".marker-cluster-small {\n\tbackground-color: rgba(181, 226, 140, 0.6);\n\t}\n.marker-cluster-small div {\n\tbackground-color: rgba(110, 204, 57, 0.6);\n\t}\n\n.marker-cluster-medium {\n\tbackground-color: rgba(241, 211, 87, 0.6);\n\t}\n.marker-cluster-medium div {\n\tbackground-color: rgba(240, 194, 12, 0.6);\n\t}\n\n.marker-cluster-large {\n\tbackground-color: rgba(253, 156, 115, 0.6);\n\t}\n.marker-cluster-large div {\n\tbackground-color: rgba(241, 128, 23, 0.6);\n\t}\n\n\t/* IE 6-8 fallback colors */\n.leaflet-oldie .marker-cluster-small {\n\tbackground-color: rgb(181, 226, 140);\n\t}\n.leaflet-oldie .marker-cluster-small div {\n\tbackground-color: rgb(110, 204, 57);\n\t}\n\n.leaflet-oldie .marker-cluster-medium {\n\tbackground-color: rgb(241, 211, 87);\n\t}\n.leaflet-oldie .marker-cluster-medium div {\n\tbackground-color: rgb(240, 194, 12);\n\t}\n\n.leaflet-oldie .marker-cluster-large {\n\tbackground-color: rgb(253, 156, 115);\n\t}\n.leaflet-oldie .marker-cluster-large div {\n\tbackground-color: rgb(241, 128, 23);\n}\n\n.marker-cluster {\n\tbackground-clip: padding-box;\n\tborder-radius: 20px;\n\t}\n.marker-cluster div {\n\twidth: 30px;\n\theight: 30px;\n\tmargin-left: 5px;\n\tmargin-top: 5px;\n\n\ttext-align: center;\n\tborder-radius: 15px;\n\tfont: 12px \"Helvetica Neue\", Arial, Helvetica, sans-serif;\n\t}\n.marker-cluster span {\n\tline-height: 30px;\n\t}", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ 785:
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(81);
+/* harmony import */ var _css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(645);
+/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+// Imports
+
+
+var ___CSS_LOADER_EXPORT___ = _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".leaflet-cluster-anim .leaflet-marker-icon, .leaflet-cluster-anim .leaflet-marker-shadow {\n\t-webkit-transition: -webkit-transform 0.3s ease-out, opacity 0.3s ease-in;\n\t-moz-transition: -moz-transform 0.3s ease-out, opacity 0.3s ease-in;\n\t-o-transition: -o-transform 0.3s ease-out, opacity 0.3s ease-in;\n\ttransition: transform 0.3s ease-out, opacity 0.3s ease-in;\n}\n\n.leaflet-cluster-spider-leg {\n\t/* stroke-dashoffset (duration and function) should match with leaflet-marker-icon transform in order to track it exactly */\n\t-webkit-transition: -webkit-stroke-dashoffset 0.3s ease-out, -webkit-stroke-opacity 0.3s ease-in;\n\t-moz-transition: -moz-stroke-dashoffset 0.3s ease-out, -moz-stroke-opacity 0.3s ease-in;\n\t-o-transition: -o-stroke-dashoffset 0.3s ease-out, -o-stroke-opacity 0.3s ease-in;\n\ttransition: stroke-dashoffset 0.3s ease-out, stroke-opacity 0.3s ease-in;\n}\n", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ 984:
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(81);
+/* harmony import */ var _css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(645);
+/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(667);
+/* harmony import */ var _css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__);
+// Imports
+
+
+
+var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(505), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_1___ = new URL(/* asset import */ __webpack_require__(836), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_2___ = new URL(/* asset import */ __webpack_require__(93), __webpack_require__.b);
+var ___CSS_LOADER_EXPORT___ = _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+var ___CSS_LOADER_URL_REPLACEMENT_0___ = _css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
+var ___CSS_LOADER_URL_REPLACEMENT_1___ = _css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_1___);
+var ___CSS_LOADER_URL_REPLACEMENT_2___ = _css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_2___);
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "/* required styles */\r\n\r\n.leaflet-pane,\r\n.leaflet-tile,\r\n.leaflet-marker-icon,\r\n.leaflet-marker-shadow,\r\n.leaflet-tile-container,\r\n.leaflet-pane > svg,\r\n.leaflet-pane > canvas,\r\n.leaflet-zoom-box,\r\n.leaflet-image-layer,\r\n.leaflet-layer {\r\n\tposition: absolute;\r\n\tleft: 0;\r\n\ttop: 0;\r\n\t}\r\n.leaflet-container {\r\n\toverflow: hidden;\r\n\t}\r\n.leaflet-tile,\r\n.leaflet-marker-icon,\r\n.leaflet-marker-shadow {\r\n\t-webkit-user-select: none;\r\n\t   -moz-user-select: none;\r\n\t        user-select: none;\r\n\t  -webkit-user-drag: none;\r\n\t}\r\n/* Prevents IE11 from highlighting tiles in blue */\r\n.leaflet-tile::selection {\r\n\tbackground: transparent;\r\n}\r\n/* Safari renders non-retina tile on retina better with this, but Chrome is worse */\r\n.leaflet-safari .leaflet-tile {\r\n\timage-rendering: -webkit-optimize-contrast;\r\n\t}\r\n/* hack that prevents hw layers \"stretching\" when loading new tiles */\r\n.leaflet-safari .leaflet-tile-container {\r\n\twidth: 1600px;\r\n\theight: 1600px;\r\n\t-webkit-transform-origin: 0 0;\r\n\t}\r\n.leaflet-marker-icon,\r\n.leaflet-marker-shadow {\r\n\tdisplay: block;\r\n\t}\r\n/* .leaflet-container svg: reset svg max-width decleration shipped in Joomla! (joomla.org) 3.x */\r\n/* .leaflet-container img: map is broken in FF if you have max-width: 100% on tiles */\r\n.leaflet-container .leaflet-overlay-pane svg {\r\n\tmax-width: none !important;\r\n\tmax-height: none !important;\r\n\t}\r\n.leaflet-container .leaflet-marker-pane img,\r\n.leaflet-container .leaflet-shadow-pane img,\r\n.leaflet-container .leaflet-tile-pane img,\r\n.leaflet-container img.leaflet-image-layer,\r\n.leaflet-container .leaflet-tile {\r\n\tmax-width: none !important;\r\n\tmax-height: none !important;\r\n\twidth: auto;\r\n\tpadding: 0;\r\n\t}\r\n\r\n.leaflet-container img.leaflet-tile {\r\n\t/* See: https://bugs.chromium.org/p/chromium/issues/detail?id=600120 */\r\n\tmix-blend-mode: plus-lighter;\r\n}\r\n\r\n.leaflet-container.leaflet-touch-zoom {\r\n\t-ms-touch-action: pan-x pan-y;\r\n\ttouch-action: pan-x pan-y;\r\n\t}\r\n.leaflet-container.leaflet-touch-drag {\r\n\t-ms-touch-action: pinch-zoom;\r\n\t/* Fallback for FF which doesn't support pinch-zoom */\r\n\ttouch-action: none;\r\n\ttouch-action: pinch-zoom;\r\n}\r\n.leaflet-container.leaflet-touch-drag.leaflet-touch-zoom {\r\n\t-ms-touch-action: none;\r\n\ttouch-action: none;\r\n}\r\n.leaflet-container {\r\n\t-webkit-tap-highlight-color: transparent;\r\n}\r\n.leaflet-container a {\r\n\t-webkit-tap-highlight-color: rgba(51, 181, 229, 0.4);\r\n}\r\n.leaflet-tile {\r\n\tfilter: inherit;\r\n\tvisibility: hidden;\r\n\t}\r\n.leaflet-tile-loaded {\r\n\tvisibility: inherit;\r\n\t}\r\n.leaflet-zoom-box {\r\n\twidth: 0;\r\n\theight: 0;\r\n\t-moz-box-sizing: border-box;\r\n\t     box-sizing: border-box;\r\n\tz-index: 800;\r\n\t}\r\n/* workaround for https://bugzilla.mozilla.org/show_bug.cgi?id=888319 */\r\n.leaflet-overlay-pane svg {\r\n\t-moz-user-select: none;\r\n\t}\r\n\r\n.leaflet-pane         { z-index: 400; }\r\n\r\n.leaflet-tile-pane    { z-index: 200; }\r\n.leaflet-overlay-pane { z-index: 400; }\r\n.leaflet-shadow-pane  { z-index: 500; }\r\n.leaflet-marker-pane  { z-index: 600; }\r\n.leaflet-tooltip-pane   { z-index: 650; }\r\n.leaflet-popup-pane   { z-index: 700; }\r\n\r\n.leaflet-map-pane canvas { z-index: 100; }\r\n.leaflet-map-pane svg    { z-index: 200; }\r\n\r\n.leaflet-vml-shape {\r\n\twidth: 1px;\r\n\theight: 1px;\r\n\t}\r\n.lvml {\r\n\tbehavior: url(#default#VML);\r\n\tdisplay: inline-block;\r\n\tposition: absolute;\r\n\t}\r\n\r\n\r\n/* control positioning */\r\n\r\n.leaflet-control {\r\n\tposition: relative;\r\n\tz-index: 800;\r\n\tpointer-events: visiblePainted; /* IE 9-10 doesn't have auto */\r\n\tpointer-events: auto;\r\n\t}\r\n.leaflet-top,\r\n.leaflet-bottom {\r\n\tposition: absolute;\r\n\tz-index: 1000;\r\n\tpointer-events: none;\r\n\t}\r\n.leaflet-top {\r\n\ttop: 0;\r\n\t}\r\n.leaflet-right {\r\n\tright: 0;\r\n\t}\r\n.leaflet-bottom {\r\n\tbottom: 0;\r\n\t}\r\n.leaflet-left {\r\n\tleft: 0;\r\n\t}\r\n.leaflet-control {\r\n\tfloat: left;\r\n\tclear: both;\r\n\t}\r\n.leaflet-right .leaflet-control {\r\n\tfloat: right;\r\n\t}\r\n.leaflet-top .leaflet-control {\r\n\tmargin-top: 10px;\r\n\t}\r\n.leaflet-bottom .leaflet-control {\r\n\tmargin-bottom: 10px;\r\n\t}\r\n.leaflet-left .leaflet-control {\r\n\tmargin-left: 10px;\r\n\t}\r\n.leaflet-right .leaflet-control {\r\n\tmargin-right: 10px;\r\n\t}\r\n\r\n\r\n/* zoom and fade animations */\r\n\r\n.leaflet-fade-anim .leaflet-popup {\r\n\topacity: 0;\r\n\t-webkit-transition: opacity 0.2s linear;\r\n\t   -moz-transition: opacity 0.2s linear;\r\n\t        transition: opacity 0.2s linear;\r\n\t}\r\n.leaflet-fade-anim .leaflet-map-pane .leaflet-popup {\r\n\topacity: 1;\r\n\t}\r\n.leaflet-zoom-animated {\r\n\t-webkit-transform-origin: 0 0;\r\n\t    -ms-transform-origin: 0 0;\r\n\t        transform-origin: 0 0;\r\n\t}\r\nsvg.leaflet-zoom-animated {\r\n\twill-change: transform;\r\n}\r\n\r\n.leaflet-zoom-anim .leaflet-zoom-animated {\r\n\t-webkit-transition: -webkit-transform 0.25s cubic-bezier(0,0,0.25,1);\r\n\t   -moz-transition:    -moz-transform 0.25s cubic-bezier(0,0,0.25,1);\r\n\t        transition:         transform 0.25s cubic-bezier(0,0,0.25,1);\r\n\t}\r\n.leaflet-zoom-anim .leaflet-tile,\r\n.leaflet-pan-anim .leaflet-tile {\r\n\t-webkit-transition: none;\r\n\t   -moz-transition: none;\r\n\t        transition: none;\r\n\t}\r\n\r\n.leaflet-zoom-anim .leaflet-zoom-hide {\r\n\tvisibility: hidden;\r\n\t}\r\n\r\n\r\n/* cursors */\r\n\r\n.leaflet-interactive {\r\n\tcursor: pointer;\r\n\t}\r\n.leaflet-grab {\r\n\tcursor: -webkit-grab;\r\n\tcursor:    -moz-grab;\r\n\tcursor:         grab;\r\n\t}\r\n.leaflet-crosshair,\r\n.leaflet-crosshair .leaflet-interactive {\r\n\tcursor: crosshair;\r\n\t}\r\n.leaflet-popup-pane,\r\n.leaflet-control {\r\n\tcursor: auto;\r\n\t}\r\n.leaflet-dragging .leaflet-grab,\r\n.leaflet-dragging .leaflet-grab .leaflet-interactive,\r\n.leaflet-dragging .leaflet-marker-draggable {\r\n\tcursor: move;\r\n\tcursor: -webkit-grabbing;\r\n\tcursor:    -moz-grabbing;\r\n\tcursor:         grabbing;\r\n\t}\r\n\r\n/* marker & overlays interactivity */\r\n.leaflet-marker-icon,\r\n.leaflet-marker-shadow,\r\n.leaflet-image-layer,\r\n.leaflet-pane > svg path,\r\n.leaflet-tile-container {\r\n\tpointer-events: none;\r\n\t}\r\n\r\n.leaflet-marker-icon.leaflet-interactive,\r\n.leaflet-image-layer.leaflet-interactive,\r\n.leaflet-pane > svg path.leaflet-interactive,\r\nsvg.leaflet-image-layer.leaflet-interactive path {\r\n\tpointer-events: visiblePainted; /* IE 9-10 doesn't have auto */\r\n\tpointer-events: auto;\r\n\t}\r\n\r\n/* visual tweaks */\r\n\r\n.leaflet-container {\r\n\tbackground: #ddd;\r\n\toutline-offset: 1px;\r\n\t}\r\n.leaflet-container a {\r\n\tcolor: #0078A8;\r\n\t}\r\n.leaflet-zoom-box {\r\n\tborder: 2px dotted #38f;\r\n\tbackground: rgba(255,255,255,0.5);\r\n\t}\r\n\r\n\r\n/* general typography */\r\n.leaflet-container {\r\n\tfont-family: \"Helvetica Neue\", Arial, Helvetica, sans-serif;\r\n\tfont-size: 12px;\r\n\tfont-size: 0.75rem;\r\n\tline-height: 1.5;\r\n\t}\r\n\r\n\r\n/* general toolbar styles */\r\n\r\n.leaflet-bar {\r\n\tbox-shadow: 0 1px 5px rgba(0,0,0,0.65);\r\n\tborder-radius: 4px;\r\n\t}\r\n.leaflet-bar a {\r\n\tbackground-color: #fff;\r\n\tborder-bottom: 1px solid #ccc;\r\n\twidth: 26px;\r\n\theight: 26px;\r\n\tline-height: 26px;\r\n\tdisplay: block;\r\n\ttext-align: center;\r\n\ttext-decoration: none;\r\n\tcolor: black;\r\n\t}\r\n.leaflet-bar a,\r\n.leaflet-control-layers-toggle {\r\n\tbackground-position: 50% 50%;\r\n\tbackground-repeat: no-repeat;\r\n\tdisplay: block;\r\n\t}\r\n.leaflet-bar a:hover,\r\n.leaflet-bar a:focus {\r\n\tbackground-color: #f4f4f4;\r\n\t}\r\n.leaflet-bar a:first-child {\r\n\tborder-top-left-radius: 4px;\r\n\tborder-top-right-radius: 4px;\r\n\t}\r\n.leaflet-bar a:last-child {\r\n\tborder-bottom-left-radius: 4px;\r\n\tborder-bottom-right-radius: 4px;\r\n\tborder-bottom: none;\r\n\t}\r\n.leaflet-bar a.leaflet-disabled {\r\n\tcursor: default;\r\n\tbackground-color: #f4f4f4;\r\n\tcolor: #bbb;\r\n\t}\r\n\r\n.leaflet-touch .leaflet-bar a {\r\n\twidth: 30px;\r\n\theight: 30px;\r\n\tline-height: 30px;\r\n\t}\r\n.leaflet-touch .leaflet-bar a:first-child {\r\n\tborder-top-left-radius: 2px;\r\n\tborder-top-right-radius: 2px;\r\n\t}\r\n.leaflet-touch .leaflet-bar a:last-child {\r\n\tborder-bottom-left-radius: 2px;\r\n\tborder-bottom-right-radius: 2px;\r\n\t}\r\n\r\n/* zoom control */\r\n\r\n.leaflet-control-zoom-in,\r\n.leaflet-control-zoom-out {\r\n\tfont: bold 18px 'Lucida Console', Monaco, monospace;\r\n\ttext-indent: 1px;\r\n\t}\r\n\r\n.leaflet-touch .leaflet-control-zoom-in, .leaflet-touch .leaflet-control-zoom-out  {\r\n\tfont-size: 22px;\r\n\t}\r\n\r\n\r\n/* layers control */\r\n\r\n.leaflet-control-layers {\r\n\tbox-shadow: 0 1px 5px rgba(0,0,0,0.4);\r\n\tbackground: #fff;\r\n\tborder-radius: 5px;\r\n\t}\r\n.leaflet-control-layers-toggle {\r\n\tbackground-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\r\n\twidth: 36px;\r\n\theight: 36px;\r\n\t}\r\n.leaflet-retina .leaflet-control-layers-toggle {\r\n\tbackground-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ");\r\n\tbackground-size: 26px 26px;\r\n\t}\r\n.leaflet-touch .leaflet-control-layers-toggle {\r\n\twidth: 44px;\r\n\theight: 44px;\r\n\t}\r\n.leaflet-control-layers .leaflet-control-layers-list,\r\n.leaflet-control-layers-expanded .leaflet-control-layers-toggle {\r\n\tdisplay: none;\r\n\t}\r\n.leaflet-control-layers-expanded .leaflet-control-layers-list {\r\n\tdisplay: block;\r\n\tposition: relative;\r\n\t}\r\n.leaflet-control-layers-expanded {\r\n\tpadding: 6px 10px 6px 6px;\r\n\tcolor: #333;\r\n\tbackground: #fff;\r\n\t}\r\n.leaflet-control-layers-scrollbar {\r\n\toverflow-y: scroll;\r\n\toverflow-x: hidden;\r\n\tpadding-right: 5px;\r\n\t}\r\n.leaflet-control-layers-selector {\r\n\tmargin-top: 2px;\r\n\tposition: relative;\r\n\ttop: 1px;\r\n\t}\r\n.leaflet-control-layers label {\r\n\tdisplay: block;\r\n\tfont-size: 13px;\r\n\tfont-size: 1.08333em;\r\n\t}\r\n.leaflet-control-layers-separator {\r\n\theight: 0;\r\n\tborder-top: 1px solid #ddd;\r\n\tmargin: 5px -10px 5px -6px;\r\n\t}\r\n\r\n/* Default icon URLs */\r\n.leaflet-default-icon-path { /* used only in path-guessing heuristic, see L.Icon.Default */\r\n\tbackground-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_2___ + ");\r\n\t}\r\n\r\n\r\n/* attribution and scale controls */\r\n\r\n.leaflet-container .leaflet-control-attribution {\r\n\tbackground: #fff;\r\n\tbackground: rgba(255, 255, 255, 0.8);\r\n\tmargin: 0;\r\n\t}\r\n.leaflet-control-attribution,\r\n.leaflet-control-scale-line {\r\n\tpadding: 0 5px;\r\n\tcolor: #333;\r\n\tline-height: 1.4;\r\n\t}\r\n.leaflet-control-attribution a {\r\n\ttext-decoration: none;\r\n\t}\r\n.leaflet-control-attribution a:hover,\r\n.leaflet-control-attribution a:focus {\r\n\ttext-decoration: underline;\r\n\t}\r\n.leaflet-attribution-flag {\r\n\tdisplay: inline !important;\r\n\tvertical-align: baseline !important;\r\n\twidth: 1em;\r\n\theight: 0.6669em;\r\n\t}\r\n.leaflet-left .leaflet-control-scale {\r\n\tmargin-left: 5px;\r\n\t}\r\n.leaflet-bottom .leaflet-control-scale {\r\n\tmargin-bottom: 5px;\r\n\t}\r\n.leaflet-control-scale-line {\r\n\tborder: 2px solid #777;\r\n\tborder-top: none;\r\n\tline-height: 1.1;\r\n\tpadding: 2px 5px 1px;\r\n\twhite-space: nowrap;\r\n\t-moz-box-sizing: border-box;\r\n\t     box-sizing: border-box;\r\n\tbackground: rgba(255, 255, 255, 0.8);\r\n\ttext-shadow: 1px 1px #fff;\r\n\t}\r\n.leaflet-control-scale-line:not(:first-child) {\r\n\tborder-top: 2px solid #777;\r\n\tborder-bottom: none;\r\n\tmargin-top: -2px;\r\n\t}\r\n.leaflet-control-scale-line:not(:first-child):not(:last-child) {\r\n\tborder-bottom: 2px solid #777;\r\n\t}\r\n\r\n.leaflet-touch .leaflet-control-attribution,\r\n.leaflet-touch .leaflet-control-layers,\r\n.leaflet-touch .leaflet-bar {\r\n\tbox-shadow: none;\r\n\t}\r\n.leaflet-touch .leaflet-control-layers,\r\n.leaflet-touch .leaflet-bar {\r\n\tborder: 2px solid rgba(0,0,0,0.2);\r\n\tbackground-clip: padding-box;\r\n\t}\r\n\r\n\r\n/* popup */\r\n\r\n.leaflet-popup {\r\n\tposition: absolute;\r\n\ttext-align: center;\r\n\tmargin-bottom: 20px;\r\n\t}\r\n.leaflet-popup-content-wrapper {\r\n\tpadding: 1px;\r\n\ttext-align: left;\r\n\tborder-radius: 12px;\r\n\t}\r\n.leaflet-popup-content {\r\n\tmargin: 13px 24px 13px 20px;\r\n\tline-height: 1.3;\r\n\tfont-size: 13px;\r\n\tfont-size: 1.08333em;\r\n\tmin-height: 1px;\r\n\t}\r\n.leaflet-popup-content p {\r\n\tmargin: 17px 0;\r\n\tmargin: 1.3em 0;\r\n\t}\r\n.leaflet-popup-tip-container {\r\n\twidth: 40px;\r\n\theight: 20px;\r\n\tposition: absolute;\r\n\tleft: 50%;\r\n\tmargin-top: -1px;\r\n\tmargin-left: -20px;\r\n\toverflow: hidden;\r\n\tpointer-events: none;\r\n\t}\r\n.leaflet-popup-tip {\r\n\twidth: 17px;\r\n\theight: 17px;\r\n\tpadding: 1px;\r\n\r\n\tmargin: -10px auto 0;\r\n\tpointer-events: auto;\r\n\r\n\t-webkit-transform: rotate(45deg);\r\n\t   -moz-transform: rotate(45deg);\r\n\t    -ms-transform: rotate(45deg);\r\n\t        transform: rotate(45deg);\r\n\t}\r\n.leaflet-popup-content-wrapper,\r\n.leaflet-popup-tip {\r\n\tbackground: white;\r\n\tcolor: #333;\r\n\tbox-shadow: 0 3px 14px rgba(0,0,0,0.4);\r\n\t}\r\n.leaflet-container a.leaflet-popup-close-button {\r\n\tposition: absolute;\r\n\ttop: 0;\r\n\tright: 0;\r\n\tborder: none;\r\n\ttext-align: center;\r\n\twidth: 24px;\r\n\theight: 24px;\r\n\tfont: 16px/24px Tahoma, Verdana, sans-serif;\r\n\tcolor: #757575;\r\n\ttext-decoration: none;\r\n\tbackground: transparent;\r\n\t}\r\n.leaflet-container a.leaflet-popup-close-button:hover,\r\n.leaflet-container a.leaflet-popup-close-button:focus {\r\n\tcolor: #585858;\r\n\t}\r\n.leaflet-popup-scrolled {\r\n\toverflow: auto;\r\n\t}\r\n\r\n.leaflet-oldie .leaflet-popup-content-wrapper {\r\n\t-ms-zoom: 1;\r\n\t}\r\n.leaflet-oldie .leaflet-popup-tip {\r\n\twidth: 24px;\r\n\tmargin: 0 auto;\r\n\r\n\t-ms-filter: \"progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678)\";\r\n\tfilter: progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678);\r\n\t}\r\n\r\n.leaflet-oldie .leaflet-control-zoom,\r\n.leaflet-oldie .leaflet-control-layers,\r\n.leaflet-oldie .leaflet-popup-content-wrapper,\r\n.leaflet-oldie .leaflet-popup-tip {\r\n\tborder: 1px solid #999;\r\n\t}\r\n\r\n\r\n/* div icon */\r\n\r\n.leaflet-div-icon {\r\n\tbackground: #fff;\r\n\tborder: 1px solid #666;\r\n\t}\r\n\r\n\r\n/* Tooltip */\r\n/* Base styles for the element that has a tooltip */\r\n.leaflet-tooltip {\r\n\tposition: absolute;\r\n\tpadding: 6px;\r\n\tbackground-color: #fff;\r\n\tborder: 1px solid #fff;\r\n\tborder-radius: 3px;\r\n\tcolor: #222;\r\n\twhite-space: nowrap;\r\n\t-webkit-user-select: none;\r\n\t-moz-user-select: none;\r\n\t-ms-user-select: none;\r\n\tuser-select: none;\r\n\tpointer-events: none;\r\n\tbox-shadow: 0 1px 3px rgba(0,0,0,0.4);\r\n\t}\r\n.leaflet-tooltip.leaflet-interactive {\r\n\tcursor: pointer;\r\n\tpointer-events: auto;\r\n\t}\r\n.leaflet-tooltip-top:before,\r\n.leaflet-tooltip-bottom:before,\r\n.leaflet-tooltip-left:before,\r\n.leaflet-tooltip-right:before {\r\n\tposition: absolute;\r\n\tpointer-events: none;\r\n\tborder: 6px solid transparent;\r\n\tbackground: transparent;\r\n\tcontent: \"\";\r\n\t}\r\n\r\n/* Directions */\r\n\r\n.leaflet-tooltip-bottom {\r\n\tmargin-top: 6px;\r\n}\r\n.leaflet-tooltip-top {\r\n\tmargin-top: -6px;\r\n}\r\n.leaflet-tooltip-bottom:before,\r\n.leaflet-tooltip-top:before {\r\n\tleft: 50%;\r\n\tmargin-left: -6px;\r\n\t}\r\n.leaflet-tooltip-top:before {\r\n\tbottom: 0;\r\n\tmargin-bottom: -12px;\r\n\tborder-top-color: #fff;\r\n\t}\r\n.leaflet-tooltip-bottom:before {\r\n\ttop: 0;\r\n\tmargin-top: -12px;\r\n\tmargin-left: -6px;\r\n\tborder-bottom-color: #fff;\r\n\t}\r\n.leaflet-tooltip-left {\r\n\tmargin-left: -6px;\r\n}\r\n.leaflet-tooltip-right {\r\n\tmargin-left: 6px;\r\n}\r\n.leaflet-tooltip-left:before,\r\n.leaflet-tooltip-right:before {\r\n\ttop: 50%;\r\n\tmargin-top: -6px;\r\n\t}\r\n.leaflet-tooltip-left:before {\r\n\tright: 0;\r\n\tmargin-right: -12px;\r\n\tborder-left-color: #fff;\r\n\t}\r\n.leaflet-tooltip-right:before {\r\n\tleft: 0;\r\n\tmargin-left: -12px;\r\n\tborder-right-color: #fff;\r\n\t}\r\n\r\n/* Printing */\r\n\r\n@media print {\r\n\t/* Prevent printers from removing background-images of controls. */\r\n\t.leaflet-control {\r\n\t\t-webkit-print-color-adjust: exact;\r\n\t\tprint-color-adjust: exact;\r\n\t\t}\r\n\t}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -26505,6 +26583,2730 @@ return jQuery;
 
 /***/ }),
 
+/***/ 732:
+/***/ (function(__unused_webpack_module, exports) {
+
+/*
+ * Leaflet.markercluster 1.5.3+master.e5124b2,
+ * Provides Beautiful Animated Marker Clustering functionality for Leaflet, a JS library for interactive maps.
+ * https://github.com/Leaflet/Leaflet.markercluster
+ * (c) 2012-2017, Dave Leaver, smartrak
+ */
+(function (global, factory) {
+	 true ? factory(exports) :
+	0;
+}(this, function (exports) { 'use strict';
+
+	/*
+	 * L.MarkerClusterGroup extends L.FeatureGroup by clustering the markers contained within
+	 */
+
+	var MarkerClusterGroup = L.MarkerClusterGroup = L.FeatureGroup.extend({
+
+		options: {
+			maxClusterRadius: 80, //A cluster will cover at most this many pixels from its center
+			iconCreateFunction: null,
+			clusterPane: L.Marker.prototype.options.pane,
+
+			spiderfyOnEveryZoom: false,
+			spiderfyOnMaxZoom: true,
+			showCoverageOnHover: true,
+			zoomToBoundsOnClick: true,
+			singleMarkerMode: false,
+
+			disableClusteringAtZoom: null,
+
+			// Setting this to false prevents the removal of any clusters outside of the viewpoint, which
+			// is the default behaviour for performance reasons.
+			removeOutsideVisibleBounds: true,
+
+			// Set to false to disable all animations (zoom and spiderfy).
+			// If false, option animateAddingMarkers below has no effect.
+			// If L.DomUtil.TRANSITION is falsy, this option has no effect.
+			animate: true,
+
+			//Whether to animate adding markers after adding the MarkerClusterGroup to the map
+			// If you are adding individual markers set to true, if adding bulk markers leave false for massive performance gains.
+			animateAddingMarkers: false,
+
+			// Make it possible to provide custom function to calculate spiderfy shape positions
+			spiderfyShapePositions: null,
+
+			//Increase to increase the distance away that spiderfied markers appear from the center
+			spiderfyDistanceMultiplier: 1,
+
+			// Make it possible to specify a polyline options on a spider leg
+			spiderLegPolylineOptions: { weight: 1.5, color: '#222', opacity: 0.5 },
+
+			// When bulk adding layers, adds markers in chunks. Means addLayers may not add all the layers in the call, others will be loaded during setTimeouts
+			chunkedLoading: false,
+			chunkInterval: 200, // process markers for a maximum of ~ n milliseconds (then trigger the chunkProgress callback)
+			chunkDelay: 50, // at the end of each interval, give n milliseconds back to system/browser
+			chunkProgress: null, // progress callback: function(processed, total, elapsed) (e.g. for a progress indicator)
+
+			//Options to pass to the L.Polygon constructor
+			polygonOptions: {}
+		},
+
+		initialize: function (options) {
+			L.Util.setOptions(this, options);
+			if (!this.options.iconCreateFunction) {
+				this.options.iconCreateFunction = this._defaultIconCreateFunction;
+			}
+
+			this._featureGroup = L.featureGroup();
+			this._featureGroup.addEventParent(this);
+
+			this._nonPointGroup = L.featureGroup();
+			this._nonPointGroup.addEventParent(this);
+
+			this._inZoomAnimation = 0;
+			this._needsClustering = [];
+			this._needsRemoving = []; //Markers removed while we aren't on the map need to be kept track of
+			//The bounds of the currently shown area (from _getExpandedVisibleBounds) Updated on zoom/move
+			this._currentShownBounds = null;
+
+			this._queue = [];
+
+			this._childMarkerEventHandlers = {
+				'dragstart': this._childMarkerDragStart,
+				'move': this._childMarkerMoved,
+				'dragend': this._childMarkerDragEnd,
+			};
+
+			// Hook the appropriate animation methods.
+			var animate = L.DomUtil.TRANSITION && this.options.animate;
+			L.extend(this, animate ? this._withAnimation : this._noAnimation);
+			// Remember which MarkerCluster class to instantiate (animated or not).
+			this._markerCluster = animate ? L.MarkerCluster : L.MarkerClusterNonAnimated;
+		},
+
+		addLayer: function (layer) {
+
+			if (layer instanceof L.LayerGroup) {
+				return this.addLayers([layer]);
+			}
+
+			//Don't cluster non point data
+			if (!layer.getLatLng) {
+				this._nonPointGroup.addLayer(layer);
+				this.fire('layeradd', { layer: layer });
+				return this;
+			}
+
+			if (!this._map) {
+				this._needsClustering.push(layer);
+				this.fire('layeradd', { layer: layer });
+				return this;
+			}
+
+			if (this.hasLayer(layer)) {
+				return this;
+			}
+
+
+			//If we have already clustered we'll need to add this one to a cluster
+
+			if (this._unspiderfy) {
+				this._unspiderfy();
+			}
+
+			this._addLayer(layer, this._maxZoom);
+			this.fire('layeradd', { layer: layer });
+
+			// Refresh bounds and weighted positions.
+			this._topClusterLevel._recalculateBounds();
+
+			this._refreshClustersIcons();
+
+			//Work out what is visible
+			var visibleLayer = layer,
+			    currentZoom = this._zoom;
+			if (layer.__parent) {
+				while (visibleLayer.__parent._zoom >= currentZoom) {
+					visibleLayer = visibleLayer.__parent;
+				}
+			}
+
+			if (this._currentShownBounds.contains(visibleLayer.getLatLng())) {
+				if (this.options.animateAddingMarkers) {
+					this._animationAddLayer(layer, visibleLayer);
+				} else {
+					this._animationAddLayerNonAnimated(layer, visibleLayer);
+				}
+			}
+			return this;
+		},
+
+		removeLayer: function (layer) {
+
+			if (layer instanceof L.LayerGroup) {
+				return this.removeLayers([layer]);
+			}
+
+			//Non point layers
+			if (!layer.getLatLng) {
+				this._nonPointGroup.removeLayer(layer);
+				this.fire('layerremove', { layer: layer });
+				return this;
+			}
+
+			if (!this._map) {
+				if (!this._arraySplice(this._needsClustering, layer) && this.hasLayer(layer)) {
+					this._needsRemoving.push({ layer: layer, latlng: layer._latlng });
+				}
+				this.fire('layerremove', { layer: layer });
+				return this;
+			}
+
+			if (!layer.__parent) {
+				return this;
+			}
+
+			if (this._unspiderfy) {
+				this._unspiderfy();
+				this._unspiderfyLayer(layer);
+			}
+
+			//Remove the marker from clusters
+			this._removeLayer(layer, true);
+			this.fire('layerremove', { layer: layer });
+
+			// Refresh bounds and weighted positions.
+			this._topClusterLevel._recalculateBounds();
+
+			this._refreshClustersIcons();
+
+			layer.off(this._childMarkerEventHandlers, this);
+
+			if (this._featureGroup.hasLayer(layer)) {
+				this._featureGroup.removeLayer(layer);
+				if (layer.clusterShow) {
+					layer.clusterShow();
+				}
+			}
+
+			return this;
+		},
+
+		//Takes an array of markers and adds them in bulk
+		addLayers: function (layersArray, skipLayerAddEvent) {
+			if (!L.Util.isArray(layersArray)) {
+				return this.addLayer(layersArray);
+			}
+
+			var fg = this._featureGroup,
+			    npg = this._nonPointGroup,
+			    chunked = this.options.chunkedLoading,
+			    chunkInterval = this.options.chunkInterval,
+			    chunkProgress = this.options.chunkProgress,
+			    l = layersArray.length,
+			    offset = 0,
+			    originalArray = true,
+			    m;
+
+			if (this._map) {
+				var started = (new Date()).getTime();
+				var process = L.bind(function () {
+					var start = (new Date()).getTime();
+
+					// Make sure to unspiderfy before starting to add some layers
+					if (this._map && this._unspiderfy) {
+						this._unspiderfy();
+					}
+
+					for (; offset < l; offset++) {
+						if (chunked && offset % 200 === 0) {
+							// every couple hundred markers, instrument the time elapsed since processing started:
+							var elapsed = (new Date()).getTime() - start;
+							if (elapsed > chunkInterval) {
+								break; // been working too hard, time to take a break :-)
+							}
+						}
+
+						m = layersArray[offset];
+
+						// Group of layers, append children to layersArray and skip.
+						// Side effects:
+						// - Total increases, so chunkProgress ratio jumps backward.
+						// - Groups are not included in this group, only their non-group child layers (hasLayer).
+						// Changing array length while looping does not affect performance in current browsers:
+						// http://jsperf.com/for-loop-changing-length/6
+						if (m instanceof L.LayerGroup) {
+							if (originalArray) {
+								layersArray = layersArray.slice();
+								originalArray = false;
+							}
+							this._extractNonGroupLayers(m, layersArray);
+							l = layersArray.length;
+							continue;
+						}
+
+						//Not point data, can't be clustered
+						if (!m.getLatLng) {
+							npg.addLayer(m);
+							if (!skipLayerAddEvent) {
+								this.fire('layeradd', { layer: m });
+							}
+							continue;
+						}
+
+						if (this.hasLayer(m)) {
+							continue;
+						}
+
+						this._addLayer(m, this._maxZoom);
+						if (!skipLayerAddEvent) {
+							this.fire('layeradd', { layer: m });
+						}
+
+						//If we just made a cluster of size 2 then we need to remove the other marker from the map (if it is) or we never will
+						if (m.__parent) {
+							if (m.__parent.getChildCount() === 2) {
+								var markers = m.__parent.getAllChildMarkers(),
+								    otherMarker = markers[0] === m ? markers[1] : markers[0];
+								fg.removeLayer(otherMarker);
+							}
+						}
+					}
+
+					if (chunkProgress) {
+						// report progress and time elapsed:
+						chunkProgress(offset, l, (new Date()).getTime() - started);
+					}
+
+					// Completed processing all markers.
+					if (offset === l) {
+
+						// Refresh bounds and weighted positions.
+						this._topClusterLevel._recalculateBounds();
+
+						this._refreshClustersIcons();
+
+						this._topClusterLevel._recursivelyAddChildrenToMap(null, this._zoom, this._currentShownBounds);
+					} else {
+						setTimeout(process, this.options.chunkDelay);
+					}
+				}, this);
+
+				process();
+			} else {
+				var needsClustering = this._needsClustering;
+
+				for (; offset < l; offset++) {
+					m = layersArray[offset];
+
+					// Group of layers, append children to layersArray and skip.
+					if (m instanceof L.LayerGroup) {
+						if (originalArray) {
+							layersArray = layersArray.slice();
+							originalArray = false;
+						}
+						this._extractNonGroupLayers(m, layersArray);
+						l = layersArray.length;
+						continue;
+					}
+
+					//Not point data, can't be clustered
+					if (!m.getLatLng) {
+						npg.addLayer(m);
+						continue;
+					}
+
+					if (this.hasLayer(m)) {
+						continue;
+					}
+
+					needsClustering.push(m);
+				}
+			}
+			return this;
+		},
+
+		//Takes an array of markers and removes them in bulk
+		removeLayers: function (layersArray) {
+			var i, m,
+			    l = layersArray.length,
+			    fg = this._featureGroup,
+			    npg = this._nonPointGroup,
+			    originalArray = true;
+
+			if (!this._map) {
+				for (i = 0; i < l; i++) {
+					m = layersArray[i];
+
+					// Group of layers, append children to layersArray and skip.
+					if (m instanceof L.LayerGroup) {
+						if (originalArray) {
+							layersArray = layersArray.slice();
+							originalArray = false;
+						}
+						this._extractNonGroupLayers(m, layersArray);
+						l = layersArray.length;
+						continue;
+					}
+
+					this._arraySplice(this._needsClustering, m);
+					npg.removeLayer(m);
+					if (this.hasLayer(m)) {
+						this._needsRemoving.push({ layer: m, latlng: m._latlng });
+					}
+					this.fire('layerremove', { layer: m });
+				}
+				return this;
+			}
+
+			if (this._unspiderfy) {
+				this._unspiderfy();
+
+				// Work on a copy of the array, so that next loop is not affected.
+				var layersArray2 = layersArray.slice(),
+				    l2 = l;
+				for (i = 0; i < l2; i++) {
+					m = layersArray2[i];
+
+					// Group of layers, append children to layersArray and skip.
+					if (m instanceof L.LayerGroup) {
+						this._extractNonGroupLayers(m, layersArray2);
+						l2 = layersArray2.length;
+						continue;
+					}
+
+					this._unspiderfyLayer(m);
+				}
+			}
+
+			for (i = 0; i < l; i++) {
+				m = layersArray[i];
+
+				// Group of layers, append children to layersArray and skip.
+				if (m instanceof L.LayerGroup) {
+					if (originalArray) {
+						layersArray = layersArray.slice();
+						originalArray = false;
+					}
+					this._extractNonGroupLayers(m, layersArray);
+					l = layersArray.length;
+					continue;
+				}
+
+				if (!m.__parent) {
+					npg.removeLayer(m);
+					this.fire('layerremove', { layer: m });
+					continue;
+				}
+
+				this._removeLayer(m, true, true);
+				this.fire('layerremove', { layer: m });
+
+				if (fg.hasLayer(m)) {
+					fg.removeLayer(m);
+					if (m.clusterShow) {
+						m.clusterShow();
+					}
+				}
+			}
+
+			// Refresh bounds and weighted positions.
+			this._topClusterLevel._recalculateBounds();
+
+			this._refreshClustersIcons();
+
+			//Fix up the clusters and markers on the map
+			this._topClusterLevel._recursivelyAddChildrenToMap(null, this._zoom, this._currentShownBounds);
+
+			return this;
+		},
+
+		//Removes all layers from the MarkerClusterGroup
+		clearLayers: function () {
+			//Need our own special implementation as the LayerGroup one doesn't work for us
+
+			//If we aren't on the map (yet), blow away the markers we know of
+			if (!this._map) {
+				this._needsClustering = [];
+				this._needsRemoving = [];
+				delete this._gridClusters;
+				delete this._gridUnclustered;
+			}
+
+			if (this._noanimationUnspiderfy) {
+				this._noanimationUnspiderfy();
+			}
+
+			//Remove all the visible layers
+			this._featureGroup.clearLayers();
+			this._nonPointGroup.clearLayers();
+
+			this.eachLayer(function (marker) {
+				marker.off(this._childMarkerEventHandlers, this);
+				delete marker.__parent;
+			}, this);
+
+			if (this._map) {
+				//Reset _topClusterLevel and the DistanceGrids
+				this._generateInitialClusters();
+			}
+
+			return this;
+		},
+
+		//Override FeatureGroup.getBounds as it doesn't work
+		getBounds: function () {
+			var bounds = new L.LatLngBounds();
+
+			if (this._topClusterLevel) {
+				bounds.extend(this._topClusterLevel._bounds);
+			}
+
+			for (var i = this._needsClustering.length - 1; i >= 0; i--) {
+				bounds.extend(this._needsClustering[i].getLatLng());
+			}
+
+			bounds.extend(this._nonPointGroup.getBounds());
+
+			return bounds;
+		},
+
+		//Overrides LayerGroup.eachLayer
+		eachLayer: function (method, context) {
+			var markers = this._needsClustering.slice(),
+				needsRemoving = this._needsRemoving,
+				thisNeedsRemoving, i, j;
+
+			if (this._topClusterLevel) {
+				this._topClusterLevel.getAllChildMarkers(markers);
+			}
+
+			for (i = markers.length - 1; i >= 0; i--) {
+				thisNeedsRemoving = true;
+
+				for (j = needsRemoving.length - 1; j >= 0; j--) {
+					if (needsRemoving[j].layer === markers[i]) {
+						thisNeedsRemoving = false;
+						break;
+					}
+				}
+
+				if (thisNeedsRemoving) {
+					method.call(context, markers[i]);
+				}
+			}
+
+			this._nonPointGroup.eachLayer(method, context);
+		},
+
+		//Overrides LayerGroup.getLayers
+		getLayers: function () {
+			var layers = [];
+			this.eachLayer(function (l) {
+				layers.push(l);
+			});
+			return layers;
+		},
+
+		//Overrides LayerGroup.getLayer, WARNING: Really bad performance
+		getLayer: function (id) {
+			var result = null;
+
+			id = parseInt(id, 10);
+
+			this.eachLayer(function (l) {
+				if (L.stamp(l) === id) {
+					result = l;
+				}
+			});
+
+			return result;
+		},
+
+		//Returns true if the given layer is in this MarkerClusterGroup
+		hasLayer: function (layer) {
+			if (!layer) {
+				return false;
+			}
+
+			var i, anArray = this._needsClustering;
+
+			for (i = anArray.length - 1; i >= 0; i--) {
+				if (anArray[i] === layer) {
+					return true;
+				}
+			}
+
+			anArray = this._needsRemoving;
+			for (i = anArray.length - 1; i >= 0; i--) {
+				if (anArray[i].layer === layer) {
+					return false;
+				}
+			}
+
+			return !!(layer.__parent && layer.__parent._group === this) || this._nonPointGroup.hasLayer(layer);
+		},
+
+		//Zoom down to show the given layer (spiderfying if necessary) then calls the callback
+		zoomToShowLayer: function (layer, callback) {
+
+			var map = this._map;
+
+			if (typeof callback !== 'function') {
+				callback = function () {};
+			}
+
+			var showMarker = function () {
+				// Assumes that map.hasLayer checks for direct appearance on map, not recursively calling
+				// hasLayer on Layer Groups that are on map (typically not calling this MarkerClusterGroup.hasLayer, which would always return true)
+				if ((map.hasLayer(layer) || map.hasLayer(layer.__parent)) && !this._inZoomAnimation) {
+					this._map.off('moveend', showMarker, this);
+					this.off('animationend', showMarker, this);
+
+					if (map.hasLayer(layer)) {
+						callback();
+					} else if (layer.__parent._icon) {
+						this.once('spiderfied', callback, this);
+						layer.__parent.spiderfy();
+					}
+				}
+			};
+
+			if (layer._icon && this._map.getBounds().contains(layer.getLatLng())) {
+				//Layer is visible ond on screen, immediate return
+				callback();
+			} else if (layer.__parent._zoom < Math.round(this._map._zoom)) {
+				//Layer should be visible at this zoom level. It must not be on screen so just pan over to it
+				this._map.on('moveend', showMarker, this);
+				this._map.panTo(layer.getLatLng());
+			} else {
+				this._map.on('moveend', showMarker, this);
+				this.on('animationend', showMarker, this);
+				layer.__parent.zoomToBounds();
+			}
+		},
+
+		//Overrides FeatureGroup.onAdd
+		onAdd: function (map) {
+			this._map = map;
+			var i, l, layer;
+
+			if (!isFinite(this._map.getMaxZoom())) {
+				throw "Map has no maxZoom specified";
+			}
+
+			this._featureGroup.addTo(map);
+			this._nonPointGroup.addTo(map);
+
+			if (!this._gridClusters) {
+				this._generateInitialClusters();
+			}
+
+			this._maxLat = map.options.crs.projection.MAX_LATITUDE;
+
+			//Restore all the positions as they are in the MCG before removing them
+			for (i = 0, l = this._needsRemoving.length; i < l; i++) {
+				layer = this._needsRemoving[i];
+				layer.newlatlng = layer.layer._latlng;
+				layer.layer._latlng = layer.latlng;
+			}
+			//Remove them, then restore their new positions
+			for (i = 0, l = this._needsRemoving.length; i < l; i++) {
+				layer = this._needsRemoving[i];
+				this._removeLayer(layer.layer, true);
+				layer.layer._latlng = layer.newlatlng;
+			}
+			this._needsRemoving = [];
+
+			//Remember the current zoom level and bounds
+			this._zoom = Math.round(this._map._zoom);
+			this._currentShownBounds = this._getExpandedVisibleBounds();
+
+			this._map.on('zoomend', this._zoomEnd, this);
+			this._map.on('moveend', this._moveEnd, this);
+
+			if (this._spiderfierOnAdd) { //TODO FIXME: Not sure how to have spiderfier add something on here nicely
+				this._spiderfierOnAdd();
+			}
+
+			this._bindEvents();
+
+			//Actually add our markers to the map:
+			l = this._needsClustering;
+			this._needsClustering = [];
+			this.addLayers(l, true);
+		},
+
+		//Overrides FeatureGroup.onRemove
+		onRemove: function (map) {
+			map.off('zoomend', this._zoomEnd, this);
+			map.off('moveend', this._moveEnd, this);
+
+			this._unbindEvents();
+
+			//In case we are in a cluster animation
+			this._map._mapPane.className = this._map._mapPane.className.replace(' leaflet-cluster-anim', '');
+
+			if (this._spiderfierOnRemove) { //TODO FIXME: Not sure how to have spiderfier add something on here nicely
+				this._spiderfierOnRemove();
+			}
+
+			delete this._maxLat;
+
+			//Clean up all the layers we added to the map
+			this._hideCoverage();
+			this._featureGroup.remove();
+			this._nonPointGroup.remove();
+
+			this._featureGroup.clearLayers();
+
+			this._map = null;
+		},
+
+		getVisibleParent: function (marker) {
+			var vMarker = marker;
+			while (vMarker && !vMarker._icon) {
+				vMarker = vMarker.__parent;
+			}
+			return vMarker || null;
+		},
+
+		//Remove the given object from the given array
+		_arraySplice: function (anArray, obj) {
+			for (var i = anArray.length - 1; i >= 0; i--) {
+				if (anArray[i] === obj) {
+					anArray.splice(i, 1);
+					return true;
+				}
+			}
+		},
+
+		/**
+		 * Removes a marker from all _gridUnclustered zoom levels, starting at the supplied zoom.
+		 * @param marker to be removed from _gridUnclustered.
+		 * @param z integer bottom start zoom level (included)
+		 * @private
+		 */
+		_removeFromGridUnclustered: function (marker, z) {
+			var map = this._map,
+			    gridUnclustered = this._gridUnclustered,
+				minZoom = Math.floor(this._map.getMinZoom());
+
+			for (; z >= minZoom; z--) {
+				if (!gridUnclustered[z].removeObject(marker, map.project(marker.getLatLng(), z))) {
+					break;
+				}
+			}
+		},
+
+		_childMarkerDragStart: function (e) {
+			e.target.__dragStart = e.target._latlng;
+		},
+
+		_childMarkerMoved: function (e) {
+			if (!this._ignoreMove && !e.target.__dragStart) {
+				var isPopupOpen = e.target._popup && e.target._popup.isOpen();
+
+				this._moveChild(e.target, e.oldLatLng, e.latlng);
+
+				if (isPopupOpen) {
+					e.target.openPopup();
+				}
+			}
+		},
+
+		_moveChild: function (layer, from, to) {
+			layer._latlng = from;
+			this.removeLayer(layer);
+
+			layer._latlng = to;
+			this.addLayer(layer);
+		},
+
+		_childMarkerDragEnd: function (e) {
+			var dragStart = e.target.__dragStart;
+			delete e.target.__dragStart;
+			if (dragStart) {
+				this._moveChild(e.target, dragStart, e.target._latlng);
+			}		
+		},
+
+
+		//Internal function for removing a marker from everything.
+		//dontUpdateMap: set to true if you will handle updating the map manually (for bulk functions)
+		_removeLayer: function (marker, removeFromDistanceGrid, dontUpdateMap) {
+			var gridClusters = this._gridClusters,
+				gridUnclustered = this._gridUnclustered,
+				fg = this._featureGroup,
+				map = this._map,
+				minZoom = Math.floor(this._map.getMinZoom());
+
+			//Remove the marker from distance clusters it might be in
+			if (removeFromDistanceGrid) {
+				this._removeFromGridUnclustered(marker, this._maxZoom);
+			}
+
+			//Work our way up the clusters removing them as we go if required
+			var cluster = marker.__parent,
+				markers = cluster._markers,
+				otherMarker;
+
+			//Remove the marker from the immediate parents marker list
+			this._arraySplice(markers, marker);
+
+			while (cluster) {
+				cluster._childCount--;
+				cluster._boundsNeedUpdate = true;
+
+				if (cluster._zoom < minZoom) {
+					//Top level, do nothing
+					break;
+				} else if (removeFromDistanceGrid && cluster._childCount <= 1) { //Cluster no longer required
+					//We need to push the other marker up to the parent
+					otherMarker = cluster._markers[0] === marker ? cluster._markers[1] : cluster._markers[0];
+
+					//Update distance grid
+					gridClusters[cluster._zoom].removeObject(cluster, map.project(cluster._cLatLng, cluster._zoom));
+					gridUnclustered[cluster._zoom].addObject(otherMarker, map.project(otherMarker.getLatLng(), cluster._zoom));
+
+					//Move otherMarker up to parent
+					this._arraySplice(cluster.__parent._childClusters, cluster);
+					cluster.__parent._markers.push(otherMarker);
+					otherMarker.__parent = cluster.__parent;
+
+					if (cluster._icon) {
+						//Cluster is currently on the map, need to put the marker on the map instead
+						fg.removeLayer(cluster);
+						if (!dontUpdateMap) {
+							fg.addLayer(otherMarker);
+						}
+					}
+				} else {
+					cluster._iconNeedsUpdate = true;
+				}
+
+				cluster = cluster.__parent;
+			}
+
+			delete marker.__parent;
+		},
+
+		_isOrIsParent: function (el, oel) {
+			while (oel) {
+				if (el === oel) {
+					return true;
+				}
+				oel = oel.parentNode;
+			}
+			return false;
+		},
+
+		//Override L.Evented.fire
+		fire: function (type, data, propagate) {
+			if (data && data.layer instanceof L.MarkerCluster) {
+				//Prevent multiple clustermouseover/off events if the icon is made up of stacked divs (Doesn't work in ie <= 8, no relatedTarget)
+				if (data.originalEvent && this._isOrIsParent(data.layer._icon, data.originalEvent.relatedTarget)) {
+					return;
+				}
+				type = 'cluster' + type;
+			}
+
+			L.FeatureGroup.prototype.fire.call(this, type, data, propagate);
+		},
+
+		//Override L.Evented.listens
+		listens: function (type, propagate) {
+			return L.FeatureGroup.prototype.listens.call(this, type, propagate) || L.FeatureGroup.prototype.listens.call(this, 'cluster' + type, propagate);
+		},
+
+		//Default functionality
+		_defaultIconCreateFunction: function (cluster) {
+			var childCount = cluster.getChildCount();
+
+			var c = ' marker-cluster-';
+			if (childCount < 10) {
+				c += 'small';
+			} else if (childCount < 100) {
+				c += 'medium';
+			} else {
+				c += 'large';
+			}
+
+			return new L.DivIcon({ html: '<div><span>' + childCount + '</span></div>', className: 'marker-cluster' + c, iconSize: new L.Point(40, 40) });
+		},
+
+		_bindEvents: function () {
+			var map = this._map,
+			    spiderfyOnMaxZoom = this.options.spiderfyOnMaxZoom,
+			    showCoverageOnHover = this.options.showCoverageOnHover,
+			    zoomToBoundsOnClick = this.options.zoomToBoundsOnClick,
+			    spiderfyOnEveryZoom = this.options.spiderfyOnEveryZoom;
+
+			//Zoom on cluster click or spiderfy if we are at the lowest level
+			if (spiderfyOnMaxZoom || zoomToBoundsOnClick || spiderfyOnEveryZoom) {
+				this.on('clusterclick clusterkeypress', this._zoomOrSpiderfy, this);
+			}
+
+			//Show convex hull (boundary) polygon on mouse over
+			if (showCoverageOnHover) {
+				this.on('clustermouseover', this._showCoverage, this);
+				this.on('clustermouseout', this._hideCoverage, this);
+				map.on('zoomend', this._hideCoverage, this);
+			}
+		},
+
+		_zoomOrSpiderfy: function (e) {
+			var cluster = e.layer,
+			    bottomCluster = cluster;
+
+			if (e.type === 'clusterkeypress' && e.originalEvent && e.originalEvent.keyCode !== 13) {
+				return;
+			}
+
+			while (bottomCluster._childClusters.length === 1) {
+				bottomCluster = bottomCluster._childClusters[0];
+			}
+
+			if (bottomCluster._zoom === this._maxZoom &&
+				bottomCluster._childCount === cluster._childCount &&
+				this.options.spiderfyOnMaxZoom) {
+
+				// All child markers are contained in a single cluster from this._maxZoom to this cluster.
+				cluster.spiderfy();
+			} else if (this.options.zoomToBoundsOnClick) {
+				cluster.zoomToBounds();
+			}
+
+			if (this.options.spiderfyOnEveryZoom) {
+				cluster.spiderfy();
+			}
+
+			// Focus the map again for keyboard users.
+			if (e.originalEvent && e.originalEvent.keyCode === 13) {
+				this._map._container.focus();
+			}
+		},
+
+		_showCoverage: function (e) {
+			var map = this._map;
+			if (this._inZoomAnimation) {
+				return;
+			}
+			if (this._shownPolygon) {
+				map.removeLayer(this._shownPolygon);
+			}
+			if (e.layer.getChildCount() > 2 && e.layer !== this._spiderfied) {
+				this._shownPolygon = new L.Polygon(e.layer.getConvexHull(), this.options.polygonOptions);
+				map.addLayer(this._shownPolygon);
+			}
+		},
+
+		_hideCoverage: function () {
+			if (this._shownPolygon) {
+				this._map.removeLayer(this._shownPolygon);
+				this._shownPolygon = null;
+			}
+		},
+
+		_unbindEvents: function () {
+			var spiderfyOnMaxZoom = this.options.spiderfyOnMaxZoom,
+				showCoverageOnHover = this.options.showCoverageOnHover,
+				zoomToBoundsOnClick = this.options.zoomToBoundsOnClick,
+				spiderfyOnEveryZoom = this.options.spiderfyOnEveryZoom,
+				map = this._map;
+
+			if (spiderfyOnMaxZoom || zoomToBoundsOnClick || spiderfyOnEveryZoom) {
+				this.off('clusterclick clusterkeypress', this._zoomOrSpiderfy, this);
+			}
+			if (showCoverageOnHover) {
+				this.off('clustermouseover', this._showCoverage, this);
+				this.off('clustermouseout', this._hideCoverage, this);
+				map.off('zoomend', this._hideCoverage, this);
+			}
+		},
+
+		_zoomEnd: function () {
+			if (!this._map) { //May have been removed from the map by a zoomEnd handler
+				return;
+			}
+			this._mergeSplitClusters();
+
+			this._zoom = Math.round(this._map._zoom);
+			this._currentShownBounds = this._getExpandedVisibleBounds();
+		},
+
+		_moveEnd: function () {
+			if (this._inZoomAnimation) {
+				return;
+			}
+
+			var newBounds = this._getExpandedVisibleBounds();
+
+			this._topClusterLevel._recursivelyRemoveChildrenFromMap(this._currentShownBounds, Math.floor(this._map.getMinZoom()), this._zoom, newBounds);
+			this._topClusterLevel._recursivelyAddChildrenToMap(null, Math.round(this._map._zoom), newBounds);
+
+			this._currentShownBounds = newBounds;
+			return;
+		},
+
+		_generateInitialClusters: function () {
+			var maxZoom = Math.ceil(this._map.getMaxZoom()),
+				minZoom = Math.floor(this._map.getMinZoom()),
+				radius = this.options.maxClusterRadius,
+				radiusFn = radius;
+
+			//If we just set maxClusterRadius to a single number, we need to create
+			//a simple function to return that number. Otherwise, we just have to
+			//use the function we've passed in.
+			if (typeof radius !== "function") {
+				radiusFn = function () { return radius; };
+			}
+
+			if (this.options.disableClusteringAtZoom !== null) {
+				maxZoom = this.options.disableClusteringAtZoom - 1;
+			}
+			this._maxZoom = maxZoom;
+			this._gridClusters = {};
+			this._gridUnclustered = {};
+
+			//Set up DistanceGrids for each zoom
+			for (var zoom = maxZoom; zoom >= minZoom; zoom--) {
+				this._gridClusters[zoom] = new L.DistanceGrid(radiusFn(zoom));
+				this._gridUnclustered[zoom] = new L.DistanceGrid(radiusFn(zoom));
+			}
+
+			// Instantiate the appropriate L.MarkerCluster class (animated or not).
+			this._topClusterLevel = new this._markerCluster(this, minZoom - 1);
+		},
+
+		//Zoom: Zoom to start adding at (Pass this._maxZoom to start at the bottom)
+		_addLayer: function (layer, zoom) {
+			var gridClusters = this._gridClusters,
+			    gridUnclustered = this._gridUnclustered,
+				minZoom = Math.floor(this._map.getMinZoom()),
+			    markerPoint, z;
+
+			if (this.options.singleMarkerMode) {
+				this._overrideMarkerIcon(layer);
+			}
+
+			layer.on(this._childMarkerEventHandlers, this);
+
+			//Find the lowest zoom level to slot this one in
+			for (; zoom >= minZoom; zoom--) {
+				markerPoint = this._map.project(layer.getLatLng(), zoom); // calculate pixel position
+
+				//Try find a cluster close by
+				var closest = gridClusters[zoom].getNearObject(markerPoint);
+				if (closest) {
+					closest._addChild(layer);
+					layer.__parent = closest;
+					return;
+				}
+
+				//Try find a marker close by to form a new cluster with
+				closest = gridUnclustered[zoom].getNearObject(markerPoint);
+				if (closest) {
+					var parent = closest.__parent;
+					if (parent) {
+						this._removeLayer(closest, false);
+					}
+
+					//Create new cluster with these 2 in it
+
+					var newCluster = new this._markerCluster(this, zoom, closest, layer);
+					gridClusters[zoom].addObject(newCluster, this._map.project(newCluster._cLatLng, zoom));
+					closest.__parent = newCluster;
+					layer.__parent = newCluster;
+
+					//First create any new intermediate parent clusters that don't exist
+					var lastParent = newCluster;
+					for (z = zoom - 1; z > parent._zoom; z--) {
+						lastParent = new this._markerCluster(this, z, lastParent);
+						gridClusters[z].addObject(lastParent, this._map.project(closest.getLatLng(), z));
+					}
+					parent._addChild(lastParent);
+
+					//Remove closest from this zoom level and any above that it is in, replace with newCluster
+					this._removeFromGridUnclustered(closest, zoom);
+
+					return;
+				}
+
+				//Didn't manage to cluster in at this zoom, record us as a marker here and continue upwards
+				gridUnclustered[zoom].addObject(layer, markerPoint);
+			}
+
+			//Didn't get in anything, add us to the top
+			this._topClusterLevel._addChild(layer);
+			layer.__parent = this._topClusterLevel;
+			return;
+		},
+
+		/**
+		 * Refreshes the icon of all "dirty" visible clusters.
+		 * Non-visible "dirty" clusters will be updated when they are added to the map.
+		 * @private
+		 */
+		_refreshClustersIcons: function () {
+			this._featureGroup.eachLayer(function (c) {
+				if (c instanceof L.MarkerCluster && c._iconNeedsUpdate) {
+					c._updateIcon();
+				}
+			});
+		},
+
+		//Enqueue code to fire after the marker expand/contract has happened
+		_enqueue: function (fn) {
+			this._queue.push(fn);
+			if (!this._queueTimeout) {
+				this._queueTimeout = setTimeout(L.bind(this._processQueue, this), 300);
+			}
+		},
+		_processQueue: function () {
+			for (var i = 0; i < this._queue.length; i++) {
+				this._queue[i].call(this);
+			}
+			this._queue.length = 0;
+			clearTimeout(this._queueTimeout);
+			this._queueTimeout = null;
+		},
+
+		//Merge and split any existing clusters that are too big or small
+		_mergeSplitClusters: function () {
+			var mapZoom = Math.round(this._map._zoom);
+
+			//In case we are starting to split before the animation finished
+			this._processQueue();
+
+			if (this._zoom < mapZoom && this._currentShownBounds.intersects(this._getExpandedVisibleBounds())) { //Zoom in, split
+				this._animationStart();
+				//Remove clusters now off screen
+				this._topClusterLevel._recursivelyRemoveChildrenFromMap(this._currentShownBounds, Math.floor(this._map.getMinZoom()), this._zoom, this._getExpandedVisibleBounds());
+
+				this._animationZoomIn(this._zoom, mapZoom);
+
+			} else if (this._zoom > mapZoom) { //Zoom out, merge
+				this._animationStart();
+
+				this._animationZoomOut(this._zoom, mapZoom);
+			} else {
+				this._moveEnd();
+			}
+		},
+
+		//Gets the maps visible bounds expanded in each direction by the size of the screen (so the user cannot see an area we do not cover in one pan)
+		_getExpandedVisibleBounds: function () {
+			if (!this.options.removeOutsideVisibleBounds) {
+				return this._mapBoundsInfinite;
+			} else if (L.Browser.mobile) {
+				return this._checkBoundsMaxLat(this._map.getBounds());
+			}
+
+			return this._checkBoundsMaxLat(this._map.getBounds().pad(1)); // Padding expands the bounds by its own dimensions but scaled with the given factor.
+		},
+
+		/**
+		 * Expands the latitude to Infinity (or -Infinity) if the input bounds reach the map projection maximum defined latitude
+		 * (in the case of Web/Spherical Mercator, it is 85.0511287798 / see https://en.wikipedia.org/wiki/Web_Mercator#Formulas).
+		 * Otherwise, the removeOutsideVisibleBounds option will remove markers beyond that limit, whereas the same markers without
+		 * this option (or outside MCG) will have their position floored (ceiled) by the projection and rendered at that limit,
+		 * making the user think that MCG "eats" them and never displays them again.
+		 * @param bounds L.LatLngBounds
+		 * @returns {L.LatLngBounds}
+		 * @private
+		 */
+		_checkBoundsMaxLat: function (bounds) {
+			var maxLat = this._maxLat;
+
+			if (maxLat !== undefined) {
+				if (bounds.getNorth() >= maxLat) {
+					bounds._northEast.lat = Infinity;
+				}
+				if (bounds.getSouth() <= -maxLat) {
+					bounds._southWest.lat = -Infinity;
+				}
+			}
+
+			return bounds;
+		},
+
+		//Shared animation code
+		_animationAddLayerNonAnimated: function (layer, newCluster) {
+			if (newCluster === layer) {
+				this._featureGroup.addLayer(layer);
+			} else if (newCluster._childCount === 2) {
+				newCluster._addToMap();
+
+				var markers = newCluster.getAllChildMarkers();
+				this._featureGroup.removeLayer(markers[0]);
+				this._featureGroup.removeLayer(markers[1]);
+			} else {
+				newCluster._updateIcon();
+			}
+		},
+
+		/**
+		 * Extracts individual (i.e. non-group) layers from a Layer Group.
+		 * @param group to extract layers from.
+		 * @param output {Array} in which to store the extracted layers.
+		 * @returns {*|Array}
+		 * @private
+		 */
+		_extractNonGroupLayers: function (group, output) {
+			var layers = group.getLayers(),
+			    i = 0,
+			    layer;
+
+			output = output || [];
+
+			for (; i < layers.length; i++) {
+				layer = layers[i];
+
+				if (layer instanceof L.LayerGroup) {
+					this._extractNonGroupLayers(layer, output);
+					continue;
+				}
+
+				output.push(layer);
+			}
+
+			return output;
+		},
+
+		/**
+		 * Implements the singleMarkerMode option.
+		 * @param layer Marker to re-style using the Clusters iconCreateFunction.
+		 * @returns {L.Icon} The newly created icon.
+		 * @private
+		 */
+		_overrideMarkerIcon: function (layer) {
+			var icon = layer.options.icon = this.options.iconCreateFunction({
+				getChildCount: function () {
+					return 1;
+				},
+				getAllChildMarkers: function () {
+					return [layer];
+				}
+			});
+
+			return icon;
+		}
+	});
+
+	// Constant bounds used in case option "removeOutsideVisibleBounds" is set to false.
+	L.MarkerClusterGroup.include({
+		_mapBoundsInfinite: new L.LatLngBounds(new L.LatLng(-Infinity, -Infinity), new L.LatLng(Infinity, Infinity))
+	});
+
+	L.MarkerClusterGroup.include({
+		_noAnimation: {
+			//Non Animated versions of everything
+			_animationStart: function () {
+				//Do nothing...
+			},
+			_animationZoomIn: function (previousZoomLevel, newZoomLevel) {
+				this._topClusterLevel._recursivelyRemoveChildrenFromMap(this._currentShownBounds, Math.floor(this._map.getMinZoom()), previousZoomLevel);
+				this._topClusterLevel._recursivelyAddChildrenToMap(null, newZoomLevel, this._getExpandedVisibleBounds());
+
+				//We didn't actually animate, but we use this event to mean "clustering animations have finished"
+				this.fire('animationend');
+			},
+			_animationZoomOut: function (previousZoomLevel, newZoomLevel) {
+				this._topClusterLevel._recursivelyRemoveChildrenFromMap(this._currentShownBounds, Math.floor(this._map.getMinZoom()), previousZoomLevel);
+				this._topClusterLevel._recursivelyAddChildrenToMap(null, newZoomLevel, this._getExpandedVisibleBounds());
+
+				//We didn't actually animate, but we use this event to mean "clustering animations have finished"
+				this.fire('animationend');
+			},
+			_animationAddLayer: function (layer, newCluster) {
+				this._animationAddLayerNonAnimated(layer, newCluster);
+			}
+		},
+
+		_withAnimation: {
+			//Animated versions here
+			_animationStart: function () {
+				this._map._mapPane.className += ' leaflet-cluster-anim';
+				this._inZoomAnimation++;
+			},
+
+			_animationZoomIn: function (previousZoomLevel, newZoomLevel) {
+				var bounds = this._getExpandedVisibleBounds(),
+				    fg = this._featureGroup,
+					minZoom = Math.floor(this._map.getMinZoom()),
+				    i;
+
+				this._ignoreMove = true;
+
+				//Add all children of current clusters to map and remove those clusters from map
+				this._topClusterLevel._recursively(bounds, previousZoomLevel, minZoom, function (c) {
+					var startPos = c._latlng,
+					    markers  = c._markers,
+					    m;
+
+					if (!bounds.contains(startPos)) {
+						startPos = null;
+					}
+
+					if (c._isSingleParent() && previousZoomLevel + 1 === newZoomLevel) { //Immediately add the new child and remove us
+						fg.removeLayer(c);
+						c._recursivelyAddChildrenToMap(null, newZoomLevel, bounds);
+					} else {
+						//Fade out old cluster
+						c.clusterHide();
+						c._recursivelyAddChildrenToMap(startPos, newZoomLevel, bounds);
+					}
+
+					//Remove all markers that aren't visible any more
+					//TODO: Do we actually need to do this on the higher levels too?
+					for (i = markers.length - 1; i >= 0; i--) {
+						m = markers[i];
+						if (!bounds.contains(m._latlng)) {
+							fg.removeLayer(m);
+						}
+					}
+
+				});
+
+				this._forceLayout();
+
+				//Update opacities
+				this._topClusterLevel._recursivelyBecomeVisible(bounds, newZoomLevel);
+				//TODO Maybe? Update markers in _recursivelyBecomeVisible
+				fg.eachLayer(function (n) {
+					if (!(n instanceof L.MarkerCluster) && n._icon) {
+						n.clusterShow();
+					}
+				});
+
+				//update the positions of the just added clusters/markers
+				this._topClusterLevel._recursively(bounds, previousZoomLevel, newZoomLevel, function (c) {
+					c._recursivelyRestoreChildPositions(newZoomLevel);
+				});
+
+				this._ignoreMove = false;
+
+				//Remove the old clusters and close the zoom animation
+				this._enqueue(function () {
+					//update the positions of the just added clusters/markers
+					this._topClusterLevel._recursively(bounds, previousZoomLevel, minZoom, function (c) {
+						fg.removeLayer(c);
+						c.clusterShow();
+					});
+
+					this._animationEnd();
+				});
+			},
+
+			_animationZoomOut: function (previousZoomLevel, newZoomLevel) {
+				this._animationZoomOutSingle(this._topClusterLevel, previousZoomLevel - 1, newZoomLevel);
+
+				//Need to add markers for those that weren't on the map before but are now
+				this._topClusterLevel._recursivelyAddChildrenToMap(null, newZoomLevel, this._getExpandedVisibleBounds());
+				//Remove markers that were on the map before but won't be now
+				this._topClusterLevel._recursivelyRemoveChildrenFromMap(this._currentShownBounds, Math.floor(this._map.getMinZoom()), previousZoomLevel, this._getExpandedVisibleBounds());
+			},
+
+			_animationAddLayer: function (layer, newCluster) {
+				var me = this,
+				    fg = this._featureGroup;
+
+				fg.addLayer(layer);
+				if (newCluster !== layer) {
+					if (newCluster._childCount > 2) { //Was already a cluster
+
+						newCluster._updateIcon();
+						this._forceLayout();
+						this._animationStart();
+
+						layer._setPos(this._map.latLngToLayerPoint(newCluster.getLatLng()));
+						layer.clusterHide();
+
+						this._enqueue(function () {
+							fg.removeLayer(layer);
+							layer.clusterShow();
+
+							me._animationEnd();
+						});
+
+					} else { //Just became a cluster
+						this._forceLayout();
+
+						me._animationStart();
+						me._animationZoomOutSingle(newCluster, this._map.getMaxZoom(), this._zoom);
+					}
+				}
+			}
+		},
+
+		// Private methods for animated versions.
+		_animationZoomOutSingle: function (cluster, previousZoomLevel, newZoomLevel) {
+			var bounds = this._getExpandedVisibleBounds(),
+				minZoom = Math.floor(this._map.getMinZoom());
+
+			//Animate all of the markers in the clusters to move to their cluster center point
+			cluster._recursivelyAnimateChildrenInAndAddSelfToMap(bounds, minZoom, previousZoomLevel + 1, newZoomLevel);
+
+			var me = this;
+
+			//Update the opacity (If we immediately set it they won't animate)
+			this._forceLayout();
+			cluster._recursivelyBecomeVisible(bounds, newZoomLevel);
+
+			//TODO: Maybe use the transition timing stuff to make this more reliable
+			//When the animations are done, tidy up
+			this._enqueue(function () {
+
+				//This cluster stopped being a cluster before the timeout fired
+				if (cluster._childCount === 1) {
+					var m = cluster._markers[0];
+					//If we were in a cluster animation at the time then the opacity and position of our child could be wrong now, so fix it
+					this._ignoreMove = true;
+					m.setLatLng(m.getLatLng());
+					this._ignoreMove = false;
+					if (m.clusterShow) {
+						m.clusterShow();
+					}
+				} else {
+					cluster._recursively(bounds, newZoomLevel, minZoom, function (c) {
+						c._recursivelyRemoveChildrenFromMap(bounds, minZoom, previousZoomLevel + 1);
+					});
+				}
+				me._animationEnd();
+			});
+		},
+
+		_animationEnd: function () {
+			if (this._map) {
+				this._map._mapPane.className = this._map._mapPane.className.replace(' leaflet-cluster-anim', '');
+			}
+			this._inZoomAnimation--;
+			this.fire('animationend');
+		},
+
+		//Force a browser layout of stuff in the map
+		// Should apply the current opacity and location to all elements so we can update them again for an animation
+		_forceLayout: function () {
+			//In my testing this works, infact offsetWidth of any element seems to work.
+			//Could loop all this._layers and do this for each _icon if it stops working
+
+			L.Util.falseFn(document.body.offsetWidth);
+		}
+	});
+
+	L.markerClusterGroup = function (options) {
+		return new L.MarkerClusterGroup(options);
+	};
+
+	var MarkerCluster = L.MarkerCluster = L.Marker.extend({
+		options: L.Icon.prototype.options,
+
+		initialize: function (group, zoom, a, b) {
+
+			L.Marker.prototype.initialize.call(this, a ? (a._cLatLng || a.getLatLng()) : new L.LatLng(0, 0),
+	            { icon: this, pane: group.options.clusterPane });
+
+			this._group = group;
+			this._zoom = zoom;
+
+			this._markers = [];
+			this._childClusters = [];
+			this._childCount = 0;
+			this._iconNeedsUpdate = true;
+			this._boundsNeedUpdate = true;
+
+			this._bounds = new L.LatLngBounds();
+
+			if (a) {
+				this._addChild(a);
+			}
+			if (b) {
+				this._addChild(b);
+			}
+		},
+
+		//Recursively retrieve all child markers of this cluster
+		getAllChildMarkers: function (storageArray, ignoreDraggedMarker) {
+			storageArray = storageArray || [];
+
+			for (var i = this._childClusters.length - 1; i >= 0; i--) {
+				this._childClusters[i].getAllChildMarkers(storageArray, ignoreDraggedMarker);
+			}
+
+			for (var j = this._markers.length - 1; j >= 0; j--) {
+				if (ignoreDraggedMarker && this._markers[j].__dragStart) {
+					continue;
+				}
+				storageArray.push(this._markers[j]);
+			}
+
+			return storageArray;
+		},
+
+		//Returns the count of how many child markers we have
+		getChildCount: function () {
+			return this._childCount;
+		},
+
+		//Zoom to the minimum of showing all of the child markers, or the extents of this cluster
+		zoomToBounds: function (fitBoundsOptions) {
+			var childClusters = this._childClusters.slice(),
+				map = this._group._map,
+				boundsZoom = map.getBoundsZoom(this._bounds),
+				zoom = this._zoom + 1,
+				mapZoom = map.getZoom(),
+				i;
+
+			//calculate how far we need to zoom down to see all of the markers
+			while (childClusters.length > 0 && boundsZoom > zoom) {
+				zoom++;
+				var newClusters = [];
+				for (i = 0; i < childClusters.length; i++) {
+					newClusters = newClusters.concat(childClusters[i]._childClusters);
+				}
+				childClusters = newClusters;
+			}
+
+			if (boundsZoom > zoom) {
+				this._group._map.setView(this._latlng, zoom);
+			} else if (boundsZoom <= mapZoom) { //If fitBounds wouldn't zoom us down, zoom us down instead
+				this._group._map.setView(this._latlng, mapZoom + 1);
+			} else {
+				this._group._map.fitBounds(this._bounds, fitBoundsOptions);
+			}
+		},
+
+		getBounds: function () {
+			var bounds = new L.LatLngBounds();
+			bounds.extend(this._bounds);
+			return bounds;
+		},
+
+		_updateIcon: function () {
+			this._iconNeedsUpdate = true;
+			if (this._icon) {
+				this.setIcon(this);
+			}
+		},
+
+		//Cludge for Icon, we pretend to be an icon for performance
+		createIcon: function () {
+			if (this._iconNeedsUpdate) {
+				this._iconObj = this._group.options.iconCreateFunction(this);
+				this._iconNeedsUpdate = false;
+			}
+			return this._iconObj.createIcon();
+		},
+		createShadow: function () {
+			return this._iconObj.createShadow();
+		},
+
+
+		_addChild: function (new1, isNotificationFromChild) {
+
+			this._iconNeedsUpdate = true;
+
+			this._boundsNeedUpdate = true;
+			this._setClusterCenter(new1);
+
+			if (new1 instanceof L.MarkerCluster) {
+				if (!isNotificationFromChild) {
+					this._childClusters.push(new1);
+					new1.__parent = this;
+				}
+				this._childCount += new1._childCount;
+			} else {
+				if (!isNotificationFromChild) {
+					this._markers.push(new1);
+				}
+				this._childCount++;
+			}
+
+			if (this.__parent) {
+				this.__parent._addChild(new1, true);
+			}
+		},
+
+		/**
+		 * Makes sure the cluster center is set. If not, uses the child center if it is a cluster, or the marker position.
+		 * @param child L.MarkerCluster|L.Marker that will be used as cluster center if not defined yet.
+		 * @private
+		 */
+		_setClusterCenter: function (child) {
+			if (!this._cLatLng) {
+				// when clustering, take position of the first point as the cluster center
+				this._cLatLng = child._cLatLng || child._latlng;
+			}
+		},
+
+		/**
+		 * Assigns impossible bounding values so that the next extend entirely determines the new bounds.
+		 * This method avoids having to trash the previous L.LatLngBounds object and to create a new one, which is much slower for this class.
+		 * As long as the bounds are not extended, most other methods would probably fail, as they would with bounds initialized but not extended.
+		 * @private
+		 */
+		_resetBounds: function () {
+			var bounds = this._bounds;
+
+			if (bounds._southWest) {
+				bounds._southWest.lat = Infinity;
+				bounds._southWest.lng = Infinity;
+			}
+			if (bounds._northEast) {
+				bounds._northEast.lat = -Infinity;
+				bounds._northEast.lng = -Infinity;
+			}
+		},
+
+		_recalculateBounds: function () {
+			var markers = this._markers,
+			    childClusters = this._childClusters,
+			    latSum = 0,
+			    lngSum = 0,
+			    totalCount = this._childCount,
+			    i, child, childLatLng, childCount;
+
+			// Case where all markers are removed from the map and we are left with just an empty _topClusterLevel.
+			if (totalCount === 0) {
+				return;
+			}
+
+			// Reset rather than creating a new object, for performance.
+			this._resetBounds();
+
+			// Child markers.
+			for (i = 0; i < markers.length; i++) {
+				childLatLng = markers[i]._latlng;
+
+				this._bounds.extend(childLatLng);
+
+				latSum += childLatLng.lat;
+				lngSum += childLatLng.lng;
+			}
+
+			// Child clusters.
+			for (i = 0; i < childClusters.length; i++) {
+				child = childClusters[i];
+
+				// Re-compute child bounds and weighted position first if necessary.
+				if (child._boundsNeedUpdate) {
+					child._recalculateBounds();
+				}
+
+				this._bounds.extend(child._bounds);
+
+				childLatLng = child._wLatLng;
+				childCount = child._childCount;
+
+				latSum += childLatLng.lat * childCount;
+				lngSum += childLatLng.lng * childCount;
+			}
+
+			this._latlng = this._wLatLng = new L.LatLng(latSum / totalCount, lngSum / totalCount);
+
+			// Reset dirty flag.
+			this._boundsNeedUpdate = false;
+		},
+
+		//Set our markers position as given and add it to the map
+		_addToMap: function (startPos) {
+			if (startPos) {
+				this._backupLatlng = this._latlng;
+				this.setLatLng(startPos);
+			}
+			this._group._featureGroup.addLayer(this);
+		},
+
+		_recursivelyAnimateChildrenIn: function (bounds, center, maxZoom) {
+			this._recursively(bounds, this._group._map.getMinZoom(), maxZoom - 1,
+				function (c) {
+					var markers = c._markers,
+						i, m;
+					for (i = markers.length - 1; i >= 0; i--) {
+						m = markers[i];
+
+						//Only do it if the icon is still on the map
+						if (m._icon) {
+							m._setPos(center);
+							m.clusterHide();
+						}
+					}
+				},
+				function (c) {
+					var childClusters = c._childClusters,
+						j, cm;
+					for (j = childClusters.length - 1; j >= 0; j--) {
+						cm = childClusters[j];
+						if (cm._icon) {
+							cm._setPos(center);
+							cm.clusterHide();
+						}
+					}
+				}
+			);
+		},
+
+		_recursivelyAnimateChildrenInAndAddSelfToMap: function (bounds, mapMinZoom, previousZoomLevel, newZoomLevel) {
+			this._recursively(bounds, newZoomLevel, mapMinZoom,
+				function (c) {
+					c._recursivelyAnimateChildrenIn(bounds, c._group._map.latLngToLayerPoint(c.getLatLng()).round(), previousZoomLevel);
+
+					//TODO: depthToAnimateIn affects _isSingleParent, if there is a multizoom we may/may not be.
+					//As a hack we only do a animation free zoom on a single level zoom, if someone does multiple levels then we always animate
+					if (c._isSingleParent() && previousZoomLevel - 1 === newZoomLevel) {
+						c.clusterShow();
+						c._recursivelyRemoveChildrenFromMap(bounds, mapMinZoom, previousZoomLevel); //Immediately remove our children as we are replacing them. TODO previousBounds not bounds
+					} else {
+						c.clusterHide();
+					}
+
+					c._addToMap();
+				}
+			);
+		},
+
+		_recursivelyBecomeVisible: function (bounds, zoomLevel) {
+			this._recursively(bounds, this._group._map.getMinZoom(), zoomLevel, null, function (c) {
+				c.clusterShow();
+			});
+		},
+
+		_recursivelyAddChildrenToMap: function (startPos, zoomLevel, bounds) {
+			this._recursively(bounds, this._group._map.getMinZoom() - 1, zoomLevel,
+				function (c) {
+					if (zoomLevel === c._zoom) {
+						return;
+					}
+
+					//Add our child markers at startPos (so they can be animated out)
+					for (var i = c._markers.length - 1; i >= 0; i--) {
+						var nm = c._markers[i];
+
+						if (!bounds.contains(nm._latlng)) {
+							continue;
+						}
+
+						if (startPos) {
+							nm._backupLatlng = nm.getLatLng();
+
+							nm.setLatLng(startPos);
+							if (nm.clusterHide) {
+								nm.clusterHide();
+							}
+						}
+
+						c._group._featureGroup.addLayer(nm);
+					}
+				},
+				function (c) {
+					c._addToMap(startPos);
+				}
+			);
+		},
+
+		_recursivelyRestoreChildPositions: function (zoomLevel) {
+			//Fix positions of child markers
+			for (var i = this._markers.length - 1; i >= 0; i--) {
+				var nm = this._markers[i];
+				if (nm._backupLatlng) {
+					nm.setLatLng(nm._backupLatlng);
+					delete nm._backupLatlng;
+				}
+			}
+
+			if (zoomLevel - 1 === this._zoom) {
+				//Reposition child clusters
+				for (var j = this._childClusters.length - 1; j >= 0; j--) {
+					this._childClusters[j]._restorePosition();
+				}
+			} else {
+				for (var k = this._childClusters.length - 1; k >= 0; k--) {
+					this._childClusters[k]._recursivelyRestoreChildPositions(zoomLevel);
+				}
+			}
+		},
+
+		_restorePosition: function () {
+			if (this._backupLatlng) {
+				this.setLatLng(this._backupLatlng);
+				delete this._backupLatlng;
+			}
+		},
+
+		//exceptBounds: If set, don't remove any markers/clusters in it
+		_recursivelyRemoveChildrenFromMap: function (previousBounds, mapMinZoom, zoomLevel, exceptBounds) {
+			var m, i;
+			this._recursively(previousBounds, mapMinZoom - 1, zoomLevel - 1,
+				function (c) {
+					//Remove markers at every level
+					for (i = c._markers.length - 1; i >= 0; i--) {
+						m = c._markers[i];
+						if (!exceptBounds || !exceptBounds.contains(m._latlng)) {
+							c._group._featureGroup.removeLayer(m);
+							if (m.clusterShow) {
+								m.clusterShow();
+							}
+						}
+					}
+				},
+				function (c) {
+					//Remove child clusters at just the bottom level
+					for (i = c._childClusters.length - 1; i >= 0; i--) {
+						m = c._childClusters[i];
+						if (!exceptBounds || !exceptBounds.contains(m._latlng)) {
+							c._group._featureGroup.removeLayer(m);
+							if (m.clusterShow) {
+								m.clusterShow();
+							}
+						}
+					}
+				}
+			);
+		},
+
+		//Run the given functions recursively to this and child clusters
+		// boundsToApplyTo: a L.LatLngBounds representing the bounds of what clusters to recurse in to
+		// zoomLevelToStart: zoom level to start running functions (inclusive)
+		// zoomLevelToStop: zoom level to stop running functions (inclusive)
+		// runAtEveryLevel: function that takes an L.MarkerCluster as an argument that should be applied on every level
+		// runAtBottomLevel: function that takes an L.MarkerCluster as an argument that should be applied at only the bottom level
+		_recursively: function (boundsToApplyTo, zoomLevelToStart, zoomLevelToStop, runAtEveryLevel, runAtBottomLevel) {
+			var childClusters = this._childClusters,
+			    zoom = this._zoom,
+			    i, c;
+
+			if (zoomLevelToStart <= zoom) {
+				if (runAtEveryLevel) {
+					runAtEveryLevel(this);
+				}
+				if (runAtBottomLevel && zoom === zoomLevelToStop) {
+					runAtBottomLevel(this);
+				}
+			}
+
+			if (zoom < zoomLevelToStart || zoom < zoomLevelToStop) {
+				for (i = childClusters.length - 1; i >= 0; i--) {
+					c = childClusters[i];
+					if (c._boundsNeedUpdate) {
+						c._recalculateBounds();
+					}
+					if (boundsToApplyTo.intersects(c._bounds)) {
+						c._recursively(boundsToApplyTo, zoomLevelToStart, zoomLevelToStop, runAtEveryLevel, runAtBottomLevel);
+					}
+				}
+			}
+		},
+
+		//Returns true if we are the parent of only one cluster and that cluster is the same as us
+		_isSingleParent: function () {
+			//Don't need to check this._markers as the rest won't work if there are any
+			return this._childClusters.length > 0 && this._childClusters[0]._childCount === this._childCount;
+		}
+	});
+
+	/*
+	* Extends L.Marker to include two extra methods: clusterHide and clusterShow.
+	* 
+	* They work as setOpacity(0) and setOpacity(1) respectively, but
+	* don't overwrite the options.opacity
+	* 
+	*/
+
+	L.Marker.include({
+		clusterHide: function () {
+			var backup = this.options.opacity;
+			this.setOpacity(0);
+			this.options.opacity = backup;
+			return this;
+		},
+		
+		clusterShow: function () {
+			return this.setOpacity(this.options.opacity);
+		}
+	});
+
+	L.DistanceGrid = function (cellSize) {
+		this._cellSize = cellSize;
+		this._sqCellSize = cellSize * cellSize;
+		this._grid = {};
+		this._objectPoint = { };
+	};
+
+	L.DistanceGrid.prototype = {
+
+		addObject: function (obj, point) {
+			var x = this._getCoord(point.x),
+			    y = this._getCoord(point.y),
+			    grid = this._grid,
+			    row = grid[y] = grid[y] || {},
+			    cell = row[x] = row[x] || [],
+			    stamp = L.Util.stamp(obj);
+
+			this._objectPoint[stamp] = point;
+
+			cell.push(obj);
+		},
+
+		updateObject: function (obj, point) {
+			this.removeObject(obj);
+			this.addObject(obj, point);
+		},
+
+		//Returns true if the object was found
+		removeObject: function (obj, point) {
+			var x = this._getCoord(point.x),
+			    y = this._getCoord(point.y),
+			    grid = this._grid,
+			    row = grid[y] = grid[y] || {},
+			    cell = row[x] = row[x] || [],
+			    i, len;
+
+			delete this._objectPoint[L.Util.stamp(obj)];
+
+			for (i = 0, len = cell.length; i < len; i++) {
+				if (cell[i] === obj) {
+
+					cell.splice(i, 1);
+
+					if (len === 1) {
+						delete row[x];
+					}
+
+					return true;
+				}
+			}
+
+		},
+
+		eachObject: function (fn, context) {
+			var i, j, k, len, row, cell, removed,
+			    grid = this._grid;
+
+			for (i in grid) {
+				row = grid[i];
+
+				for (j in row) {
+					cell = row[j];
+
+					for (k = 0, len = cell.length; k < len; k++) {
+						removed = fn.call(context, cell[k]);
+						if (removed) {
+							k--;
+							len--;
+						}
+					}
+				}
+			}
+		},
+
+		getNearObject: function (point) {
+			var x = this._getCoord(point.x),
+			    y = this._getCoord(point.y),
+			    i, j, k, row, cell, len, obj, dist,
+			    objectPoint = this._objectPoint,
+			    closestDistSq = this._sqCellSize,
+			    closest = null;
+
+			for (i = y - 1; i <= y + 1; i++) {
+				row = this._grid[i];
+				if (row) {
+
+					for (j = x - 1; j <= x + 1; j++) {
+						cell = row[j];
+						if (cell) {
+
+							for (k = 0, len = cell.length; k < len; k++) {
+								obj = cell[k];
+								dist = this._sqDist(objectPoint[L.Util.stamp(obj)], point);
+								if (dist < closestDistSq ||
+									dist <= closestDistSq && closest === null) {
+									closestDistSq = dist;
+									closest = obj;
+								}
+							}
+						}
+					}
+				}
+			}
+			return closest;
+		},
+
+		_getCoord: function (x) {
+			var coord = Math.floor(x / this._cellSize);
+			return isFinite(coord) ? coord : x;
+		},
+
+		_sqDist: function (p, p2) {
+			var dx = p2.x - p.x,
+			    dy = p2.y - p.y;
+			return dx * dx + dy * dy;
+		}
+	};
+
+	/* Copyright (c) 2012 the authors listed at the following URL, and/or
+	the authors of referenced articles or incorporated external code:
+	http://en.literateprograms.org/Quickhull_(Javascript)?action=history&offset=20120410175256
+
+	Permission is hereby granted, free of charge, to any person obtaining
+	a copy of this software and associated documentation files (the
+	"Software"), to deal in the Software without restriction, including
+	without limitation the rights to use, copy, modify, merge, publish,
+	distribute, sublicense, and/or sell copies of the Software, and to
+	permit persons to whom the Software is furnished to do so, subject to
+	the following conditions:
+
+	The above copyright notice and this permission notice shall be
+	included in all copies or substantial portions of the Software.
+
+	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+	EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+	MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+	IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+	CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+	TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+	SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+	Retrieved from: http://en.literateprograms.org/Quickhull_(Javascript)?oldid=18434
+	*/
+
+	(function () {
+		L.QuickHull = {
+
+			/*
+			 * @param {Object} cpt a point to be measured from the baseline
+			 * @param {Array} bl the baseline, as represented by a two-element
+			 *   array of latlng objects.
+			 * @returns {Number} an approximate distance measure
+			 */
+			getDistant: function (cpt, bl) {
+				var vY = bl[1].lat - bl[0].lat,
+					vX = bl[0].lng - bl[1].lng;
+				return (vX * (cpt.lat - bl[0].lat) + vY * (cpt.lng - bl[0].lng));
+			},
+
+			/*
+			 * @param {Array} baseLine a two-element array of latlng objects
+			 *   representing the baseline to project from
+			 * @param {Array} latLngs an array of latlng objects
+			 * @returns {Object} the maximum point and all new points to stay
+			 *   in consideration for the hull.
+			 */
+			findMostDistantPointFromBaseLine: function (baseLine, latLngs) {
+				var maxD = 0,
+					maxPt = null,
+					newPoints = [],
+					i, pt, d;
+
+				for (i = latLngs.length - 1; i >= 0; i--) {
+					pt = latLngs[i];
+					d = this.getDistant(pt, baseLine);
+
+					if (d > 0) {
+						newPoints.push(pt);
+					} else {
+						continue;
+					}
+
+					if (d > maxD) {
+						maxD = d;
+						maxPt = pt;
+					}
+				}
+
+				return { maxPoint: maxPt, newPoints: newPoints };
+			},
+
+
+			/*
+			 * Given a baseline, compute the convex hull of latLngs as an array
+			 * of latLngs.
+			 *
+			 * @param {Array} latLngs
+			 * @returns {Array}
+			 */
+			buildConvexHull: function (baseLine, latLngs) {
+				var convexHullBaseLines = [],
+					t = this.findMostDistantPointFromBaseLine(baseLine, latLngs);
+
+				if (t.maxPoint) { // if there is still a point "outside" the base line
+					convexHullBaseLines =
+						convexHullBaseLines.concat(
+							this.buildConvexHull([baseLine[0], t.maxPoint], t.newPoints)
+						);
+					convexHullBaseLines =
+						convexHullBaseLines.concat(
+							this.buildConvexHull([t.maxPoint, baseLine[1]], t.newPoints)
+						);
+					return convexHullBaseLines;
+				} else {  // if there is no more point "outside" the base line, the current base line is part of the convex hull
+					return [baseLine[0]];
+				}
+			},
+
+			/*
+			 * Given an array of latlngs, compute a convex hull as an array
+			 * of latlngs
+			 *
+			 * @param {Array} latLngs
+			 * @returns {Array}
+			 */
+			getConvexHull: function (latLngs) {
+				// find first baseline
+				var maxLat = false, minLat = false,
+					maxLng = false, minLng = false,
+					maxLatPt = null, minLatPt = null,
+					maxLngPt = null, minLngPt = null,
+					maxPt = null, minPt = null,
+					i;
+
+				for (i = latLngs.length - 1; i >= 0; i--) {
+					var pt = latLngs[i];
+					if (maxLat === false || pt.lat > maxLat) {
+						maxLatPt = pt;
+						maxLat = pt.lat;
+					}
+					if (minLat === false || pt.lat < minLat) {
+						minLatPt = pt;
+						minLat = pt.lat;
+					}
+					if (maxLng === false || pt.lng > maxLng) {
+						maxLngPt = pt;
+						maxLng = pt.lng;
+					}
+					if (minLng === false || pt.lng < minLng) {
+						minLngPt = pt;
+						minLng = pt.lng;
+					}
+				}
+				
+				if (minLat !== maxLat) {
+					minPt = minLatPt;
+					maxPt = maxLatPt;
+				} else {
+					minPt = minLngPt;
+					maxPt = maxLngPt;
+				}
+
+				var ch = [].concat(this.buildConvexHull([minPt, maxPt], latLngs),
+									this.buildConvexHull([maxPt, minPt], latLngs));
+				return ch;
+			}
+		};
+	}());
+
+	L.MarkerCluster.include({
+		getConvexHull: function () {
+			var childMarkers = this.getAllChildMarkers(),
+				points = [],
+				p, i;
+
+			for (i = childMarkers.length - 1; i >= 0; i--) {
+				p = childMarkers[i].getLatLng();
+				points.push(p);
+			}
+
+			return L.QuickHull.getConvexHull(points);
+		}
+	});
+
+	//This code is 100% based on https://github.com/jawj/OverlappingMarkerSpiderfier-Leaflet
+	//Huge thanks to jawj for implementing it first to make my job easy :-)
+
+	L.MarkerCluster.include({
+
+		_2PI: Math.PI * 2,
+		_circleFootSeparation: 25, //related to circumference of circle
+		_circleStartAngle: 0,
+
+		_spiralFootSeparation:  28, //related to size of spiral (experiment!)
+		_spiralLengthStart: 11,
+		_spiralLengthFactor: 5,
+
+		_circleSpiralSwitchover: 9, //show spiral instead of circle from this marker count upwards.
+									// 0 -> always spiral; Infinity -> always circle
+
+		spiderfy: function () {
+			if (this._group._spiderfied === this || this._group._inZoomAnimation) {
+				return;
+			}
+
+			var childMarkers = this.getAllChildMarkers(null, true),
+				group = this._group,
+				map = group._map,
+				center = map.latLngToLayerPoint(this._latlng),
+				positions;
+
+			this._group._unspiderfy();
+			this._group._spiderfied = this;
+
+			//TODO Maybe: childMarkers order by distance to center
+
+			if (this._group.options.spiderfyShapePositions) {
+				positions = this._group.options.spiderfyShapePositions(childMarkers.length, center);
+			} else if (childMarkers.length >= this._circleSpiralSwitchover) {
+				positions = this._generatePointsSpiral(childMarkers.length, center);
+			} else {
+				center.y += 10; // Otherwise circles look wrong => hack for standard blue icon, renders differently for other icons.
+				positions = this._generatePointsCircle(childMarkers.length, center);
+			}
+
+			this._animationSpiderfy(childMarkers, positions);
+		},
+
+		unspiderfy: function (zoomDetails) {
+			/// <param Name="zoomDetails">Argument from zoomanim if being called in a zoom animation or null otherwise</param>
+			if (this._group._inZoomAnimation) {
+				return;
+			}
+			this._animationUnspiderfy(zoomDetails);
+
+			this._group._spiderfied = null;
+		},
+
+		_generatePointsCircle: function (count, centerPt) {
+			var circumference = this._group.options.spiderfyDistanceMultiplier * this._circleFootSeparation * (2 + count),
+				legLength = circumference / this._2PI,  //radius from circumference
+				angleStep = this._2PI / count,
+				res = [],
+				i, angle;
+
+			legLength = Math.max(legLength, 35); // Minimum distance to get outside the cluster icon.
+
+			res.length = count;
+
+			for (i = 0; i < count; i++) { // Clockwise, like spiral.
+				angle = this._circleStartAngle + i * angleStep;
+				res[i] = new L.Point(centerPt.x + legLength * Math.cos(angle), centerPt.y + legLength * Math.sin(angle))._round();
+			}
+
+			return res;
+		},
+
+		_generatePointsSpiral: function (count, centerPt) {
+			var spiderfyDistanceMultiplier = this._group.options.spiderfyDistanceMultiplier,
+				legLength = spiderfyDistanceMultiplier * this._spiralLengthStart,
+				separation = spiderfyDistanceMultiplier * this._spiralFootSeparation,
+				lengthFactor = spiderfyDistanceMultiplier * this._spiralLengthFactor * this._2PI,
+				angle = 0,
+				res = [],
+				i;
+
+			res.length = count;
+
+			// Higher index, closer position to cluster center.
+			for (i = count; i >= 0; i--) {
+				// Skip the first position, so that we are already farther from center and we avoid
+				// being under the default cluster icon (especially important for Circle Markers).
+				if (i < count) {
+					res[i] = new L.Point(centerPt.x + legLength * Math.cos(angle), centerPt.y + legLength * Math.sin(angle))._round();
+				}
+				angle += separation / legLength + i * 0.0005;
+				legLength += lengthFactor / angle;
+			}
+			return res;
+		},
+
+		_noanimationUnspiderfy: function () {
+			var group = this._group,
+				map = group._map,
+				fg = group._featureGroup,
+				childMarkers = this.getAllChildMarkers(null, true),
+				m, i;
+
+			group._ignoreMove = true;
+
+			this.setOpacity(1);
+			for (i = childMarkers.length - 1; i >= 0; i--) {
+				m = childMarkers[i];
+
+				fg.removeLayer(m);
+
+				if (m._preSpiderfyLatlng) {
+					m.setLatLng(m._preSpiderfyLatlng);
+					delete m._preSpiderfyLatlng;
+				}
+				if (m.setZIndexOffset) {
+					m.setZIndexOffset(0);
+				}
+
+				if (m._spiderLeg) {
+					map.removeLayer(m._spiderLeg);
+					delete m._spiderLeg;
+				}
+			}
+
+			group.fire('unspiderfied', {
+				cluster: this,
+				markers: childMarkers
+			});
+			group._ignoreMove = false;
+			group._spiderfied = null;
+		}
+	});
+
+	//Non Animated versions of everything
+	L.MarkerClusterNonAnimated = L.MarkerCluster.extend({
+		_animationSpiderfy: function (childMarkers, positions) {
+			var group = this._group,
+				map = group._map,
+				fg = group._featureGroup,
+				legOptions = this._group.options.spiderLegPolylineOptions,
+				i, m, leg, newPos;
+
+			group._ignoreMove = true;
+
+			// Traverse in ascending order to make sure that inner circleMarkers are on top of further legs. Normal markers are re-ordered by newPosition.
+			// The reverse order trick no longer improves performance on modern browsers.
+			for (i = 0; i < childMarkers.length; i++) {
+				newPos = map.layerPointToLatLng(positions[i]);
+				m = childMarkers[i];
+
+				// Add the leg before the marker, so that in case the latter is a circleMarker, the leg is behind it.
+				leg = new L.Polyline([this._latlng, newPos], legOptions);
+				map.addLayer(leg);
+				m._spiderLeg = leg;
+
+				// Now add the marker.
+				m._preSpiderfyLatlng = m._latlng;
+				m.setLatLng(newPos);
+				if (m.setZIndexOffset) {
+					m.setZIndexOffset(1000000); //Make these appear on top of EVERYTHING
+				}
+
+				fg.addLayer(m);
+			}
+			this.setOpacity(0.3);
+
+			group._ignoreMove = false;
+			group.fire('spiderfied', {
+				cluster: this,
+				markers: childMarkers
+			});
+		},
+
+		_animationUnspiderfy: function () {
+			this._noanimationUnspiderfy();
+		}
+	});
+
+	//Animated versions here
+	L.MarkerCluster.include({
+
+		_animationSpiderfy: function (childMarkers, positions) {
+			var me = this,
+				group = this._group,
+				map = group._map,
+				fg = group._featureGroup,
+				thisLayerLatLng = this._latlng,
+				thisLayerPos = map.latLngToLayerPoint(thisLayerLatLng),
+				svg = L.Path.SVG,
+				legOptions = L.extend({}, this._group.options.spiderLegPolylineOptions), // Copy the options so that we can modify them for animation.
+				finalLegOpacity = legOptions.opacity,
+				i, m, leg, legPath, legLength, newPos;
+
+			if (finalLegOpacity === undefined) {
+				finalLegOpacity = L.MarkerClusterGroup.prototype.options.spiderLegPolylineOptions.opacity;
+			}
+
+			if (svg) {
+				// If the initial opacity of the spider leg is not 0 then it appears before the animation starts.
+				legOptions.opacity = 0;
+
+				// Add the class for CSS transitions.
+				legOptions.className = (legOptions.className || '') + ' leaflet-cluster-spider-leg';
+			} else {
+				// Make sure we have a defined opacity.
+				legOptions.opacity = finalLegOpacity;
+			}
+
+			group._ignoreMove = true;
+
+			// Add markers and spider legs to map, hidden at our center point.
+			// Traverse in ascending order to make sure that inner circleMarkers are on top of further legs. Normal markers are re-ordered by newPosition.
+			// The reverse order trick no longer improves performance on modern browsers.
+			for (i = 0; i < childMarkers.length; i++) {
+				m = childMarkers[i];
+
+				newPos = map.layerPointToLatLng(positions[i]);
+
+				// Add the leg before the marker, so that in case the latter is a circleMarker, the leg is behind it.
+				leg = new L.Polyline([thisLayerLatLng, newPos], legOptions);
+				map.addLayer(leg);
+				m._spiderLeg = leg;
+
+				// Explanations: https://jakearchibald.com/2013/animated-line-drawing-svg/
+				// In our case the transition property is declared in the CSS file.
+				if (svg) {
+					legPath = leg._path;
+					legLength = legPath.getTotalLength() + 0.1; // Need a small extra length to avoid remaining dot in Firefox.
+					legPath.style.strokeDasharray = legLength; // Just 1 length is enough, it will be duplicated.
+					legPath.style.strokeDashoffset = legLength;
+				}
+
+				// If it is a marker, add it now and we'll animate it out
+				if (m.setZIndexOffset) {
+					m.setZIndexOffset(1000000); // Make normal markers appear on top of EVERYTHING
+				}
+				if (m.clusterHide) {
+					m.clusterHide();
+				}
+				
+				// Vectors just get immediately added
+				fg.addLayer(m);
+
+				if (m._setPos) {
+					m._setPos(thisLayerPos);
+				}
+			}
+
+			group._forceLayout();
+			group._animationStart();
+
+			// Reveal markers and spider legs.
+			for (i = childMarkers.length - 1; i >= 0; i--) {
+				newPos = map.layerPointToLatLng(positions[i]);
+				m = childMarkers[i];
+
+				//Move marker to new position
+				m._preSpiderfyLatlng = m._latlng;
+				m.setLatLng(newPos);
+				
+				if (m.clusterShow) {
+					m.clusterShow();
+				}
+
+				// Animate leg (animation is actually delegated to CSS transition).
+				if (svg) {
+					leg = m._spiderLeg;
+					legPath = leg._path;
+					legPath.style.strokeDashoffset = 0;
+					//legPath.style.strokeOpacity = finalLegOpacity;
+					leg.setStyle({opacity: finalLegOpacity});
+				}
+			}
+			this.setOpacity(0.3);
+
+			group._ignoreMove = false;
+
+			setTimeout(function () {
+				group._animationEnd();
+				group.fire('spiderfied', {
+					cluster: me,
+					markers: childMarkers
+				});
+			}, 200);
+		},
+
+		_animationUnspiderfy: function (zoomDetails) {
+			var me = this,
+				group = this._group,
+				map = group._map,
+				fg = group._featureGroup,
+				thisLayerPos = zoomDetails ? map._latLngToNewLayerPoint(this._latlng, zoomDetails.zoom, zoomDetails.center) : map.latLngToLayerPoint(this._latlng),
+				childMarkers = this.getAllChildMarkers(null, true),
+				svg = L.Path.SVG,
+				m, i, leg, legPath, legLength, nonAnimatable;
+
+			group._ignoreMove = true;
+			group._animationStart();
+
+			//Make us visible and bring the child markers back in
+			this.setOpacity(1);
+			for (i = childMarkers.length - 1; i >= 0; i--) {
+				m = childMarkers[i];
+
+				//Marker was added to us after we were spiderfied
+				if (!m._preSpiderfyLatlng) {
+					continue;
+				}
+
+				//Close any popup on the marker first, otherwise setting the location of the marker will make the map scroll
+				m.closePopup();
+
+				//Fix up the location to the real one
+				m.setLatLng(m._preSpiderfyLatlng);
+				delete m._preSpiderfyLatlng;
+
+				//Hack override the location to be our center
+				nonAnimatable = true;
+				if (m._setPos) {
+					m._setPos(thisLayerPos);
+					nonAnimatable = false;
+				}
+				if (m.clusterHide) {
+					m.clusterHide();
+					nonAnimatable = false;
+				}
+				if (nonAnimatable) {
+					fg.removeLayer(m);
+				}
+
+				// Animate the spider leg back in (animation is actually delegated to CSS transition).
+				if (svg) {
+					leg = m._spiderLeg;
+					legPath = leg._path;
+					legLength = legPath.getTotalLength() + 0.1;
+					legPath.style.strokeDashoffset = legLength;
+					leg.setStyle({opacity: 0});
+				}
+			}
+
+			group._ignoreMove = false;
+
+			setTimeout(function () {
+				//If we have only <= one child left then that marker will be shown on the map so don't remove it!
+				var stillThereChildCount = 0;
+				for (i = childMarkers.length - 1; i >= 0; i--) {
+					m = childMarkers[i];
+					if (m._spiderLeg) {
+						stillThereChildCount++;
+					}
+				}
+
+
+				for (i = childMarkers.length - 1; i >= 0; i--) {
+					m = childMarkers[i];
+
+					if (!m._spiderLeg) { //Has already been unspiderfied
+						continue;
+					}
+
+					if (m.clusterShow) {
+						m.clusterShow();
+					}
+					if (m.setZIndexOffset) {
+						m.setZIndexOffset(0);
+					}
+
+					if (stillThereChildCount > 1) {
+						fg.removeLayer(m);
+					}
+
+					map.removeLayer(m._spiderLeg);
+					delete m._spiderLeg;
+				}
+				group._animationEnd();
+				group.fire('unspiderfied', {
+					cluster: me,
+					markers: childMarkers
+				});
+			}, 200);
+		}
+	});
+
+
+	L.MarkerClusterGroup.include({
+		//The MarkerCluster currently spiderfied (if any)
+		_spiderfied: null,
+
+		unspiderfy: function () {
+			this._unspiderfy.apply(this, arguments);
+		},
+
+		_spiderfierOnAdd: function () {
+			this._map.on('click', this._unspiderfyWrapper, this);
+
+			if (this._map.options.zoomAnimation) {
+				this._map.on('zoomstart', this._unspiderfyZoomStart, this);
+			}
+			//Browsers without zoomAnimation or a big zoom don't fire zoomstart
+			this._map.on('zoomend', this._noanimationUnspiderfy, this);
+
+			if (!L.Browser.touch) {
+				this._map.getRenderer(this);
+				//Needs to happen in the pageload, not after, or animations don't work in webkit
+				//  http://stackoverflow.com/questions/8455200/svg-animate-with-dynamically-added-elements
+				//Disable on touch browsers as the animation messes up on a touch zoom and isn't very noticable
+			}
+		},
+
+		_spiderfierOnRemove: function () {
+			this._map.off('click', this._unspiderfyWrapper, this);
+			this._map.off('zoomstart', this._unspiderfyZoomStart, this);
+			this._map.off('zoomanim', this._unspiderfyZoomAnim, this);
+			this._map.off('zoomend', this._noanimationUnspiderfy, this);
+
+			//Ensure that markers are back where they should be
+			// Use no animation to avoid a sticky leaflet-cluster-anim class on mapPane
+			this._noanimationUnspiderfy();
+		},
+
+		//On zoom start we add a zoomanim handler so that we are guaranteed to be last (after markers are animated)
+		//This means we can define the animation they do rather than Markers doing an animation to their actual location
+		_unspiderfyZoomStart: function () {
+			if (!this._map) { //May have been removed from the map by a zoomEnd handler
+				return;
+			}
+
+			this._map.on('zoomanim', this._unspiderfyZoomAnim, this);
+		},
+
+		_unspiderfyZoomAnim: function (zoomDetails) {
+			//Wait until the first zoomanim after the user has finished touch-zooming before running the animation
+			if (L.DomUtil.hasClass(this._map._mapPane, 'leaflet-touching')) {
+				return;
+			}
+
+			this._map.off('zoomanim', this._unspiderfyZoomAnim, this);
+			this._unspiderfy(zoomDetails);
+		},
+
+		_unspiderfyWrapper: function () {
+			/// <summary>_unspiderfy but passes no arguments</summary>
+			this._unspiderfy();
+		},
+
+		_unspiderfy: function (zoomDetails) {
+			if (this._spiderfied) {
+				this._spiderfied.unspiderfy(zoomDetails);
+			}
+		},
+
+		_noanimationUnspiderfy: function () {
+			if (this._spiderfied) {
+				this._spiderfied._noanimationUnspiderfy();
+			}
+		},
+
+		//If the given layer is currently being spiderfied then we unspiderfy it so it isn't on the map anymore etc
+		_unspiderfyLayer: function (layer) {
+			if (layer._spiderLeg) {
+				this._featureGroup.removeLayer(layer);
+
+				if (layer.clusterShow) {
+					layer.clusterShow();
+				}
+					//Position will be fixed up immediately in _animationUnspiderfy
+				if (layer.setZIndexOffset) {
+					layer.setZIndexOffset(0);
+				}
+
+				this._map.removeLayer(layer._spiderLeg);
+				delete layer._spiderLeg;
+			}
+		}
+	});
+
+	/**
+	 * Adds 1 public method to MCG and 1 to L.Marker to facilitate changing
+	 * markers' icon options and refreshing their icon and their parent clusters
+	 * accordingly (case where their iconCreateFunction uses data of childMarkers
+	 * to make up the cluster icon).
+	 */
+
+
+	L.MarkerClusterGroup.include({
+		/**
+		 * Updates the icon of all clusters which are parents of the given marker(s).
+		 * In singleMarkerMode, also updates the given marker(s) icon.
+		 * @param layers L.MarkerClusterGroup|L.LayerGroup|Array(L.Marker)|Map(L.Marker)|
+		 * L.MarkerCluster|L.Marker (optional) list of markers (or single marker) whose parent
+		 * clusters need to be updated. If not provided, retrieves all child markers of this.
+		 * @returns {L.MarkerClusterGroup}
+		 */
+		refreshClusters: function (layers) {
+			if (!layers) {
+				layers = this._topClusterLevel.getAllChildMarkers();
+			} else if (layers instanceof L.MarkerClusterGroup) {
+				layers = layers._topClusterLevel.getAllChildMarkers();
+			} else if (layers instanceof L.LayerGroup) {
+				layers = layers._layers;
+			} else if (layers instanceof L.MarkerCluster) {
+				layers = layers.getAllChildMarkers();
+			} else if (layers instanceof L.Marker) {
+				layers = [layers];
+			} // else: must be an Array(L.Marker)|Map(L.Marker)
+			this._flagParentsIconsNeedUpdate(layers);
+			this._refreshClustersIcons();
+
+			// In case of singleMarkerMode, also re-draw the markers.
+			if (this.options.singleMarkerMode) {
+				this._refreshSingleMarkerModeMarkers(layers);
+			}
+
+			return this;
+		},
+
+		/**
+		 * Simply flags all parent clusters of the given markers as having a "dirty" icon.
+		 * @param layers Array(L.Marker)|Map(L.Marker) list of markers.
+		 * @private
+		 */
+		_flagParentsIconsNeedUpdate: function (layers) {
+			var id, parent;
+
+			// Assumes layers is an Array or an Object whose prototype is non-enumerable.
+			for (id in layers) {
+				// Flag parent clusters' icon as "dirty", all the way up.
+				// Dumb process that flags multiple times upper parents, but still
+				// much more efficient than trying to be smart and make short lists,
+				// at least in the case of a hierarchy following a power law:
+				// http://jsperf.com/flag-nodes-in-power-hierarchy/2
+				parent = layers[id].__parent;
+				while (parent) {
+					parent._iconNeedsUpdate = true;
+					parent = parent.__parent;
+				}
+			}
+		},
+
+		/**
+		 * Re-draws the icon of the supplied markers.
+		 * To be used in singleMarkerMode only.
+		 * @param layers Array(L.Marker)|Map(L.Marker) list of markers.
+		 * @private
+		 */
+		_refreshSingleMarkerModeMarkers: function (layers) {
+			var id, layer;
+
+			for (id in layers) {
+				layer = layers[id];
+
+				// Make sure we do not override markers that do not belong to THIS group.
+				if (this.hasLayer(layer)) {
+					// Need to re-create the icon first, then re-draw the marker.
+					layer.setIcon(this._overrideMarkerIcon(layer));
+				}
+			}
+		}
+	});
+
+	L.Marker.include({
+		/**
+		 * Updates the given options in the marker's icon and refreshes the marker.
+		 * @param options map object of icon options.
+		 * @param directlyRefreshClusters boolean (optional) true to trigger
+		 * MCG.refreshClustersOf() right away with this single marker.
+		 * @returns {L.Marker}
+		 */
+		refreshIconOptions: function (options, directlyRefreshClusters) {
+			var icon = this.options.icon;
+
+			L.setOptions(icon, options);
+
+			this.setIcon(icon);
+
+			// Shortcut to refresh the associated MCG clusters right away.
+			// To be used when refreshing a single marker.
+			// Otherwise, better use MCG.refreshClusters() once at the end with
+			// the list of modified markers.
+			if (directlyRefreshClusters && this.__parent) {
+				this.__parent._group.refreshClusters(this);
+			}
+
+			return this;
+		}
+	});
+
+	exports.MarkerClusterGroup = MarkerClusterGroup;
+	exports.MarkerCluster = MarkerCluster;
+
+	Object.defineProperty(exports, '__esModule', { value: true });
+
+}));
+//# sourceMappingURL=leaflet.markercluster-src.js.map
+
+
+/***/ }),
+
 /***/ 466:
 /***/ (function(module) {
 
@@ -27335,6 +30137,162 @@ var update = _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMP
 
 /***/ }),
 
+/***/ 618:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(379);
+/* harmony import */ var _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(795);
+/* harmony import */ var _style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(569);
+/* harmony import */ var _style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(565);
+/* harmony import */ var _style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(216);
+/* harmony import */ var _style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(589);
+/* harmony import */ var _style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _css_loader_dist_cjs_js_MarkerCluster_Default_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(827);
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+var options = {};
+
+options.styleTagTransform = (_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default());
+options.setAttributes = (_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default());
+
+      options.insert = _style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default().bind(null, "head");
+    
+options.domAPI = (_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default());
+options.insertStyleElement = (_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default());
+
+var update = _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_css_loader_dist_cjs_js_MarkerCluster_Default_css__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .Z, options);
+
+
+
+
+       /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_css_loader_dist_cjs_js_MarkerCluster_Default_css__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .Z && _css_loader_dist_cjs_js_MarkerCluster_Default_css__WEBPACK_IMPORTED_MODULE_6__/* ["default"].locals */ .Z.locals ? _css_loader_dist_cjs_js_MarkerCluster_Default_css__WEBPACK_IMPORTED_MODULE_6__/* ["default"].locals */ .Z.locals : undefined);
+
+
+/***/ }),
+
+/***/ 256:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(379);
+/* harmony import */ var _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(795);
+/* harmony import */ var _style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(569);
+/* harmony import */ var _style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(565);
+/* harmony import */ var _style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(216);
+/* harmony import */ var _style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(589);
+/* harmony import */ var _style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _css_loader_dist_cjs_js_MarkerCluster_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(785);
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+var options = {};
+
+options.styleTagTransform = (_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default());
+options.setAttributes = (_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default());
+
+      options.insert = _style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default().bind(null, "head");
+    
+options.domAPI = (_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default());
+options.insertStyleElement = (_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default());
+
+var update = _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_css_loader_dist_cjs_js_MarkerCluster_css__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .Z, options);
+
+
+
+
+       /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_css_loader_dist_cjs_js_MarkerCluster_css__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .Z && _css_loader_dist_cjs_js_MarkerCluster_css__WEBPACK_IMPORTED_MODULE_6__/* ["default"].locals */ .Z.locals ? _css_loader_dist_cjs_js_MarkerCluster_css__WEBPACK_IMPORTED_MODULE_6__/* ["default"].locals */ .Z.locals : undefined);
+
+
+/***/ }),
+
+/***/ 623:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(379);
+/* harmony import */ var _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(795);
+/* harmony import */ var _style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(569);
+/* harmony import */ var _style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(565);
+/* harmony import */ var _style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(216);
+/* harmony import */ var _style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(589);
+/* harmony import */ var _style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _css_loader_dist_cjs_js_leaflet_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(984);
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+var options = {};
+
+options.styleTagTransform = (_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default());
+options.setAttributes = (_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default());
+
+      options.insert = _style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default().bind(null, "head");
+    
+options.domAPI = (_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default());
+options.insertStyleElement = (_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default());
+
+var update = _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_css_loader_dist_cjs_js_leaflet_css__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .Z, options);
+
+
+
+
+       /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_css_loader_dist_cjs_js_leaflet_css__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .Z && _css_loader_dist_cjs_js_leaflet_css__WEBPACK_IMPORTED_MODULE_6__/* ["default"].locals */ .Z.locals ? _css_loader_dist_cjs_js_leaflet_css__WEBPACK_IMPORTED_MODULE_6__/* ["default"].locals */ .Z.locals : undefined);
+
+
+/***/ }),
+
 /***/ 529:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -27701,6 +30659,7 @@ exports.getAsValue = exports.removeClass = exports.addClass = exports.hasClass =
 __exportStar(__webpack_require__(577), exports);
 __exportStar(__webpack_require__(296), exports);
 __exportStar(__webpack_require__(399), exports);
+__exportStar(__webpack_require__(869), exports);
 function drawSvgStringAsElement(svgString) {
     if (svgString && svgString.trim().indexOf("<svg") == 0) {
         //no style passed via config. guess own styles
@@ -27864,33 +30823,515 @@ exports.HTMLTemplatePlugin = HTMLTemplatePlugin;
 
 /***/ }),
 
+/***/ 869:
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+"use strict";
+
+var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
+    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+        if (ar || !(i in from)) {
+            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+            ar[i] = from[i];
+        }
+    }
+    return to.concat(ar || Array.prototype.slice.call(from));
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.MapPlugin = void 0;
+var __1 = __webpack_require__(607);
+var leaflet_1 = __importDefault(__webpack_require__(159));
+var wktParsing_1 = __webpack_require__(862);
+// CSS is required otherwise tiles are messed up
+__webpack_require__(623);
+__webpack_require__(732);
+__webpack_require__(256);
+__webpack_require__(618);
+var markerIcon = leaflet_1.default.icon({
+    iconUrl: __webpack_require__(93),
+    shadowUrl: __webpack_require__(858)
+});
+var MapPlugin = /** @class */ (function () {
+    function MapPlugin(yasr) {
+        this.priority = 5; // priority for sorting the plugins in yasr
+        this.mapEL = null; //HTMLElement of the map
+        this.warnEL = null; //HTMLElement of Warning message if results with no geo coordinates.
+        this.map = null;
+        this.layerGroups = {}; // group all polygons with sparql var name as key
+        this.controlLayers = null; // responsible for filterable layers on the map
+        this.colorsUsed = []; // used to color the polygons
+        this.layers = []; // contains all layers (Marker | Polygon)
+        this.hideFromSelection = false;
+        this.label = 'Map';
+        this.haveResultWithoutGeo = 0;
+        this.sparnaturalQuery = null;
+        this.yasr = yasr;
+        // merge options when set by client
+        if (MapPlugin.defaults.markerOptions)
+            leaflet_1.default.Marker.mergeOptions(MapPlugin.defaults.markerOptions);
+        if (MapPlugin.defaults.polylineOptions)
+            leaflet_1.default.Marker.mergeOptions(MapPlugin.defaults.polylineOptions);
+        this.config = MapPlugin.defaults;
+        this.markerCluster = leaflet_1.default.markerClusterGroup();
+        this.controlLayers = leaflet_1.default.control.layers();
+        /*this.yasr?.rootEl.addEventListener("sparnaturalQueryChange", (e) => {
+            this.initDrawSearchAreas() ;
+        });*/
+    }
+    // Map plugin can handle results in the form of geosparql wktLiterals
+    // http://schemas.opengis.net/geosparql/1.0/geosparql_vocab_all.rdf#wktLiteral
+    MapPlugin.prototype.canHandleResults = function () {
+        var _this = this;
+        var rows = this.getRows();
+        var have_geo = false;
+        this.haveResultWithoutGeo = 0;
+        if (rows && rows.length > 0) {
+            rows.some(function (row) {
+                if (_this.getGeosparqlValue(row)) {
+                    have_geo = true;
+                }
+                else {
+                    _this.haveResultWithoutGeo++;
+                }
+            });
+        }
+        return have_geo;
+    };
+    // this method checks if there is a geosparql value in a cell for a given row
+    MapPlugin.prototype.getGeosparqlValue = function (row) {
+        var _this = this;
+        var geoLiterals = [];
+        row.forEach(function (cell, index) {
+            if (_this.isBindingValue(cell)) {
+                if (_this.config.geoDataType.includes(cell.datatype)) {
+                    // cell contains a geoliteral
+                    geoLiterals.push({ cellValue: cell, colIndex: index - 1 });
+                }
+            }
+            return false;
+        });
+        if (geoLiterals.length > 0)
+            return geoLiterals;
+        return null;
+    };
+    MapPlugin.prototype.draw = function (persistentConfig, runtimeConfig) {
+        var _this = this;
+        var _a, _b;
+        var rows = this.getRows();
+        //if the resultset changed, then cleanup and rerender
+        this.cleanUp();
+        this.createMap();
+        var drawables = rows.flatMap(function (row) {
+            var geoCells = _this.parseGeoLiteral(row, _this.config.parsingFunction);
+            // features are in this case either GeoJson Point or Polygons
+            if (geoCells.length === 0)
+                return;
+            return geoCells.map(function (c) {
+                var _a, _b;
+                var popUpString = _this.createPopUpString(row);
+                if (((_a = c.parsedLit) === null || _a === void 0 ? void 0 : _a.type) === "Point")
+                    _this.drawMarker(c.parsedLit, c.colIndex, popUpString);
+                if (((_b = c.parsedLit) === null || _b === void 0 ? void 0 : _b.type) === "Polygon")
+                    _this.drawPoly(c.parsedLit, c.colIndex, popUpString);
+            });
+        });
+        // If the markers are clustered then draw the cluster now
+        if (!this.map)
+            throw Error("Couldn't find map element");
+        // add all the layers created in addControlLayer
+        for (var _i = 0, _c = Object.entries(this.layerGroups); _i < _c.length; _i++) {
+            var _d = _c[_i], k = _d[0], v = _d[1];
+            (_a = this.controlLayers) === null || _a === void 0 ? void 0 : _a.addOverlay(v, k);
+        }
+        (_b = this.controlLayers) === null || _b === void 0 ? void 0 : _b.addTo(this.map);
+        // add cluster of markers
+        this.markerCluster.addTo(this.map);
+        // when a popup gets rendered then attach listener
+        this.map.on('popupopen', function (e) {
+            var el = e.popup.getElement();
+            if (!el)
+                return;
+            _this.addIriClickListener(el);
+        });
+        this.initDrawSearchAreas();
+        this.map.fitBounds(this.bounds);
+    };
+    MapPlugin.prototype.calcBounds = function (coordinates) {
+        if (this.bounds) {
+            this.bounds.extend(coordinates);
+        }
+        else {
+            this.bounds = leaflet_1.default.latLngBounds(coordinates); // Instantiate LatLngBounds object
+        }
+    };
+    MapPlugin.prototype.notifyQuery = function (sparnaturalQuery) {
+        console.log("received query on map");
+        console.log(sparnaturalQuery);
+        this.sparnaturalQuery = sparnaturalQuery;
+        /*const eventChange = new Event("sparnaturalQueryChange");
+        this.yasr?.rootEl.dispatchEvent(eventChange);*/
+    };
+    MapPlugin.prototype.notifyConfiguration = function (specProvider) {
+        console.log("received specification provider from Sparnatural");
+        console.log(specProvider);
+    };
+    MapPlugin.prototype.searchCoordinatesOnQuery = function (data) {
+        var result = [];
+        var iterate = function (obj) {
+            if (!obj) {
+                console.log(obj);
+                return;
+            }
+            Object.keys(obj).forEach(function (key) {
+                var value = obj[key];
+                if (typeof value === "object" && value !== null) {
+                    iterate(value);
+                    if (value.coordinates) {
+                        result.push(value);
+                    }
+                }
+            });
+        };
+        iterate(data);
+        return result;
+    };
+    MapPlugin.prototype.initDrawSearchAreas = function () {
+        if ((this.map == null) || (this.sparnaturalQuery == null)) {
+            return false;
+        }
+        else {
+            var searchareas = this.searchCoordinatesOnQuery(this.sparnaturalQuery);
+            var arrayPolygones = [];
+            for (var i = 0; i < searchareas.length; i++) {
+                var coordonnees = searchareas[i].coordinates[0];
+                var latlongs = [];
+                for (var ic = 0; ic < coordonnees.length; ic++) {
+                    var latLon = [coordonnees[ic].lat, coordonnees[ic].lng];
+                    latlongs.push(latLon);
+                }
+                arrayPolygones.push(latlongs);
+            }
+            this.drawSearchAreas(arrayPolygones);
+        }
+    };
+    MapPlugin.prototype.drawSearchAreas = function (searchareas) {
+        if ((this.map == null) || (this.sparnaturalQuery == null)) {
+            return false;
+        }
+        for (var i = 0; i < searchareas.length; i++) {
+            this.drawSearchPoly(searchareas[i]);
+        }
+    };
+    MapPlugin.prototype.drawSearchPoly = function (feature) {
+        if (!this.map)
+            throw Error("Wanted to draw Polygon but no map found");
+        // configuration of Polygon see: https://leafletjs.com/reference.html#polygon
+        var searchedPolygon = {};
+        var polyOptions = [];
+        polyOptions = this.config.searchedPolygon;
+        var poly = new leaflet_1.default.Polygon(feature, polyOptions);
+        this.layerGroups['searchPoly'] ? this.layerGroups['searchPoly'].addLayer(poly) : this.layerGroups['searchPoly'] = leaflet_1.default.layerGroup([poly]);
+        poly.addTo(this.map);
+        this.calcBounds(feature);
+    };
+    MapPlugin.prototype.drawMarker = function (feature, colIndex, popUpString) {
+        var latLng = new leaflet_1.default.LatLng(feature.coordinates[1], feature.coordinates[0]);
+        if (!this.map)
+            throw Error("Wanted to draw Marker but no map found");
+        var markerOptions = {
+            icon: markerIcon
+        };
+        if (this.config.markerOptions)
+            markerOptions = this.config.markerOptions;
+        var marker = new leaflet_1.default.Marker(latLng, markerOptions).bindPopup(popUpString);
+        this.addToLayerList(marker);
+        //if clustering is activated, then don't draw the marker but gather it in the cluster
+        this.markerCluster.addLayer(marker);
+        this.calcBounds(latLng);
+    };
+    MapPlugin.prototype.drawPoly = function (feature, colIndex, popUpString) {
+        console.log('el');
+        if (!this.map)
+            throw Error("Wanted to draw Polygon but no map found");
+        // configuration of Polygon see: https://leafletjs.com/reference.html#polygon
+        var polyOptions = {};
+        if (this.config.polylineOptions)
+            polyOptions = this.config.polylineOptions;
+        if (this.colorsUsed.includes(colIndex)) {
+            polyOptions['color'] = this.config.polygonColors[this.colorsUsed.indexOf(colIndex)];
+        }
+        else {
+            this.colorsUsed.push(colIndex);
+            polyOptions['color'] = this.config.polygonColors[this.colorsUsed.indexOf(colIndex)];
+        }
+        //polyOptions['color'] = 'red';
+        polyOptions['fill'] = true; // no color filled in polygon
+        polyOptions['opacity'] = 0.4; // stroke opacity
+        // add controll layers for columns
+        feature.coordinates[0].map(function (item) {
+            item.reverse();
+        });
+        var poly = new leaflet_1.default.Polygon(feature.coordinates, polyOptions).bindPopup(popUpString);
+        this.addToLayerList(poly);
+        this.addToLayerGroup(colIndex, poly);
+        poly.addTo(this.map);
+        this.calcBounds(feature.coordinates[0]);
+    };
+    MapPlugin.prototype.addIriClickListener = function (el) {
+        var iriElements = el.getElementsByClassName('iri');
+        var _loop_1 = function (i) {
+            var el_1 = iriElements[i];
+            el_1.addEventListener('click', function () {
+                el_1.dispatchEvent(new CustomEvent('YasrIriClick', { bubbles: true, detail: el_1.text }));
+            });
+        };
+        for (var i = 0; i < iriElements.length; i++) {
+            _loop_1(i);
+        }
+    };
+    // Add the drawable to a control layer
+    MapPlugin.prototype.addToLayerGroup = function (colIndex, feature) {
+        var cols = this.getVariables();
+        if (cols) {
+            var vName = cols[colIndex];
+            this.layerGroups[vName] ? this.layerGroups[vName].addLayer(feature) : this.layerGroups[vName] = leaflet_1.default.layerGroup([feature]);
+        }
+    };
+    MapPlugin.prototype.createPopUpString = function (row) {
+        var _this = this;
+        var popUp = {};
+        var columns = this.getVariables();
+        row.forEach(function (cell, i) {
+            // uncomment to get the row number in the popup
+            // if(i === 0) popUp['row number'] = cell as number
+            if (_this.isBindingValue(cell)
+                &&
+                    !_this.config.geoDataType.includes(cell.datatype)
+                &&
+                    columns) {
+                // store the whole cell in the popup
+                popUp[columns[i - 1]] = cell;
+            }
+        });
+        var contentString = "";
+        for (var _i = 0, _a = Object.entries(popUp); _i < _a.length; _i++) {
+            var _b = _a[_i], k = _b[0], cell = _b[1];
+            var currentString = "<strong>".concat(k, "</strong>:&nbsp;");
+            if (cell.type === "uri") {
+                currentString += " <a class='iri' style=\"cursor: pointer; color:blue;\" href=\"".concat(cell.value, "\" target=\"_blank\">").concat(cell.value, "</a>");
+            }
+            else {
+                currentString += "".concat(cell.value);
+            }
+            currentString += "<br />";
+            contentString += currentString;
+        }
+        return contentString;
+    };
+    MapPlugin.prototype.createMap = function () {
+        // Create the map HTMLElement
+        var _this = this;
+        // Append map to YASR result HTMLElement and init
+        var parentEl = document.getElementById('resultsId1');
+        if (!parentEl)
+            throw Error("Couldn't find parent element of Yasr. No element found with Id: resultsId1");
+        if (this.haveResultWithoutGeo > 0) {
+            this.warnEL = document.createElement('div');
+            this.warnEL.setAttribute('id', 'yasrmap-warnEL');
+            this.warnEL.setAttribute('class', 'alert alert-warning');
+            this.warnEL.innerText = 'Attention, des résultats (' + this.haveResultWithoutGeo + ') n\'ont pas de coordonnées pour être représentés sur la carte';
+            parentEl.appendChild(this.warnEL);
+        }
+        // Create the map HTMLElement
+        this.mapEL = document.createElement('div');
+        this.mapEL.setAttribute('id', 'yasrmap');
+        this.mapEL.style.height = this.config.mapSize.height;
+        this.mapEL.style.width = this.config.mapSize.width;
+        if (!parentEl)
+            throw Error("Couldn't find parent element of Yasr. No element found with Id: resultsId1");
+        parentEl.appendChild(this.mapEL);
+        this.map = leaflet_1.default.map('yasrmap').setView(this.config.setView.center, this.config.setView.zoom, this.config.setView.options);
+        this.map.options.maxZoom = 19; // see: https://github.com/Leaflet/Leaflet.markercluster/issues/611
+        // For each provided baseLayer create a tileLayer and add it to control
+        this.config.baseLayers.map(function (l, index) {
+            var _a, _b;
+            var name = 'No attribution name provided';
+            if ((_a = l.options) === null || _a === void 0 ? void 0 : _a.attribution)
+                name = l.options.attribution;
+            var layer = leaflet_1.default.tileLayer(l.urlTemplate, l.options);
+            if (index === 0 && _this.map)
+                layer.addTo(_this.map); // set first base layer as active
+            (_b = _this.controlLayers) === null || _b === void 0 ? void 0 : _b.addBaseLayer(layer, name);
+        });
+    };
+    MapPlugin.prototype.getIcon = function () {
+        return (0, __1.drawSvgStringAsElement)("<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 576 512\"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d=\"M408 120C408 174.6 334.9 271.9 302.8 311.1C295.1 321.6 280.9 321.6 273.2 311.1C241.1 271.9 168 174.6 168 120C168 53.73 221.7 0 288 0C354.3 0 408 53.73 408 120zM288 152C310.1 152 328 134.1 328 112C328 89.91 310.1 72 288 72C265.9 72 248 89.91 248 112C248 134.1 265.9 152 288 152zM425.6 179.8C426.1 178.6 426.6 177.4 427.1 176.1L543.1 129.7C558.9 123.4 576 135 576 152V422.8C576 432.6 570 441.4 560.9 445.1L416 503V200.4C419.5 193.5 422.7 186.7 425.6 179.8zM150.4 179.8C153.3 186.7 156.5 193.5 160 200.4V451.8L32.91 502.7C17.15 508.1 0 497.4 0 480.4V209.6C0 199.8 5.975 190.1 15.09 187.3L137.6 138.3C140 152.5 144.9 166.6 150.4 179.8H150.4zM327.8 331.1C341.7 314.6 363.5 286.3 384 255V504.3L192 449.4V255C212.5 286.3 234.3 314.6 248.2 331.1C268.7 357.6 307.3 357.6 327.8 331.1L327.8 331.1z\"/></svg>");
+    };
+    // cb: parsing function which takes a string and translates it to a geoJSON geometry
+    MapPlugin.prototype.parseGeoLiteral = function (row, cb) {
+        var literals = this.getGeosparqlValue(row);
+        if (!literals)
+            return [];
+        return literals.map(function (lit) {
+            lit.parsedLit = cb(lit.cellValue.value); // let callback do the parsing
+            return lit;
+        });
+    };
+    MapPlugin.prototype.getRows = function () {
+        if (!this.yasr.results)
+            return [];
+        var bindings = this.yasr.results.getBindings();
+        if (!bindings)
+            return [];
+        // Vars decide the columns
+        var vars = this.yasr.results.getVariables();
+        // Use "" as the empty value, undefined will throw runtime errors
+        return bindings.map(function (binding, rowId) { return __spreadArray([rowId + 1], vars.map(function (variable) { var _a; return (_a = binding[variable]) !== null && _a !== void 0 ? _a : ""; }), true); });
+    };
+    MapPlugin.prototype.getVariables = function () {
+        var _a;
+        return (_a = this.yasr.results) === null || _a === void 0 ? void 0 : _a.getVariables();
+    };
+    // remove the already rendered map so we can rerender it
+    MapPlugin.prototype.cleanUp = function () {
+        var _a, _b;
+        (_a = this.mapEL) === null || _a === void 0 ? void 0 : _a.remove();
+        (_b = this.warnEL) === null || _b === void 0 ? void 0 : _b.remove();
+        this.layerGroups = {};
+        this.markerCluster = leaflet_1.default.markerClusterGroup();
+        this.controlLayers = leaflet_1.default.control.layers();
+        this.colorsUsed = [];
+        this.bounds = false;
+    };
+    MapPlugin.prototype.addToLayerList = function (g) {
+        this.layers.push(g);
+    };
+    // see: https://www.typescriptlang.org/docs/handbook/advanced-types.html#user-defined-type-guards
+    MapPlugin.prototype.isBindingValue = function (cell) {
+        if (cell === '')
+            return false;
+        if (typeof cell === 'number')
+            return false;
+        return ('value' in cell && (('type' in cell) || ('datatype' in cell)));
+    };
+    // define the default config for leaflet
+    MapPlugin.defaults = {
+        baseLayers: [{
+                urlTemplate: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                options: {
+                    maxZoom: 19,
+                    attribution: "© OpenStreetMap"
+                }
+            }],
+        geoDataType: ['http://www.opengis.net/ont/geosparql#wktLiteral', 'http://www.openlinksw.com/schemas/virtrdf#Geometry'],
+        polylineOptions: null,
+        markerOptions: null,
+        polygonDefaultColor: 'blue',
+        polygonColors: [
+            'black',
+            'green',
+            'orange',
+            'blue',
+            'purple',
+            'red',
+        ],
+        searchedPolygon: {
+            fillColor: 'transparent',
+            weight: 2,
+            opacity: 1,
+            color: 'gray',
+            dashArray: '10',
+            fillOpacity: 0
+        },
+        mapSize: {
+            width: 'auto',
+            height: '550px',
+        },
+        setView: {
+            center: [46.20222, 6.14569],
+            zoom: 11,
+            options: undefined
+        },
+        parsingFunction: wktParsing_1.wktToGeoJson
+    };
+    return MapPlugin;
+}());
+exports.MapPlugin = MapPlugin;
+
+
+/***/ }),
+
+/***/ 862:
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.wktToGeoJson = void 0;
+var Wkt = __webpack_require__(405);
+/*
+    Callback function for the MapPlugin.
+    Uses wicket to parse WktLiterals to GeoJson and leaflet objects
+*/
+var wktToGeoJson = function (literal) {
+    // split on whitespaces and filter out multiple subsequent whitespaces
+    var stringParts = literal.split(' ').filter(function (subStr) { return subStr !== " "; });
+    // look for either Point or Polygon string
+    var featureType = stringParts.find(function (string) {
+        return string.includes('Polygon') || string.includes('POLYLINE') || string.includes('POINT') || string.includes('Point') || string.includes('Polyline') || string.includes('POLYGON');
+    });
+    if (!featureType)
+        throw Error("The parsing function couldn't find substring \"Polygon\" or \"Point\" in wktLiteral: ".concat(literal));
+    var ind = stringParts.findIndex(function (prt) { return prt.includes(featureType); });
+    var wkt = stringParts.slice(ind, stringParts.length).join(' ');
+    var wktObj = new Wkt.Wkt();
+    wktObj.read(wkt);
+    //wktObj.toObject();
+    return wktObj.toJson();
+};
+exports.wktToGeoJson = wktToGeoJson;
+
+
+/***/ }),
+
 /***/ 577:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.MyTable = void 0;
-var MyTable = /** @class */ (function () {
-    function MyTable(yasr) {
+exports.MyTestPlugin = void 0;
+var MyTestPlugin = /** @class */ (function () {
+    function MyTestPlugin(yasr) {
         this.priority = 10;
         this.yasr = yasr;
     }
-    MyTable.prototype.getIcon = function () {
+    MyTestPlugin.prototype.getIcon = function () {
         var svgContainer = document.createElement("div");
         svgContainer.className = "svgImg";
         // svgContainer.appendChild(svg);
         return svgContainer;
     };
-    MyTable.prototype.draw = function (persistentConfig) {
+    MyTestPlugin.prototype.draw = function (persistentConfig) {
         console.log("Plugin drawing !");
     };
-    MyTable.prototype.canHandleResults = function () {
+    MyTestPlugin.prototype.canHandleResults = function () {
         return !!this.yasr.results && this.yasr.results.getVariables() && this.yasr.results.getVariables().length > 0;
     };
-    return MyTable;
+    MyTestPlugin.prototype.notifyQuery = function (sparnaturalQuery) {
+        console.log("received query");
+        console.log(sparnaturalQuery);
+    };
+    MyTestPlugin.prototype.notifyConfiguration = function (specProvider) {
+        console.log("received specification provider from Sparnatural");
+        console.log(specProvider);
+    };
+    return MyTestPlugin;
 }());
-exports.MyTable = MyTable;
+exports.MyTestPlugin = MyTestPlugin;
 
 
 /***/ }),
@@ -27990,7 +31431,8 @@ var TableXResults = /** @class */ (function () {
         var newBinding = {};
         for (var key in bindingSet) {
             // if we find the same key woth _label in the binding set
-            if (key + "_label" in bindingSet) {
+            // if(key+"_label" in bindingSet) {
+            if (bindingSet[key + "_label"] != undefined) {
                 // then recreate a special binding in the binding set with the URI and the label
                 var label = bindingSet[key + "_label"].value;
                 newBinding[key] = {
@@ -28430,6 +31872,899 @@ exports.TableX = TableX;
 
 /***/ }),
 
+/***/ 405:
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_RESULT__;/** @license
+ *
+ *  Copyright (C) 2012 K. Arthur Endsley (kaendsle@mtu.edu)
+ *  Michigan Tech Research Institute (MTRI)
+ *  3600 Green Court, Suite 100, Ann Arbor, MI, 48105
+ *
+ *  This program is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ */
+
+(function (root, factory) {
+
+    if (true) {
+        // AMD (+ global for extensions)
+        !(__WEBPACK_AMD_DEFINE_RESULT__ = (function () {
+            return factory();
+        }).call(exports, __webpack_require__, exports, module),
+		__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+    } else {}
+}(this, function () {
+
+
+    var beginsWith, endsWith, root, Wkt;
+
+    // Establish the root object, window in the browser, or exports on the server
+    root = this;
+
+    /**
+     * @desc The Wkt namespace.
+     * @property    {String}    delimiter   - The default delimiter for separating components of atomic geometry (coordinates)
+     * @namespace
+     * @global
+     */
+    Wkt = function (obj) {
+        if (obj instanceof Wkt) return obj;
+        if (!(this instanceof Wkt)) return new Wkt(obj);
+        this._wrapped = obj;
+    };
+
+
+
+    /**
+     * Returns true if the substring is found at the beginning of the string.
+     * @param   str {String}    The String to search
+     * @param   sub {String}    The substring of interest
+     * @return      {Boolean}
+     * @private
+     */
+    beginsWith = function (str, sub) {
+        return str.substring(0, sub.length) === sub;
+    };
+
+    /**
+     * Returns true if the substring is found at the end of the string.
+     * @param   str {String}    The String to search
+     * @param   sub {String}    The substring of interest
+     * @return      {Boolean}
+     * @private
+     */
+    endsWith = function (str, sub) {
+        return str.substring(str.length - sub.length) === sub;
+    };
+
+    /**
+     * The default delimiter for separating components of atomic geometry (coordinates)
+     * @ignore
+     */
+    Wkt.delimiter = ' ';
+
+    /**
+     * Determines whether or not the passed Object is an Array.
+     * @param   obj {Object}    The Object in question
+     * @return      {Boolean}
+     * @member Wkt.isArray
+     * @method
+     */
+    Wkt.isArray = function (obj) {
+        return !!(obj && obj.constructor === Array);
+    };
+
+    /**
+     * Removes given character String(s) from a String.
+     * @param   str {String}    The String to search
+     * @param   sub {String}    The String character(s) to trim
+     * @return      {String}    The trimmed string
+     * @member Wkt.trim
+     * @method
+     */
+    Wkt.trim = function (str, sub) {
+        sub = sub || ' '; // Defaults to trimming spaces
+        // Trim beginning spaces
+        while (beginsWith(str, sub)) {
+            str = str.substring(1);
+        }
+        // Trim ending spaces
+        while (endsWith(str, sub)) {
+            str = str.substring(0, str.length - 1);
+        }
+        return str;
+    };
+
+    /**
+     * An object for reading WKT strings and writing geographic features
+     * @constructor this.Wkt.Wkt
+     * @param   initializer {String}    An optional WKT string for immediate read
+     * @property            {Array}     components      - Holder for atomic geometry objects (internal representation of geometric components)
+     * @property            {String}    delimiter       - The default delimiter for separating components of atomic geometry (coordinates)
+     * @property            {Object}    regExes         - Some regular expressions copied from OpenLayers.Format.WKT.js
+     * @property            {String}    type            - The Well-Known Text name (e.g. 'point') of the geometry
+     * @property            {Boolean}   wrapVerticies   - True to wrap vertices in MULTIPOINT geometries; If true: MULTIPOINT((30 10),(10 30),(40 40)); If false: MULTIPOINT(30 10,10 30,40 40)
+     * @return              {this.Wkt.Wkt}
+     * @memberof Wkt
+     */
+    Wkt.Wkt = function (initializer) {
+
+        /**
+         * The default delimiter between X and Y coordinates.
+         * @ignore
+         */
+        this.delimiter = Wkt.delimiter || ' ';
+
+        /**
+         * Configuration parameter for controlling how Wicket seralizes
+         * MULTIPOINT strings. Examples; both are valid WKT:
+         * If true: MULTIPOINT((30 10),(10 30),(40 40))
+         * If false: MULTIPOINT(30 10,10 30,40 40)
+         * @ignore
+         */
+        this.wrapVertices = true;
+
+        /**
+         * Some regular expressions copied from OpenLayers.Format.WKT.js
+         * @ignore
+         */
+        this.regExes = {
+            'typeStr': /^\s*(\w+)\s*\(\s*(.*)\s*\)\s*$/,
+            'spaces': /\s+|\+/, // Matches the '+' or the empty space
+            'numeric': /-*\d+(\.*\d+)?/,
+            'comma': /\s*,\s*/,
+            'parenComma': /\)\s*,\s*\(/,
+            'coord': /-*\d+\.*\d+ -*\d+\.*\d+/, // e.g. "24 -14"
+            'doubleParenComma': /\)\s*\)\s*,\s*\(\s*\(/,
+            'ogcTypes': /^(multi)?(point|line|polygon|box)?(string)?$/i, // Captures e.g. "Multi","Line","String"
+            'crudeJson': /^{.*"(type|coordinates|geometries|features)":.*}$/ // Attempts to recognize JSON strings
+        };
+
+        /**
+         * Strip any whitespace and parens from front and back.
+         * This is the equivalent of s/^\s*\(?(.*)\)?\s*$/$1/ but without the risk of catastrophic backtracking.
+         * @param   str {String}
+         */
+        this._stripWhitespaceAndParens = function (fullStr) {
+            var trimmed = fullStr.trim();
+            var noParens = trimmed.replace(/^\(?(.*?)\)?$/, '$1');
+            return noParens;
+        };
+
+        /**
+         * The internal representation of geometry--the "components" of geometry.
+         * @ignore
+         */
+        this.components = undefined;
+
+        // An initial WKT string may be provided
+        if (initializer && typeof initializer === 'string') {
+            this.read(initializer);
+        } else if (initializer && typeof initializer !== undefined) {
+            this.fromObject(initializer);
+        }
+
+    };
+
+
+
+    /**
+     * Returns true if the internal geometry is a collection of geometries.
+     * @return  {Boolean}   Returns true when it is a collection
+     * @memberof this.Wkt.Wkt
+     * @method
+     */
+    Wkt.Wkt.prototype.isCollection = function () {
+        switch (this.type.slice(0, 5)) {
+            case 'multi':
+                // Trivial; any multi-geometry is a collection
+                return true;
+            case 'polyg':
+                // Polygons with holes are "collections" of rings
+                return true;
+            default:
+                // Any other geometry is not a collection
+                return false;
+        }
+    };
+
+    /**
+     * Compares two x,y coordinates for equality.
+     * @param   a   {Object}    An object with x and y properties
+     * @param   b   {Object}    An object with x and y properties
+     * @return      {Boolean}
+     * @memberof this.Wkt.Wkt
+     * @method
+     */
+    Wkt.Wkt.prototype.sameCoords = function (a, b) {
+        return (a.x === b.x && a.y === b.y);
+    };
+
+    /**
+     * Sets internal geometry (components) from framework geometry (e.g.
+     * Google Polygon objects or google.maps.Polygon).
+     * @param   obj {Object}    The framework-dependent geometry representation
+     * @return      {this.Wkt.Wkt}   The object itself
+     * @memberof this.Wkt.Wkt
+     * @method
+     */
+    Wkt.Wkt.prototype.fromObject = function (obj) {
+        var result;
+
+        if (obj.hasOwnProperty('type') && obj.hasOwnProperty('coordinates')) {
+            result = this.fromJson(obj);
+        } else {
+            result = this.deconstruct.call(this, obj);
+        }
+
+        this.components = result.components;
+        this.isRectangle = result.isRectangle || false;
+        this.type = result.type;
+        return this;
+    };
+
+    /**
+     * Creates external geometry objects based on a plug-in framework's
+     * construction methods and available geometry classes.
+     * @param   config  {Object}    An optional framework-dependent properties specification
+     * @return          {Object}    The framework-dependent geometry representation
+     * @memberof this.Wkt.Wkt
+     * @method
+     */
+    Wkt.Wkt.prototype.toObject = function (config) {
+        var obj = this.construct[this.type].call(this, config);
+        // Don't assign the "properties" property to an Array
+        if (typeof obj === 'object' && !Wkt.isArray(obj)) {
+            obj.properties = this.properties;
+        }
+        return obj;
+    };
+
+    /**
+     * Returns the WKT string representation; the same as the write() method.
+     * @memberof this.Wkt.Wkt
+     * @method
+     */
+    Wkt.Wkt.prototype.toString = function (config) {
+        return this.write();
+    };
+
+    /**
+     * Parses a JSON representation as an Object.
+     * @param	obj	{Object}	An Object with the GeoJSON schema
+     * @return	{this.Wkt.Wkt}	The object itself
+     * @memberof this.Wkt.Wkt
+     * @method
+     */
+    Wkt.Wkt.prototype.fromJson = function (obj) {
+        var i, j, k, coords, iring, oring;
+
+        this.type = obj.type.toLowerCase();
+        this.components = [];
+        if (obj.hasOwnProperty('geometry')) { //Feature
+            this.fromJson(obj.geometry);
+            this.properties = obj.properties;
+            return this;
+        }
+        coords = obj.coordinates;
+
+        if (!Wkt.isArray(coords[0])) { // Point
+            this.components.push({
+                x: coords[0],
+                y: coords[1]
+            });
+
+        } else {
+
+            for (i in coords) {
+                if (coords.hasOwnProperty(i)) {
+
+                    if (!Wkt.isArray(coords[i][0])) { // LineString
+
+                        if (this.type === 'multipoint') { // MultiPoint
+                            this.components.push([{
+                                x: coords[i][0],
+                                y: coords[i][1]
+                            }]);
+
+                        } else {
+                            this.components.push({
+                                x: coords[i][0],
+                                y: coords[i][1]
+                            });
+
+                        }
+
+                    } else {
+
+                        oring = [];
+                        for (j in coords[i]) {
+                            if (coords[i].hasOwnProperty(j)) {
+
+                                if (!Wkt.isArray(coords[i][j][0])) {
+                                    oring.push({
+                                        x: coords[i][j][0],
+                                        y: coords[i][j][1]
+                                    });
+
+                                } else {
+
+                                    iring = [];
+                                    for (k in coords[i][j]) {
+                                        if (coords[i][j].hasOwnProperty(k)) {
+
+                                            iring.push({
+                                                x: coords[i][j][k][0],
+                                                y: coords[i][j][k][1]
+                                            });
+
+                                        }
+                                    }
+
+                                    oring.push(iring);
+
+                                }
+
+                            }
+                        }
+
+                        this.components.push(oring);
+                    }
+                }
+            }
+
+        }
+
+        return this;
+    };
+
+    /**
+     * Creates a JSON representation, with the GeoJSON schema, of the geometry.
+     * @return    {Object}    The corresponding GeoJSON representation
+     * @memberof this.Wkt.Wkt
+     * @method
+     */
+    Wkt.Wkt.prototype.toJson = function () {
+        var cs, json, i, j, k, ring, rings;
+
+        cs = this.components;
+        json = {
+            coordinates: [],
+            type: (function () {
+                var i, type, s;
+
+                type = this.regExes.ogcTypes.exec(this.type).slice(1);
+                s = [];
+
+                for (i in type) {
+                    if (type.hasOwnProperty(i)) {
+                        if (type[i] !== undefined) {
+                            s.push(type[i].toLowerCase().slice(0, 1).toUpperCase() + type[i].toLowerCase().slice(1));
+                        }
+                    }
+                }
+
+                return s;
+            }.call(this)).join('')
+        }
+
+        // Wkt BOX type gets a special bbox property in GeoJSON
+        if (this.type.toLowerCase() === 'box') {
+            json.type = 'Polygon';
+            json.bbox = [];
+
+            for (i in cs) {
+                if (cs.hasOwnProperty(i)) {
+                    json.bbox = json.bbox.concat([cs[i].x, cs[i].y]);
+                }
+            }
+
+            json.coordinates = [
+                [
+                    [cs[0].x, cs[0].y],
+                    [cs[0].x, cs[1].y],
+                    [cs[1].x, cs[1].y],
+                    [cs[1].x, cs[0].y],
+                    [cs[0].x, cs[0].y]
+                ]
+            ];
+
+            return json;
+        }
+
+        // For the coordinates of most simple features
+        for (i in cs) {
+            if (cs.hasOwnProperty(i)) {
+
+                // For those nested structures
+                if (Wkt.isArray(cs[i])) {
+                    rings = [];
+
+                    for (j in cs[i]) {
+                        if (cs[i].hasOwnProperty(j)) {
+
+                            if (Wkt.isArray(cs[i][j])) { // MULTIPOLYGONS
+                                ring = [];
+
+                                for (k in cs[i][j]) {
+                                    if (cs[i][j].hasOwnProperty(k)) {
+                                        ring.push([cs[i][j][k].x, cs[i][j][k].y]);
+                                    }
+                                }
+
+                                rings.push(ring);
+
+                            } else { // POLYGONS and MULTILINESTRINGS
+
+                                if (cs[i].length > 1) {
+                                    rings.push([cs[i][j].x, cs[i][j].y]);
+
+                                } else { // MULTIPOINTS
+                                    rings = rings.concat([cs[i][j].x, cs[i][j].y]);
+                                }
+                            }
+                        }
+                    }
+
+                    json.coordinates.push(rings);
+
+                } else {
+                    if (cs.length > 1) { // For LINESTRING type
+                        json.coordinates.push([cs[i].x, cs[i].y]);
+
+                    } else { // For POINT type
+                        json.coordinates = json.coordinates.concat([cs[i].x, cs[i].y]);
+                    }
+                }
+
+            }
+        }
+
+        return json;
+    };
+
+    /**
+     * Absorbs the geometry of another this.Wkt.Wkt instance, merging it with its own,
+     * creating a collection (MULTI-geometry) based on their types, which must agree.
+     * For example, creates a MULTIPOLYGON from a POLYGON type merged with another
+     * POLYGON type, or adds a POLYGON instance to a MULTIPOLYGON instance.
+     * @param   wkt {String}    A Wkt.Wkt object
+     * @return	{this.Wkt.Wkt}	The object itself
+     * @memberof this.Wkt.Wkt
+     * @method
+     */
+    Wkt.Wkt.prototype.merge = function (wkt) {
+        var prefix = this.type.slice(0, 5);
+
+        if (this.type !== wkt.type) {
+            if (this.type.slice(5, this.type.length) !== wkt.type) {
+                throw TypeError('The input geometry types must agree or the calling this.Wkt.Wkt instance must be a multigeometry of the other');
+            }
+        }
+
+        switch (prefix) {
+
+            case 'point':
+                this.components = [this.components.concat(wkt.components)];
+                break;
+
+            case 'multi':
+                this.components = this.components.concat((wkt.type.slice(0, 5) === 'multi') ? wkt.components : [wkt.components]);
+                break;
+
+            default:
+                this.components = [
+                    this.components,
+                    wkt.components
+                ];
+                break;
+
+        }
+
+        if (prefix !== 'multi') {
+            this.type = 'multi' + this.type;
+        }
+        return this;
+    };
+
+    /**
+     * Reads a WKT string, validating and incorporating it.
+     * @param   str {String}    A WKT or GeoJSON string
+     * @return	{this.Wkt.Wkt}	The object itself
+     * @memberof this.Wkt.Wkt
+     * @method
+     */
+    Wkt.Wkt.prototype.read = function (str) {
+        var matches;
+        matches = this.regExes.typeStr.exec(str);
+        if (matches) {
+            this.type = matches[1].toLowerCase();
+            this.base = matches[2];
+            if (this.ingest[this.type]) {
+                this.components = this.ingest[this.type].apply(this, [this.base]);
+            }
+
+        } else {
+            if (this.regExes.crudeJson.test(str)) {
+                if (typeof JSON === 'object' && typeof JSON.parse === 'function') {
+                    this.fromJson(JSON.parse(str));
+
+                } else {
+                    console.log('JSON.parse() is not available; cannot parse GeoJSON strings');
+                    throw {
+                        name: 'JSONError',
+                        message: 'JSON.parse() is not available; cannot parse GeoJSON strings'
+                    };
+                }
+
+            } else {
+                console.log('Invalid WKT string provided to read()');
+                throw {
+                    name: 'WKTError',
+                    message: 'Invalid WKT string provided to read()'
+                };
+            }
+        }
+
+        return this;
+    }; // eo readWkt
+
+    /**
+     * Writes a WKT string.
+     * @param   components  {Array}     An Array of internal geometry objects
+     * @return              {String}    The corresponding WKT representation
+     * @memberof this.Wkt.Wkt
+     * @method
+     */
+    Wkt.Wkt.prototype.write = function (components) {
+        var i, pieces, data;
+
+        components = components || this.components;
+
+        pieces = [];
+
+        pieces.push(this.type.toUpperCase() + '(');
+
+        for (i = 0; i < components.length; i += 1) {
+            if (this.isCollection() && i > 0) {
+                pieces.push(',');
+            }
+
+            // There should be an extract function for the named type
+            if (!this.extract[this.type]) {
+                return null;
+            }
+
+            data = this.extract[this.type].apply(this, [components[i]]);
+            if (this.isCollection() && this.type !== 'multipoint') {
+                pieces.push('(' + data + ')');
+
+            } else {
+                pieces.push(data);
+
+                // If not at the end of the components, add a comma
+                if (i !== (components.length - 1) && this.type !== 'multipoint') {
+                    pieces.push(',');
+                }
+
+            }
+        }
+
+        pieces.push(')');
+
+        return pieces.join('');
+    };
+
+    /**
+     * This object contains functions as property names that extract WKT
+     * strings from the internal representation.
+     * @memberof this.Wkt.Wkt
+     * @namespace this.Wkt.Wkt.extract
+     * @instance
+     */
+    Wkt.Wkt.prototype.extract = {
+        /**
+         * Return a WKT string representing atomic (point) geometry
+         * @param   point   {Object}    An object with x and y properties
+         * @return          {String}    The WKT representation
+         * @memberof this.Wkt.Wkt.extract
+         * @instance
+         */
+        point: function (point) {
+            return String(point.x) + this.delimiter + String(point.y);
+        },
+
+        /**
+         * Return a WKT string representing multiple atoms (points)
+         * @param   multipoint  {Array}     Multiple x-and-y objects
+         * @return              {String}    The WKT representation
+         * @memberof this.Wkt.Wkt.extract
+         * @instance
+         */
+        multipoint: function (multipoint) {
+            var i, parts = [],
+                s;
+
+            for (i = 0; i < multipoint.length; i += 1) {
+                s = this.extract.point.apply(this, [multipoint[i]]);
+
+                if (this.wrapVertices) {
+                    s = '(' + s + ')';
+                }
+
+                parts.push(s);
+            }
+
+            return parts.join(',');
+        },
+
+        /**
+         * Return a WKT string representing a chain (linestring) of atoms
+         * @param   linestring  {Array}     Multiple x-and-y objects
+         * @return              {String}    The WKT representation
+         * @memberof this.Wkt.Wkt.extract
+         * @instance
+         */
+        linestring: function (linestring) {
+            // Extraction of linestrings is the same as for points
+            return this.extract.point.apply(this, [linestring]);
+        },
+
+        /**
+         * Return a WKT string representing multiple chains (multilinestring) of atoms
+         * @param   multilinestring {Array}     Multiple of multiple x-and-y objects
+         * @return                  {String}    The WKT representation
+         * @memberof this.Wkt.Wkt.extract
+         * @instance
+         */
+        multilinestring: function (multilinestring) {
+            var i, parts = [];
+
+            if (multilinestring.length) {
+                for (i = 0; i < multilinestring.length; i += 1) {
+                    parts.push(this.extract.linestring.apply(this, [multilinestring[i]]));
+                }
+            } else {
+                parts.push(this.extract.point.apply(this, [multilinestring]));
+            }
+
+            return parts.join(',');
+        },
+
+        /**
+         * Return a WKT string representing multiple atoms in closed series (polygon)
+         * @param   polygon {Array}     Collection of ordered x-and-y objects
+         * @return          {String}    The WKT representation
+         * @memberof this.Wkt.Wkt.extract
+         * @instance
+         */
+        polygon: function (polygon) {
+            // Extraction of polygons is the same as for multilinestrings
+            return this.extract.multilinestring.apply(this, [polygon]);
+        },
+
+        /**
+         * Return a WKT string representing multiple closed series (multipolygons) of multiple atoms
+         * @param   multipolygon    {Array}     Collection of ordered x-and-y objects
+         * @return                  {String}    The WKT representation
+         * @memberof this.Wkt.Wkt.extract
+         * @instance
+         */
+        multipolygon: function (multipolygon) {
+            var i, parts = [];
+            for (i = 0; i < multipolygon.length; i += 1) {
+                parts.push('(' + this.extract.polygon.apply(this, [multipolygon[i]]) + ')');
+            }
+            return parts.join(',');
+        },
+
+        /**
+         * Return a WKT string representing a 2DBox
+         * @param   multipolygon    {Array}     Collection of ordered x-and-y objects
+         * @return                  {String}    The WKT representation
+         * @memberof this.Wkt.Wkt.extract
+         * @instance
+         */
+        box: function (box) {
+            return this.extract.linestring.apply(this, [box]);
+        },
+
+        geometrycollection: function (str) {
+            console.log('The geometrycollection WKT type is not yet supported.');
+        }
+    };
+
+    /**
+     * This object contains functions as property names that ingest WKT
+     * strings into the internal representation.
+     * @memberof this.Wkt.Wkt
+     * @namespace this.Wkt.Wkt.ingest
+     * @instance
+     */
+    Wkt.Wkt.prototype.ingest = {
+
+        /**
+         * Return point feature given a point WKT fragment.
+         * @param   str {String}    A WKT fragment representing the point
+         * @memberof this.Wkt.Wkt.ingest
+         * @instance
+         */
+        point: function (str) {
+            var coords = Wkt.trim(str).split(this.regExes.spaces);
+            // In case a parenthetical group of coordinates is passed...
+            return [{ // ...Search for numeric substrings
+                x: parseFloat(this.regExes.numeric.exec(coords[0])[0]),
+                y: parseFloat(this.regExes.numeric.exec(coords[1])[0])
+            }];
+        },
+
+        /**
+         * Return a multipoint feature given a multipoint WKT fragment.
+         * @param   str {String}    A WKT fragment representing the multipoint
+         * @memberof this.Wkt.Wkt.ingest
+         * @instance
+         */
+        multipoint: function (str) {
+            var i, components, points;
+            components = [];
+            points = Wkt.trim(str).split(this.regExes.comma);
+            for (i = 0; i < points.length; i += 1) {
+                components.push(this.ingest.point.apply(this, [points[i]]));
+            }
+            return components;
+        },
+
+        /**
+         * Return a linestring feature given a linestring WKT fragment.
+         * @param   str {String}    A WKT fragment representing the linestring
+         * @memberof this.Wkt.Wkt.ingest
+         * @instance
+         */
+        linestring: function (str) {
+            var i, multipoints, components;
+
+            // In our x-and-y representation of components, parsing
+            //  multipoints is the same as parsing linestrings
+            multipoints = this.ingest.multipoint.apply(this, [str]);
+
+            // However, the points need to be joined
+            components = [];
+            for (i = 0; i < multipoints.length; i += 1) {
+                components = components.concat(multipoints[i]);
+            }
+            return components;
+        },
+
+        /**
+         * Return a multilinestring feature given a multilinestring WKT fragment.
+         * @param   str {String}    A WKT fragment representing the multilinestring
+         * @memberof this.Wkt.Wkt.ingest
+         * @instance
+         */
+        multilinestring: function (str) {
+            var i, components, line, lines;
+            components = [];
+
+            lines = Wkt.trim(str).split(this.regExes.doubleParenComma);
+            if (lines.length === 1) { // If that didn't work...
+                lines = Wkt.trim(str).split(this.regExes.parenComma);
+            }
+
+            for (i = 0; i < lines.length; i += 1) {
+                line = this._stripWhitespaceAndParens(lines[i]);
+                components.push(this.ingest.linestring.apply(this, [line]));
+            }
+
+            return components;
+        },
+
+        /**
+         * Return a polygon feature given a polygon WKT fragment.
+         * @param   str {String}    A WKT fragment representing the polygon
+         * @memberof this.Wkt.Wkt.ingest
+         * @instance
+         */
+        polygon: function (str) {
+            var i, j, components, subcomponents, ring, rings;
+            rings = Wkt.trim(str).split(this.regExes.parenComma);
+            components = []; // Holds one or more rings
+            for (i = 0; i < rings.length; i += 1) {
+                ring = this._stripWhitespaceAndParens(rings[i]).split(this.regExes.comma);
+                subcomponents = []; // Holds the outer ring and any inner rings (holes)
+                for (j = 0; j < ring.length; j += 1) {
+                    // Split on the empty space or '+' character (between coordinates)
+                    var split = ring[j].split(this.regExes.spaces);
+                    if (split.length > 2) {
+                        //remove the elements which are blanks
+                        split = split.filter(function (n) {
+                            return n != ""
+                        });
+                    }
+                    if (split.length === 2) {
+                        var x_cord = split[0];
+                        var y_cord = split[1];
+
+                        //now push
+                        subcomponents.push({
+                            x: parseFloat(x_cord),
+                            y: parseFloat(y_cord)
+                        });
+                    }
+                }
+                components.push(subcomponents);
+            }
+            return components;
+        },
+
+        /**
+         * Return box vertices (which would become the Rectangle bounds) given a Box WKT fragment.
+         * @param   str {String}    A WKT fragment representing the box
+         * @memberof this.Wkt.Wkt.ingest
+         * @instance
+         */
+        box: function (str) {
+            var i, multipoints, components;
+
+            // In our x-and-y representation of components, parsing
+            //  multipoints is the same as parsing linestrings
+            multipoints = this.ingest.multipoint.apply(this, [str]);
+
+            // However, the points need to be joined
+            components = [];
+            for (i = 0; i < multipoints.length; i += 1) {
+                components = components.concat(multipoints[i]);
+            }
+
+            return components;
+        },
+
+        /**
+         * Return a multipolygon feature given a multipolygon WKT fragment.
+         * @param   str {String}    A WKT fragment representing the multipolygon
+         * @memberof this.Wkt.Wkt.ingest
+         * @instance
+         */
+        multipolygon: function (str) {
+            var i, components, polygon, polygons;
+            components = [];
+            polygons = Wkt.trim(str).split(this.regExes.doubleParenComma);
+            for (i = 0; i < polygons.length; i += 1) {
+                polygon = this._stripWhitespaceAndParens(polygons[i]);
+                components.push(this.ingest.polygon.apply(this, [polygon]));
+            }
+            return components;
+        },
+
+        /**
+         * Return an array of features given a geometrycollection WKT fragment.
+         * @param   str {String}    A WKT fragment representing the geometry collection
+         * @memberof this.Wkt.Wkt.ingest
+         * @instance
+         */
+        geometrycollection: function (str) {
+            console.log('The geometrycollection WKT type is not yet supported.');
+        }
+
+    }; // eo ingest
+
+    return Wkt;
+}));
+
+
+/***/ }),
+
 /***/ 834:
 /***/ ((module) => {
 
@@ -28507,6 +32842,46 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAATCAYAAABy
 
 "use strict";
 module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAATCAQAAADYWf5HAAAAW0lEQVQoz2NgoCm4w3Vnwh02wspK7/y6k01Ikdadx3f+37l9RxmfIsY7c4GKQHDiHUbcyhzvvIMq+3THBpci3jv7oIpAcMcdduzKEu/8vPMdDn/eiWQYBYMKAAC3ykIEuYQJUgAAAABJRU5ErkJggg==";
+
+/***/ }),
+
+/***/ 836:
+/***/ ((module) => {
+
+"use strict";
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAA0CAQAAABvcdNgAAAEsklEQVR4AWL4TydIhpZK1kpWOlg0w3ZXP6D2soBtG42jeI6ZmQTHzAxiTbSJsYLjO9HhP+WOmcuhciVnmHVQcJnp7DFvScowZorad/+V/fVzMdMT2g9Cv9guXGv/7pYOrXh2U+RRR3dSd9JRx6bIFc/ekqHI29JC6pJ5ZEh1yWkhkbcFeSjxgx3L2m1cb1C7bceyxA+CNjT/Ifff+/kDk2u/w/33/IeCMOSaWZ4glosqT3DNnNZQ7Cs58/3Ce5HL78iZH/vKVIaYlqzfdLu8Vi7dnvUbEza5Idt36tquZFldl6N5Z/POLof0XLK61mZCmJSWjVF9tEjUluu74IUXvgttuVIHE7YxSkaYhJZam7yiM9Pv82JYfl9nptxZaxMJE4YSPty+vF0+Y2up9d3wwijfjZbabqm/3bZ9ecKHsiGmRflnn1MW4pjHf9oLufyn2z3y1D6n8g8TZhxyzipLNPnAUpsOiuWimg52psrTZYnOWYNDTMuWBWa0tJb4rgq1UvmutpaYEbZlwU3CLJm/ayYjHW5/h7xWLn9Hh1vepDkyf7dE7MtT5LR4e7yYpHrkhOUpEfssBLq2pPhAqoSWKUkk7EDqkmK6RrCEzqDjhNDWNE+XSMvkJRDWlZTmCW0l0PHQGRZY5t1L83kT0Y3l2SItk5JAWHl2dCOBm+fPu3fo5/3v61RMCO9Jx2EEYYhb0rmNQMX/vm7gqOEJLcXTGw3CAuRNeyaPWwjR8PRqKQ1PDA/dpv+on9Shox52WFnx0KY8onHayrJzm87i5h9xGw/tfkev0jGsQizqezUKjk12hBMKJ4kbCqGPVNXudyyrShovGw5CgxsRICxF6aRmSjlBnHRzg7Gx8fKqEubI2rahQYdR1YgDIRQO7JvQyD52hoIQx0mxa0ODtW2Iozn1le2iIRdzwWewedyZzewidueOGqlsn1MvcnQpuVwLGG3/IR1hIKxCjelIDZ8ldqWz25jWAsnldEnK0Zxro19TGVb2ffIZEsIO89EIEDvKMPrzmBOQcKQ+rroye6NgRRxqR4U8EAkz0CL6uSGOm6KQCdWjvjRiSP1BPalCRS5iQYiEIvxuBMJEWgzSoHADcVMuN7IuqqTeyUPq22qFimFtxDyBBJEwNyt6TM88blFHao/6tWWhuuOM4SAK4EI4QmFHA+SEyWlp4EQoJ13cYGzMu7yszEIBOm2rVmHUNqwAIQabISNMRstmdhNWcFLsSm+0tjJH1MdRxO5Nx0WDMhCtgD6OKgZeljJqJKc9po8juskR9XN0Y1lZ3mWjLR9JCO1jRDMd0fpYC2VnvjBSEFg7wBENc0R9HFlb0xvF1+TBEpF68d+DHR6IOWVv2BECtxo46hOFUBd/APU57WIoEwJhIi2CdpyZX0m93BZicktMj1AS9dClteUFAUNUIEygRZCtik5zSxI9MubTBH1GOiHsiLJ3OCoSZkILa9PxiN0EbvhsAo8tdAf9Seepd36lGWHmtNANTv5Jd0z4QYyeo/UEJqxKRpg5LZx6btLPsOaEmdMyxYdlc8LMaJnikDlhclqmPiQnTEpLUIZEwkRagjYkEibQErwhkTAKCLQEbUgkzJQWc/0PstHHcfEdQ+UAAAAASUVORK5CYII=";
+
+/***/ }),
+
+/***/ 505:
+/***/ ((module) => {
+
+"use strict";
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAQAAAADQ4RFAAACf0lEQVR4AY1UM3gkARTePdvdoTxXKc+qTl3aU5U6b2Kbkz3Gtq3Zw6ziLGNPzrYx7946Tr6/ee/XeCQ4D3ykPtL5tHno4n0d/h3+xfuWHGLX81cn7r0iTNzjr7LrlxCqPtkbTQEHeqOrTy4Yyt3VCi/IOB0v7rVC7q45Q3Gr5K6jt+3Gl5nCoDD4MtO+j96Wu8atmhGqcNGHObuf8OM/x3AMx38+4Z2sPqzCxRFK2aF2e5Jol56XTLyggAMTL56XOMoS1W4pOyjUcGGQdZxU6qRh7B9Zp+PfpOFlqt0zyDZckPi1ttmIp03jX8gyJ8a/PG2yutpS/Vol7peZIbZcKBAEEheEIAgFbDkz5H6Zrkm2hVWGiXKiF4Ycw0RWKdtC16Q7qe3X4iOMxruonzegJzWaXFrU9utOSsLUmrc0YjeWYjCW4PDMADElpJSSQ0vQvA1Tm6/JlKnqFs1EGyZiFCqnRZTEJJJiKRYzVYzJck2Rm6P4iH+cmSY0YzimYa8l0EtTODFWhcMIMVqdsI2uiTvKmTisIDHJ3od5GILVhBCarCfVRmo4uTjkhrhzkiBV7SsaqS+TzrzM1qpGGUFt28pIySQHR6h7F6KSwGWm97ay+Z+ZqMcEjEWebE7wxCSQwpkhJqoZA5ivCdZDjJepuJ9IQjGGUmuXJdBFUygxVqVsxFsLMbDe8ZbDYVCGKxs+W080max1hFCarCfV+C1KATwcnvE9gRRuMP2prdbWGowm1KB1y+zwMMENkM755cJ2yPDtqhTI6ED1M/82yIDtC/4j4BijjeObflpO9I9MwXTCsSX8jWAFeHr05WoLTJ5G8IQVS/7vwR6ohirYM7f6HzYpogfS3R2OAAAAAElFTkSuQmCC";
+
+/***/ }),
+
+/***/ 93:
+/***/ ((module) => {
+
+"use strict";
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAApCAYAAADAk4LOAAAFgUlEQVR4Aa1XA5BjWRTN2oW17d3YaZtr2962HUzbDNpjszW24mRt28p47v7zq/bXZtrp/lWnXr337j3nPCe85NcypgSFdugCpW5YoDAMRaIMqRi6aKq5E3YqDQO3qAwjVWrD8Ncq/RBpykd8oZUb/kaJutow8r1aP9II0WmLKLIsJyv1w/kqw9Ch2MYdB++12Onxee/QMwvf4/Dk/Lfp/i4nxTXtOoQ4pW5Aj7wpici1A9erdAN2OH64x8OSP9j3Ft3b7aWkTg/Fm91siTra0f9on5sQr9INejH6CUUUpavjFNq1B+Oadhxmnfa8RfEmN8VNAsQhPqF55xHkMzz3jSmChWU6f7/XZKNH+9+hBLOHYozuKQPxyMPUKkrX/K0uWnfFaJGS1QPRtZsOPtr3NsW0uyh6NNCOkU3Yz+bXbT3I8G3xE5EXLXtCXbbqwCO9zPQYPRTZ5vIDXD7U+w7rFDEoUUf7ibHIR4y6bLVPXrz8JVZEql13trxwue/uDivd3fkWRbS6/IA2bID4uk0UpF1N8qLlbBlXs4Ee7HLTfV1j54APvODnSfOWBqtKVvjgLKzF5YdEk5ewRkGlK0i33Eofffc7HT56jD7/6U+qH3Cx7SBLNntH5YIPvODnyfIXZYRVDPqgHtLs5ABHD3YzLuespb7t79FY34DjMwrVrcTuwlT55YMPvOBnRrJ4VXTdNnYug5ucHLBjEpt30701A3Ts+HEa73u6dT3FNWwflY86eMHPk+Yu+i6pzUpRrW7SNDg5JHR4KapmM5Wv2E8Tfcb1HoqqHMHU+uWDD7zg54mz5/2BSnizi9T1Dg4QQXLToGNCkb6tb1NU+QAlGr1++eADrzhn/u8Q2YZhQVlZ5+CAOtqfbhmaUCS1ezNFVm2imDbPmPng5wmz+gwh+oHDce0eUtQ6OGDIyR0uUhUsoO3vfDmmgOezH0mZN59x7MBi++WDL1g/eEiU3avlidO671bkLfwbw5XV2P8Pzo0ydy4t2/0eu33xYSOMOD8hTf4CrBtGMSoXfPLchX+J0ruSePw3LZeK0juPJbYzrhkH0io7B3k164hiGvawhOKMLkrQLyVpZg8rHFW7E2uHOL888IBPlNZ1FPzstSJM694fWr6RwpvcJK60+0HCILTBzZLFNdtAzJaohze60T8qBzyh5ZuOg5e7uwQppofEmf2++DYvmySqGBuKaicF1blQjhuHdvCIMvp8whTTfZzI7RldpwtSzL+F1+wkdZ2TBOW2gIF88PBTzD/gpeREAMEbxnJcaJHNHrpzji0gQCS6hdkEeYt9DF/2qPcEC8RM28Hwmr3sdNyht00byAut2k3gufWNtgtOEOFGUwcXWNDbdNbpgBGxEvKkOQsxivJx33iow0Vw5S6SVTrpVq11ysA2Rp7gTfPfktc6zhtXBBC+adRLshf6sG2RfHPZ5EAc4sVZ83yCN00Fk/4kggu40ZTvIEm5g24qtU4KjBrx/BTTH8ifVASAG7gKrnWxJDcU7x8X6Ecczhm3o6YicvsLXWfh3Ch1W0k8x0nXF+0fFxgt4phz8QvypiwCCFKMqXCnqXExjq10beH+UUA7+nG6mdG/Pu0f3LgFcGrl2s0kNNjpmoJ9o4B29CMO8dMT4Q5ox8uitF6fqsrJOr8qnwNbRzv6hSnG5wP+64C7h9lp30hKNtKdWjtdkbuPA19nJ7Tz3zR/ibgARbhb4AlhavcBebmTHcFl2fvYEnW0ox9xMxKBS8btJ+KiEbq9zA4RthQXDhPa0T9TEe69gWupwc6uBUphquXgf+/FrIjweHQS4/pduMe5ERUMHUd9xv8ZR98CxkS4F2n3EUrUZ10EYNw7BWm9x1GiPssi3GgiGRDKWRYZfXlON+dfNbM+GgIwYdwAAAAASUVORK5CYII=";
+
+/***/ }),
+
+/***/ 858:
+/***/ ((module) => {
+
+"use strict";
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACkAAAApCAQAAAACach9AAACMUlEQVR4Ae3ShY7jQBAE0Aoz/f9/HTMzhg1zrdKUrJbdx+Kd2nD8VNudfsL/Th///dyQN2TH6f3y/BGpC379rV+S+qqetBOxImNQXL8JCAr2V4iMQXHGNJxeCfZXhSRBcQMfvkOWUdtfzlLgAENmZDcmo2TVmt8OSM2eXxBp3DjHSMFutqS7SbmemzBiR+xpKCNUIRkdkkYxhAkyGoBvyQFEJEefwSmmvBfJuJ6aKqKWnAkvGZOaZXTUgFqYULWNSHUckZuR1HIIimUExutRxwzOLROIG4vKmCKQt364mIlhSyzAf1m9lHZHJZrlAOMMztRRiKimp/rpdJDc9Awry5xTZCte7FHtuS8wJgeYGrex28xNTd086Dik7vUMscQOa8y4DoGtCCSkAKlNwpgNtphjrC6MIHUkR6YWxxs6Sc5xqn222mmCRFzIt8lEdKx+ikCtg91qS2WpwVfBelJCiQJwvzixfI9cxZQWgiSJelKnwBElKYtDOb2MFbhmUigbReQBV0Cg4+qMXSxXSyGUn4UbF8l+7qdSGnTC0XLCmahIgUHLhLOhpVCtw4CzYXvLQWQbJNmxoCsOKAxSgBJno75avolkRw8iIAFcsdc02e9iyCd8tHwmeSSoKTowIgvscSGZUOA7PuCN5b2BX9mQM7S0wYhMNU74zgsPBj3HU7wguAfnxxjFQGBE6pwN+GjME9zHY7zGp8wVxMShYX9NXvEWD3HbwJf4giO4CFIQxXScH1/TM+04kkBiAAAAAElFTkSuQmCC";
+
+/***/ }),
+
+/***/ 159:
+/***/ ((module) => {
+
+"use strict";
+module.exports = __WEBPACK_EXTERNAL_MODULE__159__;
 
 /***/ }),
 

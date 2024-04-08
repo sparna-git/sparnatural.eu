@@ -312,7 +312,15 @@
     <script src='assets/js/timeline.js'></script>
     <script src='assets/js/myTable.js'></script>
 
-    <!-- Sparnatural Javascript -->
+     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+      <!-- Make sure you put this AFTER Leaflet's CSS -->
+      <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+
+    <!-- Sparnatural Javascript -->    
     <script type="text/javascript" src="./sparnatural.js"></script>
     <script type="text/javascript" src="./sparnatural-yasgui-plugins.js"></script>
 
@@ -410,6 +418,13 @@
         // save query
         document.getElementById('query-json').value = JSON.stringify(event.detail.queryJson);
 
+        // notify the query to yasr plugins
+        for (const plugin in yasr.plugins) {
+            if(yasr.plugins[plugin].notifyQuery) {
+                yasr.plugins[plugin].notifyQuery(event.detail.queryJson);
+            }
+        }
+
         // When click on select2 for Sheperd tour
         if (StepToWait3 != null && StepToWait3.isOpen()){
           Shepherd.activeTour.next();
@@ -457,6 +472,7 @@
       });
 
       Yasr.registerPlugin("LabelledUriTable",SparnaturalYasguiPlugins.TableX);
+      Yasr.registerPlugin("Map",SparnaturalYasguiPlugins.MapPlugin);
       Yasr.registerPlugin("Timeline",Timeline);
       Yasr.plugins.LabelledUriTable.defaults.labelledUriAdapter = function(uri) {
         if(uri.startsWith("http://fr.dbpedia.org/resource/")) {
@@ -468,7 +484,7 @@
       delete Yasr.plugins['table'];
       delete Yasr.plugins['response'];
       const yasr = new Yasr(document.getElementById("yasr"), {
-        pluginOrder: ["LabelledUriTable", "Timeline"],
+        pluginOrder: ["LabelledUriTable", "Timeline","Map"],
         defaultPlugin: "LabelledUriTable",
         // disable persistency
         persistencyExpire: 0,
