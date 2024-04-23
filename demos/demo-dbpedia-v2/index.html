@@ -427,7 +427,7 @@
 
       Yasr.registerPlugin("TableX",SparnaturalYasguiPlugins.TableX);
       Yasr.registerPlugin("Timeline",Timeline);
-      Yasr.plugins.TableX.defaults.labelledUriAdapter = function(uri) {
+      Yasr.plugins.TableX.defaults.uriHrefAdapter = function(uri) {
         if(uri.startsWith("http://fr.dbpedia.org/resource/")) {
           return "http://fr.wikipedia.org/wiki/" + uri.substring("http://fr.dbpedia.org/resource/".length);
         } else {
