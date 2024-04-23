@@ -163,6 +163,16 @@
                         "description"@fr .
 
 
+###  http://ontologies.sparna.fr/sparnatural-demo-dbpedia#description
+:numberOfVisitors rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#NumberProperty> ;
+             rdfs:domain :Museum ;
+             rdfs:range :Number ;
+             <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://dbpedia.org/ontology/numberOfVisitors>" ;
+             rdfs:label "number of visitors"@en ,
+                        "nombre de visiteurs"@fr .
+
+
 ###  http://ontologies.sparna.fr/sparnatural-demo-dbpedia#diedIn
 :diedIn rdf:type owl:ObjectProperty ;
         rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#ListProperty> ;
@@ -395,6 +405,12 @@
       rdfs:label "Text"@en ,
                  "Texte"@fr .
 
+
+:Number rdf:type owl:Class ;
+      rdfs:subClassOf rdfs:Literal ;
+      <http://data.sparna.fr/ontologies/sparnatural-config-core#faIcon> "fad fa-1" ;
+      rdfs:label "Number"@en ,
+                 "Nombre"@fr .
 
 ###  http://xmlns.com/foaf/0.1/Person
 <http://xmlns.com/foaf/0.1/Person> rdf:type owl:Class .

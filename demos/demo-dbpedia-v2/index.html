@@ -127,7 +127,7 @@
         </div>
 
         <div class="row" style="font-style: italic; font-size:0.9em;">
-          <a href="#" id="tutorial"><i id="sparql-toggle-icon" class="fad fa-question fa-fw"></i>&nbsp; <span data-i18n="tutorial"></a>
+          <a href="#" id="tutorial"><i id="tutorial-toggle-icon" class="fad fa-question fa-fw"></i>&nbsp; <span data-i18n="tutorial"></a>
         </div>
 
         <!-- This is where Sparnatural is inserted -->
@@ -425,9 +425,9 @@
         copyEndpointOnNewTab: false  
       });
 
-      Yasr.registerPlugin("LabelledUriTable",SparnaturalYasguiPlugins.TableX);
+      Yasr.registerPlugin("TableX",SparnaturalYasguiPlugins.TableX);
       Yasr.registerPlugin("Timeline",Timeline);
-      Yasr.plugins.LabelledUriTable.defaults.labelledUriAdapter = function(uri) {
+      Yasr.plugins.TableX.defaults.labelledUriAdapter = function(uri) {
         if(uri.startsWith("http://fr.dbpedia.org/resource/")) {
           return "http://fr.wikipedia.org/wiki/" + uri.substring("http://fr.dbpedia.org/resource/".length);
         } else {
@@ -437,8 +437,8 @@
       delete Yasr.plugins['table'];
       delete Yasr.plugins['response'];
       const yasr = new Yasr(document.getElementById("yasr"), {
-        pluginOrder: ["LabelledUriTable", "Timeline"],
-        defaultPlugin: "LabelledUriTable",
+        pluginOrder: ["TableX", "Timeline"],
+        defaultPlugin: "TableX",
         // disable persistency
         persistencyExpire: 0,
         maxPersistentResponseSize: 0
