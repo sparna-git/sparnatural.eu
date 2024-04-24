@@ -125,6 +125,10 @@
               <div class="form-group">
                 <select class="form-control" style="width:100%; appearance: auto !important;" id="select-examples">
                   <option value="none" data-i18n="example.placeholder" selected></option>
+                  <option value="example.1" data-i18n="example.1.title" selected></option>
+                  <option value="example.2" data-i18n="example.2.title" selected></option>
+                  <option value="example.3" data-i18n="example.3.title" selected></option>
+                  <option value="example.4" data-i18n="example.4.title" selected></option>
                 </select>
               </div>
             </form>
@@ -312,15 +316,16 @@
     <script src='assets/js/timeline.js'></script>
     <script src='assets/js/myTable.js'></script>
 
+    <!--
      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
      crossorigin=""/>
-      <!-- Make sure you put this AFTER Leaflet's CSS -->
       <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
      crossorigin=""></script>
+   -->
 
-    <!-- Sparnatural Javascript -->    
+    <!-- Sparnatural Javascript -->
     <script type="text/javascript" src="./sparnatural.js"></script>
     <script type="text/javascript" src="./sparnatural-yasgui-plugins.js"></script>
 
@@ -371,9 +376,10 @@
             'import.modal.title': 'Query as JSON',
             'import.modal.import': 'Import',
             'example.placeholder': 'Load example query...',
-            'example.1.title': 'All Aggregations under Public Domain License',
-            'example.2.title': 'All Statues of Dublin with their Web Pictures',
-            'example.3.title': 'All DC Types Sounds of Irish tales'
+            'example.1.title': 'All Aggregations under CC-by 4.0 license',
+            'example.2.title': 'Number of Cultural Heritage Objects per Collection',
+            'example.3.title': 'Number of Cultural Heritage Objects per creator',
+            'example.4.title': 'Du côté de la côte d`\'azur et du piémont...'
           },
           'fr': {
             'page.title': 'Sparnatural Nakala',
@@ -393,9 +399,10 @@
             'import.modal.title': 'Charger une requête en JSON',
             'import.modal.import': 'Charger',
             'example.placeholder': 'Charger une requête d\'exemple...',
-            'example.1.title': 'Toutes les Vues catalogue sous Licence Domaine Public',
-            'example.2.title': 'Toutes les Statues de Dublin avec leurs images',
-            'example.3.title': 'Tous les DC Types "sounds" de contes irlandais'
+            'example.1.title': 'Toutes les Vues catalogue sous Licence CC-BY 4.0',
+            'example.2.title': 'Nombre d\'objets culturels par Collection',
+            'example.3.title': 'Nombre d\'objets culturels par créateur',
+            'example.4.title': 'Du côté de la côte d`\'azur et du piémont...'
           }
       } );  
       $('body').i18n();

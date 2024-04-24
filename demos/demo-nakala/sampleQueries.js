@@ -3,22 +3,27 @@ var sampleQueries = {
 {
   "distinct": true,
   "variables": [
-    "Aggregation_1",
-    "License_2"
+    {
+      "termType": "Variable",
+      "value": "Aggregation_1"
+    }
   ],
   "order": null,
   "branches": [
     {
       "line": {
-        "s": "?Aggregation_1",
-        "p": "http://www.europeana.eu/schemas/edm/rights",
-        "o": "?License_2",
-        "sType": "http://www.openarchives.org/ore/terms/Aggregation",
-        "oType": "http://creativecommons.org/ns#License",
+        "s": "Aggregation_1",
+        "p": "https://shacl-play.sparna.fr/shapes/Aggregation_rights",
+        "o": "ZZ_Other_2",
+        "sType": "https://shacl-play.sparna.fr/shapes/Aggregation",
+        "oType": "http://special/ZZ_Other",
         "values": [
           {
-            "label": "public",
-            "regex": "public"
+            "label": "https://creativecommons.org/licenses/by/4.0/",
+            "rdfTerm": {
+              "type": "uri",
+              "value": "https://creativecommons.org/licenses/by/4.0/"
+            }
           }
         ]
       },
@@ -31,90 +36,38 @@ var sampleQueries = {
 {
   "distinct": true,
   "variables": [
-    "ProvidedCHO_1",
-    "Concept_2",
-    "Coverage_4",
-    "WebResource_10"
+    {
+      "expression": {
+        "type": "aggregate",
+        "aggregation": "count",
+        "distinct": false,
+        "expression": {
+          "termType": "Variable",
+          "value": "CulturalHeritageObject"
+        }
+      },
+      "variable": {
+        "termType": "Variable",
+        "value": "CulturalHeritageObject_count"
+      }
+    },
+    {
+      "termType": "Variable",
+      "value": "aCollection"
+    }
   ],
-  "order": null,
+  "order": "desc",
   "branches": [
     {
       "line": {
-        "s": "?ProvidedCHO_1",
-        "p": "http://purl.org/dc/elements/1.1/subject",
-        "o": "?Concept_2",
-        "sType": "http://www.europeana.eu/schemas/edm/ProvidedCHO",
-        "oType": "http://www.w3.org/2004/02/skos/core#Concept",
-        "values": [
-          {
-            "label": "Statues",
-            "rdfTerm": {
-              "type": "literal",
-              "xml:lang": "en",
-              "value": "Statues"
-            }
-          }
-        ]
-      },
-      "children": []
-    },
-    {
-      "line": {
-        "s": "?ProvidedCHO_1",
-        "p": "http://purl.org/dc/terms/spatial",
-        "o": "?Coverage_4",
-        "sType": "http://www.europeana.eu/schemas/edm/ProvidedCHO",
-        "oType": "http://sparnatural.eu/demos/demo-edm/sparnatural-config.ttl/Coverage",
-        "values": [
-          {
-            "label": "Dublin",
-            "regex": "Dublin"
-          }
-        ]
-      },
-      "children": []
-    },
-    {
-      "line": {
-        "s": "?ProvidedCHO_1",
-        "p": "http://www.europeana.eu/schemas/edm/type",
-        "o": "?Type_6",
-        "sType": "http://www.europeana.eu/schemas/edm/ProvidedCHO",
-        "oType": "http://sparnatural.eu/demos/demo-edm/sparnatural-config.ttl/Type",
-        "values": [
-          {
-            "label": "IMAGE (19160)",
-            "rdfTerm": {
-              "type": "literal",
-              "value": "IMAGE"
-            }
-          }
-        ]
-      },
-      "children": []
-    },
-    {
-      "line": {
-        "s": "?ProvidedCHO_1",
-        "p": "http://sparnatural.eu/demos/demo-edm/sparnatural-config.ttl/aggredatedIn",
-        "o": "?Aggregation_8",
-        "sType": "http://www.europeana.eu/schemas/edm/ProvidedCHO",
-        "oType": "http://www.openarchives.org/ore/terms/Aggregation",
+        "s": "CulturalHeritageObject",
+        "p": "https://shacl-play.sparna.fr/shapes/ProvidedCHO_isGatheredInto",
+        "o": "aCollection",
+        "sType": "https://shacl-play.sparna.fr/shapes/ProvidedCHO",
+        "oType": "https://shacl-play.sparna.fr/shapes/Collection",
         "values": []
       },
-      "children": [
-        {
-          "line": {
-            "s": "?Aggregation_8",
-            "p": "http://www.europeana.eu/schemas/edm/hasView",
-            "o": "?WebResource_10",
-            "sType": "http://www.openarchives.org/ore/terms/Aggregation",
-            "oType": "http://www.europeana.eu/schemas/edm/WebResource",
-            "values": []
-          },
-          "children": []
-        }
-      ]
+      "children": []
     }
   ]
 },
@@ -123,88 +76,99 @@ var sampleQueries = {
 {
   "distinct": true,
   "variables": [
-    "ProvidedCHO_1",
-    "WebResource_10"
+    {
+      "expression": {
+        "type": "aggregate",
+        "aggregation": "count",
+        "distinct": false,
+        "expression": {
+          "termType": "Variable",
+          "value": "ProvidedCHO_1"
+        }
+      },
+      "variable": {
+        "termType": "Variable",
+        "value": "ProvidedCHO_1_count"
+      }
+    },
+    {
+      "termType": "Variable",
+      "value": "Agent_2"
+    }
+  ],
+  "order": "desc",
+  "branches": [
+    {
+      "line": {
+        "s": "ProvidedCHO_1",
+        "p": "https://shacl-play.sparna.fr/shapes/ProvidedCHO_creator",
+        "o": "Agent_2",
+        "sType": "https://shacl-play.sparna.fr/shapes/ProvidedCHO",
+        "oType": "https://shacl-play.sparna.fr/shapes/Agent",
+        "values": []
+      },
+      "children": []
+    }
+  ]
+},
+"example.4":
+{
+  "distinct": true,
+  "variables": [
+    {
+      "termType": "Variable",
+      "value": "ProvidedCHO_1"
+    },
+    {
+      "termType": "Variable",
+      "value": "Z_Location_4"
+    }
   ],
   "order": null,
   "branches": [
     {
       "line": {
-        "s": "?ProvidedCHO_1",
-        "p": "http://purl.org/dc/elements/1.1/type",
-        "o": "?Type_2",
-        "sType": "http://www.europeana.eu/schemas/edm/ProvidedCHO",
-        "oType": "http://sparnatural.eu/demos/demo-edm/sparnatural-config.ttl/Type",
-        "values": [
-          {
-            "label": "SOUND (396)",
-            "rdfTerm": {
-              "type": "literal",
-              "xml:lang": "en",
-              "value": "SOUND"
-            }
-          }
-        ]
-      },
-      "children": []
-    },
-    {
-      "line": {
-        "s": "?ProvidedCHO_1",
-        "p": "http://purl.org/dc/elements/1.1/subject",
-        "o": "?Concept_4",
-        "sType": "http://www.europeana.eu/schemas/edm/ProvidedCHO",
-        "oType": "http://www.w3.org/2004/02/skos/core#Concept",
-        "values": [
-          {
-            "label": "Tales -- Ireland",
-            "rdfTerm": {
-              "type": "literal",
-              "xml:lang": "en",
-              "value": "Tales -- Ireland"
-            }
-          }
-        ]
-      },
-      "children": []
-    },
-    {
-      "line": {
-        "s": "?ProvidedCHO_1",
-        "p": "http://purl.org/dc/elements/1.1/language",
-        "o": "?Language_6",
-        "sType": "http://www.europeana.eu/schemas/edm/ProvidedCHO",
-        "oType": "http://sparnatural.eu/demos/demo-edm/sparnatural-config.ttl/Language",
-        "values": [
-          {
-            "label": "ga (395)",
-            "rdfTerm": {
-              "type": "literal",
-              "value": "ga"
-            }
-          }
-        ]
-      },
-      "children": []
-    },
-    {
-      "line": {
-        "s": "?ProvidedCHO_1",
-        "p": "http://sparnatural.eu/demos/demo-edm/sparnatural-config.ttl/aggredatedIn",
-        "o": "?Aggregation_8",
-        "sType": "http://www.europeana.eu/schemas/edm/ProvidedCHO",
-        "oType": "http://www.openarchives.org/ore/terms/Aggregation",
+        "s": "ProvidedCHO_1",
+        "p": "https://shacl-play.sparna.fr/shapes/ProvidedCHO_spatial",
+        "o": "Place_2",
+        "sType": "https://shacl-play.sparna.fr/shapes/ProvidedCHO",
+        "oType": "https://shacl-play.sparna.fr/shapes/Place",
         "values": []
       },
       "children": [
         {
           "line": {
-            "s": "?Aggregation_8",
-            "p": "http://www.europeana.eu/schemas/edm/hasView",
-            "o": "?WebResource_10",
-            "sType": "http://www.openarchives.org/ore/terms/Aggregation",
-            "oType": "http://www.europeana.eu/schemas/edm/WebResource",
-            "values": []
+            "s": "Place_2",
+            "p": "https://shacl-play.sparna.fr/shapes/Place_asWKT",
+            "o": "Z_Location_4",
+            "sType": "https://shacl-play.sparna.fr/shapes/Place",
+            "oType": "http://special/Z_Location",
+            "values": [
+              {
+                "label": "<svg id=\"svgelem\" width=\"30\" height=\"30\" viewBox=\"0 0 2.768554687500001 2.6751296840457783\" xmlns=\"http://www.w3.org/2000/svg\" style=\" transform: rotateX(180deg);\" preserveAspectRatio=\"xMidYMid meet\">   <g><polygon points=\"0,0 0,2.6751296840457783 2.768554687500001,2.6751296840457783 2.768554687500001,0\" style=\"fill:#ffffff;\" /></g></svg><span>90834 km²</span>",
+                "type": "Rectangle",
+                "coordinates": [
+                  [
+                    {
+                      "lat": 42.90816007196054,
+                      "lng": 5.858641862869264
+                    },
+                    {
+                      "lat": 45.583289756006316,
+                      "lng": 5.858641862869264
+                    },
+                    {
+                      "lat": 45.583289756006316,
+                      "lng": 8.627196550369264
+                    },
+                    {
+                      "lat": 42.90816007196054,
+                      "lng": 8.627196550369264
+                    }
+                  ]
+                ]
+              }
+            ]
           },
           "children": []
         }
