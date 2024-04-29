@@ -90,6 +90,20 @@
          rdfs:label "country"@en ,
                     "pays"@fr .
 
+:thumbnail rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf <http://data.sparna.fr/ontologies/sparnatural-config-core#NonSelectableProperty> ;
+         rdfs:domain [ rdf:type owl:Class ;
+                           owl:unionOf ( :Artwork
+                                         :Museum
+                                         :Person
+                                       )
+                         ] ;
+         rdfs:range :Image ;
+         <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://dbpedia.org/ontology/thumbnail>" ;
+         rdfs:label "thumbnail"@en ,
+                    "vignette"@fr .
+
+
 
 ###  http://ontologies.sparna.fr/sparnatural-demo-dbpedia#countryOf
 :countryOf rdf:type owl:ObjectProperty ;
@@ -328,6 +342,14 @@
                                                                             "Un <b>Pays DBPedia</b>"@fr ;
          rdfs:label "Country"@en ,
                     "Pays"@fr .
+
+
+:Image rdf:type owl:Class ;
+         rdfs:subClassOf rdfs:Literal ;
+         <http://data.sparna.fr/ontologies/sparnatural-config-core#faIcon> "fad fa-image" ;
+         rdfs:label "Image"@en ,
+                    "Image"@fr .
+
 
 
 ###  http://ontologies.sparna.fr/sparnatural-demo-dbpedia#Date
