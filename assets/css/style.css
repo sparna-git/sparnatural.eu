@@ -853,14 +853,23 @@ section {
   border: 2px solid #1dc8cd;
 }
 
-/* Demos Section
+/* Demos Section + Who uses
 --------------------------------*/
 #demos {
-  padding: 60px 0 60px 0;
+  padding: 60px 0 20px 0;
   overflow: hidden;
 }
 
-#demos .box {
+#uses {
+  padding: 40px 0 60px 0;
+  overflow: hidden;
+}
+
+#demos .section-description, #uses .section-description {
+  font-size: 130%;
+}
+
+#demos .box, #uses .box {
   padding: 40px;
   margin-bottom: 30px;
   box-shadow: 0px 0px 30px rgba(73, 78, 92, 0.15);
@@ -869,11 +878,11 @@ section {
   height: 100%;
 }
 
-#demos .icon {
+#demos .icon, #uses .icon {
   float: left;
 }
 
-#demos .icon i {
+#demos .icon i, #uses .icon i {
   color: #666666;
   /* font-size: 80px; */
   font-size: 65px;
@@ -881,7 +890,7 @@ section {
   /* line-height: 0; */
 }
 
-#demos .icon i:before {
+#demos .icon i:before, #uses .icon i:before {
   background: #1dc8cd;
   background: linear-gradient(45deg, #1dc8cd 0%, #55fabe 100%);
   background-clip: border-box;
@@ -889,18 +898,18 @@ section {
   -webkit-text-fill-color: transparent;
 }
 
-#demos h4 {
+#demos h4, #uses h4 {
   margin-left: 100px;
   font-weight: 700;
   margin-bottom: 15px;
   font-size: 18px;
 }
 
-#demos h4 a {
+#demos h4 a, #uses h4 a {
   color: #111;
 }
 
-#demos p {
+#demos .box p, #uses .box p {
   font-size: 14px;
   margin-left: 100px;
   margin-bottom: 0;
@@ -908,19 +917,23 @@ section {
 }
 
 @media (max-width: 767px) {
-  #demos .box {
+  #demos .box; #uses .box {
     margin-bottom: 20px;
   }
-  #demos .icon {
+  #demos .icon, #uses .icon {
     float: none;
     text-align: center;
     padding-bottom: 15px;
   }
-  #demos h4, #demos p {
+  #demos h4, #demos p, #uses h4, #uses p {
     margin-left: 0;
     text-align: center;
   }
 }
+
+
+
+
 
 /* Clients Section
 --------------------------------*/
