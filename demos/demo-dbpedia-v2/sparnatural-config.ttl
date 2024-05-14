@@ -100,6 +100,8 @@
                          ] ;
          rdfs:range :Image ;
          <http://data.sparna.fr/ontologies/sparnatural-config-core#sparqlString> "<http://dbpedia.org/ontology/thumbnail>" ;
+         # mark the property as an image property
+         # dash:propertyRole dash:DepictionRole ;
          rdfs:label "thumbnail"@en ,
                     "vignette"@fr .
 
