@@ -3,16 +3,22 @@ var sampleQueries = {
 {
   "distinct": true,
   "variables": [
-    "Artwork_1",
-    "Text_6"
+    {
+      "termType": "Variable",
+      "value": "Artwork_1"
+    },
+    {
+      "termType": "Variable",
+      "value": "Text_6"
+    }
   ],
   "order": null,
   "branches": [
     {
       "line": {
-        "s": "?Artwork_1",
+        "s": "Artwork_1",
         "p": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#displayedAt",
-        "o": "?Museum_2",
+        "o": "Museum_2",
         "sType": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#Artwork",
         "oType": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#Museum",
         "values": []
@@ -20,9 +26,9 @@ var sampleQueries = {
       "children": [
         {
           "line": {
-            "s": "?Museum_2",
+            "s": "Museum_2",
             "p": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#country",
-            "o": "?Country_4",
+            "o": "Country_4",
             "sType": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#Museum",
             "oType": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#Country",
             "values": [
@@ -41,9 +47,9 @@ var sampleQueries = {
     },
     {
       "line": {
-        "s": "?Artwork_1",
+        "s": "Artwork_1",
         "p": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#description",
-        "o": "?Text_6",
+        "o": "Text_6",
         "sType": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#Artwork",
         "oType": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#Text",
         "values": []
@@ -56,17 +62,26 @@ var sampleQueries = {
 {
   "distinct": true,
   "variables": [
-    "Person_1",
-    "Date_4",
-    "Date_6"
+    {
+      "termType": "Variable",
+      "value": "Date_4"
+    },
+    {
+      "termType": "Variable",
+      "value": "Date_6"
+    },
+    {
+      "termType": "Variable",
+      "value": "Person_1"
+    }
   ],
-  "order": null,
+  "order": "asc",
   "branches": [
     {
       "line": {
-        "s": "?Person_1",
+        "s": "Person_1",
         "p": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#movement",
-        "o": "?Movement_2",
+        "o": "Movement_2",
         "sType": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#Person",
         "oType": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#Movement",
         "values": [
@@ -83,9 +98,9 @@ var sampleQueries = {
     },
     {
       "line": {
-        "s": "?Person_1",
+        "s": "Person_1",
         "p": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#birthDate",
-        "o": "?Date_4",
+        "o": "Date_4",
         "sType": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#Person",
         "oType": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#Date",
         "values": []
@@ -94,9 +109,9 @@ var sampleQueries = {
     },
     {
       "line": {
-        "s": "?Person_1",
+        "s": "Person_1",
         "p": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#deathYear",
-        "o": "?Date_6",
+        "o": "Date_6",
         "sType": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#Person",
         "oType": "http://ontologies.sparna.fr/sparnatural-demo-dbpedia#Date",
         "values": []

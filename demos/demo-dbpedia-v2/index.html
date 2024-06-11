@@ -137,7 +137,7 @@
             src="sparnatural-config.ttl"
             endpoint="https://proxy.sparnatural.eu/sparql-proxy/sparql?endpoint=http%3A%2F%2Ffr.dbpedia.org%2Fsparql"
             lang="fr"
-            queryLang="fr"
+            defaultLang="fr"
             distinct="true"
             limit="1000"
             debug="true"
@@ -343,8 +343,8 @@
             'import.modal.title': 'Query as JSON',
             'import.modal.import': 'Import',
             'example.placeholder': 'Load example query...',
-            'example.1.title': 'Toutes les Oeuvres exposées dans un musée français, avec leur nom et description',
-            'example.2.title': 'Tous les peintres impressionnistes avec leur date de naissance, triés par date'
+            'example.1.title': 'Artworks in a museum in France, with name and description',
+            'example.2.title': 'All impressionists painters with their birth date, sorted by dates'
           },
           'fr': {
             'page.title': 'Sparnatural : Musées',
@@ -380,6 +380,17 @@
       $('#endpoint').attr("href", sparnatural.getAttribute("endpoint"));
       $('#endpoint').html(sparnatural.getAttribute("endpoint"));
 
+        sparnatural.addEventListener("init", (event) => {
+          // notify the specification to yasr plugins
+          for (const plugin in yasr.plugins) {
+            if (yasr.plugins[plugin].notifyConfiguration) {
+              yasr.plugins[plugin].notifyConfiguration(
+                sparnatural.sparnatural.specProvider
+              );
+            }
+          }
+        });
+
       sparnatural.addEventListener("queryUpdated", (event) => {
         queryString = sparnatural.expandSparql(event.detail.queryString);
         $('#sparql code').html(queryString.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"));
@@ -391,6 +402,13 @@
         // When click on select2 for Sheperd tour
         if (StepToWait3 != null && StepToWait3.isOpen()){
           Shepherd.activeTour.next();
+        }
+
+        // notify the query to yasr plugins
+        for (const plugin in yasr.plugins) {
+          if (yasr.plugins[plugin].notifyQuery) {
+            yasr.plugins[plugin].notifyQuery(event.detail.queryJson);
+          }
         }
       });
 
@@ -426,6 +444,7 @@
       });
 
       Yasr.registerPlugin("TableX",SparnaturalYasguiPlugins.TableX);
+      // Yasr.registerPlugin("Grid",SparnaturalYasguiPlugins.GridPlugin);
       Yasr.registerPlugin("Timeline",Timeline);
       Yasr.plugins.TableX.defaults.uriHrefAdapter = function(uri) {
         if(uri.startsWith("http://fr.dbpedia.org/resource/")) {
@@ -437,7 +456,7 @@
       delete Yasr.plugins['table'];
       delete Yasr.plugins['response'];
       const yasr = new Yasr(document.getElementById("yasr"), {
-        pluginOrder: ["TableX", "Timeline"],
+        pluginOrder: ["TableX", "Grid", "Timeline"],
         defaultPlugin: "TableX",
         // disable persistency
         persistencyExpire: 0,
