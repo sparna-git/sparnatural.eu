@@ -375,7 +375,7 @@
       if(lang == "en") { 
         sparnatural.setAttribute("lang", "en");
       }
-
+      
       // prints the endpoint
       $('#endpoint').attr("href", sparnatural.getAttribute("endpoint"));
       $('#endpoint').html(sparnatural.getAttribute("endpoint"));
@@ -444,7 +444,8 @@
       });
 
       Yasr.registerPlugin("TableX",SparnaturalYasguiPlugins.TableX);
-      // Yasr.registerPlugin("Grid",SparnaturalYasguiPlugins.GridPlugin);
+      Yasr.registerPlugin("Grid",SparnaturalYasguiPlugins.GridPlugin);
+      Yasr.registerPlugin("Stats",SparnaturalYasguiPlugins.StatsPlugin);
       Yasr.registerPlugin("Timeline",Timeline);
       Yasr.plugins.TableX.defaults.uriHrefAdapter = function(uri) {
         if(uri.startsWith("http://fr.dbpedia.org/resource/")) {
@@ -456,12 +457,20 @@
       delete Yasr.plugins['table'];
       delete Yasr.plugins['response'];
       const yasr = new Yasr(document.getElementById("yasr"), {
-        pluginOrder: ["TableX", "Grid", "Timeline"],
+        pluginOrder: ["TableX", "Grid", "Stats", "Timeline"],
         defaultPlugin: "TableX",
         // disable persistency
         persistencyExpire: 0,
         maxPersistentResponseSize: 0
       });
+
+      if(lang == "en") { 
+        yasr.plugins["Grid"].config.lang = "en";
+        yasr.plugins["Stats"].config.lang = "en";
+      } else {
+        yasr.plugins["Grid"].config.lang = "fr";
+        yasr.plugins["Stats"].config.lang = "fr";
+      }
 
       // link yasqe and yasr
       yasqe.on("queryResponse", function(_yasqe, response, duration) {
