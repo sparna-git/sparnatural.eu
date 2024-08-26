@@ -44,7 +44,7 @@
       }
 
       #sparnatural-section {
-        padding-top: 115px;
+        padding-top: 110px;
         height: auto;
         overflow: visible;
       }
@@ -103,29 +103,6 @@
     <section id="sparnatural-section">
       <div class="container">
 
-        <div class="row" style="padding-bottom:10px;">
-          <div class="col-md-6">
-            <form>
-              <div class="form-group">
-                <select class="form-control" style="width:100%; appearance: auto !important;" id="select-examples">
-                  <option value="none" data-i18n="example.placeholder" selected></option>
-                  <option value="example.1" data-i18n="example.1.title"></option>
-                  <option value="example.2" data-i18n="example.2.title"></option>
-                </select>
-              </div>
-            </form>
-          </div>
-
-          <div class="col-md-6">
-            <div style="text-align:right;">
-              <span style="font-size:90%; font-style: italic;"> 
-                <span data-i18n="endpoint.querying"></span> <a id="endpoint" href="...">...</a> 
-              </span>
-            </div>
-          </div>
-
-        </div>
-
         <div class="row" style="font-style: italic; font-size:0.9em;">
           <a href="#" id="tutorial"><i id="tutorial-toggle-icon" class="fad fa-question fa-fw"></i>&nbsp; <span data-i18n="tutorial"></a>
         </div>
@@ -148,14 +125,29 @@
 
         <!-- -->
         <div class="row">
-          <div style="font-style: italic; font-size:0.9em;">
-            <a href="#" id="sparql-toggle"><i id="sparql-toggle-icon" class="fad fa-eye fa-fw"></i>&nbsp; <span data-i18n="actions.toggle"></span></a>
-            &nbsp;|&nbsp;
-            <a href="#" id="share"><i id="share-icon" class="fad fa-share-square"></i>&nbsp; <span data-i18n="actions.share"></span></a>
-            &nbsp;|&nbsp;
-            <a href="#" id="export"><i id="export-icon" class="fad fa-file-export"></i>&nbsp; <span data-i18n="actions.export"></span></a>
-            &nbsp;|&nbsp;
-            <a href="#" id="import"><i id="import-icon" class="fad fa-file-import"></i>&nbsp; <span data-i18n="actions.import"></span></a>
+
+          <div class="col-md-8">
+            <span style="font-style: italic; font-size:0.9em;">
+              <a href="#" id="sparql-toggle"><i id="sparql-toggle-icon" class="fad fa-eye fa-fw"></i>&nbsp; <span data-i18n="actions.toggle"></span></a>
+              &nbsp;|&nbsp;
+              <a href="#" id="share"><i id="share-icon" class="fad fa-share-square"></i>&nbsp; <span data-i18n="actions.share"></span></a>
+              &nbsp;|&nbsp;
+              <a href="#" id="export"><i id="export-icon" class="fad fa-file-export"></i>&nbsp; <span data-i18n="actions.export"></span></a>
+              &nbsp;|&nbsp;
+              <a href="#" id="import"><i id="import-icon" class="fad fa-file-import"></i>&nbsp; <span data-i18n="actions.import"></span></a>
+            </span>
+          </div>
+
+          <div class="col-md-4">
+            <form>
+              <div class="form-group">
+                <select class="form-control" style="width:100%; appearance: auto !important;" id="select-examples">
+                  <option value="none" data-i18n="example.placeholder" selected></option>
+                  <option value="example.1" data-i18n="example.1.title"></option>
+                  <option value="example.2" data-i18n="example.2.title"></option>
+                </select>
+              </div>
+            </form>
           </div>
         </div>
 
@@ -173,7 +165,7 @@
     <!-- End YASQE Section -->
 
     <!-- ======= YASR Section ======= -->
-    <section id="yasr-section">
+    <section id="yasr-section" style="margin-top:1em;">
       <div class="container">
 
         <div id="yasr">
@@ -314,6 +306,8 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/shepherd.js@8.3.1/dist/css/shepherd.css"/>
   <script src="tutorial.js"></script>
 
+  <script src="sparnatural-bindings.js"></script>
+
     <script>
       $.urlParam = function(name){
         var results = new RegExp('[\\?&amp;]' + name + '=([^&amp;#]*)').exec(window.location.href);
@@ -380,48 +374,6 @@
       $('#endpoint').attr("href", sparnatural.getAttribute("endpoint"));
       $('#endpoint').html(sparnatural.getAttribute("endpoint"));
 
-        sparnatural.addEventListener("init", (event) => {
-          // notify the specification to yasr plugins
-          for (const plugin in yasr.plugins) {
-            if (yasr.plugins[plugin].notifyConfiguration) {
-              yasr.plugins[plugin].notifyConfiguration(
-                sparnatural.sparnatural.specProvider
-              );
-            }
-          }
-        });
-
-      sparnatural.addEventListener("queryUpdated", (event) => {
-        queryString = sparnatural.expandSparql(event.detail.queryString);
-        $('#sparql code').html(queryString.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"));
-        yasqe.setValue(queryString);
-
-        // save query
-        document.getElementById('query-json').value = JSON.stringify(event.detail.queryJson);
-
-        // When click on select2 for Sheperd tour
-        if (StepToWait3 != null && StepToWait3.isOpen()){
-          Shepherd.activeTour.next();
-        }
-
-        // notify the query to yasr plugins
-        for (const plugin in yasr.plugins) {
-          if (yasr.plugins[plugin].notifyQuery) {
-            yasr.plugins[plugin].notifyQuery(event.detail.queryJson);
-          }
-        }
-      });
-
-      sparnatural.addEventListener("submit", (event) => {
-        // enable loader on button
-        sparnatural.disablePlayBtn() ; 
-        // trigger the query from YasQE
-        yasqe.query();
-      });
-
-      sparnatural.addEventListener("reset", (event) => {
-        yasqe.setValue("");
-      });
 
       // load ?query= param if present
       var UrlString = window.location.search;
@@ -472,11 +424,10 @@
         yasr.plugins["Stats"].config.lang = "fr";
       }
 
-      // link yasqe and yasr
-      yasqe.on("queryResponse", function(_yasqe, response, duration) {
-        yasr.setResponse(response, duration);
-        sparnatural.enablePlayBtn();
-      });
+      // binds Sparnatural with the YasR plugins
+      bindSparnaturalWithYasrPlugins(sparnatural, yasr);
+      // binds Sparnatural with itself for the query execution and integration with yasqe and yasr
+      bindSparnaturalWithItself(sparnatural, yasqe, yasr);
 
       document.getElementById('sparql-toggle').onclick = function() {
         if(document.getElementById('yasqe').style.display == 'none') {
