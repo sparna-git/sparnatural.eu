@@ -1,5 +1,6 @@
 var sampleQueries = {
-    "example.1" :{
+	"example.1" :
+{
     "distinct": true,
     "variables": [
         {
@@ -36,10 +37,10 @@ var sampleQueries = {
                         "oType": "https://data.mydomain.com/ontologies/sparnatural-config/Country",
                         "values": [
                             {
-                                "label": "Italie (1091)",
+                                "label": "Italy (17)",
                                 "rdfTerm": {
                                     "type": "uri",
-                                    "value": "http://fr.dbpedia.org/resource/Italie"
+                                    "value": "http://dbpedia.org/resource/Italy"
                                 }
                             }
                         ]
@@ -50,7 +51,8 @@ var sampleQueries = {
         }
     ]
 },
-"example.2": {
+	"example.2" :
+{
     "distinct": true,
     "variables": [
         {
@@ -90,7 +92,7 @@ var sampleQueries = {
                                 "label": "Vincent van Gogh",
                                 "rdfTerm": {
                                     "type": "uri",
-                                    "value": "http://fr.dbpedia.org/resource/Vincent_van_Gogh"
+                                    "value": "http://dbpedia.org/resource/Vincent_van_Gogh"
                                 }
                             }
                         ]
@@ -102,6 +104,7 @@ var sampleQueries = {
     ]
 },
 "example.3":
+
 {
     "distinct": true,
     "variables": [
@@ -115,15 +118,15 @@ var sampleQueries = {
         },
         {
             "termType": "Variable",
-            "value": "Artwork_4"
+            "value": "Movement_6"
         },
         {
             "termType": "Variable",
-            "value": "Museum_6"
+            "value": "Artwork_8"
         },
         {
             "termType": "Variable",
-            "value": "Country_8"
+            "value": "Museum_10"
         }
     ],
     "order": null,
@@ -137,10 +140,10 @@ var sampleQueries = {
                 "oType": "https://data.mydomain.com/ontologies/sparnatural-config/Category",
                 "values": [
                     {
-                        "label": "Peintre français",
+                        "label": "19th-century French women artists",
                         "rdfTerm": {
                             "type": "uri",
-                            "value": "http://fr.dbpedia.org/resource/Catégorie:Peintre_français"
+                            "value": "http://dbpedia.org/resource/Category:19th-century_French_women_artists"
                         }
                     }
                 ]
@@ -150,8 +153,20 @@ var sampleQueries = {
         {
             "line": {
                 "s": "Person_1",
+                "p": "https://data.mydomain.com/ontologies/sparnatural-config/Person_movement",
+                "o": "Movement_6",
+                "sType": "https://data.mydomain.com/ontologies/sparnatural-config/Person",
+                "oType": "https://data.mydomain.com/ontologies/sparnatural-config/Movement",
+                "values": []
+            },
+            "children": [],
+            "optional": true
+        },
+        {
+            "line": {
+                "s": "Person_1",
                 "p": "https://data.mydomain.com/ontologies/sparnatural-config/Person_created",
-                "o": "Artwork_4",
+                "o": "Artwork_8",
                 "sType": "https://data.mydomain.com/ontologies/sparnatural-config/Person",
                 "oType": "https://data.mydomain.com/ontologies/sparnatural-config/Artwork",
                 "values": []
@@ -159,37 +174,18 @@ var sampleQueries = {
             "children": [
                 {
                     "line": {
-                        "s": "Artwork_4",
+                        "s": "Artwork_8",
                         "p": "https://data.mydomain.com/ontologies/sparnatural-config/Artwork_displayedAt",
-                        "o": "Museum_6",
+                        "o": "Museum_10",
                         "sType": "https://data.mydomain.com/ontologies/sparnatural-config/Artwork",
                         "oType": "https://data.mydomain.com/ontologies/sparnatural-config/Museum",
                         "values": []
                     },
-                    "children": [
-                        {
-                            "line": {
-                                "s": "Museum_6",
-                                "p": "https://data.mydomain.com/ontologies/sparnatural-config/Museum_country",
-                                "o": "Country_8",
-                                "sType": "https://data.mydomain.com/ontologies/sparnatural-config/Museum",
-                                "oType": "https://data.mydomain.com/ontologies/sparnatural-config/Country",
-                                "values": [
-                                    {
-                                        "label": "France (3987)",
-                                        "rdfTerm": {
-                                            "type": "uri",
-                                            "value": "http://fr.dbpedia.org/resource/France"
-                                        }
-                                    }
-                                ]
-                            },
-                            "children": [],
-                            "notExists": true
-                        }
-                    ]
+                    "children": [],
+                    "optional": true
                 }
-            ]
+            ],
+            "optional": true
         }
     ]
 }

@@ -104,6 +104,12 @@
       <div class="container">
 
         <div class="row" style="font-style: italic; font-size:0.9em;">
+          <a href="#" id="intro"><span data-i18n="intro"></a>
+        </div>
+
+              &nbsp;
+
+        <div class="row" style="font-style: italic; font-size:0.9em;">
           <a href="#" id="tutorial"><i id="tutorial-toggle-icon" class="fad fa-question fa-fw"></i>&nbsp; <span data-i18n="tutorial"></a>
         </div>
 
@@ -145,6 +151,7 @@
                   <option value="none" data-i18n="example.placeholder" selected></option>
                   <option value="example.1" data-i18n="example.1.title"></option>
                   <option value="example.2" data-i18n="example.2.title"></option>
+                  <option value="example.3" data-i18n="example.3.title"></option>
                 </select>
               </div>
             </form>
@@ -329,6 +336,7 @@
             'actions.share': 'Share',            
             'actions.export': 'Export query in JSON',
             'actions.import': 'Import query in JSON',
+            'intro': 'Sparnatural is an intuitive SPARQL query editor that lets you navigate the knowledge graph on which it is configured to query model data by browsing the available classes, properties and field values.',
             'tutorial': 'First time here ? watch the tutorial !',
             'share.modal.title': 'Direct query link',
             'share.modal.close': 'Close',
@@ -337,8 +345,9 @@
             'import.modal.title': 'Query as JSON',
             'import.modal.import': 'Import',
             'example.placeholder': 'Load example query...',
-            'example.1.title': 'Artworks in a museum in France, with name and description',
-            'example.2.title': 'All impressionists painters with their birth date, sorted by dates'
+            'example.1.title': 'Artworks displayed in Italian museums',
+            'example.2.title': 'Museums where Van Goghs artworks are displayed',
+            'example.3.title': 'French painters whose artworks are displayed abroad'
           },
           'fr': {
             'page.title': 'Sparnatural : Musées',
@@ -350,6 +359,7 @@
             'actions.share': 'Partager',            
             'actions.export': 'Exporter la requête en JSON',
             'actions.import': 'Charger une requête en JSON',
+            'intro': 'Sparnatural est un éditeur de requêtes SPARQL intuitif qui permet de naviguer dans le graphe de connaissances sur lequel il est configuré pour interroger les données du modèle en parcourant les classes, propriétés et valeurs de champs disponibles.',
             'tutorial': 'Vous ne savez pas comment commencer ? cliquez ici pour être guidé !',
             'share.modal.title': 'Lien direct vers la requête',
             'share.modal.close': 'Fermer',
@@ -358,8 +368,9 @@
             'import.modal.title': 'Charger une requête en JSON',
             'import.modal.import': 'Charger',
             'example.placeholder': 'Charger une requête d\'exemple...',
-            'example.1.title': 'Toutes les Oeuvres exposées dans un musée français, avec leur nom et description',
-            'example.2.title': 'Tous les peintres impressionnistes avec leur date de naissance, triés par date'
+            'example.1.title': 'Les œuvres exposées dans des musées italiens',
+            'example.2.title': 'Les musées qui exposent les oeuvres de Vincent Van Gogh',
+            'example.3.title': 'Les peintres français dont les œuvres sont exposées à l étranger'
           }
       } );  
       $('body').i18n();
