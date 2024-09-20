@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Legilux + Sparnatural</title>
+  <title >Sparnatural EDM</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -86,12 +86,14 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link" href="http://sparnatural.eu"><i style="font-size:25px;" class="fa-thin fa-house"></i>&nbsp;Home</a></li>
+          <!--
           <li class="dropdown"><a href="#"><i style="font-size:25px;" class="fa-thin fa-globe-africa"></i>&nbsp;<span>Lang.</span> <i class="bi bi-chevron-down"></i></a>
             <ul style="width:80%;">
               <li><a href="?lang=fr">fr</a></li>
               <li><a href="?lang=en">en</a></li>
             </ul>
           </li>
+          -->
           <li><a class="nav-link" href="https://github.com/sparna-git/Sparnatural"><i style="font-size:25px;" class="fab fa-github"></i>&nbsp; Github</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -104,27 +106,92 @@
       <div class="container">
 
         <div class="row" style="padding-bottom:10px;">
+          <div class="col-md-1">
+            <label for="select-lang" class="form-label">Language</label>
+            <select class="form-control" style="appearance: auto !important;" id="select-lang">
+              <!-- this is populated automatically based on config -->                
+            </select>
+          </div>
+          <div class="col-md-2">
+            <label for="select-config" class="form-label">View</label>
+            <select class="form-control" style="appearance: auto !important;" id="select-config">
+              <option value="sparnatural-config.ttl" data-i18n="config.1.title"></option>
+              <option value="sparnatural-config-simplified.ttl" data-i18n="config.2.title"></option>            
+            </select>
+          </div>
           <div class="col-md-6">
+            <label for="select-examples" class="form-label">Sample query</label>
+            <select class="form-control" style="width:100%; appearance: auto !important;" id="select-examples">
+              <option value="none" data-i18n="example.placeholder" selected></option>
+              <option value="example.1" data-i18n="example.1.title"></option>
+              <option value="example.2" data-i18n="example.2.title"></option>
+              <option value="example.3" data-i18n="example.3.title"></option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <div style="text-align:right;">
+              <span style="font-size:90%; font-style: italic;"> 
+                <!-- Rijksmuseum : https://sage-ails.ails.ece.ntua.gr/api/content/rijksmuseum-poc/sparql -->
+                <a id="endpoint" href="https://sage-ails.ails.ece.ntua.gr/api/content/semanticsearch-digital-repository-of-ireland/sparql">SPARQL endpoint</a> / <a href="https://docs.google.com/spreadsheets/d/14Ak0N8fE8kFpmFA0cjApLDvE2BFiNa7ypa2Yk7v1pO4">configuration (standard)</a> / <a href="https://docs.google.com/spreadsheets/d/1dAcqxYyZavloNVh5ziZbnGYVLIXrUXd1AYIGVEKRmyU">configuration (simplified)</a>
+              </span>
+            </div>
+          </div>
+
+        </div>
+        <!--
+        <div class="row" style="padding-bottom:10px;">
+          <div class="col-md-2">
+            <form>
+              <div class="form-group row">
+                <div class="col-sm-6 gx-0">
+                  <i class="fa-thin fa-globe-africa"></i>&nbsp;<span>Lang.</span>
+                </div>
+                <div class="col-sm-6 gx-2">
+                  <select class="form-control" style="appearance: auto !important;" id="select-lang">               
+                  </select>
+              </div>
+              </div>
+            </form>
+          </div>
+          <div class="col-md-2">
+            <form>
+              <div class="form-group row">
+                <div class="col-sm-5 gx-0">
+                  <i class="fa-thin fa-eye"></i>&nbsp;<span>View:</span>
+                </div>
+                <div class="col-sm-7 gx-2">
+                  <select class="form-control" style="appearance: auto !important;" id="select-config">
+                    <option value="sparnatural-config.ttl" data-i18n="config.1.title"></option>
+                    <option value="sparnatural-config-simplified.ttl" data-i18n="config.2.title"></option>            
+                  </select>
+              </div>
+              </div>
+            </form>
+          </div>
+          <div class="col-md-4">
             <form>
               <div class="form-group">
                 <select class="form-control" style="width:100%; appearance: auto !important;" id="select-examples">
                   <option value="none" data-i18n="example.placeholder" selected></option>
                   <option value="example.1" data-i18n="example.1.title"></option>
                   <option value="example.2" data-i18n="example.2.title"></option>
+                  <option value="example.3" data-i18n="example.3.title"></option>
                 </select>
               </div>
             </form>
           </div>
 
-          <div class="col-md-6">
+          <div class="col-md-3">
             <div style="text-align:right;">
               <span style="font-size:90%; font-style: italic;"> 
-                <a id="endpoint" href="https://data.legilux.public.lu/sparqlendpoint">Legilux SPARQL Service</a> 
+                <- Rijksmuseum : https://sage-ails.ails.ece.ntua.gr/api/content/rijksmuseum-poc/sparql ->
+                <a id="endpoint" href="https://sage-ails.ails.ece.ntua.gr/api/content/semanticsearch-digital-repository-of-ireland/sparql">SPARQL endpoint</a> / <a href="https://docs.google.com/spreadsheets/d/14Ak0N8fE8kFpmFA0cjApLDvE2BFiNa7ypa2Yk7v1pO4/edit#gid=1577547731">configuration</a>
               </span>
             </div>
           </div>
 
         </div>
+      -->
 
         <!--<div class="row" style="font-style: italic; font-size:0.9em;">
           <a href="#" id="tutorial"><i id="sparql-toggle-icon" class="fad fa-question fa-fw"></i>&nbsp; <span data-i18n="tutorial"></a>
@@ -133,10 +200,12 @@
         <!-- This is where Sparnatural is inserted -->
         <div class="row">
 
+          <!-- https://xls2rdf.sparna.fr/rest/convert?url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F14Ak0N8fE8kFpmFA0cjApLDvE2BFiNa7ypa2Yk7v1pO4%2Fexport%3Fformat%3Dxlsx&noPostProcessings=true -->
           <spar-natural 
-            src="sparnatural-config.ttl"
-            endpoint="https://data.legilux.public.lu/sparqlendpoint"
-            lang="fr"
+            src="https://xls2rdf.sparna.fr/rest/convert?url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F14Ak0N8fE8kFpmFA0cjApLDvE2BFiNa7ypa2Yk7v1pO4%2Fexport%3Fformat%3Dxlsx&noPostProcessings=true"
+            endpoint="https://sage-ails.ails.ece.ntua.gr/api/content/semanticsearch-digital-repository-of-ireland/sparql"
+            lang="en"
+            defaultLang="en"
             distinct="true"
             limit="1000"
             debug="true"
@@ -157,11 +226,6 @@
             &nbsp;|&nbsp;
             <a href="#" id="import"><i id="import-icon" class="fad fa-file-import"></i>&nbsp; <span data-i18n="actions.import"></span></a>
             -->
-          </div>
-        </div>
-        <div class="row" style="margin-top: 2em;">
-          <div class="col-md-6">
-            <i class="fad fa-warning"></i>&nbsp; <span data-i18n="actions.warning.limit"></span>
           </div>
         </div>
 
@@ -282,7 +346,7 @@
   <!-- Sparnatural-specific -->
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
@@ -318,9 +382,7 @@
   <!-- Sheperd -->
   <script src="https://cdn.jsdelivr.net/npm/shepherd.js@8.3.1/dist/js/shepherd.min.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/shepherd.js@8.3.1/dist/css/shepherd.css"/>
-  <!--
   <script src="tutorial.js"></script>
-  -->
 
     <script>
       $.urlParam = function(name){
@@ -328,13 +390,13 @@
         if(results == null) { return null; }
         return results[1] || 0;
       }
-      var lang = ($.urlParam('lang') != null)?$.urlParam('lang'):'fr';
+      var lang = ($.urlParam('lang') != null)?$.urlParam('lang'):'en';
 
       // set the locale
       $.i18n( { locale: lang } );  
       $.i18n().load( {
           'en': {
-            'page.title': 'Legilux + Sparnatural',
+            'page.title': 'Europeana Linked Data Taskforce',
             'menu.home': 'Sparnatural',
             'menu.lang': 'Lang.',
             'menu.github': 'Github',
@@ -343,7 +405,6 @@
             'actions.share': 'Share',            
             'actions.export': 'Export query in JSON',
             'actions.import': 'Import query in JSON',
-            'actions.warning.limit': 'Result is always limited to 10000 lines',
             'tutorial': 'First time here ? watch the tutorial !',
             'share.modal.title': 'Direct query link',
             'share.modal.close': 'Close',
@@ -351,13 +412,15 @@
             'export.modal.close': 'Close',
             'import.modal.title': 'Query as JSON',
             'import.modal.import': 'Import',
-            'example.placeholder': 'Load example query...',
-            'example.1.title': '1) ...',
-            'example.2.title': '2) ...'
-
+            'example.placeholder': 'Load example query (standard view only)...',
+            'example.1.title': 'All Aggregations under Public Domain License',
+            'example.2.title': 'All Statues of Dublin with their Web Pictures',
+            'example.3.title': 'All DC Types Sounds of Irish tales',
+            'config.1.title': 'Standard view',
+            'config.2.title': 'Simplified view'
           },
           'fr': {
-            'page.title': 'Legilux + Sparnatural',
+            'page.title': 'Europeana Linked Data Taskforce',
             'menu.home': 'Sparnatural',
             'menu.lang': 'Lang.',
             'menu.github': 'Github',
@@ -366,7 +429,6 @@
             'actions.share': 'Partager',            
             'actions.export': 'Exporter la requête en JSON',
             'actions.import': 'Charger une requête en JSON',
-            'actions.warning.limit': 'Le nombre maximum de résultats est fixé à 10 000.',
             'tutorial': 'Vous ne savez pas comment commencer ? cliquez ici pour être guidé !',
             'share.modal.title': 'Lien direct vers la requête',
             'share.modal.close': 'Fermer',
@@ -374,9 +436,12 @@
             'export.modal.close': 'Fermer',
             'import.modal.title': 'Charger une requête en JSON',
             'import.modal.import': 'Charger',
-            'example.placeholder': 'Charger une requête d\'exemple...',
-            'example.1.title': '1) ...',
-            'example.2.title': '2) ...'
+            'example.placeholder': 'Charger une requête d\'exemple (vue standard seulement)...',
+            'example.1.title': 'Toutes les Vues catalogue sous Licence Domaine Public',
+            'example.2.title': 'Toutes les Statues de Dublin avec leurs images',
+            'example.3.title': 'Tous les DC Types "sounds" de contes irlandais',
+            'config.1.title': 'Vue standard',
+            'config.2.title': 'Vue simplifiée'
           }
       } );  
       $('body').i18n();
@@ -384,8 +449,12 @@
       const sparnatural = document.querySelector("spar-natural");
 
       if(lang == "fr") { 
-        // sparnatural.setAttribute("lang", "fr");
+        sparnatural.setAttribute("lang", "fr");
       }
+
+      // prints the endpoint
+      $('#endpoint').attr("href", sparnatural.getAttribute("endpoint"));
+      // $('#endpoint').html(sparnatural.getAttribute("endpoint"));
 
       sparnatural.addEventListener("queryUpdated", (event) => {
         queryString = sparnatural.expandSparql(event.detail.queryString);
@@ -412,6 +481,15 @@
         yasqe.setValue("");
       });
 
+      sparnatural.addEventListener("init", (event) => {
+        let languages = event.detail.sparnatural.specProvider.getLanguages();
+        $('#select-lang').empty();
+        languages.forEach(l => {
+          $('#select-lang').append('<option value="' + l + '">' + l + '</option>');
+        });
+        $('#select-lang').val(sparnatural.getAttribute("lang"));
+      });
+
       // load ?query= param if present
       var UrlString = window.location.search;
       var urlParams = new URLSearchParams(UrlString);
@@ -425,7 +503,7 @@
 
       const yasqe = new Yasqe(document.getElementById("yasqe"), {
         requestConfig: { 
-          endpoint: "https://proxy.sparnatural.eu/sparql-proxy/sparql?endpoint=https%3A%2F%2Fsmt.esante.gouv.fr%2Fapi%2Fsparql",
+          endpoint: $('#endpoint').attr("href"),
           method: "GET",
           header: {}
         },
@@ -480,8 +558,8 @@
           $('#shareModal').modal('show');
         });
       }
-        
-      /*
+      
+      /*  
       document.getElementById('export').onclick = function() {
           var jsonString = JSON.stringify(
               JSON.parse(document.getElementById('query-json').value),
@@ -510,12 +588,27 @@
         }
       }
 
-      /*
-      document.getElementById('tutorial').onclick = function() {
-        sparnatural.clear();
-        initTour();
+      document.getElementById('select-lang').onchange = function() {
+        var langCode = $('#select-lang option:selected').val();
+        sparnatural.setAttribute("lang", langCode);
+
+        let locale="en";
+        if(langCode == "fr") {
+          locale=langCode
+        }
+        $.i18n( { locale: locale } );
+        $('body').i18n();
       }
-      */
+
+      document.getElementById('select-config').onchange = function() {
+        var config = $('#select-config option:selected').val();
+        sparnatural.setAttribute("src", config);
+        if($('#select-config option:selected').val() == "sparnatural-config.ttl") {
+          document.getElementById('select-examples').disabled = false;
+        } else {
+          document.getElementById('select-examples').disabled = true;
+        }
+      }
 
     </script>
   </script>

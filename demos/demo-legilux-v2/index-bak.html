@@ -86,6 +86,7 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link" href="http://sparnatural.eu"><i style="font-size:25px;" class="fa-thin fa-house"></i>&nbsp;Home</a></li>
+          <li><a class="nav-link" href="dashboards.html"><i style="font-size:25px;" class="fa-thin fa-chart-pie"></i>&nbsp;Dashboards</a></li>
           <li class="dropdown"><a href="#"><i style="font-size:25px;" class="fa-thin fa-globe-africa"></i>&nbsp;<span>Lang.</span> <i class="bi bi-chevron-down"></i></a>
             <ul style="width:80%;">
               <li><a href="?lang=fr">fr</a></li>
@@ -119,49 +120,34 @@
           <div class="col-md-6">
             <div style="text-align:right;">
               <span style="font-size:90%; font-style: italic;"> 
-                <a id="endpoint" href="https://data.legilux.public.lu/sparqlendpoint">Legilux SPARQL Service</a> 
+                   <!-- https://proxy.sparnatural.eu/sparql-proxy/sparql?endpoint=https%3A%2F%2Fsmt.esante.gouv.fr%2Fapi%2Fsparql%3Fdefault-graph-uri%3Dhttp%253A%252F%252Fdata.esante.gouv.fr%252Fgraph%252Fterminologie-ref_interop_med -->
+                   <span data-i18n="endpoint.querying"></span> <a id="endpoint" href="https://data.legilux.public.lu/sparqlendpoint">https://data.legilux.public.lu/sparqlendpoint</a>
+                   <!--
+                    | <a href="https://docs.google.com/spreadsheets/d/1p79HqAvg5uDELeVSvgmZ1SgoDLcg59CSaw_tsbfQBUk">Config</a> 
+                   -->
               </span>
             </div>
           </div>
 
         </div>
 
-        <!--<div class="row" style="font-style: italic; font-size:0.9em;">
-          <a href="#" id="tutorial"><i id="sparql-toggle-icon" class="fad fa-question fa-fw"></i>&nbsp; <span data-i18n="tutorial"></a>
-        </div> -->
+
+        <div style="text-align:right; padding-bottom:10px;">
+          <span style="font-size:90%; font-style: italic;"> 
+              
+          </span>   
+        </div>
 
         <!-- This is where Sparnatural is inserted -->
         <div class="row">
-
-          <spar-natural 
-            src="sparnatural-config.ttl"
-            endpoint="https://data.legilux.public.lu/sparqlendpoint"
-            lang="fr"
-            distinct="true"
-            limit="1000"
-            debug="true"
-          ></spar-natural>
-
+          <div id="sparnatural-container"></div>
           <input type="hidden" id="query-json"></input>
         </div>
 
         <!-- -->
         <div class="row">
           <div style="font-style: italic; font-size:0.9em;">
-            <a href="#" id="sparql-toggle"><i id="sparql-toggle-icon" class="fad fa-eye fa-fw"></i>&nbsp; <span data-i18n="actions.toggle"></span></a>
-            &nbsp;|&nbsp;
-            <a href="#" id="share"><i id="share-icon" class="fad fa-share-square"></i>&nbsp; <span data-i18n="actions.share"></span></a>
-            <!--
-            &nbsp;|&nbsp;
-            <a href="#" id="export"><i id="export-icon" class="fad fa-file-export"></i>&nbsp; <span data-i18n="actions.export"></span></a>
-            &nbsp;|&nbsp;
-            <a href="#" id="import"><i id="import-icon" class="fad fa-file-import"></i>&nbsp; <span data-i18n="actions.import"></span></a>
-            -->
-          </div>
-        </div>
-        <div class="row" style="margin-top: 2em;">
-          <div class="col-md-6">
-            <i class="fad fa-warning"></i>&nbsp; <span data-i18n="actions.warning.limit"></span>
+            <a href="#" id="sparql-toggle"><i id="sparql-toggle-icon" class="fad fa-eye fa-fw"></i>&nbsp; <span data-i18n="actions.toggle"></span></a>&nbsp;|&nbsp;<a href="#" id="share"><i id="share-icon" class="fad fa-share-square"></i>&nbsp; <span data-i18n="actions.share"></span></a>&nbsp;|&nbsp;<a href="#" id="export"><i id="export-icon" class="fad fa-file-export"></i>&nbsp; <span data-i18n="actions.export"></span></a>
           </div>
         </div>
 
@@ -251,22 +237,6 @@
     </div>
   </div>
 
-  <div class="modal fade" id="importModal" tabindex="-1" role="dialog" aria-labelledby="jsonModelLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="jsonModelLabel" data-i18n="import.modal.title"></h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body" style="overflow:hidden;">
-          <textarea class="form-control" rows="20" id="import-json" style="width:100%"></textarea>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary" id="importButton" data-i18n="import.modal.import"></button>
-        </div>
-      </div>
-    </div>
-  </div>
 
   </main><!-- End #main -->
 
@@ -296,7 +266,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
     <!--  defines timeline plugin -->
     <script src='assets/js/timeline.js'></script>
-    <script src='assets/js/myTable.js'></script>
 
     <!-- Sparnatural Javascript -->
     <script type="text/javascript" src="./sparnatural.js"></script>
@@ -315,13 +284,6 @@
   <!-- Json url (Compression) -->
   <script src="https://cdn.jsdelivr.net/gh/masotime/json-url@master/dist/browser/json-url.js"></script>
 
-  <!-- Sheperd -->
-  <script src="https://cdn.jsdelivr.net/npm/shepherd.js@8.3.1/dist/js/shepherd.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/shepherd.js@8.3.1/dist/css/shepherd.css"/>
-  <!--
-  <script src="tutorial.js"></script>
-  -->
-
     <script>
       $.urlParam = function(name){
         var results = new RegExp('[\\?&amp;]' + name + '=([^&amp;#]*)').exec(window.location.href);
@@ -334,98 +296,133 @@
       $.i18n( { locale: lang } );  
       $.i18n().load( {
           'en': {
-            'page.title': 'Legilux + Sparnatural',
+            'page.title': 'Sparnatural + Legilux',
             'menu.home': 'Sparnatural',
             'menu.lang': 'Lang.',
             'menu.github': 'Github',
             'endpoint.querying': 'Querying',
             'actions.toggle': 'Toggle SPARQL editor',
             'actions.share': 'Share',            
-            'actions.export': 'Export query in JSON',
-            'actions.import': 'Import query in JSON',
-            'actions.warning.limit': 'Result is always limited to 10000 lines',
-            'tutorial': 'First time here ? watch the tutorial !',
+            'actions.export': 'Export',
             'share.modal.title': 'Direct query link',
             'share.modal.close': 'Close',
             'export.modal.title': 'Query as JSON',
             'export.modal.close': 'Close',
-            'import.modal.title': 'Query as JSON',
-            'import.modal.import': 'Import',
             'example.placeholder': 'Load example query...',
-            'example.1.title': '1) ...',
-            'example.2.title': '2) ...'
-
+            'example.1.title': '...',
+            'example.2.title': '...'
           },
           'fr': {
-            'page.title': 'Legilux + Sparnatural',
+            'page.title': 'Sparnatural + Legilux',
             'menu.home': 'Sparnatural',
             'menu.lang': 'Lang.',
             'menu.github': 'Github',
             'endpoint.querying': 'Service SPARQL:',
             'actions.toggle': 'Afficher/Masquer éditeur SPARQL',
             'actions.share': 'Partager',            
-            'actions.export': 'Exporter la requête en JSON',
-            'actions.import': 'Charger une requête en JSON',
-            'actions.warning.limit': 'Le nombre maximum de résultats est fixé à 10 000.',
-            'tutorial': 'Vous ne savez pas comment commencer ? cliquez ici pour être guidé !',
+            'actions.export': 'Exporter',
             'share.modal.title': 'Lien direct vers la requête',
             'share.modal.close': 'Fermer',
             'export.modal.title': 'Requête JSON',
             'export.modal.close': 'Fermer',
-            'import.modal.title': 'Charger une requête en JSON',
-            'import.modal.import': 'Charger',
             'example.placeholder': 'Charger une requête d\'exemple...',
-            'example.1.title': '1) ...',
-            'example.2.title': '2) ...'
+            'example.1.title': '...',
+            'example.2.title': '...'
           }
       } );  
       $('body').i18n();
 
-      const sparnatural = document.querySelector("spar-natural");
 
-      if(lang == "fr") { 
-        // sparnatural.setAttribute("lang", "fr");
+      var sparnatural;
+      $( document ).ready(function($) {          
+
+        sparnatural = document.getElementById('sparnatural-container').Sparnatural({
+          config: "https://xls2rdf.sparna.fr/rest/convert?url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1G5gJqCMw4hnQTN-tOxGZGuhOHTrTzS8uulwoqRW1iYk%2Fexport%3Fformat%3Dxlsx&noPostProcessings=true",
+          // config: "sparnatural-config.ttl",
+          language: lang,
+          maxDepth: 4,                                                                        
+          addDistinct: true,
+          sendQueryOnFirstClassSelected: false,
+          backgroundBaseColor: '29,224,153',
+          autocomplete : null,
+          list : null,
+          defaultEndpoint : $('#endpoint').text(),
+          onQueryUpdated: function(queryString, queryJson) {
+            queryString = semanticPostProcess(queryString, queryJson);
+            // queryString = displayLabelPostProcess(queryString, queryJson);
+            // queryString = orderByPostProcess(queryString, queryJson);
+            queryString = limitPostProcess(queryString, queryJson);
+            $('#sparql code').html(queryString.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"));
+            yasqe.setValue(queryString);
+            // yasqe.query();
+
+            // save query
+            document.getElementById('query-json').value = JSON.stringify(queryJson);
+          },
+          // triggered when "play" button is clicked
+          onSubmit: function(form) {
+            // enable loader on button
+            form.sparnatural.enableLoading() ; 
+            // trigger the query from YasQE
+            yasqe.query();
+          },
+          sparqlPrefixes : {
+          }
+        });
+
+        // load ?query= param if present
+        var UrlString = window.location.search;
+        var urlParams = new URLSearchParams(UrlString);
+        if (urlParams.has("query") === true) {
+          var compressedJson = urlParams.get("query") ;
+          var compressCodec = JsonUrl('lzma');
+          compressCodec.decompress(compressedJson).then(json => {
+            sparnatural.loadQuery(JSON.parse(json)) ;
+          });
+        }
+
+      }) ;
+
+      prefixesPostProcess = function(queryString, queryJson) {
+        if(queryString.indexOf("rdf-schema#") == -1) {
+          queryString = queryString.replace("SELECT ", "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> \nSELECT ");
+          queryString = queryString.replace("SELECT ", "PREFIX owl: <http://www.w3.org/2002/07/owl#> \nSELECT ");
+          queryString = queryString.replace("SELECT ", "PREFIX skos: <http://www.w3.org/2004/02/skos/core#> \nSELECT ");
+        }
+        return queryString;
       }
 
-      sparnatural.addEventListener("queryUpdated", (event) => {
-        queryString = sparnatural.expandSparql(event.detail.queryString);
-        $('#sparql code').html(queryString.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"));
-        yasqe.setValue(queryString);
+      displayLabelPostProcess = function(queryString, queryJson) {
+        queryString = queryString.replace(new RegExp('}$'), "  OPTIONAL { ?this rdfs:label ?theLabel FILTER(lang(?theLabel) = 'fr') } \n}");
+        queryString = queryString.replace(new RegExp('}$'), "  OPTIONAL { ?this skos:notation ?notation } \n}");
+        queryString = queryString.replace(new RegExp('}$'), "}\nORDER BY ?notation");
+        return queryString;
+      }
 
-        // save query
-        document.getElementById('query-json').value = JSON.stringify(event.detail.queryJson);
+      orderByPostProcess = function(queryString, queryJson) {
+        // queryString = queryString.replace(new RegExp('}$'), "}\nORDER BY ?label LIMIT 100");
+        queryString = queryString.replace("SELECT DISTINCT ?this", "SELECT DISTINCT ?notation (STR(?theLabel) AS ?label) ?this");
+        // queryString = queryString.replace(new RegExp('}$'), "}\nORDER BY ?label LIMIT 1000");
+        // queryString = queryString.replace(new RegExp('}$'), "}\nLIMIT 1000");
+        return queryString;
+      }
 
-        // When click on select2 for Sheperd tour
-        if (StepToWait3 != null && StepToWait3.isOpen()){
-          Shepherd.activeTour.next();
-        }
-      });
+      limitPostProcess = function(queryString, queryJson) {
+        queryString = queryString.replace(new RegExp('$'), "\nLIMIT 1000");
+        // queryString = queryString.replace(new RegExp('}$'), "}\nORDER BY ?label LIMIT 1000");
+        // queryString = queryString.replace(new RegExp('}$'), "}\nLIMIT 1000");
+        return queryString;
+      }
 
-      sparnatural.addEventListener("submit", (event) => {
-        // enable loader on button
-        sparnatural.disablePlayBtn() ; 
-        // trigger the query from YasQE
-        yasqe.query();
-      });
-
-      sparnatural.addEventListener("reset", (event) => {
-        yasqe.setValue("");
-      });
-
-      // load ?query= param if present
-      var UrlString = window.location.search;
-      var urlParams = new URLSearchParams(UrlString);
-      if (urlParams.has("query") === true) {
-        var compressedJson = urlParams.get("query") ;
-        var compressCodec = JsonUrl('lzma');
-        compressCodec.decompress(compressedJson).then(json => {
-          sparnatural.loadQuery(JSON.parse(json)) ;
-        });
-      }      
+      semanticPostProcess = function(queryString, queryJson) {
+        queryString = prefixesPostProcess(queryString, queryJson);
+        queryString = sparnatural.expandSparql(queryString);
+        return queryString;
+      }
 
       const yasqe = new Yasqe(document.getElementById("yasqe"), {
         requestConfig: { 
-          endpoint: "https://proxy.sparnatural.eu/sparql-proxy/sparql?endpoint=https%3A%2F%2Fsmt.esante.gouv.fr%2Fapi%2Fsparql",
+          endpoint: $('#endpoint').text(),
           method: "GET",
           header: {}
         },
@@ -435,14 +432,11 @@
       Yasr.registerPlugin("LabelledUriTable",SparnaturalYasguiPlugins.TableX);
       Yasr.registerPlugin("Timeline",Timeline);
       Yasr.plugins.LabelledUriTable.defaults.labelledUriAdapter = function(uri) {
-        if(uri.startsWith("http://fr.dbpedia.org/resource/")) {
-          return "http://fr.wikipedia.org/wiki/" + uri.substring("http://fr.dbpedia.org/resource/".length);
-        } else {
-          return uri;
-        }
+        return uri;
       };
       delete Yasr.plugins['table'];
       delete Yasr.plugins['response'];
+
       const yasr = new Yasr(document.getElementById("yasr"), {
         pluginOrder: ["LabelledUriTable", "Timeline"],
         defaultPlugin: "LabelledUriTable",
@@ -454,7 +448,7 @@
       // link yasqe and yasr
       yasqe.on("queryResponse", function(_yasqe, response, duration) {
         yasr.setResponse(response, duration);
-        sparnatural.enablePlayBtn();
+        sparnatural.disableLoading();
       });
 
       document.getElementById('sparql-toggle').onclick = function() {
@@ -481,7 +475,6 @@
         });
       }
         
-      /*
       document.getElementById('export').onclick = function() {
           var jsonString = JSON.stringify(
               JSON.parse(document.getElementById('query-json').value),
@@ -492,31 +485,12 @@
           $('#exportModal').modal('show');       
       } 
 
-      document.getElementById('import').onclick = function() {
-          $('#importModal').modal('show');       
-      } 
-      */
-
-      document.getElementById('importButton').onclick = function() {
-          var json = JSON.parse($('#import-json').val());
-          $('#importModal').modal('hide');  
-          sparnatural.loadQuery(json);    
-      } 
-
       document.getElementById('select-examples').onchange = function() {
         var key = $('#select-examples option:selected').val();
         if(sampleQueries.hasOwnProperty(key)) {
             sparnatural.loadQuery(sampleQueries[key]) ;
         }
       }
-
-      /*
-      document.getElementById('tutorial').onclick = function() {
-        sparnatural.clear();
-        initTour();
-      }
-      */
-
     </script>
   </script>
 
