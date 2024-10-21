@@ -21,9 +21,6 @@
 
   <!-- Sparnatural-specific -->
 
-    <!-- Vis.js for timeline -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css">
-
     <!-- Font Awesome -->    
     <link rel="stylesheet" href="assets/fa6/css/all.min.css" />
 
@@ -35,8 +32,6 @@
 
     <!-- Sparnatural CSS -->
     <link href="sparnatural.css" rel="stylesheet" />
-    <!-- Timeline CSS -->
-    <link rel="stylesheet" href="assets/css/timeline.css" />
 
     <style>
       .yasqe .CodeMirror {
@@ -292,12 +287,6 @@
     <!-- YASGUI stuff -->
     <script src="https://unpkg.com/@triply/yasgui/build/yasgui.min.js"></script>
 
-    <!-- vis.js for the timeline -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
-    <!--  defines timeline plugin -->
-    <script src='assets/js/timeline.js'></script>
-    <script src='assets/js/myTable.js'></script>
-
     <!-- Sparnatural Javascript -->
     <script type="text/javascript" src="./sparnatural.js"></script>
     <script type="text/javascript" src="./sparnatural-yasgui-plugins.js"></script>
@@ -425,16 +414,15 @@
 
       const yasqe = new Yasqe(document.getElementById("yasqe"), {
         requestConfig: { 
-          endpoint: "https://proxy.sparnatural.eu/sparql-proxy/sparql?endpoint=https%3A%2F%2Fsmt.esante.gouv.fr%2Fapi%2Fsparql",
+          endpoint: sparnatural.getAttribute("endpoint"),
           method: "GET",
           header: {}
         },
         copyEndpointOnNewTab: false  
       });
 
-      Yasr.registerPlugin("LabelledUriTable",SparnaturalYasguiPlugins.TableX);
-      Yasr.registerPlugin("Timeline",Timeline);
-      Yasr.plugins.LabelledUriTable.defaults.labelledUriAdapter = function(uri) {
+      Yasr.registerPlugin("TableX",SparnaturalYasguiPlugins.TableX);
+      Yasr.plugins.TableX.defaults.labelledUriAdapter = function(uri) {
         if(uri.startsWith("http://fr.dbpedia.org/resource/")) {
           return "http://fr.wikipedia.org/wiki/" + uri.substring("http://fr.dbpedia.org/resource/".length);
         } else {
@@ -444,8 +432,8 @@
       delete Yasr.plugins['table'];
       delete Yasr.plugins['response'];
       const yasr = new Yasr(document.getElementById("yasr"), {
-        pluginOrder: ["LabelledUriTable", "Timeline"],
-        defaultPlugin: "LabelledUriTable",
+        pluginOrder: ["TableX"],
+        defaultPlugin: "TableX",
         // disable persistency
         persistencyExpire: 0,
         maxPersistentResponseSize: 0
