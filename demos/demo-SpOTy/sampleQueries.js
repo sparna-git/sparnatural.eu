@@ -320,11 +320,11 @@ var sampleQueries = {
         },
         {
             "termType": "Variable",
-            "value": "Z_Text_4"
+            "value": "Center_4"
         },
         {
             "termType": "Variable",
-            "value": "Z_Text_6"
+            "value": "Center_6"
         }
     ],
     "order": null,
@@ -343,9 +343,9 @@ var sampleQueries = {
                     "line": {
                         "s": "Center_2",
                         "p": "https://w3id.org/SpOTy/shapes-ldo/Center_latitude",
-                        "o": "Z_Text_4",
+                        "o": "Center_4",
                         "sType": "https://w3id.org/SpOTy/shapes-ldo/Center",
-                        "oType": "http://special/Z_Text",
+                        "oType": "https://w3id.org/SpOTy/shapes-ldo/Center",
                         "values": []
                     },
                     "children": []
@@ -354,9 +354,9 @@ var sampleQueries = {
                     "line": {
                         "s": "Center_2",
                         "p": "https://w3id.org/SpOTy/shapes-ldo/Center_longitude",
-                        "o": "Z_Text_6",
+                        "o": "Center_6",
                         "sType": "https://w3id.org/SpOTy/shapes-ldo/Center",
-                        "oType": "http://special/Z_Text",
+                        "oType": "https://w3id.org/SpOTy/shapes-ldo/Center",
                         "values": []
                     },
                     "children": []

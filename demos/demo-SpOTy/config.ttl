@@ -151,14 +151,15 @@ this:Iso639_3 a sh:NodeShape;
   sh:order "90"^^xsd:integer;
   volipi:iconName "fa-duotone fa-language" .
 
+this:Latitude a sh:NodeShape;
+  rdfs:label "Latitude"@en, "Latitude"@fr;
+  sh:nodeKind sh:Literal;
+  sh:order "95"^^xsd:integer;
+  volipi:iconName "fa-solid fa-globe-stand" .
+
 this:Longitude a sh:NodeShape;
   rdfs:label "Longitude"@en, "Longitude"@fr;
   sh:nodeKind sh:Literal;
-  sh:order "94"^^xsd:integer;
-  volipi:iconName "fa-solid fa-globe-stand" .
-
-this:Latitude a sh:NodeShape;
-  rdfs:label "Latitude"@en, "Latitude"@fr;
   sh:order "95"^^xsd:integer;
   volipi:iconName "fa-solid fa-globe-stand" .
 
@@ -209,26 +210,26 @@ this:Sentence_lastToken sh:path spoty:lastToken;
   sh:node this:Token;
   sh:deactivated "true"^^xsd:boolean .
 
-this:Sentence_sentenceToken sh:path _:88dc89dcb85c491a887221b62c44ac411708;
+this:Sentence_sentenceToken sh:path _:88dc89dcb85c491a887221b62c44ac411784;
   sh:name "has"@en, "a pour"@fr;
   sh:nodeKind sh:IRI;
   sh:node this:Token;
   dash:searchWidget core:NonSelectableProperty;
   core:enableOptional "true"^^xsd:boolean .
 
-_:88dc89dcb85c491a887221b62c44ac411708 rdf:first spoty:firstToken;
-  rdf:rest _:88dc89dcb85c491a887221b62c44ac411709 .
+_:88dc89dcb85c491a887221b62c44ac411784 rdf:first spoty:firstToken;
+  rdf:rest _:88dc89dcb85c491a887221b62c44ac411785 .
 
-_:88dc89dcb85c491a887221b62c44ac411709 rdf:first _:88dc89dcb85c491a887221b62c44ac411710;
+_:88dc89dcb85c491a887221b62c44ac411785 rdf:first _:88dc89dcb85c491a887221b62c44ac411786;
   rdf:rest rdf:nil .
 
-_:88dc89dcb85c491a887221b62c44ac411710 sh:zeroOrMorePath spoty:nextToken .
+_:88dc89dcb85c491a887221b62c44ac411786 sh:zeroOrMorePath spoty:nextToken .
 
 this:Sentence_language sh:path spoty:language;
   sh:name "in"@en, "en"@fr;
   sh:nodeKind sh:IRI;
   sh:node this:Language;
-  dash:searchWidget core:AutocompleteProperty;
+  dash:searchWidget core:ListProperty;
   datasources:datasource this:search_language;
   core:enableOptional "true"^^xsd:boolean .
 
@@ -276,23 +277,23 @@ this:Token_lastToken sh:path spoty:lastToken;
   sh:nodeKind sh:IRI;
   sh:deactivated "true"^^xsd:boolean .
 
-this:Token_tokenSentence sh:path _:88dc89dcb85c491a887221b62c44ac411711;
+this:Token_tokenSentence sh:path _:88dc89dcb85c491a887221b62c44ac411787;
   sh:name "in"@en, "dans"@fr;
   sh:nodeKind sh:IRI;
   sh:node this:Sentence;
   dash:searchWidget core:ListProperty .
 
-_:88dc89dcb85c491a887221b62c44ac411711 rdf:first _:88dc89dcb85c491a887221b62c44ac411712;
-  rdf:rest _:88dc89dcb85c491a887221b62c44ac411714 .
+_:88dc89dcb85c491a887221b62c44ac411787 rdf:first _:88dc89dcb85c491a887221b62c44ac411788;
+  rdf:rest _:88dc89dcb85c491a887221b62c44ac411790 .
 
-_:88dc89dcb85c491a887221b62c44ac411712 sh:inversePath _:88dc89dcb85c491a887221b62c44ac411713 .
+_:88dc89dcb85c491a887221b62c44ac411788 sh:inversePath _:88dc89dcb85c491a887221b62c44ac411789 .
 
-_:88dc89dcb85c491a887221b62c44ac411713 sh:zeroOrMorePath spoty:nextToken .
+_:88dc89dcb85c491a887221b62c44ac411789 sh:zeroOrMorePath spoty:nextToken .
 
-_:88dc89dcb85c491a887221b62c44ac411714 rdf:first _:88dc89dcb85c491a887221b62c44ac411715;
+_:88dc89dcb85c491a887221b62c44ac411790 rdf:first _:88dc89dcb85c491a887221b62c44ac411791;
   rdf:rest rdf:nil .
 
-_:88dc89dcb85c491a887221b62c44ac411715 sh:inversePath spoty:firstToken .
+_:88dc89dcb85c491a887221b62c44ac411791 sh:inversePath spoty:firstToken .
 
 this:Token_ttranscription sh:path spoty:ttranscription;
   sh:name "has"@en, "a pour"@fr;
@@ -311,7 +312,7 @@ this:Token_nextToken sh:path spoty:nextToken;
   dash:searchWidget core:NonSelectableProperty;
   core:enableOptional "true"^^xsd:boolean .
 
-this:Token_previousToken sh:path _:88dc89dcb85c491a887221b62c44ac411716;
+this:Token_previousToken sh:path _:88dc89dcb85c491a887221b62c44ac411792;
   sh:order "4";
   sh:name "just after"@en, "juste après"@fr;
   sh:nodeKind sh:IRI;
@@ -319,9 +320,9 @@ this:Token_previousToken sh:path _:88dc89dcb85c491a887221b62c44ac411716;
   dash:searchWidget core:NonSelectableProperty;
   core:enableOptional "true"^^xsd:boolean .
 
-_:88dc89dcb85c491a887221b62c44ac411716 sh:inversePath spoty:nextToken .
+_:88dc89dcb85c491a887221b62c44ac411792 sh:inversePath spoty:nextToken .
 
-this:Token_laterToken sh:path _:88dc89dcb85c491a887221b62c44ac411717;
+this:Token_laterToken sh:path _:88dc89dcb85c491a887221b62c44ac411793;
   sh:order "1";
   sh:name "before"@en, "avant"@fr;
   sh:nodeKind sh:IRI;
@@ -329,9 +330,9 @@ this:Token_laterToken sh:path _:88dc89dcb85c491a887221b62c44ac411717;
   dash:searchWidget core:NonSelectableProperty;
   core:enableOptional "true"^^xsd:boolean .
 
-_:88dc89dcb85c491a887221b62c44ac411717 sh:oneOrMorePath spoty:nextToken .
+_:88dc89dcb85c491a887221b62c44ac411793 sh:oneOrMorePath spoty:nextToken .
 
-this:Token_formerToken sh:path _:88dc89dcb85c491a887221b62c44ac411718;
+this:Token_formerToken sh:path _:88dc89dcb85c491a887221b62c44ac411794;
   sh:order "6";
   sh:name "after"@en, "après"@fr;
   sh:nodeKind sh:IRI;
@@ -339,9 +340,9 @@ this:Token_formerToken sh:path _:88dc89dcb85c491a887221b62c44ac411718;
   dash:searchWidget core:NonSelectableProperty;
   core:enableOptional "true"^^xsd:boolean .
 
-_:88dc89dcb85c491a887221b62c44ac411718 sh:inversePath _:88dc89dcb85c491a887221b62c44ac411719 .
+_:88dc89dcb85c491a887221b62c44ac411794 sh:inversePath _:88dc89dcb85c491a887221b62c44ac411795 .
 
-_:88dc89dcb85c491a887221b62c44ac411719 sh:oneOrMorePath spoty:nextToken .
+_:88dc89dcb85c491a887221b62c44ac411795 sh:oneOrMorePath spoty:nextToken .
 
 this:Token_nextAnnotatedToken sh:path spoty:nextAnnotatedToken;
   sh:order "2";
@@ -352,7 +353,7 @@ this:Token_nextAnnotatedToken sh:path spoty:nextAnnotatedToken;
   dash:searchWidget core:NonSelectableProperty;
   core:enableOptional "true"^^xsd:boolean .
 
-this:Token_previousAnnotatedToken sh:path _:88dc89dcb85c491a887221b62c44ac411720;
+this:Token_previousAnnotatedToken sh:path _:88dc89dcb85c491a887221b62c44ac411796;
   sh:order "5";
   sh:name "just after (annotated)"@en, "juste après (annotated)"@fr;
   sh:nodeKind sh:IRI;
@@ -360,7 +361,7 @@ this:Token_previousAnnotatedToken sh:path _:88dc89dcb85c491a887221b62c44ac411720
   dash:searchWidget core:NonSelectableProperty;
   core:enableOptional "true"^^xsd:boolean .
 
-_:88dc89dcb85c491a887221b62c44ac411720 sh:inversePath spoty:nextAnnotatedToken .
+_:88dc89dcb85c491a887221b62c44ac411796 sh:inversePath spoty:nextAnnotatedToken .
 
 this:Token_semantics sh:path spoty:semantics;
   sh:name "has (direct)"@en, "a pour (direct)"@fr;
@@ -371,7 +372,7 @@ this:Token_semantics sh:path spoty:semantics;
   datasources:treeRootsDatasource this:taxo_semantics_root;
   datasources:treeChildrenDatasource this:taxo_children .
 
-this:Token_tokenSemantics sh:path _:88dc89dcb85c491a887221b62c44ac411721;
+this:Token_tokenSemantics sh:path _:88dc89dcb85c491a887221b62c44ac411797;
   sh:name "has"@en, "a pour"@fr;
   sh:nodeKind sh:IRI;
   sh:node this:Semantics;
@@ -380,13 +381,13 @@ this:Token_tokenSemantics sh:path _:88dc89dcb85c491a887221b62c44ac411721;
   datasources:treeRootsDatasource this:taxo_semantics_root;
   datasources:treeChildrenDatasource this:taxo_children .
 
-_:88dc89dcb85c491a887221b62c44ac411721 rdf:first spoty:semantics;
-  rdf:rest _:88dc89dcb85c491a887221b62c44ac411722 .
+_:88dc89dcb85c491a887221b62c44ac411797 rdf:first spoty:semantics;
+  rdf:rest _:88dc89dcb85c491a887221b62c44ac411798 .
 
-_:88dc89dcb85c491a887221b62c44ac411722 rdf:first _:88dc89dcb85c491a887221b62c44ac411723;
+_:88dc89dcb85c491a887221b62c44ac411798 rdf:first _:88dc89dcb85c491a887221b62c44ac411799;
   rdf:rest rdf:nil .
 
-_:88dc89dcb85c491a887221b62c44ac411723 sh:zeroOrMorePath skos:broader .
+_:88dc89dcb85c491a887221b62c44ac411799 sh:zeroOrMorePath skos:broader .
 
 this:Token_morphoSyntax sh:path spoty:morphoSyntax;
   sh:name "has (direct)"@en, "a pour (direct)"@fr;
@@ -395,7 +396,7 @@ this:Token_morphoSyntax sh:path spoty:morphoSyntax;
   dash:searchWidget core:ListProperty;
   core:enableOptional "true"^^xsd:boolean .
 
-this:Token_tokenMorphosynytax sh:path _:88dc89dcb85c491a887221b62c44ac411724;
+this:Token_tokenMorphosynytax sh:path _:88dc89dcb85c491a887221b62c44ac411800;
   sh:name "has"@en, "a pour"@fr;
   sh:nodeKind sh:IRI;
   sh:node this:MorphoSyntax;
@@ -403,13 +404,13 @@ this:Token_tokenMorphosynytax sh:path _:88dc89dcb85c491a887221b62c44ac411724;
   datasources:datasource this:list_morphosyntax;
   core:enableOptional "true"^^xsd:boolean .
 
-_:88dc89dcb85c491a887221b62c44ac411724 rdf:first spoty:morphoSyntax;
-  rdf:rest _:88dc89dcb85c491a887221b62c44ac411725 .
+_:88dc89dcb85c491a887221b62c44ac411800 rdf:first spoty:morphoSyntax;
+  rdf:rest _:88dc89dcb85c491a887221b62c44ac411801 .
 
-_:88dc89dcb85c491a887221b62c44ac411725 rdf:first _:88dc89dcb85c491a887221b62c44ac411726;
+_:88dc89dcb85c491a887221b62c44ac411801 rdf:first _:88dc89dcb85c491a887221b62c44ac411802;
   rdf:rest rdf:nil .
 
-_:88dc89dcb85c491a887221b62c44ac411726 sh:zeroOrMorePath skos:broader .
+_:88dc89dcb85c491a887221b62c44ac411802 sh:zeroOrMorePath skos:broader .
 
 this:Token_gloss sh:path spoty:gloss;
   sh:name "has"@en, "a pour"@fr;
@@ -524,8 +525,7 @@ this:Language_rdfslabel sh:path rdfs:label;
 this:Language_center sh:path spoty:center;
   sh:name "has center"@en, "a pour centre"@fr;
   sh:nodeKind sh:IRI;
-  sh:node this:Center;
-  sh:deactivated "true"^^xsd:boolean .
+  sh:node this:Center .
 
 this:Language_order_svo sh:path spoty:order_svo;
   sh:name "has order svo"@en, "a pour ordre svo"@fr;
@@ -586,12 +586,14 @@ this:Language_wdtP220 sh:path wdt:P220;
 this:Center_longitude sh:path schema:longitude;
   sh:name "has longitude"@en, "a pour longitude"@fr;
   sh:nodeKind sh:Literal;
-  sh:datatype xsd:decimal .
+  sh:datatype xsd:decimal;
+  sh:node this:Longitude .
 
 this:Center_latitude sh:path schema:latitude;
   sh:name "has latitude"@en, "a pour latitude"@fr;
   sh:nodeKind sh:Literal;
-  sh:datatype xsd:decimal .
+  sh:datatype xsd:decimal;
+  sh:node this:Latitude .
 
 this:taxo_semantics_root a "config-datasources:SparqlDatasource";
   datasources:queryString """PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
