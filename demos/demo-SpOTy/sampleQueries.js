@@ -309,4 +309,61 @@ var sampleQueries = {
     ]
 }
 
+    ,
+    "example.5" :
+{
+    "distinct": true,
+    "variables": [
+        {
+            "termType": "Variable",
+            "value": "Language_1"
+        },
+        {
+            "termType": "Variable",
+            "value": "Z_Text_4"
+        },
+        {
+            "termType": "Variable",
+            "value": "Z_Text_6"
+        }
+    ],
+    "order": null,
+    "branches": [
+        {
+            "line": {
+                "s": "Language_1",
+                "p": "https://w3id.org/SpOTy/shapes-ldo/Language_center",
+                "o": "Center_2",
+                "sType": "https://w3id.org/SpOTy/shapes-ldo/Language",
+                "oType": "https://w3id.org/SpOTy/shapes-ldo/Center",
+                "values": []
+            },
+            "children": [
+                {
+                    "line": {
+                        "s": "Center_2",
+                        "p": "https://w3id.org/SpOTy/shapes-ldo/Center_latitude",
+                        "o": "Z_Text_4",
+                        "sType": "https://w3id.org/SpOTy/shapes-ldo/Center",
+                        "oType": "http://special/Z_Text",
+                        "values": []
+                    },
+                    "children": []
+                },
+                {
+                    "line": {
+                        "s": "Center_2",
+                        "p": "https://w3id.org/SpOTy/shapes-ldo/Center_longitude",
+                        "o": "Z_Text_6",
+                        "sType": "https://w3id.org/SpOTy/shapes-ldo/Center",
+                        "oType": "http://special/Z_Text",
+                        "values": []
+                    },
+                    "children": []
+                }
+            ]
+        }
+    ]
+}
+
 };
