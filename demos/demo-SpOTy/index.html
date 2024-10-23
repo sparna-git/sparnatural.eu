@@ -416,7 +416,7 @@
       Yasr.registerPlugin("TableX",SparnaturalYasguiPlugins.TableX);
       Yasr.registerPlugin("Grid",SparnaturalYasguiPlugins.GridPlugin);
       Yasr.registerPlugin("Stats",SparnaturalYasguiPlugins.StatsPlugin);
-      Yasr.registerPlugin("Timeline",Timeline);
+      Yasr.registerPlugin("Map",SparnaturalYasguiPlugins.MapPlugin);
       Yasr.plugins.TableX.defaults.uriHrefAdapter = function(uri) {
         if(uri.startsWith("http://fr.dbpedia.org/resource/")) {
           return "http://fr.wikipedia.org/wiki/" + uri.substring("http://fr.dbpedia.org/resource/".length);
@@ -427,7 +427,7 @@
       delete Yasr.plugins['table'];
       delete Yasr.plugins['response'];
       const yasr = new Yasr(document.getElementById("yasr"), {
-        pluginOrder: ["TableX", "Grid", "Stats", "Timeline"],
+        pluginOrder: ["TableX", "Grid", "Map", "Stats"],
         defaultPlugin: "TableX",
         // disable persistency
         persistencyExpire: 0,
