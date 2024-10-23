@@ -1,7 +1,7 @@
 [
   {
-    "label_en" : "All magnetic tapes with their identifier and title of the resource",
-    "label_de" : "Alle Magnetbänder im Feld Trägertyp und deren Signatur und Titel",
+    "label_en" : "Q1 All magnetic tapes with their identifier and title of the resource",
+    "label_de" : "Q1 Alle Magnetbänder im Feld Trägertyp und deren Signatur und Titel",
     "query" : {
       "distinct": true,
       "variables": [
@@ -95,8 +95,8 @@
     }
   },
   {
-    "label_en" : "All U-matic tapes with their identifier and title of the resource",
-    "label_de" : "Alle Umatic Kassetten im Feld Trägertyp und deren Signatur und Titel",
+    "label_en" : "Q2 All U-matic tapes with their identifier and title of the resource",
+    "label_de" : "Q2 Alle Umatic Kassetten im Feld Trägertyp und deren Signatur und Titel",
     "query" : {
       "distinct": true,
       "variables": [
@@ -190,8 +190,8 @@
     }
   },
   {
-    "label_en" : "All VHS cassette in Hallerstrasse with status «archival master»",
-    "label_de" : "Alle VHS Kassetten an der Hallerstrasse mit dem Archivstatus «archival master»",
+    "label_en" : "Q3 All VHS cassette in Hallerstrasse with status «archival master»",
+    "label_de" : "Q3 Alle VHS Kassetten an der Hallerstrasse mit dem Archivstatus «archival master»",
     "query" : {
       "distinct": true,
       "variables": [
@@ -332,8 +332,8 @@
     }
   },
   {
-    "label_en" : "All Instantiations at LTO with format mkv and status «archival master»",
-    "label_de" : "Alle Instantiationen auf LTO mit dem Format mkv und dem Archivstatus «archival master»",
+    "label_en" : "Q4 All Instantiations at LTO with format mkv and status «archival master»",
+    "label_de" : "Q4 Alle Instantiationen auf LTO mit dem Format mkv und dem Archivstatus «archival master»",
     "query" : {
       "distinct": true,
       "variables": [
@@ -490,8 +490,8 @@
     }
   },
   {
-    "label_en" : "All Instantiations in fonds 'Jean Deroc' with status «archival master», with identifiers, conditions, and title",
-    "label_de" : "Alle Instantiationen in Bestand 'Jean Deroc' mit dem Archivstatus «archival master» mit Angabe zu Zustand, Record und Standort",
+    "label_en" : "Q5 All Instantiations in fonds 'Jean Deroc' with status «archival master», with identifiers, conditions, and title",
+    "label_de" : "Q5 Alle Instantiationen in Bestand 'Jean Deroc' mit dem Archivstatus «archival master» mit Angabe zu Zustand, Record und Standort",
     "query" : {
       "distinct": true,
       "variables": [
@@ -633,8 +633,8 @@
     }
   },
   {
-    "label_en" : "All Files with Standard 'secam', with their location",
-    "label_de" : "Alle Files mit dem Standard 'secam' suchen. Angaben zu Standort",
+    "label_en" : "Q6 All Files with Standard 'secam', with their location",
+    "label_de" : "Q6 Alle Files mit dem Standard 'secam' suchen. Angaben zu Standort",
     "query" : {
       "distinct": true,
       "variables": [
@@ -695,8 +695,8 @@
     }
   },
   {
-    "label_en" : "In Fonds 'Jean Deroc', all Files with status 'preservation copy', with their video format and container format",
-    "label_de" : "In Bestand 'Jean Deroc' alle Files mit dem Archivstatus 'preservation copy' suchen, dazu Angaben zu Videoformat und Containerformat",
+    "label_en" : "Q7 In Fonds 'Jean Deroc', all Files with status 'preservation copy', with their video format and container format",
+    "label_de" : "Q7 In Bestand 'Jean Deroc' alle Files mit dem Archivstatus 'preservation copy' suchen, dazu Angaben zu Videoformat und Containerformat",
     "query" : {
       "distinct": true,
       "variables": [
@@ -853,6 +853,207 @@
             "o": "ContainerFormat",
             "sType": "http://shapes.performing-arts.ch/instantiations/File",
             "oType": "http://shapes.performing-arts.ch/instantiations/ContainerFormat",
+            "values": []
+          },
+          "children": [],
+          "optional": true
+        }
+      ]
+    }
+  }
+  {
+    "label_en" : "File : full query",
+    "label_de" : "File : full query",
+    "query" : {
+      "distinct": true,
+      "variables": [
+        {
+          "termType": "Variable",
+          "value": "File"
+        },
+        {
+          "termType": "Variable",
+          "value": "OriginalName"
+        },
+        {
+          "termType": "Variable",
+          "value": "VideoFormat"
+        },
+        {
+          "termType": "Variable",
+          "value": "AudioFormat"
+        },
+        {
+          "termType": "Variable",
+          "value": "ContainerFormat"
+        },
+        {
+          "termType": "Variable",
+          "value": "Size"
+        },
+        {
+          "termType": "Variable",
+          "value": "LastControlExprDate"
+        },
+        {
+          "termType": "Variable",
+          "value": "LastControlNormDate"
+        },
+        {
+          "termType": "Variable",
+          "value": "Standard"
+        },
+        {
+          "termType": "Variable",
+          "value": "History"
+        },
+        {
+          "termType": "Variable",
+          "value": "Integrity"
+        }
+      ],
+      "order": null,
+      "branches": [
+        {
+          "line": {
+            "s": "File",
+            "p": "http://shapes.performing-arts.ch/instantiations/File_originalName",
+            "o": "OriginalName",
+            "sType": "http://shapes.performing-arts.ch/instantiations/File",
+            "oType": "http://special/Z_Text",
+            "values": []
+          },
+          "children": [],
+          "optional": true
+        },
+        {
+          "line": {
+            "s": "File",
+            "p": "http://shapes.performing-arts.ch/instantiations/File_hasFormat",
+            "o": "VideoFormat",
+            "sType": "http://shapes.performing-arts.ch/instantiations/File",
+            "oType": "http://shapes.performing-arts.ch/instantiations/VideoFormat",
+            "values": []
+          },
+          "children": [],
+          "optional": true
+        },
+        {
+          "line": {
+            "s": "File",
+            "p": "http://shapes.performing-arts.ch/instantiations/File_hasFormat",
+            "o": "AudioFormat",
+            "sType": "http://shapes.performing-arts.ch/instantiations/File",
+            "oType": "http://shapes.performing-arts.ch/instantiations/AudioFormat",
+            "values": []
+          },
+          "children": [],
+          "optional": true
+        },
+        {
+          "line": {
+            "s": "File",
+            "p": "http://shapes.performing-arts.ch/instantiations/File_hasFormat",
+            "o": "ContainerFormat",
+            "sType": "http://shapes.performing-arts.ch/instantiations/File",
+            "oType": "http://shapes.performing-arts.ch/instantiations/ContainerFormat",
+            "values": []
+          },
+          "children": [],
+          "optional": true
+        },
+        {
+          "line": {
+            "s": "File",
+            "p": "http://shapes.performing-arts.ch/instantiations/File_size",
+            "o": "Size",
+            "sType": "http://shapes.performing-arts.ch/instantiations/File",
+            "oType": "http://special/Z_Text",
+            "values": []
+          },
+          "children": [],
+          "optional": true
+        },
+        {
+          "line": {
+            "s": "File",
+            "p": "http://shapes.performing-arts.ch/instantiations/File_isIncludedIn",
+            "o": "Representation_12",
+            "sType": "http://shapes.performing-arts.ch/instantiations/File",
+            "oType": "http://shapes.performing-arts.ch/instantiations/Representation",
+            "values": []
+          },
+          "children": [
+            {
+              "line": {
+                "s": "Representation_12",
+                "p": "http://shapes.performing-arts.ch/instantiations/Instantiation_lastControl",
+                "o": "SingleDate_14",
+                "sType": "http://shapes.performing-arts.ch/instantiations/Representation",
+                "oType": "http://shapes.performing-arts.ch/collections/SingleDate",
+                "values": []
+              },
+              "children": [
+                {
+                  "line": {
+                    "s": "SingleDate_14",
+                    "p": "http://shapes.performing-arts.ch/collections/SingleDate_expressedDate",
+                    "o": "LastControlExprDate",
+                    "sType": "http://shapes.performing-arts.ch/collections/SingleDate",
+                    "oType": "http://special/Z_Text",
+                    "values": []
+                  },
+                  "children": [],
+                  "optional": true
+                },
+                {
+                  "line": {
+                    "s": "SingleDate_14",
+                    "p": "http://shapes.performing-arts.ch/collections/SingleDate_normalizedDateValue",
+                    "o": "LastControlNormDate",
+                    "sType": "http://shapes.performing-arts.ch/collections/SingleDate",
+                    "oType": "http://special/Z_Text",
+                    "values": []
+                  },
+                  "children": [],
+                  "optional": true
+                }
+              ],
+              "optional": true
+            },
+            {
+              "line": {
+                "s": "Representation_12",
+                "p": "http://shapes.performing-arts.ch/instantiations/Instantiation_history",
+                "o": "History",
+                "sType": "http://shapes.performing-arts.ch/instantiations/Representation",
+                "oType": "http://special/Z_Text",
+                "values": []
+              },
+              "children": [],
+              "optional": true
+            },
+            {
+              "line": {
+                "s": "Representation_12",
+                "p": "http://shapes.performing-arts.ch/instantiations/Instantiation_integrity",
+                "o": "Integrity",
+                "sType": "http://shapes.performing-arts.ch/instantiations/Representation",
+                "oType": "http://special/Z_Text",
+                "values": []
+              },
+              "children": [],
+              "optional": true
+            }
+          ]
+        },
+        {
+          "line": {
+            "s": "File",
+            "p": "http://shapes.performing-arts.ch/instantiations/File_hasStandard",
+            "o": "Standard",
+            "sType": "http://shapes.performing-arts.ch/instantiations/File",
+            "oType": "http://shapes.performing-arts.ch/instantiations/Standard",
             "values": []
           },
           "children": [],
