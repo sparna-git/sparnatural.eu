@@ -115,7 +115,7 @@
           <!-- full config : https://europarl.github.io/org-ep/1.2/org-ep.shacl.ttl https://xls2rdf.sparna.fr/rest/convert?url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1GUr0h834D4KiY3VuRoL_yrrgG9APjcX8%2Fexport%3Fformat%3Dxlsx&noPostProcessings=true -->
 
           <spar-natural 
-            src="https://europarl.github.io/org-ep/1.2/org-ep.shacl.ttl https://europarl.github.io/eli-ep/2.1.0/eli-ep.shacl.ttl https://xls2rdf.sparna.fr/rest/convert?url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1GUr0h834D4KiY3VuRoL_yrrgG9APjcX8%2Fexport%3Fformat%3Dxlsx&noPostProcessings=true"
+            src="https://europarl.github.io/org-ep/2.1.0/org-ep.shacl.ttl https://europarl.github.io/eli-ep/2.1.0/eli-ep.shacl.ttl https://xls2rdf.sparna.fr/rest/convert?url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1GUr0h834D4KiY3VuRoL_yrrgG9APjcX8%2Fexport%3Fformat%3Dxlsx&noPostProcessings=true statistics.ttl"
             endpoint="https://proxy.sparnatural.eu/sparql-proxy/sparql?endpoint=http%3A%2F%2Fgraphdb.sparna.fr%2Frepositories%2Fep_dashboard"
             lang="en"
             distinct="true"
@@ -421,7 +421,7 @@
 
       // load sample queries
       let queries = [];
-      fetch('instantiation_queries.json').then(response => {
+      fetch('ep_queries.json').then(response => {
         if (!response.ok) {
            throw new Error("HTTP error " + response.status);
         }

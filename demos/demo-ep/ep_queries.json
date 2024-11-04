@@ -1,0 +1,517 @@
+[
+  {
+    "label_en" : "All chairs of EU political groups, with dates of membership",
+    "query" : {
+      "distinct": true,
+      "variables": [
+        {
+          "termType": "Variable",
+          "value": "Person_1"
+        },
+        {
+          "termType": "Variable",
+          "value": "Image_10"
+        },
+        {
+          "termType": "Variable",
+          "value": "Organization_6"
+        },
+        {
+          "termType": "Variable",
+          "value": "Z_Date_14"
+        },
+        {
+          "termType": "Variable",
+          "value": "Z_Date_16"
+        }
+      ],
+      "order": null,
+      "branches": [
+        {
+          "line": {
+            "s": "Person_1",
+            "p": "https://data.europarl.europa.eu/def/org-ep#P45",
+            "o": "Membership_2",
+            "sType": "http://xmlns.com/foaf/0.1/Person",
+            "oType": "http://www.w3.org/ns/org#Membership",
+            "values": []
+          },
+          "children": [
+            {
+              "line": {
+                "s": "Membership_2",
+                "p": "https://data.europarl.europa.eu/def/org-ep#P53",
+                "o": "Role_4",
+                "sType": "http://www.w3.org/ns/org#Membership",
+                "oType": "http://www.w3.org/ns/org#Role",
+                "values": [
+                  {
+                    "label": "Chairman",
+                    "rdfTerm": {
+                      "type": "uri",
+                      "value": "https://data.europarl.europa.eu/def/ep-roles/CHAIR"
+                    }
+                  }
+                ]
+              },
+              "children": []
+            },
+            {
+              "line": {
+                "s": "Membership_2",
+                "p": "https://data.europarl.europa.eu/def/org-ep#P54",
+                "o": "Organization_6",
+                "sType": "http://www.w3.org/ns/org#Membership",
+                "oType": "http://www.w3.org/ns/org#Organization",
+                "values": []
+              },
+              "children": [
+                {
+                  "line": {
+                    "s": "Organization_6",
+                    "p": "https://data.europarl.europa.eu/def/org-ep#P17",
+                    "o": "CorporateBodyClassification_8",
+                    "sType": "http://www.w3.org/ns/org#Organization",
+                    "oType": "http://publications.europa.eu/ontology/euvoc#CorporateBodyClassification",
+                    "values": [
+                      {
+                        "label": "European political group",
+                        "rdfTerm": {
+                          "type": "uri",
+                          "value": "https://data.europarl.europa.eu/def/ep-entities/EU_POLITICAL_GROUP"
+                        }
+                      }
+                    ]
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "line": {
+                "s": "Membership_2",
+                "p": "https://data.europarl.europa.eu/def/org-ep#P51",
+                "o": "PeriodOfTime_12",
+                "sType": "http://www.w3.org/ns/org#Membership",
+                "oType": "http://purl.org/dc/terms/PeriodOfTime",
+                "values": []
+              },
+              "children": [
+                {
+                  "line": {
+                    "s": "PeriodOfTime_12",
+                    "p": "https://data.europarl.europa.eu/def/org-ep#P60",
+                    "o": "Z_Date_14",
+                    "sType": "http://purl.org/dc/terms/PeriodOfTime",
+                    "oType": "http://special/Z_Date",
+                    "values": []
+                  },
+                  "children": []
+                },
+                {
+                  "line": {
+                    "s": "PeriodOfTime_12",
+                    "p": "https://data.europarl.europa.eu/def/org-ep#P61",
+                    "o": "Z_Date_16",
+                    "sType": "http://purl.org/dc/terms/PeriodOfTime",
+                    "oType": "http://special/Z_Date",
+                    "values": []
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "line": {
+            "s": "Person_1",
+            "p": "https://data.europarl.europa.eu/def/org-ep#P38",
+            "o": "Image_10",
+            "sType": "http://xmlns.com/foaf/0.1/Person",
+            "oType": "http://xmlns.com/foaf/0.1/Image",
+            "values": []
+          },
+          "children": []
+        }
+      ]
+    }
+  },
+  {
+    "label_en" : "All PDFs in French of EP reports having a rapporteur belonging to VERTS/ALE",
+    "query" : {
+      "distinct": true,
+      "variables": [
+        {
+          "termType": "Variable",
+          "value": "identifier"
+        },
+        {
+          "termType": "Variable",
+          "value": "document"
+        },
+        {
+          "termType": "Variable",
+          "value": "URL"
+        }
+      ],
+      "order": null,
+      "branches": [
+        {
+          "line": {
+            "s": "document",
+            "p": "https://data.europarl.europa.eu/def/eli-ep#P15",
+            "o": "WorkType_2",
+            "sType": "http://data.europa.eu/eli/ontology#Work",
+            "oType": "http://data.europa.eu/eli/ontology#WorkType",
+            "values": [
+              {
+                "label": "EP plenary report",
+                "rdfTerm": {
+                  "type": "uri",
+                  "value": "https://data.europarl.europa.eu/def/ep-document-types/REPORT_PLENARY"
+                }
+              }
+            ]
+          },
+          "children": []
+        },
+        {
+          "line": {
+            "s": "document",
+            "p": "https://data.europarl.europa.eu/def/eli-ep#P42",
+            "o": "Expression_5",
+            "sType": "http://data.europa.eu/eli/ontology#Work",
+            "oType": "http://data.europa.eu/eli/ontology#Expression",
+            "values": []
+          },
+          "children": [
+            {
+              "line": {
+                "s": "Expression_5",
+                "p": "https://data.europarl.europa.eu/def/eli-ep#P139",
+                "o": "LinguisticSystem_6",
+                "sType": "http://data.europa.eu/eli/ontology#Expression",
+                "oType": "http://purl.org/dc/terms/LinguisticSystem",
+                "values": [
+                  {
+                    "label": "French",
+                    "rdfTerm": {
+                      "type": "uri",
+                      "value": "http://publications.europa.eu/resource/authority/language/FRA"
+                    }
+                  }
+                ]
+              },
+              "children": []
+            },
+            {
+              "line": {
+                "s": "Expression_5",
+                "p": "https://data.europarl.europa.eu/def/eli-ep#P140",
+                "o": "Manifestation_11",
+                "sType": "http://data.europa.eu/eli/ontology#Expression",
+                "oType": "http://data.europa.eu/eli/ontology#Manifestation",
+                "values": []
+              },
+              "children": [
+                {
+                  "line": {
+                    "s": "Manifestation_11",
+                    "p": "https://data.europarl.europa.eu/def/eli-ep#P146",
+                    "o": "MediaType_14",
+                    "sType": "http://data.europa.eu/eli/ontology#Manifestation",
+                    "oType": "http://purl.org/dc/terms/MediaType",
+                    "values": [
+                      {
+                        "label": "https://www.iana.org/assignments/media-types/application/pdf",
+                        "rdfTerm": {
+                          "type": "uri",
+                          "value": "https://www.iana.org/assignments/media-types/application/pdf"
+                        }
+                      }
+                    ]
+                  },
+                  "children": []
+                },
+                {
+                  "line": {
+                    "s": "Manifestation_11",
+                    "p": "https://data.europarl.europa.eu/def/eli-ep#P144",
+                    "o": "URL",
+                    "sType": "http://data.europa.eu/eli/ontology#Manifestation",
+                    "oType": "http://www.w3.org/2000/01/rdf-schema#Resource",
+                    "values": []
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "line": {
+            "s": "document",
+            "p": "https://data.europarl.europa.eu/def/eli-ep#P19",
+            "o": "identifier",
+            "sType": "http://data.europa.eu/eli/ontology#Work",
+            "oType": "http://special/Z_Text",
+            "values": []
+          },
+          "children": []
+        },
+        {
+          "line": {
+            "s": "document",
+            "p": "https://data.europarl.europa.eu/def/eli-ep#P29",
+            "o": "Participation_22",
+            "sType": "http://data.europa.eu/eli/ontology#Work",
+            "oType": "http://data.europa.eu/eli/eli-draft-legislation-ontology#Participation",
+            "values": []
+          },
+          "children": [
+            {
+              "line": {
+                "s": "Participation_22",
+                "p": "https://data.europarl.europa.eu/def/eli-ep#P153",
+                "o": "ParticipationRole_24",
+                "sType": "http://data.europa.eu/eli/eli-draft-legislation-ontology#Participation",
+                "oType": "http://data.europa.eu/eli/eli-draft-legislation-ontology#ParticipationRole",
+                "values": [
+                  {
+                    "label": "Rapporteur",
+                    "rdfTerm": {
+                      "type": "uri",
+                      "value": "https://data.europarl.europa.eu/def/ep-roles/RAPPORTEUR"
+                    }
+                  }
+                ]
+              },
+              "children": []
+            },
+            {
+              "line": {
+                "s": "Participation_22",
+                "p": "https://data.europarl.europa.eu/def/eli-ep#P152",
+                "o": "Person_26",
+                "sType": "http://data.europa.eu/eli/eli-draft-legislation-ontology#Participation",
+                "oType": "http://xmlns.com/foaf/0.1/Person",
+                "values": []
+              },
+              "children": [
+                {
+                  "line": {
+                    "s": "Person_26",
+                    "p": "https://data.europarl.europa.eu/def/org-ep#P45",
+                    "o": "Membership_28",
+                    "sType": "http://xmlns.com/foaf/0.1/Person",
+                    "oType": "http://www.w3.org/ns/org#Membership",
+                    "values": []
+                  },
+                  "children": [
+                    {
+                      "line": {
+                        "s": "Membership_28",
+                        "p": "https://data.europarl.europa.eu/def/org-ep#P54",
+                        "o": "Organization_32",
+                        "sType": "http://www.w3.org/ns/org#Membership",
+                        "oType": "http://www.w3.org/ns/org#Organization",
+                        "values": [
+                          {
+                            "label": "Verts/ALE",
+                            "rdfTerm": {
+                              "type": "uri",
+                              "value": "https://data.europarl.europa.eu/org/5155"
+                            }
+                          }
+                        ]
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "label_en" : "All memberships of Martin Schulz",
+    "query" : {
+      "distinct": true,
+      "variables": [
+        {
+          "termType": "Variable",
+          "value": "Z_Date_19"
+        },
+        {
+          "termType": "Variable",
+          "value": "Z_Date_21"
+        },
+        {
+          "termType": "Variable",
+          "value": "Role_23"
+        },
+        {
+          "termType": "Variable",
+          "value": "Organization_25"
+        }
+      ],
+      "order": "asc",
+      "branches": [
+        {
+          "line": {
+            "s": "Person_1",
+            "p": "https://data.europarl.europa.eu/def/org-ep#P45",
+            "o": "Membership_2",
+            "sType": "http://xmlns.com/foaf/0.1/Person",
+            "oType": "http://www.w3.org/ns/org#Membership",
+            "values": []
+          },
+          "children": [
+            {
+              "line": {
+                "s": "Membership_2",
+                "p": "https://data.europarl.europa.eu/def/org-ep#P51",
+                "o": "PeriodOfTime_17",
+                "sType": "http://www.w3.org/ns/org#Membership",
+                "oType": "http://purl.org/dc/terms/PeriodOfTime",
+                "values": []
+              },
+              "children": [
+                {
+                  "line": {
+                    "s": "PeriodOfTime_17",
+                    "p": "https://data.europarl.europa.eu/def/org-ep#P60",
+                    "o": "Z_Date_19",
+                    "sType": "http://purl.org/dc/terms/PeriodOfTime",
+                    "oType": "http://special/Z_Date",
+                    "values": []
+                  },
+                  "children": []
+                },
+                {
+                  "line": {
+                    "s": "PeriodOfTime_17",
+                    "p": "https://data.europarl.europa.eu/def/org-ep#P61",
+                    "o": "Z_Date_21",
+                    "sType": "http://purl.org/dc/terms/PeriodOfTime",
+                    "oType": "http://special/Z_Date",
+                    "values": []
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "line": {
+                "s": "Membership_2",
+                "p": "https://data.europarl.europa.eu/def/org-ep#P53",
+                "o": "Role_23",
+                "sType": "http://www.w3.org/ns/org#Membership",
+                "oType": "http://www.w3.org/ns/org#Role",
+                "values": []
+              },
+              "children": []
+            },
+            {
+              "line": {
+                "s": "Membership_2",
+                "p": "https://data.europarl.europa.eu/def/org-ep#P54",
+                "o": "Organization_25",
+                "sType": "http://www.w3.org/ns/org#Membership",
+                "oType": "http://www.w3.org/ns/org#Organization",
+                "values": []
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "line": {
+            "s": "Person_1",
+            "p": "https://data.europarl.europa.eu/def/org-ep#P26",
+            "o": "Z_Text_15",
+            "sType": "http://xmlns.com/foaf/0.1/Person",
+            "oType": "http://special/Z_Text",
+            "values": [
+              {
+                "label": "martin schulz",
+                "regex": "martin schulz"
+              }
+            ]
+          },
+          "children": []
+        }
+      ]
+    }
+  },
+  {
+    "label_en" : "What happened during summer 2022 ? (activities)",
+    "query" : {
+      "distinct": true,
+      "variables": [
+        {
+          "termType": "Variable",
+          "value": "Z_Date_6"
+        },
+        {
+          "termType": "Variable",
+          "value": "Activity_1"
+        },
+        {
+          "termType": "Variable",
+          "value": "Activity_2"
+        },
+        {
+          "termType": "Variable",
+          "value": "ActivityType_4"
+        }
+      ],
+      "order": "asc",
+      "branches": [
+        {
+          "line": {
+            "s": "Activity_1",
+            "p": "https://data.europarl.europa.eu/def/eli-ep#P80",
+            "o": "Activity_2",
+            "sType": "http://data.europa.eu/eli/eli-draft-legislation-ontology#Activity",
+            "oType": "http://data.europa.eu/eli/eli-draft-legislation-ontology#Activity",
+            "values": []
+          },
+          "children": []
+        },
+        {
+          "line": {
+            "s": "Activity_1",
+            "p": "https://data.europarl.europa.eu/def/eli-ep#P64",
+            "o": "ActivityType_4",
+            "sType": "http://data.europa.eu/eli/eli-draft-legislation-ontology#Activity",
+            "oType": "http://data.europa.eu/eli/eli-draft-legislation-ontology#ActivityType",
+            "values": []
+          },
+          "children": []
+        },
+        {
+          "line": {
+            "s": "Activity_1",
+            "p": "https://data.europarl.europa.eu/def/eli-ep#P65",
+            "o": "Z_Date_6",
+            "sType": "http://data.europa.eu/eli/eli-draft-legislation-ontology#Activity",
+            "oType": "http://special/Z_Date",
+            "values": [
+              {
+                "label": "from 01/06/2022 to 31/08/2022",
+                "start": "2022-05-31T22:00:00.000Z",
+                "stop": "2022-08-31T21:59:59.059Z"
+              }
+            ]
+          },
+          "children": []
+        }
+      ]
+    }
+  }
+]
