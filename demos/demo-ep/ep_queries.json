@@ -1,6 +1,6 @@
 [
   {
-    "label_en" : "All chairs of EU political groups, with dates of membership",
+    "label_en" : "1. All chairs of EU political groups, with dates of membership",
     "query" : {
       "distinct": true,
       "variables": [
@@ -138,7 +138,7 @@
     }
   },
   {
-    "label_en" : "All PDFs in French of EP reports having a rapporteur belonging to VERTS/ALE",
+    "label_en" : "2. All PDFs in French of EP reports having a rapporteur belonging to VERTS/ALE",
     "query" : {
       "distinct": true,
       "variables": [
@@ -338,7 +338,7 @@
     }
   },
   {
-    "label_en" : "All memberships of Martin Schulz",
+    "label_en" : "3. All memberships of Martin Schulz",
     "query" : {
       "distinct": true,
       "variables": [
@@ -449,7 +449,7 @@
     }
   },
   {
-    "label_en" : "What happened during summer 2022 ? (activities)",
+    "label_en" : "4. What happened during summer 2022 ? (activities)",
     "query" : {
       "distinct": true,
       "variables": [
@@ -508,6 +508,47 @@
                 "stop": "2022-08-31T21:59:59.059Z"
               }
             ]
+          },
+          "children": []
+        }
+      ]
+    }
+  },
+  {
+    "label_en" : "5. Count the number of activities per type",
+    "query" : {
+      "distinct": true,
+      "variables": [
+        {
+          "expression": {
+            "type": "aggregate",
+            "aggregation": "count",
+            "distinct": false,
+            "expression": {
+              "termType": "Variable",
+              "value": "Activity_1"
+            }
+          },
+          "variable": {
+            "termType": "Variable",
+            "value": "Activity_1_count"
+          }
+        },
+        {
+          "termType": "Variable",
+          "value": "ActivityType_2"
+        }
+      ],
+      "order": null,
+      "branches": [
+        {
+          "line": {
+            "s": "Activity_1",
+            "p": "https://data.europarl.europa.eu/def/eli-ep#P64",
+            "o": "ActivityType_2",
+            "sType": "http://data.europa.eu/eli/eli-draft-legislation-ontology#Activity",
+            "oType": "http://data.europa.eu/eli/eli-draft-legislation-ontology#ActivityType",
+            "values": []
           },
           "children": []
         }
