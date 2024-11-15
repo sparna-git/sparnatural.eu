@@ -1067,8 +1067,8 @@
     }
   },
   {
-    "label_en" : "File : full query",
-    "label_de" : "File : full query",
+    "label_en" : "File : query for the simple form",
+    "label_de" : "File : query for the simple form",
     "query" : {
       "distinct": true,
       "variables": [
@@ -1078,7 +1078,11 @@
         },
         {
           "termType": "Variable",
-          "value": "OriginalName"
+          "value": "Instantiation"
+        },
+        {
+          "termType": "Variable",
+          "value": "ContainerFormat"
         },
         {
           "termType": "Variable",
@@ -1090,31 +1094,11 @@
         },
         {
           "termType": "Variable",
-          "value": "ContainerFormat"
-        },
-        {
-          "termType": "Variable",
-          "value": "Size"
-        },
-        {
-          "termType": "Variable",
-          "value": "LastControlExprDate"
-        },
-        {
-          "termType": "Variable",
-          "value": "LastControlNormDate"
-        },
-        {
-          "termType": "Variable",
           "value": "Standard"
         },
         {
           "termType": "Variable",
-          "value": "History"
-        },
-        {
-          "termType": "Variable",
-          "value": "Integrity"
+          "value": "Size"
         }
       ],
       "order": null,
@@ -1170,87 +1154,13 @@
         {
           "line": {
             "s": "File",
-            "p": "http://shapes.performing-arts.ch/instantiations/File_size",
-            "o": "Size",
-            "sType": "http://shapes.performing-arts.ch/instantiations/File",
-            "oType": "http://special/Z_Text",
-            "values": []
-          },
-          "children": [],
-          "optional": true
-        },
-        {
-          "line": {
-            "s": "File",
             "p": "http://shapes.performing-arts.ch/instantiations/File_isIncludedIn",
-            "o": "Representation_12",
+            "o": "Instantiation",
             "sType": "http://shapes.performing-arts.ch/instantiations/File",
             "oType": "http://shapes.performing-arts.ch/instantiations/Representation",
             "values": []
           },
-          "children": [
-            {
-              "line": {
-                "s": "Representation_12",
-                "p": "http://shapes.performing-arts.ch/instantiations/Instantiation_lastControl",
-                "o": "SingleDate_14",
-                "sType": "http://shapes.performing-arts.ch/instantiations/Representation",
-                "oType": "http://shapes.performing-arts.ch/collections/SingleDate",
-                "values": []
-              },
-              "children": [
-                {
-                  "line": {
-                    "s": "SingleDate_14",
-                    "p": "http://shapes.performing-arts.ch/collections/SingleDate_expressedDate",
-                    "o": "LastControlExprDate",
-                    "sType": "http://shapes.performing-arts.ch/collections/SingleDate",
-                    "oType": "http://special/Z_Text",
-                    "values": []
-                  },
-                  "children": [],
-                  "optional": true
-                },
-                {
-                  "line": {
-                    "s": "SingleDate_14",
-                    "p": "http://shapes.performing-arts.ch/collections/SingleDate_normalizedDateValue",
-                    "o": "LastControlNormDate",
-                    "sType": "http://shapes.performing-arts.ch/collections/SingleDate",
-                    "oType": "http://special/Z_Text",
-                    "values": []
-                  },
-                  "children": [],
-                  "optional": true
-                }
-              ],
-              "optional": true
-            },
-            {
-              "line": {
-                "s": "Representation_12",
-                "p": "http://shapes.performing-arts.ch/instantiations/Instantiation_history",
-                "o": "History",
-                "sType": "http://shapes.performing-arts.ch/instantiations/Representation",
-                "oType": "http://special/Z_Text",
-                "values": []
-              },
-              "children": [],
-              "optional": true
-            },
-            {
-              "line": {
-                "s": "Representation_12",
-                "p": "http://shapes.performing-arts.ch/instantiations/Instantiation_integrity",
-                "o": "Integrity",
-                "sType": "http://shapes.performing-arts.ch/instantiations/Representation",
-                "oType": "http://special/Z_Text",
-                "values": []
-              },
-              "children": [],
-              "optional": true
-            }
-          ]
+          "children": []
         },
         {
           "line": {
@@ -1259,6 +1169,18 @@
             "o": "Standard",
             "sType": "http://shapes.performing-arts.ch/instantiations/File",
             "oType": "http://shapes.performing-arts.ch/instantiations/Standard",
+            "values": []
+          },
+          "children": [],
+          "optional": true
+        },
+        {
+          "line": {
+            "s": "File",
+            "p": "http://shapes.performing-arts.ch/instantiations/File_size",
+            "o": "Size",
+            "sType": "http://shapes.performing-arts.ch/instantiations/File",
+            "oType": "http://special/Z_Text",
             "values": []
           },
           "children": [],
