@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Search Instantiations</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700|Open+Sans:300,300i,400,400i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- Font Awesome -->    
+  <link rel="stylesheet" href="assets/fa6/css/all.min.css" />
+
+  <!-- YASGUI CSS -->
+  <link href="https://unpkg.com/@triply/yasgui/build/yasgui.min.css" rel="stylesheet" type="text/css" />
+
+  <link href="sparnatural-form.css" rel="stylesheet">
+
+  <style>
+    .yasqe .CodeMirror {
+      font-size: 0.8em;
+    }
+
+    #first-section {
+      padding-top: 115px;
+      height: auto;
+      overflow: visible;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex justify-content-between align-items-center">
+
+      <div id="logo">
+        <h1 data-i18n="page.title"></h1>
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link" href="index.html">Advanced query</a></li>
+          <li><a class="nav-link" href="instantiation_query.html">Instantiation Query</a></li>
+          <li class="dropdown"><a href="#"><i style="font-size:25px;" class="fa-thin fa-globe-africa"></i>&nbsp;<span>Lang.</span> <i class="bi bi-chevron-down"></i></a>
+            <ul style="width:80%;">
+              <li><a href="?lang=fr">fr</a></li>
+              <li><a href="?lang=en">en</a></li>
+            </ul>
+          </li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+    </div>
+  </header><!-- End Header -->
+
+    <!-- ======= First Section ======= -->
+    <section id="first-section">
+      <div class="container-fluid">
+        <div class="row">
+
+          <div class="col-md-3">
+            <!-- Sparnatural Form -->
+            <sparnatural-form
+              src="https://xls2rdf.sparna.fr/rest/convert?url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1WrC2r7yDQCP5AKhu6SAK8Ba_QshzFKmm%2Fexport%3Fformat%3Dxlsx&noPostProcessings=true https://xls2rdf.sparna.fr/rest/convert?url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1UWfCJmgvgwJ0yOs6Ox_qzn47heaiQ0cx%2Fexport%3Fformat%3Dxlsx&noPostProcessings=true form-configs/collections-shacl.ttl form-configs/instantiation_statistics_sparnatural.ttl"
+              lang="en"
+              defaultLang="en"
+              limit="1000"
+              endpoint="https://proxy.sparnatural.eu/sparql-proxy/sparql?endpoint=https%3A%2F%2Fwww.performing-arts.ch%2Fsparql"
+              form="form-configs/instantiations/form.json"
+              prefix="skos:http://www.w3.org/2004/02/skos/core# rico:https://www.ica.org/standards/RiC/ontology#"
+              query="form-configs/instantiations/query.json"
+            ></sparnatural-form>
+
+            <div class="row" style="margin-bottom: 0.5em">
+              <div class="col-md-12">
+                <span style="font-size: 90%">
+                  Les requêtes sont envoyées à
+                  <a
+                    id="endpoint"
+                    href="https://proxy.sparnatural.eu/sparql-proxy/sparql?endpoint=https%3A%2F%2Fwww.performing-arts.ch%2Fsparql"
+                    >https://proxy.sparnatural.eu/sparql-proxy/sparql?endpoint=https%3A%2F%2Fwww.performing-arts.ch%2Fsparql</a
+                  >
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Éditeur SPARQL à droite -->
+          <div class="col-md-9">
+            <div class="row">
+              <div class="col-md-12">
+                  <a href="#" id="sparql-toggle"><i id="sparql-toggle-icon" class="fad fa-eye fa-fw"></i>&nbsp; <span data-i18n="actions.toggle"></span></a>
+              </div>
+            </div>
+            <div class="row">
+              <div  class="col-md-12">
+                <div id="yasqe"  style="display:none;"></div>
+              </div>
+            </div>
+
+            <div class="row result-container">
+              <div id="yasr"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section><!-- End First Section -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-chevron-up"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/demo.js"></script>
+
+  <!-- Sparnatural-specific -->
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <!-- YASGUI stuff -->
+    <script src="https://unpkg.com/@triply/yasgui/build/yasgui.min.js"></script>
+
+    <!-- Sparnatural Javascript -->
+    <script type="text/javascript" src="./sparnatural.js"></script>
+    <script type="text/javascript" src="./sparnatural-yasgui-plugins.js"></script>
+    <script type="text/javascript" src="./sparnatural-form.js"></script>
+
+  <!-- /Sparnatural-specific -->
+
+  <!-- i18n -->
+  <script src="assets/vendor/jquery.i18n/jquery.i18n.js"></script>
+  <script src="assets/vendor/jquery.i18n/jquery.i18n.messagestore.js"></script>
+  <script src="assets/vendor/jquery.i18n/jquery.i18n.fallbacks.js"></script>
+  <script src="assets/vendor/jquery.i18n/jquery.i18n.language.js"></script>
+  <script src="assets/vendor/jquery.i18n/jquery.i18n.parser.js"></script>
+  <script src="assets/vendor/jquery.i18n/jquery.i18n.emitter.js"></script>
+
+  <!-- Json url (Compression) -->
+  <script src="https://cdn.jsdelivr.net/gh/masotime/json-url@master/dist/browser/json-url.js"></script>
+
+  <!-- Sheperd -->
+
+    <script>
+      $.urlParam = function(name){
+        var results = new RegExp('[\\?&amp;]' + name + '=([^&amp;#]*)').exec(window.location.href);
+        if(results == null) { return null; }
+        return results[1] || 0;
+      }
+      var lang = ($.urlParam('lang') != null)?$.urlParam('lang'):'en';
+
+      // set the locale
+      $.i18n( { locale: lang } );  
+      $.i18n().load( {
+          'en': {
+            'page.title': 'Search Instantiations',
+            'menu.home': 'Sparnatural',
+            'menu.lang': 'Lang.',
+            'actions.toggle': 'Toggle SPARQL'
+          },
+          'fr': {
+            'page.title': 'Search Instantiations',
+            'menu.home': 'Sparnatural',
+            'menu.lang': 'Lang.',
+            'actions.toggle': 'Voir/masquer SPARQL'
+          }
+      } );  
+      $('body').i18n();
+
+      // Select the Sparnatural form component
+      const sparnaturalForm = document.querySelector("sparnatural-form");
+
+      sparnaturalForm.addEventListener("init", (event) => {
+        // Notify all plugins of configuration updates if they support it
+        for (const plugin in yasr.plugins) {
+          if (yasr.plugins[plugin].notifyConfiguration) {
+            yasr.plugins[plugin].notifyConfiguration(
+              sparnaturalForm.sparnaturalForm.specProvider
+            );
+          }
+        }
+      });
+
+      // Listen for updates to the query and pass to YASQE
+      sparnaturalForm.addEventListener("queryUpdated", (event) => {
+        const queryString = sparnaturalForm.expandSparql(
+          event.detail.queryString
+        );
+        console.log("queryString", event.detail);
+
+        // Update YASQE with the new SPARQL query
+        yasqe.setValue(queryString);
+
+        for (const plugin in yasr.plugins) {
+          if (yasr.plugins[plugin].notifyQuery) {
+            yasr.plugins[plugin].notifyQuery(event.detail.queryJson);
+            console.log("notifying query for plugin " + plugin);
+          }
+        }
+      });
+
+      // Listen for form submission and trigger YASQE query
+      sparnaturalForm.addEventListener("submit", () => {
+        sparnaturalForm.disablePlayBtn();
+        let finalResult = sparnaturalForm.executeSparql(
+          yasqe.getValue(),
+          (finalResult) => {
+            // send final result to YasR
+            yasr.setResponse(finalResult);
+            // re-enable submit button
+            sparnaturalForm.enablePlayBtn();
+          },
+          (error) => {
+            console.error("Got an error when executing SPARQL in Sparnatural");
+            console.dir(error);
+          }
+        );
+      });
+
+      const yasqe = new Yasqe(document.getElementById("yasqe"), {
+        requestConfig: { 
+          endpoint: $('#endpoint').text(),
+          method: "GET",
+          header: {}
+        },
+        copyEndpointOnNewTab: false  
+      });
+
+      Yasr.registerPlugin("TableX",SparnaturalYasguiPlugins.TableX);
+      Yasr.registerPlugin("Grid",SparnaturalYasguiPlugins.GridPlugin);
+      Yasr.registerPlugin("Stats",SparnaturalYasguiPlugins.StatsPlugin);
+
+      delete Yasr.plugins['table'];
+      delete Yasr.plugins['response'];
+      const yasr = new Yasr(document.getElementById("yasr"), {
+        pluginOrder: ["TableX", "Grid", "Stats"],
+        defaultPlugin: "TableX",
+        // disable persistency
+        persistencyExpire: 0,
+        maxPersistentResponseSize: 0
+      });
+
+      if(lang == "fr") { 
+        yasr.plugins["Grid"].config.lang = "fr";
+        yasr.plugins["Stats"].config.lang = "fr";
+      } else {
+        yasr.plugins["Grid"].config.lang = "en";
+        yasr.plugins["Stats"].config.lang = "en";
+      }
+
+      document.getElementById('sparql-toggle').onclick = function() {
+        if(document.getElementById('yasqe').style.display == 'none') {
+          document.getElementById('yasqe').style.display = 'block';
+          yasqe.setValue(yasqe.getValue());
+          yasqe.refresh();
+          document.getElementById('sparql-toggle-icon').className = 'fad fa-eye-slash fa-fw';
+        } else {
+          document.getElementById('yasqe').style.display = 'none';
+          document.getElementById('sparql-toggle-icon').className = 'fad fa-eye fa-fw';
+        }
+        return false;        
+      } ;
+
+    </script>
+
+</body>
+
+</html>

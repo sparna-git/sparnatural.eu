@@ -77,7 +77,8 @@ bindSparnaturalWithYasqe = function(sparnatural, yasqe, yasr) {
 bindSparnaturalWithItself = function(sparnatural, yasqe, yasr) {
 
   sparnatural.addEventListener("queryUpdated", (event) => {
-    queryString = sparnatural.expandSparql(event.detail.queryString);
+    // queryString = sparnatural.expandSparql(event.detail.queryString);
+    queryString = sparnatural.expandSparql(event.detail.queryStringFromJson);
     yasqe.setValue(queryString);
   });
 
