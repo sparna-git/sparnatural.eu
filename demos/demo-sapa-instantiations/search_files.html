@@ -258,6 +258,9 @@
         maxPersistentResponseSize: 0
       });
 
+      yasr.plugins["TableX"].config.includeControls = true;
+      yasr.plugins["TableX"].config.excludeColumnsFromCompactView = ["Size","Standard"];
+
       if(lang == "fr") { 
         yasr.plugins["Grid"].config.lang = "fr";
         yasr.plugins["Stats"].config.lang = "fr";
