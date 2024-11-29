@@ -5,8 +5,18 @@
       "node": {
         "type": "UserPrompt",
         "name": {
-          "en": "quick access by ID",
-          "fr": "accès rapide par identifiant"
+          "en": "quick access by name",
+          "fr": "accès rapide par nom"
+        }
+      }
+    },
+    {
+      "variable": "OriginalNameSearch",
+      "node": {
+        "type": "UserPrompt",
+        "name": {
+          "en": "full-text on name",
+          "fr": "recherche dans le nom"
         }
       }
     },

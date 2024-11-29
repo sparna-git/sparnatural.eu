@@ -19,6 +19,14 @@
     },
     {
       "termType": "Variable",
+      "value": "Instantiation"
+    },
+    {
+      "termType": "Variable",
+      "value": "InstArchivalStatus"
+    },
+    {
+      "termType": "Variable",
       "value": "File"
     },
     {
@@ -40,10 +48,6 @@
     {
       "termType": "Variable",
       "value": "Size"
-    },
-    {
-      "termType": "Variable",
-      "value": "Instantiation"
     }
   ],
   "order": null,
@@ -53,6 +57,18 @@
         "s": "File",
         "p": "http://shapes.performing-arts.ch/instantiations/File_originalName",
         "o": "OriginalName",
+        "sType": "http://shapes.performing-arts.ch/instantiations/File",
+        "oType": "http://special/Z_Text",
+        "values": []
+      },
+      "children": [],
+      "optional": false
+    },
+    {
+      "line": {
+        "s": "File",
+        "p": "http://shapes.performing-arts.ch/sparnatural/File_originalName_search",
+        "o": "OriginalNameSearch",
         "sType": "http://shapes.performing-arts.ch/instantiations/File",
         "oType": "http://special/Z_Text",
         "values": []
@@ -164,6 +180,18 @@
               "optional": true
             }
           ],
+          "optional": true
+        },
+        {
+          "line": {
+            "s": "Instantiation",
+            "p": "http://shapes.performing-arts.ch/sparnatural/Instantiation_hasArchivalStatus_rec",
+            "o": "InstArchivalStatus",
+            "sType": "http://shapes.performing-arts.ch/instantiations/Representation",
+            "oType": "http://shapes.performing-arts.ch/instantiations/PreservationState",
+            "values": []
+          },
+          "children": [],
           "optional": true
         }
       ]
