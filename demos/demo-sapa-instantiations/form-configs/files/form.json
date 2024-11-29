@@ -5,8 +5,8 @@
       "node": {
         "type": "UserPrompt",
         "name": {
-          "en": "original name",
-          "fr": "nom d'origine"
+          "en": "quick access by ID",
+          "fr": "accès rapide par identifiant"
         }
       }
     },

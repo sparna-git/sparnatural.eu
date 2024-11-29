@@ -3,6 +3,22 @@
   "variables": [
     {
       "termType": "Variable",
+      "value": "Fonds"
+    },
+    {
+      "termType": "Variable",
+      "value": "RecordResource"
+    },
+    {
+      "termType": "Variable",
+      "value": "InstCote1"
+    },
+    {
+      "termType": "Variable",
+      "value": "InstCote2"
+    },
+    {
+      "termType": "Variable",
       "value": "File"
     },
     {
@@ -28,22 +44,6 @@
     {
       "termType": "Variable",
       "value": "Instantiation"
-    },
-    {
-      "termType": "Variable",
-      "value": "Cote1"
-    },
-    {
-      "termType": "Variable",
-      "value": "Cote2"
-    },
-    {
-      "termType": "Variable",
-      "value": "RecordResource"
-    },
-    {
-      "termType": "Variable",
-      "value": "Fonds"
     }
   ],
   "order": null,
@@ -133,7 +133,7 @@
           "line": {
             "s": "Instantiation",
             "p": "http://shapes.performing-arts.ch/instantiations/Instantiation_identifier",
-            "o": "Cote1",
+            "o": "InstCote1",
             "sType": "http://shapes.performing-arts.ch/instantiations/Representation",
             "oType": "http://special/Z_Text",
             "values": []
@@ -155,7 +155,7 @@
               "line": {
                 "s": "MainIdentifier_33",
                 "p": "http://shapes.performing-arts.ch/instantiations/Identifier_value",
-                "o": "Cote2",
+                "o": "InstCote2",
                 "sType": "http://shapes.performing-arts.ch/sparnatural/MainIdentifier",
                 "oType": "http://special/Z_Text",
                 "values": []
