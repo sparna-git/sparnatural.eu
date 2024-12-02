@@ -19,7 +19,11 @@
     },
     {
       "termType": "Variable",
-      "value": "Inst"
+      "value": "InstCote1"
+    },
+    {
+      "termType": "Variable",
+      "value": "InstCote2"
     },
     {
       "termType": "Variable",
@@ -27,11 +31,7 @@
     },
     {
       "termType": "Variable",
-      "value": "InstCote1"
-    },
-    {
-      "termType": "Variable",
-      "value": "InstCote2"
+      "value": "Inst"
     },
     {
       "termType": "Variable",
@@ -44,36 +44,6 @@
     {
       "termType": "Variable",
       "value": "RecordingSystem"
-    },
-    {
-      "expression": {
-        "type": "aggregate",
-        "aggregation": "group_concat",
-        "distinct": false,
-        "expression": {
-          "termType": "Variable",
-          "value": "DerivedInstantiation"
-        }
-      },
-      "variable": {
-        "termType": "Variable",
-        "value": "DerivedInstantiationConcat"
-      }
-    },
-    {
-      "expression": {
-        "type": "aggregate",
-        "aggregation": "group_concat",
-        "distinct": false,
-        "expression": {
-          "termType": "Variable",
-          "value": "DerivedFromInstantiation"
-        }
-      },
-      "variable": {
-        "termType": "Variable",
-        "value": "DerivedFromInstantiationConcat"
-      }
     },
     {
       "termType": "Variable",
@@ -167,10 +137,10 @@
         {
           "line": {
             "s": "RR",
-            "p": "http://shapes.performing-arts.ch/collections/RecordResource_hasOrHadIdentifier",
+            "p": "http://shapes.performing-arts.ch/collections/RecordResource_identifier",
             "o": "RRCote1",
             "sType": "http://shapes.performing-arts.ch/collections/RecordResource",
-            "oType": "http://shapes.performing-arts.ch/collections/Identifier",
+            "oType": "http://special/Z_Text",
             "values": []
           },
           "children": [],
