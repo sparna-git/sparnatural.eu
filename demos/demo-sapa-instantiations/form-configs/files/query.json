@@ -141,7 +141,8 @@
                 "oType": "http://shapes.performing-arts.ch/sparnatural/Fonds",
                 "values": []
               },
-              "children": []
+              "children": [],
+              "optional": true
             }
           ]
         },

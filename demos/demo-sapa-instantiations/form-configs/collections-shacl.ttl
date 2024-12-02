@@ -959,7 +959,7 @@ spao-co:Event_hasEventType sh:path rico:hasEventType;
   sh:nodeKind sh:IRI;
   sh:class rico:EventType;
   dash:searchWidget core:ListProperty;
-  datasources:datasource datasources:list_skospreflabel_alpha_with_count .
+  datasources:datasource datasources:list_skospreflabel_alpha .
 
 spao-co:Event_label sh:path rdfs:label;
   sh:order "2";

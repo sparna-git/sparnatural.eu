@@ -37,6 +37,11 @@
       height: auto;
       overflow: visible;
     }
+
+    .nav-tabs .form-tab.active {
+      background-color:#e8fcf5;
+      border-color: #dee2e6 #dee2e6 #e8fcf5;
+    }
   </style>
 
 </head>
@@ -73,17 +78,47 @@
         <div class="row">
 
           <div class="col-md-3">
-            <!-- Sparnatural Form -->
-            <sparnatural-form
-              src="https://xls2rdf.sparna.fr/rest/convert?url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1WrC2r7yDQCP5AKhu6SAK8Ba_QshzFKmm%2Fexport%3Fformat%3Dxlsx&noPostProcessings=true https://xls2rdf.sparna.fr/rest/convert?url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1UWfCJmgvgwJ0yOs6Ox_qzn47heaiQ0cx%2Fexport%3Fformat%3Dxlsx&noPostProcessings=true form-configs/collections-shacl.ttl form-configs/instantiation_statistics_sparnatural.ttl"
-              lang="en"
-              defaultLang="en"
-              limit="1000"
-              endpoint="https://proxy.sparnatural.eu/sparql-proxy/sparql?endpoint=https%3A%2F%2Fwww.performing-arts.ch%2Fsparql"
-              form="form-configs/files/form.json"
-              prefixes="skos:http://www.w3.org/2004/02/skos/core# rico:https://www.ica.org/standards/RiC/ontology#"
-              query="form-configs/files/query.json"
-            ></sparnatural-form>
+
+            <ul class="nav nav-tabs">
+              <li class="nav-item">
+                <a class="nav-link form-tab" id="tab-files" aria-current="page" href="#" data-bs-toggle="tab" data-bs-target="#sparnatural-form-files">Files</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active form-tab" id="tab-instantiations" href="#" data-bs-toggle="tab" data-bs-target="#sparnatural-form-instantiations">Instantiations</a>
+              </li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+
+              <div class="tab-pane" id="sparnatural-form-files">
+                <!-- Sparnatural Form -->
+                <sparnatural-form
+                  src="https://xls2rdf.sparna.fr/rest/convert?url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1WrC2r7yDQCP5AKhu6SAK8Ba_QshzFKmm%2Fexport%3Fformat%3Dxlsx&noPostProcessings=true https://xls2rdf.sparna.fr/rest/convert?url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1UWfCJmgvgwJ0yOs6Ox_qzn47heaiQ0cx%2Fexport%3Fformat%3Dxlsx&noPostProcessings=true form-configs/collections-shacl.ttl"
+                  lang="en"
+                  defaultLang="en"
+                  limit="1000"
+                  endpoint="https://proxy.sparnatural.eu/sparql-proxy/sparql?endpoint=https%3A%2F%2Fwww.performing-arts.ch%2Fsparql"
+                  form="form-configs/files/form.json"
+                  prefixes="skos:http://www.w3.org/2004/02/skos/core# rico:https://www.ica.org/standards/RiC/ontology# spao:http://ontology.performing-arts.ch/ ebucore:https://www.ebu.ch/metadata/ontologies/ebucore# crm:http://www.cidoc-crm.org/cidoc-crm/ premis:http://www.loc.gov/premis/rdf/v1#"
+                  query="form-configs/files/query.json"
+                ></sparnatural-form>
+              </div>
+              <div class="tab-pane active" id="sparnatural-form-instantiations">
+                <!-- Sparnatural Form -->
+                <sparnatural-form
+                  src="https://xls2rdf.sparna.fr/rest/convert?url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1WrC2r7yDQCP5AKhu6SAK8Ba_QshzFKmm%2Fexport%3Fformat%3Dxlsx&noPostProcessings=true https://xls2rdf.sparna.fr/rest/convert?url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1UWfCJmgvgwJ0yOs6Ox_qzn47heaiQ0cx%2Fexport%3Fformat%3Dxlsx&noPostProcessings=true form-configs/collections-shacl.ttl"
+                  lang="en"
+                  defaultLang="en"
+                  limit="1000"
+                  endpoint="https://proxy.sparnatural.eu/sparql-proxy/sparql?endpoint=https%3A%2F%2Fwww.performing-arts.ch%2Fsparql"
+                  form="form-configs/instantiations/form.json"
+                  prefixes="skos:http://www.w3.org/2004/02/skos/core# rico:https://www.ica.org/standards/RiC/ontology# spao:http://ontology.performing-arts.ch/ ebucore:https://www.ebu.ch/metadata/ontologies/ebucore# crm:http://www.cidoc-crm.org/cidoc-crm/ premis:http://www.loc.gov/premis/rdf/v1#"
+                  query="form-configs/instantiations/query.json"
+                ></sparnatural-form>
+              </div>
+
+            </div>
 
             <div class="row" style="margin-bottom: 0.5em">
               <div class="col-md-12">
@@ -134,7 +169,10 @@
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"></script>
+    <!--
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.min.js" ></script>
 
     <!-- YASGUI stuff -->
     <script src="https://unpkg.com/@triply/yasgui/build/yasgui.min.js"></script>
@@ -186,54 +224,57 @@
       $('body').i18n();
 
       // Select the Sparnatural form component
-      const sparnaturalForm = document.querySelector("sparnatural-form");
+      const sparnaturalForms = document.querySelectorAll("sparnatural-form");
 
-      sparnaturalForm.addEventListener("init", (event) => {
+      sparnaturalForms[0].addEventListener("init", (event) => {
         // Notify all plugins of configuration updates if they support it
         for (const plugin in yasr.plugins) {
           if (yasr.plugins[plugin].notifyConfiguration) {
             yasr.plugins[plugin].notifyConfiguration(
-              sparnaturalForm.sparnaturalForm.specProvider
+              sparnaturalForms[0].sparnaturalForm.specProvider
             );
           }
         }
       });
 
-      // Listen for updates to the query and pass to YASQE
-      sparnaturalForm.addEventListener("queryUpdated", (event) => {
-        const queryString = sparnaturalForm.expandSparql(
-          event.detail.queryString
-        );
-        console.log("queryString", event.detail);
 
-        // Update YASQE with the new SPARQL query
-        yasqe.setValue(queryString);
+      sparnaturalForms.forEach(form => {
+        // Listen for updates to the query and pass to YASQE
+        form.addEventListener("queryUpdated", (event) => {
+          const queryString = form.expandSparql(
+            event.detail.queryString
+          );
 
-        for (const plugin in yasr.plugins) {
-          if (yasr.plugins[plugin].notifyQuery) {
-            yasr.plugins[plugin].notifyQuery(event.detail.queryJson);
-            console.log("notifying query for plugin " + plugin);
+          // Update YASQE with the new SPARQL query
+          yasqe.setValue(queryString);
+
+          for (const plugin in yasr.plugins) {
+            if (yasr.plugins[plugin].notifyQuery) {
+              yasr.plugins[plugin].notifyQuery(event.detail.queryJson);
+            }
           }
-        }
+        });
       });
 
-      // Listen for form submission and trigger YASQE query
-      sparnaturalForm.addEventListener("submit", () => {
-        sparnaturalForm.disablePlayBtn();
-        let finalResult = sparnaturalForm.executeSparql(
-          yasqe.getValue(),
-          (finalResult) => {
-            // send final result to YasR
-            yasr.setResponse(finalResult);
-            // re-enable submit button
-            sparnaturalForm.enablePlayBtn();
-          },
-          (error) => {
-            console.error("Got an error when executing SPARQL in Sparnatural");
-            console.dir(error);
-          }
-        );
-      });
+      sparnaturalForms.forEach(form => {
+        // Listen for form submission and trigger YASQE query
+        form.addEventListener("submit", () => {
+          form.disablePlayBtn();
+          let finalResult = form.executeSparql(
+            yasqe.getValue(),
+            (finalResult) => {
+              // send final result to YasR
+              yasr.setResponse(finalResult);
+              // re-enable submit button
+              form.enablePlayBtn();
+            },
+            (error) => {
+              console.error("Got an error when executing SPARQL in Sparnatural");
+              console.dir(error);
+            }
+          );
+        });
+      });      
 
       const yasqe = new Yasqe(document.getElementById("yasqe"), {
         requestConfig: { 
@@ -259,7 +300,33 @@
       });
 
       yasr.plugins["TableX"].config.includeControls = true;
-      yasr.plugins["TableX"].config.excludeColumnsFromCompactView = ["Size","Standard"];
+      yasr.plugins["TableX"].config.excludeColumnsFromCompactView = [
+        // these 2 are for files
+        "Size",
+        "Standard",
+        // these are all for instantiations
+        "RepresentationType",
+        "CarrierType",
+        "RecordingSystem",
+        "DerivedInstantiation",
+        "DerivedFromInstantiation",
+        "CopyPath",
+        "History",
+        "ContentDesc",
+        "ModeOfAcq",
+        "Condition",
+        "Location",
+        "Color",
+        "Standard",
+        "DisplayMode",
+        "VideoDamage",
+        "ScanningFormat",
+        "ScanningOrder",
+        "Integrity",
+        "PhysUsability",
+        "InternalNote",
+        "Note"
+      ];
 
       if(lang == "fr") { 
         yasr.plugins["Grid"].config.lang = "fr";
@@ -282,6 +349,19 @@
         return false;        
       } ;
 
+      // tab management
+      document.getElementById('tab-files').onclick = function() {
+        if(!document.getElementById('tab-files').classList.contains("active")) {
+          document.getElementById('tab-files').classList.add("active");
+          document.getElementById('tab-instantiations').classList.remove("active");
+        }
+      }
+      document.getElementById('tab-instantiations').onclick = function() {
+        if(!document.getElementById('tab-instantiations').classList.contains("active")) {
+          document.getElementById('tab-instantiations').classList.add("active");
+          document.getElementById('tab-files').classList.remove("active");
+        }
+      }
     </script>
 
 </body>
