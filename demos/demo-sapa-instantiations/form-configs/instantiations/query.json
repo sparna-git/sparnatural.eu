@@ -46,12 +46,34 @@
       "value": "RecordingSystem"
     },
     {
-      "termType": "Variable",
-      "value": "DerivedInstantiation"
+      "expression": {
+        "type": "aggregate",
+        "aggregation": "group_concat",
+        "distinct": false,
+        "expression": {
+          "termType": "Variable",
+          "value": "DerivedInstantiation"
+        }
+      },
+      "variable": {
+        "termType": "Variable",
+        "value": "DerivedInstantiationConcat"
+      }
     },
     {
-      "termType": "Variable",
-      "value": "DerivedFromInstantiation"
+      "expression": {
+        "type": "aggregate",
+        "aggregation": "group_concat",
+        "distinct": false,
+        "expression": {
+          "termType": "Variable",
+          "value": "DerivedFromInstantiation"
+        }
+      },
+      "variable": {
+        "termType": "Variable",
+        "value": "DerivedFromInstantiationConcat"
+      }
     },
     {
       "termType": "Variable",
