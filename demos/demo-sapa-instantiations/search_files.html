@@ -299,6 +299,7 @@
         maxPersistentResponseSize: 0
       });
 
+      yasr.plugins["TableX"].persistentConfig.compact = true;
       yasr.plugins["TableX"].config.includeControls = true;
       yasr.plugins["TableX"].config.excludeColumnsFromCompactView = [
         // these 2 are for files
