@@ -1,22 +1,12 @@
 {
   "bindings": [
     {
-      "variable": "Fonds",
+      "variable": "AncestorRecordResource",
       "node": {
         "type": "UserPrompt",
         "name": {
-          "en": "fonds",
-          "fr": "fonds"
-        }
-      }
-    },
-    {
-      "variable": "RR",
-      "node": {
-        "type": "UserPrompt",
-        "name": {
-          "en": "record resource",
-          "fr": "record resource"
+          "en": "inside record resource",
+          "fr": "dans la record resource"
         }
       }
     },

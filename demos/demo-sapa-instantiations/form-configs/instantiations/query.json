@@ -133,8 +133,7 @@
         "oType": "http://shapes.performing-arts.ch/sparnatural/Type",
         "values": []
       },
-      "children": [],
-      "optional": true
+      "children": []
     },
     {
       "line": {
@@ -153,6 +152,18 @@
             "o": "Fonds",
             "sType": "http://shapes.performing-arts.ch/collections/RecordResource",
             "oType": "http://shapes.performing-arts.ch/sparnatural/Fonds",
+            "values": []
+          },
+          "children": [],
+          "optional": true
+        },
+        {
+          "line": {
+            "s": "RR",
+            "p": "http://shapes.performing-arts.ch/sparnatural/RecordResource_optional_isOrWasConstituentOf_zeroOrMore_isOrWasIncludedIn",
+            "o": "AncestorRecordResource",
+            "sType": "http://shapes.performing-arts.ch/collections/RecordResource",
+            "oType": "http://shapes.performing-arts.ch/collections/RecordResource",
             "values": []
           },
           "children": [],
