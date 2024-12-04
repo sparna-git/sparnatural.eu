@@ -19,6 +19,10 @@
     },
     {
       "termType": "Variable",
+      "value": "Type"
+    },
+    {
+      "termType": "Variable",
       "value": "InstCote1"
     },
     {
@@ -120,6 +124,18 @@
   ],
   "order": null,
   "branches": [
+    {
+      "line": {
+        "s": "Inst",
+        "p": "http://shapes.performing-arts.ch/sparnatural/Instantiation_type",
+        "o": "Type",
+        "sType": "http://shapes.performing-arts.ch/instantiations/Instantiation",
+        "oType": "http://shapes.performing-arts.ch/sparnatural/Type",
+        "values": []
+      },
+      "children": [],
+      "optional": true
+    },
     {
       "line": {
         "s": "Inst",

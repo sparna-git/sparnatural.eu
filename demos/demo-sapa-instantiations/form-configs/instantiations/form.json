@@ -21,6 +21,16 @@
       }
     },
     {
+      "variable": "Type",
+      "node": {
+        "type": "UserPrompt",
+        "name": {
+          "en": "type (physical / virtual)",
+          "fr": "type (physique / virtuel)"
+        }
+      }
+    },
+    {
       "variable": "InstCote2",
       "node": {
         "type": "UserPrompt",

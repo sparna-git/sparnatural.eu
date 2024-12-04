@@ -247,6 +247,7 @@
       sparnaturalForms.forEach(form => {
         // Listen for updates to the query and pass to YASQE
         form.addEventListener("queryUpdated", (event) => {
+          console.log(event.detail.queryString)
           const queryString = form.expandSparql(
             event.detail.queryString
           );
@@ -321,8 +322,10 @@
         "History",
         "ContentDesc",
         "ModeOfAcq",
+        "Material",
         "Condition",
         "Location",
+        "PhysicalCharacteristics",
         "Color",
         "Standard",
         "DisplayMode",
