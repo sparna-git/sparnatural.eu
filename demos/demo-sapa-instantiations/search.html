@@ -226,6 +226,12 @@
       // Select the Sparnatural form component
       const sparnaturalForms = document.querySelectorAll("sparnatural-form");
 
+      if(lang == "fr") { 
+        sparnaturalForms.forEach(form => {
+          form.setAttribute("lang", "fr");
+        });        
+      }
+
       sparnaturalForms[0].addEventListener("init", (event) => {
         // Notify all plugins of configuration updates if they support it
         for (const plugin in yasr.plugins) {

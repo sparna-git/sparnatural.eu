@@ -151,6 +151,16 @@
       }
     },
     {
+      "variable": "Material",
+      "node": {
+        "type": "UserPrompt",
+        "name": {
+          "en": "material",
+          "fr": "matériaux"
+        }
+      }
+    },
+    {
       "variable": "Condition",
       "node": {
         "type": "UserPrompt",
@@ -167,6 +177,16 @@
         "name": {
           "en": "location",
           "fr": "localisation"
+        }
+      }
+    },
+    {
+      "variable": "PhysicalCharacteristics",
+      "node": {
+        "type": "UserPrompt",
+        "name": {
+          "en": "physical characteristics",
+          "fr": "caractéristiques physiques"
         }
       }
     },

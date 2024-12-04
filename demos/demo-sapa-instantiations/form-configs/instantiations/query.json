@@ -63,11 +63,19 @@
     },
     {
       "termType": "Variable",
+      "value": "Material"
+    },
+    {
+      "termType": "Variable",
       "value": "Condition"
     },
     {
       "termType": "Variable",
       "value": "Location"
+    },
+    {
+      "termType": "Variable",
+      "value": "PhysicalCharacteristics"
     },
     {
       "termType": "Variable",
@@ -125,7 +133,7 @@
         {
           "line": {
             "s": "RR",
-            "p": "http://shapes.performing-arts.ch/sparnatural/RecordResource_optional_isOrWasConstituentOf_zeroOrMore_isOrWasIncludedIn",
+            "p": "http://shapes.performing-arts.ch/sparnatural/RecordResource_optional_isOrWasConstituentOf_zeroOrMore_isOrWasIncludedIn_Fonds",
             "o": "Fonds",
             "sType": "http://shapes.performing-arts.ch/collections/RecordResource",
             "oType": "http://shapes.performing-arts.ch/sparnatural/Fonds",
@@ -495,8 +503,7 @@
       },
       "children": [],
       "optional": true
-    }
-    ,
+    },
     {
       "line": {
         "s": "Inst",
@@ -504,6 +511,30 @@
         "o": "DerivedFromInstantiation",
         "sType": "http://shapes.performing-arts.ch/instantiations/Instantiation",
         "oType": "http://shapes.performing-arts.ch/instantiations/Instantiation",
+        "values": []
+      },
+      "children": [],
+      "optional": true
+    },
+    {
+      "line": {
+        "s": "Inst",
+        "p": "http://shapes.performing-arts.ch/sparnatural/Instantiation_P45_consists_of",
+        "o": "Material",
+        "sType": "http://shapes.performing-arts.ch/instantiations/Instantiation",
+        "oType": "http://shapes.performing-arts.ch/instantiations/Material",
+        "values": []
+      },
+      "children": [],
+      "optional": true
+    },
+    {
+      "line": {
+        "s": "Inst",
+        "p": "http://shapes.performing-arts.ch/sparnatural/Instantiation_physicalCharacteristics",
+        "o": "PhysicalCharacteristics",
+        "sType": "http://shapes.performing-arts.ch/instantiations/Instantiation",
+        "oType": "http://special/Z_Text",
         "values": []
       },
       "children": [],
