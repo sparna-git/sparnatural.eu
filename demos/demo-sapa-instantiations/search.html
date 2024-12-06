@@ -267,6 +267,28 @@
         // Listen for form submission and trigger YASQE query
         form.addEventListener("submit", () => {
           form.disablePlayBtn();
+
+          // Afficher un message ou un spinner temporaire dans YASR
+          yasr.setResponse({
+            contentType: "text/html",
+            data: {
+              "head": {
+                "vars": ["message"]
+              },
+              "results": {
+                "bindings": [
+                  {
+                    "message": {
+                      "type": "literal",
+                      "value": "Chargement en cours..."
+                    }
+                  }
+                ]
+              }
+            },
+            status: 200
+          });
+
           let finalResult = form.executeSparql(
             yasqe.getValue(),
             (finalResult) => {
@@ -280,8 +302,8 @@
               console.dir(error);
             }
           );
-        });
-      });      
+        });      
+      });
 
       const yasqe = new Yasqe(document.getElementById("yasqe"), {
         requestConfig: { 

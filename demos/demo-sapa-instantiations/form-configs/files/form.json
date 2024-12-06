@@ -1,12 +1,22 @@
 {
   "bindings": [
     {
+      "variable": "Fonds",
+      "node": {
+        "type": "UserPrompt",
+        "name": {
+          "en": "Fonds",
+          "fr": "Fonds"
+        }
+      }
+    },
+    {
       "variable": "OriginalName",
       "node": {
         "type": "UserPrompt",
         "name": {
-          "en": "quick access by name",
-          "fr": "accès rapide par nom"
+          "en": "File name quick access",
+          "fr": "Accès rapide par nom"
         }
       }
     },
@@ -15,18 +25,8 @@
       "node": {
         "type": "UserPrompt",
         "name": {
-          "en": "full-text on name",
-          "fr": "recherche dans le nom"
-        }
-      }
-    },
-    {
-      "variable": "Fonds",
-      "node": {
-        "type": "UserPrompt",
-        "name": {
-          "en": "fonds",
-          "fr": "fonds"
+          "en": "File name - regex",
+          "fr": "Nom de fichier - regex"
         }
       }
     },
@@ -35,8 +35,8 @@
       "node": {
         "type": "UserPrompt",
         "name": {
-          "en": "container format",
-          "fr": "format container"
+          "en": "Container format",
+          "fr": "Format container"
         }
       }
     },
@@ -45,8 +45,8 @@
       "node": {
         "type": "UserPrompt",
         "name": {
-          "en": "video format",
-          "fr": "format vidéo"
+          "en": "Video format",
+          "fr": "Format vidéo"
         }
       }
     },
@@ -55,8 +55,8 @@
       "node": {
         "type": "UserPrompt",
         "name": {
-          "en": "audio format",
-          "fr": "format audio"
+          "en": "Audio format",
+          "fr": "Format audio"
         }
       }
     },
@@ -65,8 +65,8 @@
       "node": {
         "type": "UserPrompt",
         "name": {
-          "en": "standard",
-          "fr": "standard"
+          "en": "Standard",
+          "fr": "Standard"
         }
       }
     }

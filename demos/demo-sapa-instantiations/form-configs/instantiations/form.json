@@ -1,22 +1,12 @@
 {
   "bindings": [
     {
-      "variable": "Fonds",
+      "variable": "AncestorRecordResource",
       "node": {
         "type": "UserPrompt",
         "name": {
-          "en": "fonds",
-          "fr": "fonds"
-        }
-      }
-    },
-    {
-      "variable": "RR",
-      "node": {
-        "type": "UserPrompt",
-        "name": {
-          "en": "record resource",
-          "fr": "record resource"
+          "en": "inside record resource",
+          "fr": "dans la record resource"
         }
       }
     },
@@ -35,8 +25,8 @@
       "node": {
         "type": "UserPrompt",
         "name": {
-          "en": "signaturID quick access",
-          "fr": "signaturID accès rapide"
+          "en": "InstCote2 - quick access",
+          "fr": "InstCote2 - accès rapide"
         }
       }
     },
@@ -45,8 +35,8 @@
       "node": {
         "type": "UserPrompt",
         "name": {
-          "en": "signaturID search",
-          "fr": "signaturID recherche"
+          "en": "InstCote2 - regex",
+          "fr": "InstCote2 - regex"
         }
       }
     },
@@ -55,8 +45,8 @@
       "node": {
         "type": "UserPrompt",
         "name": {
-          "en": "identifier (deprecated)",
-          "fr": "identifiant (déprécié)"
+          "en": "InstCote1 - regex",
+          "fr": "InstCote1 - regex"
         }
       }
     },
