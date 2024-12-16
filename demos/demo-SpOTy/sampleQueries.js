@@ -69,7 +69,7 @@ var sampleQueries = {
                                 "label": "P trajectoire",
                                 "rdfTerm": {
                                     "type": "uri",
-                                    "value": "https://aslan.universite-lyon.fr/spoty/ns/CC-P"
+                                    "value": "https://w3id.org/SpOTy/ontology#CC-P"
                                 }
                             }
                         ]
@@ -177,7 +177,7 @@ var sampleQueries = {
                                 "label": "F figure",
                                 "rdfTerm": {
                                     "type": "uri",
-                                    "value": "https://aslan.universite-lyon.fr/spoty/ns/CC-F"
+                                    "value": "https://w3id.org/SpOTy/ontology#CC-F"
                                 }
                             }
                         ]
@@ -277,7 +277,7 @@ var sampleQueries = {
                         "label": "H tête",
                         "rdfTerm": {
                             "type": "uri",
-                            "value": "https://aslan.universite-lyon.fr/spoty/ns/MS-H"
+                            "value": "https://w3id.org/SpOTy/ontology#MS-H"
                         }
                     }
                 ]
