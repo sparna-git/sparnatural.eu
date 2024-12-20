@@ -42,6 +42,46 @@
       background-color:#e8fcf5;
       border-color: #dee2e6 #dee2e6 #e8fcf5;
     }
+
+    input.switch {
+      --s: 20px; /* adjust this to control the size*/
+      
+      height: calc(var(--s) + var(--s)/5);
+      width: auto; /* some browsers need this */
+      aspect-ratio: 2.25;
+      border-radius: var(--s);
+      /* margin: calc(var(--s)/2); */
+      display: grid;
+      cursor: pointer;
+      background-color:#85ff7a;
+      box-sizing: content-box;
+      overflow: hidden;
+      transition: .3s .1s;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+    }
+    input.switch:before{
+      content: "";
+      padding: calc(var(--s)/10);
+      --_g: radial-gradient(circle closest-side at calc(100% - var(--s)/2) 50%,#000 96%,#0000);
+      background: 
+        var(--_g) 0 /var(--_p,var(--s)) 100% no-repeat content-box,
+        var(--_g) var(--_p,0)/var(--s)  100% no-repeat content-box,
+        #fff;
+      mix-blend-mode: darken;
+      filter: blur(calc(var(--s)/12)) contrast(11);
+      transition: .4s, background-position .4s .1s,
+        padding cubic-bezier(0,calc(var(--_i,-1)*200),1,calc(var(--_i,-1)*200)) .25s .1s;
+    }
+    input.switch:checked {
+      background-color: #ff7a7a;
+    }
+    input.switch:checked:before {
+      padding: calc(var(--s)/10 + .05px) calc(var(--s)/10);
+      --_p: 100%;
+      --_i: 1;
+    }
   </style>
 
 </head>
@@ -120,20 +160,16 @@
 
             </div>
 
-            <!--
-            <div class="row" style="margin-bottom: 0.5em">
-              <div class="col-md-12">
-                <span style="font-size: 90%">
-                  Les requêtes sont envoyées à
-                  <a
-                    id="endpoint"
-                    href="https://proxy.sparnatural.eu/sparql-proxy/sparql?endpoint=https%3A%2F%2Fwww.dev.performing-arts.ch%2Fsparql"
-                    >https://proxy.sparnatural.eu/sparql-proxy/sparql?endpoint=https%3A%2F%2Fwww.dev.performing-arts.ch%2Fsparql</a
-                  >
-                </span>
+            <div class="row">
+              <div class="col-md-2">
+                  <input type="checkbox" class="switch" id="prodSwitch" autocomplete="off" />
+              </div>
+              <div class="col-md-10">
+                  <span id="dev">Queries are sent to <a href="https://www.dev.performing-arts.ch/sparql">DEV</a></span>
+                  <span id="prod" style="display:none;">Queries are sent to <a href="https://www.performing-arts.ch/sparql">PROD</a></span>
               </div>
             </div>
-            -->
+
           </div>
 
           <!-- Éditeur SPARQL à droite -->
@@ -396,6 +432,29 @@
           document.getElementById('tab-files').classList.remove("active");
         }
       }
+      
+
+      let toggleEndpointLabel = function() {
+        if(document.getElementById('prodSwitch').checked) {
+          document.getElementById('prod').style.display = 'inline';
+          document.getElementById('dev').style.display = 'none';
+
+          sparnaturalForms.forEach(form => {
+            form.setAttribute("endpoint", "https://proxy.sparnatural.eu/sparql-proxy/sparql?endpoint=https%3A%2F%2Fwww.performing-arts.ch%2Fsparql");
+          }); 
+        } else {
+          document.getElementById('prod').style.display = 'none';
+          document.getElementById('dev').style.display = 'inline';
+
+          sparnaturalForms.forEach(form => {
+            form.setAttribute("endpoint", "https://proxy.sparnatural.eu/sparql-proxy/sparql?endpoint=https%3A%2F%2Fwww.dev.performing-arts.ch%2Fsparql");
+          }); 
+        }
+        return false; 
+      }
+
+      document.getElementById('prodSwitch').onchange = toggleEndpointLabel;
+
     </script>
 
 </body>
