@@ -71,6 +71,10 @@
 
   <!-- /Sparnatural-specific -->
 
+  
+    <!-- Spoty CSS -->
+    <link rel="stylesheet" href="spoty.css" />
+
 </head>
 
 <body>
@@ -109,8 +113,20 @@
 
               &nbsp;
 
+<!--
+
         <div class="row" style="font-style: italic; font-size:0.9em;">
           <a href="#" id="tutorial"><i id="tutorial-toggle-icon" class="fad fa-question fa-fw"></i>&nbsp; <span data-i18n="tutorial"></a>
+        </div>
+
+-->
+        <!-- This is where Solid Connect for Sparnatural is inserted -->
+        <div class="row solid-connect-wrapper">
+          <solid-connect
+          suggest-idp-src="https://login.inrupt.com,https://login.inrupt.fr" 
+          suggest-sources="https://solid.champin.net/pa/spoty/"
+          additional-sources="https://w3id.org/SpOTy/languages,https://w3id.org/SpOTy/ontology"
+          ></solid-connect>
         </div>
 
         <!-- This is where Sparnatural is inserted -->
@@ -278,7 +294,7 @@
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
     <!-- datepicker -->
@@ -497,15 +513,66 @@
             sparnatural.loadQuery(sampleQueries[key]) ;
         }
       }
-
+/*
       document.getElementById('tutorial').onclick = function() {
         sparnatural.clear();
         initTour();
       }
+*/
+      window.podConnectComponent = document.querySelector("solid-connect");
 
-    </script>
+      window.callbackQueryPod = async function (sparql, session) {
+        console.log('callback launched') ;
+        let results = await window.podQueryEngine(sparql, session) ;
+        return results ;
+      }
+      windowerrorCollbackQueryPod = function(error) {
+        console.log(error) ;
+      }
+
+
+
+      sparnatural.addEventListener("init", (event) => {
+        sparnatural.customization = {
+          sparqlHandler: { 
+            async executeSparql(
+              sparql,
+              callback,
+              errorCallback
+            ) {
+                console.log("Received SPARQL "+sparql);
+
+                if (window.podConnectComponent.logedSession) {
+                  console.log('Connected to pod') ;
+                  let results = await window.callbackQueryPod(sparql, window.podConnectComponent.logedSession);
+                  /*let solidQueryUi = document.querySelector("solid-query-ui");
+                  console.log('query launched on index.html') ;
+                  let results = await solidQueryUi.playLdfQueryUI(sparql) ;
+                  
+                  console.log('results...');
+                  console.log(solidQueryUi.allResultsRecived) ;*/
+                  console.log(results) ;
+                  callback(results);
+                //callback(results) ;
+
+                } else {
+                  window.windowerrorCollbackQueryPod('Not connected to pod') ;
+                  return {};
+                }
+                
+                // ... execute SPARQL ...
+                // fire callback with SPARQL results
+                
+            }
+          }
+        }
+      });
+
+
   </script>
 
+  <!-- Spoty integration-->
+  <script src="spoty-1.js"></script>
 
 </body>
 
