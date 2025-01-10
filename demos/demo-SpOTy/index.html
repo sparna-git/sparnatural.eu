@@ -138,7 +138,7 @@
             lang="en"
             defaultLang="en"
             distinct="true"
-            limit="1000"
+            limit="100"
             debug="true"
           ></spar-natural>
 
@@ -533,6 +533,9 @@
 
 
       sparnatural.addEventListener("init", (event) => {
+
+        console.log("comunica init listener")
+
         sparnatural.customization = {
           sparqlHandler: { 
             async executeSparql(
@@ -542,27 +545,32 @@
             ) {
                 console.log("Received SPARQL "+sparql);
 
+                // ... execute SPARQL ...
                 if (window.podConnectComponent.logedSession) {
                   console.log('Connected to pod') ;
-                  let results = await window.callbackQueryPod(sparql, window.podConnectComponent.logedSession);
-                  /*let solidQueryUi = document.querySelector("solid-query-ui");
-                  console.log('query launched on index.html') ;
-                  let results = await solidQueryUi.playLdfQueryUI(sparql) ;
                   
-                  console.log('results...');
-                  console.log(solidQueryUi.allResultsRecived) ;*/
+
+                  let results = await window.callbackQueryPod(
+                    sparql,
+                    window.podConnectComponent.logedSession
+                  );
+
+
+                  /*
+                  let solidQueryUi = document.querySelector("solid-query-ui");
+                  let results = await solidQueryUi.playLdfQueryUI(sparql) ;
+                  */
+
+                  console.log('Got results from comunica ');
                   console.log(results) ;
+
+                  // fire callback with SPARQL results
                   callback(results);
-                //callback(results) ;
 
                 } else {
                   window.windowerrorCollbackQueryPod('Not connected to pod') ;
                   return {};
                 }
-                
-                // ... execute SPARQL ...
-                // fire callback with SPARQL results
-                
             }
           }
         }
