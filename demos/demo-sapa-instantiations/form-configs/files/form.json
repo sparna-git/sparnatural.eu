@@ -1,12 +1,12 @@
 {
   "bindings": [
     {
-      "variable": "Fonds",
+      "variable": "AncestorRecordResource",
       "node": {
         "type": "UserPrompt",
         "name": {
-          "en": "Fonds",
-          "fr": "Fonds"
+          "en": "inside record resource",
+          "fr": "dans la record resource"
         }
       }
     },
@@ -70,5 +70,12 @@
         }
       }
     }
-  ]
+  ],
+  "variables": {
+    "onscreen": [
+      "Fonds",
+      "OriginalName",
+      "ContainerFormat"
+    ]
+  }
 }

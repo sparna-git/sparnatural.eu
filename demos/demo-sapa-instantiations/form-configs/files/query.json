@@ -11,6 +11,10 @@
     },
     {
       "termType": "Variable",
+      "value": "OriginalName"
+    },
+    {
+      "termType": "Variable",
       "value": "InstCote1"
     },
     {
@@ -135,10 +139,22 @@
             {
               "line": {
                 "s": "RecordResource",
-                "p": "http://shapes.performing-arts.ch/sparnatural/RecordResource_optional_isOrWasConstituentOf_zeroOrMore_isOrWasIncludedIn",
+                "p": "http://shapes.performing-arts.ch/sparnatural/RecordResource_optional_isOrWasConstituentOf_zeroOrMore_isOrWasIncludedIn_Fonds",
                 "o": "Fonds",
                 "sType": "http://shapes.performing-arts.ch/collections/RecordResource",
                 "oType": "http://shapes.performing-arts.ch/sparnatural/Fonds",
+                "values": []
+              },
+              "children": [],
+              "optional": true
+            },
+            {
+              "line": {
+                "s": "RecordResource",
+                "p": "http://shapes.performing-arts.ch/sparnatural/RecordResource_optional_isOrWasConstituentOf_zeroOrMore_isOrWasIncludedIn",
+                "o": "AncestorRecordResource",
+                "sType": "http://shapes.performing-arts.ch/collections/RecordResource",
+                "oType": "http://shapes.performing-arts.ch/collections/RecordResource",
                 "values": []
               },
               "children": [],
