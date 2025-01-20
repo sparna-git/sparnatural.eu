@@ -289,6 +289,29 @@
           "fr": "note / anmerkung"
         }
       }
+    },
+    {
+      "variable": "ResponsibleEmployee",
+      "node": {
+        "type": "UserPrompt",
+        "name": {
+          "en": "responsible employee",
+          "fr": "responsable"
+        }
+      }
     }
-  ]
+  ],
+  "variables": {
+    "onscreen": [
+      "Fonds",
+      "RRCote1",
+      "RRCote2",
+      "RR",
+      "Type",
+      "InstCote1",
+      "InstCote2",
+      "ArchivalStatus",
+      "Inst"
+    ]
+  }
 }

@@ -120,6 +120,10 @@
     {
       "termType": "Variable",
       "value": "Note"
+    },
+    {
+      "termType": "Variable",
+      "value": "ResponsibleEmployee"
     }
   ],
   "order": null,
@@ -560,6 +564,18 @@
         "s": "Inst",
         "p": "http://shapes.performing-arts.ch/sparnatural/Instantiation_physicalCharacteristics",
         "o": "PhysicalCharacteristics",
+        "sType": "http://shapes.performing-arts.ch/instantiations/Instantiation",
+        "oType": "http://special/Z_Text",
+        "values": []
+      },
+      "children": [],
+      "optional": true
+    },
+    {
+      "line": {
+        "s": "Inst",
+        "p": "http://shapes.performing-arts.ch/instantiations/Instantiation_hasResponsibleEmployee",
+        "o": "ResponsibleEmployee",
         "sType": "http://shapes.performing-arts.ch/instantiations/Instantiation",
         "oType": "http://special/Z_Text",
         "values": []
