@@ -527,7 +527,7 @@
       window.callbackQueryPod = async function (sparql, session) {
         console.log('callback launched') ;
         
-        let podurl = window.podConnectComponent.source ;
+        let podurl = window.podConnectComponent.allSources ;
         if (podurl == '') {
           alert("Please enter source url") ;
           return await window.errorCollbackQueryPod('No source url defined') ;
