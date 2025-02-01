@@ -140,7 +140,7 @@
             distinct="true"
             limit="100"
             debug="true"
-            prefixes="schema:https://schema.org/ spotyonto:https://w3id.org/SpOTy/ontology#"
+            prefixes="skos:http://www.w3.org/2004/02/skos/core# schema:https://schema.org/ spotyonto:https://w3id.org/SpOTy/ontology#"
           ></spar-natural>
 
           <input type="hidden" id="query-json"></input>
@@ -544,58 +544,41 @@
       }
 
 
+      sparnatural.customization = {
+        sparqlHandler: { 
+          async executeSparql(
+            sparql,
+            callback,
+            errorCallback
+          ) {
+              console.log("Received SPARQL "+sparql);
 
-      sparnatural.addEventListener("init", (event) => {
+              // ... execute SPARQL ...
+              if (window.podConnectComponent.logedSession) {
+                console.log('Connected to pod') ;                
 
-        console.log("comunica init listener")
+                let results = await window.callbackQueryPod(
+                  sparql, 
+                  window.podConnectComponent.logedSession
+                );
 
-        sparnatural.customization = {
-          sparqlHandler: { 
-            async executeSparql(
-              sparql,
-              callback,
-              errorCallback
-            ) {
-                console.log("Received SPARQL "+sparql);
-
-                // ... execute SPARQL ...
-                if (window.podConnectComponent.logedSession) {
-                  console.log('Connected to pod') ;
-                  
-
-                  let results = await window.callbackQueryPod(
-                    sparql, 
-                    window.podConnectComponent.logedSession
-                  );
-                    console.log('results...');
-                    //console.log(solidQueryUi.allResultsRecived) ;/**/
-                  if (results instanceof Error) {
-                    
-                    errorCallback(results) ;
-
-                  } else{
-                    
-                    console.log(results) ;
-                  
-                    callback(results);
-                  }
-                  
-                  /*let solidQueryUi = document.querySelector("solid-query-ui");
-                  console.log('query launched on index.html') ;
-                  let results = await solidQueryUi.playLdfQueryUI(sparql) ;*/
-                  
-                  
-                //callback(results) ;
-
-                } else {
-                  let error = window.errorCollbackQueryPod('Not connected to pod') ;
-                  
-                  errorCallback(error) ;
+                if (results instanceof Error) {
+                  errorCallback(results) ;
+                } else{                
+                  console.log(results) ;
+                  callback(results);
                 }
-            }
+                
+                /*let solidQueryUi = document.querySelector("solid-query-ui");
+                console.log('query launched on index.html') ;
+                let results = await solidQueryUi.playLdfQueryUI(sparql) ;*/
+              } else {
+                let error = window.errorCollbackQueryPod('Not connected to pod') ;
+                errorCallback(error) ;
+              }
           }
         }
-      });
+      };
 
 
   </script>
