@@ -60,7 +60,7 @@ this:Token a sh:NodeShape;
   sh:property this:Token_type, this:Token_originalGloss, this:Token_lastToken, this:Token_tokenSentence,
     this:Token_ttranscription, this:Token_nextToken, this:Token_previousToken, this:Token_laterToken,
     this:Token_formerToken, this:Token_nextAnnotatedToken, this:Token_previousAnnotatedToken,
-    this:Token_semantics, this:Token_tokenSemantics, this:Token_morphoSyntax, this:Token_tokenMorphosynytax,
+    this:Token_semantics, this:Token_tokenSemantics, this:Token_morphoSyntax, this:Token_tokenMorphoSyntax,
     this:Token_gloss, this:Token_clause .
 
 this:Semantics a sh:NodeShape;
@@ -97,6 +97,12 @@ this:Center a sh:NodeShape;
   volipi:iconName "fa-solid fa-location-dot";
   sh:deactivated "true"^^xsd:boolean;
   sh:property this:Center_longitude, this:Center_latitude .
+
+this:MorphoSyntaxCode a sh:NodeShape;
+  rdfs:label "Morpho-syntactic category code"@en, "Code catégorie morpho-syntaxique"@fr;
+  sh:nodeKind sh:Literal;
+  sh:order "90"^^xsd:integer;
+  volipi:iconName "fa-solid fa-list-tree" .
 
 this:Transcription a sh:NodeShape;
   rdfs:label "Transcription"@en, "Transcription"@fr;
@@ -211,20 +217,20 @@ this:Sentence_lastToken sh:path spoty:lastToken;
   sh:node this:Token;
   sh:deactivated "true"^^xsd:boolean .
 
-this:Sentence_sentenceToken sh:path _:1dbc0e1c12eb4e498d11cf37fb5a8fbd1235;
+this:Sentence_sentenceToken sh:path _:1dbc0e1c12eb4e498d11cf37fb5a8fbd1296;
   sh:name "has"@en, "a pour"@fr;
   sh:nodeKind sh:IRI;
   sh:node this:Token;
   dash:searchWidget core:NonSelectableProperty;
   core:enableOptional "true"^^xsd:boolean .
 
-_:1dbc0e1c12eb4e498d11cf37fb5a8fbd1235 rdf:first spoty:firstToken;
-  rdf:rest _:1dbc0e1c12eb4e498d11cf37fb5a8fbd1236 .
+_:1dbc0e1c12eb4e498d11cf37fb5a8fbd1296 rdf:first spoty:firstToken;
+  rdf:rest _:1dbc0e1c12eb4e498d11cf37fb5a8fbd1297 .
 
-_:1dbc0e1c12eb4e498d11cf37fb5a8fbd1236 rdf:first _:1dbc0e1c12eb4e498d11cf37fb5a8fbd1237;
+_:1dbc0e1c12eb4e498d11cf37fb5a8fbd1297 rdf:first _:1dbc0e1c12eb4e498d11cf37fb5a8fbd1298;
   rdf:rest rdf:nil .
 
-_:1dbc0e1c12eb4e498d11cf37fb5a8fbd1237 sh:zeroOrMorePath spoty:nextToken .
+_:1dbc0e1c12eb4e498d11cf37fb5a8fbd1298 sh:zeroOrMorePath spoty:nextToken .
 
 this:Sentence_language sh:path spoty:language;
   sh:name "in"@en, "en"@fr;
@@ -277,23 +283,23 @@ this:Token_lastToken sh:path spoty:lastToken;
   sh:nodeKind sh:IRI;
   sh:deactivated "true"^^xsd:boolean .
 
-this:Token_tokenSentence sh:path _:1dbc0e1c12eb4e498d11cf37fb5a8fbd1238;
+this:Token_tokenSentence sh:path _:1dbc0e1c12eb4e498d11cf37fb5a8fbd1299;
   sh:name "in"@en, "dans"@fr;
   sh:nodeKind sh:IRI;
   sh:node this:Sentence;
   dash:searchWidget core:ListProperty .
 
-_:1dbc0e1c12eb4e498d11cf37fb5a8fbd1238 rdf:first _:1dbc0e1c12eb4e498d11cf37fb5a8fbd1239;
-  rdf:rest _:1dbc0e1c12eb4e498d11cf37fb5a8fbd1241 .
+_:1dbc0e1c12eb4e498d11cf37fb5a8fbd1299 rdf:first _:1dbc0e1c12eb4e498d11cf37fb5a8fbd1300;
+  rdf:rest _:1dbc0e1c12eb4e498d11cf37fb5a8fbd1302 .
 
-_:1dbc0e1c12eb4e498d11cf37fb5a8fbd1239 sh:inversePath _:1dbc0e1c12eb4e498d11cf37fb5a8fbd1240 .
+_:1dbc0e1c12eb4e498d11cf37fb5a8fbd1300 sh:inversePath _:1dbc0e1c12eb4e498d11cf37fb5a8fbd1301 .
 
-_:1dbc0e1c12eb4e498d11cf37fb5a8fbd1240 sh:zeroOrMorePath spoty:nextToken .
+_:1dbc0e1c12eb4e498d11cf37fb5a8fbd1301 sh:zeroOrMorePath spoty:nextToken .
 
-_:1dbc0e1c12eb4e498d11cf37fb5a8fbd1241 rdf:first _:1dbc0e1c12eb4e498d11cf37fb5a8fbd1242;
+_:1dbc0e1c12eb4e498d11cf37fb5a8fbd1302 rdf:first _:1dbc0e1c12eb4e498d11cf37fb5a8fbd1303;
   rdf:rest rdf:nil .
 
-_:1dbc0e1c12eb4e498d11cf37fb5a8fbd1242 sh:inversePath spoty:firstToken .
+_:1dbc0e1c12eb4e498d11cf37fb5a8fbd1303 sh:inversePath spoty:firstToken .
 
 this:Token_ttranscription sh:path spoty:ttranscription;
   sh:name "has"@en, "a pour"@fr;
@@ -312,7 +318,7 @@ this:Token_nextToken sh:path spoty:nextToken;
   dash:searchWidget core:NonSelectableProperty;
   core:enableOptional "true"^^xsd:boolean .
 
-this:Token_previousToken sh:path _:1dbc0e1c12eb4e498d11cf37fb5a8fbd1243;
+this:Token_previousToken sh:path _:1dbc0e1c12eb4e498d11cf37fb5a8fbd1304;
   sh:order "4";
   sh:name "just after"@en, "juste après"@fr;
   sh:nodeKind sh:IRI;
@@ -320,9 +326,9 @@ this:Token_previousToken sh:path _:1dbc0e1c12eb4e498d11cf37fb5a8fbd1243;
   dash:searchWidget core:NonSelectableProperty;
   core:enableOptional "true"^^xsd:boolean .
 
-_:1dbc0e1c12eb4e498d11cf37fb5a8fbd1243 sh:inversePath spoty:nextToken .
+_:1dbc0e1c12eb4e498d11cf37fb5a8fbd1304 sh:inversePath spoty:nextToken .
 
-this:Token_laterToken sh:path _:1dbc0e1c12eb4e498d11cf37fb5a8fbd1244;
+this:Token_laterToken sh:path _:1dbc0e1c12eb4e498d11cf37fb5a8fbd1305;
   sh:order "1";
   sh:name "before"@en, "avant"@fr;
   sh:nodeKind sh:IRI;
@@ -330,9 +336,9 @@ this:Token_laterToken sh:path _:1dbc0e1c12eb4e498d11cf37fb5a8fbd1244;
   dash:searchWidget core:NonSelectableProperty;
   core:enableOptional "true"^^xsd:boolean .
 
-_:1dbc0e1c12eb4e498d11cf37fb5a8fbd1244 sh:oneOrMorePath spoty:nextToken .
+_:1dbc0e1c12eb4e498d11cf37fb5a8fbd1305 sh:oneOrMorePath spoty:nextToken .
 
-this:Token_formerToken sh:path _:1dbc0e1c12eb4e498d11cf37fb5a8fbd1245;
+this:Token_formerToken sh:path _:1dbc0e1c12eb4e498d11cf37fb5a8fbd1306;
   sh:order "6";
   sh:name "after"@en, "après"@fr;
   sh:nodeKind sh:IRI;
@@ -340,9 +346,9 @@ this:Token_formerToken sh:path _:1dbc0e1c12eb4e498d11cf37fb5a8fbd1245;
   dash:searchWidget core:NonSelectableProperty;
   core:enableOptional "true"^^xsd:boolean .
 
-_:1dbc0e1c12eb4e498d11cf37fb5a8fbd1245 sh:inversePath _:1dbc0e1c12eb4e498d11cf37fb5a8fbd1246 .
+_:1dbc0e1c12eb4e498d11cf37fb5a8fbd1306 sh:inversePath _:1dbc0e1c12eb4e498d11cf37fb5a8fbd1307 .
 
-_:1dbc0e1c12eb4e498d11cf37fb5a8fbd1246 sh:oneOrMorePath spoty:nextToken .
+_:1dbc0e1c12eb4e498d11cf37fb5a8fbd1307 sh:oneOrMorePath spoty:nextToken .
 
 this:Token_nextAnnotatedToken sh:path spoty:nextAnnotatedToken;
   sh:order "2";
@@ -353,7 +359,7 @@ this:Token_nextAnnotatedToken sh:path spoty:nextAnnotatedToken;
   dash:searchWidget core:NonSelectableProperty;
   core:enableOptional "true"^^xsd:boolean .
 
-this:Token_previousAnnotatedToken sh:path _:1dbc0e1c12eb4e498d11cf37fb5a8fbd1247;
+this:Token_previousAnnotatedToken sh:path _:1dbc0e1c12eb4e498d11cf37fb5a8fbd1308;
   sh:order "5";
   sh:name "just after (annotated)"@en, "juste après (annotated)"@fr;
   sh:nodeKind sh:IRI;
@@ -361,7 +367,7 @@ this:Token_previousAnnotatedToken sh:path _:1dbc0e1c12eb4e498d11cf37fb5a8fbd1247
   dash:searchWidget core:NonSelectableProperty;
   core:enableOptional "true"^^xsd:boolean .
 
-_:1dbc0e1c12eb4e498d11cf37fb5a8fbd1247 sh:inversePath spoty:nextAnnotatedToken .
+_:1dbc0e1c12eb4e498d11cf37fb5a8fbd1308 sh:inversePath spoty:nextAnnotatedToken .
 
 this:Token_semantics sh:path spoty:semantics;
   sh:name "has (direct)"@en, "a pour (direct)"@fr;
@@ -372,7 +378,7 @@ this:Token_semantics sh:path spoty:semantics;
   datasources:treeRootsDatasource this:taxo_semantics_root;
   datasources:treeChildrenDatasource this:taxo_children .
 
-this:Token_tokenSemantics sh:path _:1dbc0e1c12eb4e498d11cf37fb5a8fbd1248;
+this:Token_tokenSemantics sh:path _:1dbc0e1c12eb4e498d11cf37fb5a8fbd1309;
   sh:name "has"@en, "a pour"@fr;
   sh:nodeKind sh:IRI;
   sh:node this:Semantics;
@@ -381,22 +387,28 @@ this:Token_tokenSemantics sh:path _:1dbc0e1c12eb4e498d11cf37fb5a8fbd1248;
   datasources:treeRootsDatasource this:taxo_semantics_root;
   datasources:treeChildrenDatasource this:taxo_children .
 
-_:1dbc0e1c12eb4e498d11cf37fb5a8fbd1248 rdf:first spoty:semantics;
-  rdf:rest _:1dbc0e1c12eb4e498d11cf37fb5a8fbd1249 .
+_:1dbc0e1c12eb4e498d11cf37fb5a8fbd1309 rdf:first spoty:semantics;
+  rdf:rest _:1dbc0e1c12eb4e498d11cf37fb5a8fbd1310 .
 
-_:1dbc0e1c12eb4e498d11cf37fb5a8fbd1249 rdf:first _:1dbc0e1c12eb4e498d11cf37fb5a8fbd1250;
+_:1dbc0e1c12eb4e498d11cf37fb5a8fbd1310 rdf:first _:1dbc0e1c12eb4e498d11cf37fb5a8fbd1311;
   rdf:rest rdf:nil .
 
-_:1dbc0e1c12eb4e498d11cf37fb5a8fbd1250 sh:zeroOrMorePath skos:broader .
+_:1dbc0e1c12eb4e498d11cf37fb5a8fbd1311 sh:zeroOrMorePath skos:broader .
 
-this:Token_morphoSyntax sh:path spoty:morphoSyntax;
+this:Token_morphoSyntax sh:path _:1dbc0e1c12eb4e498d11cf37fb5a8fbd1312;
   sh:name "has (direct)"@en, "a pour (direct)"@fr;
-  sh:nodeKind sh:IRI;
-  sh:node this:MorphoSyntax;
-  dash:searchWidget core:ListProperty;
+  sh:nodeKind sh:Literal;
+  sh:node this:MorphoSyntaxCode;
+  dash:searchWidget core:StringEqualsProperty;
   core:enableOptional "true"^^xsd:boolean .
 
-this:Token_tokenMorphosynytax sh:path _:1dbc0e1c12eb4e498d11cf37fb5a8fbd1251;
+_:1dbc0e1c12eb4e498d11cf37fb5a8fbd1312 rdf:first spoty:morphoSyntax;
+  rdf:rest _:1dbc0e1c12eb4e498d11cf37fb5a8fbd1313 .
+
+_:1dbc0e1c12eb4e498d11cf37fb5a8fbd1313 rdf:first spoty:code;
+  rdf:rest rdf:nil .
+
+this:Token_tokenMorphoSyntax sh:path _:1dbc0e1c12eb4e498d11cf37fb5a8fbd1314;
   sh:name "has"@en, "a pour"@fr;
   sh:nodeKind sh:IRI;
   sh:node this:MorphoSyntax;
@@ -404,13 +416,13 @@ this:Token_tokenMorphosynytax sh:path _:1dbc0e1c12eb4e498d11cf37fb5a8fbd1251;
   datasources:datasource this:list_morphosyntax;
   core:enableOptional "true"^^xsd:boolean .
 
-_:1dbc0e1c12eb4e498d11cf37fb5a8fbd1251 rdf:first spoty:morphoSyntax;
-  rdf:rest _:1dbc0e1c12eb4e498d11cf37fb5a8fbd1252 .
+_:1dbc0e1c12eb4e498d11cf37fb5a8fbd1314 rdf:first spoty:morphoSyntax;
+  rdf:rest _:1dbc0e1c12eb4e498d11cf37fb5a8fbd1315 .
 
-_:1dbc0e1c12eb4e498d11cf37fb5a8fbd1252 rdf:first _:1dbc0e1c12eb4e498d11cf37fb5a8fbd1253;
+_:1dbc0e1c12eb4e498d11cf37fb5a8fbd1315 rdf:first _:1dbc0e1c12eb4e498d11cf37fb5a8fbd1316;
   rdf:rest rdf:nil .
 
-_:1dbc0e1c12eb4e498d11cf37fb5a8fbd1253 sh:zeroOrMorePath skos:broader .
+_:1dbc0e1c12eb4e498d11cf37fb5a8fbd1316 sh:zeroOrMorePath skos:broader .
 
 this:Token_gloss sh:path spoty:gloss;
   sh:name "has"@en, "a pour"@fr;
