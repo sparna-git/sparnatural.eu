@@ -23,10 +23,6 @@
     },
     {
       "termType": "Variable",
-      "value": "InstCote1"
-    },
-    {
-      "termType": "Variable",
       "value": "InstCote2"
     },
     {
@@ -222,18 +218,6 @@
           "children": []
         }        
       ]
-    },
-    {
-      "line": {
-        "s": "Inst",
-        "p": "http://shapes.performing-arts.ch/instantiations/Instantiation_identifier",
-        "o": "InstCote1",
-        "sType": "http://shapes.performing-arts.ch/instantiations/Instantiation",
-        "oType": "http://special/Z_Text",
-        "values": []
-      },
-      "children": [],
-      "optional": true
     },
     {
       "line": {

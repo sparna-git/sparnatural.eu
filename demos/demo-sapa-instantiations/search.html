@@ -25,7 +25,7 @@
   <!-- YASGUI CSS -->
   <link href="https://unpkg.com/@triply/yasgui/build/yasgui.min.css" rel="stylesheet" type="text/css" />
 
-  <link href="sparnatural-form.css" rel="stylesheet">
+  <link href="assets/css/sparnatural-form.css" rel="stylesheet">
 
   <style>
     .yasqe .CodeMirror {
@@ -216,9 +216,9 @@
     <script src="https://unpkg.com/@triply/yasgui/build/yasgui.min.js"></script>
 
     <!-- Sparnatural Javascript -->
-    <script type="text/javascript" src="./sparnatural.js"></script>
-    <script type="text/javascript" src="./sparnatural-yasgui-plugins.js"></script>
-    <script type="text/javascript" src="./sparnatural-form.js"></script>
+    <script type="text/javascript" src="assets/js/sparnatural.js"></script>
+    <script type="text/javascript" src="assets/js/sparnatural-yasgui-plugins.js"></script>
+    <script type="text/javascript" src="assets/js/sparnatural-form.js"></script>
 
   <!-- /Sparnatural-specific -->
 
@@ -368,35 +368,6 @@
 
       yasr.plugins["TableX"].persistentConfig.compact = true;
       yasr.plugins["TableX"].config.includeControls = true;
-      yasr.plugins["TableX"].config.excludeColumnsFromCompactView = [
-        // these 2 are for files
-        "Size",
-        "Standard",
-        // these are all for instantiations
-        "RepresentationType",
-        "CarrierType",
-        "RecordingSystem",
-        "DerivedInstantiationConcat",
-        "DerivedFromInstantiationConcat",
-        "CopyPath",
-        "History",
-        "ContentDesc",
-        "ModeOfAcq",
-        "Material",
-        "Condition",
-        "Location",
-        "PhysicalCharacteristics",
-        "Color",
-        "Standard",
-        "DisplayMode",
-        "VideoDamage",
-        "ScanningFormat",
-        "ScanningOrder",
-        "Integrity",
-        "PhysUsability",
-        "InternalNote",
-        "Note"
-      ];
 
       if(lang == "fr") { 
         yasr.plugins["Grid"].config.lang = "fr";

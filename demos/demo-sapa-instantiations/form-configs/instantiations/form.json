@@ -5,18 +5,8 @@
       "node": {
         "type": "UserPrompt",
         "name": {
-          "en": "inside record resource",
-          "fr": "dans la record resource"
-        }
-      }
-    },
-    {
-      "variable": "Type",
-      "node": {
-        "type": "UserPrompt",
-        "name": {
-          "en": "type (physical / virtual)",
-          "fr": "type (physique / virtuel)"
+          "en": "Record Resource (URI/Text)",
+          "fr": "Record Resource (URI/Text)"
         }
       }
     },
@@ -25,8 +15,8 @@
       "node": {
         "type": "UserPrompt",
         "name": {
-          "en": "InstCote2 - quick access",
-          "fr": "InstCote2 - accès rapide"
+          "en": "Unique ID (search)",
+          "fr": "Unique ID (search)"
         }
       }
     },
@@ -35,18 +25,18 @@
       "node": {
         "type": "UserPrompt",
         "name": {
-          "en": "InstCote2 - regex",
-          "fr": "InstCote2 - regex"
+          "en": "Unique ID (regex)",
+          "fr": "Unique ID (regex)"
         }
       }
     },
     {
-      "variable": "InstCote1",
+      "variable": "Type",
       "node": {
         "type": "UserPrompt",
         "name": {
-          "en": "InstCote1 - regex",
-          "fr": "InstCote1 - regex"
+          "en": "Type (physical / virtual)",
+          "fr": "Type (physical / virtual)"
         }
       }
     },
@@ -55,8 +45,8 @@
       "node": {
         "type": "UserPrompt",
         "name": {
-          "en": "representation type",
-          "fr": "type de représentation"
+          "en": "Representation type",
+          "fr": "Representation type"
         }
       }
     },
@@ -65,8 +55,8 @@
       "node": {
         "type": "UserPrompt",
         "name": {
-          "en": "carrier type",
-          "fr": "type de support"
+          "en": "Carrier type",
+          "fr": "Carrier type"
         }
       }
     },
@@ -75,8 +65,8 @@
       "node": {
         "type": "UserPrompt",
         "name": {
-          "en": "recording system",
-          "fr": "système d'enregistrement"
+          "en": "Recording system",
+          "fr": "Recording system"
         }
       }
     },
@@ -85,78 +75,8 @@
       "node": {
         "type": "UserPrompt",
         "name": {
-          "en": "archival status",
-          "fr": "statut de préservation"
-        }
-      }
-    },
-    {
-      "variable": "DerivedInstantiation",
-      "node": {
-        "type": "UserPrompt",
-        "name": {
-          "en": "derived instantiation",
-          "fr": "instantiation dérivée"
-        }
-      }
-    },
-    {
-      "variable": "DerivedFromInstantiation",
-      "node": {
-        "type": "UserPrompt",
-        "name": {
-          "en": "derived from instantiation",
-          "fr": "dérive de l'instantiation"
-        }
-      }
-    },
-    {
-      "variable": "CopyPath",
-      "node": {
-        "type": "UserPrompt",
-        "name": {
-          "en": "copy path",
-          "fr": "copy path"
-        }
-      }
-    },
-    {
-      "variable": "History",
-      "node": {
-        "type": "UserPrompt",
-        "name": {
-          "en": "history",
-          "fr": "historique"
-        }
-      }
-    },
-    {
-      "variable": "ModeOfAcq",
-      "node": {
-        "type": "UserPrompt",
-        "name": {
-          "en": "mode of acquisition",
-          "fr": "mode d'acquisition"
-        }
-      }
-    },
-    {
-      "variable": "ContentDesc",
-      "node": {
-        "type": "UserPrompt",
-        "name": {
-          "en": "content description",
-          "fr": "description du contenu"
-        }
-      }
-    },
-    {
-      "variable": "Material",
-      "node": {
-        "type": "UserPrompt",
-        "name": {
-          "en": "material",
-          "fr": "matériaux"
+          "en": "Archival status",
+          "fr": "Archival status"
         }
       }
     },
@@ -165,78 +85,8 @@
       "node": {
         "type": "UserPrompt",
         "name": {
-          "en": "condition",
-          "fr": "condition"
-        }
-      }
-    },
-    {
-      "variable": "LocationCriteria",
-      "node": {
-        "type": "UserPrompt",
-        "name": {
-          "en": "location",
-          "fr": "localisation"
-        }
-      }
-    },
-    {
-      "variable": "PhysicalCharacteristics",
-      "node": {
-        "type": "UserPrompt",
-        "name": {
-          "en": "physical characteristics",
-          "fr": "caractéristiques physiques"
-        }
-      }
-    },
-    {
-      "variable": "Color",
-      "node": {
-        "type": "UserPrompt",
-        "name": {
-          "en": "color",
-          "fr": "couleur"
-        }
-      }
-    },
-    {
-      "variable": "Standard",
-      "node": {
-        "type": "UserPrompt",
-        "name": {
-          "en": "standard",
-          "fr": "standard"
-        }
-      }
-    },
-    {
-      "variable": "DisplayMode",
-      "node": {
-        "type": "UserPrompt",
-        "name": {
-          "en": "display mode",
-          "fr": "mode d'affichage"
-        }
-      }
-    },
-    {
-      "variable": "ScanningFormat",
-      "node": {
-        "type": "UserPrompt",
-        "name": {
-          "en": "scanning format",
-          "fr": "scanning format"
-        }
-      }
-    },
-    {
-      "variable": "ScanningOrder",
-      "node": {
-        "type": "UserPrompt",
-        "name": {
-          "en": "scanning order",
-          "fr": "scanning order"
+          "en": "Condition",
+          "fr": "Condition"
         }
       }
     },
@@ -245,8 +95,8 @@
       "node": {
         "type": "UserPrompt",
         "name": {
-          "en": "video damage",
-          "fr": "dommages vidéo"
+          "en": "Video damage",
+          "fr": "Video damage"
         }
       }
     },
@@ -255,38 +105,68 @@
       "node": {
         "type": "UserPrompt",
         "name": {
-          "en": "integrity",
-          "fr": "intégrité"
+          "en": "Integrity",
+          "fr": "Integrity"
         }
       }
     },
     {
-      "variable": "PhysUsability",
+      "variable": "History",
       "node": {
         "type": "UserPrompt",
         "name": {
-          "en": "physical usability",
-          "fr": "utilisabilité physique"
+          "en": "History",
+          "fr": "History"
         }
       }
     },
     {
-      "variable": "InternalNote",
+      "variable": "LocationCriteria",
       "node": {
         "type": "UserPrompt",
         "name": {
-          "en": "internal note",
-          "fr": "note interne"
+          "en": "Location",
+          "fr": "Location"
         }
       }
     },
     {
-      "variable": "Note",
+      "variable": "CopyPath",
       "node": {
         "type": "UserPrompt",
         "name": {
-          "en": "note / anmerkung",
-          "fr": "note / anmerkung"
+          "en": "Copy path",
+          "fr": "Copy path"
+        }
+      }
+    },
+    {
+      "variable": "DerivedInstantiation",
+      "node": {
+        "type": "UserPrompt",
+        "name": {
+          "en": "Derived instantiation",
+          "fr": "Derived instantiation"
+        }
+      }
+    },
+    {
+      "variable": "DerivedFromInstantiation",
+      "node": {
+        "type": "UserPrompt",
+        "name": {
+          "en": "Derived from instantiation",
+          "fr": "Derived from instantiation"
+        }
+      }
+    },
+    {
+      "variable": "ModeOfAcq",
+      "node": {
+        "type": "UserPrompt",
+        "name": {
+          "en": "Mode of acquisition",
+          "fr": "Mode of acquisition"
         }
       }
     },
@@ -295,23 +175,51 @@
       "node": {
         "type": "UserPrompt",
         "name": {
-          "en": "responsible employee",
-          "fr": "responsable"
+          "en": "Responsible employee",
+          "fr": "Responsible employee"
         }
       }
-    }
+    },
+    {
+      "variable": "Material",
+      "node": {
+        "type": "UserPrompt",
+        "name": {
+          "en": "Material",
+          "fr": "Material"
+        }
+      }
+    },
+    {
+      "variable": "Color",
+      "node": {
+        "type": "UserPrompt",
+        "name": {
+          "en": "Color",
+          "fr": "Color"
+        }
+      }
+    },
+    {
+      "variable": "Standard",
+      "node": {
+        "type": "UserPrompt",
+        "name": {
+          "en": "Standard (Video)",
+          "fr": "Standard (Video)"
+        }
+      }
+    }    
   ],
   "variables": {
     "onscreen": [
       "Fonds",
-      "RRCote1",
-      "RRCote2",
       "RR",
-      "Type",
-      "InstCote1",
       "InstCote2",
+      "Inst",
+      "CarrierType",
       "ArchivalStatus",
-      "Inst"
+      "Location"
     ]
   }
 }
