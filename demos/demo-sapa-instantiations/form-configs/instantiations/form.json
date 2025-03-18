@@ -11,7 +11,7 @@
       }
     },
     {
-      "variable": "InstCote2",
+      "variable": "UniqueID",
       "node": {
         "type": "UserPrompt",
         "name": {
@@ -21,12 +21,16 @@
       }
     },
     {
-      "variable": "InstCote2Value",
+      "variable": "UniqueIDValue",
       "node": {
         "type": "UserPrompt",
         "name": {
           "en": "Unique ID (regex)",
           "fr": "Unique ID (regex)"
+        },
+        "help": {
+          "en": "^Anfang, Ende$",
+          "fr": "^Anfang, Ende$"
         }
       }
     },
@@ -37,6 +41,10 @@
         "name": {
           "en": "Type (physical / virtual)",
           "fr": "Type (physical / virtual)"
+        },
+        "help": {
+          "en": "ebucore (physical), premis (virtual)",
+          "fr": "ebucore (physical), premis (virtual)"
         }
       }
     },
@@ -201,7 +209,7 @@
       }
     },
     {
-      "variable": "Standard",
+      "variable": "StandardVideo",
       "node": {
         "type": "UserPrompt",
         "name": {
@@ -215,7 +223,7 @@
     "onscreen": [
       "Fonds",
       "RR",
-      "InstCote2",
+      "UniqueID",
       "Inst",
       "CarrierType",
       "ArchivalStatus",

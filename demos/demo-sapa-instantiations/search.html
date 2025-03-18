@@ -368,6 +368,35 @@
 
       yasr.plugins["TableX"].persistentConfig.compact = true;
       yasr.plugins["TableX"].config.includeControls = true;
+      yasr.plugins["TableX"].config.excludeColumnsFromCompactView = [ 
+        // these 2 are for files 
+        "Size", 
+        "Standard", 
+        // these are all for instantiations 
+        "RepresentationType", 
+        "Type",
+        "History",
+        "CopyPath",
+        "DerivedInstantiation",
+        "DerivedFromInstantiation",
+        "PhysUsability",
+        "VideoDamage",
+        "Integrity",
+        "ModeOfAcq",
+        "InternalNote",
+        "Note",
+        "ContentDesc",
+        "Material",
+        "RecodingSystem",
+        "Duration",
+        "Color",
+        "StandardVideo",
+        "AspectRatio",
+        "RecordingSystem",
+        "DisplayMode",
+        "ScanningFormat"
+      ]; 
+
 
       if(lang == "fr") { 
         yasr.plugins["Grid"].config.lang = "fr";

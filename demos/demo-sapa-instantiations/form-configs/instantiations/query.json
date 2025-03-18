@@ -7,27 +7,11 @@
     },
     {
       "termType": "Variable",
-      "value": "RRCote1"
-    },
-    {
-      "termType": "Variable",
-      "value": "RRCote2"
-    },
-    {
-      "termType": "Variable",
       "value": "RR"
     },
     {
       "termType": "Variable",
-      "value": "Type"
-    },
-    {
-      "termType": "Variable",
-      "value": "InstCote2"
-    },
-    {
-      "termType": "Variable",
-      "value": "ArchivalStatus"
+      "value": "UniqueID"
     },
     {
       "termType": "Variable",
@@ -35,35 +19,11 @@
     },
     {
       "termType": "Variable",
-      "value": "RepresentationType"
-    },
-    {
-      "termType": "Variable",
       "value": "CarrierType"
     },
     {
       "termType": "Variable",
-      "value": "RecordingSystem"
-    },
-    {
-      "termType": "Variable",
-      "value": "CopyPath"
-    },
-    {
-      "termType": "Variable",
-      "value": "History"
-    },
-    {
-      "termType": "Variable",
-      "value": "ContentDesc"
-    },
-    {
-      "termType": "Variable",
-      "value": "ModeOfAcq"
-    },
-    {
-      "termType": "Variable",
-      "value": "Material"
+      "value": "ArchivalStatus"
     },
     {
       "termType": "Variable",
@@ -71,23 +31,23 @@
     },
     {
       "termType": "Variable",
+      "value": "PhysUsability"
+    },
+    {
+      "termType": "Variable",
       "value": "Location"
     },
     {
       "termType": "Variable",
-      "value": "PhysicalCharacteristics"
+      "value": "ResponsibleEmployee"
     },
     {
       "termType": "Variable",
-      "value": "Color"
+      "value": "RepresentationType"
     },
     {
       "termType": "Variable",
-      "value": "Standard"
-    },
-    {
-      "termType": "Variable",
-      "value": "DisplayMode"
+      "value": "Type"
     },
     {
       "termType": "Variable",
@@ -95,19 +55,27 @@
     },
     {
       "termType": "Variable",
-      "value": "ScanningFormat"
-    },
-    {
-      "termType": "Variable",
-      "value": "ScanningOrder"
-    },
-    {
-      "termType": "Variable",
       "value": "Integrity"
+    },  
+    {
+      "termType": "Variable",
+      "value": "History"
+    },  
+    {
+      "termType": "Variable",
+      "value": "CopyPath"
     },
     {
       "termType": "Variable",
-      "value": "PhysUsability"
+      "value": "DerivedInstantiation"
+    },
+    {
+      "termType": "Variable",
+      "value": "DerivedFromInstantiation"
+    },
+    {
+      "termType": "Variable",
+      "value": "ModeOfAcq"
     },
     {
       "termType": "Variable",
@@ -119,7 +87,39 @@
     },
     {
       "termType": "Variable",
-      "value": "ResponsibleEmployee"
+      "value": "ContentDesc"
+    },
+    {
+      "termType": "Variable",
+      "value": "Material"
+    },    
+    {
+      "termType": "Variable",
+      "value": "RecordingSystem"
+    },
+    {
+      "termType": "Variable",
+      "value": "Duration"
+    },
+    {
+      "termType": "Variable",
+      "value": "Color"
+    },
+    {
+      "termType": "Variable",
+      "value": "StandardVideo"
+    },
+    {
+      "termType": "Variable",
+      "value": "AspectRatio"
+    },
+    {
+      "termType": "Variable",
+      "value": "DisplayMode"
+    },    
+    {
+      "termType": "Variable",
+      "value": "ScanningFormat"
     }
   ],
   "order": null,
@@ -168,30 +168,6 @@
           },
           "children": [],
           "optional": true
-        },
-        {
-          "line": {
-            "s": "RR",
-            "p": "http://shapes.performing-arts.ch/collections/RecordResource_identifier",
-            "o": "RRCote1",
-            "sType": "http://shapes.performing-arts.ch/collections/RecordResource",
-            "oType": "http://special/Z_Text",
-            "values": []
-          },
-          "children": [],
-          "optional": true
-        },
-        {
-          "line": {
-            "s": "RR",
-            "p": "http://shapes.performing-arts.ch/collections/RecordResource_hasOrHadIdentifier",
-            "o": "RRCote2",
-            "sType": "http://shapes.performing-arts.ch/collections/RecordResource",
-            "oType": "http://shapes.performing-arts.ch/sparnatural/MainIdentifier",
-            "values": []
-          },
-          "children": [],
-          "optional": true
         }
       ]
     },
@@ -199,7 +175,7 @@
       "line": {
         "s": "Inst",
         "p": "http://shapes.performing-arts.ch/instantiations/Instantiation_hasOrHadIdentifier",
-        "o": "InstCote2",
+        "o": "UniqueID",
         "sType": "http://shapes.performing-arts.ch/instantiations/Instantiation",
         "oType": "http://shapes.performing-arts.ch/sparnatural/MainIdentifier",
         "values": []
@@ -208,9 +184,9 @@
       "children": [
         {
           "line": {
-            "s": "InstCote2",
+            "s": "UniqueID",
             "p": "http://shapes.performing-arts.ch/instantiations/Identifier_value",
-            "o": "InstCote2Value",
+            "o": "UniqueIDValue",
             "sType": "http://shapes.performing-arts.ch/sparnatural/MainIdentifier",
             "oType": "http://special/Z_Text",
             "values": []
@@ -403,7 +379,7 @@
       "line": {
         "s": "Inst",
         "p": "http://shapes.performing-arts.ch/sparnatural/Instantiation_hasStandard_FileOrInst",
-        "o": "Standard",
+        "o": "StandardVideo",
         "sType": "http://shapes.performing-arts.ch/instantiations/Instantiation",
         "oType": "http://shapes.performing-arts.ch/instantiations/Standard",
         "values": []
@@ -560,6 +536,30 @@
         "s": "Inst",
         "p": "http://shapes.performing-arts.ch/instantiations/Instantiation_hasResponsibleEmployee",
         "o": "ResponsibleEmployee",
+        "sType": "http://shapes.performing-arts.ch/instantiations/Instantiation",
+        "oType": "http://special/Z_Text",
+        "values": []
+      },
+      "children": [],
+      "optional": true
+    },
+    {
+      "line": {
+        "s": "Inst",
+        "p": "http://shapes.performing-arts.ch/instantiations/Instantiation_duration",
+        "o": "Duration",
+        "sType": "http://shapes.performing-arts.ch/instantiations/Instantiation",
+        "oType": "http://special/Z_Text",
+        "values": []
+      },
+      "children": [],
+      "optional": true
+    },
+    {
+      "line": {
+        "s": "Inst",
+        "p": "http://shapes.performing-arts.ch/sparnatural/Instantiation_aspectRatio_FileOrInst",
+        "o": "AspectRatio",
         "sType": "http://shapes.performing-arts.ch/instantiations/Instantiation",
         "oType": "http://special/Z_Text",
         "values": []
