@@ -166,7 +166,7 @@
           "line": {
             "s": "Instantiation",
             "p": "http://shapes.performing-arts.ch/instantiations/Instantiation_hasOrHadIdentifier",
-            "o": "MainIdentifier_33",
+            "o": "InstUniqueID",
             "sType": "http://shapes.performing-arts.ch/instantiations/Representation",
             "oType": "http://shapes.performing-arts.ch/sparnatural/MainIdentifier",
             "values": []
@@ -174,15 +174,14 @@
           "children": [
             {
               "line": {
-                "s": "MainIdentifier_33",
+                "s": "InstUniqueID",
                 "p": "http://shapes.performing-arts.ch/instantiations/Identifier_value",
-                "o": "InstUniqueID",
+                "o": "InstUniqueIDValue",
                 "sType": "http://shapes.performing-arts.ch/sparnatural/MainIdentifier",
                 "oType": "http://special/Z_Text",
                 "values": []
               },
-              "children": [],
-              "optional": true
+              "children": []
             }
           ],
           "optional": true
