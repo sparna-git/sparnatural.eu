@@ -90,6 +90,20 @@
     }
   ],
   "variables": {
-
+    "onscreen": [
+      "Fonds",
+      "RecordResource",
+      "OriginalName",
+      "File",
+      "Instantiation",
+      "InstUniqueID",      
+      "InstArchivalStatus",
+      "ContainerFormat",
+      "VideoFormat",
+      "AudioFormat",
+      "Standard",
+      "Size",
+      "Duration"
+    ]
   }
 }
