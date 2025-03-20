@@ -5,8 +5,12 @@
       "node": {
         "type": "UserPrompt",
         "name": {
-          "en": "inside record resource",
-          "fr": "dans la record resource"
+          "en": "Record resource",
+          "fr": "Record resource"
+        },
+        "help": {
+          "en": "URI or name",
+          "fr": "URI ou nom"
         }
       }
     },
@@ -15,8 +19,8 @@
       "node": {
         "type": "UserPrompt",
         "name": {
-          "en": "File name quick access",
-          "fr": "Accès rapide par nom"
+          "en": "File name (quick access)",
+          "fr": "Nom de fichier (accès rapide)"
         }
       }
     },
@@ -25,8 +29,22 @@
       "node": {
         "type": "UserPrompt",
         "name": {
-          "en": "File name - regex",
-          "fr": "Nom de fichier - regex"
+          "en": "File name (REGEX)",
+          "fr": "Nom de fichier (REGEX)"
+        },
+        "help": {
+          "en": "^Anfang, End$",
+          "fr": "^Début, Fin$"
+        }
+      }
+    },
+    {
+      "variable": "InstArchivalStatus",
+      "node": {
+        "type": "UserPrompt",
+        "name": {
+          "en": "InstArchivalStatus",
+          "fr": "InstArchivalStatus"
         }
       }
     },
@@ -72,10 +90,6 @@
     }
   ],
   "variables": {
-    "onscreen": [
-      "Fonds",
-      "OriginalName",
-      "ContainerFormat"
-    ]
+
   }
 }

@@ -121,15 +121,29 @@
 
             <ul class="nav nav-tabs">
               <li class="nav-item">
-                <a class="nav-link form-tab" id="tab-files" aria-current="page" href="#" data-bs-toggle="tab" data-bs-target="#sparnatural-form-files">Files</a>
-              </li>
-              <li class="nav-item">
                 <a class="nav-link active form-tab" id="tab-instantiations" href="#" data-bs-toggle="tab" data-bs-target="#sparnatural-form-instantiations">Instantiations</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link form-tab" id="tab-files" aria-current="page" href="#" data-bs-toggle="tab" data-bs-target="#sparnatural-form-files">Files</a>
+              </li>              
             </ul>
 
             <!-- Tab panes -->
             <div class="tab-content">
+
+              <div class="tab-pane active" id="sparnatural-form-instantiations">
+                <!-- Sparnatural Form -->
+                <sparnatural-form
+                  src="https://xls2rdf.sparna.fr/rest/convert?url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1WrC2r7yDQCP5AKhu6SAK8Ba_QshzFKmm%2Fexport%3Fformat%3Dxlsx&noPostProcessings=true https://xls2rdf.sparna.fr/rest/convert?url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1UWfCJmgvgwJ0yOs6Ox_qzn47heaiQ0cx%2Fexport%3Fformat%3Dxlsx&noPostProcessings=true form-configs/collections-shacl.ttl"
+                  lang="en"
+                  defaultLang="en"
+                  limit="1000"
+                  endpoint="https://proxy.sparnatural.eu/sparql-proxy/sparql?endpoint=https%3A%2F%2Fwww.dev.performing-arts.ch%2Fsparql"
+                  form="form-configs/instantiations/form.json"
+                  prefixes="skos:http://www.w3.org/2004/02/skos/core# rico:https://www.ica.org/standards/RiC/ontology# spao:http://ontology.performing-arts.ch/ ebucore:https://www.ebu.ch/metadata/ontologies/ebucore# crm:http://www.cidoc-crm.org/cidoc-crm/ premis:http://www.loc.gov/premis/rdf/v1#"
+                  query="form-configs/instantiations/query.json"
+                ></sparnatural-form>
+              </div>
 
               <div class="tab-pane" id="sparnatural-form-files">
                 <!-- Sparnatural Form -->
@@ -144,19 +158,7 @@
                   query="form-configs/files/query.json"
                 ></sparnatural-form>
               </div>
-              <div class="tab-pane active" id="sparnatural-form-instantiations">
-                <!-- Sparnatural Form -->
-                <sparnatural-form
-                  src="https://xls2rdf.sparna.fr/rest/convert?url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1WrC2r7yDQCP5AKhu6SAK8Ba_QshzFKmm%2Fexport%3Fformat%3Dxlsx&noPostProcessings=true https://xls2rdf.sparna.fr/rest/convert?url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1UWfCJmgvgwJ0yOs6Ox_qzn47heaiQ0cx%2Fexport%3Fformat%3Dxlsx&noPostProcessings=true form-configs/collections-shacl.ttl"
-                  lang="en"
-                  defaultLang="en"
-                  limit="1000"
-                  endpoint="https://proxy.sparnatural.eu/sparql-proxy/sparql?endpoint=https%3A%2F%2Fwww.dev.performing-arts.ch%2Fsparql"
-                  form="form-configs/instantiations/form.json"
-                  prefixes="skos:http://www.w3.org/2004/02/skos/core# rico:https://www.ica.org/standards/RiC/ontology# spao:http://ontology.performing-arts.ch/ ebucore:https://www.ebu.ch/metadata/ontologies/ebucore# crm:http://www.cidoc-crm.org/cidoc-crm/ premis:http://www.loc.gov/premis/rdf/v1#"
-                  query="form-configs/instantiations/query.json"
-                ></sparnatural-form>
-              </div>
+
 
             </div>
 
@@ -369,9 +371,14 @@
       yasr.plugins["TableX"].persistentConfig.compact = true;
       yasr.plugins["TableX"].config.includeControls = true;
       yasr.plugins["TableX"].config.excludeColumnsFromCompactView = [ 
-        // these 2 are for files 
+        // these are for files 
         "Size", 
         "Standard", 
+        "File",
+        "AudioFormat",
+        "Standard",
+        "Size",
+        "Duration",
         // these are all for instantiations 
         "RepresentationType", 
         "Type",

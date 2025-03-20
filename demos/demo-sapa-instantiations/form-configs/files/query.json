@@ -15,11 +15,7 @@
     },
     {
       "termType": "Variable",
-      "value": "InstCote1"
-    },
-    {
-      "termType": "Variable",
-      "value": "InstCote2"
+      "value": "File"
     },
     {
       "termType": "Variable",
@@ -27,11 +23,11 @@
     },
     {
       "termType": "Variable",
-      "value": "InstArchivalStatus"
-    },
+      "value": "InstUniqueID"
+    }, 
     {
       "termType": "Variable",
-      "value": "File"
+      "value": "InstArchivalStatus"
     },
     {
       "termType": "Variable",
@@ -52,6 +48,10 @@
     {
       "termType": "Variable",
       "value": "Size"
+    },
+    {
+      "termType": "Variable",
+      "value": "Duration"
     }
   ],
   "order": null,
@@ -165,18 +165,6 @@
         {
           "line": {
             "s": "Instantiation",
-            "p": "http://shapes.performing-arts.ch/instantiations/Instantiation_identifier",
-            "o": "InstCote1",
-            "sType": "http://shapes.performing-arts.ch/instantiations/Representation",
-            "oType": "http://special/Z_Text",
-            "values": []
-          },
-          "children": [],
-          "optional": true
-        },
-        {
-          "line": {
-            "s": "Instantiation",
             "p": "http://shapes.performing-arts.ch/instantiations/Instantiation_hasOrHadIdentifier",
             "o": "MainIdentifier_33",
             "sType": "http://shapes.performing-arts.ch/instantiations/Representation",
@@ -188,7 +176,7 @@
               "line": {
                 "s": "MainIdentifier_33",
                 "p": "http://shapes.performing-arts.ch/instantiations/Identifier_value",
-                "o": "InstCote2",
+                "o": "InstUniqueID",
                 "sType": "http://shapes.performing-arts.ch/sparnatural/MainIdentifier",
                 "oType": "http://special/Z_Text",
                 "values": []
@@ -206,6 +194,18 @@
             "o": "InstArchivalStatus",
             "sType": "http://shapes.performing-arts.ch/instantiations/Representation",
             "oType": "http://shapes.performing-arts.ch/instantiations/PreservationState",
+            "values": []
+          },
+          "children": [],
+          "optional": true
+        },
+        {
+          "line": {
+            "s": "Instantiation",
+            "p": "http://shapes.performing-arts.ch/instantiations/Instantiation_duration",
+            "o": "Duration",
+            "sType": "http://shapes.performing-arts.ch/instantiations/Instantiation",
+            "oType": "http://special/Z_Text",
             "values": []
           },
           "children": [],
