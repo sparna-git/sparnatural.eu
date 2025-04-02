@@ -35,6 +35,10 @@
     },
     {
       "termType": "Variable",
+      "value": "ParentLocation"
+    },
+    {
+      "termType": "Variable",
       "value": "Location"
     },
     {
@@ -360,7 +364,20 @@
         "oType": "http://shapes.performing-arts.ch/collections/ArchivalPlace",
         "values": []
       },
-      "children": [],
+      "children": [
+        {
+          "line": {
+            "s": "Location",
+            "p": "http://shapes.performing-arts.ch/collections/ArchivalPlace_containedBy",
+            "o": "ParentLocation",
+            "sType": "http://shapes.performing-arts.ch/collections/ArchivalPlace",
+            "oType": "http://shapes.performing-arts.ch/collections/ArchivalPlace",
+            "values": []
+          },
+          "children": [],
+          "optional": false
+        }
+      ],
       "optional": true
     },
     {

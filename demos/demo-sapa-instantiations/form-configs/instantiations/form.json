@@ -227,6 +227,7 @@
       "Inst",
       "CarrierType",
       "ArchivalStatus",
+      "ParentLocation",
       "Location"
     ]
   }
