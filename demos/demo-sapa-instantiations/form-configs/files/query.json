@@ -43,7 +43,7 @@
     },
     {
       "termType": "Variable",
-      "value": "Standard"
+      "value": "VideoStandard"
     },
     {
       "termType": "Variable",
@@ -190,6 +190,18 @@
           "line": {
             "s": "Instantiation",
             "p": "http://shapes.performing-arts.ch/sparnatural/Instantiation_hasArchivalStatus_rec",
+            "o": "InstArchivalStatusCriteria",
+            "sType": "http://shapes.performing-arts.ch/instantiations/Representation",
+            "oType": "http://shapes.performing-arts.ch/instantiations/PreservationState",
+            "values": []
+          },
+          "children": [],
+          "optional": true
+        },
+        {
+          "line": {
+            "s": "Instantiation",
+            "p": "http://shapes.performing-arts.ch/instantiations/Instantiation_hasArchivalStatus",
             "o": "InstArchivalStatus",
             "sType": "http://shapes.performing-arts.ch/instantiations/Representation",
             "oType": "http://shapes.performing-arts.ch/instantiations/PreservationState",
@@ -216,7 +228,7 @@
       "line": {
         "s": "File",
         "p": "http://shapes.performing-arts.ch/instantiations/File_hasStandard",
-        "o": "Standard",
+        "o": "VideoStandard",
         "sType": "http://shapes.performing-arts.ch/instantiations/File",
         "oType": "http://shapes.performing-arts.ch/instantiations/Standard",
         "values": []

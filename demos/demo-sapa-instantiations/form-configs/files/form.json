@@ -39,7 +39,7 @@
       }
     },
     {
-      "variable": "InstArchivalStatus",
+      "variable": "InstArchivalStatusCriteria",
       "node": {
         "type": "UserPrompt",
         "name": {
@@ -79,12 +79,12 @@
       }
     },
     {
-      "variable": "Standard",
+      "variable": "VideoStandard",
       "node": {
         "type": "UserPrompt",
         "name": {
-          "en": "Standard",
-          "fr": "Standard"
+          "en": "Video Standard",
+          "fr": "Standard Vidéo"
         }
       }
     }
@@ -101,7 +101,7 @@
       "ContainerFormat",
       "VideoFormat",
       "AudioFormat",
-      "Standard",
+      "VideoStandard",
       "Size",
       "Duration"
     ]
