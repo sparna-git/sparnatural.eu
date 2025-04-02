@@ -83,8 +83,8 @@
       "node": {
         "type": "UserPrompt",
         "name": {
-          "en": "Video Standard",
-          "fr": "Standard Vidéo"
+          "en": "Video standard",
+          "fr": "Standard vidéo"
         }
       }
     }
