@@ -69,7 +69,7 @@
       }
     },
     {
-      "variable": "RecordingSystem",
+      "variable": "RecordingSystem_many",
       "node": {
         "type": "UserPrompt",
         "name": {
@@ -99,7 +99,7 @@
       }
     },
     {
-      "variable": "VideoDamage",
+      "variable": "VideoDamage_many",
       "node": {
         "type": "UserPrompt",
         "name": {
