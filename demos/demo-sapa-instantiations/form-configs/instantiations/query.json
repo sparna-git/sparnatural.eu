@@ -93,8 +93,19 @@
       "value": "ModeOfAcq"
     },
     {
-      "termType": "Variable",
-      "value": "InternalNote"
+      "variable": {
+        "termType": "Variable",
+        "value": "InternalNote"
+      },
+      "expression": {
+        "type": "aggregate",
+        "aggregation": "group_concat",
+        "distinct": false,
+        "expression": {
+          "termType": "Variable",
+          "value": "InternalNote_many"
+        }
+      }
     },
     {
       "termType": "Variable",
@@ -502,7 +513,7 @@
       "line": {
         "s": "Inst",
         "p": "http://shapes.performing-arts.ch/instantiations/Instantiation_hasInternalNote",
-        "o": "InternalNote",
+        "o": "InternalNote_many",
         "sType": "http://shapes.performing-arts.ch/instantiations/Instantiation",
         "oType": "http://special/Z_Text",
         "values": []
