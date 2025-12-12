@@ -667,6 +667,79 @@ section {
   padding-bottom: 10px;
 }
 
+
+
+/* Sparnatural-form Section
+--------------------------------*/
+#sparnatural-form {
+  padding: 60px 0;
+  overflow: hidden;
+}
+
+#sparnatural-form .section-description {
+  font-size: 130%;
+}
+
+#sparnatural-form .sparnatural-form-img {
+  height: 510px;
+  overflow: hidden;
+}
+
+#sparnatural-form .sparnatural-form-img img {
+  margin-left: -15px;
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  #sparnatural-form .sparnatural-form-img {
+    height: auto;
+  }
+  #sparnatural-form .sparnatural-form-img img {
+    margin-left: 0;
+    padding-bottom: 30px;
+  }
+}
+
+#sparnatural-form .content .h2 {
+  color: #333;
+  font-weight: 300;
+  font-size: 24px;
+}
+
+#sparnatural-form .content h3 {
+  color: #777;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 26px;
+  font-style: italic;
+}
+
+#sparnatural-form .content p {
+  line-height: 26px;
+}
+
+#sparnatural-form .content p:last-child {
+  margin-bottom: 0;
+}
+
+#sparnatural-form .content i {
+  font-size: 20px;
+  padding-right: 4px;
+  color: #1dc8cd;
+}
+
+#sparnatural-form .content ul {
+  list-style: none;
+  padding: 0;
+}
+
+#sparnatural-form .content ul li {
+  padding-bottom: 10px;
+}
+
+
+
+
 /* Product Featuress Section
 --------------------------------*/
 #features {
