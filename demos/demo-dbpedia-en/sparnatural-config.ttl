@@ -164,7 +164,7 @@ this:Artwork_creationYear sh:path dbp:year;
   core:enableOptional "true"^^xsd:boolean;
   core:enableNegation "true"^^xsd:boolean .
 
-this:Artwork_displayedAt sh:path _:1dbc0e1c12eb4e498d11cf37fb5a8fbd715;
+this:Artwork_displayedAt sh:path _:3574333af7b047fea34a3057441bf75491;
   sh:name "displayed at"@en, "exposée à"@fr;
   sh:nodeKind sh:IRI;
   sh:class dbpedia:Museum;
@@ -173,35 +173,37 @@ this:Artwork_displayedAt sh:path _:1dbc0e1c12eb4e498d11cf37fb5a8fbd715;
   core:enableOptional "true"^^xsd:boolean;
   core:enableNegation "true"^^xsd:boolean .
 
-_:1dbc0e1c12eb4e498d11cf37fb5a8fbd715 sh:alternativePath _:1dbc0e1c12eb4e498d11cf37fb5a8fbd716 .
+_:3574333af7b047fea34a3057441bf75491 sh:alternativePath _:3574333af7b047fea34a3057441bf75492 .
 
-_:1dbc0e1c12eb4e498d11cf37fb5a8fbd716 rdf:first dbpedia:museum;
-  rdf:rest _:1dbc0e1c12eb4e498d11cf37fb5a8fbd717 .
+_:3574333af7b047fea34a3057441bf75492 rdf:first dbpedia:museum;
+  rdf:rest _:3574333af7b047fea34a3057441bf75493 .
 
-_:1dbc0e1c12eb4e498d11cf37fb5a8fbd717 rdf:first _:1dbc0e1c12eb4e498d11cf37fb5a8fbd718;
+_:3574333af7b047fea34a3057441bf75493 rdf:first _:3574333af7b047fea34a3057441bf75494;
   rdf:rest rdf:nil .
 
-_:1dbc0e1c12eb4e498d11cf37fb5a8fbd718 sh:inversePath dbpedia:displays .
+_:3574333af7b047fea34a3057441bf75494 sh:inversePath dbpedia:displays .
 
 this:Artwork_thumbnail sh:path dbpedia:thumbnail;
   sh:name "thumbnail"@en, "vignette"@fr;
+  sh:maxCount "1"^^xsd:integer;
   sh:nodeKind sh:IRI;
   sh:node this:Image;
   dash:searchWidget core:NonSelectableProperty;
+  dash:propertyRole dash:KeyInfoRole;
   core:enableOptional "true"^^xsd:boolean;
   core:enableNegation "true"^^xsd:boolean .
 
 this:Artwork_description sh:path rdfs:comment;
   sh:name "description"@en, "description"@fr;
-  sh:minCount "1"^^xsd:integer;
   sh:nodeKind sh:Literal;
   sh:datatype rdf:langString;
   sh:node this:Text;
   dash:searchWidget core:SearchProperty;
+  dash:propertyRole dash:KeyInfoRole;
   core:enableOptional "true"^^xsd:boolean;
   core:enableNegation "true"^^xsd:boolean .
 
-this:Museum_country sh:path _:1dbc0e1c12eb4e498d11cf37fb5a8fbd719;
+this:Museum_country sh:path _:3574333af7b047fea34a3057441bf75495;
   sh:name "country"@en, "pays"@fr;
   sh:description "Specifies the country where the museum is located."@en, "Spécifie le pays où se trouve le musée."@fr;
   sh:nodeKind sh:IRI;
@@ -211,10 +213,10 @@ this:Museum_country sh:path _:1dbc0e1c12eb4e498d11cf37fb5a8fbd719;
   core:enableOptional "true"^^xsd:boolean;
   core:enableNegation "true"^^xsd:boolean .
 
-_:1dbc0e1c12eb4e498d11cf37fb5a8fbd719 rdf:first dbpedia:location;
-  rdf:rest _:1dbc0e1c12eb4e498d11cf37fb5a8fbd720 .
+_:3574333af7b047fea34a3057441bf75495 rdf:first dbpedia:location;
+  rdf:rest _:3574333af7b047fea34a3057441bf75496 .
 
-_:1dbc0e1c12eb4e498d11cf37fb5a8fbd720 rdf:first dbpedia:country;
+_:3574333af7b047fea34a3057441bf75496 rdf:first dbpedia:country;
   rdf:rest rdf:nil .
 
 this:Museum_label sh:path rdfs:label;
@@ -236,7 +238,7 @@ this:Museum_numberOfVisitors sh:path dbpedia:numberOfVisitors;
   core:enableOptional "true"^^xsd:boolean;
   core:enableNegation "true"^^xsd:boolean .
 
-this:Museum_displays sh:path _:1dbc0e1c12eb4e498d11cf37fb5a8fbd721;
+this:Museum_displays sh:path _:3574333af7b047fea34a3057441bf75497;
   sh:name "displays"@en, "expose"@fr;
   sh:nodeKind sh:IRI;
   sh:class dbpedia:Artwork;
@@ -244,15 +246,15 @@ this:Museum_displays sh:path _:1dbc0e1c12eb4e498d11cf37fb5a8fbd721;
   core:enableOptional "true"^^xsd:boolean;
   core:enableNegation "true"^^xsd:boolean .
 
-_:1dbc0e1c12eb4e498d11cf37fb5a8fbd721 sh:alternativePath _:1dbc0e1c12eb4e498d11cf37fb5a8fbd722 .
+_:3574333af7b047fea34a3057441bf75497 sh:alternativePath _:3574333af7b047fea34a3057441bf75498 .
 
-_:1dbc0e1c12eb4e498d11cf37fb5a8fbd722 rdf:first dbpedia:displays;
-  rdf:rest _:1dbc0e1c12eb4e498d11cf37fb5a8fbd723 .
+_:3574333af7b047fea34a3057441bf75498 rdf:first dbpedia:displays;
+  rdf:rest _:3574333af7b047fea34a3057441bf75499 .
 
-_:1dbc0e1c12eb4e498d11cf37fb5a8fbd723 rdf:first _:1dbc0e1c12eb4e498d11cf37fb5a8fbd724;
+_:3574333af7b047fea34a3057441bf75499 rdf:first _:3574333af7b047fea34a3057441bf754100;
   rdf:rest rdf:nil .
 
-_:1dbc0e1c12eb4e498d11cf37fb5a8fbd724 sh:inversePath dbpedia:museum .
+_:3574333af7b047fea34a3057441bf754100 sh:inversePath dbpedia:museum .
 
 this:Museum_inWikidata sh:path owl:sameAs;
   sh:name "has other record"@en, "autre fiche"@fr;
@@ -264,23 +266,25 @@ this:Museum_inWikidata sh:path owl:sameAs;
 
 this:Museum_thumbnail sh:path dbpedia:thumbnail;
   sh:name "thumbnail"@en, "vignette"@fr;
+  sh:maxCount "1"^^xsd:integer;
   sh:nodeKind sh:IRI;
   sh:node this:Image;
   dash:searchWidget core:NonSelectableProperty;
+  dash:propertyRole dash:KeyInfoRole;
   core:enableOptional "true"^^xsd:boolean;
   core:enableNegation "true"^^xsd:boolean .
 
 this:Museum_description sh:path rdfs:comment;
   sh:name "description"@en, "description"@fr;
-  sh:minCount "1"^^xsd:integer;
   sh:nodeKind sh:Literal;
   sh:datatype rdf:langString;
   sh:node this:Text;
   dash:searchWidget core:SearchProperty;
+  dash:propertyRole dash:KeyInfoRole;
   core:enableOptional "true"^^xsd:boolean;
   core:enableNegation "true"^^xsd:boolean .
 
-this:Country_countryOf sh:path _:1dbc0e1c12eb4e498d11cf37fb5a8fbd725;
+this:Country_countryOf sh:path _:3574333af7b047fea34a3057441bf754101;
   sh:name "country of"@en, "pays de"@fr;
   sh:description "Specifies the museums located in this country."@en, "Spécifie les musées situés dans ce pays."@fr;
   sh:minCount "1"^^xsd:integer;
@@ -291,15 +295,15 @@ this:Country_countryOf sh:path _:1dbc0e1c12eb4e498d11cf37fb5a8fbd725;
   core:enableOptional "true"^^xsd:boolean;
   core:enableNegation "true"^^xsd:boolean .
 
-_:1dbc0e1c12eb4e498d11cf37fb5a8fbd725 rdf:first _:1dbc0e1c12eb4e498d11cf37fb5a8fbd726;
-  rdf:rest _:1dbc0e1c12eb4e498d11cf37fb5a8fbd727 .
+_:3574333af7b047fea34a3057441bf754101 rdf:first _:3574333af7b047fea34a3057441bf754102;
+  rdf:rest _:3574333af7b047fea34a3057441bf754103 .
 
-_:1dbc0e1c12eb4e498d11cf37fb5a8fbd726 sh:inversePath dbpedia:country .
+_:3574333af7b047fea34a3057441bf754102 sh:inversePath dbpedia:country .
 
-_:1dbc0e1c12eb4e498d11cf37fb5a8fbd727 rdf:first _:1dbc0e1c12eb4e498d11cf37fb5a8fbd728;
+_:3574333af7b047fea34a3057441bf754103 rdf:first _:3574333af7b047fea34a3057441bf754104;
   rdf:rest rdf:nil .
 
-_:1dbc0e1c12eb4e498d11cf37fb5a8fbd728 sh:inversePath dbpedia:location .
+_:3574333af7b047fea34a3057441bf754104 sh:inversePath dbpedia:location .
 
 this:Country_label sh:path rdfs:label;
   sh:name "label"@en, "libellé"@fr;
@@ -312,7 +316,7 @@ this:Country_label sh:path rdfs:label;
   core:enableOptional "false"^^xsd:boolean;
   core:enableNegation "false"^^xsd:boolean .
 
-this:Country_deathPlace sh:path _:1dbc0e1c12eb4e498d11cf37fb5a8fbd729;
+this:Country_deathPlace sh:path _:3574333af7b047fea34a3057441bf754105;
   sh:order "2";
   sh:name "death place of"@en, "lieu de décès de"@fr;
   sh:description "Persons who died in this country.<br/><br/><em>Note : in DBPedia, persons are linked to the city where they died, and the city is linked to the country.</em>"@en,
@@ -324,9 +328,9 @@ this:Country_deathPlace sh:path _:1dbc0e1c12eb4e498d11cf37fb5a8fbd729;
   core:enableOptional "true"^^xsd:boolean;
   core:enableNegation "true"^^xsd:boolean .
 
-_:1dbc0e1c12eb4e498d11cf37fb5a8fbd729 sh:inversePath dbpedia:deathPlace .
+_:3574333af7b047fea34a3057441bf754105 sh:inversePath dbpedia:deathPlace .
 
-this:Country_birthPlace sh:path _:1dbc0e1c12eb4e498d11cf37fb5a8fbd730;
+this:Country_birthPlace sh:path _:3574333af7b047fea34a3057441bf754106;
   sh:order "1";
   sh:name "birth place of"@en, "lieu de naissance de"@fr;
   sh:description "Persons who were born in this country.<br/><br/><em>Note : in DBPedia, persons are linked to the city in which they were born, and the city is linked to the country.</em>"@en,
@@ -338,9 +342,9 @@ this:Country_birthPlace sh:path _:1dbc0e1c12eb4e498d11cf37fb5a8fbd730;
   core:enableOptional "true"^^xsd:boolean;
   core:enableNegation "true"^^xsd:boolean .
 
-_:1dbc0e1c12eb4e498d11cf37fb5a8fbd730 sh:inversePath dbpedia:birthPlace .
+_:3574333af7b047fea34a3057441bf754106 sh:inversePath dbpedia:birthPlace .
 
-this:Person_bornIn sh:path _:1dbc0e1c12eb4e498d11cf37fb5a8fbd731;
+this:Person_bornIn sh:path _:3574333af7b047fea34a3057441bf754107;
   sh:order "1";
   sh:name "born in"@en, "né à / né en"@fr;
   sh:description "Persons who were born in this country.<br/><br/><em>Note : in DBPedia, persons are linked to the city in which they were born, and the city is linked to the country.</em>"@en,
@@ -353,13 +357,13 @@ this:Person_bornIn sh:path _:1dbc0e1c12eb4e498d11cf37fb5a8fbd731;
   core:enableOptional "true"^^xsd:boolean;
   core:enableNegation "true"^^xsd:boolean .
 
-_:1dbc0e1c12eb4e498d11cf37fb5a8fbd731 rdf:first dbpedia:birthPlace;
-  rdf:rest _:1dbc0e1c12eb4e498d11cf37fb5a8fbd732 .
+_:3574333af7b047fea34a3057441bf754107 rdf:first dbpedia:birthPlace;
+  rdf:rest _:3574333af7b047fea34a3057441bf754108 .
 
-_:1dbc0e1c12eb4e498d11cf37fb5a8fbd732 rdf:first dbpedia:country;
+_:3574333af7b047fea34a3057441bf754108 rdf:first dbpedia:country;
   rdf:rest rdf:nil .
 
-this:Person_diedIn sh:path _:1dbc0e1c12eb4e498d11cf37fb5a8fbd733;
+this:Person_diedIn sh:path _:3574333af7b047fea34a3057441bf754109;
   sh:order "2";
   sh:name "died in"@en, "mort à / mort en"@fr;
   sh:description "The country where the person died.<br/><br/><em>Note : in DBPedia, persons are linked to the city where they died, and the city is linked to the country.</em>"@en,
@@ -372,10 +376,10 @@ this:Person_diedIn sh:path _:1dbc0e1c12eb4e498d11cf37fb5a8fbd733;
   core:enableOptional "true"^^xsd:boolean;
   core:enableNegation "true"^^xsd:boolean .
 
-_:1dbc0e1c12eb4e498d11cf37fb5a8fbd733 rdf:first dbpedia:deathPlace;
-  rdf:rest _:1dbc0e1c12eb4e498d11cf37fb5a8fbd734 .
+_:3574333af7b047fea34a3057441bf754109 rdf:first dbpedia:deathPlace;
+  rdf:rest _:3574333af7b047fea34a3057441bf754110 .
 
-_:1dbc0e1c12eb4e498d11cf37fb5a8fbd734 rdf:first dbpedia:country;
+_:3574333af7b047fea34a3057441bf754110 rdf:first dbpedia:country;
   rdf:rest rdf:nil .
 
 this:Person_label sh:path rdfs:label;
@@ -408,7 +412,7 @@ this:Person_classifiedIn sh:path dcterms:subject;
   datasources:treeRootsDatasource this:tree_root_frenchPainters;
   datasources:treeChildrenDatasource datasources:tree_children_skosnarrower .
 
-this:Person_created sh:path _:1dbc0e1c12eb4e498d11cf37fb5a8fbd735;
+this:Person_created sh:path _:3574333af7b047fea34a3057441bf754111;
   sh:name "created"@en, "a créé"@fr;
   sh:nodeKind sh:IRI;
   sh:class dbpedia:Artwork;
@@ -417,7 +421,7 @@ this:Person_created sh:path _:1dbc0e1c12eb4e498d11cf37fb5a8fbd735;
   core:enableOptional "true"^^xsd:boolean;
   core:enableNegation "true"^^xsd:boolean .
 
-_:1dbc0e1c12eb4e498d11cf37fb5a8fbd735 sh:inversePath dbpedia:author .
+_:3574333af7b047fea34a3057441bf754111 sh:inversePath dbpedia:author .
 
 this:Person_deathYear sh:path dbpedia:deathYear;
   sh:order "2";
@@ -440,23 +444,25 @@ this:Person_movement sh:path dbpedia:movement;
 
 this:Person_thumbnail sh:path dbpedia:thumbnail;
   sh:name "thumbnail"@en, "vignette"@fr;
+  sh:maxCount "1"^^xsd:integer;
   sh:nodeKind sh:IRI;
   sh:node this:Image;
   dash:searchWidget core:NonSelectableProperty;
+  dash:propertyRole dash:KeyInfoRole;
   core:enableOptional "true"^^xsd:boolean;
   core:enableNegation "true"^^xsd:boolean .
 
 this:Person_description sh:path rdfs:comment;
   sh:name "description"@en, "description"@fr;
-  sh:minCount "1"^^xsd:integer;
   sh:nodeKind sh:Literal;
   sh:datatype rdf:langString;
   sh:node this:Text;
   dash:searchWidget core:SearchProperty;
+  dash:propertyRole dash:KeyInfoRole;
   core:enableOptional "true"^^xsd:boolean;
   core:enableNegation "true"^^xsd:boolean .
 
-this:Movement_movementIncludes sh:path _:1dbc0e1c12eb4e498d11cf37fb5a8fbd736;
+this:Movement_movementIncludes sh:path _:3574333af7b047fea34a3057441bf754112;
   sh:name "participant"@en, "participant"@fr;
   sh:nodeKind sh:IRI;
   sh:class dbpedia:Person;
@@ -465,7 +471,7 @@ this:Movement_movementIncludes sh:path _:1dbc0e1c12eb4e498d11cf37fb5a8fbd736;
   core:enableOptional "true"^^xsd:boolean;
   core:enableNegation "true"^^xsd:boolean .
 
-_:1dbc0e1c12eb4e498d11cf37fb5a8fbd736 sh:inversePath dbpedia:movement .
+_:3574333af7b047fea34a3057441bf754112 sh:inversePath dbpedia:movement .
 
 this:Movement_description sh:path rdfs:comment;
   sh:name "description"@en, "description"@fr;

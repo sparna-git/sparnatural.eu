@@ -35,12 +35,14 @@ var sampleQueries = {
                         "o": "Country_4",
                         "sType": "https://data.mydomain.com/ontologies/sparnatural-config/Museum",
                         "oType": "https://data.mydomain.com/ontologies/sparnatural-config/Country",
-                        "values": [
+                        "criterias": [
                             {
                                 "label": "Italy (17)",
-                                "rdfTerm": {
-                                    "type": "uri",
-                                    "value": "http://dbpedia.org/resource/Italy"
+                                "criteria": {
+                                    "rdfTerm": {
+                                        "type": "uri",
+                                        "value": "http://dbpedia.org/resource/Italy"
+                                    }
                                 }
                             }
                         ]
@@ -87,12 +89,14 @@ var sampleQueries = {
                         "o": "Person_4",
                         "sType": "https://data.mydomain.com/ontologies/sparnatural-config/Artwork",
                         "oType": "https://data.mydomain.com/ontologies/sparnatural-config/Person",
-                        "values": [
+                        "criterias": [
                             {
                                 "label": "Vincent van Gogh",
-                                "rdfTerm": {
-                                    "type": "uri",
-                                    "value": "http://dbpedia.org/resource/Vincent_van_Gogh"
+                                "criteria": {
+                                    "rdfTerm": {
+                                        "type": "uri",
+                                        "value": "http://dbpedia.org/resource/Vincent_van_Gogh"
+                                    }
                                 }
                             }
                         ]
@@ -138,12 +142,14 @@ var sampleQueries = {
                 "o": "Category_2",
                 "sType": "https://data.mydomain.com/ontologies/sparnatural-config/Person",
                 "oType": "https://data.mydomain.com/ontologies/sparnatural-config/Category",
-                "values": [
+                "criterias": [
                     {
                         "label": "19th-century French women artists",
-                        "rdfTerm": {
-                            "type": "uri",
-                            "value": "http://dbpedia.org/resource/Category:19th-century_French_women_artists"
+                        "criteria": {
+                            "rdfTerm": {
+                                "type": "uri",
+                                "value": "http://dbpedia.org/resource/Category:19th-century_French_women_artists"
+                            }
                         }
                     }
                 ]
